@@ -32,12 +32,12 @@ There are six masters set up for Google Sans:
 * **Black**
 > Taken from Product Sans. The boldest style. Used to interolate the Bold/Medium styles
 
-#Instances
+# Instances
 There are 18 Instances set up Google Sans. Some of which are purely referential.
 
-##Hinted
+## Hinted
 
-###Google Sans Regular
+### Google Sans Regular
 * Weight: 380
 * Width: 170
 * Custom: 70
@@ -45,7 +45,7 @@ There are 18 Instances set up Google Sans. Some of which are purely referential.
 	- These remove the calt and ss03 feature, and then update the feature code and are NOT hinted. 
 	- This is an export ready for VTT
 
-###Google Sans Display Regular
+### Google Sans Display Regular
 * Weight: 380
 * Width: 150
 * Custom: 22
@@ -77,7 +77,7 @@ There are 18 Instances set up Google Sans. Some of which are purely referential.
 	- These remove the calt and ss03 feature, and then update the feature code and are NOT hinted. 
 	- This is an export ready for VTT
 
-###Google Sans Display Bold
+### Google Sans Display Bold
 * Weight: 734
 * Width: 150
 * Custom: 22
@@ -142,11 +142,11 @@ $ ttf2eot
 
 # Process
 
-##Android
+## Android
 
 **Android** files are exported straight from Glyphs. They then have the ```fontbakery-fix-cmap.py``` command ran with the ```-f4 -k0 -dm``` sub options.
 
-##Hinted
+## Hinted
 
 **Hinted** files are exported from VTT. Upon export, these have then been through ```ttx``` to remove `nameID=14` (this was included in an old binary and now has to be removed manually). 
 Version numbers are incremented via ```fontbakery-update-version.py```
