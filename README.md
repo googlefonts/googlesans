@@ -151,6 +151,6 @@ $ ttf2eot
 **Hinted** files are exported from VTT. Upon export, these have then been through ```ttx``` to remove `nameID=14` (this was included in an old binary and now has to be removed manually). 
 Version numbers are incremented via ```fontbakery-update-version.py```
 
-## Hardware 
+## Hardware 
 
 The latest hardware build has been branched out of the main design space. This has been created by making an instance in the main design space, and then generating this as a master. This was down primarily to inconistent curves and drawing which could only be rectified by manual intervention.
