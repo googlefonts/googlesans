@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ttFont ttLibVersion="3.0">
+
+  <prep>
+    <assembly>
+      PUSH[ ]	/* 521 values pushed */
+      144 62 23 31 143 64 250 31 142 64 255 31 141 64 250 31 140 64 100 31 139 63 255 31 138
+      63 84 31 137 61 255 31 136 61 72 31 135 59 255 31 134 58 255 31 133 53 11 31 132 56
+      23 31 131 57 100 31 130 57 250 31 129 57 255 31 128 57 125 31 127 57 63 31 126 55 125
+      31 125 55 250 31 124 55 255 31 123 55 72 31 122 52 255 31 121 50 72 31 120 50 167 31
+      119 50 255 31 118 50 167 31 117 51 255 31 116 51 167 31 115 48 255 31 114 49 250 31 113
+      49 255 31 112 48 39 31 111 46 167 31 110 46 255 31 109 45 255 31 108 44 250 31 107 44
+      255 31 106 42 84 31 105 42 167 31 104 42 255 31 103 42 250 31 102 43 250 31 101 43 255
+      31 100 42 42 31 99 41 100 31 98 41 255 31 97 41 250 31 96 41 84 31 95 40 255 31
+      94 39 125 31 93 39 255 31 92 39 250 31 91 37 255 31 90 37 125 31 89 38 167 31 88
+      38 255 31 87 38 100 31 86 36 255 31 85 34 167 31 84 34 255 31 83 34 167 31 82 34
+      100 31 81 34 56 31 80 35 255 31 79 35 125 31 78 33 255 31 77 32 255 31 76 32 84
+      31 75 31 255 31 74 30 167 31 73 30 255 31 72 30 100 31 71 30 36 31 70 29 255 31
+      69 29 125 31 68 29 72 31 67 29 42 31 66 28 255 31 65 28 125 31 64 62 72 31 63
+      62 167 31 62 60 250 31 61 60 27 31 57 56 250 31 56 54 250 31 55 54 36 31 54 53
+      125 31 51 50 56 31 50 47 250 31 49 48 72 31 48 47 27 31 46 45 125 31 43 42 72
+      31 39 37 63 31 38 37 36 31 37 57 27 25 92 36 27 23 31 35 34 34 31 34 30 26
+      25 92 33 26 28 31 32 25 255 31 31 22 125 31 30 8 24 22 92 29 8 23 22 92 28
+      22 255 31 27 54 25 27 91 24 60 22 64 91 26 54 25 27 91 23 60 22 64 91 21 25
+      62 22 123 90 19 32 18 85 17 32 16 85 18 89 16 89 13 32 12 85 5 32 4 85 12
+      89 4 89 15 32 14 85 11 32 10 85 7 32 6 85 1 63 0 85 14 89 10 89 6 89
+      0 89 9 32 8 85 3 32 2 85 8 89 2 89 3 64 64 5 1 400 84
+      CALL[ ]	/* CallFunction */
+      MPPEM[ ]	/* MeasurePixelPerEm */
+      PUSH[ ]	/* 1 value pushed */
+      2047
+      GT[ ]	/* GreaterThan */
+      MPPEM[ ]	/* MeasurePixelPerEm */
+      PUSH[ ]	/* 1 value pushed */
+      8
+      LT[ ]	/* LessThan */
+      OR[ ]	/* LogicalOr */
+      PUSH[ ]	/* 1 value pushed */
+      1
+      GETINFO[ ]	/* GetInfo */
+      PUSH[ ]	/* 1 value pushed */
+      37
+      GTEQ[ ]	/* GreaterThanOrEqual */
+      PUSH[ ]	/* 1 value pushed */
+      1
+      GETINFO[ ]	/* GetInfo */
+      PUSH[ ]	/* 1 value pushed */
+      64
+      LTEQ[ ]	/* LessThenOrEqual */
+      AND[ ]	/* LogicalAnd */
+      PUSH[ ]	/* 1 value pushed */
+      6
+      GETINFO[ ]	/* GetInfo */
+      PUSH[ ]	/* 1 value pushed */
+      0
+      NEQ[ ]	/* NotEqual */
+      AND[ ]	/* LogicalAnd */
+      OR[ ]	/* LogicalOr */
+      IF[ ]	/* If */
+      PUSH[ ]	/* 2 values pushed */
+      1 1
+      INSTCTRL[ ]	/* SetInstrExecControl */
+      EIF[ ]	/* EndIf */
+      SCANCTRL[ ]	/* ScanConversionControl */
+      SCANTYPE[ ]	/* ScanType */
+      SCANTYPE[ ]	/* ScanType */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      SCVTCI[ ]	/* SetCVTCutIn */
+      WS[ ]	/* WriteStore */
+      MPPEM[ ]	/* MeasurePixelPerEm */
+      PUSH[ ]	/* 1 value pushed */
+      144
+      GTEQ[ ]	/* GreaterThanOrEqual */
+      IF[ ]	/* If */
+      PUSH[ ]	/* 3 values pushed */
+      3 0 0
+      SCVTCI[ ]	/* SetCVTCutIn */
+      WS[ ]	/* WriteStore */
+      EIF[ ]	/* EndIf */
+      PUSH[ ]	/* 2 values pushed */
+      2 2
+      RS[ ]	/* ReadStore */
+      LTEQ[ ]	/* LessThenOrEqual */
+      IF[ ]	/* If */
+      PUSH[ ]	/* 2 values pushed */
+      4 3
+      INSTCTRL[ ]	/* SetInstrExecControl */
+      EIF[ ]	/* EndIf */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      CALL[ ]	/* CallFunction */
+      RTG[ ]	/* RoundToGrid */
+    </assembly>
+  </prep>
+
+</ttFont>
