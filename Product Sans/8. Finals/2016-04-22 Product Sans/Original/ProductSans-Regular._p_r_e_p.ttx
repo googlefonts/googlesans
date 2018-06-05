@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ttFont ttLibVersion="3.0">
+
+  <prep>
+    <assembly>
+      PUSH[ ]	/* 1 value pushed */
+      0
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      PUSH[ ]	/* 3 values pushed */
+      1 34 2
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      PUSH[ ]	/* 3 values pushed */
+      35 1 2
+      CALL[ ]	/* CallFunction */
+      SVTCA[1]	/* SetFPVectorToAxis */
+      PUSH[ ]	/* 8 values pushed */
+      1 64 56 41 31 19 0 8
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      PUSH[ ]	/* 8 values pushed */
+      2 64 56 41 31 19 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      3 64 56 41 31 19 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      4 64 56 41 31 19 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      5 75 56 46 31 19 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      6 73 56 46 31 19 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      7 41 36 27 20 12 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      8 41 34 26 19 12 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      9 50 43 31 25 13 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      10 83 69 50 34 20 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      11 25 20 16 11 6 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      12 77 69 50 34 19 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      13 86 69 55 39 24 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      14 92 69 55 39 24 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      15 53 43 31 25 13 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      16 64 56 41 31 19 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      17 43 36 31 19 10 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      18 44 36 31 19 10 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      19 131 102 82 59 34 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      20 49 36 31 25 14 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      21 115 102 73 52 30 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      22 125 102 82 59 34 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      23 99 81 65 47 30 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      24 104 81 65 47 30 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      25 15 13 10 7 6 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      26 17 13 10 7 6 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      27 24 20 16 11 6 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      28 24 20 16 11 6 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      29 95 81 65 47 30 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      30 37 29 24 18 12 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      31 34 28 22 15 12 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      32 33 28 22 15 12 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      33 53 43 31 23 13 0 8
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 8 values pushed */
+      34 50 43 31 23 13 0 8
+      CALL[ ]	/* CallFunction */
+      SVTCA[0]	/* SetFPVectorToAxis */
+      PUSH[ ]	/* 3 values pushed */
+      36 9 7
+      CALL[ ]	/* CallFunction */
+      PUSH[ ]	/* 1 value pushed */
+      0
+      DUP[ ]	/* DuplicateTopStack */
+      RCVT[ ]	/* ReadCVT */
+      RDTG[ ]	/* RoundDownToGrid */
+      ROUND[01]	/* Round */
+      RTG[ ]	/* RoundToGrid */
+      WCVTP[ ]	/* WriteCVTInPixels */
+      PUSH[ ]	/* 3 values pushed */
+      175 42 1
+      DELTAC1[ ]	/* DeltaExceptionC1 */
+      PUSH[ ]	/* 3 values pushed */
+      79 50 1
+      DELTAC1[ ]	/* DeltaExceptionC1 */
+      PUSH[ ]	/* 3 values pushed */
+      79 52 1
+      DELTAC1[ ]	/* DeltaExceptionC1 */
+    </assembly>
+  </prep>
+
+</ttFont>
