@@ -1,5 +1,71 @@
 # Google Sans
-## Version 1.27
+
+## Version 1.035 / 11th Oct 2018
+### Android Update Release Notes
+
+* Overhaul of design space within .glyphs file.
+* Vietnamese language support added. See [Vietnamese Extension List](Docs/Lists/VietnameseGlyphs.xml). 
+* The full language list that Google Sans & Google Sans Display can be found [here](Docs/Lists/LanguageList.txt).
+* A full list of all amends can be found in the [Diff Reports](Docs/Changelogs/gf-sans_v1.35_imgs). 116 new Glyphs total.
+
+### Ligatures
+
+* Google Ligatures are now available in both contextual and PUA encoded flavours.
+
+```
+Glogo => E000
+ologo => E001
+glogo => E002 
+llogo => E003
+elogo => E004
+Gsuper => E005
+Googlelogo => E006
+```
+
+* Additional code is now in the `liga` feature:
+
+```
+[Gg]oogleligature => Google.logo
+Glogoligature => G.logo
+ologoligature => o.logo
+glogoligature => g.logo
+llogoligature => l.logo
+elogoligature => e.logo
+```
+
+### Styles Updated
+
+* Google Sans
+	* Regular
+	* Italic
+	* Medium
+	* Medium Italic
+	* Bold
+	* Bold Italic
+* Google Sans Display
+	* Regular
+	* Italic
+	* Medium
+	* Medium Italic
+	* Bold
+	* Bold Italic
+
+## Glyphs Update
+
+**Glyphs Update**
+
+Inbetween Glyphs version `1075` and `1141`, there has been a significant change to the way in-which it interpolated a 3 dimensional design space. It is impossible to produce the same results of which the previous master files (<v1.028)output originally. Because of this, we have created the extreme corners of the design space to ensure consistent interpolation. These now include:
+
+* Regular
+* Bold
+* Display Regular
+* Display Bold
+
+Across two axes, Weight and Width.
+
+Glyphs version 1075 can be found [here](https://updates.glyphsapp.com/Glyphs2.4.4-1075.zip)
+
+## Version 1.27 / Early 2018 (Date TBC)
 • As of Version 1.27, the Android versions now have a CALT feature, with updated feature code.
 
 * Hinted files are v1.26, and then ttx ran. The additional (compiled) code from a straight export is then pasted into the calt rule to extend this. Version number has been incremented.

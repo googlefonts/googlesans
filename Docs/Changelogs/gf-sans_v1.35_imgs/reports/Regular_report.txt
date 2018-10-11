@@ -1,0 +1,334 @@
+'diff_kerning'  3594.66 ms
+'diff_metrics'  27.80 ms
+'diff_marks'  89.14 ms
+'diff_marks'  4.11 ms
+'diff_attribs'  1.44 ms
+'diff_glyphs'  306.94 ms
+'diff_nametable'  1.78 ms
+**Diffenator**
+
+***/Users/marc/Documents/googlefonts/manual_font_cleaning/google-sans/Exports/Android/v1.28/fixed/GoogleSans-Regular.ttf vs /Users/marc/Documents/googlefonts/manual_font_cleaning/google-sans/Exports/Android/v1.35 (Pre-release)/GoogleSans-Regular-v1.035.ttf***
+
+****Attribs Modified: 7****
+
+table               attrib              value_a             value_b             
+head                modified            2018/04/17 08:40... 2018/10/10 12:19... 
+OS/2                usLastCharIndex     10130               57350               
+OS/2                usMaxContex         12                  18                  
+head                yMax                959.0               1000.0              
+OS/2                usWinAscent         966.0               1000.0              
+OS/2                usMaxContext        12                  18                  
+head                fontRevision        1.028               1.03499             
+
+****Names Modified: 8****
+
+id                  string_a            string_b            
+(3, 1, 0, 0)        1.028;GOOG;Googl... 1.035;GOOG;Googl... 
+(3, 3, 1, 1033)     1.028;GOOG;Googl... 1.035;GOOG;Googl... 
+(5, 1, 0, 0)        Version 1.028       Version 1.035       
+(5, 3, 1, 1033)     Version 1.028       Version 1.035       
+(8, 1, 0, 0)        Google Inc.         Google, Inc.        
+(8, 3, 1, 1033)     Google Inc.         Google, Inc.        
+(11, 1, 0, 0)       https://design.g... https://design.g... 
+(11, 3, 1, 1033)    https://design.g... https://design.g... 
+
+****Glyphs New: 116****
+
+glyph               
+Google.logo         
+Ohorn               
+Uhorn               
+dotbelowcomb        
+hookabovecomb       
+ohorn               
+uhorn               
+uni01CD             
+uni03020300         
+uni03020301         
+uni03020303         
+uni03020309         
+uni03060300         
+uni03060301         
+uni03060303         
+uni03060309         
+uni031B             
+uni0324             
+uni032E             
+uni0331             
+uni1EA0             
+uni1EA1             
+uni1EA2             
+uni1EA3             
+uni1EA4             
+uni1EA5             
+uni1EA6             
+uni1EA7             
+uni1EA8             
+uni1EA9             
+uni1EAA             
+uni1EAB             
+uni1EAC             
+uni1EAD             
+uni1EAE             
+uni1EAF             
+uni1EB0             
+uni1EB1             
+uni1EB2             
+uni1EB3             
+uni1EB4             
+uni1EB5             
+uni1EB6             
+uni1EB7             
+uni1EB8             
+uni1EB9             
+uni1EBA             
+uni1EBB             
+uni1EBC             
+uni1EBD             
+
+****Glyphs Missing: 1****
+
+glyph               
+Google.logo         
+
+****Glyphs Modified: 77****
+
+glyph               diff                
+dotlessi            0.0117647058824     
+iota                0.0117647058824     
+uni0456             0.0116630375612     
+i                   0.0116630375612     
+quoteright          0.0113965572024     
+uni0458             0.0104164471549     
+j                   0.0104164471549     
+uni0237             0.0102641728015     
+iacute              0.00945240897423    
+iotatonos           0.00945240897423    
+igrave              0.00944129734533    
+iotadieresis        0.0082961902593     
+uni0457             0.0082961902593     
+icircumflex         0.00829025651029    
+imacron             0.00823789755932    
+ibreve              0.00816297132156    
+jcircumflex         0.00808306659441    
+iotadieresistonos   0.00757509181086    
+itilde              0.00726363801446    
+Eta                 0.00662583812893    
+H                   0.00662583812893    
+uni041D             0.00662583812893    
+Etatonos            0.00619246603858    
+Hcircumflex         0.0059204920377     
+scedilla            0.00590419513124    
+ccedilla            0.00551763654347    
+Scedilla            0.00518370530727    
+uni041E             0.00503653112973    
+Omicron             0.00503653112973    
+O                   0.00503653112973    
+Omicrontonos        0.00474627974859    
+Oacute              0.00474627974859    
+Ograve              0.00474464244283    
+f_l                 0.0046850446218     
+Ccedilla            0.00457349511423    
+Ocircumflex         0.00456164488201    
+Omacron             0.00455618347415    
+Odieresis           0.00455586460251    
+Obreve              0.00454012916658    
+Ohungarumlaut       0.00448765941831    
+Otilde              0.00435632271579    
+f_j                 0.00396853121755    
+f_i                 0.00373543093143    
+f_f                 0.00352936053422    
+f_k                 0.00335102706652    
+f_h                 0.00333445639677    
+f_t                 0.00324205493355    
+f_b                 0.00299996979197    
+r_f_f               0.00262803940145    
+Q                   0.00231985065124    
+
+****Metrics Modified: 4****
+
+glyph               diff_adv            diff_lsb            diff_rsb            
+Icircumflex.alt     448.0               0                   0                   
+lcaron              8.0                 0                   0                   
+quoteright          4.0                 0                   0                   
+f_b                 2.0                 0                   0                   
+
+****Marks New: 840****
+
+base_glyph          mark_glyph          base_x              base_y              mark_x              mark_y              
+Aogonek             uni0308             335                 716                 -196                510                 
+Aogonek             uni0302             335                 716                 -198                510                 
+Aogonek             uni0312             335                 716                 -200                510                 
+Aogonek             uni0328             0                   0                   -163                0                   
+Aogonek             uni0326             335                 0                   -204                0                   
+Aogonek             uni0327             335                 0                   -255                0                   
+Aogonek             uni030B             335                 716                 -199                510                 
+Aogonek             uni030C             335                 716                 -198                510                 
+Aogonek             uni030A             335                 716                 -201                510                 
+Aogonek             uni0306             335                 716                 -199                510                 
+Aogonek             uni0307             335                 716                 -113                510                 
+Aogonek             uni0304             335                 716                 -200                510                 
+Aogonek             tildecomb           335                 716                 -199                510                 
+Aogonek             gravecomb           335                 716                 -192                510                 
+Aogonek             acutecomb           335                 716                 -205                510                 
+Aring               uni0308             334                 756                 -196                510                 
+Aring               uni030A             334                 756                 -201                510                 
+Aring               uni0307             334                 756                 -113                510                 
+Aring               uni0306             334                 756                 -199                510                 
+Aring               acutecomb           334                 756                 -205                510                 
+Aring               uni0312             334                 756                 -200                510                 
+Aring               uni0328             654                 0                   -163                0                   
+Aring               uni0327             334                 0                   -255                0                   
+Aring               uni0326             334                 0                   -204                0                   
+Aring               uni030C             334                 756                 -198                510                 
+Aring               uni030B             334                 756                 -199                510                 
+Aring               uni0304             334                 756                 -200                510                 
+Aring               gravecomb           334                 756                 -192                510                 
+Aring               tildecomb           334                 756                 -199                510                 
+Aring               uni0302             334                 756                 -198                510                 
+Aringacute          uni0328             654                 0                   -163                0                   
+Aringacute          uni0326             334                 0                   -204                0                   
+Aringacute          uni0327             334                 0                   -255                0                   
+Aringacute          uni030C             334                 808                 -198                510                 
+Aringacute          uni0308             334                 808                 -196                510                 
+Aringacute          uni030A             334                 808                 -201                510                 
+Aringacute          uni030B             334                 808                 -199                510                 
+Aringacute          uni0304             334                 808                 -200                510                 
+Aringacute          uni0306             334                 808                 -199                510                 
+Aringacute          uni0307             334                 808                 -113                510                 
+Aringacute          gravecomb           334                 808                 -192                510                 
+Aringacute          acutecomb           334                 808                 -205                510                 
+Aringacute          uni0302             334                 808                 -198                510                 
+Aringacute          tildecomb           334                 808                 -199                510                 
+Aringacute          uni0312             334                 808                 -200                510                 
+B                   uni0312             303                 716                 -200                510                 
+B                   uni0328             0                   0                   -163                0                   
+B                   uni0304             303                 716                 -200                510                 
+B                   uni0306             303                 716                 -199                510                 
+B                   uni0307             303                 716                 -113                510                 
+
+****Marks Modified: 721****
+
+base_glyph          mark_glyph          diff_x              diff_y              
+Ccedilla            uni0308             -408.0              -716.0              
+Ccedilla            uni0304             -408.0              -716.0              
+Ccedilla            uni030C             -408.0              -716.0              
+Ccedilla            uni0312             -408.0              -716.0              
+Ccedilla            uni0307             -408.0              -716.0              
+Ccedilla            uni0306             -408.0              -716.0              
+Ccedilla            tildecomb           -408.0              -716.0              
+Ccedilla            acutecomb           -408.0              -716.0              
+Ccedilla            gravecomb           -408.0              -716.0              
+Ccedilla            uni030B             -408.0              -716.0              
+Ccedilla            uni030A             -408.0              -716.0              
+Ccedilla            uni0302             -408.0              -716.0              
+Scedilla            uni0308             -275.0              -716.0              
+Scedilla            uni0306             -275.0              -716.0              
+Scedilla            uni0312             -275.0              -716.0              
+Scedilla            uni030A             -275.0              -716.0              
+Scedilla            uni030B             -275.0              -716.0              
+Scedilla            uni030C             -275.0              -716.0              
+Scedilla            gravecomb           -275.0              -716.0              
+Scedilla            acutecomb           -275.0              -716.0              
+Scedilla            uni0302             -275.0              -716.0              
+Scedilla            tildecomb           -275.0              -716.0              
+Scedilla            uni0304             -275.0              -716.0              
+Scedilla            uni0307             -275.0              -716.0              
+ccedilla            uni030A             -292.0              -510.0              
+ccedilla            uni0312             -292.0              -510.0              
+ccedilla            uni0307             -292.0              -510.0              
+ccedilla            uni0306             -292.0              -510.0              
+ccedilla            uni0304             -292.0              -510.0              
+ccedilla            tildecomb           -292.0              -510.0              
+ccedilla            uni0302             -292.0              -510.0              
+ccedilla            acutecomb           -292.0              -510.0              
+ccedilla            gravecomb           -292.0              -510.0              
+ccedilla            uni030C             -292.0              -510.0              
+ccedilla            uni030B             -292.0              -510.0              
+ccedilla            uni0308             -292.0              -510.0              
+scedilla            uni0307             -236.0              -510.0              
+scedilla            uni0306             -236.0              -510.0              
+scedilla            uni0312             -236.0              -510.0              
+scedilla            uni030C             -236.0              -510.0              
+scedilla            uni030B             -236.0              -510.0              
+scedilla            uni030A             -236.0              -510.0              
+scedilla            tildecomb           -236.0              -510.0              
+scedilla            uni0302             -236.0              -510.0              
+scedilla            acutecomb           -236.0              -510.0              
+scedilla            gravecomb           -236.0              -510.0              
+scedilla            uni0308             -236.0              -510.0              
+scedilla            uni0304             -236.0              -510.0              
+kcommaaccent        uni0306             -148.0              206.0               
+kcommaaccent        uni0302             -148.0              206.0               
+
+****Kerns New: 12610****
+
+left                right               value               
+Eng                 uni03C2             -10                 
+H                   uni03C2             -10                 
+Hbar                uni03C2             -10                 
+Hcircumflex         uni03C2             -10                 
+I                   uni03C2             -10                 
+Iacute              uni03C2             -10                 
+Ibreve              uni03C2             -10                 
+Icircumflex         uni03C2             -10                 
+Idieresis           uni03C2             -10                 
+Idotaccent          uni03C2             -10                 
+Igrave              uni03C2             -10                 
+Igrave              uni03D6             -10                 
+Igrave              lambda              -10                 
+Igrave              uni0447             -10                 
+Igrave              uni044A             -10                 
+Igrave              uni0434             -10                 
+Igrave              uni0437             -20                 
+Imacron             uni03C2             -10                 
+Iogonek             uni03C2             -10                 
+Itilde              uni03C2             -10                 
+M                   uni03C2             -10                 
+N                   uni03C2             -10                 
+Nacute              uni03C2             -10                 
+Ncaron              uni03C2             -10                 
+Ntilde              uni03C2             -10                 
+O                   uni03C2             -10                 
+Oacute              uni03C2             -10                 
+Obreve              uni03C2             -10                 
+Ocircumflex         uni03C2             -10                 
+Odieresis           uni03C2             -10                 
+Ograve              uni03C2             -10                 
+Ohungarumlaut       uni03C2             -10                 
+Omacron             uni03C2             -10                 
+Oslash              uni03C2             -10                 
+Oslashacute         uni03C2             -10                 
+Otilde              uni03C2             -10                 
+Psi                 eth                 -20                 
+Psi                 lslash              -30                 
+Psi                 uni0434             -40                 
+Psi                 uni0437             -20                 
+Q                   uni03C2             -10                 
+a.sc                one.sc              -40                 
+a.sc                nine.sc             -20                 
+a.sc.lc             one.sc              -20                 
+delta               uni0437             -10                 
+delta               uni0436             -10                 
+delta               uni0434             -10                 
+eight.sc            y.sc                -10                 
+eth                 uni0437             -10                 
+eth                 uni0434             -20                 
+
+****Kerns Missing: 13****
+
+left                right               value               
+Eta                 uni03C2             -10                 
+Etatonos            uni03C2             -10                 
+Iota                uni03C2             -10                 
+Iotadieresis        uni03C2             -10                 
+Iotatonos           uni03C2             -10                 
+Mu                  uni03C2             -10                 
+Nu                  uni03C2             -10                 
+Omicron             uni03C2             -10                 
+Omicrontonos        uni03C2             -10                 
+Phi                 uni03C2             -10                 
+Pi                  uni03C2             -10                 
+Theta               uni03C2             -10                 
+theta               uni03C2             -10                 
+

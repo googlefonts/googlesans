@@ -1,0 +1,275 @@
+'diff_kerning'  3767.06 ms
+'diff_metrics'  26.25 ms
+'diff_marks'  79.03 ms
+'diff_marks'  3.57 ms
+'diff_attribs'  10.68 ms
+'diff_glyphs'  314.75 ms
+'diff_nametable'  1.47 ms
+**Diffenator**
+
+***/Users/marc/Documents/googlefonts/manual_font_cleaning/google-sans/Exports/Android/v1.28/fixed/GoogleSans-Italic.ttf vs /Users/marc/Documents/googlefonts/manual_font_cleaning/google-sans/Exports/Android/v1.35 (Pre-release)/GoogleSans-Italic-v1.035.ttf***
+
+****Attribs Modified: 10****
+
+table               attrib              value_a             value_b             
+head                modified            2018/04/17 08:40... 2018/10/10 12:19... 
+OS/2                usLastCharIndex     10130               57350               
+gasp                version             1                   4                   
+head                xMin                -408.0              -432.0              
+OS/2                usMaxContex         12                  18                  
+head                yMax                959.0               1000.0              
+OS/2                usWinAscent         966.0               1000.0              
+OS/2                usMaxContext        12                  18                  
+OS/2                panose              2-11-5-3-3-5-2-1... 2-11-5-3-3-5-2-4... 
+head                fontRevision        1.028               1.03499             
+
+****Names Modified: 6****
+
+id                  string_a            string_b            
+(3, 1, 0, 0)        1.028;GOOG;Googl... 1.035;GOOG;Googl... 
+(3, 3, 1, 1033)     1.028;GOOG;Googl... 1.035;GOOG;Googl... 
+(5, 1, 0, 0)        Version 1.028       Version 1.035       
+(5, 3, 1, 1033)     Version 1.028       Version 1.035       
+(8, 1, 0, 0)        Google Inc.         Google, Inc.        
+(8, 3, 1, 1033)     Google Inc.         Google, Inc.        
+
+****Glyphs New: 107****
+
+glyph               
+Google.logo         
+Ohorn               
+Uhorn               
+dotbelowcomb        
+hookabovecomb       
+ohorn               
+uhorn               
+uni01CD             
+uni031B             
+uni0324             
+uni032E             
+uni0331             
+uni1EA0             
+uni1EA1             
+uni1EA2             
+uni1EA3             
+uni1EA4             
+uni1EA5             
+uni1EA6             
+uni1EA7             
+uni1EA8             
+uni1EA9             
+uni1EAA             
+uni1EAB             
+uni1EAC             
+uni1EAD             
+uni1EAE             
+uni1EAF             
+uni1EB0             
+uni1EB1             
+uni1EB2             
+uni1EB3             
+uni1EB4             
+uni1EB5             
+uni1EB6             
+uni1EB7             
+uni1EB8             
+uni1EB9             
+uni1EBA             
+uni1EBB             
+uni1EBC             
+uni1EBD             
+uni1EBE             
+uni1EBF             
+uni1EC0             
+uni1EC1             
+uni1EC2             
+uni1EC3             
+uni1EC4             
+uni1EC5             
+
+****Glyphs Missing: 1****
+
+glyph               
+Google.logo         
+
+****Glyphs Modified: 24****
+
+glyph               diff                
+scedilla            0.00628612577438    
+ccedilla            0.00562223780273    
+Scedilla            0.00516865539304    
+Ccedilla            0.00442363386812    
+two.sc              0.00137126512528    
+six.denominator     0.00133241220143    
+zeta                0.000460644783048   
+two.cap             0.000454411152381   
+two                 0.000412703991845   
+two.tf              0.000412703991845   
+U                   0.000180821457318   
+nine.numerator      0.000169572431592   
+nine.denominator    0.000169565530719   
+six.numerator       0.000169478168246   
+Ugrave              0.000168148736021   
+Uacute              0.000167500562785   
+Ucircumflex         0.000159814272219   
+Umacron             0.000159646292389   
+Udieresis           0.000159595505726   
+Ubreve              0.000158148453104   
+Uhungarumlaut       0.000156007669504   
+Utilde              0.000150742393643   
+Uring               9.95811241946e-05   
+uni042D             2.58666090025e-06   
+
+****Metrics Modified: 7****
+
+glyph               diff_adv            diff_lsb            diff_rsb            
+Icircumflex.alt     447.0               0                   0                   
+uni043A             3.0                 0                   0                   
+kappa               3.0                 0                   0                   
+kgreenlandic        3.0                 0                   0                   
+uni045C             3.0                 0                   0                   
+oe                  1.0                 0                   0                   
+uni2103.cap         1.0                 0                   0                   
+
+****Marks New: 30****
+
+base_glyph          mark_glyph          base_x              base_y              mark_x              mark_y              
+i                   uni0328             0                   0                   -207                0                   
+i                   uni0327             68                  0                   -302                0                   
+i                   uni0326             68                  0                   -243                0                   
+i                   uni0312             0                   0                   -165                510                 
+i                   uni0308             0                   0                   -171                510                 
+i                   uni030B             0                   0                   -174                510                 
+i                   uni030A             0                   0                   -179                510                 
+i                   uni030C             0                   0                   -175                510                 
+i                   acutecomb           0                   0                   -181                510                 
+i                   gravecomb           0                   0                   -168                510                 
+i                   tildecomb           0                   0                   -173                510                 
+i                   uni0302             0                   0                   -168                510                 
+i                   uni0304             0                   0                   -173                510                 
+i                   uni0307             0                   0                   -87                 510                 
+i                   uni0306             0                   0                   -170                510                 
+uni0456             gravecomb           0                   0                   -168                510                 
+uni0456             acutecomb           0                   0                   -181                510                 
+uni0456             uni0302             0                   0                   -168                510                 
+uni0456             tildecomb           0                   0                   -173                510                 
+uni0456             uni0304             0                   0                   -173                510                 
+uni0456             uni0306             0                   0                   -170                510                 
+uni0456             uni0307             0                   0                   -87                 510                 
+uni0456             uni0308             0                   0                   -171                510                 
+uni0456             uni030A             0                   0                   -179                510                 
+uni0456             uni030B             0                   0                   -174                510                 
+uni0456             uni030C             0                   0                   -175                510                 
+uni0456             uni0312             0                   0                   -165                510                 
+uni0456             uni0326             68                  0                   -243                0                   
+uni0456             uni0327             68                  0                   -302                0                   
+uni0456             uni0328             0                   0                   -207                0                   
+
+****Marks Modified: 162****
+
+base_glyph          mark_glyph          diff_x              diff_y              
+Ccedilla            uni0308             -475.0              -716.0              
+Ccedilla            uni0304             -475.0              -716.0              
+Ccedilla            uni030C             -475.0              -716.0              
+Ccedilla            uni0312             -475.0              -716.0              
+Ccedilla            uni0307             -475.0              -716.0              
+Ccedilla            uni0306             -475.0              -716.0              
+Ccedilla            tildecomb           -475.0              -716.0              
+Ccedilla            acutecomb           -475.0              -716.0              
+Ccedilla            gravecomb           -475.0              -716.0              
+Ccedilla            uni030B             -475.0              -716.0              
+Ccedilla            uni030A             -475.0              -716.0              
+Ccedilla            uni0302             -475.0              -716.0              
+Scedilla            uni0304             -345.0              -716.0              
+Scedilla            uni0306             -345.0              -716.0              
+Scedilla            uni030B             -345.0              -716.0              
+Scedilla            uni0312             -345.0              -716.0              
+Scedilla            uni0308             -345.0              -716.0              
+Scedilla            uni030A             -345.0              -716.0              
+Scedilla            uni030C             -345.0              -716.0              
+Scedilla            gravecomb           -345.0              -716.0              
+Scedilla            acutecomb           -345.0              -716.0              
+Scedilla            uni0302             -345.0              -716.0              
+Scedilla            tildecomb           -345.0              -716.0              
+Scedilla            uni0307             -345.0              -716.0              
+ccedilla            uni0306             -322.0              -510.0              
+ccedilla            uni030A             -322.0              -510.0              
+ccedilla            uni0312             -322.0              -510.0              
+ccedilla            uni0307             -322.0              -510.0              
+ccedilla            uni0304             -322.0              -510.0              
+ccedilla            tildecomb           -322.0              -510.0              
+ccedilla            uni0302             -322.0              -510.0              
+ccedilla            acutecomb           -322.0              -510.0              
+ccedilla            gravecomb           -322.0              -510.0              
+ccedilla            uni030C             -322.0              -510.0              
+ccedilla            uni030B             -322.0              -510.0              
+ccedilla            uni0308             -322.0              -510.0              
+scedilla            uni0302             -263.0              -510.0              
+scedilla            uni0312             -263.0              -510.0              
+scedilla            uni0306             -263.0              -510.0              
+scedilla            uni030C             -263.0              -510.0              
+scedilla            uni030B             -263.0              -510.0              
+scedilla            uni030A             -263.0              -510.0              
+scedilla            tildecomb           -263.0              -510.0              
+scedilla            acutecomb           -263.0              -510.0              
+scedilla            gravecomb           -263.0              -510.0              
+scedilla            uni0307             -263.0              -510.0              
+scedilla            uni0308             -263.0              -510.0              
+scedilla            uni0304             -263.0              -510.0              
+ycircumflex         uni0327             100.0               0.0                 
+ycircumflex         uni0326             100.0               0.0                 
+
+****Kerns New: 13490****
+
+left                right               value               
+Igrave              uni03D6             -10                 
+Igrave              lambda              -10                 
+Igrave              uni0447             -10                 
+Igrave              uni044A             -10                 
+Igrave              uni0434             -10                 
+Igrave              uni0437             -20                 
+Psi                 eth                 -20                 
+Psi                 lslash              -30                 
+Psi                 uni0434             -40                 
+Psi                 uni0437             -20                 
+Uhorn               t_t                 -10                 
+Uhorn               t_f                 -10                 
+Uhorn               uni0442             -10                 
+Uhorn               uni0459             -20                 
+Uhorn               uni043B             -20                 
+Uhorn               uni0434             -20                 
+Uhorn               tau                 -10                 
+Uhorn               pi                  -10                 
+Uhorn               Omicrontonos        80                  
+Uhorn               Iotatonos           80                  
+Uhorn               uni021B             -10                 
+Uhorn               lslash              -10                 
+Uhorn               tbar                -10                 
+Uhorn               uni0163             -10                 
+Uhorn               period              -10                 
+Uhorn               four                -10                 
+Uhorn               trademark           40                  
+Uhorn               Omegatonos          80                  
+Uhorn               uni03D3             80                  
+Uhorn               tcaron              -10                 
+Uhorn               Upsilontonos        80                  
+Uhorn               Etatonos            80                  
+Uhorn               Epsilontonos        80                  
+Uhorn               t                   -10                 
+Uhorn               slash               -10                 
+Uhorn               comma               -10                 
+Uhorn               uni2215             -10                 
+Uhorn               ellipsis            -10                 
+Uhorn               questiondown        -10                 
+Uhorn               comma.alt           -10                 
+Uhorn               uni2120             40                  
+Uhorn               underscore          -20                 
+a.sc                one.sc              -40                 
+a.sc                nine.sc             -20                 
+a.sc.lc             one.sc              -20                 
+delta               uni0437             -10                 
+delta               uni0436             -10                 
+delta               uni0434             -10                 
+eight.sc            y.sc                -10                 
+eth                 uni0437             -10                 
+
