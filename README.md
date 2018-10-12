@@ -1,16 +1,17 @@
 # Google Sans
 
-## Version 1.035 / 11th Oct 2018
-### Android Update Release Notes
+## Version 1.035 (2018-10-11)
 
-* Overhaul of design space within .glyphs file.
-* Vietnamese language support added. See [Vietnamese Extension List](Docs/Lists/VietnameseGlyphs.xml). 
-* The full language list that Google Sans & Google Sans Display can be found [here](Docs/Lists/LanguageList.txt).
-* A full list of all amends can be found in the [Diff Reports](Docs/Changelogs/gf-sans_v1.35_imgs). 116 new Glyphs total.
+This release was made for Android (GMSCore) distribution:
+
+* Overhaul and simplify design space within `.glyphs` file.
+* Add Vietnamese language support. See [Vietnamese Extension List](Docs/Lists/VietnameseGlyphs.xml). 
+* Added 116 new glyphs. The full language list that Google Sans & Google Sans Display can be found in [LanguageList.txt](Docs/Lists/LanguageList.txt).
+* [Diff Report Images](Docs/Changelogs/gf-sans_v1.35_imgs) are available
 
 ### Ligatures
 
-* Google Ligatures are now available in both contextual and PUA encoded flavours.
+Google Ligatures are now available in both contextual and PUA encoded flavours.
 
 ```
 Glogo => E000
@@ -22,7 +23,7 @@ Gsuper => E005
 Googlelogo => E006
 ```
 
-* Additional code is now in the `liga` feature:
+Additional code is now in the `liga` feature:
 
 ```
 [Gg]oogleligature => Google.logo
@@ -50,25 +51,21 @@ elogoligature => e.logo
 	* Bold
 	* Bold Italic
 
-## Glyphs Update
+## GlyphsApp Update
 
-**Glyphs Update**
+When GlyphsApp updated from v1075 to v1141, there was significant changes to the way in-which it interpolated a 3 dimensional design space. It is impossible to produce the same results of which the previous master files (v1.028 and before) output originally. Because of this, we have created the extreme corners of the design space to ensure consistent interpolation. These are now Regular, Bold, Display Regular and Display Bold; across two axes, Weight and Width.
 
-Inbetween Glyphs version `1075` and `1141`, there has been a significant change to the way in-which it interpolated a 3 dimensional design space. It is impossible to produce the same results of which the previous master files (<v1.028)output originally. Because of this, we have created the extreme corners of the design space to ensure consistent interpolation. These now include:
+Compiled with Glyphs v1075 ([Glyphs2.4.4-1075.zip](https://updates.glyphsapp.com/Glyphs2.4.4-1075.zip))
 
-* Regular
-* Bold
-* Display Regular
-* Display Bold
+## Version 1.27 (2018-01-22)
 
-Across two axes, Weight and Width.
+This was distributed within Google asn `GoogleSans-22Jan2018-v1_27.zip`
 
-Glyphs version 1075 can be found [here](https://updates.glyphsapp.com/Glyphs2.4.4-1075.zip)
+As of Version 1.27, the Android versions now have a CALT feature, with updated feature code.
 
-## Version 1.27 / Early 2018 (Date TBC)
-• As of Version 1.27, the Android versions now have a CALT feature, with updated feature code.
-
-* Hinted files are v1.26, and then ttx ran. The additional (compiled) code from a straight export is then pasted into the calt rule to extend this. Version number has been incremented.
+Hinted files are v1.26, and then modified via ttx.
+The additional (compiled) code from a straight export is then pasted into the calt rule to extend this.
+Version number has been incremented.
 
 **Note** – The VTT sources are STILL v1.26, so any subsequent versions will need to have all updates manually inserted from here.
 
