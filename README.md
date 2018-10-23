@@ -5,9 +5,10 @@
 This release was made for Android (GMSCore) distribution:
 
 * Overhaul and simplify design space within `.glyphs` file.
-* Add Vietnamese language support. See [Vietnamese Extension List](Docs/Lists/VietnameseGlyphs.xml). 
-* Added 116 new glyphs. The full language list that Google Sans & Google Sans Display can be found in [LanguageList.txt](Docs/Lists/LanguageList.txt).
+* ~~Add Vietnamese language support. See [Vietnamese Extension List](Docs/Lists/VietnameseGlyphs.xml). ~~
+* ~~Added 116 new glyphs. The full language list that Google Sans & Google Sans Display can be found in [LanguageList.txt](Docs/Lists/LanguageList.txt).~~
 * [Diff Report Images](Docs/Changelogs/gf-sans_v1.35_imgs) are available
+
 
 ### Ligatures
 
