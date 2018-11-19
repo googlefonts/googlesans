@@ -1,5 +1,13 @@
 # Google Sans
 
+## Version 2.001 (2018-11-19)
+
+* Add Vietnamese language support. See [Vietnamese Extension List](Docs/Lists/VietnameseGlyphs.xml)
+* Added 116 new glyphs. The full language list that Google Sans & Google Sans Display can be found in [LanguageList.txt](Docs/Lists/LanguageList.txt).
+* All files have been run through a script to force the `yMin` and `yMax` glyphs. This sets the values to the files from `v1.027`. Can be found in the [/tools](/tools) folder.
+* Android vs Hinted files is that Hinted files do NOT have the `SS03` Thin Numerals (used on Android home screens).
+* Character map is the same otherwise (includes the new Vietnamese glyphs and anchor marks for composition).
+
 ## Version 1.035 (2018-10-11)
 
 This release was made for Android (GMSCore) distribution:
