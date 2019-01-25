@@ -3,7 +3,7 @@
 The first prototype of the Google Sans Text optical size has a series of user-configurable axes that allow granular modification of different aspects of Google Sans Regular for use in small point sizes and long body copy.
 
 * The core output is a [variable font](betas/20190125/Variable/GoogleSansTextBeta-v2.001.ttf) in `.ttf` format. This is then viewed in the [web viewer](https://colophon-foundry.github.io/google-sans).
-* The second output are [static instances](betas/20190125/Preset\ Instances) of our recommendations.
+* The second output are [static instances](betas/20190125/Preset%20Instances) of our recommendations.
 	* There is a PDF overview document detailing these in the [Docs](Docs) folder.
 
 ## Betas
@@ -107,7 +107,7 @@ The following are our initial presets and recommendations from the design proces
 7. Option **4A** — As 3B but incrementally bolder
 8. Option **4B** — Amplified values set to personal preference
 
-These presets are available in the [presets](betas/20190125/Preset\ Instances/) folder.
+These presets are available in the [presets](betas/20190125/Preset%20Instances/) folder.
 
 ## Build Process
 
