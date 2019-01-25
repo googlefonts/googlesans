@@ -1,0 +1,27 @@
+.header {
+  padding: 1em;
+  clear: both;
+  position: fixed;
+}
+
+.nav {
+  margin:0;
+  float: left;
+  li {
+    display: inline;
+    padding-right: 1em;
+    a {
+      padding: 1em;
+      margin-left: -1em;
+      margin-right: -1em;
+    }
+  }
+}
+
+.counter {
+  float: right;
+  li {
+    float: right;
+    padding-left: 1em;
+  }
+}
