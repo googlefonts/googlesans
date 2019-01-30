@@ -229,5 +229,5 @@ The latest hardware build has been branched out of the main design space. This h
 
 ## Site
 
-https://colophon-foundry.github.io/google-sans/
+https://colophon-foundry.github.io/variable-web-viewer/
 pw conway
