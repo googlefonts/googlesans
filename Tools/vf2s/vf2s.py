@@ -17,7 +17,7 @@ import argparse
 from fontTools.ttLib import TTFont
 from fontTools.varLib.mutator import instantiateVariableFont
 
-SCRIPT_VERSION = "v0.2.0"
+SCRIPT_VERSION = "v0.3.0"
 
 FONTNAME = "GS"
 
@@ -62,7 +62,7 @@ def main():
 
     instance_location = {}
     # axis value validity testing and location definitions
-    if args.weight:
+    if args.weight is not None:
         if args.weight < 300 or args.weight > 400:
             sys.stderr.write(
                 "Weight axis value must be in the range 300 - 400{}".format(os.linesep)
@@ -70,7 +70,7 @@ def main():
             sys.exit(1)
         else:
             instance_location["wght"] = args.weight
-    if args.xheight:
+    if args.xheight is not None:
         if args.xheight < 170 or args.xheight > 200:
             sys.stderr.write(
                 "X-height axis value must be in the range 170 - 200{}".format(
@@ -80,7 +80,7 @@ def main():
             sys.exit(1)
         else:
             instance_location["opsz"] = args.xheight
-    if args.spacing:
+    if args.spacing is not None:
         if args.spacing < 100 or args.spacing > 200:
             sys.stderr.write(
                 "Spacing axis value must be in the range 100 - 200{}".format(os.linesep)
@@ -88,7 +88,7 @@ def main():
             sys.exit(1)
         else:
             instance_location["ital"] = args.spacing
-    if args.charwidth:
+    if args.charwidth is not None:
         if args.charwidth < 0 or args.charwidth > 200:
             sys.stderr.write(
                 "Character width axis value must be 0, 100, or 200{}".format(os.linesep)
@@ -96,7 +96,7 @@ def main():
             sys.exit(1)
         else:
             instance_location["CUS2"] = args.charwidth
-    if args.ascender:
+    if args.ascender is not None:
         if args.ascender < 0 or args.ascender > 100:
             sys.stderr.write(
                 "Ascender height axis value must be in the range 0 - 100{}".format(
@@ -106,7 +106,7 @@ def main():
             sys.exit(1)
         else:
             instance_location["CUS3"] = args.ascender
-    if args.counter:
+    if args.counter is not None:
         if args.counter < 0 or args.counter > 100:
             sys.stderr.write(
                 "Counter axis value must be in the range 0 - 100{}".format(os.linesep)
