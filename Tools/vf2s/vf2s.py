@@ -17,7 +17,7 @@ import argparse
 from fontTools.ttLib import TTFont
 from fontTools.varLib.mutator import instantiateVariableFont
 
-SCRIPT_VERSION = "v0.1.0"
+SCRIPT_VERSION = "v0.2.0"
 
 FONTNAME = "GS"
 
@@ -50,16 +50,15 @@ def main():
         "--counter", type=int, help="Counter axis value (0-100)"
     )  # CUS4
     parser.add_argument(
-        "--version", action="version", version="vf2s {}".format(SCRIPT_VERSION)
+        "-v",
+        "--version",
+        action="version",
+        version="vf2s {}".format(SCRIPT_VERSION),
+        help="Display application version",
     )
     parser.add_argument("path", help="Variable font path")
 
     args = parser.parse_args()
-
-    # Version string
-    if args.version:
-        print("vf2s {}".format(SCRIPT_VERSION))
-        sys.exit(0)
 
     instance_location = {}
     # axis value validity testing and location definitions
