@@ -24,14 +24,28 @@ from fontTools.varLib.mutator import instantiateVariableFont
 
 from gooey import Gooey, GooeyParser
 
-SCRIPT_VERSION = "v0.3.0"
+SCRIPT_VERSION = "v0.4.0"
 
 FONTNAME = "GS"
+
+MAC_OVERLAP_RENDERING_BIT = 1 << 6
+
+
+def set_mac_overlap_rendering_bit(font):
+    """Sets the bit6 macOS overlap rendering bit."""
+    glyf = font["glyf"]
+    for glyph_name in glyf.keys():
+        glyph = glyf[glyph_name]
+        # Only needs to be set for glyphs with contours
+        if glyph.numberOfContours > 0:
+            glyph.flags[0] |= MAC_OVERLAP_RENDERING_BIT
+    return font
+
 
 @Gooey(
     program_name="vf2s",
     description="A variable font to static instance generator for Google Sans.",
-    default_size=(600,600),
+    default_size=(600, 600),
     show_success_modal=False,
 )
 def main():
@@ -39,8 +53,10 @@ def main():
         description="A variable font to static instance generator for Google Sans."
     )
     filegroup = parser.add_argument_group("Variable Font")
-    filegroup.add_argument("path", widget="FileChooser", help="Path to the variable font file")
-    
+    filegroup.add_argument(
+        "path", widget="FileChooser", help="Path to the variable font file"
+    )
+
     optionsgroup = parser.add_argument_group("Design Axes")
     optionsgroup.add_argument(
         "--weight", type=int, help="Weight axis value (300-400)"
@@ -61,7 +77,6 @@ def main():
         "--counter", type=int, help="Counter Axis Value (0-100)"
     )  # CUS4
 
-
     args = parser.parse_args()
 
     instance_location = {}
@@ -69,7 +84,9 @@ def main():
     if args.weight is not None:
         if args.weight < 300 or args.weight > 400:
             sys.stderr.write(
-                "Failed. Weight axis value must be in the range 300 - 400.{}".format(os.linesep)
+                "Failed. Weight axis value must be in the range 300 - 400.{}".format(
+                    os.linesep
+                )
             )
             sys.exit(1)
         else:
@@ -87,7 +104,9 @@ def main():
     if args.spacing is not None:
         if args.spacing < 100 or args.spacing > 200:
             sys.stderr.write(
-                "Failed. Spacing axis value must be in the range 100 - 200{}".format(os.linesep)
+                "Failed. Spacing axis value must be in the range 100 - 200{}".format(
+                    os.linesep
+                )
             )
             sys.exit(1)
         else:
@@ -95,7 +114,9 @@ def main():
     if args.charwidth is not None:
         if args.charwidth < 0 or args.charwidth > 200:
             sys.stderr.write(
-                "Failed. Character width axis value must be 0, 100, or 200{}".format(os.linesep)
+                "Failed. Character width axis value must be 0, 100, or 200{}".format(
+                    os.linesep
+                )
             )
             sys.exit(1)
         else:
@@ -113,7 +134,9 @@ def main():
     if args.counter is not None:
         if args.counter < 0 or args.counter > 100:
             sys.stderr.write(
-                "Failed. Counter axis value must be in the range 0 - 100{}".format(os.linesep)
+                "Failed. Counter axis value must be in the range 0 - 100{}".format(
+                    os.linesep
+                )
             )
             sys.exit(1)
         else:
@@ -166,6 +189,11 @@ def main():
             record.string = nameID4_name
         elif record.nameID == 6:
             record.string = nameID6_name
+
+    # Set the macOS overlap rendering bit
+    # addresses bug in overlap path rendering on macOS web browsers
+    # see https://github.com/Colophon-Foundry/google-sans/pull/39#issuecomment-463152268
+    font = set_mac_overlap_rendering_bit(font)
 
     # write the instance font to disk
     try:

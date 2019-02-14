@@ -17,14 +17,27 @@ import argparse
 from fontTools.ttLib import TTFont
 from fontTools.varLib.mutator import instantiateVariableFont
 
-SCRIPT_VERSION = "v0.3.0"
+SCRIPT_VERSION = "v0.4.0"
 
 FONTNAME = "GS"
+
+MAC_OVERLAP_RENDERING_BIT = 1 << 6
 
 # PyInstaller build
 #
 # pyinstaller -c --onefile --hidden-import=fontTools --clean --distpath="dist/macos64" -n vf2s vf2s.py
 #
+
+
+def set_mac_overlap_rendering_bit(font):
+    """Sets the bit6 macOS overlap rendering bit."""
+    glyf = font["glyf"]
+    for glyph_name in glyf.keys():
+        glyph = glyf[glyph_name]
+        # Only needs to be set for glyphs with contours
+        if glyph.numberOfContours > 0:
+            glyph.flags[0] |= MAC_OVERLAP_RENDERING_BIT
+    return font
 
 
 def main():
@@ -162,6 +175,11 @@ def main():
             record.string = nameID4_name
         elif record.nameID == 6:
             record.string = nameID6_name
+
+    # Set the macOS overlap rendering bit
+    # addresses bug in overlap path rendering on macOS web browsers
+    # see https://github.com/Colophon-Foundry/google-sans/pull/39#issuecomment-463152268
+    font = set_mac_overlap_rendering_bit(font)
 
     # write the instance font to disk
     try:
