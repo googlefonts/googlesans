@@ -2,8 +2,8 @@
 
 The first prototype of the Google Sans Text optical size has a series of user-configurable axes that allow granular modification of different aspects of Google Sans Regular for use in small point sizes and long body copy.
 
-* The core output is a [variable font](betas/20190125/Variable/GoogleSansTextBeta-v2.001.ttf) in `.ttf` format. This is then viewed in the [web viewer](https://colophon-foundry.github.io/variable-web-viewer). Password `conway`
-* The second output are [static instances](betas/20190131/Preset%20Instances) of our recommendations.
+* The core output is a [variable font](betas/20190215/Variable/GoogleSansTextBeta-v2.004.ttf) in `.ttf` format. This is then viewed in the [web viewer](https://colophon-foundry.github.io/variable-web-viewer). Password `conway`
+* The second output are [static instances](betas/20190225/Preset%20Instances) of our recommendations.
 	* There is a PDF overview document detailing these in the [Docs](Docs) folder.
 
 ## Betas
@@ -73,6 +73,12 @@ Individual character modifications changing the aperture to an interior counter,
 
 Characters changing: `C G J S a c e g s 1 2 3 5 6 7 9 ?` <sup>2</sup>
 
+### TERTIARY TOGGLES
+
+* **Stylistic Set 01**
+
+Enabling `SS01` changes the characters `C G J O Q` to more Grotesque forms. This is controlled (in varying degrees of extremity) by changing the `Character Width` and `Counter` axis.
+
 
 ### Notes
 
@@ -102,7 +108,7 @@ The following are our initial presets and recommendations from the design proces
 4. Version **2**: Option **2B** — All changes pushed to the maximum
 5. Version **2**: Option **3A** — Colophon Foundry’s currently favoured values
 
-These presets are available in the [presets](betas/20190131/Preset%20Instances) folder.
+These presets are available in the [presets](betas/20190131/Preset%20Instances/) folder.
 
 ## Build Process
 
