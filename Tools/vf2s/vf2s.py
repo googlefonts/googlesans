@@ -10,6 +10,10 @@
 # + unique name table writer for the Google Sans typeface
 # =======================================================
 
+# PyInstaller build for macOS architecture
+#
+# pyinstaller -c --onefile --hidden-import=fontTools --clean --distpath="dist/macos64" -n vf2s vf2s.py
+
 import os
 import sys
 import argparse
@@ -17,16 +21,40 @@ import argparse
 from fontTools.ttLib import TTFont
 from fontTools.varLib.mutator import instantiateVariableFont
 
-SCRIPT_VERSION = "v0.4.0"
+SCRIPT_VERSION = "v0.5.0"
 
 FONTNAME = "GS"
 
-MAC_OVERLAP_RENDERING_BIT = 1 << 6
+# Default values
+DEFAULT_WEIGHT = 400
+DEFAULT_XHEIGHT = 190
+DEFAULT_SPACING = 150
+DEFAULT_CHARWIDTH = 60
+DEFAULT_ASCENDER = 100
+DEFAULT_COUNTER = 50
 
-# PyInstaller build
-#
-# pyinstaller -c --onefile --hidden-import=fontTools --clean --distpath="dist/macos64" -n vf2s vf2s.py
-#
+# Min/Max of design axis range values
+WEIGHT_MIN = 300
+WEIGHT_MAX = 400
+
+XHEIGHT_MIN = 170
+XHEIGHT_MAX = 200
+
+SPACING_MIN = 100
+SPACING_MAX = 200
+
+CHARWIDTH_MIN = 0
+CHARWIDTH_MAX = 200
+
+ASCENDER_MIN = 0
+ASCENDER_MAX = 100
+
+COUNTER_MIN = 0
+COUNTER_MAX = 100
+
+# macOS rendering bit
+# used for workaround fix for fontTools varLib.mutator bug
+MAC_OVERLAP_RENDERING_BIT = 1 << 6
 
 
 def set_mac_overlap_rendering_bit(font):
@@ -45,22 +73,40 @@ def main():
         description="A variable font to static instance generator for Google Sans."
     )
     parser.add_argument(
-        "--weight", type=int, help="Weight axis value (300-400)"
+        "--weight",
+        default=DEFAULT_WEIGHT,
+        type=int,
+        help="Weight axis value ({}-{})".format(WEIGHT_MIN, WEIGHT_MAX),
     )  # wght
     parser.add_argument(
-        "--xheight", type=int, help="X-height axis value (170-200)"
+        "--xheight",
+        default=DEFAULT_XHEIGHT,
+        type=int,
+        help="X-height axis value ({}-{})".format(XHEIGHT_MIN, XHEIGHT_MAX),
     )  # opsz
     parser.add_argument(
-        "--spacing", type=int, help="Spacing axis value (100-200)"
+        "--spacing",
+        default=DEFAULT_SPACING,
+        type=int,
+        help="Spacing axis value ({}-{})".format(SPACING_MIN, SPACING_MAX),
     )  # ital
     parser.add_argument(
-        "--charwidth", type=int, help="Character width axis value (0-100-200)"
+        "--charwidth",
+        default=DEFAULT_CHARWIDTH,
+        type=int,
+        help="Character width axis value ({}-{})".format(CHARWIDTH_MIN, CHARWIDTH_MAX),
     )  # CUS2
     parser.add_argument(
-        "--ascender", type=int, help="Ascender height axis value (0-100)"
+        "--ascender",
+        default=DEFAULT_ASCENDER,
+        type=int,
+        help="Ascender height axis value ({}-{})".format(ASCENDER_MIN, ASCENDER_MAX),
     )  # CUS3
     parser.add_argument(
-        "--counter", type=int, help="Counter axis value (0-100)"
+        "--counter",
+        default=DEFAULT_COUNTER,
+        type=int,
+        help="Counter axis value ({}-{})".format(COUNTER_MIN, COUNTER_MAX),
     )  # CUS4
     parser.add_argument(
         "-v",
@@ -76,53 +122,61 @@ def main():
     instance_location = {}
     # axis value validity testing and location definitions
     if args.weight is not None:
-        if args.weight < 300 or args.weight > 400:
+        if args.weight < WEIGHT_MIN or args.weight > WEIGHT_MAX:
             sys.stderr.write(
-                "Weight axis value must be in the range 300 - 400{}".format(os.linesep)
+                "Weight axis value must be in the range {} - {}{}".format(
+                    WEIGHT_MIN, WEIGHT_MAX, os.linesep
+                )
             )
             sys.exit(1)
         else:
             instance_location["wght"] = args.weight
     if args.xheight is not None:
-        if args.xheight < 170 or args.xheight > 200:
+        if args.xheight < XHEIGHT_MIN or args.xheight > XHEIGHT_MAX:
             sys.stderr.write(
-                "X-height axis value must be in the range 170 - 200{}".format(
-                    os.linesep
+                "X-height axis value must be in the range {} - {}{}".format(
+                    XHEIGHT_MIN, XHEIGHT_MAX, os.linesep
                 )
             )
             sys.exit(1)
         else:
             instance_location["opsz"] = args.xheight
     if args.spacing is not None:
-        if args.spacing < 100 or args.spacing > 200:
+        if args.spacing < SPACING_MIN or args.spacing > SPACING_MAX:
             sys.stderr.write(
-                "Spacing axis value must be in the range 100 - 200{}".format(os.linesep)
+                "Spacing axis value must be in the range {} - {}{}".format(
+                    SPACING_MIN, SPACING_MAX, os.linesep
+                )
             )
             sys.exit(1)
         else:
             instance_location["ital"] = args.spacing
     if args.charwidth is not None:
-        if args.charwidth < 0 or args.charwidth > 200:
+        if args.charwidth < CHARWIDTH_MIN or args.charwidth > CHARWIDTH_MAX:
             sys.stderr.write(
-                "Character width axis value must be 0, 100, or 200{}".format(os.linesep)
+                "Character width axis value must be in the range {} - {}{}".format(
+                    CHARWIDTH_MIN, CHARWIDTH_MAX, os.linesep
+                )
             )
             sys.exit(1)
         else:
             instance_location["CUS2"] = args.charwidth
     if args.ascender is not None:
-        if args.ascender < 0 or args.ascender > 100:
+        if args.ascender < ASCENDER_MIN or args.ascender > ASCENDER_MAX:
             sys.stderr.write(
-                "Ascender height axis value must be in the range 0 - 100{}".format(
-                    os.linesep
+                "Ascender height axis value must be in the range {} - {}{}".format(
+                    ASCENDER_MIN, ASCENDER_MAX, os.linesep
                 )
             )
             sys.exit(1)
         else:
             instance_location["CUS3"] = args.ascender
     if args.counter is not None:
-        if args.counter < 0 or args.counter > 100:
+        if args.counter < COUNTER_MIN or args.counter > COUNTER_MAX:
             sys.stderr.write(
-                "Counter axis value must be in the range 0 - 100{}".format(os.linesep)
+                "Counter axis value must be in the range {} - {}{}".format(
+                    COUNTER_MIN, COUNTER_MAX, os.linesep
+                )
             )
             sys.exit(1)
         else:
