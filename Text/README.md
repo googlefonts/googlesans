@@ -1,5 +1,13 @@
 # Google Sans Text
 
+The latest version of Google Sans Text is a static TTF build following on from the exploration in the Variable font in round 1. Building upon the latest VF Colophon Recommendation, the file has been drawn to encompass a more grotesque styling.
+
+The latest file is available [here](betas/20190312/). An accompanying specimen PDF detailing the changes made to the Text style is [here](Docs/20190312-GoogleSans-Text-Overview-002.pdf).
+
+--
+
+# Google Sans Text VF
+
 The first prototype of the Google Sans Text optical size has a series of user-configurable axes that allow granular modification of different aspects of Google Sans Regular for use in small point sizes and long body copy.
 
 * The core output is a [variable font](betas/20190215/Variable/GoogleSansTextBeta-v2.004.ttf) in `.ttf` format. This is then viewed in the [web viewer](https://colophon-foundry.github.io/variable-web-viewer). Password `conway`
