@@ -32,7 +32,7 @@
 * `peso` forms updated to have two inlines as opposed to one. All variants updated (standard, tabular and cap).
 * Removed previous bracket layers found in [Version 1.038](#version-1.038) 
 
-## Version 1.041
+## Version 1.041
 
 * Internal (Pre-release)
 * [Commit Link](a276e2b61a75dfc2d23e020af1da22eba908e1fe)
@@ -50,7 +50,7 @@
 * Internal (Pre-release)
 * Skip version number
 
-## Version 1.038
+## Version 1.038
 
 * Internal (Pre-release)
 * [Commit Link](5d568116acfbda71e0cd6089cdc1365bf1925e39)
