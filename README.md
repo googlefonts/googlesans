@@ -7,6 +7,7 @@
 * All files have been run through a script to force the `yMin` and `yMax` glyphs. This sets the values to the files from `v1.027`. Can be found in the [/tools](/tools) folder.
 * Android vs Hinted files is that Hinted files do NOT have the `SS03` Thin Numerals (used on Android home screens).
 * Character map is the same otherwise (includes the new Vietnamese glyphs and anchor marks for composition).
+* Glyphs Version `Glyphs2.5.1-1141`
 
 ## Version 1.035 (2018-10-11)
 
