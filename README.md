@@ -1,21 +1,14 @@
 # Google Sans
 
-## Version 2.002 (2019-04-05)
+## Version 2.002 (2019-04-09)
 
 * **AWAITING APPROVAL OF RELEASE**
 
-* Removal of `GID 1159` (`uni000A`) which was causing an issue with Android. See [Issue 51](https://github.com/Colophon-Foundry/google-sans/issues/51) for more info.
-* Removal done to binaries from `v2.001` with the following subset command:
-
-	```sh
-	$ pyftsubset GoogleSansDisplay-Regular.ttf --gids=0-1158,1160-1169 --notdef-outline --layout-features='*' --layout-scripts='*' --drop-tables='' --name-IDs='*' --name-legacy --name-languages='*' --glyph-names --legacy-cmap --no-prune-unicode-ranges --passthrough-tables
-	```
+* Swap of `GID 1159` (Romans) and `GID 1164` (Italics) (`uni000A`) which was causing an issue with Android. See [Issue 51](https://github.com/Colophon-Foundry/google-sans/issues/51) for more info.
+* Swap was done to binaries from `v2.001` with a shell script provided [here](Tools/glyph_replace.sh):
 	
-	```sh
-	$ font-v write --ver=2.002 *ttf
-	```
-	
-* Source files have been updated to Version `2.002`, and have had `uni000A` removed.
+* Source files have been updated to Version `2.002`, and have had `uni000A` replaced with `uniE007`.
+* Source files have had the new (zero width) glyphs inserted, along with a glyphOrder attribute.
 * Hint source files remain as-is, as I _think_ that subsetting on these source files will cause issues. Further investigation required.
 * All files have been run through a script to force the yMin and yMax glyphs. This sets the values to the files from v1.027. Can be found in the /tools folder.
 
