@@ -1,8 +1,21 @@
 # Google Sans
 
-## Version 2.002 (2019-04-09)
+## Version 2.003 (2019-04-11)
 
 * **AWAITING APPROVAL OF RELEASE**
+* Fixes for Issue #24 and Issue #52
+* Fixes done via TTX:
+	* Manufacturer Name
+	* Copyright Notice	
+	* nameID 3
+* Glyphs Source:
+	* Added in `Name Table Entry` attribute to all Instances for future binary generation.
+
+* **!! NOTE !! Subsequent versions built from `v2.001` Hint source WILL require the above process applied again!**
+
+## Version 2.002 (2019-04-09)
+
+* **Non-used, interim variant**
 
 * Swap of `GID 1159` (Romans) and `GID 1164` (Italics) (`uni000A`) which was causing an issue with Android. See [Issue 51](https://github.com/Colophon-Foundry/google-sans/issues/51) for more info.
 * Swap was done to binaries from `v2.001` with a shell script provided [here](Tools/glyph_replace.sh):
