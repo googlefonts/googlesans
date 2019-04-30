@@ -1,13 +1,19 @@
 # Google Sans
 
-## Version 2.003 (2019-04-11)
+## Version 2.003 (2019-04-29)
 
-* **AWAITING APPROVAL OF RELEASE**
-* Fixes for Issue #24 and Issue #52
-* Fixes done via TTX:
-	* Manufacturer Name
-	* Copyright Notice	
-	* nameID 3
+This build involved `ttx` based OpenType table edits of the v2.001 build of the Google Sans fonts to avoid reordering the glyphID (which would require repeat manual VTT hinting of the fonts).
+
+- re-encoded the U+000A glyph (line feed) to a PUA encoded code point at U+E007 ([#51](https://github.com/Colophon-Foundry/google-sans/issues/51))
+- Edit of OpenType name table record nameID 0 ([#24](https://github.com/Colophon-Foundry/google-sans/issues/24))
+    - changed "Google, Inc" to "Google LLC"
+    - changed copyright year to 2015 from 2017
+- Edit of OpenType name table record nameID 8 ([#24](https://github.com/Colophon-Foundry/google-sans/issues/24))
+    - changed "Google, Inc" to "Google LLC"
+- Edit of OpenType name table record nameID 3 ([#52](https://github.com/Colophon-Foundry/google-sans/issues/52))
+    - removed version number from the unique ID string and revised string format
+    
+    
 * Glyphs Source:
 	* Added in `Name Table Entry` attribute to all Instances for future binary generation.
 
