@@ -21,36 +21,24 @@ import argparse
 from fontTools.ttLib import TTFont
 from fontTools.varLib.mutator import instantiateVariableFont
 
-SCRIPT_VERSION = "v0.5.0"
+SCRIPT_VERSION = "v0.6.0"
 
 FONTNAME = "GS"
 
 # Default values
 DEFAULT_WEIGHT = 400
-DEFAULT_XHEIGHT = 190
-DEFAULT_SPACING = 150
-DEFAULT_CHARWIDTH = 60
-DEFAULT_ASCENDER = 100
-DEFAULT_COUNTER = 50
+DEFAULT_WIDTH = 300
+FIXED_OPSZ = 14
 
 # Min/Max of design axis range values
-WEIGHT_MIN = 300
-WEIGHT_MAX = 400
+WEIGHT_MIN = 380
+WEIGHT_MAX = 734
 
-XHEIGHT_MIN = 170
-XHEIGHT_MAX = 200
+WIDTH_MIN = 0
+WIDTH_MAX = 400
 
-SPACING_MIN = 100
-SPACING_MAX = 200
-
-CHARWIDTH_MIN = 0
-CHARWIDTH_MAX = 200
-
-ASCENDER_MIN = 0
-ASCENDER_MAX = 100
-
-COUNTER_MIN = 0
-COUNTER_MAX = 100
+OPSZ_MIN = 14
+OPSZ_MAX = 24
 
 # macOS rendering bit
 # used for workaround fix for fontTools varLib.mutator bug
@@ -79,35 +67,11 @@ def main():
         help="Weight axis value ({}-{})".format(WEIGHT_MIN, WEIGHT_MAX),
     )  # wght
     parser.add_argument(
-        "--xheight",
-        default=DEFAULT_XHEIGHT,
+        "--width",
+        default=DEFAULT_WIDTH,
         type=int,
-        help="X-height axis value ({}-{})".format(XHEIGHT_MIN, XHEIGHT_MAX),
-    )  # opsz
-    parser.add_argument(
-        "--spacing",
-        default=DEFAULT_SPACING,
-        type=int,
-        help="Spacing axis value ({}-{})".format(SPACING_MIN, SPACING_MAX),
-    )  # ital
-    parser.add_argument(
-        "--charwidth",
-        default=DEFAULT_CHARWIDTH,
-        type=int,
-        help="Character width axis value ({}-{})".format(CHARWIDTH_MIN, CHARWIDTH_MAX),
-    )  # CUS2
-    parser.add_argument(
-        "--ascender",
-        default=DEFAULT_ASCENDER,
-        type=int,
-        help="Ascender height axis value ({}-{})".format(ASCENDER_MIN, ASCENDER_MAX),
-    )  # CUS3
-    parser.add_argument(
-        "--counter",
-        default=DEFAULT_COUNTER,
-        type=int,
-        help="Counter axis value ({}-{})".format(COUNTER_MIN, COUNTER_MAX),
-    )  # CUS4
+        help="Width axis value ({}-{})".format(WIDTH_MIN, WIDTH_MAX),
+    )  # wdth
     parser.add_argument(
         "-v",
         "--version",
@@ -131,56 +95,29 @@ def main():
             sys.exit(1)
         else:
             instance_location["wght"] = args.weight
-    if args.xheight is not None:
-        if args.xheight < XHEIGHT_MIN or args.xheight > XHEIGHT_MAX:
+    if args.width is not None:
+        if args.width < WIDTH_MIN or args.width > WIDTH_MAX:
             sys.stderr.write(
-                "X-height axis value must be in the range {} - {}{}".format(
-                    XHEIGHT_MIN, XHEIGHT_MAX, os.linesep
+                "Width axis value must be in the range {} - {}{}".format(
+                    WIDTH_MIN, WIDTH_MAX, os.linesep
                 )
             )
             sys.exit(1)
         else:
-            instance_location["opsz"] = args.xheight
-    if args.spacing is not None:
-        if args.spacing < SPACING_MIN or args.spacing > SPACING_MAX:
-            sys.stderr.write(
-                "Spacing axis value must be in the range {} - {}{}".format(
-                    SPACING_MIN, SPACING_MAX, os.linesep
+            instance_location["wdth"] = args.width
+
+    # define opsz axis with fixed value as per discussion with Edd Harrington
+    #  Note that the opsz axis is actually defined using the slnt axis due to technical issues
+    #  with the build engineering
+    if FIXED_OPSZ < OPSZ_MIN or FIXED_OPSZ > OPSZ_MAX:
+        sys.stderr.write(
+                "Optical size axis value must be in the range {} - {}{}".format(
+                    OPSZ_MIN, OPSZ_MAX, os.linesep
                 )
             )
-            sys.exit(1)
-        else:
-            instance_location["ital"] = args.spacing
-    if args.charwidth is not None:
-        if args.charwidth < CHARWIDTH_MIN or args.charwidth > CHARWIDTH_MAX:
-            sys.stderr.write(
-                "Character width axis value must be in the range {} - {}{}".format(
-                    CHARWIDTH_MIN, CHARWIDTH_MAX, os.linesep
-                )
-            )
-            sys.exit(1)
-        else:
-            instance_location["CUS2"] = args.charwidth
-    if args.ascender is not None:
-        if args.ascender < ASCENDER_MIN or args.ascender > ASCENDER_MAX:
-            sys.stderr.write(
-                "Ascender height axis value must be in the range {} - {}{}".format(
-                    ASCENDER_MIN, ASCENDER_MAX, os.linesep
-                )
-            )
-            sys.exit(1)
-        else:
-            instance_location["CUS3"] = args.ascender
-    if args.counter is not None:
-        if args.counter < COUNTER_MIN or args.counter > COUNTER_MAX:
-            sys.stderr.write(
-                "Counter axis value must be in the range {} - {}{}".format(
-                    COUNTER_MIN, COUNTER_MAX, os.linesep
-                )
-            )
-            sys.exit(1)
-        else:
-            instance_location["CUS4"] = args.counter
+        sys.exit(1)
+    else:
+        instance_location["slnt"] = FIXED_OPSZ
 
     # variable font path check
     if not os.path.exists(args.path):
@@ -190,6 +127,11 @@ def main():
             )
         )
         sys.exit(1)
+
+    print("Using the following values for the font definition:")
+    print("weight: {}".format(instance_location["wght"]))
+    print("width: {}".format(instance_location["wdth"]))
+    print("opsz: {}".format(instance_location["slnt"]))
 
     # instantiate the variable font with the requested values
     font = TTFont(args.path)
@@ -206,18 +148,16 @@ def main():
     for axis_value in instance_location:
         axis_param_string += "{}{}".format(axis_value, instance_location[axis_value])
 
-    axis_param_string = axis_param_string.replace("wght", "w")
-    axis_param_string = axis_param_string.replace("opsz", "x")
-    axis_param_string = axis_param_string.replace("ital", "s")
-    axis_param_string = axis_param_string.replace("CUS2", "cw")
-    axis_param_string = axis_param_string.replace("CUS3", "a")
-    axis_param_string = axis_param_string.replace("CUS4", "co")
+    axis_param_string = axis_param_string.replace("wght", "wt")
+    axis_param_string = axis_param_string.replace("wdth", "wd")
+    axis_param_string = axis_param_string.replace("slnt", "op")
 
     # name definitions
+    # note: removed the weight name as of v0.6.0
     nameID1_name = "GS {}".format(axis_param_string)
-    nameID4_name = "GS {} Regular".format(axis_param_string)
-    nameID6_name = "GS-{}-Regular".format(axis_param_string)
-    outfont_name = "GS-{}-Regular.ttf".format(axis_param_string)
+    nameID4_name = "GS {}".format(axis_param_string)
+    nameID6_name = "GS-{}".format(axis_param_string)
+    outfont_name = "GS-{}.ttf".format(axis_param_string)
     outfont_path = os.path.join(
         os.path.dirname(os.path.abspath(args.path)), outfont_name
     )
