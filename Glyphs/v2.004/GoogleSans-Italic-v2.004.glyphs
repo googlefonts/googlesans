@@ -3,8 +3,7 @@
 DisplayStrings = (
 "/a-cy/be-cy/ve-cy/ge-cy/dotbelowcomb/acutecomb/gje-cy/gheupturn-cy/de-cy/ie-cy/iegrave-cy/io-cy/zhe-cy/ze-cy/ii-cy/iishort-cy/iigrave-cy kk/k.alt/kappa/ka-cy/kje-cy/el-cy/em-cy/en-cy/o-cy/pe-cy/er-cy/es-cy/tau/te-cy/u-cy/ushort-cy/ef-cy/ha-cy/che-cy/tse-cy/sha-cy/shcha-cy/dzhe-cy/softsign-cy/hardsign-cy/yeru-cy/lje-cy/nje-cy/dze-cy/e-cy/ereversed-cy/i-cy/yi-cy/je-cy h/tshe-cy/iu-cy/ia-cy h/dje-cy/ustrait-cy/ustraitstroke-cy z",
 "/Alpha/Beta/Gamma op/Delta/Epsilon/Zeta/Eta/Theta/Iota/Kappa/Lambda/Mu/Nu/Xi/Omicron/Pi/Rho/Sigma/Tau/Upsilon/Phi/Chi/Psi/Omega/Alphatonos/Epsilontonos/Etatonos/Iotatonos/Omicrontonos/Upsilontonos/Omegatonos z/Iotadieresis/Upsilondieresis/UpsilonhookSymbol/UpsilonacutehookSymbol/UpsilondieresishookSymbol/alpha/beta/gamma/delta/epsilon/zeta/eta/theta/iota/kappa/lambda/mu/nu/xi/omicron/pi/rho/sigmafinal/sigma/tau tom/upsilon/phi/chi/psi/omega/iotatonos/iotadieresis/iotadieresistonos/upsilontonos/upsilondieresis/upsilondieresistonos/omicrontonos/dotbelowcomb/omegatonos/alphatonos/epsilontonos/etatonos/thetaSymbol/piSymbol/dieresistonos.alt/iotadieresistonos.alt/upsilondieresistonos.alt",
-"/replacementCharacter",
-"/backslash"
+"/replacementCharacter"
 );
 classes = (
 {
@@ -147370,7 +147369,7 @@ unicode = 0324;
 },
 {
 glyphname = commaaccentcomb;
-lastChange = "2018-10-05 16:16:39 +0000";
+lastChange = "2019-07-09 16:13:22 +0000";
 layers = (
 {
 anchors = (
@@ -147452,10 +147451,10 @@ position = "{170, 0}";
 },
 {
 name = bottom;
-position = "{119, -286}";
+position = "{122, -271}";
 }
 );
-layerId = "E3D0AE35-FDA8-40C5-B77D-1233E980F611";
+background = {
 paths = (
 {
 closed = 1;
@@ -147475,6 +147474,30 @@ nodes = (
 "98 -173 OFFCURVE",
 "124 -183 CURVE",
 "66 -249 LINE"
+);
+}
+);
+};
+layerId = "E3D0AE35-FDA8-40C5-B77D-1233E980F611";
+paths = (
+{
+closed = 1;
+nodes = (
+"122 -271 LINE",
+"204 -172 LINE SMOOTH",
+"217 -157 OFFCURVE",
+"223 -136 OFFCURVE",
+"223 -117 CURVE SMOOTH",
+"223 -79 OFFCURVE",
+"193 -48 OFFCURVE",
+"155 -48 CURVE SMOOTH",
+"117 -48 OFFCURVE",
+"87 -80 OFFCURVE",
+"87 -116 CURVE SMOOTH",
+"87 -144 OFFCURVE",
+"104 -168 OFFCURVE",
+"129 -177 CURVE",
+"79 -234 LINE"
 );
 }
 );
@@ -147488,10 +147511,10 @@ position = "{170, 0}";
 },
 {
 name = bottom;
-position = "{119, -286}";
+position = "{122, -271}";
 }
 );
-layerId = "ED48CB1B-FCCA-4E9C-9B09-135B84E688FE";
+background = {
 paths = (
 {
 closed = 1;
@@ -147511,6 +147534,35 @@ nodes = (
 "98 -173 OFFCURVE",
 "124 -183 CURVE",
 "66 -249 LINE"
+);
+}
+);
+};
+guideLines = (
+{
+position = "{110, -271}";
+}
+);
+layerId = "ED48CB1B-FCCA-4E9C-9B09-135B84E688FE";
+paths = (
+{
+closed = 1;
+nodes = (
+"122 -271 LINE",
+"204 -172 LINE SMOOTH",
+"217 -157 OFFCURVE",
+"223 -136 OFFCURVE",
+"223 -117 CURVE SMOOTH",
+"223 -79 OFFCURVE",
+"193 -48 OFFCURVE",
+"155 -48 CURVE SMOOTH",
+"117 -48 OFFCURVE",
+"87 -80 OFFCURVE",
+"87 -116 CURVE SMOOTH",
+"87 -144 OFFCURVE",
+"104 -168 OFFCURVE",
+"129 -177 CURVE",
+"79 -234 LINE"
 );
 }
 );
@@ -159471,7 +159523,7 @@ value = "3 1 0 0; Google;GoogleSans-Italic";
 },
 {
 name = "Name Table Entry";
-value = "3 3 0 0; Google;GoogleSans-Italic";
+value = "3 3 1 1033; Google;GoogleSans-Italic";
 }
 );
 interpolationWeight = 380;
@@ -159518,7 +159570,7 @@ value = "3 1 0 0; Google;GoogleSans-MediumItalic";
 },
 {
 name = "Name Table Entry";
-value = "3 3 0 0; Google;GoogleSans-MediumItalic";
+value = "3 3 1 1033; Google;GoogleSans-MediumItalic";
 }
 );
 interpolationWeight = 555;
@@ -159567,7 +159619,7 @@ value = "3 1 0 0; Google;GoogleSans-BoldItalic";
 },
 {
 name = "Name Table Entry";
-value = "3 3 0 0; Google;GoogleSans-BoldItalic";
+value = "3 3 1 1033; Google;GoogleSans-BoldItalic";
 }
 );
 interpolationWeight = 734;
@@ -159616,7 +159668,7 @@ value = "3 1 0 0; Google;GoogleSansDisplay-Italic";
 },
 {
 name = "Name Table Entry";
-value = "3 3 0 0; Google;GoogleSansDisplay-Italic";
+value = "3 3 1 1033; Google;GoogleSansDisplay-Italic";
 }
 );
 interpolationWeight = 380;
@@ -159712,7 +159764,7 @@ value = "3 1 0 0; Google;GoogleSansDisplay-BoldItalic";
 },
 {
 name = "Name Table Entry";
-value = "3 3 0 0; Google;GoogleSansDisplay-BoldItalic";
+value = "3 3 1 1033; Google;GoogleSansDisplay-BoldItalic";
 }
 );
 interpolationWeight = 734;
