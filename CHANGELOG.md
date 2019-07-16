@@ -5,7 +5,7 @@
 Android build generated to match Google Sans `yMin` and `yMax` values to that of Roboto. ([#71](https://github.com/Colophon-Foundry/google-sans/issues/71))
 
 - Added `U+FFFD` glyph to match Roboto maximum values (Uses two barely-visible rectangles at the extremes).
-- Within the Bold weights, the commaaccent combinational glyphs exceeded the yMin of Roboto. The `force_ymin_ymax_match_roboto.py` python script was run to force these values.
+- The glyph `U+0326` was reduced in the Bold & Bold Italic masters to have a yMax of `-271`. This change subsequently affected `U+0312` in both the Medium & Bold weights.
 - Values Updated:
 	- `yMin` : `-271`
 	- `yMax` : `1056`
