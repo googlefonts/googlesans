@@ -12,6 +12,7 @@ Android build generated to match Google Sans `yMin` and `yMax` values to that of
 - Witin Medium Italic instance, changed the name attribute entry to the correct specification:
 	- `3 3 1 1033; Google;GoogleSans-MediumItalic`
 - Fixed panose to match `v2.003`
+- Update unicode value in `uniE007` (E007) to correct value in Italics source file.
 - Updated vietnamese `O` characters to be auto-aligned within Glyphs. 
 - Note – **NO** hinted versions were generated in this release.
 
