@@ -1,6 +1,6 @@
 # Google Sans Changelog
 
-## Version 2.004 (2019-07-05)
+## Version 2.004 (2019-07-22)
 
 Android build generated to match Google Sans `yMin` and `yMax` values to that of Roboto. ([#71](https://github.com/Colophon-Foundry/google-sans/issues/71))
 
@@ -9,6 +9,10 @@ Android build generated to match Google Sans `yMin` and `yMax` values to that of
 - Values Updated:
 	- `yMin` : `-271`
 	- `yMax` : `1056`
+- Witin Medium Italic instance, changed the name attribute entry to the correct specification:
+	- `3 3 1 1033; Google;GoogleSans-MediumItalic`
+- Fixed panose to match `v2.003`
+- Updated vietnamese `O` characters to be auto-aligned within Glyphs. 
 - Note – **NO** hinted versions were generated in this release.
 
 ## Version 2.003 (2019-04-29)
