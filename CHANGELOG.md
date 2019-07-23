@@ -2,19 +2,21 @@
 
 ## Version 2.004 (2019-07-22)
 
-Android build generated to match Google Sans `yMin` and `yMax` values to that of Roboto. ([#71](https://github.com/Colophon-Foundry/google-sans/issues/71))
+- **Note** – **NO** hinted versions were generated in this release. This is an unhinted build only bug fix release.
 
-- Added `U+FFFD` glyph to match Roboto maximum values (Uses two barely-visible rectangles at the extremes).
+Android build generated to match Google Sans `yMin` and `yMax` values to that of the Roboto / Noto Sans UI font stack. ([#71](https://github.com/Colophon-Foundry/google-sans/issues/71))
+
+- Added `U+FFFD` glyph.  This glyph was required by the Android Text team.  We designed it to match Roboto yMin/yMax  values (uses two barely-visible rectangles at the extremes) so that any downstream edits to the files with libraries/executables that recalculate bounding boxes based on calculations across the glyph set identify and set these newly defined, desired yMin/yMax values.  This is to address an issue with fixed vertical metrics Android UI layouts.
 - The glyph `U+0326` was reduced in the Bold & Bold Italic masters to have a yMax of `-271`. This change subsequently affected `U+0312` in both the Medium & Bold weights.
 - Values Updated:
-	- `yMin` : `-271`
-	- `yMax` : `1056`
-- Witin Medium Italic instance, changed the name attribute entry to the correct specification:
+	- `head.yMin` : `-271`
+	- `head.yMax` : `1056`
+- eliminated the yMin/yMax post-compile editing script as this is no longer necessary after the changes in this update
+- Within Medium Italic instance, changed the name attribute entry to the correct specification:
 	- `3 3 1 1033; Google;GoogleSans-MediumItalic`
-- Fixed panose to match `v2.003`
+- Fixed panose to match the values that are used in the `v2.003` release of the unhinted Android builds
 - Update unicode value in `uniE007` (E007) to correct value in Italics source file.
 - Updated vietnamese `O` characters to be auto-aligned within Glyphs. 
-- Note – **NO** hinted versions were generated in this release.
 
 ## Version 2.003 (2019-04-29)
 
