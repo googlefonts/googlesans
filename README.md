@@ -55,19 +55,6 @@ When GlyphsApp updated from v1075 to v1141, there was significant changes to the
 
 Compiled with Glyphs v1075 ([Glyphs2.4.4-1075.zip](https://updates.glyphsapp.com/Glyphs2.4.4-1075.zip))
 
-## Version 1.27 (2018-01-22)
-
-This was distributed within Google asn `GoogleSans-22Jan2018-v1_27.zip`
-
-As of Version 1.27, the Android versions now have a CALT feature, with updated feature code.
-
-Hinted files are v1.26, and then modified via ttx.
-The additional (compiled) code from a straight export is then pasted into the calt rule to extend this.
-Version number has been incremented.
-
-**Note** – The VTT sources are STILL v1.26, so any subsequent versions will need to have all updates manually inserted from here.
-
-* Source (glyph) files have been incremented and have the new additions in (just not the hinting).
 
 # Glyphs
 Within /Master Files/Glyphs are two .glyphs files containing the master drawings for both the Upright drawings and the Italics. They are set up identically for ease-of-use.
