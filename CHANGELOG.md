@@ -178,7 +178,8 @@ This release was made for Android (GMSCore) distribution:
 * Hot-fixed by @m4rc1e and @davelab6
 * [Commit Link](87ce8f85f4311d774e90e38714fdb8b1a65af63e)
 
-## Version 1.027
+
+## Version 1.027 (2018-01-22)
 
 * **Available Release**
 * Last export done by EH
@@ -186,9 +187,8 @@ This release was made for Android (GMSCore) distribution:
 * All previous documentation done on Google Drive and Email chains.
 * Beginning of repo.
 
-## Version 1.27 (2018-01-22)
 
-This was distributed within Google asn `GoogleSans-22Jan2018-v1_27.zip`
+This was distributed within Google as `GoogleSans-22Jan2018-v1_27.zip`
 
 As of Version 1.27, the Android versions now have a CALT feature, with updated feature code.
 
