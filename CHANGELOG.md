@@ -7,7 +7,7 @@
 Android build generated to match Google Sans `yMin` and `yMax` values to that of the Roboto / Noto Sans UI font stack. ([#71](https://github.com/Colophon-Foundry/google-sans/issues/71))
 
 - Added `U+FFFD` glyph.  This glyph was required by the Android Text team.  We designed it to match Roboto yMin/yMax  values (uses two barely-visible rectangles at the extremes) so that any downstream edits to the files with libraries/executables that recalculate bounding boxes based on calculations across the glyph set identify and set these newly defined, desired yMin/yMax values.  This is to address an issue with fixed vertical metrics Android UI layouts.
-- The glyph `U+0326` was reduced in the Bold & Bold Italic masters to have a yMax of `-271`. This change subsequently affected `U+0312` in both the Medium & Bold weights.
+- The glyph `U+0326` was reduced in the Bold & Bold Italic masters to have a yMin of `-271`. This change subsequently affected `U+0312` in both the Medium & Bold weights.
 - Values Updated:
 	- `head.yMin` : `-271`
 	- `head.yMax` : `1056`
