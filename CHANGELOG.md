@@ -180,10 +180,24 @@ This release was made for Android (GMSCore) distribution:
 * Hot-fixed by @m4rc1e and @davelab6
 * [Commit Link](87ce8f85f4311d774e90e38714fdb8b1a65af63e)
 
-## Version 1.027
+
+## Version 1.027 (2018-01-22)
 
 * **Available Release**
 * Last export done by EH
 * [Commit Link](2ec29c65f5ea4c5e20556c333aa3ef063af53beb)
 * All previous documentation done on Google Drive and Email chains.
 * Beginning of repo.
+
+
+This was distributed within Google as `GoogleSans-22Jan2018-v1_27.zip`
+
+As of Version 1.27, the Android versions now have a CALT feature, with updated feature code.
+
+Hinted files are v1.26, and then modified via ttx.
+The additional (compiled) code from a straight export is then pasted into the calt rule to extend this.
+Version number has been incremented.
+
+**Note** – The VTT sources are STILL v1.26, so any subsequent versions will need to have all updates manually inserted from here.
+
+* Source (glyph) files have been incremented and have the new additions in (just not the hinting).
