@@ -1,15 +1,22 @@
 # Google Sans Changelog
 
-## Version 2.004 (2019-07-05)
+## Version 2.004 (2019-07-22)
 
-Android build generated to match Google Sans `yMin` and `yMax` values to that of Roboto. ([#71](https://github.com/Colophon-Foundry/google-sans/issues/71))
+- **Note** – **NO** hinted versions were generated in this release. This is an unhinted build only bug fix release.
 
-- Added `U+FFFD` glyph to match Roboto maximum values (Uses two barely-visible rectangles at the extremes).
-- The glyph `U+0326` was reduced in the Bold & Bold Italic masters to have a yMax of `-271`. This change subsequently affected `U+0312` in both the Medium & Bold weights.
+Android build generated to match Google Sans `yMin` and `yMax` values to that of the Roboto / Noto Sans UI font stack. ([#71](https://github.com/Colophon-Foundry/google-sans/issues/71))
+
+- Added `U+FFFD` glyph.  This glyph was required by the Android Text team.  We designed it to match Roboto yMin/yMax  values (uses two barely-visible rectangles at the extremes) so that any downstream edits to the files with libraries/executables that recalculate bounding boxes based on calculations across the glyph set identify and set these newly defined, desired yMin/yMax values.  This is to address an issue with fixed vertical metrics Android UI layouts.
+- The glyph `U+0326` was reduced in the Bold & Bold Italic masters to have a yMin of `-271`. This change subsequently affected `U+0312` in both the Medium & Bold weights.
 - Values Updated:
-	- `yMin` : `-271`
-	- `yMax` : `1056`
-- Note – **NO** hinted versions were generated in this release.
+	- `head.yMin` : `-271`
+	- `head.yMax` : `1056`
+- eliminated the yMin/yMax post-compile editing script as this is no longer necessary after the changes in this update
+- Within Medium Italic instance, changed the name attribute entry to the correct specification:
+	- `3 3 1 1033; Google;GoogleSans-MediumItalic`
+- Fixed panose to match the values that are used in the `v2.003` release of the unhinted Android builds
+- Update unicode value in `uniE007` (E007) to correct value in Italics source file.
+- Updated vietnamese `O` characters to be auto-aligned within Glyphs. 
 
 ## Version 2.003 (2019-04-29)
 
@@ -173,10 +180,24 @@ This release was made for Android (GMSCore) distribution:
 * Hot-fixed by @m4rc1e and @davelab6
 * [Commit Link](87ce8f85f4311d774e90e38714fdb8b1a65af63e)
 
-## Version 1.027
+
+## Version 1.027 (2018-01-22)
 
 * **Available Release**
 * Last export done by EH
 * [Commit Link](2ec29c65f5ea4c5e20556c333aa3ef063af53beb)
 * All previous documentation done on Google Drive and Email chains.
 * Beginning of repo.
+
+
+This was distributed within Google as `GoogleSans-22Jan2018-v1_27.zip`
+
+As of Version 1.27, the Android versions now have a CALT feature, with updated feature code.
+
+Hinted files are v1.26, and then modified via ttx.
+The additional (compiled) code from a straight export is then pasted into the calt rule to extend this.
+Version number has been incremented.
+
+**Note** – The VTT sources are STILL v1.26, so any subsequent versions will need to have all updates manually inserted from here.
+
+* Source (glyph) files have been incremented and have the new additions in (just not the hinting).
