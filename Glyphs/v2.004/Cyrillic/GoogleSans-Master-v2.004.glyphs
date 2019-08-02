@@ -1,5 +1,12 @@
 {
 .appVersion = "1240";
+DisplayStrings = (
+"/En-cy/en-cy.sc/en-cy  /Pe-cy/pe-cy/ef-cy/ef-cy  /Sha-cy/sha-cy  /Shcha-cy/shcha-cy",
+"/sha-cy/ii-cy/er-cy/o-cy/ka-cy/a-cy  /ze-cy/ie-cy/em-cy/el-cy/ia-cy  /em-cy/o-cy/ia-cy  /er-cy/o-cy/de-cy/en-cy/a-cy/ia-cy \012",
+"/sha-cy/ii-cy/er-cy/o-cy/ka-cy/a-cy  /ze-cy/ie-cy/em-cy/el-cy/ia-cy  /em-cy/o-cy/ia-cy  /er-cy/o-cy/de-cy/en-cy/a-cy/ia-cy \012",
+"/De-cy.loclBGR/El-cy.loclBGR/Ef-cy.loclBGR/Ghestroke-cy.loclBSH/Zedescender-cy.loclBSH/Esdescender-cy.loclBSH/Esdescender-cy.loclCHU/zedescender-cy.loclBSH/esdescender-cy.loclBSH/esdescender-cy.loclCHU/de-cy.loclBGR/zhe-cy.loclBGR/ze-cy.loclBGR/ii-cy.loclBGR/iishort-cy.loclBGR/iigrave-cy.loclBGR/ka-cy.loclBGR/el-cy.loclBGR/pe-cy.loclBGR/te-cy.loclBGR/tse-cy.loclBGR/sha-cy.loclBGR/shcha-cy.loclBGR/softsign-cy.loclBGR/hardsign-cy.loclBGR/iu-cy.loclBGR/ghestroke-cy.loclBSH/ve-cy.loclBGR/ge-cy.loclBGR/be-cy.loclSRB",
+"/Ghestroke-cy F"
+);
 classes = (
 {
 code = "zero one two three four five six seven eight nine";
@@ -1292,7 +1299,7 @@ name = ccmp;
 },
 {
 automatic = 1;
-code = "script latn;\012language ROM;\012sub Scedilla by Scommaaccent;\012sub scedilla by scommaaccent;\012sub Tcedilla by Tcommaaccent;\012sub tcedilla by tcommaaccent;\012language MOL;\012sub Scedilla by Scommaaccent;\012sub scedilla by scommaaccent;\012sub Tcedilla by Tcommaaccent;\012sub tcedilla by tcommaaccent;\012language CAT;\012sub  L' periodcentered' L by Ldot;\012\012script cyrl;\012language BSH;\012sub Ghestroke-cy by Ghestroke-cy.loclBSH;\012sub Zedescender-cy by Zedescender-cy.loclBSH;\012sub Esdescender-cy by Esdescender-cy.loclBSH;\012language CHU;\012sub Esdescender-cy by Esdescender-cy.loclCHU;\012";
+code = "script latn;\012language ROM;\012sub Scedilla by Scommaaccent;\012sub scedilla by scommaaccent;\012sub Tcedilla by Tcommaaccent;\012sub tcedilla by tcommaaccent;\012language MOL;\012sub Scedilla by Scommaaccent;\012sub scedilla by scommaaccent;\012sub Tcedilla by Tcommaaccent;\012sub tcedilla by tcommaaccent;\012language CAT;\012sub  L' periodcentered' L by Ldot;\012\012script cyrl;\012language CHU;\012sub Esdescender-cy by Esdescender-cy.loclCHU;\012sub esdescender-cy by esdescender-cy.loclCHU;\012language BSH;\012sub Ghestroke-cy by Ghestroke-cy.loclBSH;\012sub Zedescender-cy by Zedescender-cy.loclBSH;\012sub Esdescender-cy by Esdescender-cy.loclBSH;\012sub ghestroke-cy by ghestroke-cy.loclBSH;\012sub zedescender-cy by zedescender-cy.loclBSH;\012sub esdescender-cy by esdescender-cy.loclBSH;\012language BGR;\012sub De-cy by De-cy.loclBGR;\012sub El-cy by El-cy.loclBGR;\012sub Ef-cy by Ef-cy.loclBGR;\012sub de-cy by de-cy.loclBGR;\012sub zhe-cy by zhe-cy.loclBGR;\012sub ze-cy by ze-cy.loclBGR;\012sub ii-cy by ii-cy.loclBGR;\012sub iishort-cy by iishort-cy.loclBGR;\012sub iigrave-cy by iigrave-cy.loclBGR;\012sub ka-cy by ka-cy.loclBGR;\012sub el-cy by el-cy.loclBGR;\012sub pe-cy by pe-cy.loclBGR;\012sub te-cy by te-cy.loclBGR;\012sub tse-cy by tse-cy.loclBGR;\012sub sha-cy by sha-cy.loclBGR;\012sub shcha-cy by shcha-cy.loclBGR;\012sub softsign-cy by softsign-cy.loclBGR;\012sub hardsign-cy by hardsign-cy.loclBGR;\012sub iu-cy by iu-cy.loclBGR;\012";
 name = locl;
 },
 {
@@ -88399,8 +88406,9 @@ leftMetricsKey = "Ef-cy";
 rightMetricsKey = "=|";
 },
 {
+color = 3;
 glyphname = "Ghestroke-cy.loclBSH";
-lastChange = "2019-07-26 13:14:53 +0000";
+lastChange = "2019-08-02 13:24:58 +0000";
 layers = (
 {
 components = (
@@ -88423,8 +88431,9 @@ width = 573;
 );
 },
 {
+color = 3;
 glyphname = "Zedescender-cy.loclBSH";
-lastChange = "2019-07-26 13:14:53 +0000";
+lastChange = "2019-08-02 13:24:58 +0000";
 layers = (
 {
 components = (
@@ -88447,8 +88456,9 @@ width = 647;
 );
 },
 {
+color = 3;
 glyphname = "Esdescender-cy.loclBSH";
-lastChange = "2019-07-26 13:14:53 +0000";
+lastChange = "2019-08-02 13:24:58 +0000";
 layers = (
 {
 components = (
@@ -88471,8 +88481,9 @@ width = 750;
 );
 },
 {
+color = 3;
 glyphname = "Esdescender-cy.loclCHU";
-lastChange = "2019-07-26 13:14:53 +0000";
+lastChange = "2019-08-02 13:24:58 +0000";
 layers = (
 {
 components = (
@@ -92633,6 +92644,73 @@ width = 920;
 }
 );
 unicode = 04D5;
+},
+{
+color = 4;
+glyphname = "en-cy.sc";
+lastChange = "2019-08-02 14:20:23 +0000";
+layers = (
+{
+anchors = (
+{
+name = bottomright;
+position = "{418, 0}";
+}
+);
+layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
+paths = (
+{
+closed = 1;
+nodes = (
+"148 0 LINE",
+"148 219 LINE",
+"418 219 LINE",
+"418 0 LINE",
+"503 0 LINE",
+"503 510 LINE",
+"418 510 LINE",
+"418 296 LINE",
+"148 296 LINE",
+"148 510 LINE",
+"63 510 LINE",
+"63 0 LINE"
+);
+}
+);
+width = 566;
+},
+{
+anchors = (
+{
+name = bottomright;
+position = "{449, 0}";
+}
+);
+layerId = "090CB6A0-BE7C-4D17-A551-206C7456A8A3";
+paths = (
+{
+closed = 1;
+nodes = (
+"214 0 LINE",
+"214 218 LINE",
+"439 218 LINE",
+"439 0 LINE",
+"583 0 LINE",
+"583 582 LINE",
+"439 582 LINE",
+"439 352 LINE",
+"214 352 LINE",
+"214 582 LINE",
+"70 582 LINE",
+"70 0 LINE"
+);
+}
+);
+width = 663;
+}
+);
+leftKerningGroup = lc_straight;
+rightKerningGroup = lower_straight;
 },
 {
 color = 4;
