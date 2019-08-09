@@ -43240,6 +43240,67 @@ unicode = 017C;
 },
 {
 color = 9;
+glyphname = tcedilla.alt.2;
+lastChange = "2019-08-09 10:14:15 +0000";
+layers = (
+{
+components = (
+{
+name = t.alt;
+},
+{
+name = cedillacomb.alt;
+transform = "{1, 0, 0, 1, -35, 0}";
+}
+);
+layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
+width = 364;
+},
+{
+components = (
+{
+name = t.alt;
+},
+{
+name = cedillacomb.alt;
+transform = "{1, 0, 0, 1, -36, 0}";
+}
+);
+layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
+width = 405;
+},
+{
+components = (
+{
+name = t.alt;
+},
+{
+name = cedillacomb.alt;
+transform = "{1, 0, 0, 1, -37, 0}";
+}
+);
+layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
+width = 354;
+},
+{
+components = (
+{
+name = t.alt;
+},
+{
+name = cedillacomb.alt;
+transform = "{1, 0, 0, 1, -36, 0}";
+}
+);
+layerId = "090CB6A0-BE7C-4D17-A551-206C7456A8A3";
+width = 401;
+}
+);
+leftKerningGroup = t.alt;
+rightKerningGroup = t.alt;
+},
+{
+color = 9;
 glyphname = jdotless.alt;
 lastChange = "2019-08-09 08:15:42 +0000";
 layers = (
@@ -43410,69 +43471,8 @@ rightKerningGroup = j;
 },
 {
 color = 9;
-glyphname = scommaaccent.alt;
-lastChange = "2019-08-09 08:18:02 +0000";
-layers = (
-{
-components = (
-{
-name = s;
-},
-{
-name = commaaccentcomb;
-transform = "{1, 0, 0, 1, 41, 0}";
-}
-);
-layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
-width = 488;
-},
-{
-components = (
-{
-name = s;
-},
-{
-name = commaaccentcomb;
-transform = "{1, 0, 0, 1, 27, 0}";
-}
-);
-layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
-width = 525;
-},
-{
-components = (
-{
-name = s;
-},
-{
-name = commaaccentcomb;
-transform = "{1, 0, 0, 1, 35, 0}";
-}
-);
-layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
-width = 473;
-},
-{
-components = (
-{
-name = s;
-},
-{
-name = commaaccentcomb;
-transform = "{1, 0, 0, 1, 24, 0}";
-}
-);
-layerId = "090CB6A0-BE7C-4D17-A551-206C7456A8A3";
-width = 505;
-}
-);
-leftKerningGroup = s;
-rightKerningGroup = s;
-},
-{
-color = 9;
 glyphname = tcedilla.alt;
-lastChange = "2019-08-09 08:17:27 +0000";
+lastChange = "2019-08-09 10:14:38 +0000";
 layers = (
 {
 components = (
@@ -43480,8 +43480,8 @@ components = (
 name = t.alt;
 },
 {
-name = cedillacomb.alt;
-transform = "{1, 0, 0, 1, -35, 0}";
+name = cedillacomb;
+transform = "{1, 0, 0, 1, 30, 0}";
 }
 );
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
@@ -43493,8 +43493,8 @@ components = (
 name = t.alt;
 },
 {
-name = cedillacomb.alt;
-transform = "{1, 0, 0, 1, -36, 0}";
+name = cedillacomb;
+transform = "{1, 0, 0, 1, 43, 0}";
 }
 );
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
@@ -43506,8 +43506,8 @@ components = (
 name = t.alt;
 },
 {
-name = cedillacomb.alt;
-transform = "{1, 0, 0, 1, -37, 0}";
+name = cedillacomb;
+transform = "{1, 0, 0, 1, 28, 0}";
 }
 );
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -43519,8 +43519,8 @@ components = (
 name = t.alt;
 },
 {
-name = cedillacomb.alt;
-transform = "{1, 0, 0, 1, -36, 0}";
+name = cedillacomb;
+transform = "{1, 0, 0, 1, 43, 0}";
 }
 );
 layerId = "090CB6A0-BE7C-4D17-A551-206C7456A8A3";
@@ -49361,9 +49361,8 @@ width = 578;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_b;
-lastChange = "2019-08-09 10:06:11 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -49725,9 +49724,8 @@ rightMetricsKey = o;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_f;
-lastChange = "2019-08-09 10:02:41 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -49981,9 +49979,8 @@ rightMetricsKey = f;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_f_b;
-lastChange = "2019-08-09 10:06:26 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -50473,9 +50470,8 @@ rightMetricsKey = b;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_f_h;
-lastChange = "2019-08-09 10:06:36 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -50905,9 +50901,8 @@ rightMetricsKey = h;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_f_i;
-lastChange = "2019-08-09 10:02:26 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -51253,9 +51248,8 @@ rightMetricsKey = i;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_f_j;
-lastChange = "2019-08-09 10:06:48 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -51745,9 +51739,8 @@ rightMetricsKey = j;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_f_k;
-lastChange = "2019-08-09 10:06:58 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -52149,9 +52142,8 @@ rightMetricsKey = k;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_f_l;
-lastChange = "2019-08-08 17:02:53 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -52413,9 +52405,8 @@ rightMetricsKey = l;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_f_t;
-lastChange = "2019-08-09 10:07:13 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -52861,9 +52852,8 @@ rightMetricsKey = t;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_h;
-lastChange = "2019-08-09 10:07:22 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -53165,9 +53155,8 @@ rightMetricsKey = h;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_i;
-lastChange = "2019-08-09 10:07:29 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -53481,9 +53470,8 @@ rightMetricsKey = i;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_j;
-lastChange = "2019-08-09 10:07:35 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -53845,9 +53833,8 @@ rightMetricsKey = j;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_k;
-lastChange = "2019-08-09 10:07:41 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -54121,9 +54108,8 @@ rightMetricsKey = k;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_l;
-lastChange = "2019-08-09 10:07:56 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -54353,9 +54339,8 @@ rightMetricsKey = l;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_t;
-lastChange = "2019-08-09 10:08:04 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -54673,9 +54658,8 @@ rightMetricsKey = t;
 },
 {
 color = 7;
-export = 0;
 glyphname = r_f;
-lastChange = "2019-08-09 10:08:12 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -55066,9 +55050,8 @@ rightMetricsKey = f;
 },
 {
 color = 7;
-export = 0;
 glyphname = r_f_f;
-lastChange = "2019-08-09 10:08:24 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -55265,9 +55248,8 @@ rightMetricsKey = f;
 },
 {
 color = 7;
-export = 0;
 glyphname = r_t;
-lastChange = "2019-08-09 09:45:49 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -55545,9 +55527,8 @@ rightMetricsKey = t;
 },
 {
 color = 7;
-export = 0;
 glyphname = t_f;
-lastChange = "2019-08-09 10:10:49 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -55929,9 +55910,8 @@ rightMetricsKey = f;
 },
 {
 color = 7;
-export = 0;
 glyphname = t_t;
-lastChange = "2019-08-09 09:00:23 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -56378,9 +56358,8 @@ rightMetricsKey = t;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_f_j.alt;
-lastChange = "2019-08-09 10:08:47 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -56822,9 +56801,8 @@ rightMetricsKey = j.alt;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_f_k.alt;
-lastChange = "2019-08-09 10:08:59 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -57226,9 +57204,8 @@ rightMetricsKey = k.alt;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_f_t.alt;
-lastChange = "2019-08-09 10:09:13 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -57626,9 +57603,8 @@ rightMetricsKey = t.alt;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_j.alt;
-lastChange = "2019-08-09 10:09:28 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -57942,9 +57918,8 @@ rightMetricsKey = j.alt;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_k.alt;
-lastChange = "2019-08-09 10:09:38 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -58218,9 +58193,8 @@ rightMetricsKey = k.alt;
 },
 {
 color = 7;
-export = 0;
 glyphname = f_t.alt;
-lastChange = "2019-08-09 10:09:45 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -58490,9 +58464,8 @@ rightMetricsKey = t.alt;
 },
 {
 color = 7;
-export = 0;
 glyphname = r_t.alt;
-lastChange = "2019-08-09 09:52:09 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -58585,9 +58558,8 @@ com.typemytype.robofont.mark = (
 },
 {
 color = 7;
-export = 0;
 glyphname = t_f.alt;
-lastChange = "2019-08-09 10:10:49 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
@@ -58921,9 +58893,8 @@ rightMetricsKey = f;
 },
 {
 color = 7;
-export = 0;
 glyphname = t_t.alt;
-lastChange = "2019-08-09 09:51:58 +0000";
+lastChange = "2019-08-09 10:13:14 +0000";
 layers = (
 {
 anchors = (
