@@ -22,32 +22,27 @@ code = "zero one two three four five six seven eight nine zero.tf one.tf two.tf 
 name = multiply;
 },
 {
-code = "franc.cap ring.cap grave.cap acute.cap dieresis.cap caron.cap breve.cap macron.cap circumflex.cap at.cap tilde.cap hungarumlaut.cap dotaccent.cap bracketleft.cap bracketright.cap parenleft.cap parenright.cap braceleft.cap braceright.cap questiondown.cap exclamdown.cap hyphen.cap endash.cap emdash.cap guilsinglleft.cap guilsinglright.cap guillemetleft.cap guillemetright.cap zero.cap one.cap two.cap three.cap four.cap five.cap six.cap seven.cap eight.cap nine.cap currency.cap dollar.cap euro.cap sterling.cap yen.cap lira.cap won.cap tugrik.cap peso.cap tenge.cap rupeeIndian.cap liraTurkish.cap ruble.cap dong.cap numbersign.cap percent.cap perthousand.cap pertenthousand.cap zero.alt.cap one.alt.cap six.alt.cap seven.alt.cap nine.alt.cap degree.cap fahrenheit.cap centigrade.cap cent.cap baht.cap bullet.cap";
+code = "franc.cap ringcomb.cap gravecomb.cap acutecomb.cap dieresiscomb.cap caroncomb.cap brevecomb.cap macroncomb.cap circumflexcomb.cap at.cap tildecomb.cap hungarumlautcomb.cap dotaccentcomb.cap bracketleft.cap bracketright.cap parenleft.cap parenright.cap braceleft.cap braceright.cap questiondown.cap exclamdown.cap hyphen.cap endash.cap emdash.cap guilsinglleft.cap guilsinglright.cap guillemetleft.cap guillemetright.cap zero.cap one.cap two.cap three.cap four.cap five.cap six.cap seven.cap eight.cap nine.cap currency.cap dollar.cap euro.cap sterling.cap yen.cap lira.cap won.cap tugrik.cap peso.cap tenge.cap rupeeIndian.cap liraTurkish.cap ruble.cap dong.cap numbersign.cap percent.cap perthousand.cap pertenthousand.cap zero.alt.cap one.alt.cap six.alt.cap seven.alt.cap nine.alt.cap degree.cap fahrenheit.cap centigrade.cap cent.cap baht.cap bullet.cap";
 name = cap_on;
 },
 {
 code = "franc ring grave acute dieresis caron breve macron circumflex at tilde hungarumlaut dotaccent bracketleft bracketright parenleft parenright braceleft braceright questiondown exclamdown hyphen endash emdash guilsinglleft guilsinglright guillemetleft guillemetright zero one two three four five six seven eight nine currency dollar euro sterling yen lira won tugrik peso tenge rupeeIndian liraTurkish ruble dong numbersign percent perthousand pertenthousand zero.alt one.alt six.alt seven.alt nine.alt degree fahrenheit centigrade cent baht bullet    ";
-disabled = 1;
 name = cap_off;
 },
 {
 code = "franc.tf space.tf numbersign.tf dollar.tf percent.tf plus.tf comma.tf period.tf colon.tf semicolon.tf less.tf equal.tf greater.tf cent.tf sterling.tf currency.tf yen.tf section.tf logicalnot.tf plusminus.tf multiply.tf divide.tf florin.tf euro.tf minus.tf approxequal.tf notequal.tf lessequal.tf greaterequal.tf lira.tf won.tf dong.tf tugrik.tf tenge.tf rupeeIndian.tf liraTurkish.tf ruble.tf peso.tf";
-disabled = 1;
 name = symbols_tab;
 },
 {
 code = "franc space numbersign dollar percent plus comma period colon semicolon less equal greater cent sterling currency yen section logicalnot plusminus multiply divide florin euro minus approxequal notequal lessequal greaterequal lira won dong tugrik tenge rupeeIndian liraTurkish ruble peso";
-disabled = 1;
 name = symbols;
 },
 {
 code = "zero.denominator one.denominator two.denominator three.denominator four.denominator five.denominator six.denominator seven.denominator eight.denominator nine.denominator";
-disabled = 1;
 name = figuresDenominator;
 },
 {
 code = "zero.numerator one.numerator two.numerator three.numerator four.numerator five.numerator six.numerator seven.numerator eight.numerator nine.numerator";
-disabled = 1;
 name = figuresNumerator;
 }
 );
@@ -128,22 +123,18 @@ name = aalt;
 },
 {
 code = "    lookup FractionBar {\012        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';\012        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;\012        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';\012        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;\012        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures slash';\012        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures slash;\012        ignore sub slash @figures @figures @figures @figures @figures @figures @figures slash';\012        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures slash;\012        ignore sub slash @figures @figures @figures @figures @figures @figures slash';\012        ignore sub slash' @figures @figures @figures @figures @figures @figures slash;\012        ignore sub slash @figures @figures @figures @figures @figures slash';\012        ignore sub slash' @figures @figures @figures @figures @figures slash;\012        ignore sub slash @figures @figures @figures @figures slash';\012        ignore sub slash' @figures @figures @figures @figures slash;\012        ignore sub slash @figures @figures @figures slash';\012        ignore sub slash' @figures @figures @figures slash;\012        ignore sub slash @figures @figures slash';\012        ignore sub slash' @figures @figures slash;\012        ignore sub slash @figures slash';\012        ignore sub slash' @figures slash;\012        ignore sub slash slash';\012        ignore sub slash' slash;\012        sub @figures slash' @figures by fraction;\012    } FractionBar;\012\012    lookup Numerator1 {\012        sub @figures' fraction by @figuresNumerator;\012    } Numerator1;\012\012    lookup Numerator2 {\012        sub @figures' @figuresNumerator fraction by @figuresNumerator;\012    } Numerator2;\012\012    lookup Numerator3 {\012        sub @figures' @figuresNumerator @figuresNumerator fraction by @figuresNumerator;\012    } Numerator3;\012\012    lookup Numerator4 {\012        sub @figures' @figuresNumerator @figuresNumerator @figuresNumerator fraction by @figuresNumerator;\012    } Numerator4;\012\012    lookup Numerator5 {\012        sub @figures' @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator fraction by @figuresNumerator;\012    } Numerator5;\012\012    lookup Numerator6 {\012        sub @figures' @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator fraction by @figuresNumerator;\012    } Numerator6;\012\012    lookup Numerator7 {\012        sub @figures' @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator fraction by @figuresNumerator;\012    } Numerator7;\012\012    lookup Numerator8 {\012        sub @figures' @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator fraction by @figuresNumerator;\012    } Numerator8;\012\012    lookup Numerator9 {\012        sub @figures' @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator fraction by @figuresNumerator;\012    } Numerator9;\012\012    lookup Numerator10 {\012        sub @figures' @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator fraction by @figuresNumerator;\012    } Numerator10;\012\012    lookup Denominator {\012        sub [fraction @figuresDenominator] @figures' by @figuresDenominator;\012    } Denominator;\012\012    sub @figures space' @figuresNumerator by thinspace;";
-disabled = 1;
 name = frac;
 },
 {
 code = "sub @figures by @figuresNumerator;";
-disabled = 1;
 name = numr;
 },
 {
 code = "sub @figures by @figuresDenominator;";
-disabled = 1;
 name = dnom;
 },
 {
 code = "sub @figures_tab by @figures;\012sub @symbols_tab by @symbols;";
-disabled = 1;
 name = lnum;
 },
 {
@@ -152,23 +143,19 @@ name = tnum;
 },
 {
 code = "sub [A a] by ordfeminine;\012sub [O o] by ordmasculine;";
-disabled = 1;
 name = ordn;
 },
 {
 code = "sub @cap_off by @cap_on;";
-disabled = 1;
 name = case;
 },
 {
 code = "sub colon by colon.time;";
-disabled = 1;
 name = ss02;
 notes = "names: Colon time";
 },
 {
 code = "    sub f f b by f_f_b;\012    sub f f h by f_f_h;\012    sub f f i by f_f_i;\012    sub f f j by f_f_j;\012    sub f f k by f_f_k;\012    sub f f l by f_f_l;\012    sub f f t by f_f_t;\012    sub r f f by r_f_f;\012    sub f b by f_b;\012    sub f f by f_f;\012    sub f h by f_h;\012    sub f i by f_i;\012    sub f j by f_j;\012    sub f k by f_k;\012    sub f l by f_l;\012    sub f t by f_t;\012    sub r f by r_f;\012    sub r t by r_t;\012    sub t f by t_f;\012    sub t t by t_t;\012    sub [G g] o o g l e underscore l o g o by Google.logo;\012    \012    sub [G g] o o g l e l o g o l i g a t u r e by Google.logo;\012    sub G l o g o l i g a t u r e by G.logo;\012    sub o l o g o l i g a t u r e by o.logo;\012    sub g l o g o l i g a t u r e by g.logo;\012    sub l l o g o l i g a t u r e by l.logo;\012    sub e l o g o l i g a t u r e by e.logo;";
-disabled = 1;
 name = liga;
 },
 {
@@ -178,12 +165,10 @@ name = c2sc;
 },
 {
 code = "sub f f b by f_f_b;\012sub f f h by f_f_h;\012sub f f j by f_f_j;\012sub f f k by f_f_k;\012sub f f t by f_f_t;\012sub r f f by r_f_f;\012sub f b by f_b;\012sub f h by f_h;\012sub f i by f_i;\012sub f j by f_j;\012sub f k by f_k;\012sub f l by f_l;\012sub f t by f_t;\012sub r f by r_f;\012sub r t by r_t;\012sub t f by t_f;\012sub t t by t_t;\012sub r.alt t.alt by r_t.alt;\012sub t.alt t.alt by t_t.alt;\012";
-disabled = 1;
 name = dlig;
 },
 {
 code = "sub [G g] o o g l e underscore l o g o by Google.logo;\012sub g o o g l e underscore [G g] by G.logo;\012sub s u p e r underscore [G g] underscore l o g o by G.super;\012sub G underscore l o g o by G.logo;\012sub e underscore l o g o by e.logo;\012sub g underscore l o g o by g.logo;\012sub l underscore l o g o by l.logo;\012sub o underscore l o g o by o.logo;\012";
-disabled = 1;
 name = calt;
 },
 {
@@ -66834,9 +66819,9 @@ source = Z;
 };
 },
 {
-export = 0;
+color = 7;
 glyphname = ordfeminine;
-lastChange = "2019-06-18 11:49:46 +0000";
+lastChange = "2019-08-16 10:42:37 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -66960,57 +66945,57 @@ paths = (
 {
 closed = 1;
 nodes = (
-"275 272 OFFCURVE",
-"326 308 OFFCURVE",
-"351 352 CURVE",
-"355 352 LINE",
-"355 286 LINE",
-"433 286 LINE",
-"433 548 LINE SMOOTH",
-"433 668 OFFCURVE",
-"344 732 OFFCURVE",
-"238 732 CURVE SMOOTH",
-"139 732 OFFCURVE",
-"83 684 OFFCURVE",
-"61 638 CURVE",
-"133 603 LINE",
-"156 644 OFFCURVE",
-"190 660 OFFCURVE",
-"241 660 CURVE SMOOTH",
-"301 660 OFFCURVE",
-"355 622 OFFCURVE",
-"355 552 CURVE SMOOTH",
-"355 536 LINE",
-"335 548 OFFCURVE",
-"288 566 OFFCURVE",
-"230 566 CURVE SMOOTH",
-"130 566 OFFCURVE",
-"41 516 OFFCURVE",
-"41 419 CURVE SMOOTH",
-"41 330 OFFCURVE",
-"118 272 OFFCURVE",
-"207 272 CURVE SMOOTH"
+"278 264 OFFCURVE",
+"325 303 OFFCURVE",
+"350 350 CURVE",
+"354 350 LINE",
+"354 278 LINE",
+"432 278 LINE",
+"432 558 LINE SMOOTH",
+"432 677 OFFCURVE",
+"371 732 OFFCURVE",
+"240 732 CURVE SMOOTH",
+"147 732 OFFCURVE",
+"84 681 OFFCURVE",
+"62 613 CURVE",
+"137 598 LINE",
+"153 636 OFFCURVE",
+"187 660 OFFCURVE",
+"243 660 CURVE SMOOTH",
+"315 660 OFFCURVE",
+"354 621 OFFCURVE",
+"354 557 CURVE SMOOTH",
+"354 524 LINE",
+"349 531 OFFCURVE",
+"269 542 OFFCURVE",
+"209 542 CURVE SMOOTH",
+"118 542 OFFCURVE",
+"48 488 OFFCURVE",
+"48 407 CURVE SMOOTH",
+"48 318 OFFCURVE",
+"115 264 OFFCURVE",
+"202 264 CURVE SMOOTH"
 );
 },
 {
 closed = 1;
 nodes = (
-"173 342 OFFCURVE",
-"125 366 OFFCURVE",
-"125 415 CURVE SMOOTH",
-"125 465 OFFCURVE",
-"161 504 OFFCURVE",
-"247 504 CURVE SMOOTH",
-"314 504 OFFCURVE",
-"350 475 OFFCURVE",
-"355 472 CURVE",
-"355 396 OFFCURVE",
-"286 342 OFFCURVE",
-"219 342 CURVE SMOOTH"
+"169 334 OFFCURVE",
+"132 358 OFFCURVE",
+"132 407 CURVE SMOOTH",
+"132 448 OFFCURVE",
+"167 480 OFFCURVE",
+"226 480 CURVE SMOOTH",
+"273 480 OFFCURVE",
+"321 472 OFFCURVE",
+"354 460 CURVE",
+"354 384 OFFCURVE",
+"287 334 OFFCURVE",
+"220 334 CURVE SMOOTH"
 );
 }
 );
-width = 474;
+width = 480;
 },
 {
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
@@ -67018,57 +67003,57 @@ paths = (
 {
 closed = 1;
 nodes = (
-"261 272 OFFCURVE",
-"302 296 OFFCURVE",
-"330 332 CURVE",
-"338 332 LINE",
-"338 286 LINE",
-"455 286 LINE",
-"455 544 LINE SMOOTH",
-"455 669 OFFCURVE",
-"370 732 OFFCURVE",
-"241 732 CURVE SMOOTH",
-"156 732 OFFCURVE",
-"86 696 OFFCURVE",
-"52 635 CURVE",
-"147 587 LINE",
-"165 620 OFFCURVE",
-"201 638 OFFCURVE",
-"241 638 CURVE SMOOTH",
-"299 638 OFFCURVE",
-"338 604 OFFCURVE",
-"338 555 CURVE SMOOTH",
-"338 541 LINE",
-"309 555 OFFCURVE",
-"270 566 OFFCURVE",
-"218 566 CURVE SMOOTH",
-"123 566 OFFCURVE",
-"40 510 OFFCURVE",
-"40 420 CURVE SMOOTH",
-"40 330 OFFCURVE",
-"114 272 OFFCURVE",
-"203.992 272 CURVE SMOOTH"
+"260 264 OFFCURVE",
+"303 288 OFFCURVE",
+"331 324 CURVE",
+"339 324 LINE",
+"339 278 LINE",
+"456 278 LINE",
+"456 554 LINE SMOOTH",
+"456 670 OFFCURVE",
+"389 732 OFFCURVE",
+"251 732 CURVE SMOOTH",
+"147 732 OFFCURVE",
+"78 678 OFFCURVE",
+"58 603 CURVE",
+"167 586 LINE",
+"180 620 OFFCURVE",
+"210 638 OFFCURVE",
+"251 638 CURVE SMOOTH",
+"315 638 OFFCURVE",
+"339 606 OFFCURVE",
+"339 555 CURVE SMOOTH",
+"339 531 LINE",
+"307 539 OFFCURVE",
+"264 546 OFFCURVE",
+"219 546 CURVE SMOOTH",
+"122 546 OFFCURVE",
+"48 495 OFFCURVE",
+"48 409 CURVE SMOOTH",
+"48 319 OFFCURVE",
+"109 264 OFFCURVE",
+"203 264 CURVE SMOOTH"
 );
 },
 {
 closed = 1;
 nodes = (
-"190 363 OFFCURVE",
-"159 384 OFFCURVE",
-"159 419 CURVE SMOOTH",
-"159 454 OFFCURVE",
-"186 482 OFFCURVE",
-"245 482 CURVE SMOOTH",
-"286 482 OFFCURVE",
-"320 468 OFFCURVE",
-"338 460 CURVE",
-"338 410 OFFCURVE",
-"291 363 OFFCURVE",
-"229 363 CURVE SMOOTH"
+"192 355 OFFCURVE",
+"167 374 OFFCURVE",
+"167 409 CURVE SMOOTH",
+"167 438 OFFCURVE",
+"191 462 OFFCURVE",
+"242 462 CURVE SMOOTH",
+"283 462 OFFCURVE",
+"321 454 OFFCURVE",
+"339 450 CURVE",
+"339 400 OFFCURVE",
+"292 355 OFFCURVE",
+"233 355 CURVE SMOOTH"
 );
 }
 );
-width = 495;
+width = 504;
 }
 );
 leftKerningGroup = ords;
@@ -67083,9 +67068,9 @@ com.typemytype.robofont.mark = (
 };
 },
 {
-export = 0;
+color = 7;
 glyphname = ordmasculine;
-lastChange = "2019-06-18 11:49:46 +0000";
+lastChange = "2019-08-16 10:42:37 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -67173,39 +67158,39 @@ paths = (
 {
 closed = 1;
 nodes = (
-"386 272 OFFCURVE",
-"479 371 OFFCURVE",
-"479 502 CURVE SMOOTH",
-"479 633 OFFCURVE",
-"386 732 OFFCURVE",
-"258 732 CURVE SMOOTH",
-"129 732 OFFCURVE",
-"37 633 OFFCURVE",
-"37 502 CURVE SMOOTH",
-"37 371 OFFCURVE",
-"129 272 OFFCURVE",
-"258 272 CURVE"
+"396 264 OFFCURVE",
+"478 365 OFFCURVE",
+"478 498 CURVE SMOOTH",
+"478 631 OFFCURVE",
+"396 732 OFFCURVE",
+"260 732 CURVE SMOOTH",
+"124 732 OFFCURVE",
+"42 631 OFFCURVE",
+"42 498 CURVE SMOOTH",
+"42 365 OFFCURVE",
+"124 264 OFFCURVE",
+"260 264 CURVE SMOOTH"
 );
 },
 {
 closed = 1;
 nodes = (
-"185 346 OFFCURVE",
-"118 409 OFFCURVE",
-"118 502 CURVE SMOOTH",
-"118 595 OFFCURVE",
-"185 658 OFFCURVE",
-"258 658 CURVE SMOOTH",
-"329 658 OFFCURVE",
-"397 595 OFFCURVE",
-"397 502 CURVE SMOOTH",
-"397 409 OFFCURVE",
-"329 346 OFFCURVE",
-"258 346 CURVE SMOOTH"
+"178 338 OFFCURVE",
+"123 389 OFFCURVE",
+"123 498 CURVE SMOOTH",
+"123 607 OFFCURVE",
+"178 658 OFFCURVE",
+"260 658 CURVE SMOOTH",
+"342 658 OFFCURVE",
+"396 607 OFFCURVE",
+"396 498 CURVE SMOOTH",
+"396 389 OFFCURVE",
+"342 338 OFFCURVE",
+"260 338 CURVE SMOOTH"
 );
 }
 );
-width = 515;
+width = 520;
 },
 {
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
@@ -67213,39 +67198,39 @@ paths = (
 {
 closed = 1;
 nodes = (
-"400 272 OFFCURVE",
-"499 368 OFFCURVE",
-"499 502 CURVE SMOOTH",
-"499 636 OFFCURVE",
-"400 732 OFFCURVE",
-"267 732 CURVE SMOOTH",
-"134 732 OFFCURVE",
-"36 636 OFFCURVE",
-"36 502 CURVE SMOOTH",
-"36 368 OFFCURVE",
-"134 272 OFFCURVE",
-"267 272 CURVE"
+"401 264 OFFCURVE",
+"499 357 OFFCURVE",
+"499 498 CURVE SMOOTH",
+"499 639 OFFCURVE",
+"407 732 OFFCURVE",
+"270 732 CURVE SMOOTH",
+"133 732 OFFCURVE",
+"42 639 OFFCURVE",
+"42 498 CURVE SMOOTH",
+"42 357 OFFCURVE",
+"133 264 OFFCURVE",
+"270 264 CURVE"
 );
 },
 {
 closed = 1;
 nodes = (
-"208 381 OFFCURVE",
-"153 429 OFFCURVE",
-"153 502 CURVE SMOOTH",
-"153 575 OFFCURVE",
-"208 623 OFFCURVE",
-"267 623 CURVE SMOOTH",
-"326 623 OFFCURVE",
-"381 575 OFFCURVE",
-"381 502 CURVE SMOOTH",
-"381 429 OFFCURVE",
-"326 381 OFFCURVE",
-"267 381 CURVE SMOOTH"
+"204 373 OFFCURVE",
+"159 419 OFFCURVE",
+"159 498 CURVE SMOOTH",
+"159 577 OFFCURVE",
+"204 623 OFFCURVE",
+"270 623 CURVE SMOOTH",
+"336 623 OFFCURVE",
+"381 577 OFFCURVE",
+"381 498 CURVE SMOOTH",
+"381 419 OFFCURVE",
+"336 373 OFFCURVE",
+"270 373 CURVE SMOOTH"
 );
 }
 );
-width = 535;
+width = 541;
 }
 );
 leftKerningGroup = ords;
@@ -163041,9 +163026,8 @@ unicode = 000A;
 },
 {
 color = 7;
-export = 0;
 glyphname = Glogo;
-lastChange = "2019-08-16 10:22:34 +0000";
+lastChange = "2019-08-16 10:35:18 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -163242,9 +163226,8 @@ unicode = E000;
 },
 {
 color = 7;
-export = 0;
 glyphname = ologo;
-lastChange = "2019-08-16 10:22:34 +0000";
+lastChange = "2019-08-16 10:35:18 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -163411,9 +163394,8 @@ unicode = E001;
 },
 {
 color = 7;
-export = 0;
 glyphname = glogo;
-lastChange = "2019-08-16 10:22:34 +0000";
+lastChange = "2019-08-16 10:35:18 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -163656,9 +163638,8 @@ unicode = E002;
 },
 {
 color = 7;
-export = 0;
 glyphname = llogo;
-lastChange = "2019-08-16 10:22:34 +0000";
+lastChange = "2019-08-16 10:35:18 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -163725,9 +163706,8 @@ unicode = E003;
 },
 {
 color = 7;
-export = 0;
 glyphname = elogo;
-lastChange = "2019-08-16 10:22:34 +0000";
+lastChange = "2019-08-16 10:35:18 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -163910,9 +163890,8 @@ unicode = E004;
 },
 {
 color = 7;
-export = 0;
 glyphname = Gsuper;
-lastChange = "2019-08-16 10:22:34 +0000";
+lastChange = "2019-08-16 10:35:18 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -164087,9 +164066,8 @@ unicode = E005;
 },
 {
 color = 7;
-export = 0;
 glyphname = Googlelogo;
-lastChange = "2019-08-16 10:22:34 +0000";
+lastChange = "2019-08-16 10:35:18 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -164998,9 +164976,8 @@ y = 0;
 };
 },
 {
-export = 0;
 glyphname = NULL;
-lastChange = "2019-06-18 11:49:46 +0000";
+lastChange = "2019-08-16 10:35:18 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -165021,9 +164998,8 @@ width = 0;
 );
 },
 {
-export = 0;
 glyphname = cyrillictic;
-lastChange = "2019-06-18 11:49:46 +0000";
+lastChange = "2019-08-16 10:35:18 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -165088,9 +165064,8 @@ width = 432;
 );
 },
 {
-export = 0;
 glyphname = Google.logo;
-lastChange = "2019-06-18 11:49:46 +0000";
+lastChange = "2019-08-16 10:35:18 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -165998,9 +165973,8 @@ y = 0;
 };
 },
 {
-export = 0;
 glyphname = notdef.alt;
-lastChange = "2019-06-18 11:49:46 +0000";
+lastChange = "2019-08-16 10:35:18 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
