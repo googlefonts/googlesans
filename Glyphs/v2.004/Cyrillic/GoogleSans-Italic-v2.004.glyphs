@@ -1,5 +1,15 @@
 {
 .appVersion = "1240";
+DisplayStrings = (
+"/de-cy.loclSRB",
+"/de-cy.loclSRB",
+"/pe-cy.loclSRB",
+"/te-cy.loclSRB",
+"/sha-cy.loclSRB",
+"/pe-cy.loclSRB",
+"/ge-cy.loclMKD",
+"/tse-cy.loclBGR"
+);
 classes = (
 {
 code = "zero one two three four five six seven eight nine";
@@ -1295,7 +1305,7 @@ code = "lookup ccmp_Other_1 {\012	@CombiningTopAccents = [acutecomb brevecomb ca
 name = ccmp;
 },
 {
-code = "script latn;\012language ROM;\012sub Scedilla by Scommaaccent;\012sub scedilla by scommaaccent;\012sub Tcedilla by Tcommaaccent;\012sub tcedilla by tcommaaccent;\012language MOL;\012sub Scedilla by Scommaaccent;\012sub scedilla by scommaaccent;\012sub Tcedilla by Tcommaaccent;\012sub tcedilla by tcommaaccent;\012language CAT;\012sub  L' periodcentered' L by Ldot;\012\012script cyrl;\012language SRB;\012sub be-cy by be-cy.loclSRB;\012language CHU;\012sub Esdescender-cy by Esdescender-cy.loclCHU;\012sub esdescender-cy by esdescender-cy.loclCHU;\012language BSH;\012sub Ghestroke-cy by Ghestroke-cy.loclBSH;\012sub Zedescender-cy by Zedescender-cy.loclBSH;\012sub Esdescender-cy by Esdescender-cy.loclBSH;\012sub ghestroke-cy by ghestroke-cy.loclBSH;\012sub zedescender-cy by zedescender-cy.loclBSH;\012sub esdescender-cy by esdescender-cy.loclBSH;\012language BGR;\012sub De-cy by De-cy.loclBGR;\012sub El-cy by El-cy.loclBGR;\012sub Ef-cy by Ef-cy.loclBGR;\012sub ve-cy by ve-cy.loclBGR;\012sub ge-cy by ge-cy.loclBGR;\012sub de-cy by de-cy.loclBGR;\012sub zhe-cy by zhe-cy.loclBGR;\012sub ze-cy by ze-cy.loclBGR;\012sub ii-cy by ii-cy.loclBGR;\012sub iishort-cy by iishort-cy.loclBGR;\012sub iigrave-cy by iigrave-cy.loclBGR;\012sub ka-cy by ka-cy.loclBGR;\012sub el-cy by el-cy.loclBGR;\012sub pe-cy by pe-cy.loclBGR;\012sub te-cy by te-cy.loclBGR;\012sub tse-cy by tse-cy.loclBGR;\012sub sha-cy by sha-cy.loclBGR;\012sub shcha-cy by shcha-cy.loclBGR;\012sub softsign-cy by softsign-cy.loclBGR;\012sub hardsign-cy by hardsign-cy.loclBGR;\012sub iu-cy by iu-cy.loclBGR;\012";
+code = "script latn;\012language CAT;\012sub  L' periodcentered' L by Ldot;\012language ROM;\012sub Scedilla by Scommaaccent;\012sub scedilla by scommaaccent;\012sub Tcedilla by Tcommaaccent;\012sub tcedilla by tcommaaccent;\012language MOL;\012sub Scedilla by Scommaaccent;\012sub scedilla by scommaaccent;\012sub Tcedilla by Tcommaaccent;\012sub tcedilla by tcommaaccent;\012\012script cyrl;\012language SRB;\012sub be-cy by be-cy.loclSRB;\012sub de-cy by de-cy.loclSRB;\012sub pe-cy by pe-cy.loclSRB;\012sub te-cy by te-cy.loclSRB;\012sub sha-cy by sha-cy.loclSRB;\012language MKD;\012sub ge-cy by ge-cy.loclMKD;\012language CHU;\012sub Esdescender-cy by Esdescender-cy.loclCHU;\012sub esdescender-cy by esdescender-cy.loclCHU;\012language BSH;\012sub Ghestroke-cy by Ghestroke-cy.loclBSH;\012sub Zedescender-cy by Zedescender-cy.loclBSH;\012sub Esdescender-cy by Esdescender-cy.loclBSH;\012sub ghestroke-cy by ghestroke-cy.loclBSH;\012sub zedescender-cy by zedescender-cy.loclBSH;\012sub esdescender-cy by esdescender-cy.loclBSH;\012language BGR;\012sub De-cy by De-cy.loclBGR;\012sub El-cy by El-cy.loclBGR;\012sub Ef-cy by Ef-cy.loclBGR;\012sub ve-cy by ve-cy.loclBGR;\012sub ge-cy by ge-cy.loclBGR;\012sub de-cy by de-cy.loclBGR;\012sub zhe-cy by zhe-cy.loclBGR;\012sub ze-cy by ze-cy.loclBGR;\012sub ii-cy by ii-cy.loclBGR;\012sub iishort-cy by iishort-cy.loclBGR;\012sub iigrave-cy by iigrave-cy.loclBGR;\012sub ka-cy by ka-cy.loclBGR;\012sub el-cy by el-cy.loclBGR;\012sub pe-cy by pe-cy.loclBGR;\012sub te-cy by te-cy.loclBGR;\012sub tse-cy by tse-cy.loclBGR;\012sub sha-cy by sha-cy.loclBGR;\012sub shcha-cy by shcha-cy.loclBGR;\012sub softsign-cy by softsign-cy.loclBGR;\012sub hardsign-cy by hardsign-cy.loclBGR;\012sub iu-cy by iu-cy.loclBGR;\012";
 name = locl;
 },
 {
@@ -101860,6 +101870,30 @@ width = 572;
 );
 },
 {
+glyphname = "ge-cy.loclMKD";
+lastChange = "2019-09-02 13:28:28 +0000";
+layers = (
+{
+components = (
+{
+name = imacron;
+}
+);
+layerId = "8B58F8C3-CBF6-4C04-9FA1-F7EA6C699325";
+width = 227;
+},
+{
+components = (
+{
+name = imacron;
+}
+);
+layerId = "E3D0AE35-FDA8-40C5-B77D-1233E980F611";
+width = 276;
+}
+);
+},
+{
 glyphname = "be-cy.loclSRB";
 lastChange = "2019-08-22 15:04:33 +0000";
 layers = (
@@ -102018,6 +102052,222 @@ nodes = (
 }
 );
 width = 615;
+}
+);
+},
+{
+glyphname = "de-cy.loclSRB";
+lastChange = "2019-09-02 13:25:43 +0000";
+layers = (
+{
+components = (
+{
+name = g;
+}
+);
+layerId = "8B58F8C3-CBF6-4C04-9FA1-F7EA6C699325";
+width = 597;
+},
+{
+components = (
+{
+name = g;
+}
+);
+layerId = "E3D0AE35-FDA8-40C5-B77D-1233E980F611";
+width = 624;
+}
+);
+},
+{
+glyphname = "pe-cy.loclSRB";
+lastChange = "2019-09-02 13:28:03 +0000";
+layers = (
+{
+components = (
+{
+name = "ii-cy.loclBGR";
+},
+{
+name = macroncomb;
+transform = "{1, 0, 0, 1, 97, 0}";
+}
+);
+layerId = "8B58F8C3-CBF6-4C04-9FA1-F7EA6C699325";
+width = 561;
+},
+{
+components = (
+{
+name = "ii-cy.loclBGR";
+},
+{
+name = macroncomb;
+transform = "{1, 0, 0, 1, 108, 0}";
+}
+);
+layerId = "E3D0AE35-FDA8-40C5-B77D-1233E980F611";
+width = 600;
+}
+);
+},
+{
+glyphname = "te-cy.loclSRB";
+lastChange = "2019-09-02 13:27:27 +0000";
+layers = (
+{
+layerId = "8B58F8C3-CBF6-4C04-9FA1-F7EA6C699325";
+paths = (
+{
+closed = 1;
+nodes = (
+"281 -16 OFFCURVE",
+"348 24 OFFCURVE",
+"384 83 CURVE",
+"401 22 OFFCURVE",
+"451 -16 OFFCURVE",
+"527 -16 CURVE SMOOTH",
+"606 -16 OFFCURVE",
+"662 20 OFFCURVE",
+"696 75 CURVE",
+"700 75 LINE",
+"687 0 LINE",
+"767 0 LINE",
+"857 510 LINE",
+"772 510 LINE",
+"723 232 LINE SMOOTH",
+"707 139 OFFCURVE",
+"643 61 OFFCURVE",
+"560 61 CURVE SMOOTH",
+"500 61 OFFCURVE",
+"463 94 OFFCURVE",
+"463 149 CURVE SMOOTH",
+"463 163 OFFCURVE",
+"465 179 OFFCURVE",
+"468 197 CURVE SMOOTH",
+"523 510 LINE",
+"438 510 LINE",
+"388 230 LINE SMOOTH",
+"371 136 OFFCURVE",
+"308 61 OFFCURVE",
+"226 61 CURVE SMOOTH",
+"161 61 OFFCURVE",
+"128 94 OFFCURVE",
+"128 147 CURVE SMOOTH",
+"128 162 OFFCURVE",
+"130 178 OFFCURVE",
+"133 196 CURVE SMOOTH",
+"188 510 LINE",
+"104 510 LINE",
+"50 201 LINE SMOOTH",
+"44 168 OFFCURVE",
+"41 147 OFFCURVE",
+"41 124 CURVE SMOOTH",
+"41 43 OFFCURVE",
+"95 -16 OFFCURVE",
+"197 -16 CURVE SMOOTH"
+);
+},
+{
+closed = 1;
+nodes = (
+"799 645 LINE",
+"811 712 LINE",
+"220 712 LINE",
+"208 645 LINE"
+);
+}
+);
+width = 875;
+},
+{
+layerId = "E3D0AE35-FDA8-40C5-B77D-1233E980F611";
+paths = (
+{
+closed = 1;
+nodes = (
+"292 -16 OFFCURVE",
+"350 24 OFFCURVE",
+"384 74 CURVE",
+"402 23 OFFCURVE",
+"448 -16 OFFCURVE",
+"523 -16 CURVE SMOOTH",
+"598 -16 OFFCURVE",
+"645 14 OFFCURVE",
+"682 64 CURVE",
+"690 64 LINE",
+"679 0 LINE",
+"801 0 LINE",
+"891 510 LINE",
+"760 510 LINE",
+"716 261 LINE SMOOTH",
+"699 167 OFFCURVE",
+"651 106 OFFCURVE",
+"584 106 CURVE SMOOTH",
+"539 106 OFFCURVE",
+"507 130 OFFCURVE",
+"507 174 CURVE SMOOTH",
+"507 186 OFFCURVE",
+"508 196 OFFCURVE",
+"510 206 CURVE SMOOTH",
+"564 510 LINE",
+"433 510 LINE",
+"389 261 LINE SMOOTH",
+"372 166 OFFCURVE",
+"321 106 OFFCURVE",
+"253 106 CURVE SMOOTH",
+"206 106 OFFCURVE",
+"180 132 OFFCURVE",
+"180 174 CURVE SMOOTH",
+"180 183 OFFCURVE",
+"181 194 OFFCURVE",
+"183 206 CURVE SMOOTH",
+"236 510 LINE",
+"106 510 LINE",
+"49 188 LINE SMOOTH",
+"45 168 OFFCURVE",
+"43 151 OFFCURVE",
+"43 135 CURVE SMOOTH",
+"43 47 OFFCURVE",
+"102 -16 OFFCURVE",
+"202 -16 CURVE SMOOTH"
+);
+},
+{
+closed = 1;
+nodes = (
+"822 629 LINE",
+"839 729 LINE",
+"233 729 LINE",
+"215 629 LINE"
+);
+}
+);
+width = 911;
+}
+);
+},
+{
+glyphname = "sha-cy.loclSRB";
+lastChange = "2019-09-02 13:27:47 +0000";
+layers = (
+{
+components = (
+{
+name = "sha-cy.loclBGR";
+}
+);
+layerId = "8B58F8C3-CBF6-4C04-9FA1-F7EA6C699325";
+width = 875;
+},
+{
+components = (
+{
+name = "sha-cy.loclBGR";
+}
+);
+layerId = "E3D0AE35-FDA8-40C5-B77D-1233E980F611";
+width = 911;
 }
 );
 },
