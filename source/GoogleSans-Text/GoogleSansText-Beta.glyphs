@@ -9,7 +9,8 @@ DisplayStrings = (
 " Ï/Ldot LG",
 "/blackCircle Testing/whiteCircle/blackSquare",
 "/peace",
-"/Uhorntilde"
+"/Uhorntilde",
+"/One-roman/Two-roman/Three-roman/Four-roman/Five-roman/Six-roman/Seven-roman/Eight-roman/Nine-roman/Ten-roman/Eleven-roman/Twelve-roman/Fifty-roman/Hundred-roman/Fivehundred-roman/Thousand-roman/Onethousandcd-roman/Fivethousand-roman/Tenthousand-roman"
 );
 classes = (
 {
@@ -87,6 +88,10 @@ name = license;
 value = "Google offers many fonts on open source terms. Google Sans is not one of them. Please see google.com/fonts for alternatives.";
 },
 {
+name = note;
+value = "# Adjustment notes\012\012- All legacy marks have been made out of components to reduce the repetition in hinting\012- All accent marks have been slightly modified in height and position to align better. This is true in ALL optical sizes\012\012- Numbers (0123456789) (+tf variants) jump at optical size 14 to avoid a form morphing in interim steps (Angled to straight forms), which can look strange.\012\012\012– symbols – fixed minor spacing errors (tabular forms in the period.tf comma.tf colon.tf)\012\012– tcommaaccent.alt had an incorrect form \012– tcedilla.alt was missing. Added in!\012– jdotless.alt jcircumflex.alt added\012– t_f t_f.alt – changed the f terminal to be inline with all of the other f components";
+},
+{
 name = Axes;
 value = (
 {
@@ -102,10 +107,6 @@ Tag = wght;
 {
 name = "Enforce Compatibility Check";
 value = 1;
-},
-{
-name = note;
-value = "# Adjustment notes\012\012- All legacy marks have been made out of components to reduce the repetition in hinting\012- All accent marks have been slightly modified in height and position to align better. This is true in ALL optical sizes\012\012- Numbers (0123456789) (+tf variants) jump at optical size 14 to avoid a form morphing in interim steps (Angled to straight forms), which can look strange.\012\012\012– symbols – fixed minor spacing errors (tabular forms in the period.tf comma.tf colon.tf)\012\012– tcommaaccent.alt had an incorrect form \012– tcedilla.alt was missing. Added in!\012– jdotless.alt jcircumflex.alt added\012– t_f t_f.alt – changed the f terminal to be inline with all of the other f components";
 }
 );
 date = "2017-07-06 09:41:44 +0000";
@@ -205663,5 +205664,5 @@ UFOFormat = 2;
 com.schriftgestaltung.disablesAutomaticAlignment = 0;
 };
 versionMajor = 2;
-versionMinor = 18;
+versionMinor = 19;
 }
