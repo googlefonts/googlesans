@@ -1,0 +1,745 @@
+@figures = [ zero one two three four five six seven eight nine ];
+
+@figures_tab = [ zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf ];
+
+@multiply = [ zero one two three four five six seven eight nine zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf zero.cap one.cap two.cap three.cap four.cap five.cap six.cap seven.cap eight.cap nine.cap ];
+
+@cap_on = [ franc.cap ringcomb.cap gravecomb.cap acutecomb.cap dieresiscomb.cap caroncomb.cap brevecomb.cap macroncomb.cap circumflexcomb.cap at.cap tildecomb.cap hungarumlautcomb.cap dotaccentcomb.cap bracketleft.cap bracketright.cap parenleft.cap parenright.cap braceleft.cap braceright.cap questiondown.cap exclamdown.cap hyphen.cap endash.cap emdash.cap guilsinglleft.cap guilsinglright.cap guillemetleft.cap guillemetright.cap zero.cap one.cap two.cap three.cap four.cap five.cap six.cap seven.cap eight.cap nine.cap currency.cap dollar.cap euro.cap sterling.cap yen.cap lira.cap won.cap tugrik.cap peso.cap tenge.cap rupeeIndian.cap liraTurkish.cap ruble.cap dong.cap numbersign.cap percent.cap perthousand.cap pertenthousand.cap zero.alt.cap one.alt.cap six.alt.cap seven.alt.cap nine.alt.cap degree.cap fahrenheit.cap centigrade.cap cent.cap baht.cap bullet.cap ];
+
+@cap_off = [ franc ring grave acute dieresis caron breve macron circumflex at tilde hungarumlaut dotaccent bracketleft bracketright parenleft parenright braceleft braceright questiondown exclamdown hyphen endash emdash guilsinglleft guilsinglright guillemetleft guillemetright zero one two three four five six seven eight nine currency dollar euro sterling yen lira won tugrik peso tenge rupeeIndian liraTurkish ruble dong numbersign percent perthousand pertenthousand zero.alt one.alt six.alt seven.alt nine.alt degree fahrenheit centigrade cent baht bullet     ];
+
+@symbols_tab = [ franc.tf space.tf numbersign.tf dollar.tf percent.tf plus.tf comma.tf period.tf colon.tf semicolon.tf less.tf equal.tf greater.tf cent.tf sterling.tf currency.tf yen.tf section.tf logicalnot.tf plusminus.tf multiply.tf divide.tf florin.tf euro.tf minus.tf approxequal.tf notequal.tf lessequal.tf greaterequal.tf lira.tf won.tf dong.tf tugrik.tf tenge.tf rupeeIndian.tf liraTurkish.tf ruble.tf peso.tf ];
+
+@symbols = [ franc space numbersign dollar percent plus comma period colon semicolon less equal greater cent sterling currency yen section logicalnot plusminus multiply divide florin euro minus approxequal notequal lessequal greaterequal lira won dong tugrik tenge rupeeIndian liraTurkish ruble peso ];
+
+@figuresDenominator = [ zero.denominator one.denominator two.denominator three.denominator four.denominator five.denominator six.denominator seven.denominator eight.denominator nine.denominator ];
+
+@figuresNumerator = [ zero.numerator one.numerator two.numerator three.numerator four.numerator five.numerator six.numerator seven.numerator eight.numerator nine.numerator ];
+
+# Prefix: Languagesystems
+# automatic
+languagesystem DFLT dflt;
+
+
+feature aalt {
+# disabled
+#    sub Ccedilla from [Ccedilla Ccedilla.alt];
+#    sub Ccedilla.alt from [Ccedilla.alt Ccedilla];
+#    sub euro from [euro euro.cap euro.tf];
+#    sub euro.tf from [euro.tf euro euro.cap];
+#    sub euro.cap from [euro.cap euro.tf euro];
+#    sub G from [G G.alt G.logo];
+#    sub G.logo from [G.logo G G.alt];
+#    sub G.alt from [G.alt G.logo G];
+#    sub Gbreve from [Gbreve Gbreve.alt];
+#    sub Gbreve.alt from [Gbreve.alt Gbreve];
+#    sub Gcircumflex from [Gcircumflex Gcircumflex.alt];
+#    sub Gcircumflex.alt from [Gcircumflex.alt Gcircumflex];
+#    sub Gdotaccent from [Gdotaccent Gdotaccent.alt];
+#    sub Gdotaccent.alt from [Gdotaccent.alt Gdotaccent];
+#    sub I from [I I.alt];
+#    sub I.alt from [I.alt I];
+#    sub Iacute from [Iacute Iacute.alt];
+#    sub Iacute.alt from [Iacute.alt Iacute];
+#    sub Ibreve from [Ibreve Ibreve.alt];
+#    sub Ibreve.alt from [Ibreve.alt Ibreve];
+#    sub Icircumflex from [Icircumflex Icircumflex.alt];
+#    sub Icircumflex.alt from [Icircumflex.alt Icircumflex];
+#    sub Idieresis from [Idieresis Idieresis.alt];
+#    sub Idieresis.alt from [Idieresis.alt Idieresis];
+#    sub Idotaccent from [Idotaccent Idotaccent.alt];
+#    sub Idotaccent.alt from [Idotaccent.alt Idotaccent];
+#    sub Igrave from [Igrave Igrave.alt];
+#    sub Igrave.alt from [Igrave.alt Igrave];
+#    sub Imacron from [Imacron Imacron.alt];
+#    sub Imacron.alt from [Imacron.alt Imacron];
+#    sub Iogonek from [Iogonek Iogonek.alt];
+#    sub Iogonek.alt from [Iogonek.alt Iogonek];
+#    sub Itilde from [Itilde Itilde.alt];
+#    sub Itilde.alt from [Itilde.alt Itilde];
+#    sub J from [J J.alt];
+#    sub J.alt from [J.alt J];
+#    sub Jcircumflex from [Jcircumflex Jcircumflex.alt];
+#    sub Jcircumflex.alt from [Jcircumflex.alt Jcircumflex];
+#    sub K from [K K.alt];
+#    sub K.alt from [K.alt K];
+#    sub M from [M M.alt];
+#    sub M.alt from [M.alt M];
+#    sub Q from [Q Q.alt];
+#    sub Q.alt from [Q.alt Q];
+#    sub R from [R R.alt];
+#    sub R.alt from [R.alt R];
+#    sub Racute from [Racute Racute.alt];
+#    sub Racute.alt from [Racute.alt Racute];
+#    sub Rcaron from [Rcaron Rcaron.alt];
+#    sub Rcaron.alt from [Rcaron.alt Rcaron];
+#    sub Scedilla from [Scedilla Scedilla.alt];
+#    sub Scedilla.alt from [Scedilla.alt Scedilla];
+#    sub W from [W W.alt];
+#    sub W.alt from [W.alt W];
+#    sub Wacute from [Wacute Wacute.alt];
+#    sub Wacute.alt from [Wacute.alt Wacute];
+#    sub Wcircumflex from [Wcircumflex Wcircumflex.alt];
+#    sub Wcircumflex.alt from [Wcircumflex.alt Wcircumflex];
+#    sub Wdieresis from [Wdieresis Wdieresis.alt];
+#    sub Wdieresis.alt from [Wdieresis.alt Wdieresis];
+#    sub Wgrave from [Wgrave Wgrave.alt];
+#    sub Wgrave.alt from [Wgrave.alt Wgrave];
+#    sub a from [a a.alt];
+#    sub a.alt from [a.alt a];
+#    sub aacute from [aacute aacute.alt];
+#    sub aacute.alt from [aacute.alt aacute];
+#    sub abreve from [abreve abreve.alt];
+#    sub abreve.alt from [abreve.alt abreve];
+#    sub acircumflex from [acircumflex acircumflex.alt];
+#    sub acircumflex.alt from [acircumflex.alt acircumflex];
+#    sub acute from [acute acute.cap];
+#    sub acute.cap from [acute.cap acute];
+#    sub adieresis from [adieresis adieresis.alt];
+#    sub adieresis.alt from [adieresis.alt adieresis];
+#    sub ae from [ae ae.alt];
+#    sub ae.alt from [ae.alt ae];
+#    sub aeacute from [aeacute aeacute.alt];
+#    sub aeacute.alt from [aeacute.alt aeacute];
+#    sub agrave from [agrave agrave.alt];
+#    sub agrave.alt from [agrave.alt agrave];
+#    sub amacron from [amacron amacron.alt];
+#    sub amacron.alt from [amacron.alt amacron];
+#    sub ampersand from [ampersand ampersand.alt];
+#    sub ampersand.alt from [ampersand.alt ampersand];
+#    sub aogonek from [aogonek aogonek.alt];
+#    sub aogonek.alt from [aogonek.alt aogonek];
+#    sub quoteright from [quoteright quoteright.alt];
+#    sub quoteright.alt from [quoteright.alt quoteright];
+#    sub approxequal from [approxequal approxequal.tf];
+#    sub approxequal.tf from [approxequal.tf approxequal];
+#    sub aring from [aring aring.alt];
+#    sub aring.alt from [aring.alt aring];
+#    sub aringacute from [aringacute aringacute.alt];
+#    sub aringacute.alt from [aringacute.alt aringacute];
+#    sub at from [at at.cap];
+#    sub at.cap from [at.cap at];
+#    sub atilde from [atilde atilde.alt];
+#    sub atilde.alt from [atilde.alt atilde];
+#    sub braceleft from [braceleft braceleft.cap];
+#    sub braceleft.cap from [braceleft.cap braceleft];
+#    sub braceright from [braceright braceright.cap];
+#    sub braceright.cap from [braceright.cap braceright];
+#    sub bracketleft from [bracketleft bracketleft.cap];
+#    sub bracketleft.cap from [bracketleft.cap bracketleft];
+#    sub bracketright from [bracketright bracketright.cap];
+#    sub bracketright.cap from [bracketright.cap bracketright];
+#    sub breve from [breve breve.cap];
+#    sub breve.cap from [breve.cap breve];
+#    sub bullet from [bullet bullet.cap];
+#    sub bullet.cap from [bullet.cap bullet];
+#    sub caron from [caron caron.alt caron.cap];
+#    sub caron.cap from [caron.cap caron caron.alt];
+#    sub caron.alt from [caron.alt caron.cap caron];
+#    sub ccedilla from [ccedilla ccedilla.alt];
+#    sub ccedilla.alt from [ccedilla.alt ccedilla];
+#    sub cedilla from [cedilla cedilla.alt];
+#    sub cedilla.alt from [cedilla.alt cedilla];
+#    sub cent from [cent cent.tf cent.cap];
+#    sub cent.cap from [cent.cap cent cent.tf];
+#    sub cent.tf from [cent.tf cent.cap cent];
+#    sub circumflex from [circumflex circumflex.cap];
+#    sub circumflex.cap from [circumflex.cap circumflex];
+#    sub colon from [colon colon.tf];
+#    sub colon.tf from [colon.tf colon];
+#    sub comma from [comma comma.tf comma.alt];
+#    sub comma.alt from [comma.alt comma comma.tf];
+#    sub comma.tf from [comma.tf comma.alt comma];
+#    sub copyright from [copyright copyright.alt];
+#    sub copyright.alt from [copyright.alt copyright];
+#    sub currency from [currency currency.cap currency.tf];
+#    sub currency.tf from [currency.tf currency currency.cap];
+#    sub currency.cap from [currency.cap currency.tf currency];
+#    sub degree from [degree degree.cap];
+#    sub degree.cap from [degree.cap degree];
+#    sub dieresis from [dieresis dieresis.cap];
+#    sub dieresis.cap from [dieresis.cap dieresis];
+#    sub dieresistonos from [dieresistonos dieresistonos.alt];
+#    sub dieresistonos.alt from [dieresistonos.alt dieresistonos];
+#    sub divide from [divide divide.tf];
+#    sub divide.tf from [divide.tf divide];
+#    sub dollar from [dollar dollar.tf dollar.cap];
+#    sub dollar.cap from [dollar.cap dollar dollar.tf];
+#    sub dollar.tf from [dollar.tf dollar.cap dollar];
+#    sub dotaccent from [dotaccent dotaccent.cap];
+#    sub dotaccent.cap from [dotaccent.cap dotaccent];
+#    sub e from [e e.logo];
+#    sub e.logo from [e.logo e];
+#    sub eight from [eight eight.tf eight.cap eight.numerator eight.denominator];
+#    sub eight.denominator from [eight.denominator eight eight.tf eight.cap eight.numerator];
+#    sub eight.numerator from [eight.numerator eight.denominator eight eight.tf eight.cap];
+#    sub eight.cap from [eight.cap eight.numerator eight.denominator eight eight.tf];
+#    sub eight.tf from [eight.tf eight.cap eight.numerator eight.denominator eight];
+#    sub emdash from [emdash emdash.cap];
+#    sub emdash.cap from [emdash.cap emdash];
+#    sub endash from [endash endash.cap];
+#    sub endash.cap from [endash.cap endash];
+#    sub equal from [equal equal.tf];
+#    sub equal.tf from [equal.tf equal];
+#    sub exclamdown from [exclamdown exclamdown.cap];
+#    sub exclamdown.cap from [exclamdown.cap exclamdown];
+#    sub f_f_j from [f_f_j f_f_j.alt];
+#    sub f_f_j.alt from [f_f_j.alt f_f_j];
+#    sub f_f_k from [f_f_k f_f_k.alt];
+#    sub f_f_k.alt from [f_f_k.alt f_f_k];
+#    sub f_f_t from [f_f_t f_f_t.alt];
+#    sub f_f_t.alt from [f_f_t.alt f_f_t];
+#    sub f_j from [f_j f_j.alt];
+#    sub f_j.alt from [f_j.alt f_j];
+#    sub f_k from [f_k f_k.alt];
+#    sub f_k.alt from [f_k.alt f_k];
+#    sub f_t from [f_t f_t.alt];
+#    sub f_t.alt from [f_t.alt f_t];
+#    sub five from [five five.cap five.tf five.numerator five.denominator];
+#    sub five.denominator from [five.denominator five five.cap five.tf five.numerator];
+#    sub five.numerator from [five.numerator five.denominator five five.cap five.tf];
+#    sub five.tf from [five.tf five.numerator five.denominator five five.cap];
+#    sub five.cap from [five.cap five.tf five.numerator five.denominator five];
+#    sub florin from [florin florin.tf];
+#    sub florin.tf from [florin.tf florin];
+#    sub four from [four four.cap four.tf four.denominator four.numerator];
+#    sub four.numerator from [four.numerator four four.cap four.tf four.denominator];
+#    sub four.denominator from [four.denominator four.numerator four four.cap four.tf];
+#    sub four.tf from [four.tf four.denominator four.numerator four four.cap];
+#    sub four.cap from [four.cap four.tf four.denominator four.numerator four];
+#    sub g from [g g.logo];
+#    sub g.logo from [g.logo g];
+#    sub grave from [grave grave.cap];
+#    sub grave.cap from [grave.cap grave];
+#    sub greater from [greater greater.tf];
+#    sub greater.tf from [greater.tf greater];
+#    sub greaterequal from [greaterequal greaterequal.tf];
+#    sub greaterequal.tf from [greaterequal.tf greaterequal];
+#    sub guillemetleft from [guillemetleft guillemetleft.cap];
+#    sub guillemetleft.cap from [guillemetleft.cap guillemetleft];
+#    sub guillemetright from [guillemetright guillemetright.cap];
+#    sub guillemetright.cap from [guillemetright.cap guillemetright];
+#    sub guilsinglleft from [guilsinglleft guilsinglleft.cap];
+#    sub guilsinglleft.cap from [guilsinglleft.cap guilsinglleft];
+#    sub guilsinglright from [guilsinglright guilsinglright.cap];
+#    sub guilsinglright.cap from [guilsinglright.cap guilsinglright];
+#    sub hungarumlaut from [hungarumlaut hungarumlaut.cap];
+#    sub hungarumlaut.cap from [hungarumlaut.cap hungarumlaut];
+#    sub hyphen from [hyphen hyphen.cap];
+#    sub hyphen.cap from [hyphen.cap hyphen];
+#    sub iotadieresistonos from [iotadieresistonos iotadieresistonos.alt];
+#    sub iotadieresistonos.alt from [iotadieresistonos.alt iotadieresistonos];
+#    sub j from [j j.alt];
+#    sub j.alt from [j.alt j];
+#    sub k from [k k.alt];
+#    sub k.alt from [k.alt k];
+#    sub l from [l l.logo];
+#    sub l.logo from [l.logo l];
+#    sub less from [less less.tf];
+#    sub less.tf from [less.tf less];
+#    sub lessequal from [lessequal lessequal.tf];
+#    sub lessequal.tf from [lessequal.tf lessequal];
+#    sub logicalnot from [logicalnot logicalnot.tf];
+#    sub logicalnot.tf from [logicalnot.tf logicalnot];
+#    sub macron from [macron macron.cap];
+#    sub macron.cap from [macron.cap macron];
+#    sub minus from [minus minus.tf];
+#    sub minus.tf from [minus.tf minus];
+#    sub multiply from [multiply multiply.tf];
+#    sub multiply.tf from [multiply.tf multiply];
+#    sub nine from [nine nine.denominator nine.cap nine.alt.cap nine.tf nine.numerator nine.alt];
+#    sub nine.alt from [nine.alt nine nine.denominator nine.cap nine.alt.cap nine.tf nine.numerator];
+#    sub nine.numerator from [nine.numerator nine.alt nine nine.denominator nine.cap nine.alt.cap nine.tf];
+#    sub nine.tf from [nine.tf nine.numerator nine.alt nine nine.denominator nine.cap nine.alt.cap];
+#    sub nine.alt.cap from [nine.alt.cap nine.tf nine.numerator nine.alt nine nine.denominator nine.cap];
+#    sub nine.cap from [nine.cap nine.alt.cap nine.tf nine.numerator nine.alt nine nine.denominator];
+#    sub nine.denominator from [nine.denominator nine.cap nine.alt.cap nine.tf nine.numerator nine.alt nine];
+#    sub notequal from [notequal notequal.tf];
+#    sub notequal.tf from [notequal.tf notequal];
+#    sub numbersign from [numbersign numbersign.tf numbersign.cap];
+#    sub numbersign.cap from [numbersign.cap numbersign numbersign.tf];
+#    sub numbersign.tf from [numbersign.tf numbersign.cap numbersign];
+#    sub o from [o o.logo];
+#    sub o.logo from [o.logo o];
+#    sub one from [one one.alt one.cap one.numerator one.alt.cap one.denominator one.tf];
+#    sub one.tf from [one.tf one one.alt one.cap one.numerator one.alt.cap one.denominator];
+#    sub one.denominator from [one.denominator one.tf one one.alt one.cap one.numerator one.alt.cap];
+#    sub one.alt.cap from [one.alt.cap one.denominator one.tf one one.alt one.cap one.numerator];
+#    sub one.numerator from [one.numerator one.alt.cap one.denominator one.tf one one.alt one.cap];
+#    sub one.cap from [one.cap one.numerator one.alt.cap one.denominator one.tf one one.alt];
+#    sub one.alt from [one.alt one.cap one.numerator one.alt.cap one.denominator one.tf one];
+#    sub parenleft from [parenleft parenleft.cap];
+#    sub parenleft.cap from [parenleft.cap parenleft];
+#    sub parenright from [parenright parenright.cap];
+#    sub parenright.cap from [parenright.cap parenright];
+#    sub percent from [percent percent.cap percent.tf];
+#    sub percent.tf from [percent.tf percent percent.cap];
+#    sub percent.cap from [percent.cap percent.tf percent];
+#    sub period from [period period.tf];
+#    sub period.tf from [period.tf period];
+#    sub pertenthousand from [pertenthousand pertenthousand.cap];
+#    sub pertenthousand.cap from [pertenthousand.cap pertenthousand];
+#    sub perthousand from [perthousand perthousand.cap];
+#    sub perthousand.cap from [perthousand.cap perthousand];
+#    sub plus from [plus plus.tf];
+#    sub plus.tf from [plus.tf plus];
+#    sub plusminus from [plusminus plusminus.tf];
+#    sub plusminus.tf from [plusminus.tf plusminus];
+#    sub q from [q q.alt];
+#    sub q.alt from [q.alt q];
+#    sub questiondown from [questiondown questiondown.cap];
+#    sub questiondown.cap from [questiondown.cap questiondown];
+#    sub quotedblbase from [quotedblbase quotedblbase.alt];
+#    sub quotedblbase.alt from [quotedblbase.alt quotedblbase];
+#    sub quotedblleft from [quotedblleft quotedblleft.alt];
+#    sub quotedblleft.alt from [quotedblleft.alt quotedblleft];
+#    sub quotedblright from [quotedblright quotedblright.alt];
+#    sub quotedblright.alt from [quotedblright.alt quotedblright];
+#    sub quoteleft from [quoteleft quoteleft.alt];
+#    sub quoteleft.alt from [quoteleft.alt quoteleft];
+#    sub quoteright from [quoteright quoteright.alt];
+#    sub quoteright.alt from [quoteright.alt quoteright];
+#    sub quotesinglbase from [quotesinglbase quotesinglbase.alt];
+#    sub quotesinglbase.alt from [quotesinglbase.alt quotesinglbase];
+#    sub r from [r r.alt];
+#    sub r.alt from [r.alt r];
+#    sub r_t from [r_t r_t.alt];
+#    sub r_t.alt from [r_t.alt r_t];
+#    sub racute from [racute racute.alt];
+#    sub racute.alt from [racute.alt racute];
+#    sub rcaron from [rcaron rcaron.alt];
+#    sub rcaron.alt from [rcaron.alt rcaron];
+#    sub registered from [registered registered.alt];
+#    sub registered.alt from [registered.alt registered];
+#    sub ring from [ring ring.cap];
+#    sub ring.cap from [ring.cap ring];
+#    sub scedilla from [scedilla scedilla.alt];
+#    sub scedilla.alt from [scedilla.alt scedilla];
+#    sub section from [section section.tf];
+#    sub section.tf from [section.tf section];
+#    sub semicolon from [semicolon semicolon.tf semicolon.alt];
+#    sub semicolon.alt from [semicolon.alt semicolon semicolon.tf];
+#    sub semicolon.tf from [semicolon.tf semicolon.alt semicolon];
+#    sub seven from [seven seven.cap seven.alt.cap seven.alt seven.numerator seven.tf seven.denominator];
+#    sub seven.denominator from [seven.denominator seven seven.cap seven.alt.cap seven.alt seven.numerator seven.tf];
+#    sub seven.tf from [seven.tf seven.denominator seven seven.cap seven.alt.cap seven.alt seven.numerator];
+#    sub seven.numerator from [seven.numerator seven.tf seven.denominator seven seven.cap seven.alt.cap seven.alt];
+#    sub seven.alt from [seven.alt seven.numerator seven.tf seven.denominator seven seven.cap seven.alt.cap];
+#    sub seven.alt.cap from [seven.alt.cap seven.alt seven.numerator seven.tf seven.denominator seven seven.cap];
+#    sub seven.cap from [seven.cap seven.alt.cap seven.alt seven.numerator seven.tf seven.denominator seven];
+#    sub six from [six six.numerator six.alt.cap six.cap six.tf six.denominator six.alt];
+#    sub six.alt from [six.alt six six.numerator six.alt.cap six.cap six.tf six.denominator];
+#    sub six.denominator from [six.denominator six.alt six six.numerator six.alt.cap six.cap six.tf];
+#    sub six.tf from [six.tf six.denominator six.alt six six.numerator six.alt.cap six.cap];
+#    sub six.cap from [six.cap six.tf six.denominator six.alt six six.numerator six.alt.cap];
+#    sub six.alt.cap from [six.alt.cap six.cap six.tf six.denominator six.alt six six.numerator];
+#    sub six.numerator from [six.numerator six.alt.cap six.cap six.tf six.denominator six.alt six];
+#    sub space from [space space.tf];
+#    sub space.tf from [space.tf space];
+#    sub sterling from [sterling sterling.cap sterling.tf];
+#    sub sterling.tf from [sterling.tf sterling sterling.cap];
+#    sub sterling.cap from [sterling.cap sterling.tf sterling];
+#    sub t from [t t.alt];
+#    sub t.alt from [t.alt t];
+#    sub t_f from [t_f t_f.alt];
+#    sub t_f.alt from [t_f.alt t_f];
+#    sub t_t from [t_t t_t.alt];
+#    sub t_t.alt from [t_t.alt t_t];
+#    sub tbar from [tbar tbar.alt];
+#    sub tbar.alt from [tbar.alt tbar];
+#    sub tcaron from [tcaron tcaron.alt];
+#    sub tcaron.alt from [tcaron.alt tcaron];
+#    sub three from [three three.denominator three.numerator three.tf three.cap];
+#    sub three.cap from [three.cap three three.denominator three.numerator three.tf];
+#    sub three.tf from [three.tf three.cap three three.denominator three.numerator];
+#    sub three.numerator from [three.numerator three.tf three.cap three three.denominator];
+#    sub three.denominator from [three.denominator three.numerator three.tf three.cap three];
+#    sub tilde from [tilde tilde.cap];
+#    sub tilde.cap from [tilde.cap tilde];
+#    sub trademark from [trademark trademark.alt2 trademark.alt trademark.alt3];
+#    sub trademark.alt3 from [trademark.alt3 trademark trademark.alt2 trademark.alt];
+#    sub trademark.alt from [trademark.alt trademark.alt3 trademark trademark.alt2];
+#    sub trademark.alt2 from [trademark.alt2 trademark.alt trademark.alt3 trademark];
+#    sub two from [two two.cap two.denominator two.tf two.numerator];
+#    sub two.numerator from [two.numerator two two.cap two.denominator two.tf];
+#    sub two.tf from [two.tf two.numerator two two.cap two.denominator];
+#    sub two.denominator from [two.denominator two.tf two.numerator two two.cap];
+#    sub two.cap from [two.cap two.denominator two.tf two.numerator two];
+#    sub baht from [baht baht.cap];
+#    sub baht.cap from [baht.cap baht];
+#    sub franc from [franc franc.tf franc.cap];
+#    sub franc.cap from [franc.cap franc franc.tf];
+#    sub franc.tf from [franc.tf franc.cap franc];
+#    sub lira from [lira lira.cap lira.tf];
+#    sub lira.tf from [lira.tf lira lira.cap];
+#    sub lira.cap from [lira.cap lira.tf lira];
+#    sub won from [won won.tf won.cap];
+#    sub won.cap from [won.cap won won.tf];
+#    sub won.tf from [won.tf won.cap won];
+#    sub dong from [dong dong.tf dong.cap];
+#    sub dong.cap from [dong.cap dong dong.tf];
+#    sub dong.tf from [dong.tf dong.cap dong];
+#    sub tugrik from [tugrik tugrik.tf tugrik.cap];
+#    sub tugrik.cap from [tugrik.cap tugrik tugrik.tf];
+#    sub tugrik.tf from [tugrik.tf tugrik.cap tugrik];
+#    sub peso from [peso peso.cap peso.tf];
+#    sub peso.tf from [peso.tf peso peso.cap];
+#    sub peso.cap from [peso.cap peso.tf peso];
+#    sub tenge from [tenge tenge.cap tenge.tf];
+#    sub tenge.tf from [tenge.tf tenge tenge.cap];
+#    sub tenge.cap from [tenge.cap tenge.tf tenge];
+#    sub rupeeIndian from [rupeeIndian rupeeIndian.cap rupeeIndian.tf];
+#    sub rupeeIndian.tf from [rupeeIndian.tf rupeeIndian rupeeIndian.cap];
+#    sub rupeeIndian.cap from [rupeeIndian.cap rupeeIndian.tf rupeeIndian];
+#    sub liraTurkish from [liraTurkish liraTurkish.cap liraTurkish.tf];
+#    sub liraTurkish.tf from [liraTurkish.tf liraTurkish liraTurkish.cap];
+#    sub liraTurkish.cap from [liraTurkish.cap liraTurkish.tf liraTurkish];
+#    sub ruble from [ruble ruble.cap ruble.tf];
+#    sub ruble.tf from [ruble.tf ruble ruble.cap];
+#    sub ruble.cap from [ruble.cap ruble.tf ruble];
+#    sub centigrade from [centigrade centigrade.cap];
+#    sub centigrade.cap from [centigrade.cap centigrade];
+#    sub fahrenheit from [fahrenheit fahrenheit.cap];
+#    sub fahrenheit.cap from [fahrenheit.cap fahrenheit];
+#    sub published from [published published.alt];
+#    sub published.alt from [published.alt published];
+#    sub servicemark from [servicemark servicemark.alt3 servicemark.alt servicemark.alt2];
+#    sub servicemark.alt2 from [servicemark.alt2 servicemark servicemark.alt3 servicemark.alt];
+#    sub servicemark.alt from [servicemark.alt servicemark.alt2 servicemark servicemark.alt3];
+#    sub servicemark.alt3 from [servicemark.alt3 servicemark.alt servicemark.alt2 servicemark];
+#    sub upsilondieresistonos from [upsilondieresistonos upsilondieresistonos.alt];
+#    sub upsilondieresistonos.alt from [upsilondieresistonos.alt upsilondieresistonos];
+#    sub y from [y y.alt];
+#    sub y.alt from [y.alt y];
+#    sub yacute from [yacute yacute.alt];
+#    sub yacute.alt from [yacute.alt yacute];
+#    sub ycircumflex from [ycircumflex ycircumflex.alt];
+#    sub ycircumflex.alt from [ycircumflex.alt ycircumflex];
+#    sub ydieresis from [ydieresis ydieresis.alt];
+#    sub ydieresis.alt from [ydieresis.alt ydieresis];
+#    sub yen from [yen yen.tf yen.cap];
+#    sub yen.cap from [yen.cap yen yen.tf];
+#    sub yen.tf from [yen.tf yen.cap yen];
+#    sub ygrave from [ygrave ygrave.alt];
+#    sub ygrave.alt from [ygrave.alt ygrave];
+#    sub zero from [zero zero.alt.cap zero.cap zero.denominator zero.alt zero.numerator zero.tf];
+#    sub zero.tf from [zero.tf zero zero.alt.cap zero.cap zero.denominator zero.alt zero.numerator];
+#    sub zero.numerator from [zero.numerator zero.tf zero zero.alt.cap zero.cap zero.denominator zero.alt];
+#    sub zero.alt from [zero.alt zero.numerator zero.tf zero zero.alt.cap zero.cap zero.denominator];
+#    sub zero.denominator from [zero.denominator zero.alt zero.numerator zero.tf zero zero.alt.cap zero.cap];
+#    sub zero.cap from [zero.cap zero.denominator zero.alt zero.numerator zero.tf zero zero.alt.cap];
+#    sub zero.alt.cap from [zero.alt.cap zero.cap zero.denominator zero.alt zero.numerator zero.tf zero];
+} aalt;
+
+feature frac {
+    lookup FractionBar {
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures slash;
+        ignore sub slash @figures @figures slash';
+        ignore sub slash' @figures @figures slash;
+        ignore sub slash @figures slash';
+        ignore sub slash' @figures slash;
+        ignore sub slash slash';
+        ignore sub slash' slash;
+        sub @figures slash' @figures by fraction;
+    } FractionBar;
+
+    lookup Numerator1 {
+        sub @figures' fraction by @figuresNumerator;
+    } Numerator1;
+
+    lookup Numerator2 {
+        sub @figures' @figuresNumerator fraction by @figuresNumerator;
+    } Numerator2;
+
+    lookup Numerator3 {
+        sub @figures' @figuresNumerator @figuresNumerator fraction by @figuresNumerator;
+    } Numerator3;
+
+    lookup Numerator4 {
+        sub @figures' @figuresNumerator @figuresNumerator @figuresNumerator fraction by @figuresNumerator;
+    } Numerator4;
+
+    lookup Numerator5 {
+        sub @figures' @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator fraction by @figuresNumerator;
+    } Numerator5;
+
+    lookup Numerator6 {
+        sub @figures' @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator fraction by @figuresNumerator;
+    } Numerator6;
+
+    lookup Numerator7 {
+        sub @figures' @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator fraction by @figuresNumerator;
+    } Numerator7;
+
+    lookup Numerator8 {
+        sub @figures' @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator fraction by @figuresNumerator;
+    } Numerator8;
+
+    lookup Numerator9 {
+        sub @figures' @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator fraction by @figuresNumerator;
+    } Numerator9;
+
+    lookup Numerator10 {
+        sub @figures' @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator @figuresNumerator fraction by @figuresNumerator;
+    } Numerator10;
+
+    lookup Denominator {
+        sub [fraction @figuresDenominator] @figures' by @figuresDenominator;
+    } Denominator;
+
+    sub @figures space' @figuresNumerator by thinspace;
+} frac;
+
+feature numr {
+sub @figures by @figuresNumerator;
+} numr;
+
+feature dnom {
+sub @figures by @figuresDenominator;
+} dnom;
+
+feature lnum {
+sub @figures_tab by @figures;
+sub @symbols_tab by @symbols;
+} lnum;
+
+feature tnum {
+sub @figures by @figures_tab;
+#sub @symbols by @symbols_tab;
+} tnum;
+
+feature ordn {
+sub [A a] by ordfeminine;
+sub [O o] by ordmasculine;
+} ordn;
+
+feature case {
+sub @cap_off by @cap_on;
+} case;
+
+feature ss02 {
+# notes:
+# names: Colon time
+sub colon by colon.time;
+} ss02;
+
+feature liga {
+    sub f f b by f_f_b;
+    sub f f h by f_f_h;
+    sub f f i by f_f_i;
+    sub f f j by f_f_j;
+    sub f f k by f_f_k;
+    sub f f l by f_f_l;
+    sub f f t by f_f_t;
+    sub r f f by r_f_f;
+    sub f b by f_b;
+    sub f f by f_f;
+    sub f h by f_h;
+    sub f i by f_i;
+    sub f j by f_j;
+    sub f k by f_k;
+    sub f l by f_l;
+    sub f t by f_t;
+    sub r f by r_f;
+    sub r t by r_t;
+    sub t f by t_f;
+    sub t t by t_t;
+    sub [G g] o o g l e underscore l o g o by Google.logo;
+    
+    sub [G g] o o g l e l o g o l i g a t u r e by Google.logo;
+    sub G l o g o l i g a t u r e by G.logo;
+    sub o l o g o l i g a t u r e by o.logo;
+    sub g l o g o l i g a t u r e by g.logo;
+    sub l l o g o l i g a t u r e by l.logo;
+    sub e l o g o l i g a t u r e by e.logo;
+} liga;
+
+feature c2sc {
+# disabled
+#sub A by a.sc;
+#sub B by b.sc;
+#sub C by c.sc;
+#sub D by d.sc;
+#sub E by e.sc;
+#sub F by f.sc;
+#sub G by g.sc;
+#sub H by h.sc;
+#sub I by i.sc;
+#sub J by j.sc;
+#sub K by k.sc;
+#sub L by l.sc;
+#sub M by m.sc;
+#sub N by n.sc;
+#sub O by o.sc;
+#sub P by p.sc;
+#sub Q by q.sc;
+#sub R by r.sc;
+#sub S by s.sc;
+#sub T by t.sc;
+#sub U by u.sc;
+#sub V by v.sc;
+#sub W by w.sc;
+#sub X by x.sc;
+#sub Y by y.sc;
+#sub Z by z.sc;
+#
+#sub a by a.sc.lc;
+#sub b by b.sc.lc;
+#sub c by c.sc.lc;
+#sub d by d.sc.lc;
+#sub e by e.sc.lc;
+#sub f by f.sc.lc;
+#sub g by g.sc.lc;
+#sub h by h.sc.lc;
+#sub i by i.sc.lc;
+#sub j by j.sc.lc;
+#sub k by k.sc.lc;
+#sub l by l.sc.lc;
+#sub m by m.sc.lc;
+#sub n by n.sc.lc;
+#sub o by o.sc.lc;
+#sub p by p.sc.lc;
+#sub q by q.sc.lc;
+#sub r by r.sc.lc;
+#sub s by s.sc.lc;
+#sub t by t.sc.lc;
+#sub u by u.sc.lc;
+#sub v by v.sc.lc;
+#sub w by w.sc.lc;
+#sub x by x.sc.lc;
+#sub y by y.sc.lc;
+#sub z by z.sc.lc;
+#
+#sub zero by zero.sc;
+#sub one by one.sc;
+#sub two by two.sc;
+#sub three by three.sc;
+#sub four by four.sc;
+#sub five by five.sc;
+#sub six by six.sc;
+#sub seven by seven.sc;
+#sub eight by eight.sc;
+#sub nine by nine.sc;
+} c2sc;
+
+feature dlig {
+sub f f b by f_f_b;
+sub f f h by f_f_h;
+sub f f j by f_f_j;
+sub f f k by f_f_k;
+sub f f t by f_f_t;
+sub r f f by r_f_f;
+sub f b by f_b;
+sub f h by f_h;
+sub f i by f_i;
+sub f j by f_j;
+sub f k by f_k;
+sub f l by f_l;
+sub f t by f_t;
+sub r f by r_f;
+sub r t by r_t;
+sub t f by t_f;
+sub t t by t_t;
+sub r.alt t.alt by r_t.alt;
+sub t.alt t.alt by t_t.alt;
+
+} dlig;
+
+feature calt {
+sub [G g] o o g l e underscore l o g o by Google.logo;
+sub g o o g l e underscore [G g] by G.logo;
+sub s u p e r underscore [G g] underscore l o g o by G.super;
+sub G underscore l o g o by G.logo;
+sub e underscore l o g o by e.logo;
+sub g underscore l o g o by g.logo;
+sub l underscore l o g o by l.logo;
+sub o underscore l o g o by o.logo;
+
+} calt;
+
+feature ccmp {
+# automatic
+lookup ccmp_Other_1 {
+	@CombiningTopAccents = [acutecomb brevecomb caroncomb circumflexcomb commaturnedabovecomb dieresiscomb dotaccentcomb gravecomb hookabovecomb hungarumlautcomb macroncomb ringcomb tildecomb];
+	@CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb];
+	sub [i j]' @CombiningTopAccents by [idotless jdotless];
+	sub [i j]' @CombiningNonTopAccents @CombiningTopAccents by [idotless jdotless];
+} ccmp_Other_1;
+
+lookup ccmp_latn_1 {
+	lookupflag 0;
+	sub brevecomb acutecomb by brevecomb_acutecomb;
+	sub brevecomb.cap acutecomb.cap by brevecomb_acutecomb.cap;
+	sub brevecomb gravecomb by brevecomb_gravecomb;
+	sub brevecomb.cap gravecomb.cap by brevecomb_gravecomb.cap;
+	sub brevecomb hookabovecomb by brevecomb_hookabovecomb;
+	sub brevecomb.cap hookabovecomb.cap by brevecomb_hookabovecomb.cap;
+	sub brevecomb tildecomb by brevecomb_tildecomb;
+	sub brevecomb.cap tildecomb.cap by brevecomb_tildecomb.cap;
+	sub circumflexcomb acutecomb by circumflexcomb_acutecomb;
+	sub circumflexcomb.cap acutecomb.cap by circumflexcomb_acutecomb.cap;
+	sub circumflexcomb gravecomb by circumflexcomb_gravecomb;
+	sub circumflexcomb.cap gravecomb.cap by circumflexcomb_gravecomb.cap;
+	sub circumflexcomb hookabovecomb by circumflexcomb_hookabovecomb;
+	sub circumflexcomb.cap hookabovecomb.cap by circumflexcomb_hookabovecomb.cap;
+	sub circumflexcomb tildecomb by circumflexcomb_tildecomb;
+	sub circumflexcomb.cap tildecomb.cap by circumflexcomb_tildecomb.cap;
+} ccmp_latn_1;
+
+script latn;
+lookup ccmp_latn_1;
+
+} ccmp;
+
+table GDEF {
+  # automatic
+  GlyphClassDef
+    [A Aacute Abreve Abreveacute Abrevedotbelow Abrevegrave Abrevehookabove Abrevetilde Acaron Acircumflex Acircumflexacute Acircumflexdotbelow Acircumflexgrave Acircumflexhookabove Acircumflextilde Adieresis Adotbelow Agrave Ahookabove Amacron Aogonek Aring Aringacute Atilde AE AEacute B C Cacute Ccaron Ccedilla Ccircumflex Cdotaccent D Eth Dcaron Dcroat E Eacute Ebreve Ecaron Ecircumflex Ecircumflexacute Ecircumflexdotbelow Ecircumflexgrave Ecircumflexhookabove Ecircumflextilde Edieresis Edotaccent Edotbelow Egrave Ehookabove Emacron Eogonek Etilde F G Gbreve Gcircumflex Gcommaaccent Gdotaccent H Hbar Hcircumflex I Iacute Ibreve Icircumflex Idieresis Idotaccent Idotbelow Igrave Ihookabove Imacron Iogonek Itilde J Jcircumflex K Kcommaaccent L Lacute Lcaron Lcommaaccent Ldot Lslash M N Nacute Ncaron Ncommaaccent Eng Ntilde O Oacute Obreve Ocircumflex Ocircumflexacute Ocircumflexdotbelow Ocircumflexgrave Ocircumflexhookabove Ocircumflextilde Odieresis Odotbelow Ograve Ohookabove Ohorn Ohornacute Ohorndotbelow Ohorngrave Ohornhookabove Ohorntilde Ohungarumlaut Omacron Oslash Oslashacute Otilde OE P Thorn Q R Racute Rcaron Rcommaaccent S Sacute Scaron Scedilla Scircumflex Scommaaccent T Tbar Tcaron Tcedilla Tcommaaccent U Uacute Ubreve Ucircumflex Udieresis Udotbelow Ugrave Uhookabove Uhorn Uhornacute Uhorndotbelow Uhorngrave Uhornhookabove Uhorntilde Uhungarumlaut Umacron Uogonek Uring Utilde V W Wacute Wcircumflex Wdieresis Wgrave X Y Yacute Ycircumflex Ydieresis Ydotbelow Ygrave Yhookabove Ytilde Z Zacute Zcaron Zdotaccent Ccedilla.alt G.alt Gbreve.alt Gcircumflex.alt Gcommaaccent.alt Gdotaccent.alt I.alt Iacute.alt Ibreve.alt Icircumflex.alt Idieresis.alt Idotaccent.alt Igrave.alt Imacron.alt Iogonek.alt Itilde.alt J.alt Jcircumflex.alt K.alt Kcommaaccent.alt M.alt Q.alt R.alt Racute.alt Rcaron.alt Rcommaaccent.alt Scedilla.alt W.alt Wacute.alt Wcircumflex.alt Wdieresis.alt Wgrave.alt a aacute abreve abreveacute abrevedotbelow abrevegrave abrevehookabove abrevetilde acircumflex acircumflexacute acircumflexdotbelow acircumflexgrave acircumflexhookabove acircumflextilde adieresis adotbelow agrave ahookabove amacron aogonek aring aringacute atilde ae aeacute b c cacute ccaron ccedilla ccircumflex cdotaccent d eth dcaron dcroat e eacute ebreve ecaron ecircumflex ecircumflexacute ecircumflexdotbelow ecircumflexgrave ecircumflexhookabove ecircumflextilde edieresis edotaccent edotbelow egrave ehookabove emacron eogonek etilde schwa f g gbreve gcircumflex gcommaaccent gdotaccent h hbar hcircumflex i idotless iacute ibreve icircumflex idieresis idotbelow igrave ihookabove imacron iogonek itilde j jdotless jcircumflex k kcommaaccent kgreenlandic l lacute lcaron lcommaaccent lslash m n nacute ncaron ncommaaccent eng ntilde o oacute obreve ocircumflex ocircumflexacute ocircumflexdotbelow ocircumflexgrave ocircumflexhookabove ocircumflextilde odieresis odotbelow ograve ohookabove ohorn ohornacute ohorndotbelow ohorngrave ohornhookabove ohorntilde ohungarumlaut omacron oslash oslashacute otilde oe p thorn q r racute rcaron rcommaaccent s sacute scaron scedilla scircumflex scommaaccent germandbls t tbar tcaron tcedilla tcommaaccent u uacute ubreve ucircumflex udieresis udotbelow ugrave uhookabove uhorn uhornacute uhorndotbelow uhorngrave uhornhookabove uhorntilde uhungarumlaut umacron uogonek uring utilde v w wacute wcircumflex wdieresis wgrave x y yacute ycircumflex ydieresis ydotbelow ygrave yhookabove ytilde z zacute zcaron zdotaccent tcedilla.alt.2 a.alt aacute.alt abreve.alt abreveacute.alt abrevedotbelow.alt abrevegrave.alt abrevehookabove.alt abrevetilde.alt acircumflex.alt acircumflexacute.alt acircumflexdotbelow.alt acircumflexgrave.alt acircumflexhookabove.alt acircumflextilde.alt adieresis.alt adotbelow.alt agrave.alt ahookabove.alt amacron.alt aogonek.alt aring.alt aringacute.alt atilde.alt ae.alt aeacute.alt ccedilla.alt j.alt jdotless.alt jcircumflex.alt k.alt kcommaaccent.alt q.alt r.alt racute.alt rcaron.alt rcommaaccent.alt scedilla.alt t.alt tbar.alt tcaron.alt tcedilla.alt tcommaaccent.alt y.alt yacute.alt ycircumflex.alt ydieresis.alt ydotbelow.alt ygrave.alt yhookabove.alt ytilde.alt A-cy Ve-cy Ge-cy Gje-cy Ie-cy Iegrave-cy Io-cy Zhe-cy Ze-cy Ii-cy Iishort-cy Iigrave-cy Ka-cy Kje-cy Em-cy En-cy O-cy Er-cy Es-cy Te-cy U-cy Ushort-cy Ha-cy Che-cy Yeru-cy Dze-cy Ereversed-cy I-cy Yi-cy Je-cy Iu-cy Ia-cy Yat-cy Fita-cy Zhedescender-cy Zedescender-cy Kadescender-cy Kabashkir-cy Endescender-cy Esdescender-cy Ustrait-cy Ustraitstroke-cy Hadescender-cy Chedescender-cy Shha-cy Palochka-cy Zhebreve-cy Abreve-cy Adieresis-cy Iebreve-cy Schwa-cy Zhedieresis-cy Zedieresis-cy Imacron-cy Idieresis-cy Odieresis-cy Obarred-cy Umacron-cy Udieresis-cy Uhungarumlaut-cy Chedieresis-cy Yerudieresis-cy Qa-cy We-cy El-cy.loclBGR Ghestroke-cy.loclBSH Zedescender-cy.loclBSH Esdescender-cy.loclBSH Esdescender-cy.loclCHU a-cy ge-cy gje-cy ie-cy iegrave-cy io-cy ze-cy ii-cy iishort-cy iigrave-cy ka-cy kje-cy en-cy o-cy er-cy es-cy u-cy ushort-cy ha-cy che-cy yeru-cy dze-cy e-cy ereversed-cy i-cy yi-cy je-cy iu-cy ia-cy fita-cy kadescender-cy kabashkir-cy endescender-cy esdescender-cy ustrait-cy ustraitstroke-cy hadescender-cy chedescender-cy shha-cy palochka-cy abreve-cy adieresis-cy iebreve-cy schwa-cy zedieresis-cy imacron-cy idieresis-cy odieresis-cy obarred-cy umacron-cy udieresis-cy uhungarumlaut-cy chedieresis-cy yerudieresis-cy qa-cy we-cy de-cy.loclBGR ii-cy.loclBGR iishort-cy.loclBGR iigrave-cy.loclBGR pe-cy.loclBGR te-cy.loclBGR esdescender-cy.loclBSH esdescender-cy.loclCHU Aie-cy aie-cy Ohm increment summation micro], # Base
+    [f_b f_f f_f_b f_f_h f_f_i f_f_j f_f_k f_f_l f_f_t f_h f_i f_j f_k f_l f_t r_f r_f_f r_t t_f t_t f_f_j.alt f_f_k.alt f_f_t.alt f_j.alt f_k.alt f_t.alt r_t.alt t_f.alt t_t.alt], # Liga
+    [dieresiscomb dotaccentcomb gravecomb acutecomb hungarumlautcomb caroncomb.alt circumflexcomb caroncomb brevecomb ringcomb tildecomb macroncomb hookabovecomb commaturnedabovecomb horncomb dotbelowcomb dieresisbelowcomb commaaccentcomb cedillacomb ogonekcomb brevebelowcomb macronbelowcomb cedillacomb.alt dieresiscomb.cap dotaccentcomb.cap gravecomb.cap acutecomb.cap hungarumlautcomb.cap caroncomb.alt.cap circumflexcomb.cap caroncomb.cap brevecomb.cap ringcomb.cap tildecomb.cap macroncomb.cap hookabovecomb.cap horncomb.cap dieresiscomb.sc gravecomb.sc acutecomb.sc hungarumlautcomb.sc macroncomb.sc brevecomb-cy brevecomb-cy.cap brevecomb-cy.sc brevecomb_acutecomb brevecomb_gravecomb brevecomb_hookabovecomb brevecomb_tildecomb circumflexcomb_acutecomb circumflexcomb_gravecomb circumflexcomb_hookabovecomb circumflexcomb_tildecomb brevecomb_acutecomb.cap brevecomb_gravecomb.cap brevecomb_hookabovecomb.cap brevecomb_tildecomb.cap circumflexcomb_acutecomb.cap circumflexcomb_gravecomb.cap circumflexcomb_hookabovecomb.cap circumflexcomb_tildecomb.cap], # Mark
+    ;
+  LigatureCaretByPos f_b 516;
+  LigatureCaretByPos f_f 358;
+  LigatureCaretByPos f_f_b 358 709;
+  LigatureCaretByPos f_f_h 358 709;
+  LigatureCaretByPos f_f_i 358 709;
+  LigatureCaretByPos f_f_j 358 709;
+  LigatureCaretByPos f_f_j.alt 358 709;
+  LigatureCaretByPos f_f_k 358 709;
+  LigatureCaretByPos f_f_k.alt 358 884;
+  LigatureCaretByPos f_f_l 358 709;
+  LigatureCaretByPos f_f_t 358 709;
+  LigatureCaretByPos f_f_t.alt 358 709;
+  LigatureCaretByPos f_h 351;
+  LigatureCaretByPos f_i 358;
+  LigatureCaretByPos f_j 358;
+  LigatureCaretByPos f_j.alt 358;
+  LigatureCaretByPos f_k 351;
+  LigatureCaretByPos f_k.alt 358;
+  LigatureCaretByPos f_l 363;
+  LigatureCaretByPos f_t 358;
+  LigatureCaretByPos f_t.alt 358;
+  LigatureCaretByPos r_f 371;
+  LigatureCaretByPos r_f_f 371 780;
+  LigatureCaretByPos r_t 377;
+  LigatureCaretByPos r_t.alt 421;
+  LigatureCaretByPos t_f 373;
+  LigatureCaretByPos t_f.alt 371;
+  LigatureCaretByPos t_t 373;
+  LigatureCaretByPos t_t.alt 371;
+} GDEF;
