@@ -1,5 +1,7 @@
 # Google Sans
 
+[![Build Status](https://travis-ci.com/Colophon-Foundry/google-sans.svg?token=xM1gpyu7W7unaFXB86eV&branch=master)](https://travis-ci.com/Colophon-Foundry/google-sans)
+
 Google Sans is a geometric sans-serif typefaced for use as the corporate branding typeface. Originally based off of Product Sans (Design by Jesse Kaczmarek, Google Sans (Design by Colophon Foundry) has been modified for more general use. 
 
 Currently in 2 Optical Sizes (Display & Sans), across three weights – Regular, Medium & Bold with corresponding Italics.
