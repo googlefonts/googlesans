@@ -120,19 +120,19 @@ name = aalt;
 },
 {
 automatic = 1;
-code = "lookup ccmp_Other_1 {\012	@CombiningTopAccents = [acutecomb brevecomb caroncomb circumflexcomb commaturnedabovecomb dieresiscomb dotaccentcomb gravecomb hookabovecomb hungarumlautcomb macroncomb ringcomb tildecomb];\012	@CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb];\012	sub [i j]' @CombiningTopAccents by [idotless jdotless];\012	sub [i j]' @CombiningNonTopAccents @CombiningTopAccents by [idotless jdotless];\012} ccmp_Other_1;\012\012lookup ccmp_latn_1 {\012	lookupflag 0;\012	sub brevecomb acutecomb by brevecomb_acutecomb;\012	sub brevecomb.cap acutecomb.cap by brevecomb_acutecomb.cap;\012	sub brevecomb gravecomb by brevecomb_gravecomb;\012	sub brevecomb.cap gravecomb.cap by brevecomb_gravecomb.cap;\012	sub brevecomb hookabovecomb by brevecomb_hookabovecomb;\012	sub brevecomb.cap hookabovecomb.cap by brevecomb_hookabovecomb.cap;\012	sub brevecomb tildecomb by brevecomb_tildecomb;\012	sub brevecomb.cap tildecomb.cap by brevecomb_tildecomb.cap;\012	sub circumflexcomb acutecomb by circumflexcomb_acutecomb;\012	sub circumflexcomb.cap acutecomb.cap by circumflexcomb_acutecomb.cap;\012	sub circumflexcomb gravecomb by circumflexcomb_gravecomb;\012	sub circumflexcomb.cap gravecomb.cap by circumflexcomb_gravecomb.cap;\012	sub circumflexcomb hookabovecomb by circumflexcomb_hookabovecomb;\012	sub circumflexcomb.cap hookabovecomb.cap by circumflexcomb_hookabovecomb.cap;\012	sub circumflexcomb tildecomb by circumflexcomb_tildecomb;\012	sub circumflexcomb.cap tildecomb.cap by circumflexcomb_tildecomb.cap;\012} ccmp_latn_1;\012\012script latn;\012";
+code = "lookup ccmp_Other_1 {\012	@CombiningTopAccents = [acutecomb brevecomb caroncomb circumflexcomb commaturnedabovecomb dieresiscomb dotaccentcomb gravecomb hookabovecomb hungarumlautcomb macroncomb ringcomb tildecomb];\012	@CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb];\012	sub [i j]' @CombiningTopAccents by [idotless jdotless];\012	sub [i j]' @CombiningNonTopAccents @CombiningTopAccents by [idotless jdotless];\012} ccmp_Other_1;\012\012lookup ccmp_latn_1 {\012	lookupflag 0;\012	sub brevecomb acutecomb by brevecomb_acutecomb;\012	sub brevecomb.cap acutecomb.cap by brevecomb_acutecomb.cap;\012	sub brevecomb gravecomb by brevecomb_gravecomb;\012	sub brevecomb.cap gravecomb.cap by brevecomb_gravecomb.cap;\012	sub brevecomb hookabovecomb by brevecomb_hookabovecomb;\012	sub brevecomb.cap hookabovecomb.cap by brevecomb_hookabovecomb.cap;\012	sub brevecomb tildecomb by brevecomb_tildecomb;\012	sub brevecomb.cap tildecomb.cap by brevecomb_tildecomb.cap;\012	sub circumflexcomb acutecomb by circumflexcomb_acutecomb;\012	sub circumflexcomb.cap acutecomb.cap by circumflexcomb_acutecomb.cap;\012	sub circumflexcomb gravecomb by circumflexcomb_gravecomb;\012	sub circumflexcomb.cap gravecomb.cap by circumflexcomb_gravecomb.cap;\012	sub circumflexcomb hookabovecomb by circumflexcomb_hookabovecomb;\012	sub circumflexcomb.cap hookabovecomb.cap by circumflexcomb_hookabovecomb.cap;\012	sub circumflexcomb tildecomb by circumflexcomb_tildecomb;\012	sub circumflexcomb.cap tildecomb.cap by circumflexcomb_tildecomb.cap;\012} ccmp_latn_1;\012\012script latn;\012lookup ccmp_latn_1;\012";
 disabled = 1;
 name = ccmp;
 },
 {
 automatic = 1;
-code = "script latn;\012language ROM;\012sub Scedilla by Scommaaccent;\012sub scedilla by scommaaccent;\012sub Tcedilla by Tcommaaccent;\012sub tcedilla by tcommaaccent;\012language MOL;\012sub Scedilla by Scommaaccent;\012sub scedilla by scommaaccent;\012sub Tcedilla by Tcommaaccent;\012sub tcedilla by tcommaaccent;\012language CAT;\012sub  L' periodcentered' L by Ldot;\012";
+code = "script latn;\012language CAT;\012sub  L' periodcentered' L by Ldot;\012language ROM;\012sub Scedilla by Scommaaccent;\012sub scedilla by scommaaccent;\012sub Tcedilla by Tcommaaccent;\012sub tcedilla by tcommaaccent;\012language MOL;\012sub Scedilla by Scommaaccent;\012sub scedilla by scommaaccent;\012sub Tcedilla by Tcommaaccent;\012sub tcedilla by tcommaaccent;\012language SRB;\012sub be-cy by be-cy.loclSRB;\012sub de-cy by de-cy.loclSRB;\012sub pe-cy by pe-cy.loclSRB;\012sub te-cy by te-cy.loclSRB;\012sub sha-cy by sha-cy.loclSRB;\012\012script cyrl;\012language CHU;\012sub Esdescender-cy by Esdescender-cy.loclCHU;\012sub esdescender-cy by esdescender-cy.loclCHU;\012language MKD;\012sub ge-cy by ge-cy.loclMKD;\012language BSH;\012sub Ghestroke-cy by Ghestroke-cy.loclBSH;\012sub Zedescender-cy by Zedescender-cy.loclBSH;\012sub Esdescender-cy by Esdescender-cy.loclBSH;\012sub ghestroke-cy by ghestroke-cy.loclBSH;\012sub zedescender-cy by zedescender-cy.loclBSH;\012sub esdescender-cy by esdescender-cy.loclBSH;\012language BGR;\012sub De-cy by De-cy.loclBGR;\012sub El-cy by El-cy.loclBGR;\012sub Ef-cy by Ef-cy.loclBGR;\012sub ve-cy by ve-cy.loclBGR;\012sub ge-cy by ge-cy.loclBGR;\012sub de-cy by de-cy.loclBGR;\012sub zhe-cy by zhe-cy.loclBGR;\012sub ze-cy by ze-cy.loclBGR;\012sub ii-cy by ii-cy.loclBGR;\012sub iishort-cy by iishort-cy.loclBGR;\012sub iigrave-cy by iigrave-cy.loclBGR;\012sub ka-cy by ka-cy.loclBGR;\012sub el-cy by el-cy.loclBGR;\012sub pe-cy by pe-cy.loclBGR;\012sub te-cy by te-cy.loclBGR;\012sub tse-cy by tse-cy.loclBGR;\012sub sha-cy by sha-cy.loclBGR;\012sub shcha-cy by shcha-cy.loclBGR;\012sub softsign-cy by softsign-cy.loclBGR;\012sub hardsign-cy by hardsign-cy.loclBGR;\012sub iu-cy by iu-cy.loclBGR;\012";
 disabled = 1;
 name = locl;
 },
 {
 automatic = 1;
-code = "sub zero.tf by zero;\012sub one.tf by one;\012sub two.tf by two;\012sub three.tf by three;\012sub four.tf by four;\012sub five.tf by five;\012sub six.tf by six;\012sub seven.tf by seven;\012sub eight.tf by eight;\012sub nine.tf by nine;\012sub period.tf by period;\012sub comma.tf by comma;\012sub colon.tf by colon;\012sub semicolon.tf by semicolon;\012sub numbersign.tf by numbersign;\012sub space.tf by space;\012sub cent.tf by cent;\012sub currency.tf by currency;\012sub dollar.tf by dollar;\012sub dong.tf by dong;\012sub euro.tf by euro;\012sub florin.tf by florin;\012sub franc.tf by franc;\012sub lira.tf by lira;\012sub liraTurkish.tf by liraTurkish;\012sub peso.tf by peso;\012sub ruble.tf by ruble;\012sub rupeeIndian.tf by rupeeIndian;\012sub sterling.tf by sterling;\012sub tenge.tf by tenge;\012sub tugrik.tf by tugrik;\012sub won.tf by won;\012sub yen.tf by yen;\012sub plus.tf by plus;\012sub minus.tf by minus;\012sub multiply.tf by multiply;\012sub divide.tf by divide;\012sub equal.tf by equal;\012sub notequal.tf by notequal;\012sub greater.tf by greater;\012sub less.tf by less;\012sub greaterequal.tf by greaterequal;\012sub lessequal.tf by lessequal;\012sub plusminus.tf by plusminus;\012sub approxequal.tf by approxequal;\012sub logicalnot.tf by logicalnot;\012sub percent.tf by percent;\012sub section.tf by section;\012";
+code = "sub zero.tf by zero;\012sub one.tf by one;\012sub two.tf by two;\012sub three.tf by three;\012sub four.tf by four;\012sub five.tf by five;\012sub six.tf by six;\012sub seven.tf by seven;\012sub eight.tf by eight;\012sub nine.tf by nine;\012sub period.tf by period;\012sub colon.tf by colon;\012sub numbersign.tf by numbersign;\012sub space.tf by space;\012sub hryvnia.tf by hryvnia;\012";
 disabled = 1;
 name = pnum;
 },
@@ -200,7 +200,7 @@ name = c2sc;
 },
 {
 automatic = 1;
-code = "sub a by a.sc;\012sub b by b.sc;\012sub c by c.sc;\012sub d by d.sc;\012sub e by e.sc;\012sub f by f.sc;\012sub g by g.sc;\012sub h by h.sc;\012sub i by i.sc;\012sub j by j.sc;\012sub k by k.sc;\012sub l by l.sc;\012sub m by m.sc;\012sub n by n.sc;\012sub o by o.sc;\012sub p by p.sc;\012sub q by q.sc;\012sub r by r.sc;\012sub s by s.sc;\012sub t by t.sc;\012sub u by u.sc;\012sub v by v.sc;\012sub w by w.sc;\012sub x by x.sc;\012sub y by y.sc;\012sub z by z.sc;\012sub zero by zero.sc;\012sub one by one.sc;\012sub two by two.sc;\012sub three by three.sc;\012sub four by four.sc;\012sub five by five.sc;\012sub six by six.sc;\012sub seven by seven.sc;\012sub eight by eight.sc;\012sub nine by nine.sc;\012";
+code = "sub a by a.sc;\012sub b by b.sc;\012sub c by c.sc;\012sub d by d.sc;\012sub e by e.sc;\012sub f by f.sc;\012sub g by g.sc;\012sub h by h.sc;\012sub i by i.sc;\012sub j by j.sc;\012sub k by k.sc;\012sub l by l.sc;\012sub m by m.sc;\012sub n by n.sc;\012sub o by o.sc;\012sub p by p.sc;\012sub q by q.sc;\012sub r by r.sc;\012sub s by s.sc;\012sub t by t.sc;\012sub u by u.sc;\012sub v by v.sc;\012sub w by w.sc;\012sub x by x.sc;\012sub y by y.sc;\012sub z by z.sc;\012sub a-cy by a-cy.sc;\012sub be-cy by be-cy.sc;\012sub ve-cy by ve-cy.sc;\012sub ge-cy by ge-cy.sc;\012sub gje-cy by gje-cy.sc;\012sub gheupturn-cy by gheupturn-cy.sc;\012sub de-cy by de-cy.sc;\012sub ie-cy by ie-cy.sc;\012sub iegrave-cy by iegrave-cy.sc;\012sub io-cy by io-cy.sc;\012sub zhe-cy by zhe-cy.sc;\012sub ze-cy by ze-cy.sc;\012sub ii-cy by ii-cy.sc;\012sub iishort-cy by iishort-cy.sc;\012sub iigrave-cy by iigrave-cy.sc;\012sub ka-cy by ka-cy.sc;\012sub kje-cy by kje-cy.sc;\012sub el-cy by el-cy.sc;\012sub em-cy by em-cy.sc;\012sub en-cy by en-cy.sc;\012sub o-cy by o-cy.sc;\012sub pe-cy by pe-cy.sc;\012sub er-cy by er-cy.sc;\012sub es-cy by es-cy.sc;\012sub te-cy by te-cy.sc;\012sub u-cy by u-cy.sc;\012sub ushort-cy by ushort-cy.sc;\012sub ef-cy by ef-cy.sc;\012sub ha-cy by ha-cy.sc;\012sub che-cy by che-cy.sc;\012sub tse-cy by tse-cy.sc;\012sub sha-cy by sha-cy.sc;\012sub shcha-cy by shcha-cy.sc;\012sub dzhe-cy by dzhe-cy.sc;\012sub softsign-cy by softsign-cy.sc;\012sub hardsign-cy by hardsign-cy.sc;\012sub yeru-cy by yeru-cy.sc;\012sub lje-cy by lje-cy.sc;\012sub nje-cy by nje-cy.sc;\012sub dze-cy by dze-cy.sc;\012sub e-cy by e-cy.sc;\012sub ereversed-cy by ereversed-cy.sc;\012sub i-cy by i-cy.sc;\012sub yi-cy by yi-cy.sc;\012sub je-cy by je-cy.sc;\012sub tshe-cy by tshe-cy.sc;\012sub iu-cy by iu-cy.sc;\012sub ia-cy by ia-cy.sc;\012sub dje-cy by dje-cy.sc;\012sub yat-cy by yat-cy.sc;\012sub yusbig-cy by yusbig-cy.sc;\012sub fita-cy by fita-cy.sc;\012sub izhitsa-cy by izhitsa-cy.sc;\012sub ghestroke-cy by ghestroke-cy.sc;\012sub ghemiddlehook-cy by ghemiddlehook-cy.sc;\012sub zhedescender-cy by zhedescender-cy.sc;\012sub zedescender-cy by zedescender-cy.sc;\012sub kadescender-cy by kadescender-cy.sc;\012sub kaverticalstroke-cy by kaverticalstroke-cy.sc;\012sub kabashkir-cy by kabashkir-cy.sc;\012sub endescender-cy by endescender-cy.sc;\012sub esdescender-cy by esdescender-cy.sc;\012sub ustrait-cy by ustrait-cy.sc;\012sub ustraitstroke-cy by ustraitstroke-cy.sc;\012sub hadescender-cy by hadescender-cy.sc;\012sub chedescender-cy by chedescender-cy.sc;\012sub cheverticalstroke-cy by cheverticalstroke-cy.sc;\012sub shha-cy by shha-cy.sc;\012sub palochka-cy by palochka-cy.sc;\012sub zhebreve-cy by zhebreve-cy.sc;\012sub chekhakassian-cy by chekhakassian-cy.sc;\012sub abreve-cy by abreve-cy.sc;\012sub adieresis-cy by adieresis-cy.sc;\012sub iebreve-cy by iebreve-cy.sc;\012sub schwa-cy by schwa-cy.sc;\012sub zhedieresis-cy by zhedieresis-cy.sc;\012sub zedieresis-cy by zedieresis-cy.sc;\012sub imacron-cy by imacron-cy.sc;\012sub idieresis-cy by idieresis-cy.sc;\012sub odieresis-cy by odieresis-cy.sc;\012sub obarred-cy by obarred-cy.sc;\012sub umacron-cy by umacron-cy.sc;\012sub udieresis-cy by udieresis-cy.sc;\012sub uhungarumlaut-cy by uhungarumlaut-cy.sc;\012sub chedieresis-cy by chedieresis-cy.sc;\012sub gedescender-cy by gedescender-cy.sc;\012sub yerudieresis-cy by yerudieresis-cy.sc;\012sub qa-cy by qa-cy.sc;\012sub we-cy by we-cy.sc;\012sub ve-cy.loclBGR by ve-cy.sc;\012sub ge-cy.loclBGR by ge-cy.sc;\012sub de-cy.loclBGR by de-cy.loclBGR.sc;\012sub zhe-cy.loclBGR by zhe-cy.sc;\012sub ze-cy.loclBGR by ze-cy.sc;\012sub ii-cy.loclBGR by ii-cy.sc;\012sub iishort-cy.loclBGR by iishort-cy.sc;\012sub iigrave-cy.loclBGR by iigrave-cy.sc;\012sub ka-cy.loclBGR by ka-cy.sc;\012sub el-cy.loclBGR by el-cy.loclBGR.sc;\012sub pe-cy.loclBGR by pe-cy.sc;\012sub te-cy.loclBGR by te-cy.sc;\012sub tse-cy.loclBGR by tse-cy.sc;\012sub sha-cy.loclBGR by sha-cy.sc;\012sub shcha-cy.loclBGR by shcha-cy.sc;\012sub softsign-cy.loclBGR by softsign-cy.sc;\012sub hardsign-cy.loclBGR by hardsign-cy.sc;\012sub iu-cy.loclBGR by iu-cy.sc;\012sub ghestroke-cy.loclBSH by ghestroke-cy.loclBSH.sc;\012sub zedescender-cy.loclBSH by zedescender-cy.loclBSH.sc;\012sub esdescender-cy.loclBSH by esdescender-cy.loclBSH.sc;\012sub esdescender-cy.loclCHU by esdescender-cy.loclCHU.sc;\012sub ge-cy.loclMKD by ge-cy.sc;\012sub be-cy.loclSRB by be-cy.sc;\012sub de-cy.loclSRB by de-cy.sc;\012sub pe-cy.loclSRB by pe-cy.sc;\012sub te-cy.loclSRB by te-cy.sc;\012sub sha-cy.loclSRB by sha-cy.sc;\012sub dieresiscomb by dieresiscomb.sc;\012sub gravecomb by gravecomb.sc;\012sub acutecomb by acutecomb.sc;\012sub hungarumlautcomb by hungarumlautcomb.sc;\012sub macroncomb by macroncomb.sc;\012sub brevecomb-cy by brevecomb-cy.sc;\012";
 disabled = 1;
 name = smcp;
 },
@@ -213,6 +213,10 @@ name = dlig;
 code = "sub [G g] o o g l e underscore l o g o by Google.logo;\012sub g o o g l e underscore [G g] by G.logo;\012sub s u p e r underscore [G g] underscore l o g o by G.super;\012sub G underscore l o g o by G.logo;\012sub e underscore l o g o by e.logo;\012sub g underscore l o g o by g.logo;\012sub l underscore l o g o by l.logo;\012sub o underscore l o g o by o.logo;";
 disabled = 1;
 name = calt;
+},
+{
+code = "sub De-cy by De-cy.loclBGR;\012sub El-cy by El-cy.loclBGR;\012sub Ef-cy by Ef-cy.loclBGR;\012sub ve-cy by ve-cy.loclBGR;\012sub ge-cy by ge-cy.loclBGR;\012sub de-cy by de-cy.loclBGR;\012sub zhe-cy by zhe-cy.loclBGR;\012sub ze-cy by ze-cy.loclBGR;\012sub ii-cy by ii-cy.loclBGR;\012sub iishort-cy by iishort-cy.loclBGR;\012sub iigrave-cy by iigrave-cy.loclBGR;\012sub ka-cy by ka-cy.loclBGR;\012sub el-cy by el-cy.loclBGR;\012sub pe-cy by pe-cy.loclBGR;\012sub te-cy by te-cy.loclBGR;\012sub tse-cy by tse-cy.loclBGR;\012sub sha-cy by sha-cy.loclBGR;\012sub shcha-cy by shcha-cy.loclBGR;\012sub softsign-cy by softsign-cy.loclBGR;\012sub hardsign-cy by hardsign-cy.loclBGR;\012sub iu-cy by iu-cy.loclBGR;\012";
+name = ss05;
 }
 );
 fontMaster = (
@@ -207308,6 +207312,7 @@ name = "Bold Italic";
 weightClass = Bold;
 },
 {
+exports = 0;
 customParameters = (
 {
 name = panose;
@@ -207344,6 +207349,7 @@ linkStyle = "Text Regular";
 name = "Text Italic";
 },
 {
+exports = 0;
 customParameters = (
 {
 name = panose;
@@ -207382,6 +207388,7 @@ name = "Text Medium Italic";
 weightClass = Medium;
 },
 {
+exports = 0;
 customParameters = (
 {
 name = panose;
@@ -207458,6 +207465,115 @@ instanceInterpolations = {
 isItalic = 1;
 linkStyle = "Text Regular";
 name = "Interpolation Test";
+},
+{
+customParameters = (
+{
+name = panose;
+value = (
+2,
+11,
+5,
+3,
+3,
+5,
+2,
+4,
+2,
+4
+);
+},
+{
+name = Autohint;
+value = 0;
+},
+{
+name = familyName;
+value = "Google Sans CYR";
+}
+);
+interpolationWeight = 18;
+interpolationWidth = 380;
+instanceInterpolations = {
+"8B58F8C3-CBF6-4C04-9FA1-F7EA6C699325" = 1;
+};
+isItalic = 1;
+linkStyle = Regular;
+name = Italic;
+},
+{
+customParameters = (
+{
+name = panose;
+value = (
+2,
+11,
+6,
+3,
+3,
+5,
+2,
+4,
+2,
+3
+);
+},
+{
+name = Autohint;
+value = 0;
+},
+{
+name = familyName;
+value = "Google Sans CYR";
+}
+);
+interpolationWeight = 18;
+interpolationWidth = 555;
+instanceInterpolations = {
+"8B58F8C3-CBF6-4C04-9FA1-F7EA6C699325" = 0.50565;
+"E3D0AE35-FDA8-40C5-B77D-1233E980F611" = 0.49435;
+};
+isItalic = 1;
+linkStyle = Medium;
+name = "Medium Italic";
+weightClass = Medium;
+},
+{
+customParameters = (
+{
+name = panose;
+value = (
+2,
+11,
+8,
+3,
+3,
+5,
+2,
+4,
+2,
+4
+);
+},
+{
+name = Autohint;
+value = 0;
+},
+{
+name = familyName;
+value = "Google Sans CYR";
+}
+);
+interpolationWeight = 18;
+interpolationWidth = 734;
+instanceInterpolations = {
+"E3D0AE35-FDA8-40C5-B77D-1233E980F611" = 1;
+};
+isBold = 1;
+isItalic = 1;
+linkStyle = Regular;
+name = "Bold Italic";
+weightClass = Bold;
 }
 );
 kerning = {
