@@ -17,7 +17,7 @@ matrix:
     - python: 3.7
       dist: xenial
       env: TOX_ENV=static-font-compiles
-      install: pip install --upgrade fontmake
+      install: pip install -r requirements.txt
       script: 
         - fontmake -g source/GoogleSans-Text/GoogleSansText-Beta.glyphs --interpolate -o ttf
         - fontmake -g source/GoogleSans-Text/GoogleSansText-Italic-Beta.glyphs --interpolate -o ttf
