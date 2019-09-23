@@ -42,5 +42,17 @@ matrix:
         - gftools qa -f new-fonts/*.ttf -fb new-fonts/*.ttf --fontbakery --diffbrowsers --diffenator -o out -ogh --out-url https://github.com/$TRAVIS_REPO_SLUG/pulls/$TRAVIS_PULL_REQUEST
 
 
+
+# The following prevents Travis from running CI on pull requests that come from a
+# branch in the same repository. Without this, it will run the same CI for the
+# pull request branch _and_ the pull request itself, which is unnecessary.
+branches:
+  only:
+    - master
+    # We want to build wip/* branches since these are not usually used for PRs
+    - /^wip\/.*$/
+    # We want to build version tags as well.
+    - /^v\d+\.\d+.*$/
+
 notifications:
   email: false
