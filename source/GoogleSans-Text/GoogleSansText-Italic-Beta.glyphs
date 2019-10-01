@@ -201,7 +201,6 @@ name = sups;
 {
 automatic = 1;
 code = "sub six by six.ss05;\012sub nine by nine.ss05;\012";
-disabled = 1;
 name = ss05;
 notes = "Name: Alternate Numbers";
 }
@@ -132717,7 +132716,7 @@ unicode = 20BA;
 {
 color = 4;
 glyphname = peso;
-lastChange = "2019-09-05 10:08:32 +0000";
+lastChange = "2019-10-01 08:22:20 +0000";
 layers = (
 {
 background = {
@@ -132879,7 +132878,7 @@ nodes = (
 width = 680;
 },
 {
-layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
+background = {
 paths = (
 {
 closed = 1;
@@ -132927,6 +132926,58 @@ nodes = (
 "710 581 LINE",
 "91 581 LINE",
 "80 517 LINE"
+);
+}
+);
+};
+layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
+paths = (
+{
+closed = 1;
+nodes = (
+"159 0 LINE",
+"198 221 LINE",
+"329 221 LINE SMOOTH",
+"523 221 OFFCURVE",
+"628 341 OFFCURVE",
+"628 504 CURVE SMOOTH",
+"628 627 OFFCURVE",
+"544 717 OFFCURVE",
+"402 717 CURVE SMOOTH",
+"200 717 LINE",
+"74 0 LINE"
+);
+},
+{
+closed = 1;
+nodes = (
+"672 367 LINE",
+"684 431 LINE",
+"65 431 LINE",
+"53 367 LINE"
+);
+},
+{
+closed = 1;
+nodes = (
+"271 636 LINE",
+"391 636 LINE SMOOTH",
+"480 636 OFFCURVE",
+"541 587 OFFCURVE",
+"541 494 CURVE SMOOTH",
+"541 378 OFFCURVE",
+"478 302 OFFCURVE",
+"346 302 CURVE SMOOTH",
+"212 302 LINE"
+);
+},
+{
+closed = 1;
+nodes = (
+"697 507 LINE",
+"708 571 LINE",
+"89 571 LINE",
+"78 507 LINE"
 );
 }
 );
