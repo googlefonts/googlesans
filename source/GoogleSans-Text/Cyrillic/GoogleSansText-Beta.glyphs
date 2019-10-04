@@ -1,5 +1,8 @@
 {
 .appVersion = "1240";
+DisplayStrings = (
+""
+);
 classes = (
 {
 code = "zero one two three four five six seven eight nine";
@@ -94,7 +97,7 @@ value = 1;
 },
 {
 name = note;
-value = "# Adjustment notes\012\012- All legacy marks have been made out of components to reduce the repetition in hinting\012- All accent marks have been slightly modified in height and position to align better. This is true in ALL optical sizes\012\012- Numbers (0123456789) (+tf variants) jump at optical size 14 to avoid a form morphing in interim steps (Angled to straight forms), which can look strange.\012\012\012– symbols – fixed minor spacing errors (tabular forms in the period.tf comma.tf colon.tf)\012\012– tcommaaccent.alt had an incorrect form \012– tcedilla.alt was missing. Added in!\012– jdotless.alt jcircumflex.alt added\012– t_f t_f.alt – changed the f terminal to be inline with all of the other f components\012\012\012\012\012# Cyrillic notes\012\012Differences between Text and Sans\012\012\012/H Text is 11 units narrower in Regular\012/H Text is 4 units narrower in Bold\012\012/C Text is 49 narrower in Regular\012/C Text is  in Bold\012\012/P W -25 Regular\012/P W -32 Bold\012\012/n Text is 14 units narrower in Regular\012/n Text is 3 units narrower in Bold\012\012/n Text is 42 units taller in Regular\012/n Text is 42 units taller in Bold";
+value = "# Adjustment notes\012\012- All legacy marks have been made out of components to reduce the repetition in hinting\012- All accent marks have been slightly modified in height and position to align better. This is true in ALL optical sizes\012\012- Numbers (0123456789) (+tf variants) jump at optical size 14 to avoid a form morphing in interim steps (Angled to straight forms), which can look strange.\012\012\012– symbols – fixed minor spacing errors (tabular forms in the period.tf comma.tf colon.tf)\012\012– tcommaaccent.alt had an incorrect form \012– tcedilla.alt was missing. Added in!\012– jdotless.alt jcircumflex.alt added\012– t_f t_f.alt – changed the f terminal to be inline with all of the other f components\012\012\012\012\012# Cyrillic notes\012\012Differences between Text and Sans\012\012\012/H Text is 11 units narrower in Regular\012/H Text is 4 units narrower in Bold\012\012/C Text is 49 narrower in Regular\012/C Text is  in Bold\012\012/P W -25 Regular\012/P W -32 Bold\012\012/n Text is 15 units narrower in Regular\012/n Text is 3 units narrower in Bold\012\012/n Text is 16 units taller in Regular\012/n Text is 16 units taller in Bold\012\012Regular\012n width -15\012n height +16\012\012Bold\012n width -3\012n height +16\012";
 }
 );
 date = "2017-07-06 09:41:44 +0000";
@@ -173,7 +176,10 @@ code = "script latn;\012language ROM;\012sub Scedilla by Scommaaccent;\012sub sc
 name = locl;
 },
 {
-automatic = 1;
+code = "sub De-cy by De-cy.loclBGR;\012sub El-cy by El-cy.loclBGR;\012sub Ef-cy by Ef-cy.loclBGR;\012sub ve-cy by ve-cy.loclBGR;\012sub ge-cy by ge-cy.loclBGR;\012sub de-cy by de-cy.loclBGR;\012sub zhe-cy by zhe-cy.loclBGR;\012sub ze-cy by ze-cy.loclBGR;\012sub ii-cy by ii-cy.loclBGR;\012sub iishort-cy by iishort-cy.loclBGR;\012sub iigrave-cy by iigrave-cy.loclBGR;\012sub ka-cy by ka-cy.loclBGR;\012sub el-cy by el-cy.loclBGR;\012sub pe-cy by pe-cy.loclBGR;\012sub te-cy by te-cy.loclBGR;\012sub tse-cy by tse-cy.loclBGR;\012sub sha-cy by sha-cy.loclBGR;\012sub shcha-cy by shcha-cy.loclBGR;\012sub softsign-cy by softsign-cy.loclBGR;\012sub hardsign-cy by hardsign-cy.loclBGR;\012sub iu-cy by iu-cy.loclBGR;\012";
+name = ss05;
+},
+{
 code = "sub one by onesuperior;\012sub two by twosuperior;\012sub three by threesuperior;\012sub four by foursuperior;\012";
 name = sups;
 },
@@ -191,10 +197,6 @@ name = smcp;
 automatic = 1;
 code = "sub zero by zero.ss03;\012sub one by one.ss03;\012sub two by two.ss03;\012sub three by three.ss03;\012sub four by four.ss03;\012sub five by five.ss03;\012sub six by six.ss03;\012sub seven by seven.ss03;\012sub eight by eight.ss03;\012sub nine by nine.ss03;\012sub colon by colon.ss03;\012";
 name = ss03;
-},
-{
-code = "sub De-cy by De-cy.loclBGR;\012sub El-cy by El-cy.loclBGR;\012sub Ef-cy by Ef-cy.loclBGR;\012sub ve-cy by ve-cy.loclBGR;\012sub ge-cy by ge-cy.loclBGR;\012sub de-cy by de-cy.loclBGR;\012sub zhe-cy by zhe-cy.loclBGR;\012sub ze-cy by ze-cy.loclBGR;\012sub ii-cy by ii-cy.loclBGR;\012sub iishort-cy by iishort-cy.loclBGR;\012sub iigrave-cy by iigrave-cy.loclBGR;\012sub ka-cy by ka-cy.loclBGR;\012sub el-cy by el-cy.loclBGR;\012sub pe-cy by pe-cy.loclBGR;\012sub te-cy by te-cy.loclBGR;\012sub tse-cy by tse-cy.loclBGR;\012sub sha-cy by sha-cy.loclBGR;\012sub shcha-cy by shcha-cy.loclBGR;\012sub softsign-cy by softsign-cy.loclBGR;\012sub hardsign-cy by hardsign-cy.loclBGR;\012sub iu-cy by iu-cy.loclBGR;\012";
-name = ss05;
 }
 );
 fontMaster = (
@@ -33586,7 +33588,7 @@ com.typemytype.robofont.mark = (
 {
 color = 5;
 glyphname = n;
-lastChange = "2019-09-06 11:39:26 +0000";
+lastChange = "2019-10-04 13:06:11 +0000";
 layers = (
 {
 anchors = (
@@ -33641,62 +33643,6 @@ name = top;
 position = "{313, 510}";
 }
 );
-background = {
-paths = (
-{
-closed = 1;
-nodes = (
-"204 0 LINE",
-"204 281 LINE SMOOTH",
-"204 360 OFFCURVE",
-"249 420 OFFCURVE",
-"321 420 CURVE SMOOTH",
-"380 420 OFFCURVE",
-"414 384 OFFCURVE",
-"414 317 CURVE SMOOTH",
-"414 0 LINE",
-"545 0 LINE",
-"545 335 LINE SMOOTH",
-"545 465 OFFCURVE",
-"481 542 OFFCURVE",
-"360 542 CURVE SMOOTH",
-"292 542 OFFCURVE",
-"234 511 OFFCURVE",
-"204 462 CURVE",
-"196 462 LINE",
-"196 526 LINE",
-"73 526 LINE",
-"73 0 LINE"
-);
-},
-{
-closed = 1;
-nodes = (
-"204 0 LINE",
-"204 260 LINE SMOOTH",
-"204 340 OFFCURVE",
-"249 404 OFFCURVE",
-"322 404 CURVE SMOOTH",
-"381 404 OFFCURVE",
-"417 367 OFFCURVE",
-"417 301 CURVE SMOOTH",
-"417 0 LINE",
-"548 0 LINE",
-"548 317 LINE SMOOTH",
-"548 443 OFFCURVE",
-"485 526 OFFCURVE",
-"360 526 CURVE SMOOTH",
-"294 526 OFFCURVE",
-"235 495 OFFCURVE",
-"204 446 CURVE",
-"196 446 LINE",
-"196 510 LINE",
-"73 510 LINE",
-"73 0 LINE"
-);
-}
-);
-};
 layerId = "090CB6A0-BE7C-4D17-A551-206C7456A8A3";
 paths = (
 {
@@ -64252,7 +64198,7 @@ source = B;
 {
 color = 4;
 glyphname = c.sc;
-lastChange = "2019-09-06 10:59:53 +0000";
+lastChange = "2019-10-01 09:22:36 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -89077,9 +89023,9 @@ rightKerningGroup = o;
 unicode = 043E;
 },
 {
-color = 9;
+color = 4;
 glyphname = "pe-cy";
-lastChange = "2019-09-06 11:45:51 +0000";
+lastChange = "2019-10-04 13:07:45 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -89125,18 +89071,18 @@ paths = (
 {
 closed = 1;
 nodes = (
-"158 0 LINE",
-"158 433 LINE",
-"418 433 LINE",
-"418 0 LINE",
-"503 0 LINE",
-"503 510 LINE",
-"73 510 LINE",
+"157 0 LINE",
+"157 448 LINE",
+"404 448 LINE",
+"404 0 LINE",
+"488 0 LINE",
+"488 526 LINE",
+"73 526 LINE",
 "73 0 LINE"
 );
 }
 );
-width = 576;
+width = 561;
 },
 {
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
@@ -89145,17 +89091,17 @@ paths = (
 closed = 1;
 nodes = (
 "204 0 LINE",
-"204 389 LINE",
-"407 389 LINE",
-"407 0 LINE",
-"538 0 LINE",
-"538 510 LINE",
-"73 510 LINE",
+"204 404 LINE",
+"404 404 LINE",
+"404 0 LINE",
+"535 0 LINE",
+"535 526 LINE",
+"73 526 LINE",
 "73 0 LINE"
 );
 }
 );
-width = 611;
+width = 608;
 }
 );
 leftKerningGroup = lc_straight;
@@ -111859,7 +111805,7 @@ unicode = 0392;
 {
 export = 0;
 glyphname = Gamma;
-lastChange = "2019-09-13 11:11:52 +0000";
+lastChange = "2019-10-04 12:21:19 +0000";
 layers = (
 {
 components = (
@@ -111895,7 +111841,7 @@ name = "Ge-cy";
 }
 );
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
-width = 547;
+width = 542;
 }
 );
 rightKerningGroup = T;
@@ -112973,7 +112919,7 @@ unicode = 039F;
 {
 export = 0;
 glyphname = Pi;
-lastChange = "2019-09-13 11:11:52 +0000";
+lastChange = "2019-10-04 12:21:19 +0000";
 layers = (
 {
 components = (
@@ -113009,7 +112955,7 @@ name = "Pe-cy";
 }
 );
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
-width = 714;
+width = 720;
 }
 );
 rightKerningGroup = H;
@@ -139890,8 +139836,8 @@ source = nine.cap;
 {
 color = 8;
 export = 0;
-glyphname = zero.sc;
-lastChange = "2019-09-19 17:08:23 +0000";
+glyphname = zero.sc.ss04;
+lastChange = "2019-09-20 12:53:25 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -167174,7 +167120,7 @@ unicode = 2206;
 {
 color = 0;
 glyphname = product;
-lastChange = "2019-08-16 10:26:14 +0000";
+lastChange = "2019-10-04 13:00:49 +0000";
 layers = (
 {
 components = (
@@ -167201,7 +167147,7 @@ name = "Pe-cy";
 }
 );
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
-width = 674;
+width = 669;
 },
 {
 components = (
@@ -167210,7 +167156,7 @@ name = "Pe-cy";
 }
 );
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
-width = 714;
+width = 720;
 }
 );
 unicode = 220F;
