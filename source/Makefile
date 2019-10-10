@@ -1,13 +1,12 @@
-gs:
-	@echo "TKTKTKTK"
+gs: gs-static gs-vf
 
-gs-android:
-	@echo "TKTKTKTK"
-
-gs-text:
-	@echo "TKTKTKTK"
+gs-static:
+	fontmake -g source/GoogleSans-Text/GoogleSansText-Beta.glyphs --interpolate -o ttf
+	fontmake -g source/GoogleSans-Text/GoogleSansText-Italic-Beta.glyphs --interpolate -o ttf
+	# TODO: add approach to unhinted and hinted build targets
 
 gs-vf:
-	@echo "TKTKTKTK"
+	fontmake -g source/GoogleSans-Text/GoogleSansText-Beta.glyphs -o variable
+    fontmake -g source/GoogleSans-Text/GoogleSansText-Italic-Beta.glyphs -o variable
 
-.PHONY: gs gs-android gs-text gs-vf
+.PHONY: gs gs-static gs-vf
