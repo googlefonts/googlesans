@@ -1,6 +1,6 @@
 
-gs gs-android gs-text gs-vf:
+gs gs-static gs-vf:
 	cd source && $(MAKE) $@
 
 
-.PHONY: gs gs-android gs-text gs-vf
+.PHONY: gs gs-static gs-vf
