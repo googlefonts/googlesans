@@ -25,7 +25,7 @@ matrix:
       dist: xenial
       env: TOX_ENV=variable-font-compiles
       install: 
-        - pip install --upgrade fontmake
+        - pip install -r requirements.txt
         - pip install git+https://www.github.com/m4rc1e/tools
       script: 
         - mv source source-new
