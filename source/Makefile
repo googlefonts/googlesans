@@ -12,28 +12,18 @@ STATIC_BUILD_DIR="$(BUILD_DIR)/static"
 VARIABLE_BUILD_DIR="$(BUILD_DIR)/variable"
 
 # --------------------------------------------------------
-#  Intermediate source file directory path definitions
-# --------------------------------------------------------
-INSTANCE_UFO_DIR="instance_ufo"
-MASTER_UFO_DIR="master_ufo"
-
-# --------------------------------------------------------
 #  TARGETS
 # --------------------------------------------------------
 
 gs: gs-static gs-vf
 
 gs-static:
-	fontmake -g "$(UPRIGHT_SOURCE)" --interpolate -o ttf --output-dir "$(STATIC_BUILD_DIR)"
-	fontmake -g "$(ITALIC_SOURCE)" --interpolate -o ttf --output-dir "$(STATIC_BUILD_DIR)"
-	@rm -rf $(INSTANCE_UFO_DIR)
-	@rm -rf $(MASTER_UFO_DIR)
+	fontmake -g "$(UPRIGHT_SOURCE)" --interpolate -o ttf --output-dir "$(STATIC_BUILD_DIR)" --master-dir {tmp} --instance-dir {tmp}
+	fontmake -g "$(ITALIC_SOURCE)" --interpolate -o ttf --output-dir "$(STATIC_BUILD_DIR)" --master-dir {tmp} --instance-dir {tmp}
 	# TODO: add approach to unhinted and hinted build targets
 
 gs-vf:
-	fontmake -g "$(UPRIGHT_SOURCE)" -o variable --output-dir "$(VARIABLE_BUILD_DIR)"
-	fontmake -g "$(ITALIC_SOURCE)" -o variable --output-dir "$(VARIABLE_BUILD_DIR)"
-	@rm -rf $(INSTANCE_UFO_DIR)
-	@rm -rf $(MASTER_UFO_DIR)
+	fontmake -g "$(UPRIGHT_SOURCE)" -o variable --output-dir "$(VARIABLE_BUILD_DIR)" --master-dir {tmp} --instance-dir {tmp}
+	fontmake -g "$(ITALIC_SOURCE)" -o variable --output-dir "$(VARIABLE_BUILD_DIR)" --master-dir {tmp} --instance-dir {tmp}
 
 .PHONY: gs gs-static gs-vf
