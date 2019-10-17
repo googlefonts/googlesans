@@ -1,6 +1,6 @@
+all: gs
 
 gs gs-static gs-vf:
 	cd source && $(MAKE) $@
 
-
-.PHONY: gs gs-static gs-vf
+.PHONY: all gs gs-static gs-vf
