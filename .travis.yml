@@ -39,7 +39,7 @@ matrix:
         - fontmake -g source-new/GoogleSans-Text/GoogleSansText-Beta.glyphs -o variable --output-path new-fonts/GoogleSansText-Roman-VF.ttf
         - fontmake -g source-new/GoogleSans-Text/GoogleSansText-Italic-Beta.glyphs -o variable --output-path new-fonts/GoogleSansText-Italic-VF.ttf
         # Test fonts
-        - gftools qa -f new-fonts/*.ttf -fb new-fonts/*.ttf --fontbakery -o out -ogh --out-url https://github.com/$TRAVIS_REPO_SLUG/pulls/$TRAVIS_PULL_REQUEST
+        - gftools qa -f new-fonts/*.ttf -fb new-fonts/*.ttf --fontbakery --diffbrowsers --diffenator -o out -ogh --out-url https://github.com/$TRAVIS_REPO_SLUG/pulls/$TRAVIS_PULL_REQUEST
 
 
 notifications:
