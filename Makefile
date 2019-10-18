@@ -29,7 +29,7 @@ gs-vf-upright gs-vf-italic:
 	cd source && $(MAKE) $@
 
 # ------------------------------
-# Build dependency updates
+# Build dependency management
 # ------------------------------
 # `pip-compile` and `pip-sync` tools are from the https://github.com/jazzband/pip-tools package
 
