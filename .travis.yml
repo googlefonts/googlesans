@@ -32,17 +32,15 @@ matrix:
       install: 
         - pip install -r requirements.txt
         - pip install git+https://www.github.com/googlefonts/tools
-      script: 
-        - mv source source-new
-        - git checkout master source/
-        # Generate from master
-        - mkdir old-fonts
-        - fontmake -g source/GoogleSans-Text/GoogleSansText-Beta.glyphs -o variable --output-path old-fonts/GoogleSansText-Roman-VF.ttf
-        - fontmake -g source/GoogleSans-Text/GoogleSansText-Italic-Beta.glyphs -o variable --output-path old-fonts/GoogleSansText-Italic-VF.ttf
+      script:
         # Generate from this branch
-        - mkdir new-fonts
-        - fontmake -g source-new/GoogleSans-Text/GoogleSansText-Beta.glyphs -o variable --output-path new-fonts/GoogleSansText-Roman-VF.ttf
-        - fontmake -g source-new/GoogleSans-Text/GoogleSansText-Italic-Beta.glyphs -o variable --output-path new-fonts/GoogleSansText-Italic-VF.ttf
+        - make gs-vf
+        - mv build/GoogleSans/variable build/GoogleSans/variable-new
+        # checkout master branch for comparison
+        - git checkout master
+        # Generate from master
+        - make gs-vf
+        - mv build/GoogleSans/variable build/GoogleSans/variable-old
         # Test fonts
         - gftools qa -f new-fonts/*.ttf -fb new-fonts/*.ttf --fontbakery --diffbrowsers --diffenator -o out --out-url https://github.com/$TRAVIS_REPO_SLUG/pulls/$TRAVIS_PULL_REQUEST
 
