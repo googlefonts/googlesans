@@ -4,9 +4,17 @@ INSTANCE_UFO_DIR="$(FONT_BUILD_DIR)/instance_ufo"
 
 all: gs-static gs-vf
 
+# ------------------------------
+# Clean
+# ------------------------------
+
 clean:
 	rm -rf $(MASTER_UFO_DIR)
 	rm -rf $(INSTANCE_UFO_DIR)
+
+# ------------------------------
+# Compile
+# ------------------------------
 
 gs-static gs-vf:
 	cd source && $(MAKE) $@
@@ -19,6 +27,21 @@ gst-regular gst-medium gst-bold gst-italic gst-medium-italic gst-bold-italic:
 
 gs-vf-upright gs-vf-italic:
 	cd source && $(MAKE) $@
+
+# ------------------------------
+# Build dependency updates
+# ------------------------------
+# `pip-compile` and `pip-sync` tools are from the https://github.com/jazzband/pip-tools package
+
+# this updates the requirements.txt file with new releases of Python build dependencies
+update-deps:
+	pip-compile -U
+
+# this syncs updated build dependencies in a virtual environment
+# installing and uninstalling packages as (re)defined in the requirements.txt file
+sync-deps:
+	pip-sync
+
 
 .PHONY: all \
 clean \
