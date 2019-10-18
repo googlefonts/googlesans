@@ -19,11 +19,16 @@ matrix:
       env: TOX_ENV=static-font-compiles
       install: pip install -r requirements.txt
       script: 
-        - fontmake -g source/GoogleSans-Text/GoogleSansText-Beta.glyphs --interpolate -o ttf
-        - fontmake -g source/GoogleSans-Text/GoogleSansText-Italic-Beta.glyphs --interpolate -o ttf
+        - make gs-static
     - python: 3.7
       dist: xenial
       env: TOX_ENV=variable-font-compiles
+      install: pip install -r requirements.txt
+      script: 
+        - make gs-vf
+    - python: 3.7
+      dist: xenial
+      env: TOX_ENV=qa-tests
       install: 
         - pip install -r requirements.txt
         - pip install git+https://www.github.com/googlefonts/tools
