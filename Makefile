@@ -49,4 +49,4 @@ gs-static gs-vf \
 gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
 gs-vf-upright gs-vf-italic \
-build-designspace-upright build-designspace-italic
+update-deps sync-deps
