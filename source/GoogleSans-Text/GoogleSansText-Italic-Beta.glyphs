@@ -281,6 +281,7 @@ position = "{91, 960}";
 );
 id = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
 italicAngle = 10;
+visible = 1;
 weightValue = 14;
 widthValue = 380;
 xHeight = 526;
@@ -376,6 +377,7 @@ verticalStems = (
 131,
 95
 );
+visible = 1;
 weight = Bold;
 weightValue = 14;
 widthValue = 734;
@@ -454,6 +456,7 @@ verticalStems = (
 85,
 86
 );
+visible = 1;
 weightValue = 18;
 widthValue = 380;
 xHeight = 510;
@@ -531,6 +534,7 @@ verticalStems = (
 131,
 95
 );
+visible = 1;
 weight = Bold;
 weightValue = 18;
 widthValue = 734;
@@ -107889,7 +107893,7 @@ rightKerningGroup = lower_straight;
 },
 {
 glyphname = "iishort-cy.loclBGR";
-lastChange = "2019-11-07 09:49:59 +0000";
+lastChange = "2019-11-07 10:37:21 +0000";
 layers = (
 {
 components = (
@@ -107911,7 +107915,7 @@ name = "ii-cy.loclBGR";
 },
 {
 name = "brevecomb-cy";
-transform = "{1, 0, 0, 1, 102, 0}";
+transform = "{1, 0, 0, 1, 98, 0}";
 }
 );
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
@@ -107949,7 +107953,7 @@ rightKerningGroup = lower_straight;
 },
 {
 glyphname = "iigrave-cy.loclBGR";
-lastChange = "2019-11-07 09:49:59 +0000";
+lastChange = "2019-11-07 10:37:21 +0000";
 layers = (
 {
 components = (
@@ -107971,7 +107975,7 @@ name = "ii-cy.loclBGR";
 },
 {
 name = gravecomb;
-transform = "{1, 0, 0, 1, 44, 0}";
+transform = "{1, 0, 0, 1, 40, 0}";
 }
 );
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
@@ -110141,7 +110145,7 @@ width = 624;
 },
 {
 glyphname = "pe-cy.loclSRB";
-lastChange = "2019-11-07 09:50:01 +0000";
+lastChange = "2019-11-07 10:37:21 +0000";
 layers = (
 {
 components = (
@@ -110163,7 +110167,7 @@ name = "ii-cy.loclBGR";
 },
 {
 name = macroncomb;
-transform = "{1, 0, 0, 1, 100, 0}";
+transform = "{1, 0, 0, 1, 96, 0}";
 }
 );
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
@@ -111611,7 +111615,7 @@ rightKerningGroup = E;
 },
 {
 glyphname = "iegrave-cy.sc";
-lastChange = "2019-11-07 10:26:28 +0000";
+lastChange = "2019-11-07 10:37:18 +0000";
 layers = (
 {
 components = (
@@ -111633,11 +111637,11 @@ name = "ie-cy.sc";
 },
 {
 name = gravecomb.sc;
-transform = "{1, 0, 0, 1, 51, 70}";
+transform = "{1, 0, 0, 1, 538, 0}";
 }
 );
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
-width = 552;
+width = 1138;
 },
 {
 components = (
@@ -112500,7 +112504,7 @@ source = "Iishort-cy";
 },
 {
 glyphname = "iigrave-cy.sc";
-lastChange = "2019-11-07 09:49:59 +0000";
+lastChange = "2019-11-07 10:37:18 +0000";
 layers = (
 {
 components = (
@@ -112522,11 +112526,11 @@ name = "ii-cy.sc";
 },
 {
 name = gravecomb.sc;
-transform = "{1, 0, 0, 1, 131, 70}";
+transform = "{1, 0, 0, 1, 675, 0}";
 }
 );
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
-width = 675;
+width = 1275;
 },
 {
 components = (
@@ -112548,11 +112552,11 @@ name = "ii-cy.sc";
 },
 {
 name = gravecomb.sc;
-transform = "{1, 0, 0, 1, 115, 0}";
+transform = "{1, 0, 0, 1, 664, 0}";
 }
 );
 layerId = "E3D0AE35-FDA8-40C5-B77D-1233E980F611";
-width = 664;
+width = 1264;
 }
 );
 leftKerningGroup = cyr_H;
@@ -131091,8 +131095,8 @@ unicode = 03D7;
 },
 {
 color = 1;
-glyphname = alpha.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = alpha.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 anchors = (
@@ -131160,8 +131164,8 @@ rightKerningGroup = GRK_alpha.sc;
 },
 {
 color = 1;
-glyphname = beta.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = beta.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
@@ -131205,8 +131209,8 @@ rightKerningGroup = GRK_beta.sc;
 },
 {
 color = 1;
-glyphname = gamma.smcp;
-lastChange = "2019-11-06 15:05:54 +0000";
+glyphname = gamma.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
@@ -131284,8 +131288,8 @@ rightMetricsKey = "=f.sc";
 },
 {
 color = 1;
-glyphname = delta.smcp;
-lastChange = "2019-11-06 15:05:50 +0000";
+glyphname = delta.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
@@ -131407,8 +131411,8 @@ rightMetricsKey = "=a.sc+30";
 },
 {
 color = 1;
-glyphname = epsilon.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = epsilon.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 anchors = (
@@ -131476,8 +131480,8 @@ rightKerningGroup = GRK_epsilon.sc;
 },
 {
 color = 1;
-glyphname = zeta.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = zeta.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
@@ -131521,8 +131525,8 @@ rightKerningGroup = GRK_zeta.sc;
 },
 {
 color = 1;
-glyphname = eta.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = eta.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 anchors = (
@@ -131590,8 +131594,8 @@ rightKerningGroup = GRK_eta.sc;
 },
 {
 color = 1;
-glyphname = theta.smcp;
-lastChange = "2019-11-06 15:06:02 +0000";
+glyphname = theta.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
@@ -131681,8 +131685,8 @@ rightMetricsKey = "=o.sc";
 },
 {
 color = 1;
-glyphname = iota.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = iota.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 anchors = (
@@ -131750,8 +131754,8 @@ rightKerningGroup = GRK_iota.sc;
 },
 {
 color = 1;
-glyphname = kappa.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = kappa.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
@@ -131795,8 +131799,8 @@ rightKerningGroup = GRK_kappa.sc;
 },
 {
 color = 1;
-glyphname = lambda.smcp;
-lastChange = "2019-11-06 15:05:22 +0000";
+glyphname = lambda.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
@@ -131890,8 +131894,8 @@ rightMetricsKey = "=a.sc";
 },
 {
 color = 1;
-glyphname = mu.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = mu.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
@@ -131935,8 +131939,8 @@ rightKerningGroup = GRK_eta.sc;
 },
 {
 color = 1;
-glyphname = nu.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = nu.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
@@ -131980,8 +131984,8 @@ rightKerningGroup = GRK_eta.sc;
 },
 {
 color = 1;
-glyphname = xi.smcp;
-lastChange = "2019-11-06 15:06:08 +0000";
+glyphname = xi.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
@@ -132123,8 +132127,8 @@ rightMetricsKey = "=e.sc";
 },
 {
 color = 1;
-glyphname = omicron.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = omicron.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 anchors = (
@@ -132192,8 +132196,8 @@ rightKerningGroup = GRK_omicron.sc;
 },
 {
 color = 1;
-glyphname = pi.smcp;
-lastChange = "2019-11-06 15:06:11 +0000";
+glyphname = pi.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
@@ -132279,8 +132283,8 @@ rightMetricsKey = "=h.sc";
 },
 {
 color = 1;
-glyphname = rho.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = rho.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
@@ -132324,8 +132328,8 @@ rightKerningGroup = GRK_rho.sc;
 },
 {
 color = 1;
-glyphname = sigmafinal.smcp;
-lastChange = "2019-11-06 15:06:15 +0000";
+glyphname = sigmafinal.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
@@ -132431,13 +132435,13 @@ rightMetricsKey = "=z.sc";
 },
 {
 color = 1;
-glyphname = sigma.smcp;
-lastChange = "2019-11-06 15:06:18 +0000";
+glyphname = sigma.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
 {
-name = sigmafinal.smcp;
+name = sigmafinal.sc;
 }
 );
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
@@ -132446,7 +132450,7 @@ width = 517;
 {
 components = (
 {
-name = sigmafinal.smcp;
+name = sigmafinal.sc;
 }
 );
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
@@ -132455,7 +132459,7 @@ width = 555;
 {
 components = (
 {
-name = sigmafinal.smcp;
+name = sigmafinal.sc;
 }
 );
 layerId = "8B58F8C3-CBF6-4C04-9FA1-F7EA6C699325";
@@ -132464,7 +132468,7 @@ width = 525;
 {
 components = (
 {
-name = sigmafinal.smcp;
+name = sigmafinal.sc;
 }
 );
 layerId = "E3D0AE35-FDA8-40C5-B77D-1233E980F611";
@@ -132476,8 +132480,8 @@ rightKerningGroup = GRK_sigma.sc;
 },
 {
 color = 1;
-glyphname = tau.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = tau.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
@@ -132521,8 +132525,8 @@ rightKerningGroup = GRK_tau.sc;
 },
 {
 color = 1;
-glyphname = upsilon.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = upsilon.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 anchors = (
@@ -132590,8 +132594,8 @@ rightKerningGroup = GRK_upsilon.sc;
 },
 {
 color = 1;
-glyphname = phi.smcp;
-lastChange = "2019-11-06 15:06:19 +0000";
+glyphname = phi.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
@@ -132845,8 +132849,8 @@ rightMetricsKey = "=o.sc";
 },
 {
 color = 1;
-glyphname = chi.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = chi.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
@@ -132890,8 +132894,8 @@ rightKerningGroup = GRK_chi.sc;
 },
 {
 color = 1;
-glyphname = psi.smcp;
-lastChange = "2019-11-06 15:06:25 +0000";
+glyphname = psi.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
@@ -133121,8 +133125,8 @@ rightMetricsKey = "=u.sc";
 },
 {
 color = 1;
-glyphname = omega.smcp;
-lastChange = "2019-11-06 15:05:30 +0000";
+glyphname = omega.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 anchors = (
@@ -133336,13 +133340,13 @@ rightMetricsKey = "=o.sc";
 },
 {
 color = 1;
-glyphname = iotatonos.smcp;
-lastChange = "2019-11-07 10:23:02 +0000";
+glyphname = iotatonos.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
 {
-name = iota.smcp;
+name = iota.sc;
 },
 {
 name = tonos.case;
@@ -133355,7 +133359,7 @@ width = 231;
 {
 components = (
 {
-name = iota.smcp;
+name = iota.sc;
 },
 {
 name = tonos.case;
@@ -133368,7 +133372,7 @@ width = 273;
 {
 components = (
 {
-name = iota.smcp;
+name = iota.sc;
 },
 {
 name = tonos.case;
@@ -133381,7 +133385,7 @@ width = 231;
 {
 components = (
 {
-name = iota.smcp;
+name = iota.sc;
 },
 {
 name = tonos.case;
@@ -133397,13 +133401,13 @@ rightKerningGroup = GRK_upsilon.sc;
 },
 {
 color = 1;
-glyphname = iotadieresis.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = iotadieresis.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
 {
-name = iota.smcp;
+name = iota.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133416,7 +133420,7 @@ width = 231;
 {
 components = (
 {
-name = iota.smcp;
+name = iota.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133429,7 +133433,7 @@ width = 273;
 {
 components = (
 {
-name = iota.smcp;
+name = iota.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133442,7 +133446,7 @@ width = 231;
 {
 components = (
 {
-name = iota.smcp;
+name = iota.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133458,13 +133462,13 @@ rightKerningGroup = GRK_iota.sc;
 },
 {
 color = 1;
-glyphname = iotadieresistonos.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = iotadieresistonos.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
 {
-name = iota.smcp;
+name = iota.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133477,7 +133481,7 @@ width = 231;
 {
 components = (
 {
-name = iota.smcp;
+name = iota.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133490,7 +133494,7 @@ width = 273;
 {
 components = (
 {
-name = iota.smcp;
+name = iota.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133503,7 +133507,7 @@ width = 231;
 {
 components = (
 {
-name = iota.smcp;
+name = iota.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133519,13 +133523,13 @@ rightKerningGroup = GRK_iota.sc;
 },
 {
 color = 1;
-glyphname = upsilontonos.smcp;
-lastChange = "2019-11-07 10:23:02 +0000";
+glyphname = upsilontonos.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
 {
-name = upsilon.smcp;
+name = upsilon.sc;
 },
 {
 name = tonos.case;
@@ -133538,7 +133542,7 @@ width = 516;
 {
 components = (
 {
-name = upsilon.smcp;
+name = upsilon.sc;
 },
 {
 name = tonos.case;
@@ -133551,7 +133555,7 @@ width = 581;
 {
 components = (
 {
-name = upsilon.smcp;
+name = upsilon.sc;
 },
 {
 name = tonos.case;
@@ -133564,7 +133568,7 @@ width = 538;
 {
 components = (
 {
-name = upsilon.smcp;
+name = upsilon.sc;
 },
 {
 name = tonos.case;
@@ -133580,13 +133584,13 @@ rightKerningGroup = GRK_upsilon.sc;
 },
 {
 color = 1;
-glyphname = upsilondieresis.smcp;
-lastChange = "2019-11-06 15:05:49 +0000";
+glyphname = upsilondieresis.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
 {
-name = upsilon.smcp;
+name = upsilon.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133599,7 +133603,7 @@ width = 516;
 {
 components = (
 {
-name = upsilon.smcp;
+name = upsilon.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133612,7 +133616,7 @@ width = 581;
 {
 components = (
 {
-name = upsilon.smcp;
+name = upsilon.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133625,7 +133629,7 @@ width = 538;
 {
 components = (
 {
-name = upsilon.smcp;
+name = upsilon.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133641,13 +133645,13 @@ rightKerningGroup = GRK_upsilon.sc;
 },
 {
 color = 1;
-glyphname = upsilondieresistonos.smcp;
-lastChange = "2019-11-06 15:05:51 +0000";
+glyphname = upsilondieresistonos.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
 {
-name = upsilon.smcp;
+name = upsilon.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133660,7 +133664,7 @@ width = 516;
 {
 components = (
 {
-name = upsilon.smcp;
+name = upsilon.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133673,7 +133677,7 @@ width = 581;
 {
 components = (
 {
-name = upsilon.smcp;
+name = upsilon.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133686,7 +133690,7 @@ width = 538;
 {
 components = (
 {
-name = upsilon.smcp;
+name = upsilon.sc;
 },
 {
 name = dieresiscomb.cap;
@@ -133702,13 +133706,13 @@ rightKerningGroup = GRK_upsilon.sc;
 },
 {
 color = 1;
-glyphname = omicrontonos.smcp;
-lastChange = "2019-11-07 10:23:02 +0000";
+glyphname = omicrontonos.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
 {
-name = omicron.smcp;
+name = omicron.sc;
 },
 {
 name = tonos.case;
@@ -133721,7 +133725,7 @@ width = 635;
 {
 components = (
 {
-name = omicron.smcp;
+name = omicron.sc;
 },
 {
 name = tonos.case;
@@ -133734,7 +133738,7 @@ width = 670;
 {
 components = (
 {
-name = omicron.smcp;
+name = omicron.sc;
 },
 {
 name = tonos.case;
@@ -133747,7 +133751,7 @@ width = 673;
 {
 components = (
 {
-name = omicron.smcp;
+name = omicron.sc;
 },
 {
 name = tonos.case;
@@ -133763,13 +133767,13 @@ rightKerningGroup = GRK_omicron.sc;
 },
 {
 color = 1;
-glyphname = omegatonos.smcp;
-lastChange = "2019-11-07 10:23:02 +0000";
+glyphname = omegatonos.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
 {
-name = omega.smcp;
+name = omega.sc;
 },
 {
 name = tonos.case;
@@ -133782,7 +133786,7 @@ width = 655;
 {
 components = (
 {
-name = omega.smcp;
+name = omega.sc;
 },
 {
 name = tonos.case;
@@ -133795,7 +133799,7 @@ width = 677;
 {
 components = (
 {
-name = omega.smcp;
+name = omega.sc;
 },
 {
 name = tonos.case;
@@ -133808,7 +133812,7 @@ width = 648;
 {
 components = (
 {
-name = omega.smcp;
+name = omega.sc;
 },
 {
 name = tonos.case;
@@ -133824,13 +133828,13 @@ rightKerningGroup = GRK_omicron.sc;
 },
 {
 color = 1;
-glyphname = alphatonos.smcp;
-lastChange = "2019-11-07 10:23:02 +0000";
+glyphname = alphatonos.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
 {
-name = alpha.smcp;
+name = alpha.sc;
 },
 {
 name = tonos.case;
@@ -133843,7 +133847,7 @@ width = 545;
 {
 components = (
 {
-name = alpha.smcp;
+name = alpha.sc;
 },
 {
 name = tonos.case;
@@ -133856,7 +133860,7 @@ width = 598;
 {
 components = (
 {
-name = alpha.smcp;
+name = alpha.sc;
 },
 {
 name = tonos.case;
@@ -133869,7 +133873,7 @@ width = 594;
 {
 components = (
 {
-name = alpha.smcp;
+name = alpha.sc;
 },
 {
 name = tonos.case;
@@ -133885,13 +133889,13 @@ rightKerningGroup = GRK_upsilon.sc;
 },
 {
 color = 1;
-glyphname = epsilontonos.smcp;
-lastChange = "2019-11-07 10:23:02 +0000";
+glyphname = epsilontonos.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
 {
-name = epsilon.smcp;
+name = epsilon.sc;
 },
 {
 name = tonos.case;
@@ -133904,7 +133908,7 @@ width = 508;
 {
 components = (
 {
-name = epsilon.smcp;
+name = epsilon.sc;
 },
 {
 name = tonos.case;
@@ -133917,7 +133921,7 @@ width = 538;
 {
 components = (
 {
-name = epsilon.smcp;
+name = epsilon.sc;
 },
 {
 name = tonos.case;
@@ -133930,7 +133934,7 @@ width = 491;
 {
 components = (
 {
-name = epsilon.smcp;
+name = epsilon.sc;
 },
 {
 name = tonos.case;
@@ -133946,13 +133950,13 @@ rightKerningGroup = GRK_upsilon.sc;
 },
 {
 color = 1;
-glyphname = etatonos.smcp;
-lastChange = "2019-11-07 10:23:02 +0000";
+glyphname = etatonos.sc;
+lastChange = "2019-11-07 10:37:40 +0000";
 layers = (
 {
 components = (
 {
-name = eta.smcp;
+name = eta.sc;
 },
 {
 name = tonos.case;
@@ -133965,7 +133969,7 @@ width = 591;
 {
 components = (
 {
-name = eta.smcp;
+name = eta.sc;
 },
 {
 name = tonos.case;
@@ -133978,7 +133982,7 @@ width = 616;
 {
 components = (
 {
-name = eta.smcp;
+name = eta.sc;
 },
 {
 name = tonos.case;
@@ -133991,7 +133995,7 @@ width = 619;
 {
 components = (
 {
-name = eta.smcp;
+name = eta.sc;
 },
 {
 name = tonos.case;
@@ -134007,8 +134011,8 @@ rightKerningGroup = GRK_upsilon.sc;
 },
 {
 color = 1;
-glyphname = kaiSymbol.smcp;
-lastChange = "2019-11-06 15:06:31 +0000";
+glyphname = kaiSymbol.sc;
+lastChange = "2019-11-07 10:37:47 +0000";
 layers = (
 {
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
@@ -134123,8 +134127,8 @@ nodes = (
 width = 593;
 }
 );
-leftMetricsKey = "=kappa.smcp";
-rightMetricsKey = "=kappa.smcp";
+leftMetricsKey = "=kappa.sc";
+rightMetricsKey = "=kappa.sc";
 },
 {
 color = 4;
