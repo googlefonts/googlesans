@@ -1,0 +1,45 @@
+Google Sans text Regular:
+ 
+  ☐ The horizontal strokes in Cyrillic lowercase are mostly 78 units thick, while horizontal strokes in the Latin letters z, t, f are 77 units. Cyrillic н horizontal stroke is 77 units. My suggestion is to keep the rest of the horizontal strokes in Cyrillic 77 units thick as well. Or at least, the upper horizontal strokes in д, л, п, т, г and similar letters. Since straight horizontal strokes are more frequent in Cyrillic than in Latin, they have a stronger impact on the overall contrast.  
+
+  ☐ п :7 units wider.
+  ☐ ц: 4 units wider.
+  ☐ ц: right arm 4 units wider.
+  ☐ щ: right arm is currently 1 unit wider than in ц, suggestion: keep it as in ц.
+  ☐ џ is currently 3 units narrower than ц, suggestion: keep the width as in ц, it will also help to keep the descending element exactly in the middle.
+  ☐ д appears to be quite cramped. I suggest to make it as wide as л, or even wider as its white space is closed.
+  ☐ д: right arm is currently 1 unit wider thank in ц, suggestion: keep it as in ц.
+  ☐ д: left arm 2 units wider, left side bearing reduced to 28 units.
+  ☐ л: 6 units wider. Left in-stroke 10 units longer, 1 unit thinner to achieve better contrast. The way vertical stem turns into a curve doesn't look smooth, there is also undesired weight at the bottom right area of the curve ("hockey stick"), not consistent with the uppercase Л. I suggest to add two additional nodes with 45° control points for better control of the curve. I made the end of the in-stroke 5 units thicker to make it look consistent with the rest of the letter. 
+  ☐ т: 4 units wider.
+  ☐ ґ: stem one unit thinner in accordance with the rest of the lowercase.
+  ☐ ґ hook: I would suggest to keep it as thick/tall as the descending elements in цщд.
+  ☐ ф: round vertical stems are 1 unit thicker than in o, I would make them the same or 2 units thinner. 
+  ☐ ф: appears quite dense, so I would make it 8 units wider. The curvature of the ovals slightly less boxy.
+  ☐ ф: the areas where the ovals connect to the vertical stem is too dark dark, I would reduce the thickness of the horizontal strokes by 4 units at the top and at the bottom.
+  ☐ ж: the joint where diagonals meet the middle stem is thicker than in к, the letter appears dark in text settings of smaller sizes. Why diagonals on the left side are one unit closer to the middle stem, than on the right size? 
+  ☐ в: top and bottom horizontals are too thick (79 units). Since there are 3 horizontal strokes within the x-height, the letter looks to dark. I would suggest to reduce the thickness of the top and bottom horizontals to 75 units.
+  ☐ з: moved the upper bowl to the right, so the letter is better balanced. Made counters more symmetrical and balanced. Improved curves. Adjusted terminals so they fit better the terminals of э, s, a. Middle stroke 2 units lower.
+  ☐ ьъы: the bowl looks too cramped, I would make it 12 units wider.  
+  ☐ ьъы: bottom horizontal is 79 units, I would make it 77.
+  ☐ ь the right (round) stem is 86 units, I would make it 85 (as in ъы).
+  ☐ ы: the distance between two parts of ы 4 units bigger.
+  ☐ ъ: left arm too short, made it 20 units longer.
+  ☐ я: upper horizontal too thick, should be 77. The middle horizontal was 78 units, but should be even thinner(see в, Latin R), made it 72 units thick.
+  ☐ я: the curves of the bowl are unbalanced, I would adjust it after the bowl of ь
+  ☐ я: the whole letter 18 units wider
+  ☐ я: diagonal thicker, more slanted (comparing it to ж, rather than to R). The most right corner of the diagonal cut as in жкх
+  ☐ єэ: middle stroke 7 units higher
+  ☐ є: terminals slightly more closed, the curvature of the terminals and distribution of the weight along the oval more like in c
+  ☐ э: terminals slightly more "boxy", see bottom terminal of s and upper terminal of a. 
+  ☐ ч: upper part of the vertical strokes do not reach the x-height (1 unit)
+  ☐ ч: 8 units wider, bowl 6 units deeper. Horizontal 1 unit thinner (77)
+  ☐ ч: I don't see the logic or necessity of the ink-trap there, especially in bolder weights
+  ☐ ч: adjusted the curvature of the bowl, made it slightly flatter, the joint slightly thinner, so the contrast is consistent with other letters
+  ☐ б: appears to be the most problematic letter so far. The oval is overcompensated, way too low. Taking in account generous ascender height in this master, the oval can reach the x-height (excluding the overshoot, though). The area where the oval joins the ascender is too dark, see the joints of b for comparison. The curvature of the ascender (the tail) is unbalanced, the weight distribution along the tail is insecure, the little upstroke at the end is unreasonably short. I would also suggest to place the control points of the nodes in the upper left corner of the tail at 45° in all masters for better interpolation. Upper horizontal of the oval is for some reasons 1 unit thicker than in th rest of the ovals, while thickness of the right side of the oval is 2 units thinner than in the rest of the ovals, which seems to be illogical. The shape of the oval is unnecessarily asymmetric.
+  ☐ м vertical stems 2 units thinner, otherwise the м looks to dark in small sizes (see M). Ink-traps a bit higher for the same reason. Balanced the symmetry of the diagonals.
+
+  Some little things I found in Latin in the process of reviewing Cyrillic:
+  ☐ H left stem = 85 units thick, right stem = 84 units
+  ☐ h 12 units wider than n. Just to make it sure, is it intentional?
+  ☐ x appears to be somewhat too light. Compare its diagonals with the diagonals of k, for example. In Latin context it is not as obvious, but in context of Cyrillic letters it is somewhat disturbing (see word "вхожий"" for example)
