@@ -26,7 +26,7 @@ matrix:
       env: TOX_ENV=variable-font-compiles
       install: 
         - pip install -r requirements.txt
-        - pip install git+https://www.github.com/m4rc1e/tools
+        - pip install git+https://www.github.com/googlefonts/tools
       script: 
         - mv source source-new
         - git checkout master source/
