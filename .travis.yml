@@ -27,6 +27,7 @@ matrix:
       install: 
         - pip install -r requirements.txt
         - pip install git+https://www.github.com/googlefonts/tools
+        - pip install --upgrade fontbakery
       script: 
         - mv source source-new
         - git checkout master source/
@@ -39,7 +40,8 @@ matrix:
         - fontmake -g source-new/GoogleSans-Text/GoogleSansText-Beta.glyphs -o variable --output-path new-fonts/GoogleSansText-Roman-VF.ttf
         - fontmake -g source-new/GoogleSans-Text/GoogleSansText-Italic-Beta.glyphs -o variable --output-path new-fonts/GoogleSansText-Italic-VF.ttf
         # Test fonts
-        - gftools qa -f new-fonts/*.ttf -fb new-fonts/*.ttf --fontbakery --diffbrowsers --diffenator -o out --out-url https://github.com/$TRAVIS_REPO_SLUG/pulls/$TRAVIS_PULL_REQUEST
+        - fontbakery check-profile qa/check-googlesans.py new-fonts/*.ttf
+        - gftools qa -f new-fonts/*.ttf -fb new-fonts/*.ttf --diffbrowsers --diffenator -o out --out-url https://github.com/$TRAVIS_REPO_SLUG/pulls/$TRAVIS_PULL_REQUEST
 
 
 
