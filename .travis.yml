@@ -42,7 +42,7 @@ matrix:
         - make gs-vf
         - mv build/GoogleSans/variable build/GoogleSans/variable-old
         # Test fonts
-        - gftools qa -f new-fonts/*.ttf -fb new-fonts/*.ttf --fontbakery --diffbrowsers --diffenator -o out --out-url https://github.com/$TRAVIS_REPO_SLUG/pulls/$TRAVIS_PULL_REQUEST
+        - gftools qa -f build/GoogleSans/variable-new/*.ttf -fb build/GoogleSans/variable-old/*.ttf --diffbrowsers --diffenator -o out --out-url https://github.com/$TRAVIS_REPO_SLUG/pulls/$TRAVIS_PULL_REQUEST
 
 
 
