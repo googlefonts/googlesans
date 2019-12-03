@@ -6,7 +6,6 @@ The Google Sans typeface compilation workflow requires the following:
 
 - Python 3 interpreter
 - [`fontmake`](https://github.com/googlefonts/fontmake) Python package
-- [`pip-tools`](https://github.com/jazzband/pip-tools) Python package (includes the `pip-sync` tool)
 - `make`
 
 ## Virtual Environment Management
@@ -40,10 +39,10 @@ The command line prompt will display the name of your venv on the left-hand side
 
 ### Install Build Dependencies
 
-Install build dependencies in the venv with the following command (uses a tool from the `pip-tools` Python package):
+Install build dependencies in the venv with the following command:
 
 ```
-$ pip-sync
+$ pip install -r requirements.txt
 ```
 
 Execute this command every time the dependency versions are updated in the `requirements.txt` file in order to sync your venv dependency versions if you maintain a venv for local Google Sans builds.
