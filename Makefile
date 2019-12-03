@@ -31,7 +31,7 @@ gs-vf-upright gs-vf-italic:
 # ------------------------------
 # Build dependency management
 # ------------------------------
-# `pip-compile` and `pip-sync` tools are from the https://github.com/jazzband/pip-tools package
+# `pip-compile` tool from the https://github.com/jazzband/pip-tools package
 
 # this updates the requirements.txt file with new releases of Python build dependencies
 update-deps:
@@ -40,7 +40,7 @@ update-deps:
 # this syncs updated build dependencies in a virtual environment
 # installing and uninstalling packages as (re)defined in the requirements.txt file
 sync-deps:
-	pip-sync
+	pip install -r requirements.txt
 
 
 .PHONY: all \
