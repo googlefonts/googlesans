@@ -4,18 +4,26 @@ matrix:
   include:
     - python: 3.7
       dist: xenial
-      env: TOX_ENV=static-font-compiles
-      install: pip install -r requirements.txt
-      script: 
-        - make gs-static
-    - python: 3.7
-      dist: xenial
-      env: TOX_ENV=variable-font-compiles
+      env: TOX_ENV=static-font-QA
       install: 
         - pip install -r requirements.txt
         - pip install --upgrade fontbakery
-      script: 
+      script:
+        - fontmake --version
+        - make gs-static
+        - fontbakery --version
+        - fontbakery check-profile qa/check-googlesans.py build/GoogleSans/static/*.ttf
+    - python: 3.7
+      dist: xenial
+      env: TOX_ENV=variable-font-QA
+      install: 
+        - pip install -r requirements.txt
+        - pip install --upgrade fontbakery
+      script:
+        - fontmake --version
         - make gs-vf
+        - fontbakery --version
+        - fontbakery check-profile qa/check-googlesans.py build/GoogleSans/variable/*.ttf
     # - python: 3.7
     #   dist: xenial
     #   env: TOX_ENV=qa-tests
