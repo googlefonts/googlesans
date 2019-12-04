@@ -8,7 +8,7 @@ matrix:
         sudo apt-get install python3.7 python3-pip
       install: 
         - make setup
-        - pip3 install --upgrade fontbakery
+        - pip3 install --upgrade fontbakery 
       script:
         - make gs-static
         - fontbakery --version
