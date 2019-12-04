@@ -66,6 +66,8 @@ branches:
     - /^wip\/.*$/
     # We want to build version tags as well.
     - /^v\d+\.\d+.*$/
+    # Allow Chris's branches for testing
+    - /^chrissimpkins.*$/
 
 notifications:
   email: false
