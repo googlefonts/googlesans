@@ -4,9 +4,10 @@ matrix:
   include:
     - dist: xenial
       env: TOX_ENV=static-font-QA
-      before_install:
-        sudo apt-get install python3.7 python3-pip
       install: 
+        - python3 --version
+        - pip3 --version
+        - pip3 install --upgrade pip
         - make setup
         - pip3 install --upgrade fontbakery 
       script:
@@ -17,7 +18,10 @@ matrix:
       env: TOX_ENV=variable-font-QA
       before_install:
         sudo apt-get install python3.7 python3-pip
-      install: 
+      install:
+        - python3 --version
+        - pip3 --version
+        - pip3 install --upgrade pip
         - make setup
         - pip3 install --upgrade fontbakery
       script:
