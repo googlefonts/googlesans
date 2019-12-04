@@ -4,24 +4,30 @@ matrix:
   include:
     - dist: bionic
       env: TOX_ENV=static-font-QA
+      before_install:
+        - sudo apt install python3-pip
+        - pip3 --version
       install: 
         - python3 --version
-        - python3 -m pip --version
-        - python3 -m pip install --upgrade pip
+        - pip3 --version
+        - pip3 install --upgrade pip
         - make setup
-        - python3 -m pip install --upgrade fontbakery 
+        - pip3 install --upgrade fontbakery 
       script:
         - make gs-static
         - fontbakery --version
         - fontbakery check-profile qa/check-googlesans.py build/GoogleSans/static/*.ttf
     - dist: bionic
       env: TOX_ENV=variable-font-QA
+      before_install:
+        - sudo apt install python3-pip
+        - pip3 --version
       install:
         - python3 --version
-        - python3 -m pip --version
-        - python3 -m pip install --upgrade pip
+        - pip3 --version
+        - pip3 install --upgrade pip
         - make setup
-        - python3 -m pip install --upgrade fontbakery
+        - pip3 install --upgrade fontbakery
       script:
         - make gs-vf
         - fontbakery --version
