@@ -1,6 +1,7 @@
-FONT_BUILD_DIR="build/GoogleSans"
-MASTER_UFO_DIR="$(FONT_BUILD_DIR)/master_ufo"
-INSTANCE_UFO_DIR="$(FONT_BUILD_DIR)/instance_ufo"
+FONT_BUILD_DIR=build/GoogleSans
+MASTER_UFO_DIR=$(FONT_BUILD_DIR)/master_ufo
+INSTANCE_UFO_DIR=$(FONT_BUILD_DIR)/instance_ufo
+VENV_DIR=.venv
 
 all: gs-static gs-vf
 
@@ -8,9 +9,15 @@ all: gs-static gs-vf
 # Clean
 # ------------------------------
 
+# clean performs post-build cleanup tasks
 clean:
-	rm -rf $(MASTER_UFO_DIR)
-	rm -rf $(INSTANCE_UFO_DIR)
+	rm -rf "$(MASTER_UFO_DIR)"
+	rm -rf "$(INSTANCE_UFO_DIR)"
+	rm -rf "$(VENV_DIR)"
+
+# clean-builds removes the font build dir and all font artifact contents
+clean-builds:
+	rm -rf "$(FONT_BUILD_DIR)"
 
 # ------------------------------
 # Compile
@@ -31,16 +38,31 @@ gs-vf-upright gs-vf-italic:
 # ------------------------------
 # Build dependency management
 # ------------------------------
-# `pip-compile` tool from the https://github.com/jazzband/pip-tools package
+# setup creates a Python 3 virtual environment directory
+setup:
+	mkdir -p "$(VENV_DIR)"
+	python3 -m venv "$(VENV_DIR)"
+	"$(VENV_DIR)/bin/pip" install --upgrade pip
+	"$(VENV_DIR)/bin/pip" install -r requirements.txt
+	@echo "\n\nDependency versions installed in your venv are:\n"
+	@$(MAKE) list-deps
+	@echo "\n\nBuild fonts with 'make' or make targets for select font builds (see BUILD.md docs)."
+	@echo "Remove the virtual environment directory with 'make clean'."
 
-# this updates the requirements.txt file with new releases of Python build dependencies
-update-deps:
-	pip-compile -U
-
-# this syncs updated build dependencies in a virtual environment
+# sync-deps syncs updated build dependencies in an existing virtual environment
 # installing and uninstalling packages as (re)defined in the requirements.txt file
 sync-deps:
-	pip install -r requirements.txt
+	"$(VENV_DIR)/bin/pip" install -r requirements.txt
+
+# list-deps displays venv installed dependencies
+list-deps:
+	@"$(VENV_DIR)/bin/pip" list
+
+# [MAINTAINER ONLY TARGET]
+# update-deps updates the requirements.txt file with new releases of Python build dependencies
+# Note: the `pip-compile` tool is from the https://github.com/jazzband/pip-tools package
+update-deps:
+	pip-compile -U
 
 
 .PHONY: all \
@@ -49,4 +71,4 @@ gs-static gs-vf \
 gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
 gs-vf-upright gs-vf-italic \
-update-deps sync-deps
+setup update-deps sync-deps list-deps
