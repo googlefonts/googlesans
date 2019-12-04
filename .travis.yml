@@ -6,10 +6,10 @@ matrix:
       env: TOX_ENV=static-font-QA
       install: 
         - python3 --version
-        - pip3 --version
-        - pip3 install --upgrade pip
+        - python3 -m pip --version
+        - python3 -m pip install --upgrade pip
         - make setup
-        - pip3 install --upgrade fontbakery 
+        - python3 -m pip install --upgrade fontbakery 
       script:
         - make gs-static
         - fontbakery --version
@@ -18,10 +18,10 @@ matrix:
       env: TOX_ENV=variable-font-QA
       install:
         - python3 --version
-        - pip3 --version
-        - pip3 install --upgrade pip
+        - python3 -m pip --version
+        - python3 -m pip install --upgrade pip
         - make setup
-        - pip3 install --upgrade fontbakery
+        - python3 -m pip install --upgrade fontbakery
       script:
         - make gs-vf
         - fontbakery --version
