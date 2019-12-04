@@ -2,26 +2,26 @@ language: generic
 
 matrix:
   include:
-    - dist: xenial
+    - dist: bionic
       env: TOX_ENV=static-font-QA
       install: 
-        - python3.7 --version
-        - pip3.7 --version
-        - pip3.7 install --upgrade pip
+        - python3 --version
+        - pip3 --version
+        - pip3 install --upgrade pip
         - make setup
-        - pip3.7 install --upgrade fontbakery 
+        - pip3 install --upgrade fontbakery 
       script:
         - make gs-static
         - fontbakery --version
         - fontbakery check-profile qa/check-googlesans.py build/GoogleSans/static/*.ttf
-    - dist: xenial
+    - dist: bionic
       env: TOX_ENV=variable-font-QA
       install:
-        - python3.7 --version
-        - pip3.7 --version
-        - pip3.7 install --upgrade pip
+        - python3 --version
+        - pip3 --version
+        - pip3 install --upgrade pip
         - make setup
-        - pip3.7 install --upgrade fontbakery
+        - pip3 install --upgrade fontbakery
       script:
         - make gs-vf
         - fontbakery --version
