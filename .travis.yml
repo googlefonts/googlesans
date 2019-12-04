@@ -1,26 +1,26 @@
-language: python
+language: generic
 
 matrix:
   include:
-    - python: 3.7
-      dist: xenial
+    - dist: xenial
       env: TOX_ENV=static-font-QA
+      before_install:
+        sudo apt-get install python3.7 python3-pip
       install: 
         - make setup
-        - pip install --upgrade fontbakery
+        - pip3 install --upgrade fontbakery
       script:
-        - fontmake --version
         - make gs-static
         - fontbakery --version
         - fontbakery check-profile qa/check-googlesans.py build/GoogleSans/static/*.ttf
-    - python: 3.7
-      dist: xenial
+    - dist: xenial
       env: TOX_ENV=variable-font-QA
+      before_install:
+        sudo apt-get install python3.7 python3-pip
       install: 
         - make setup
-        - pip install --upgrade fontbakery
+        - pip3 install --upgrade fontbakery
       script:
-        - fontmake --version
         - make gs-vf
         - fontbakery --version
         - fontbakery check-profile qa/check-googlesans.py build/GoogleSans/variable/*.ttf
