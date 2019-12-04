@@ -14,7 +14,7 @@ matrix:
         - pip3 --version
         - pip3 install --upgrade pip
         - make setup
-        - pip3 install --upgrade fontbakery 
+        - pip3 install --user --upgrade fontbakery 
       script:
         - make gs-static
         - fontbakery --version
@@ -30,7 +30,7 @@ matrix:
         - pip3 --version
         - pip3 install --upgrade pip
         - make setup
-        - pip3 install --upgrade fontbakery
+        - pip3 install --user --upgrade fontbakery
       script:
         - make gs-vf
         - fontbakery --version
