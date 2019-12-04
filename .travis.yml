@@ -6,7 +6,7 @@ matrix:
       dist: xenial
       env: TOX_ENV=static-font-QA
       install: 
-        - pip install -r requirements.txt
+        - make setup
         - pip install --upgrade fontbakery
       script:
         - fontmake --version
@@ -17,7 +17,7 @@ matrix:
       dist: xenial
       env: TOX_ENV=variable-font-QA
       install: 
-        - pip install -r requirements.txt
+        - make setup
         - pip install --upgrade fontbakery
       script:
         - fontmake --version
