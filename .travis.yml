@@ -5,25 +5,23 @@ matrix:
     - dist: xenial
       env: TOX_ENV=static-font-QA
       install: 
-        - python3 --version
-        - pip3 --version
-        - pip3 install --upgrade pip
+        - python3.7 --version
+        - pip3.7 --version
+        - pip3.7 install --upgrade pip
         - make setup
-        - pip3 install --upgrade fontbakery 
+        - pip3.7 install --upgrade fontbakery 
       script:
         - make gs-static
         - fontbakery --version
         - fontbakery check-profile qa/check-googlesans.py build/GoogleSans/static/*.ttf
     - dist: xenial
       env: TOX_ENV=variable-font-QA
-      before_install:
-        sudo apt-get install python3.7 python3-pip
       install:
-        - python3 --version
-        - pip3 --version
-        - pip3 install --upgrade pip
+        - python3.7 --version
+        - pip3.7 --version
+        - pip3.7 install --upgrade pip
         - make setup
-        - pip3 install --upgrade fontbakery
+        - pip3.7 install --upgrade fontbakery
       script:
         - make gs-vf
         - fontbakery --version
