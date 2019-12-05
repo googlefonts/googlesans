@@ -5,7 +5,7 @@ DisplayStrings = (
 "/zero.sc/one.sc/two.sc/three.sc/four.sc/five.sc/six.sc/seven.sc/eight.sc/nine.sc \01201/zero.sc.ss04 1/one.sc.ss04 2/two.sc.ss04 3/three.sc.ss04 4/four.sc.ss04/five.sc.ss04/six.sc.ss04/seven.sc.ss04/eight.sc.ss04/nine.sc.ss04",
 "/seven.sansSerifCircled/seven.sansSerifBlackCircled/seven.sc.ss04",
 "/iotadieresistonos",
-"/iotatonos.sc.ss06"
+"/Upsilon/Upsilontonos/Upsilondieresis/upsilon/upsilontonos/upsilondieresis/upsilondieresistonos/upsilon.sc/upsilontonos.sc/upsilondieresis.sc/upsilondieresistonos.sc/upsilontonos.sc.ss06/upsilondieresis.sc.ss06/upsilondieresistonos.sc.ss06"
 );
 classes = (
 {
@@ -110524,7 +110524,7 @@ rightKerningGroup = Y;
 {
 color = 4;
 glyphname = "ustraitstroke-cy.sc";
-lastChange = "2019-11-11 14:52:18 +0000";
+lastChange = "2019-12-05 19:49:47 +0000";
 layers = (
 {
 anchors = (
@@ -110538,6 +110538,12 @@ paths = (
 {
 closed = 1;
 nodes = (
+"306 0 LINE",
+"306 221 LINE",
+"462 221 LINE",
+"462 284 LINE",
+"325 284 LINE",
+"510 580 LINE",
 "417 580 LINE",
 "268 335 LINE",
 "264 335 LINE",
@@ -110547,13 +110553,7 @@ nodes = (
 "74 284 LINE",
 "74 221 LINE",
 "226 221 LINE",
-"226 0 LINE",
-"306 0 LINE",
-"306 221 LINE",
-"462 221 LINE",
-"462 284 LINE",
-"325 284 LINE",
-"510 580 LINE"
+"226 0 LINE"
 );
 }
 );
@@ -110620,6 +110620,12 @@ paths = (
 {
 closed = 1;
 nodes = (
+"355 0 LINE",
+"355 207 LINE",
+"502 207 LINE",
+"502 299 LINE",
+"390 299 LINE",
+"558 580 LINE",
 "409 580 LINE",
 "294 382 LINE",
 "285 382 LINE",
@@ -110629,13 +110635,7 @@ nodes = (
 "78 299 LINE",
 "78 207 LINE",
 "224 207 LINE",
-"224 0 LINE",
-"355 0 LINE",
-"355 207 LINE",
-"502 207 LINE",
-"502 299 LINE",
-"390 299 LINE",
-"558 580 LINE"
+"224 0 LINE"
 );
 }
 );
@@ -110660,6 +110660,12 @@ paths = (
 {
 closed = 1;
 nodes = (
+"358 0 LINE",
+"358 206 LINE",
+"505 206 LINE",
+"505 299 LINE",
+"398 299 LINE",
+"561 580 LINE",
 "405 580 LINE",
 "297 377 LINE",
 "289 377 LINE",
@@ -110669,13 +110675,7 @@ nodes = (
 "80 299 LINE",
 "80 206 LINE",
 "227 206 LINE",
-"227 0 LINE",
-"358 0 LINE",
-"358 206 LINE",
-"505 206 LINE",
-"505 299 LINE",
-"398 299 LINE",
-"561 580 LINE"
+"227 0 LINE"
 );
 }
 );
@@ -216199,7 +216199,7 @@ value = 0;
 },
 {
 name = familyName;
-value = "Google Sans Beta v2022";
+value = "Google Sans Beta v2023";
 },
 {
 name = "Name Table Entry";
@@ -216241,7 +216241,7 @@ value = 0;
 },
 {
 name = familyName;
-value = "Google Sans Beta v2022";
+value = "Google Sans Beta v2023";
 },
 {
 name = "Name Table Entry";
@@ -216285,7 +216285,7 @@ value = 0;
 },
 {
 name = familyName;
-value = "Google Sans Beta v2022";
+value = "Google Sans Beta v2023";
 },
 {
 name = "Name Table Entry";
@@ -216432,7 +216432,7 @@ value = 1;
 },
 {
 name = familyName;
-value = "Google Sans Text Beta v2022";
+value = "Google Sans Text Beta v2023";
 },
 {
 name = "Name Table Entry";
@@ -216474,7 +216474,7 @@ value = 1;
 },
 {
 name = familyName;
-value = "Google Sans Text Beta v2022";
+value = "Google Sans Text Beta v2023";
 },
 {
 name = "Name Table Entry";
@@ -216518,7 +216518,7 @@ value = 1;
 },
 {
 name = familyName;
-value = "Google Sans Text Beta v2022";
+value = "Google Sans Text Beta v2023";
 },
 {
 name = "Name Table Entry";
@@ -231147,5 +231147,5 @@ UFOFormat = 2;
 com.schriftgestaltung.disablesAutomaticAlignment = 0;
 };
 versionMajor = 2;
-versionMinor = 22;
+versionMinor = 23;
 }
