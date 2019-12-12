@@ -18,9 +18,10 @@ GOOGLESANS_PROFILE_CHECKS = UNIVERSAL_PROFILE_CHECKS + [
 # that should be excluded here
 excluded_check_ids = (
     "com.google.fonts/check/ftxvalidator_is_available",
+    "com.google.fonts/check/dsig",
     # "com.google.fonts/check/os2_metrics_match_hhea",
     # "com.google.fonts/check/unwanted_tables",
-    # "com.google.fonts/check/dsig",
+
 )
 
 # ================================================
