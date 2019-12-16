@@ -12,6 +12,8 @@ profile = profile_factory(default_section=Section("Google Sans Custom Checks"))
 
 GOOGLESANS_PROFILE_CHECKS = UNIVERSAL_PROFILE_CHECKS + [
     "com.google.fonts/check/googlesans/opentype/os2/fsselectionbit7",
+    "com.google.fonts/check/googlesans/opentype/os2/winascent",
+    "com.google.fonts/check/googlesans/opentype/os2/windescent",
 ]
 
 # define check ID's in the upstream `universal` profile
@@ -19,12 +21,17 @@ GOOGLESANS_PROFILE_CHECKS = UNIVERSAL_PROFILE_CHECKS + [
 excluded_check_ids = (
     "com.google.fonts/check/ftxvalidator_is_available",
     "com.google.fonts/check/dsig",
+    "com.google.fonts/check/family/win_ascent_and_descent",  # replaced by custom checks
     # "com.google.fonts/check/os2_metrics_match_hhea",
     # "com.google.fonts/check/unwanted_tables",
 )
 
 ATTRIBUTES = {
     "os2_fsselection_bit7": 1,
+    "ymax": 1115,  # defined at max across min + max opsz design space (from min opsz)
+    "ymin": -292,  # defined at min across min + max opsz design space (from min opsz)
+    "os2_win_ascent": 1115,  # must be defined at yMax value (https://github.com/Colophon-Foundry/google-sans/issues/160)
+    "os2_win_descent": 292,  # must be defined at yMin value (https://github.com/Colophon-Foundry/google-sans/issues/160)
 }
 
 
@@ -95,6 +102,38 @@ def com_google_fonts_check_googlesans_opentype_os2_fsselectionbit7(ttFonts):
         yield FAIL, f"The OS/2.fsSelection bit 7 (USE_TYPO_METRICS) was NOT set in the following fonts: {fail_list}."
     else:
         yield PASS, "The OS/2.fsSelection bit 7 (USE_TYPO_METRICS) was set in all fonts."
+
+
+# winAscent and winDescent are defined at yMin and yMax values across the
+# entire design space
+@check(
+    id="com.google.fonts/check/googlesans/opentype/os2/winascent",
+    rationale="""
+        Confirms that the OS/2.winAscent value is defined at the yMax
+        value across the entire design space
+    """,
+)
+def com_google_fonts_check_googlesans_opentype_os2_winascent(ttFont):
+    """OS/2.winAscent is defined at yMax value across the entire design space"""
+    if ttFont["OS/2"].usWinAscent != ATTRIBUTES["os2_win_ascent"]:
+        yield FAIL, f"The OS/2.winAscent value {ttFont['OS/2'].usWinAscent} does not match the required value {ATTRIBUTES['os2_win_ascent']}"
+    else:
+        yield PASS, f"The OS/2.winAscent value matches the required value."
+
+
+@check(
+    id="com.google.fonts/check/googlesans/opentype/os2/windescent",
+    rationale="""
+        Confirms that the OS/2.winDescent value is defined at the yMin
+        value across the entire design space
+    """,
+)
+def com_google_fonts_check_googlesans_opentype_os2_windescent(ttFont):
+    """OS/2.winDescent is defined at yMin value across the entire design space"""
+    if ttFont["OS/2"].usWinDescent != ATTRIBUTES["os2_win_descent"]:
+        yield FAIL, f"The OS/2.winDescent value {ttFont['OS/2'].usWinDescent} does not match the required value {ATTRIBUTES['os2_win_descent']}"
+    else:
+        yield PASS, f"The OS/2.winDescent value matches the required value."
 
 
 # ================================================
