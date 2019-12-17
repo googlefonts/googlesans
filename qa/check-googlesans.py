@@ -14,6 +14,8 @@ GOOGLESANS_PROFILE_CHECKS = UNIVERSAL_PROFILE_CHECKS + [
     "com.google.fonts/check/googlesans/opentype/os2/fsselectionbit7",
     "com.google.fonts/check/googlesans/opentype/os2/winascent",
     "com.google.fonts/check/googlesans/opentype/os2/windescent",
+    "com.google.fonts/check/googlesans/opentype/hhea/ascent",
+    "com.google.fonts/check/googlesans/opentype/hhea/descent",
 ]
 
 # define check ID's in the upstream `universal` profile
@@ -32,6 +34,10 @@ ATTRIBUTES = {
     "ymin": -292,  # defined at min across min + max opsz design space (from min opsz)
     "os2_win_ascent": 1115,  # must be defined at yMax value (https://github.com/Colophon-Foundry/google-sans/issues/160)
     "os2_win_descent": 292,  # must be defined at yMin value (https://github.com/Colophon-Foundry/google-sans/issues/160)
+    "hhea_ascent": 966,
+    "hhea_descent": -286,
+    "os2_typoascender": 966,
+    "os2_typodescender": -286,
 }
 
 
@@ -104,8 +110,9 @@ def com_google_fonts_check_googlesans_opentype_os2_fsselectionbit7(ttFonts):
         yield PASS, "The OS/2.fsSelection bit 7 (USE_TYPO_METRICS) was set in all fonts."
 
 
-# winAscent and winDescent are defined at yMin and yMax values across the
+# Note: winAscent and winDescent are defined at yMin and yMax values across the
 # entire design space
+# OS/2.winAscent check
 @check(
     id="com.google.fonts/check/googlesans/opentype/os2/winascent",
     rationale="""
@@ -121,6 +128,7 @@ def com_google_fonts_check_googlesans_opentype_os2_winascent(ttFont):
         yield PASS, f"The OS/2.winAscent value matches the required value."
 
 
+# OS/2.winDescent check
 @check(
     id="com.google.fonts/check/googlesans/opentype/os2/windescent",
     rationale="""
@@ -134,6 +142,36 @@ def com_google_fonts_check_googlesans_opentype_os2_windescent(ttFont):
         yield FAIL, f"The OS/2.winDescent value {ttFont['OS/2'].usWinDescent} does not match the required value {ATTRIBUTES['os2_win_descent']}"
     else:
         yield PASS, f"The OS/2.winDescent value matches the required value."
+
+
+# hhea.Ascent check
+@check(
+    id="com.google.fonts/check/googlesans/opentype/hhea/ascent",
+    rationale="""
+        Confirms that the hhea.ascent value is defined as expected
+    """,
+)
+def com_google_fonts_check_googlesans_opentype_hhea_ascent(ttFont):
+    """hhea.ascent is defined as expected"""
+    if ttFont["hhea"].ascent != ATTRIBUTES["hhea_ascent"]:
+        yield FAIL, f"The hhea.ascent value {ttFont['hhea'].ascent} does not match the required value {ATTRIBUTES['hhea_ascent']}"
+    else:
+        yield PASS, f"The hhea.ascent value matches the required value."
+
+
+# hhea.Descent check
+@check(
+    id="com.google.fonts/check/googlesans/opentype/hhea/descent",
+    rationale="""
+        Confirms that the hhea.descent value is defined as expected
+    """,
+)
+def com_google_fonts_check_googlesans_opentype_hhea_descent(ttFont):
+    """hhea.descent is defined as expected"""
+    if ttFont["hhea"].descent != ATTRIBUTES["hhea_descent"]:
+        yield FAIL, f"The hhea.descent value {ttFont['hhea'].descent} does not match the required value {ATTRIBUTES['hhea_descent']}"
+    else:
+        yield PASS, f"The hhea.descent value matches the required value."
 
 
 # ================================================
