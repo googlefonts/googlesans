@@ -16,6 +16,10 @@ GOOGLESANS_PROFILE_CHECKS = UNIVERSAL_PROFILE_CHECKS + [
     "com.google.fonts/check/googlesans/opentype/os2/windescent",
     "com.google.fonts/check/googlesans/opentype/hhea/ascent",
     "com.google.fonts/check/googlesans/opentype/hhea/descent",
+    "com.google.fonts/check/googlesans/opentype/hhea/linegap",
+    "com.google.fonts/check/googlesans/opentype/os2/typodescender",
+    "com.google.fonts/check/googlesans/opentype/os2/typoascender",
+    "com.google.fonts/check/googlesans/opentype/os2/typolinegap",
 ]
 
 # define check ID's in the upstream `universal` profile
@@ -34,10 +38,12 @@ ATTRIBUTES = {
     "ymin": -292,  # defined at min across min + max opsz design space (from min opsz)
     "os2_win_ascent": 1115,  # must be defined at yMax value (https://github.com/Colophon-Foundry/google-sans/issues/160)
     "os2_win_descent": 292,  # must be defined at yMin value (https://github.com/Colophon-Foundry/google-sans/issues/160)
-    "hhea_ascent": 966,
+    "hhea_ascent": 966,  # set to match typo metrics values
     "hhea_descent": -286,
-    "os2_typoascender": 966,
+    "hhea_linegap": 0,
+    "os2_typoascender": 966,  # set to match hhea metrics values
     "os2_typodescender": -286,
+    "os2_typolinegap": 0,
 }
 
 
@@ -81,12 +87,16 @@ ATTRIBUTES = {
 # OpenType table attribute checks
 # ================================================
 
+# ::::::::::::::::::::::::::::::::::::::::::::::::
+# Vertical metrics
+# ::::::::::::::::::::::::::::::::::::::::::::::::
+
 # OS/2.fsSelection bit 7 (USE_TYPO_METRICS) is set in all fonts
 @check(
     id="com.google.fonts/check/googlesans/opentype/os2/fsselectionbit7",
     rationale="""
-        Confirms that fonts have OS/2.fsSelection bit 7 (USE_TYPO_METRICS) set \
-        for typo vertical metrics (instead of win vertical metrics)
+    Confirms that fonts have OS/2.fsSelection bit 7 (USE_TYPO_METRICS) set \
+    for typo vertical metrics (instead of win vertical metrics)
     """,
 )
 def com_google_fonts_check_googlesans_opentype_os2_fsselectionbit7(ttFonts):
@@ -116,8 +126,8 @@ def com_google_fonts_check_googlesans_opentype_os2_fsselectionbit7(ttFonts):
 @check(
     id="com.google.fonts/check/googlesans/opentype/os2/winascent",
     rationale="""
-        Confirms that the OS/2.winAscent value is defined at the yMax
-        value across the entire design space
+    Confirms that the OS/2.winAscent value is defined at the yMax
+    value across the entire design space
     """,
 )
 def com_google_fonts_check_googlesans_opentype_os2_winascent(ttFont):
@@ -132,8 +142,8 @@ def com_google_fonts_check_googlesans_opentype_os2_winascent(ttFont):
 @check(
     id="com.google.fonts/check/googlesans/opentype/os2/windescent",
     rationale="""
-        Confirms that the OS/2.winDescent value is defined at the yMin
-        value across the entire design space
+    Confirms that the OS/2.winDescent value is defined at the yMin
+    value across the entire design space
     """,
 )
 def com_google_fonts_check_googlesans_opentype_os2_windescent(ttFont):
@@ -148,7 +158,7 @@ def com_google_fonts_check_googlesans_opentype_os2_windescent(ttFont):
 @check(
     id="com.google.fonts/check/googlesans/opentype/hhea/ascent",
     rationale="""
-        Confirms that the hhea.ascent value is defined as expected
+    Confirms that the hhea.ascent value is defined as expected
     """,
 )
 def com_google_fonts_check_googlesans_opentype_hhea_ascent(ttFont):
@@ -163,7 +173,7 @@ def com_google_fonts_check_googlesans_opentype_hhea_ascent(ttFont):
 @check(
     id="com.google.fonts/check/googlesans/opentype/hhea/descent",
     rationale="""
-        Confirms that the hhea.descent value is defined as expected
+    Confirms that the hhea.descent value is defined as expected
     """,
 )
 def com_google_fonts_check_googlesans_opentype_hhea_descent(ttFont):
@@ -172,6 +182,66 @@ def com_google_fonts_check_googlesans_opentype_hhea_descent(ttFont):
         yield FAIL, f"The hhea.descent value {ttFont['hhea'].descent} does not match the required value {ATTRIBUTES['hhea_descent']}"
     else:
         yield PASS, f"The hhea.descent value matches the required value."
+
+
+# hhea.lineGap check
+@check(
+    id="com.google.fonts/check/googlesans/opentype/hhea/linegap",
+    rationale="""
+    Confirms that the hhea.lineGap value is defined as expected
+    """,
+)
+def com_google_fonts_check_googlesans_opentype_hhea_linegap(ttFont):
+    """hhea.linegap is defined as expected"""
+    if ttFont["hhea"].lineGap != ATTRIBUTES["hhea_linegap"]:
+        yield FAIL, f"The hhea.lineGap value {ttFont['hhea'].lineGap} does not match the required value {ATTRIBUTES['hhea_linegap']}"
+    else:
+        yield PASS, f"The hhea.lineGap value matches the required value."
+
+
+# OS/2.typoDescender check
+@check(
+    id="com.google.fonts/check/googlesans/opentype/os2/typodescender",
+    rationale="""
+    Confirms that the OS/2.typoDescender value is defined as expected
+    """,
+)
+def com_google_fonts_check_googlesans_opentype_os2_typodescender(ttFont):
+    """OS/2.typoDescender is defined as expected"""
+    if ttFont["OS/2"].sTypoDescender != ATTRIBUTES["os2_typodescender"]:
+        yield FAIL, f"The OS/2.typoDescender value {ttFont['OS/2'].sTypoDescender} does not match the required value {ATTRIBUTES['os2_typodescender']}"
+    else:
+        yield PASS, f"The OS/2.typoDescender value matches the required value."
+
+
+# OS/2.typoAscender check
+@check(
+    id="com.google.fonts/check/googlesans/opentype/os2/typoascender",
+    rationale="""
+    Confirms that the OS/2.typoAscender value is defined as expected
+    """,
+)
+def com_google_fonts_check_googlesans_opentype_os2_typoascender(ttFont):
+    """OS/2.typoAscender is defined as expected"""
+    if ttFont["OS/2"].sTypoAscender != ATTRIBUTES["os2_typoascender"]:
+        yield FAIL, f"The OS/2.typoAscender value {ttFont['OS/2'].sTypoAscender} does not match the required value {ATTRIBUTES['os2_typoascender']}"
+    else:
+        yield PASS, f"The OS/2.typoAscender value matches the required value."
+
+
+# OS/2.typoLineGap check
+@check(
+    id="com.google.fonts/check/googlesans/opentype/os2/typolinegap",
+    rationale="""
+    Confirms that the OS/2.typoLineGap value is defined as expected
+    """,
+)
+def com_google_fonts_check_googlesans_opentype_os2_typolinegap(ttFont):
+    """OS/2.typoLineGap is defined as expected"""
+    if ttFont["OS/2"].sTypoLineGap != ATTRIBUTES["os2_typolinegap"]:
+        yield FAIL, f"The OS/2.typoLineGap value {ttFont['OS/2'].sTypoLineGap} does not match the required value {ATTRIBUTES['os2_typolinegap']}"
+    else:
+        yield PASS, f"The OS/2.typoLineGap value matches the required value."
 
 
 # ================================================
