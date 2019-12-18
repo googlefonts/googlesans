@@ -19,11 +19,17 @@ UPRIGHT_SOURCE=GoogleSans-Text/GoogleSansText-Beta.glyphs
 ITALIC_SOURCE=GoogleSans-Text/GoogleSansText-Italic-Beta.glyphs
 
 # --------------------------------------------------------
-#  Build directory path definitions
+#  Build directory and file path definitions
 # --------------------------------------------------------
 FONT_BUILD_DIR=../build/GoogleSans
 STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
 VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
+
+# Variable font paths
+VARIABLE_BUILD_PATH_UPRIGHT=$(VARIABLE_BUILD_DIR)/GoogleSansBeta-VF.ttf
+VARIABLE_BUILD_PATH_UPRIGHT_TARGET=$(VARIABLE_BUILD_DIR)/GoogleSansBetaVF-[opsz,wght].ttf
+VARIABLE_BUILD_PATH_ITALIC=$(VARIABLE_BUILD_DIR)/GoogleSansBeta-Italic-VF.ttf
+VARIABLE_BUILD_PATH_ITALIC_TARGET=$(VARIABLE_BUILD_DIR)/GoogleSansBetaVF-Italic-[opsz,wght].ttf
 
 # --------------------------------------------------------
 #  UFO intermediates and designspace paths
@@ -73,6 +79,8 @@ gs-vf: $(FONT_BUILD_DIR)
 	@echo " Beginning post-compile fixes..."
 	@echo "================================"
 	python3 ../scripts/gftools-fix-unwanted-tables.py --tables MVAR $(VARIABLE_BUILD_DIR)/*.ttf
+	mv $(VARIABLE_BUILD_PATH_UPRIGHT) "$(VARIABLE_BUILD_PATH_UPRIGHT_TARGET)"
+	mv $(VARIABLE_BUILD_PATH_ITALIC) "$(VARIABLE_BUILD_PATH_ITALIC_TARGET)"
 
 #
 #  Individual static instance build targets
