@@ -69,7 +69,10 @@ gs-static: $(FONT_BUILD_DIR)
 gs-vf: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -g $(UPRIGHT_SOURCE) -o variable --output-dir $(VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
 	$(FONTMAKE_EXE) -g $(ITALIC_SOURCE) -o variable --output-dir $(VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
-
+	@echo "================================"
+	@echo " Beginning post-compile fixes..."
+	@echo "================================"
+	python3 ../scripts/gftools-fix-unwanted-tables.py --tables MVAR $(VARIABLE_BUILD_DIR)/*.ttf
 
 #
 #  Individual static instance build targets
