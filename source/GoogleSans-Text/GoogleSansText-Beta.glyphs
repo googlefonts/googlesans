@@ -5,7 +5,7 @@ DisplayStrings = (
 "/zero.sc/one.sc/two.sc/three.sc/four.sc/five.sc/six.sc/seven.sc/eight.sc/nine.sc \01201/zero.sc.ss04 1/one.sc.ss04 2/two.sc.ss04 3/three.sc.ss04 4/four.sc.ss04/five.sc.ss04/six.sc.ss04/seven.sc.ss04/eight.sc.ss04/nine.sc.ss04",
 "/seven.sansSerifCircled/seven.sansSerifBlackCircled/seven.sc.ss04",
 "/iotadieresistonos",
-"/Upsilon/Upsilontonos/Upsilondieresis/upsilon/upsilontonos/upsilondieresis/upsilondieresistonos/upsilon.sc/upsilontonos.sc/upsilondieresis.sc/upsilondieresistonos.sc/upsilontonos.sc.ss06/upsilondieresis.sc.ss06/upsilondieresistonos.sc.ss06"
+"/commaaccentcomb/Gcommaaccent"
 );
 classes = (
 {
@@ -249,7 +249,7 @@ value = 966;
 },
 {
 name = hheaDescender;
-value = -306;
+value = -286;
 },
 {
 name = hheaLineGap;
@@ -257,11 +257,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1000;
+value = 1115;
 },
 {
 name = winDescent;
-value = 286;
+value = 292;
 },
 {
 name = underlineThickness;
@@ -339,7 +339,7 @@ value = 966;
 },
 {
 name = hheaDescender;
-value = -306;
+value = -286;
 },
 {
 name = hheaLineGap;
@@ -347,11 +347,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1000;
+value = 1115;
 },
 {
 name = winDescent;
-value = 286;
+value = 292;
 },
 {
 name = underlineThickness;
@@ -437,7 +437,7 @@ value = 966;
 },
 {
 name = hheaDescender;
-value = -306;
+value = -286;
 },
 {
 name = hheaLineGap;
@@ -445,11 +445,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1000;
+value = 1115;
 },
 {
 name = winDescent;
-value = 286;
+value = 292;
 },
 {
 name = underlineThickness;
@@ -527,7 +527,7 @@ value = 966;
 },
 {
 name = hheaDescender;
-value = -306;
+value = -286;
 },
 {
 name = hheaLineGap;
@@ -535,11 +535,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1000;
+value = 1115;
 },
 {
 name = winDescent;
-value = 286;
+value = 292;
 },
 {
 name = underlineThickness;
@@ -202450,7 +202450,7 @@ unicode = 0324;
 {
 color = 7;
 glyphname = commaaccentcomb;
-lastChange = "2019-08-29 09:26:47 +0000";
+lastChange = "2019-12-19 15:01:16 +0000";
 layers = (
 {
 anchors = (
@@ -202485,7 +202485,7 @@ position = "{233, 0}";
 },
 {
 name = bottom;
-position = "{233, -282}";
+position = "{233, -271}";
 }
 );
 layerId = "090CB6A0-BE7C-4D17-A551-206C7456A8A3";
@@ -202493,10 +202493,10 @@ paths = (
 {
 closed = 1;
 nodes = (
-"208 -282 LINE",
+"211 -271 LINE",
 "312 -72 LINE",
 "155 -72 LINE",
-"97 -282 LINE"
+"100 -271 LINE"
 );
 }
 );
@@ -202675,7 +202675,7 @@ position = "{211, 0}";
 },
 {
 name = bottom;
-position = "{211, -285}";
+position = "{211, -271}";
 }
 );
 associatedMasterId = "090CB6A0-BE7C-4D17-A551-206C7456A8A3";
@@ -202685,24 +202685,25 @@ paths = (
 {
 closed = 1;
 nodes = (
-"264 -170 LINE SMOOTH",
-"276 -152 OFFCURVE",
-"282 -136 OFFCURVE",
-"282 -120 CURVE SMOOTH",
-"282 -80 OFFCURVE",
-"251 -48 OFFCURVE",
-"211 -48 CURVE SMOOTH",
-"171 -48 OFFCURVE",
-"140 -81 OFFCURVE",
-"140 -119 CURVE SMOOTH",
-"140 -148 OFFCURVE",
-"157 -173 OFFCURVE",
-"183 -183 CURVE",
-"138 -253 LINE",
-"187 -285 LINE"
+"268 -164 LINE SMOOTH",
+"277 -150 OFFCURVE",
+"282 -132 OFFCURVE",
+"282 -117 CURVE SMOOTH",
+"282 -79 OFFCURVE",
+"252 -48 OFFCURVE",
+"214 -48 CURVE SMOOTH",
+"176 -48 OFFCURVE",
+"146 -80 OFFCURVE",
+"146 -116 CURVE SMOOTH",
+"146 -144 OFFCURVE",
+"162 -168 OFFCURVE",
+"187 -177 CURVE",
+"147 -239 LINE",
+"196 -271 LINE"
 );
 }
 );
+visible = 1;
 width = 427;
 }
 );
@@ -216203,7 +216204,7 @@ value = 0;
 },
 {
 name = familyName;
-value = "Google Sans Beta v2025";
+value = "Google Sans Beta v2027";
 },
 {
 name = "Name Table Entry";
@@ -216245,7 +216246,7 @@ value = 0;
 },
 {
 name = familyName;
-value = "Google Sans Beta v2025";
+value = "Google Sans Beta v2027";
 },
 {
 name = "Name Table Entry";
@@ -216289,7 +216290,7 @@ value = 0;
 },
 {
 name = familyName;
-value = "Google Sans Beta v2025";
+value = "Google Sans Beta v2027";
 },
 {
 name = "Name Table Entry";
@@ -216436,7 +216437,7 @@ value = 0;
 },
 {
 name = familyName;
-value = "Google Sans Text Beta v2025";
+value = "Google Sans Text Beta v2027";
 },
 {
 name = "Name Table Entry";
@@ -216478,7 +216479,7 @@ value = 0;
 },
 {
 name = familyName;
-value = "Google Sans Text Beta v2025";
+value = "Google Sans Text Beta v2027";
 },
 {
 name = "Name Table Entry";
@@ -216522,7 +216523,7 @@ value = 0;
 },
 {
 name = familyName;
-value = "Google Sans Text Beta v2025";
+value = "Google Sans Text Beta v2027";
 },
 {
 name = "Name Table Entry";
@@ -231151,5 +231152,5 @@ UFOFormat = 2;
 com.schriftgestaltung.disablesAutomaticAlignment = 0;
 };
 versionMajor = 2;
-versionMinor = 25;
+versionMinor = 27;
 }
