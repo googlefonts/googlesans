@@ -1,5 +1,36 @@
 # Google Sans Changelog
 
+## Version 3.000 (WIP Changelog)
+
+### Latin
+
+- Added min opsz masters with a new design designed for Text use
+- Removal of Google Sans Display masters
+- Update `tf` width to `600` (Decrease of `-50`)
+- `❛❝` Flipped incorrect form
+- Add `ss05`; new stylistic set of arrows
+- `ss04` has now replaced the original small caps (A-Z a-z 0-9)
+- Vertical metrics adjusted to Roboto vertical metrics
+- `U+0326` shrunk in Bold masters to accomodate Roboto vertical metrics
+- Add additional input support for combining accent marks 
+- Full Latin small caps added, including Vietnamese support
+
+### Greek
+
+- Extended Greek support added
+- `ss06` added for Greek small cap support
+- `dlig` updated to include Greek localisation support
+- `calt` updated to include Greek localisation support
+
+### Cyrillic
+
+- Extended Cyrillic support added
+- `locl` Updated feature code for localised alternates
+- `ss07` Adds Bulgarian stylistic set support
+
+-
+
+
 ## Version 2.004 (2019-07-22)
 
 - **Note** – **NO** hinted versions were generated in this release. This is an unhinted build only bug fix release.
