@@ -17,8 +17,9 @@
 
 ### Greek
 
-- Extended Greek support added
-- `ss06` added for Greek small cap support
+- Extended Greek support added to meet the [Google Fonts Greek Plus glyph set encoding](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/GF%20Glyph%20Sets/Greek/GF-greek-plus.nam)
+- `ss06` Accented Greek small caps support
+- `ss07` iota adscript support
 - `dlig` updated to include Greek localisation support
 - `calt` updated to include Greek localisation support
 
