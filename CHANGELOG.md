@@ -18,6 +18,7 @@
 ### Greek
 
 - Extended Greek support added to meet the Google Fonts [Greek Plus](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/GF%20Glyph%20Sets/Greek/GF-greek-plus.nam) glyph set encoding
+- Extended Greek support with a min optical size axis design
 - `ss06` Accented Greek small caps support
 - `ss07` iota adscript support
 - `dlig` updated to include Greek localisation support
@@ -26,6 +27,7 @@
 ### Cyrillic
 
 - Extended Cyrillic support added to meet the Google Fonts [Cyrillic Plus](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/GF%20Glyph%20Sets/Cyrillic/GF-cyrillic-plus_unique-glyphs.nam), [Cyrillic Plus Local Variants](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/GF%20Glyph%20Sets/Cyrillic/GF-cyrillic-plus-locl_unique-glyphs.nam), and [Cyrillic Pro](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/GF%20Glyph%20Sets/Cyrillic/GF-cyrillic-pro_unique-glyphs.nam) glyph set encodings
+- Extended Cyrillic support with a min optical size axis design
 - `locl` Updated feature code for localised alternates
 - `ss07` Adds Bulgarian stylistic set support
 
