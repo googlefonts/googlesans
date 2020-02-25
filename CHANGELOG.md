@@ -12,12 +12,12 @@
 - `ss04` has now replaced the original small caps (A-Z a-z 0-9)
 - Vertical metrics adjusted to Roboto vertical metrics
 - `U+0326` shrunk in Bold masters to accomodate Roboto vertical metrics
-- Add additional input support for combining accent marks 
+- Add additional input support for combining accent marks
 - Full Latin small caps added, including Vietnamese support
 
 ### Greek
 
-- Extended Greek support added to meet the [Google Fonts Greek Plus glyph set encoding](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/GF%20Glyph%20Sets/Greek/GF-greek-plus.nam)
+- Extended Greek support added to meet the Google Fonts [Greek Plus](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/GF%20Glyph%20Sets/Greek/GF-greek-plus.nam) glyph set encoding
 - `ss06` Accented Greek small caps support
 - `ss07` iota adscript support
 - `dlig` updated to include Greek localisation support
@@ -25,11 +25,9 @@
 
 ### Cyrillic
 
-- Extended Cyrillic support added
+- Extended Cyrillic support added to meet the Google Fonts [Cyrillic Plus](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/GF%20Glyph%20Sets/Cyrillic/GF-cyrillic-plus_unique-glyphs.nam), [Cyrillic Plus Local Variants](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/GF%20Glyph%20Sets/Cyrillic/GF-cyrillic-plus-locl_unique-glyphs.nam), and [Cyrillic Pro](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/GF%20Glyph%20Sets/Cyrillic/GF-cyrillic-pro_unique-glyphs.nam) glyph set encodings
 - `locl` Updated feature code for localised alternates
 - `ss07` Adds Bulgarian stylistic set support
-
--
 
 
 ## Version 2.004 (2019-07-22)
