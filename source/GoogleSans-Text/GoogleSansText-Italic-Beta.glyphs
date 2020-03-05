@@ -14,19 +14,19 @@ code = "zero one two three four five six seven eight nine zero.tf one.tf two.tf 
 name = multiply;
 },
 {
-code = "franc.cap ringcomb.cap gravecomb.cap acutecomb.cap dieresiscomb.cap caroncomb.cap brevecomb.cap macroncomb.cap circumflexcomb.cap at.cap tildecomb.cap hungarumlautcomb.cap dotaccentcomb.cap bracketleft.cap bracketright.cap parenleft.cap parenright.cap braceleft.cap braceright.cap questiondown.cap exclamdown.cap hyphen.cap endash.cap emdash.cap guilsinglleft.cap guilsinglright.cap guillemetleft.cap guillemetright.cap zero.cap one.cap two.cap three.cap four.cap five.cap six.cap seven.cap eight.cap nine.cap currency.cap dollar.cap euro.cap sterling.cap yen.cap lira.cap won.cap tugrik.cap peso.cap tenge.cap rupeeIndian.cap liraTurkish.cap ruble.cap dong.cap numbersign.cap percent.cap perthousand.cap pertenthousand.cap zero.alt.cap one.alt.cap six.alt.cap seven.alt.cap nine.alt.cap degree.cap fahrenheit.cap centigrade.cap cent.cap baht.cap bullet.cap";
+code = "franc.cap ringcomb.cap gravecomb.cap acutecomb.cap dieresiscomb.cap caroncomb.cap brevecomb.cap macroncomb.cap circumflexcomb.cap at.cap tildecomb.cap hungarumlautcomb.cap dotaccentcomb.cap bracketleft.cap bracketright.cap parenleft.cap parenright.cap braceleft.cap braceright.cap questiondown.cap exclamdown.cap hyphen.cap endash.cap emdash.cap guilsinglleft.cap guilsinglright.cap guillemetleft.cap guillemetright.cap zero.cap one.cap two.cap three.cap four.cap five.cap six.cap seven.cap eight.cap nine.cap currency.cap dollar.cap euro.cap sterling.cap yen.cap lira.cap won.cap tugrik.cap peso.cap tenge.cap rupeeIndian.cap liraTurkish.cap ruble.cap dong.cap numbersign.cap percent.cap perthousand.cap pertenthousand.cap zero.alt.cap one.alt.cap six.alt.cap seven.alt.cap nine.alt.cap degree.cap fahrenheit.cap centigrade.cap cent.cap baht.cap bullet.cap hryvnia.cap";
 name = cap_on;
 },
 {
-code = "franc ring grave acute dieresis caron breve macron circumflex at tilde hungarumlaut dotaccent bracketleft bracketright parenleft parenright braceleft braceright questiondown exclamdown hyphen endash emdash guilsinglleft guilsinglright guillemetleft guillemetright zero one two three four five six seven eight nine currency dollar euro sterling yen lira won tugrik peso tenge rupeeIndian liraTurkish ruble dong numbersign percent perthousand pertenthousand zero.alt one.alt six.alt seven.alt nine.alt degree fahrenheit centigrade cent baht bullet    ";
+code = "franc ring grave acute dieresis caron breve macron circumflex at tilde hungarumlaut dotaccent bracketleft bracketright parenleft parenright braceleft braceright questiondown exclamdown hyphen endash emdash guilsinglleft guilsinglright guillemetleft guillemetright zero one two three four five six seven eight nine currency dollar euro sterling yen lira won tugrik peso tenge rupeeIndian liraTurkish ruble dong numbersign percent perthousand pertenthousand zero.alt one.alt six.alt seven.alt nine.alt degree fahrenheit centigrade cent baht bullet hryvnia";
 name = cap_off;
 },
 {
-code = "franc.tf space.tf numbersign.tf dollar.tf percent.tf plus.tf comma.tf period.tf colon.tf semicolon.tf less.tf equal.tf greater.tf cent.tf sterling.tf currency.tf yen.tf section.tf logicalnot.tf plusminus.tf multiply.tf divide.tf florin.tf euro.tf minus.tf approxequal.tf notequal.tf lessequal.tf greaterequal.tf lira.tf won.tf dong.tf tugrik.tf tenge.tf rupeeIndian.tf liraTurkish.tf ruble.tf peso.tf";
+code = "franc.tf space.tf numbersign.tf dollar.tf percent.tf plus.tf comma.tf period.tf colon.tf semicolon.tf less.tf equal.tf greater.tf cent.tf sterling.tf currency.tf yen.tf section.tf logicalnot.tf plusminus.tf multiply.tf divide.tf florin.tf euro.tf minus.tf approxequal.tf notequal.tf lessequal.tf greaterequal.tf lira.tf won.tf dong.tf tugrik.tf tenge.tf rupeeIndian.tf liraTurkish.tf ruble.tf peso.tf hryvnia.tf";
 name = symbols_tab;
 },
 {
-code = "franc space numbersign dollar percent plus comma period colon semicolon less equal greater cent sterling currency yen section logicalnot plusminus multiply divide florin euro minus approxequal notequal lessequal greaterequal lira won dong tugrik tenge rupeeIndian liraTurkish ruble peso";
+code = "franc space numbersign dollar percent plus comma period colon semicolon less equal greater cent sterling currency yen section logicalnot plusminus multiply divide florin euro minus approxequal notequal lessequal greaterequal lira won dong tugrik tenge rupeeIndian liraTurkish ruble peso hryvnia";
 name = symbols;
 },
 {
@@ -158,7 +158,7 @@ code = "sub @figures_tab by @figures;\012sub @symbols_tab by @symbols;";
 name = lnum;
 },
 {
-code = "sub @figures by @figures_tab;\012#sub @symbols by @symbols_tab;";
+code = "sub @figures by @figures_tab;\012sub @symbols by @symbols_tab;";
 name = tnum;
 },
 {
@@ -154358,7 +154358,7 @@ unicode = 0392;
 },
 {
 glyphname = Gamma;
-lastChange = "2020-01-22 16:45:12 +0000";
+lastChange = "2020-03-05 13:13:09 +0000";
 layers = (
 {
 components = (
@@ -154367,7 +154367,7 @@ name = "Ge-cy";
 }
 );
 layerId = "8B58F8C3-CBF6-4C04-9FA1-F7EA6C699325";
-width = 504;
+width = 505;
 },
 {
 components = (
@@ -154376,7 +154376,7 @@ name = "Ge-cy";
 }
 );
 layerId = "E3D0AE35-FDA8-40C5-B77D-1233E980F611";
-width = 546;
+width = 547;
 },
 {
 components = (
@@ -259885,7 +259885,7 @@ unicode = 2206;
 },
 {
 glyphname = product;
-lastChange = "2020-01-22 16:45:12 +0000";
+lastChange = "2020-03-05 13:13:19 +0000";
 layers = (
 {
 components = (
@@ -259912,7 +259912,7 @@ name = "Pe-cy";
 }
 );
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
-width = 669;
+width = 677;
 },
 {
 components = (
@@ -291722,18 +291722,8 @@ width = 42;
 {
 color = 4;
 glyphname = hryvnia.tf;
-lastChange = "2020-01-13 14:39:11 +0000";
+lastChange = "2020-03-05 13:13:42 +0000";
 layers = (
-{
-components = (
-{
-name = hryvnia;
-transform = "{1, 0, 0, 1, 62, 0}";
-}
-);
-layerId = "8B58F8C3-CBF6-4C04-9FA1-F7EA6C699325";
-width = 650;
-},
 {
 components = (
 {
@@ -291741,8 +291731,18 @@ name = hryvnia;
 transform = "{1, 0, 0, 1, 42, 0}";
 }
 );
+layerId = "8B58F8C3-CBF6-4C04-9FA1-F7EA6C699325";
+width = 600;
+},
+{
+components = (
+{
+name = hryvnia;
+transform = "{1, 0, 0, 1, 22, 0}";
+}
+);
 layerId = "E3D0AE35-FDA8-40C5-B77D-1233E980F611";
-width = 650;
+width = 600;
 },
 {
 associatedMasterId = "8B58F8C3-CBF6-4C04-9FA1-F7EA6C699325";
@@ -291772,21 +291772,21 @@ width = 650;
 components = (
 {
 name = hryvnia;
-transform = "{1, 0, 0, 1, 62, 0}";
+transform = "{1, 0, 0, 1, 42, 0}";
 }
 );
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
-width = 650;
+width = 600;
 },
 {
 components = (
 {
 name = hryvnia;
-transform = "{1, 0, 0, 1, 42, 0}";
+transform = "{1, 0, 0, 1, 22, 0}";
 }
 );
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
-width = 650;
+width = 600;
 }
 );
 },
