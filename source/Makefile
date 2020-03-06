@@ -15,8 +15,8 @@ FONTMAKE_EXE=../$(VENV_DIR)/bin/fontmake
 # --------------------------------------------------------
 #  Source file path definitions
 # --------------------------------------------------------
-UPRIGHT_SOURCE=GoogleSans-Text/GoogleSansText-Beta.glyphs
-ITALIC_SOURCE=GoogleSans-Text/GoogleSansText-Italic-Beta.glyphs
+UPRIGHT_SOURCE=GoogleSans/GoogleSans.glyphs
+ITALIC_SOURCE=GoogleSans/GoogleSans-Italic.glyphs
 
 # --------------------------------------------------------
 #  Build directory and file path definitions
@@ -26,10 +26,10 @@ STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
 VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
 
 # Variable font paths
-VARIABLE_BUILD_PATH_UPRIGHT=$(VARIABLE_BUILD_DIR)/GoogleSansBeta-VF.ttf
-VARIABLE_BUILD_PATH_UPRIGHT_TARGET=$(VARIABLE_BUILD_DIR)/GoogleSansBetaVF[opsz,wght].ttf
-VARIABLE_BUILD_PATH_ITALIC=$(VARIABLE_BUILD_DIR)/GoogleSansBeta-Italic-VF.ttf
-VARIABLE_BUILD_PATH_ITALIC_TARGET=$(VARIABLE_BUILD_DIR)/GoogleSansBetaVF-Italic[opsz,wght].ttf
+VARIABLE_BUILD_PATH_UPRIGHT=$(VARIABLE_BUILD_DIR)/GoogleSans-VF.ttf
+VARIABLE_BUILD_PATH_UPRIGHT_TARGET=$(VARIABLE_BUILD_DIR)/GoogleSansVF[opsz,wght].ttf
+VARIABLE_BUILD_PATH_ITALIC=$(VARIABLE_BUILD_DIR)/GoogleSans-Italic-VF.ttf
+VARIABLE_BUILD_PATH_ITALIC_TARGET=$(VARIABLE_BUILD_DIR)/GoogleSansVF-Italic[opsz,wght].ttf
 
 # --------------------------------------------------------
 #  UFO intermediates and designspace paths
@@ -37,27 +37,27 @@ VARIABLE_BUILD_PATH_ITALIC_TARGET=$(VARIABLE_BUILD_DIR)/GoogleSansBetaVF-Italic[
 MASTER_UFO_DIR=$(FONT_BUILD_DIR)/master_ufo
 INSTANCE_UFO_DIR=$(FONT_BUILD_DIR)/instance_ufo
 
-UPRIGHT_DESIGNSPACE=GoogleSansBeta-GoogleSans.designspace
-ITALIC_DESIGNSPACE=GoogleSansBeta-GoogleSansItalic.designspace
+UPRIGHT_DESIGNSPACE=GoogleSans.designspace
+ITALIC_DESIGNSPACE=GoogleSans-Italic.designspace
 UPRIGHT_DESIGNSPACE_PATH=$(MASTER_UFO_DIR)/$(UPRIGHT_DESIGNSPACE)
 ITALIC_DESIGNSPACE_PATH=$(MASTER_UFO_DIR)/$(ITALIC_DESIGNSPACE)
 
 # --------------------------------------------------------
 #  Master and instance intermediate UFO file paths
 # --------------------------------------------------------
-UFO_GS_REGULAR=$(MASTER_UFO_DIR)/GoogleSansBeta-GoogleSansRegular.ufo
-UFO_GS_ITALIC=$(MASTER_UFO_DIR)/GoogleSansBeta-GoogleSansItalic.ufo
-UFO_GS_MEDIUM=$(INSTANCE_UFO_DIR)/GoogleSansBeta-Medium.ufo
-UFO_GS_MEDIUMITALIC=$(INSTANCE_UFO_DIR)/GoogleSansBeta-MediumItalic.ufo
-UFO_GS_BOLD=$(MASTER_UFO_DIR)/GoogleSansBeta-GoogleSansBold.ufo
-UFO_GS_BOLDITALIC=$(MASTER_UFO_DIR)/GoogleSansBeta-GoogleSansBoldItalic.ufo
+UFO_GS_REGULAR=$(MASTER_UFO_DIR)/GoogleSans-Regular.ufo
+UFO_GS_ITALIC=$(MASTER_UFO_DIR)/GoogleSans-Italic.ufo
+UFO_GS_MEDIUM=$(INSTANCE_UFO_DIR)/GoogleSans-Medium.ufo
+UFO_GS_MEDIUMITALIC=$(INSTANCE_UFO_DIR)/GoogleSans-MediumItalic.ufo
+UFO_GS_BOLD=$(MASTER_UFO_DIR)/GoogleSans-Bold.ufo
+UFO_GS_BOLDITALIC=$(MASTER_UFO_DIR)/GoogleSans-BoldItalic.ufo
 
-UFO_GS_TEXT_REGULAR=$(MASTER_UFO_DIR)/GoogleSansBeta-GoogleSansTextRegular.ufo
-UFO_GS_TEXT_ITALIC=$(MASTER_UFO_DIR)/GoogleSansBeta-GoogleSansTextItalic.ufo
-UFO_GS_TEXT_MEDIUM=$(INSTANCE_UFO_DIR)/GoogleSansBeta-TextMedium.ufo
-UFO_GS_TEXT_MEDIUMITALIC=$(INSTANCE_UFO_DIR)/GoogleSansBeta-TextMediumItalic.ufo
-UFO_GS_TEXT_BOLD=$(MASTER_UFO_DIR)/GoogleSansBeta-GoogleSansTextBold.ufo
-UFO_GS_TEXT_BOLDITALIC=$(MASTER_UFO_DIR)/GoogleSansBeta-GoogleSansTextBoldItalic.ufo
+UFO_GS_TEXT_REGULAR=$(MASTER_UFO_DIR)/GoogleSans-TextRegular.ufo
+UFO_GS_TEXT_ITALIC=$(MASTER_UFO_DIR)/GoogleSans-TextItalic.ufo
+UFO_GS_TEXT_MEDIUM=$(INSTANCE_UFO_DIR)/GoogleSans-TextMedium.ufo
+UFO_GS_TEXT_MEDIUMITALIC=$(INSTANCE_UFO_DIR)/GoogleSans-TextMediumItalic.ufo
+UFO_GS_TEXT_BOLD=$(MASTER_UFO_DIR)/GoogleSans-TextBold.ufo
+UFO_GS_TEXT_BOLDITALIC=$(MASTER_UFO_DIR)/GoogleSans-TextBoldItalic.ufo
 
 # --------------------------------------------------------
 #  TARGETS
@@ -94,11 +94,11 @@ gs-italic: $(FONT_BUILD_DIR) build-designspace-italic
 	$(FONTMAKE_EXE) -u $(UFO_GS_ITALIC) -o ttf --output-dir $(STATIC_BUILD_DIR)
 
 gs-medium: $(FONT_BUILD_DIR) build-designspace-upright
-	$(FONTMAKE_EXE) -m $(UPRIGHT_DESIGNSPACE_PATH) -i "Google Sans Beta Medium" -o ufo
+	$(FONTMAKE_EXE) -m $(UPRIGHT_DESIGNSPACE_PATH) -i "Google Sans Medium" -o ufo
 	$(FONTMAKE_EXE) -u $(UFO_GS_MEDIUM) -o ttf --output-dir $(STATIC_BUILD_DIR)
 
 gs-medium-italic: $(FONT_BUILD_DIR) build-designspace-italic
-	$(FONTMAKE_EXE) -m $(ITALIC_DESIGNSPACE_PATH) -i "Google Sans Beta Medium Italic" -o ufo
+	$(FONTMAKE_EXE) -m $(ITALIC_DESIGNSPACE_PATH) -i "Google Sans Medium Italic" -o ufo
 	$(FONTMAKE_EXE) -u $(UFO_GS_MEDIUMITALIC) -o ttf --output-dir $(STATIC_BUILD_DIR)
 
 gs-bold: $(FONT_BUILD_DIR) build-designspace-upright
@@ -115,11 +115,11 @@ gst-italic: $(FONT_BUILD_DIR) build-designspace-italic
 	$(FONTMAKE_EXE) -u $(UFO_GS_TEXT_ITALIC) -o ttf --output-dir $(STATIC_BUILD_DIR)
 
 gst-medium: $(FONT_BUILD_DIR) build-designspace-upright
-	$(FONTMAKE_EXE) -m $(UPRIGHT_DESIGNSPACE_PATH) -i "Google Sans Beta Text Medium" -o ufo
+	$(FONTMAKE_EXE) -m $(UPRIGHT_DESIGNSPACE_PATH) -i "Google Sans Text Medium" -o ufo
 	$(FONTMAKE_EXE) -u $(UFO_GS_TEXT_MEDIUM) -o ttf --output-dir $(STATIC_BUILD_DIR)
 
 gst-medium-italic: $(FONT_BUILD_DIR) build-designspace-italic
-	$(FONTMAKE_EXE) -m $(ITALIC_DESIGNSPACE_PATH) -i "Google Sans Beta Text Medium Italic" -o ufo
+	$(FONTMAKE_EXE) -m $(ITALIC_DESIGNSPACE_PATH) -i "Google Sans Text Medium Italic" -o ufo
 	$(FONTMAKE_EXE) -u $(UFO_GS_TEXT_MEDIUMITALIC) -o ttf --output-dir $(STATIC_BUILD_DIR)
 
 gst-bold: $(FONT_BUILD_DIR) build-designspace-upright
