@@ -120,7 +120,7 @@ value = 1;
 );
 date = "2017-07-06 09:41:44 +0000";
 designer = "Jesse Kaczmarek, Colophon Foundry";
-familyName = "Google Sans Beta";
+familyName = "Google Sans";
 featurePrefixes = (
 {
 code = "languagesystem DFLT dflt;\012languagesystem latn dflt;\012languagesystem cyrl dflt;\012languagesystem latn ROM;\012languagesystem latn MOL;\012languagesystem latn CAT;\012languagesystem latn SRB;\012languagesystem cyrl BGR;\012\012@grk_UPPERCASE = [ Alpha Beta Gamma Delta Epsilon Zeta Eta Theta Iota Kappa Lambda Mu Nu Xi Omicron Pi Rho Sigma Tau Upsilon Phi Chi Psi Omega Alphatonos Epsilontonos Etatonos Iotatonos Omicrontonos Upsilontonos Omegatonos Iotadieresis Upsilondieresis ] ;\012\012@grk_lowercase = [ alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma tau upsilon phi chi psi omega alphatonos epsilontonos etatonos iotatonos omicrontonos upsilontonos omegatonos iotadieresis upsilondieresis iotadieresistonos upsilondieresistonos sigmafinal ] ;\012\012@grk_smallcaps = [ alpha.sc beta.sc gamma.sc delta.sc epsilon.sc zeta.sc eta.sc theta.sc iota.sc kappa.sc lambda.sc mu.sc nu.sc xi.sc omicron.sc pi.sc rho.sc sigma.sc tau.sc upsilon.sc phi.sc chi.sc psi.sc omega.sc alphatonos.sc epsilontonos.sc etatonos.sc iotatonos.sc omicrontonos.sc upsilontonos.sc omegatonos.sc iotadieresis.sc upsilondieresis.sc iotadieresistonos.sc upsilondieresistonos.sc sigmafinal.sc ] ;\012\012";
@@ -234053,7 +234053,7 @@ com.typemytype.robofont.mark = (
 },
 {
 glyphname = hryvnia;
-lastChange = "2020-03-05 13:16:18 +0000";
+lastChange = "2020-03-09 16:25:30 +0000";
 layers = (
 {
 layerId = "BE1166E3-1CAA-4651-A534-350E8BF10E0B";
@@ -234275,7 +234275,7 @@ nodes = (
 );
 }
 );
-width = 532;
+width = 570;
 },
 {
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
@@ -234349,7 +234349,7 @@ nodes = (
 );
 }
 );
-width = 575;
+width = 610;
 }
 );
 unicode = 20B4;
@@ -244776,11 +244776,12 @@ unicode = 2206;
 },
 {
 glyphname = product;
-lastChange = "2020-03-05 11:06:25 +0000";
+lastChange = "2020-03-06 21:17:22 +0000";
 layers = (
 {
 components = (
 {
+alignment = -1;
 name = "Pe-cy";
 }
 );
@@ -244790,6 +244791,7 @@ width = 674;
 {
 components = (
 {
+alignment = -1;
 name = "Pe-cy";
 }
 );
@@ -244808,6 +244810,7 @@ width = 678;
 {
 components = (
 {
+alignment = -1;
 name = "Pe-cy";
 }
 );
@@ -283227,167 +283230,6 @@ width = 41;
 );
 instances = (
 {
-exports = 0;
-customParameters = (
-{
-name = panose;
-value = (
-2,
-11,
-5,
-3,
-3,
-5,
-2,
-4,
-2,
-4
-);
-},
-{
-name = Autohint;
-value = 1;
-},
-{
-name = familyName;
-value = "Google Sans Beta";
-},
-{
-name = "Rename Glyphs";
-value = (
-"six=six.ss05",
-"six.cap=six.ss05.001",
-"nine=nine.ss05",
-"nine.cap=nine.ss05.001",
-"upArrow=upArrow.ss03",
-"downArrow=downArrow.ss03",
-"leftArrow=leftArrow.ss03",
-"rightArrow=rightArrow.ss03",
-"northEastArrow=northEastArrow.ss03",
-"northWestArrow=northWestArrow.ss03",
-"southEastArrow=northEastArrow.ss03",
-"southWestArrow=southWestArrow.ss03"
-);
-}
-);
-interpolationCustom = 300;
-interpolationWeight = 14;
-interpolationWidth = 380;
-instanceInterpolations = {
-"15F39A2A-7598-44C5-A4AA-18A6AD645EAA" = 1;
-};
-name = "Text Regular";
-},
-{
-exports = 0;
-customParameters = (
-{
-name = panose;
-value = (
-2,
-11,
-6,
-3,
-3,
-5,
-2,
-4,
-2,
-4
-);
-},
-{
-name = Autohint;
-value = 1;
-},
-{
-name = familyName;
-value = "Google Sans Beta";
-},
-{
-name = "Rename Glyphs";
-value = (
-"six=six.ss05",
-"six.cap=six.ss05.001",
-"nine=nine.ss05",
-"nine.cap=nine.ss05.001",
-"upArrow=upArrow.ss03",
-"downArrow=downArrow.ss03",
-"leftArrow=leftArrow.ss03",
-"rightArrow=rightArrow.ss03",
-"northEastArrow=northEastArrow.ss03",
-"northWestArrow=northWestArrow.ss03",
-"southEastArrow=northEastArrow.ss03",
-"southWestArrow=southWestArrow.ss03"
-);
-}
-);
-interpolationCustom = 400;
-interpolationWeight = 14;
-interpolationWidth = 555;
-instanceInterpolations = {
-"15F39A2A-7598-44C5-A4AA-18A6AD645EAA" = 0.50565;
-"3E1A77A5-2AAF-4B97-842E-5802590C9619" = 0.49435;
-};
-name = "Text Medium";
-weightClass = Medium;
-},
-{
-exports = 0;
-customParameters = (
-{
-name = panose;
-value = (
-2,
-11,
-8,
-3,
-3,
-5,
-2,
-4,
-2,
-4
-);
-},
-{
-name = Autohint;
-value = 1;
-},
-{
-name = familyName;
-value = "Google Sans Beta";
-},
-{
-name = "Rename Glyphs";
-value = (
-"six=six.ss05",
-"six.cap=six.ss05.001",
-"nine=nine.ss05",
-"nine.cap=nine.ss05.001",
-"upArrow=upArrow.ss03",
-"downArrow=downArrow.ss03",
-"leftArrow=leftArrow.ss03",
-"rightArrow=rightArrow.ss03",
-"northEastArrow=northEastArrow.ss03",
-"northWestArrow=northWestArrow.ss03",
-"southEastArrow=northEastArrow.ss03",
-"southWestArrow=southWestArrow.ss03"
-);
-}
-);
-interpolationCustom = 300;
-interpolationWeight = 14;
-interpolationWidth = 734;
-instanceInterpolations = {
-"3E1A77A5-2AAF-4B97-842E-5802590C9619" = 1;
-};
-isBold = 1;
-linkStyle = "Text Regular";
-name = "Text Bold";
-weightClass = Bold;
-},
-{
 customParameters = (
 {
 name = panose;
@@ -283507,108 +283349,6 @@ name = Bold;
 weightClass = Bold;
 },
 {
-exports = 0;
-customParameters = (
-{
-name = panose;
-value = (
-2,
-11,
-5,
-3,
-3,
-5,
-2,
-4,
-2,
-3
-);
-},
-{
-name = Autohint;
-value = 0;
-}
-);
-interpolationCustom = 400;
-interpolationWeight = 24;
-interpolationWidth = 380;
-instanceInterpolations = {
-"15F39A2A-7598-44C5-A4AA-18A6AD645EAA" = -1.5;
-"BE1166E3-1CAA-4651-A534-350E8BF10E0B" = 2.5;
-};
-name = "Display Regular";
-},
-{
-exports = 0;
-customParameters = (
-{
-name = panose;
-value = (
-2,
-11,
-6,
-3,
-3,
-5,
-2,
-4,
-2,
-3
-);
-},
-{
-name = Autohint;
-value = 0;
-}
-);
-interpolationCustom = 400;
-interpolationWeight = 24;
-interpolationWidth = 555;
-instanceInterpolations = {
-"090CB6A0-BE7C-4D17-A551-206C7456A8A3" = 1.23588;
-"15F39A2A-7598-44C5-A4AA-18A6AD645EAA" = -0.75847;
-"3E1A77A5-2AAF-4B97-842E-5802590C9619" = -0.74153;
-"BE1166E3-1CAA-4651-A534-350E8BF10E0B" = 1.26412;
-};
-name = "Display Medium";
-weightClass = Medium;
-},
-{
-exports = 0;
-customParameters = (
-{
-name = panose;
-value = (
-2,
-11,
-8,
-3,
-3,
-5,
-2,
-4,
-2,
-3
-);
-},
-{
-name = Autohint;
-value = 0;
-}
-);
-interpolationCustom = 400;
-interpolationWeight = 24;
-interpolationWidth = 734;
-instanceInterpolations = {
-"090CB6A0-BE7C-4D17-A551-206C7456A8A3" = 2.5;
-"3E1A77A5-2AAF-4B97-842E-5802590C9619" = -1.5;
-};
-isBold = 1;
-linkStyle = "Display Regular";
-name = "Display Bold";
-weightClass = Bold;
-},
-{
 customParameters = (
 {
 name = panose;
@@ -283631,7 +283371,7 @@ value = 0;
 },
 {
 name = familyName;
-value = "Google Sans Text Beta";
+value = "Google Sans Text";
 },
 {
 name = "Name Table Entry";
@@ -283673,7 +283413,7 @@ value = 0;
 },
 {
 name = familyName;
-value = "Google Sans Text Beta";
+value = "Google Sans Text";
 },
 {
 name = "Name Table Entry";
@@ -283717,7 +283457,7 @@ value = 0;
 },
 {
 name = familyName;
-value = "Google Sans Text Beta";
+value = "Google Sans Text";
 },
 {
 name = "Name Table Entry";
