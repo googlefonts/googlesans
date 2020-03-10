@@ -18,7 +18,7 @@ matrix:
       script:
         - make gs-static
         - fontbakery --version
-        - fontbakery check-profile qa/check-googlesans.py build/GoogleSans/static/*.ttf
+        - make test-fb-static
     - dist: bionic
       env: TOX_ENV=variable-font-QA
       before_install:
@@ -34,7 +34,7 @@ matrix:
       script:
         - make gs-vf
         - fontbakery --version
-        - fontbakery check-profile qa/check-googlesans.py build/GoogleSans/variable/*.ttf
+        - make test-fb-vf
     # - python: 3.7
     #   dist: xenial
     #   env: TOX_ENV=qa-tests
