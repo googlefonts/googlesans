@@ -65,10 +65,26 @@ update-deps:
 	pip-compile -U
 
 
+test-fb: test-fb-static test-fb-vf
+
+test-fb-static:
+	@echo "========================================================="
+	@echo " fontbakery v`fontbakery --version` static font checks"
+	@echo "========================================================="
+	fontbakery check-profile -C --loglevel WARN qa/check-googlesans.py build/GoogleSans/static/*.ttf
+
+test-fb-vf:
+	@echo "========================================================="
+	@echo " fontbakery v`fontbakery --version` variable font checks"
+	@echo "========================================================="
+	fontbakery check-profile -C --loglevel WARN qa/check-googlesans.py build/GoogleSans/variable/*.ttf
+
+
 .PHONY: all \
 clean \
 gs-static gs-vf \
 gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
 gs-vf-upright gs-vf-italic \
-setup update-deps sync-deps list-deps
+setup update-deps sync-deps list-deps \
+test-fb test-fb-static test-fb-vf
