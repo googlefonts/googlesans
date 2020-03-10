@@ -70,7 +70,16 @@ UFO_GS_TEXT_BOLDITALIC=$(MASTER_UFO_DIR)/GoogleSans-TextBoldItalic.ufo
 gs-static: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -g $(UPRIGHT_SOURCE) --interpolate -o ttf --output-dir $(STATIC_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
 	$(FONTMAKE_EXE) -g $(ITALIC_SOURCE) --interpolate -o ttf --output-dir $(STATIC_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
-	
+	@echo "================================"
+	@echo " Beginning post-compile fixes..."
+	@echo "================================"
+	@echo "================================"
+	@echo " Add gasp & prep tables"
+	@echo "================================"
+	python3 ../scripts/gftools-fix-nonhinting.py $(STATIC_BUILD_DIR)/*.ttf
+	# remove the backups that the script leaves behind
+	rm $(STATIC_BUILD_DIR)/*prep-gasp.ttf
+
 
 gs-vf: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -g $(UPRIGHT_SOURCE) -o variable --output-dir $(VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
@@ -78,9 +87,18 @@ gs-vf: $(FONT_BUILD_DIR)
 	@echo "================================"
 	@echo " Beginning post-compile fixes..."
 	@echo "================================"
+	@echo "================================"
+	@echo " MVAR table removal"
+	@echo "================================"
 	python3 ../scripts/gftools-fix-unwanted-tables.py --tables MVAR $(VARIABLE_BUILD_DIR)/*.ttf
 	mv $(VARIABLE_BUILD_PATH_UPRIGHT) "$(VARIABLE_BUILD_PATH_UPRIGHT_TARGET)"
 	mv $(VARIABLE_BUILD_PATH_ITALIC) "$(VARIABLE_BUILD_PATH_ITALIC_TARGET)"
+	@echo "================================"
+	@echo " Add gasp & prep tables"
+	@echo "================================"
+	python3 ../scripts/gftools-fix-nonhinting.py $(VARIABLE_BUILD_DIR)/*.ttf
+	# remove the backups that the script leaves behind
+	rm $(VARIABLE_BUILD_DIR)/*prep-gasp.ttf
 
 #
 #  Individual static instance build targets
