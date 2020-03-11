@@ -173155,7 +173155,7 @@ com.typemytype.robofont.mark = (
 },
 {
 glyphname = iotatonos;
-lastChange = "2020-01-22 16:45:12 +0000";
+lastChange = "2020-03-11 15:00:16 +0000";
 layers = (
 {
 components = (
@@ -173342,7 +173342,7 @@ unicode = 0390;
 },
 {
 glyphname = upsilontonos;
-lastChange = "2020-01-22 16:45:12 +0000";
+lastChange = "2020-03-11 15:00:16 +0000";
 layers = (
 {
 components = (
@@ -173540,7 +173540,7 @@ y = 1018;
 },
 {
 glyphname = omicrontonos;
-lastChange = "2020-01-22 16:45:12 +0000";
+lastChange = "2020-03-11 14:59:56 +0000";
 layers = (
 {
 components = (
@@ -173605,7 +173605,7 @@ unicode = 03CC;
 },
 {
 glyphname = omegatonos;
-lastChange = "2020-01-22 16:45:12 +0000";
+lastChange = "2020-03-11 15:00:16 +0000";
 layers = (
 {
 components = (
@@ -173666,7 +173666,7 @@ unicode = 03CE;
 },
 {
 glyphname = alphatonos;
-lastChange = "2020-01-22 16:45:12 +0000";
+lastChange = "2020-03-11 15:00:16 +0000";
 layers = (
 {
 components = (
@@ -173727,7 +173727,7 @@ unicode = 03AC;
 },
 {
 glyphname = epsilontonos;
-lastChange = "2020-01-22 16:45:12 +0000";
+lastChange = "2020-03-11 15:00:16 +0000";
 layers = (
 {
 components = (
@@ -173796,7 +173796,7 @@ com.typemytype.robofont.mark = (
 },
 {
 glyphname = etatonos;
-lastChange = "2020-01-22 16:45:12 +0000";
+lastChange = "2020-03-11 15:00:16 +0000";
 layers = (
 {
 components = (
@@ -283401,50 +283401,90 @@ width = 196;
 },
 {
 glyphname = tonos;
-lastChange = "2020-01-22 16:45:12 +0000";
+lastChange = "2020-03-11 15:00:18 +0000";
 layers = (
 {
-components = (
+anchors = (
 {
-alignment = -1;
-name = tonoscmb;
-transform = "{1, 0, 0, 1, 180, 0}";
+name = _top;
+position = "{225, 510}";
 }
 );
 layerId = "8B58F8C3-CBF6-4C04-9FA1-F7EA6C699325";
+paths = (
+{
+closed = 1;
+nodes = (
+"263 608 LINE",
+"349 755 LINE",
+"256 755 LINE",
+"194 608 LINE"
+);
+}
+);
 width = 379;
 },
 {
-components = (
+anchors = (
 {
-alignment = -1;
-name = tonoscmb;
-transform = "{1, 0, 0, 1, 200, 0}";
+name = _top;
+position = "{245, 510}";
 }
 );
 layerId = "E3D0AE35-FDA8-40C5-B77D-1233E980F611";
+paths = (
+{
+closed = 1;
+nodes = (
+"310 608 LINE",
+"428 774 LINE",
+"265 774 LINE",
+"195 608 LINE"
+);
+}
+);
 width = 451;
 },
 {
-components = (
+anchors = (
 {
-alignment = -1;
-name = tonoscmb;
-transform = "{1, 0, 0, 1, 156, 0}";
+name = _top;
+position = "{202, 526}";
 }
 );
 layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
+paths = (
+{
+closed = 1;
+nodes = (
+"257 629 LINE",
+"343 786 LINE",
+"250 786 LINE",
+"188 629 LINE"
+);
+}
+);
 width = 370;
 },
 {
-components = (
+anchors = (
 {
-alignment = -1;
-name = tonoscmb;
-transform = "{1, 0, 0, 1, 182, 0}";
+name = _top;
+position = "{228, 526}";
 }
 );
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
+paths = (
+{
+closed = 1;
+nodes = (
+"294 629 LINE",
+"398 795 LINE",
+"245 795 LINE",
+"189 629 LINE"
+);
+}
+);
 width = 427;
 }
 );
@@ -285637,7 +285677,7 @@ width = 452;
 },
 {
 glyphname = oxia;
-lastChange = "2019-12-14 16:57:10 +0000";
+lastChange = "2020-03-11 14:59:56 +0000";
 layers = (
 {
 components = (
@@ -285657,7 +285697,7 @@ name = tonos;
 }
 );
 layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
-width = 427;
+width = 496;
 },
 {
 components = (
@@ -295008,96 +295048,6 @@ nodes = (
 }
 );
 width = 3284;
-}
-);
-},
-{
-glyphname = tonoscmb;
-lastChange = "2020-01-22 16:45:12 +0000";
-layers = (
-{
-anchors = (
-{
-name = _top;
-position = "{46, 526}";
-}
-);
-layerId = "15F39A2A-7598-44C5-A4AA-18A6AD645EAA";
-paths = (
-{
-closed = 1;
-nodes = (
-"101 629 LINE",
-"187 786 LINE",
-"94 786 LINE",
-"32 629 LINE"
-);
-}
-);
-width = 0;
-},
-{
-anchors = (
-{
-name = _top;
-position = "{46, 526}";
-}
-);
-layerId = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
-paths = (
-{
-closed = 1;
-nodes = (
-"112 629 LINE",
-"216 795 LINE",
-"63 795 LINE",
-"7 629 LINE"
-);
-}
-);
-width = 0;
-},
-{
-anchors = (
-{
-name = _top;
-position = "{45, 510}";
-}
-);
-layerId = "8B58F8C3-CBF6-4C04-9FA1-F7EA6C699325";
-paths = (
-{
-closed = 1;
-nodes = (
-"83 608 LINE",
-"169 755 LINE",
-"76 755 LINE",
-"14 608 LINE"
-);
-}
-);
-width = 0;
-},
-{
-anchors = (
-{
-name = _top;
-position = "{45, 510}";
-}
-);
-layerId = "E3D0AE35-FDA8-40C5-B77D-1233E980F611";
-paths = (
-{
-closed = 1;
-nodes = (
-"110 608 LINE",
-"228 774 LINE",
-"65 774 LINE",
-"-5 608 LINE"
-);
-}
-);
-width = 0;
 }
 );
 },
