@@ -76,6 +76,10 @@ gs-static: $(FONT_BUILD_DIR)
 	@echo " Beginning post-compile fixes..."
 	@echo "================================"
 	@echo "================================"
+	@echo " Beginning font subsetting..."
+	@echo "================================"
+	$(PYTHON3_EXE) ../scripts/gs-subset.py
+	@echo "================================"
 	@echo " Add gasp & prep tables"
 	@echo "================================"
 	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(STATIC_BUILD_DIR)/*.ttf
