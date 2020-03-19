@@ -5,6 +5,8 @@
 # --------------------------------------------------------
 VENV_DIR=.venv
 
+PYTHON3_EXE=../$(VENV_DIR)/bin/python3
+
 # --------------------------------------------------------
 #  fontmake compiler executable
 #    NOTE: this builds from a venv install to support
@@ -76,7 +78,7 @@ gs-static: $(FONT_BUILD_DIR)
 	@echo "================================"
 	@echo " Add gasp & prep tables"
 	@echo "================================"
-	python3 ../scripts/gftools-fix-nonhinting.py $(STATIC_BUILD_DIR)/*.ttf
+	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(STATIC_BUILD_DIR)/*.ttf
 	# remove the backups that the script leaves behind
 	rm $(STATIC_BUILD_DIR)/*prep-gasp.ttf
 
@@ -90,13 +92,13 @@ gs-vf: $(FONT_BUILD_DIR)
 	@echo "================================"
 	@echo " MVAR table removal"
 	@echo "================================"
-	python3 ../scripts/gftools-fix-unwanted-tables.py --tables MVAR $(VARIABLE_BUILD_DIR)/*.ttf
+	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py --tables MVAR $(VARIABLE_BUILD_DIR)/*.ttf
 	mv $(VARIABLE_BUILD_PATH_UPRIGHT) "$(VARIABLE_BUILD_PATH_UPRIGHT_TARGET)"
 	mv $(VARIABLE_BUILD_PATH_ITALIC) "$(VARIABLE_BUILD_PATH_ITALIC_TARGET)"
 	@echo "================================"
 	@echo " Add gasp & prep tables"
 	@echo "================================"
-	python3 ../scripts/gftools-fix-nonhinting.py $(VARIABLE_BUILD_DIR)/*.ttf
+	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(VARIABLE_BUILD_DIR)/*.ttf
 	# remove the backups that the script leaves behind
 	rm $(VARIABLE_BUILD_DIR)/*prep-gasp.ttf
 
