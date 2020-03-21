@@ -9,12 +9,12 @@ matrix:
         - sudo apt update
         - sudo apt install python3-dev python3-pip python3-venv
         - pip3 --version
-      install: 
+      install:
         - python3 --version
         - pip3 --version
         - pip3 install --upgrade pip
         - make setup
-        - pip3 install --user --upgrade fontbakery 
+        - pip3 install --user --upgrade fontbakery
       script:
         - make gs-static
         - fontbakery --version
@@ -50,7 +50,7 @@ matrix:
     #     - cd util
     #     - PATH=$(pwd):$PATH
     #     - cd ../..
-    #   install: 
+    #   install:
     #     - pip install -r requirements.txt
     #     - pip install git+https://www.github.com/googlefonts/tools
     #   script:
@@ -64,21 +64,6 @@ matrix:
     #     - mv build/GoogleSans/variable build/GoogleSans/variable-old
     #     # Test fonts
     #     - gftools qa -f build/GoogleSans/variable-new/*.ttf -fb build/GoogleSans/variable-old/*.ttf --diffbrowsers --diffenator -o out --out-url https://github.com/$TRAVIS_REPO_SLUG/pulls/$TRAVIS_PULL_REQUEST
-
-
-
-# The following prevents Travis from running CI on pull requests that come from a
-# branch in the same repository. Without this, it will run the same CI for the
-# pull request branch _and_ the pull request itself, which is unnecessary.
-branches:
-  only:
-    - master
-    # We want to build wip/* branches since these are not usually used for PRs
-    - /^wip\/.*$/
-    # We want to build version tags as well.
-    - /^v\d+\.\d+.*$/
-    # Allow Chris's branches for testing
-    - /^chrissimpkins.*$/
 
 notifications:
   email: false
