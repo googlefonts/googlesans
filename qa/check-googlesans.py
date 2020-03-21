@@ -34,6 +34,10 @@ GOOGLESANS_PROFILE_CHECKS = UNIVERSAL_PROFILE_CHECKS + [
     "com.google.fonts/check/googlesans/opentype/os2/typodescender",
     "com.google.fonts/check/googlesans/opentype/os2/typoascender",
     "com.google.fonts/check/googlesans/opentype/os2/typolinegap",
+    "com.google.fonts/check/googlesans/features/staticuprights",
+    "com.google.fonts/check/googlesans/features/staticitalics",
+    "com.google.fonts/check/googlesans/features/variableuprights",
+    "com.google.fonts/check/googlesans/features/variableitalics",
 ]
 
 # define check ID's in the upstream `universal` profile
@@ -42,6 +46,7 @@ excluded_check_ids = (
     "com.google.fonts/check/ftxvalidator_is_available",
     "com.google.fonts/check/dsig",
     "com.google.fonts/check/family/win_ascent_and_descent",  # replaced by custom checks
+    "com.google.fonts/check/varfont/regular_opsz_coord",  # we really do want our opsz definition on regular instance
     # "com.google.fonts/check/os2_metrics_match_hhea",
     # "com.google.fonts/check/unwanted_tables",
 )
@@ -59,6 +64,159 @@ ATTRIBUTES = {
     "os2_typodescender": -286,
     "os2_typolinegap": 0,
 }
+
+STATIC_UPRIGHT_FEA = [
+    "aalt",
+    "c2sc",
+    "calt",
+    "case",
+    "ccmp",
+    "dlig",
+    "dnom",
+    "frac",
+    "kern",
+    "liga",
+    "lnum",
+    "locl",
+    "mark",
+    "mkmk",
+    "numr",
+    "ordn",
+    "pnum",
+    "sinf",
+    "smcp",
+    "ss01",
+    "ss02",
+    "ss03",
+    "ss04",
+    "ss05",
+    "ss06",
+    "ss07",
+    "ss08",
+    "subs",
+    "sups",
+    "tnum",
+]
+
+STATIC_ITALICS_FEA = [
+    "aalt",
+    "c2sc",
+    "calt",
+    "case",
+    "ccmp",
+    "dlig",
+    "dnom",
+    "frac",
+    "kern",
+    "liga",
+    "lnum",
+    "locl",
+    "mark",
+    "mkmk",
+    "numr",
+    "ordn",
+    "pnum",
+    "sinf",
+    "smcp",
+    "ss01",
+    "ss02",
+    "ss04",
+    "ss05",
+    "ss06",
+    "ss07",
+    "ss08",
+    "subs",
+    "sups",
+    "tnum",
+]
+
+VAR_UPRIGHT_FEA = [
+    "aalt",
+    "c2sc",
+    "calt",
+    "case",
+    "ccmp",
+    "dlig",
+    "dnom",
+    "frac",
+    "kern",
+    "liga",
+    "lnum",
+    "locl",
+    "mark",
+    "mkmk",
+    "numr",
+    "ordn",
+    "pnum",
+    "rvrn",
+    "sinf",
+    "smcp",
+    "ss01",
+    "ss02",
+    "ss03",
+    "ss04",
+    "ss05",
+    "ss06",
+    "ss07",
+    "ss08",
+    "subs",
+    "sups",
+    "tnum",
+]
+
+VAR_ITALICS_FEA = [
+    "aalt",
+    "c2sc",
+    "calt",
+    "case",
+    "ccmp",
+    "dlig",
+    "dnom",
+    "frac",
+    "kern",
+    "liga",
+    "lnum",
+    "locl",
+    "mark",
+    "mkmk",
+    "numr",
+    "ordn",
+    "pnum",
+    "rvrn",
+    "sinf",
+    "smcp",
+    "ss01",
+    "ss02",
+    "ss04",
+    "ss05",
+    "ss06",
+    "ss07",
+    "ss08",
+    "subs",
+    "sups",
+    "tnum",
+]
+
+# ================================================
+#
+# Conditions
+#
+# ================================================
+
+
+@condition
+def is_italic(ttFont):
+    return "Italic" in ttFont.reader.file.name
+
+
+@condition
+def is_not_italic(ttFont):
+    return "Italic" not in ttFont.reader.file.name
+
+
+@condition
+def is_not_variable_font(ttFont):
+    return "fvar" not in ttFont.keys()
 
 
 # ================================================
@@ -256,6 +414,120 @@ def com_google_fonts_check_googlesans_opentype_os2_typolinegap(ttFont):
         yield FAIL, f"The OS/2.typoLineGap value {ttFont['OS/2'].sTypoLineGap} does not match the required value {ATTRIBUTES['os2_typolinegap']}"
     else:
         yield PASS, f"The OS/2.typoLineGap value matches the required value."
+
+
+# ================================================
+# Feature support
+# ================================================
+
+# statics
+@check(
+    id="com.google.fonts/check/googlesans/features/staticuprights",
+    conditions=["is_not_italic", "is_not_variable_font"],
+    rationale="""
+    Confirms that the upright builds contain expected feature tags.
+    """,
+)
+def com_google_fonts_check_googlesans_features_static_uprights(ttFont):
+    """Confirms that the upright builds contain expected feature tags."""
+    tt = ttFont
+    gpos = tt["GPOS"]
+    gsub = tt["GSUB"]
+
+    fea_tags = set()
+
+    for gpos_record in gpos.table.FeatureList.FeatureRecord:
+        fea_tags.add(gpos_record.FeatureTag)
+
+    for gsub_record in gsub.table.FeatureList.FeatureRecord:
+        fea_tags.add(gsub_record.FeatureTag)
+
+    if sorted(fea_tags) == STATIC_UPRIGHT_FEA:
+        yield PASS, f"{tt.reader.file.name} contains the expected feature tags"
+    else:
+        yield FAIL, f"{tt.reader.file.name} does not contain the expected feature tags.\nFound:{sorted(fea_tags)}\nExpected:{STATIC_UPRIGHT_FEA}"
+
+
+@check(
+    id="com.google.fonts/check/googlesans/features/staticitalics",
+    conditions=["is_italic", "is_not_variable_font"],
+    rationale="""
+    Confirms that the italics builds contain expected feature tags.
+    """,
+)
+def com_google_fonts_check_googlesans_features_static_italics(ttFont):
+    """Confirms that the italics builds contain expected feature tags."""
+    tt = ttFont
+    gpos = tt["GPOS"]
+    gsub = tt["GSUB"]
+
+    fea_tags = set()
+
+    for gpos_record in gpos.table.FeatureList.FeatureRecord:
+        fea_tags.add(gpos_record.FeatureTag)
+
+    for gsub_record in gsub.table.FeatureList.FeatureRecord:
+        fea_tags.add(gsub_record.FeatureTag)
+
+    if sorted(fea_tags) == STATIC_ITALICS_FEA:
+        yield PASS, f"{tt.reader.file.name} contains the expected feature tags"
+    else:
+        yield FAIL, f"{tt.reader.file.name} does not contain the expected feature tags.\nFound:{sorted(fea_tags)}\nExpected:{STATIC_ITALICS_FEA}"
+
+
+# VF
+@check(
+    id="com.google.fonts/check/googlesans/features/variableuprights",
+    conditions=["is_not_italic", "is_variable_font"],
+    rationale="""
+    Confirms that the variable upright builds contain expected feature tags.
+    """,
+)
+def com_google_fonts_check_googlesans_features_variable_uprights(ttFont):
+    """Confirms that the upright builds contain expected feature tags."""
+    tt = ttFont
+    gpos = tt["GPOS"]
+    gsub = tt["GSUB"]
+
+    fea_tags = set()
+
+    for gpos_record in gpos.table.FeatureList.FeatureRecord:
+        fea_tags.add(gpos_record.FeatureTag)
+
+    for gsub_record in gsub.table.FeatureList.FeatureRecord:
+        fea_tags.add(gsub_record.FeatureTag)
+
+    if sorted(fea_tags) == VAR_UPRIGHT_FEA:
+        yield PASS, f"{tt.reader.file.name} contains the expected feature tags"
+    else:
+        yield FAIL, f"{tt.reader.file.name} does not contain the expected feature tags.\nFound:{sorted(fea_tags)}\nExpected:{VAR_UPRIGHT_FEA}"
+
+
+@check(
+    id="com.google.fonts/check/googlesans/features/variableitalics",
+    conditions=["is_italic", "is_variable_font"],
+    rationale="""
+    Confirms that the variable italics builds contain expected feature tags.
+    """,
+)
+def com_google_fonts_check_googlesans_features_variable_italics(ttFont):
+    """Confirms that the italics builds contain expected feature tags."""
+    tt = ttFont
+    gpos = tt["GPOS"]
+    gsub = tt["GSUB"]
+
+    fea_tags = set()
+
+    for gpos_record in gpos.table.FeatureList.FeatureRecord:
+        fea_tags.add(gpos_record.FeatureTag)
+
+    for gsub_record in gsub.table.FeatureList.FeatureRecord:
+        fea_tags.add(gsub_record.FeatureTag)
+
+    if sorted(fea_tags) == VAR_ITALICS_FEA:
+        yield PASS, f"{tt.reader.file.name} contains the expected feature tags"
+    else:
+        yield FAIL, f"{tt.reader.file.name} does not contain the expected feature tags.\nFound:{sorted(fea_tags)}\nExpected:{VAR_ITALICS_FEA}"
 
 
 # ================================================
