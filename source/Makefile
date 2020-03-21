@@ -38,8 +38,8 @@ ITALIC_SOURCE=GoogleSans/GoogleSans-Italic.glyphs
 #  Build directory and file path definitions
 # --------------------------------------------------------
 FONT_BUILD_DIR=../build/GoogleSans
-STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
-VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
+STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static/expert
+VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable/expert
 
 # Variable font paths
 VARIABLE_BUILD_PATH_UPRIGHT=$(VARIABLE_BUILD_DIR)/GoogleSans-VF.ttf
