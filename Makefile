@@ -13,6 +13,10 @@
 # limitations under the License.
 
 FONT_BUILD_DIR=build/GoogleSans
+EXPERT_STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static/expert
+DEFAULT_STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static/default
+EXPERT_VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable/expert
+DEFAULT_VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable/default
 MASTER_UFO_DIR=$(FONT_BUILD_DIR)/master_ufo
 INSTANCE_UFO_DIR=$(FONT_BUILD_DIR)/instance_ufo
 VENV_DIR=.venv
@@ -79,19 +83,19 @@ update-deps:
 	pip-compile -U
 
 
-test-fb: test-fb-static test-fb-vf
+test-fb: test-fb-static-expert test-fb-vf-expert
 
-test-fb-static:
+test-fb-static-expert:
 	@echo "========================================================="
 	@echo " fontbakery v`fontbakery --version` static font checks"
 	@echo "========================================================="
-	fontbakery check-profile -C --loglevel WARN qa/check-googlesans.py build/GoogleSans/static/*.ttf
+	fontbakery check-profile -C --loglevel WARN qa/check-googlesans.py $(EXPERT_STATIC_BUILD_DIR)/*.ttf
 
-test-fb-vf:
+test-fb-vf-expert:
 	@echo "========================================================="
 	@echo " fontbakery v`fontbakery --version` variable font checks"
 	@echo "========================================================="
-	fontbakery check-profile -C --loglevel WARN qa/check-googlesans.py build/GoogleSans/variable/*.ttf
+	fontbakery check-profile -C --loglevel WARN qa/check-googlesans.py $(EXPERT_VARIABLE_BUILD_DIR)/*.ttf
 
 
 .PHONY: all \
@@ -101,4 +105,4 @@ gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
 gs-vf-upright gs-vf-italic \
 setup update-deps sync-deps list-deps \
-test-fb test-fb-static test-fb-vf
+test-fb test-fb-static-expert test-fb-vf-expert
