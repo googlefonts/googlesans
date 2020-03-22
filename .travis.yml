@@ -18,7 +18,7 @@ matrix:
       script:
         - make gs-static
         - fontbakery --version
-        - make test-fb-static
+        - make test-fb-static-expert
     - dist: bionic
       env: TOX_ENV=variable-font-QA
       before_install:
@@ -34,7 +34,7 @@ matrix:
       script:
         - make gs-vf
         - fontbakery --version
-        - make test-fb-vf
+        - make test-fb-vf-expert
     # - python: 3.7
     #   dist: xenial
     #   env: TOX_ENV=qa-tests
