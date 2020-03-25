@@ -14,6 +14,8 @@ Optional dependencies for project maintainers include:
 
 ## Quickstart
 
+Source files are located on the directory path: `source/GoogleSans`.
+
 Run the following commands in the root of the repository to install the required build dependencies in a Python virtual environment and compile all variable and static instance fonts:
 
 ```
@@ -21,7 +23,9 @@ $ make setup
 $ make
 ```
 
-Fonts are located in the directories `build/GoogleSans/static` and `build/GoogleSans/variable`.
+Static fonts are located in the directories `build/GoogleSans/static/expert` and `build/GoogleSans/static/default`.
+
+Variable fonts are located in the directories `build/GoogleSans/variable/expert` and `build/GoogleSans/variable/default`.
 
 Remove the virtual environment and intermediate UFO source files that are generated during the build with the following command:
 
@@ -69,7 +73,7 @@ Please refer to the `source/Makefile` for the full set of make build targets.
 
 ### Remove temporary UFO source files
 
-The fontmake compiler builds UFO source file intermediates during the compilation of Google Sans fonts from Glyphs source files. These are found in directories on the paths `build/GoogleSans/instance_ufo` and `build/GoogleSans/master_ufo`. 
+The fontmake compiler builds UFO source file intermediates during the compilation of Google Sans fonts from Glyphs source files. These are found in directories on the paths `build/GoogleSans/instance_ufo` and `build/GoogleSans/master_ufo`.
 
 Remove these files by running the following command in the root of the repository:
 
