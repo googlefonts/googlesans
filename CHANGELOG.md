@@ -1,6 +1,6 @@
 # Google Sans Changelog
 
-## Version 3.000
+## Version 3.000
 
 ### Deprecation Notice
 
@@ -8,12 +8,13 @@
 
 ### General
 
+- Transitioned to the `fontmake` font compiler from Glyphs application exports
 - Removed Google Sans "Display" masters
 - Eliminated "Android" build target
 - Defined an "Expert" build target that includes the full source glyph set (default production build as of this release)
 - Defined a "Default" build target that eliminates all `aalt` OpenType feature supported alternate glyph forms and associated feature support. These are not being released into production as of this release. We are posting a deprecation notice for all teams and will remove the alternates in the next major release of Google Sans.
-- removed TrueType instruction sets from all builds
-- added prep/gasp tables in place of TrueType instruction sets
+- Removed TrueType instruction sets from all builds
+- Added prep/gasp tables in place of TrueType instruction sets
 - Moved underline position to -160 from -118 in max optical size designs
 
 ### Latin
