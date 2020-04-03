@@ -21,7 +21,7 @@ We build 12 static instances that include interpolated Medium and Medium Italic 
 
 Variable font builds are not production ready files at this stage. We currently build to two 2-axis variable font testing files. These include upright and italic build artifacts. These builds can be found in `build/GoogleSans/variable`.
 
-You will find documentation to build the files from the glyphs source files in the [`docs/BUILD.md`](docs/BUILD.md) document.
+You will find documentation to build the files from the glyphs source files in the [`Docs/BUILD.md`](Docs/BUILD.md) document.
 
 ## Usage
 
@@ -29,7 +29,7 @@ Usage documentation is available in [`USAGE.md`](USAGE.md).
 
 ## Other Documentation
 
-Maintainer documentation can be found in [`docs/MAINTAINER.md`](docs/MAINTAINER.md).
+Maintainer documentation can be found in [`Docs/MAINTAINER.md`](docs/MAINTAINER.md).
 
 ## License
 
