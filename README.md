@@ -29,7 +29,7 @@ Usage documentation is available in [`USAGE.md`](USAGE.md).
 
 ## Other Documentation
 
-Maintainer documentation can be found in [`Docs/MAINTAINER.md`](docs/MAINTAINER.md).
+Maintainer documentation can be found in [`Docs/MAINTAINER.md`](Docs/MAINTAINER.md).
 
 ## License
 
