@@ -37,6 +37,79 @@ elogoligature => e.logo
 
 ### `locl`
 
+**Cyrillic**
+List of localized forms
+
+- Bashkir:
+```
+Ғ 0x0492 Ghestroke-cy 
+ғ 0x0493 ghestroke-cy 
+Ҙ 0x0498 Zedescender-cy 
+ҙ 0x0499 zedescender-cy
+Ҫ 0x04AA Esdescender-cy
+ҫ 0x04AB esdescender-cy
+```
+
+- Chuvash:
+```
+Ҫ 0x04AA Esdescender-cy
+ҫ 0x04AB esdescender-cy
+```
+
+- Bulgarian:
+```
+Д 0x0414 De-cy
+Л 0x041B El-cy
+Ф 0x0424 Ef-cy
+в 0x0432 ve-cy
+г 0x0433 ge-cy
+д 0x0434 de-cy
+ж 0x0436 zhe-cy
+з 0x0437 ze-cy
+и 0x0438 ii-cy
+й 0x0439 iishort-cy
+ѝ 0x045D iigrave-cy
+к 0x043A ka-cy
+л 0x043B el-cy
+п 0x043F pe-cy
+т 0x0442 te-cy
+ф 0x0444 ef-cy
+ц 0x0446 tse-cy
+ш 0x0448 sha-cy
+щ 0x0449 shcha-cy
+ь 0x044C softsign-cy
+ъ 0x044A hardsign-cy
+ы 0x044B yeru-cy
+ю 0x044E iu-cy
+```
+
+* Serbian and Macedonian (Upright): 
+```
+б 0x0431 be-cy
+```
+
+* Serbian (Italic):
+```
+б 0x0431 be-cy
+г 0x0433 ge-cy
+ѓ 0x0433 gje-cy
+д 0x0434 de-cy
+п 0x043F pe-cy
+т 0x0442 te-cy
+ш 0x0448 sha-cy
+
+```
+
+* Macedonian (Italic):
+```
+г 0x0433 ge-cy
+ѓ 0x0433 gje-cy
+д 0x0434 de-cy
+п 0x043F pe-cy
+т 0x0442 te-cy
+ш 0x0448 sha-cy
+```
+
 ### `frac`
 
 ### `numr`
@@ -84,3 +157,8 @@ elogoligature => e.logo
 ### `ss07`
 
 ### `ss08`
+
+-Bulgarian Locale
+
+Includes Bulgarian localized variants for the following glyphs:
+`ДЛФ` (and their respective Small Caps), `вгджзийѝклптфцшщьъыю`. May be useful for applications that do not support `locl` OpenType feature.
