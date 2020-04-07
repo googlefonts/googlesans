@@ -140,6 +140,10 @@ List of localized forms
 
 ### `calt`
 
+**Greek**
+
+- Retain accent (tonos) in `ή` (disjunctive eta) in small caps transformation.
+
 ## Stylistic Sets
 
 ### `ss01`
@@ -154,7 +158,15 @@ List of localized forms
 
 ### `ss06`
 
+**Greek**
+
+- Accented Greek SC: keep all the accents in small caps transformation
+
 ### `ss07`
+
+**Greek**
+
+- iota adscript: transform `subscript iota` to `adscript iota`
 
 ### `ss08`
 
