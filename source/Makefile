@@ -45,9 +45,9 @@ DEFAULT_VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable/default
 
 # Variable font paths
 VARIABLE_BUILD_PATH_UPRIGHT=$(EXPERT_VARIABLE_BUILD_DIR)/GoogleSans-VF.ttf
-VARIABLE_BUILD_PATH_UPRIGHT_TARGET=$(EXPERT_VARIABLE_BUILD_DIR)/GoogleSansVF[opsz,wght].ttf
+VARIABLE_BUILD_PATH_UPRIGHT_TARGET=$(EXPERT_VARIABLE_BUILD_DIR)/GoogleSans[opsz,wght].ttf
 VARIABLE_BUILD_PATH_ITALIC=$(EXPERT_VARIABLE_BUILD_DIR)/GoogleSans-Italic-VF.ttf
-VARIABLE_BUILD_PATH_ITALIC_TARGET=$(EXPERT_VARIABLE_BUILD_DIR)/GoogleSansVF-Italic[opsz,wght].ttf
+VARIABLE_BUILD_PATH_ITALIC_TARGET=$(EXPERT_VARIABLE_BUILD_DIR)/GoogleSans-Italic[opsz,wght].ttf
 
 # --------------------------------------------------------
 #  UFO intermediates and designspace paths
