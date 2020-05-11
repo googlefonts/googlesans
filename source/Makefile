@@ -43,11 +43,28 @@ DEFAULT_STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static/default
 EXPERT_VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable/expert
 DEFAULT_VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable/default
 
-# Variable font paths
+PARTIAL_INSTANCE_VARIABLE_BUILD_DIR=$(EXPERT_VARIABLE_BUILD_DIR)/partial
+
+# Variable font build artifacts
+
+# upright
 VARIABLE_BUILD_PATH_UPRIGHT=$(EXPERT_VARIABLE_BUILD_DIR)/GoogleSans-VF.ttf
 VARIABLE_BUILD_PATH_UPRIGHT_TARGET=$(EXPERT_VARIABLE_BUILD_DIR)/GoogleSans[opsz,wght].ttf
+
+# italic
 VARIABLE_BUILD_PATH_ITALIC=$(EXPERT_VARIABLE_BUILD_DIR)/GoogleSans-Italic-VF.ttf
 VARIABLE_BUILD_PATH_ITALIC_TARGET=$(EXPERT_VARIABLE_BUILD_DIR)/GoogleSans-Italic[opsz,wght].ttf
+
+# partial instances ('wght' axis only)
+VARIABLE_BUILD_PATH_PARTIAL_UPRIGHT_MAX=$(EXPERT_VARIABLE_BUILD_DIR)/GoogleSans[opsz,wght].ttf.MAX_INSTANCE
+VARIABLE_BUILD_PATH_PARTIAL_ITALIC_MAX=$(EXPERT_VARIABLE_BUILD_DIR)/GoogleSans-Italic[opsz,wght].ttf.MAX_INSTANCE
+VARIABLE_BUILD_PATH_PARTIAL_UPRIGHT_MIN=$(EXPERT_VARIABLE_BUILD_DIR)/GoogleSans[opsz,wght].ttf.MIN_INSTANCE
+VARIABLE_BUILD_PATH_PARTIAL_ITALIC_MIN=$(EXPERT_VARIABLE_BUILD_DIR)/GoogleSans-Italic[opsz,wght].ttf.MIN_INSTANCE
+
+VARIABLE_BUILD_PATH_PARTIAL_UPRIGHT_MAX_TARGET=$(PARTIAL_INSTANCE_VARIABLE_BUILD_DIR)/GoogleSans[wght].ttf
+VARIABLE_BUILD_PATH_PARTIAL_ITALIC_MAX_TARGET=$(PARTIAL_INSTANCE_VARIABLE_BUILD_DIR)/GoogleSans-Italic[wght].ttf
+VARIABLE_BUILD_PATH_PARTIAL_UPRIGHT_MIN_TARGET=$(PARTIAL_INSTANCE_VARIABLE_BUILD_DIR)/GoogleSansText[wght].ttf
+VARIABLE_BUILD_PATH_PARTIAL_ITALIC_MIN_TARGET=$(PARTIAL_INSTANCE_VARIABLE_BUILD_DIR)/GoogleSansText-Italic[wght].ttf
 
 # --------------------------------------------------------
 #  UFO intermediates and designspace paths
@@ -89,7 +106,7 @@ gs-static: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -g $(UPRIGHT_SOURCE) --interpolate -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
 	$(FONTMAKE_EXE) -g $(ITALIC_SOURCE) --interpolate -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
 	@echo "================================"
-	@echo " Beginning post-compile fixes..."
+	@echo " Beginning post-compile edits..."
 	@echo "================================"
 	@echo "================================"
 	@echo " Beginning font subsetting..."
@@ -111,7 +128,7 @@ gs-vf: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -g $(UPRIGHT_SOURCE) -o variable --output-dir $(EXPERT_VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
 	$(FONTMAKE_EXE) -g $(ITALIC_SOURCE) -o variable --output-dir $(EXPERT_VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
 	@echo "================================"
-	@echo " Beginning post-compile fixes..."
+	@echo " Beginning post-compile edits..."
 	@echo "================================"
 	@echo "================================"
 	@echo " MVAR table removal"
@@ -125,6 +142,16 @@ gs-vf: $(FONT_BUILD_DIR)
 	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(EXPERT_VARIABLE_BUILD_DIR)/*.ttf
 	# remove the backups that the script leaves behind
 	rm $(EXPERT_VARIABLE_BUILD_DIR)/*prep-gasp.ttf
+	@echo "================================"
+	@echo " Partial instance build targets"
+	@echo "================================"
+	$(PYTHON3_EXE) ../scripts/gs-partial-instancer.py
+	mkdir -p "$(PARTIAL_INSTANCE_VARIABLE_BUILD_DIR)"
+	mv "$(VARIABLE_BUILD_PATH_PARTIAL_UPRIGHT_MAX)" "$(VARIABLE_BUILD_PATH_PARTIAL_UPRIGHT_MAX_TARGET)"
+	mv "$(VARIABLE_BUILD_PATH_PARTIAL_ITALIC_MAX)" "$(VARIABLE_BUILD_PATH_PARTIAL_ITALIC_MAX_TARGET)"
+	mv "$(VARIABLE_BUILD_PATH_PARTIAL_UPRIGHT_MIN)" "$(VARIABLE_BUILD_PATH_PARTIAL_UPRIGHT_MIN_TARGET)"
+	mv "$(VARIABLE_BUILD_PATH_PARTIAL_ITALIC_MIN)" "$(VARIABLE_BUILD_PATH_PARTIAL_ITALIC_MIN_TARGET)"
+	
 
 #
 #  Individual static instance build targets
