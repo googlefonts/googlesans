@@ -82,6 +82,9 @@ list-deps:
 update-deps:
 	pip-compile -U
 
+# ------------------------------
+# Testing
+# ------------------------------
 
 test-fb: test-fb-static-expert test-fb-vf-expert
 
@@ -90,12 +93,18 @@ test-fb-static-expert:
 	@echo " fontbakery v`fontbakery --version` static font checks"
 	@echo "========================================================="
 	fontbakery check-profile -C --loglevel WARN qa/check-googlesans.py $(EXPERT_STATIC_BUILD_DIR)/*.ttf
+	fontbakery check-profile -C --loglevel WARN qa/check-charset.py $(EXPERT_STATIC_BUILD_DIR)/*.ttf
 
 test-fb-vf-expert:
 	@echo "========================================================="
 	@echo " fontbakery v`fontbakery --version` variable font checks"
 	@echo "========================================================="
+	# default build checks
 	fontbakery check-profile -C --loglevel WARN qa/check-googlesans.py $(EXPERT_VARIABLE_BUILD_DIR)/*.ttf
+	fontbakery check-profile -C --loglevel WARN qa/check-charset.py $(EXPERT_VARIABLE_BUILD_DIR)/*.ttf
+	# non-default build checks
+	#  - partial instances do not repeat char set checks that were executed above in default build checks
+	fontbakery check-profile -C --loglevel WARN qa/check-googlesans.py $(EXPERT_VARIABLE_BUILD_DIR)/partial/*.ttf
 
 
 .PHONY: all \
