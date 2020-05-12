@@ -151,7 +151,11 @@ gs-vf: $(FONT_BUILD_DIR)
 	mv "$(VARIABLE_BUILD_PATH_PARTIAL_ITALIC_MAX)" "$(VARIABLE_BUILD_PATH_PARTIAL_ITALIC_MAX_TARGET)"
 	mv "$(VARIABLE_BUILD_PATH_PARTIAL_UPRIGHT_MIN)" "$(VARIABLE_BUILD_PATH_PARTIAL_UPRIGHT_MIN_TARGET)"
 	mv "$(VARIABLE_BUILD_PATH_PARTIAL_ITALIC_MIN)" "$(VARIABLE_BUILD_PATH_PARTIAL_ITALIC_MIN_TARGET)"
-	
+	@echo "================================"
+	@echo " Add STAT tables"
+	@echo "================================"
+	# partial instance build VF STAT tables
+	$(PYTHON3_EXE) ../scripts/gs-stat-partial.py
 
 #
 #  Individual static instance build targets
