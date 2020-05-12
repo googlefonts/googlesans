@@ -26,7 +26,6 @@ profile_imports = ("fontbakery.profiles.universal",)
 profile = profile_factory(default_section=Section("Google Sans Custom Checks"))
 
 GOOGLESANS_PROFILE_CHECKS = UNIVERSAL_PROFILE_CHECKS + [
-    "com.google.fonts/check/googlesans/glyphs/glyphset-contents",
     "com.google.fonts/check/googlesans/opentype/os2/fsselectionbit7",
     "com.google.fonts/check/googlesans/opentype/os2/winascent",
     "com.google.fonts/check/googlesans/opentype/os2/windescent",
@@ -256,51 +255,6 @@ def is_not_variable_font(ttFont):
 # Begin check definitions
 #
 # ================================================
-
-# ================================================
-# Glyph set checks
-# ================================================
-
-# ::::::::::::::::::::::::::::::::::::::::::::::::
-# Glyph set support
-# ::::::::::::::::::::::::::::::::::::::::::::::::
-# compare against a newline-delimited list of expected glyph names
-# this includes all Unicode encoded and non-Unicode encoded glyph definitions
-
-
-@check(
-    id="com.google.fonts/check/googlesans/glyphs/glyphset-contents",
-    rationale="""
-    Confirms that the fonts include all expected Unicode encoded and \
-    non-Unicode encoded glyph definitions. This test also confirms that \
-    fonts have the expected glyph order.
-    """,
-)
-def com_google_fonts_check_googlesans_glyphs_glyphset_contents(ttFonts):
-    """Confirm that fonts have all expected Unicode encoded and \
-       non-Unicoded encoded glyph definitions.This test also confirms \
-       that the glyph order is defined as expected."""
-    try:
-        glyph_definition_basedir = os.path.join("qa", "definitions")
-
-        tests_passed = True
-        for tt in ttFonts:
-            glyph_list_raw = ""
-            base_file_path = os.path.basename(tt.reader.file.name) + ".glyphsetdef"
-            expected_glyph_definition_path = os.path.join(glyph_definition_basedir, base_file_path)
-            with open(expected_glyph_definition_path, "r") as f:
-                glyph_list_raw = f.read()
-
-            glyph_list = glyph_list_raw.split("\n")
-            # must have (1) glyph set contents & (2) glyph set order as defined in def file
-            if not (tt.getGlyphOrder() == glyph_list):
-                tests_passed = False
-                yield FAIL, "{} failed expected glyph set check".format(tt.reader.file.name)
-        if tests_passed:
-            yield PASS, "All fonts passed the expected glyph set checks"
-    except Exception as e:
-        sys.stderr.write("[ERROR]: {}".format(str(e)))
-        sys.exit(1)
 
 
 # ================================================
