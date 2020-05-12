@@ -170,7 +170,6 @@ def main():
         vf_partial_max_opsz["name"].names = new_max_opsz_namerecords
 
         # write to min + max opsz file paths
-        vf_filepath = os.path.abspath(fontpath)
         vf_partial_min_opsz.save(os.path.abspath(fontpath) + ".MIN_INSTANCE")
         vf_partial_max_opsz.save(os.path.abspath(fontpath) + ".MAX_INSTANCE")
 
