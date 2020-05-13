@@ -16,7 +16,6 @@
 from fontTools.otlLib.builder import buildStatTable
 from fontTools.ttLib import TTFont
 
-
 UPRIGHT_AXES = [
     dict(
         tag="wght",
