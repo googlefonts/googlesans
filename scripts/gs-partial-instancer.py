@@ -42,7 +42,6 @@ NAMEID_6_MIN_ITALIC = "GoogleSansText-Italic"
 
 
 def main():
-    print(VARIABLE_INPATH)
     in_var_paths = glob.glob(VARIABLE_INPATH)
     assert len(in_var_paths) > 0
     for fontpath in in_var_paths:
