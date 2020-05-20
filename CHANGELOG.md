@@ -1,5 +1,27 @@
 # Google Sans Changelog
 
+## Version 3.001
+
+### Technical
+
+- Added partial instancing support for `wght` axis only variable font builds (PR #5)
+  - adds new scripts/gs-partial-instancer.py script
+  - adds new gs-stat-partial.py script
+- Dependency updates:
+  - appdirs from 1.4.3 to 1.4.4
+  - fontmake from 2.0.10 to 2.1.3
+  - fontmath from 0.5.2 to 0.6.0 (required for VF scaling support)
+  - fonttools from 4.4.1 to 4.10.2 (required for partial instancing support)
+  - glyphslib from 5.1.7 to 5.1.10
+  - lxml from 4.5.0 to 4.5.1
+  - pytz from 2019.3 to 2020.1
+  - adds typing-extensions requirement at 3.7.4.2
+  - ufo2ft from 2.12.2 to 2.13.0
+  - ufolib2 from 0.6.1 to 0.7.1
+  - unicodedata2 from 12.1.0 to 13.0.0.post2
+- Dependency management:
+  - update wheel and setuptools on venv setup in make target
+
 ## Version 3.000
 
 ### Deprecation Notice
