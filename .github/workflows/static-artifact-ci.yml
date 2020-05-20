@@ -62,3 +62,11 @@ jobs:
       #     subcmd: "check-profile"
       #     args: "-C --loglevel WARN qa/check-googlesans.py"
       #     path: "build/GoogleSans/static/default/*.ttf"
+      - name: OpenType Sanitizer checks (Expert artifacts)
+        uses: f-actions/opentype-sanitizer@master
+        with:
+          path: "${{ steps.config.outputs.buildpath }}"
+      - name: OpenType Sanitizer checks (Default artifacts)
+        uses: f-actions/opentype-sanitizer@master
+        with:
+          path: "build/GoogleSans/static/default/*.ttf"
