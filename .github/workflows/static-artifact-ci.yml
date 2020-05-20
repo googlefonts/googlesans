@@ -41,3 +41,24 @@ jobs:
           update-setuptools: "true"
       - name: Build fonts
         run: ${{ steps.config.outputs.buildcommand }}
+      - name: Font Bakery GS profile tests (Expert artifacts)
+        uses: f-actions/font-bakery@master
+        with:
+          version: "latest"
+          subcmd: "check-profile"
+          args: "-C --loglevel WARN qa/check-googlesans.py"
+          path: "${{ steps.config.outputs.buildpath }}"
+      - name: Font Bakery character set profile tests (Expert artifacts)
+        uses: f-actions/font-bakery@master
+        with:
+          version: "latest"
+          subcmd: "check-profile"
+          args: "-C --loglevel WARN qa/check-charset.py"
+          path: "${{ steps.config.outputs.buildpath }}"
+      - name: Font Bakery GS profile tests (Default artifacts)
+        uses: f-actions/font-bakery@master
+        with:
+          version: "latest"
+          subcmd: "check-profile"
+          args: "-C --loglevel WARN qa/check-googlesans.py"
+          path: "build/GoogleSans/static/default/*.ttf"
