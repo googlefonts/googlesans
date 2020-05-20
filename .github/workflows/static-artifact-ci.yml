@@ -22,15 +22,6 @@ jobs:
           dependpath: "requirements.txt"
           py-version: ${{ matrix.python-version }}
           buildcommand: "make gs-static" # static font make target
-      - name: Action environment variable definitions
-        run: |
-          echo "projectname: ${{ steps.config.outputs.projectname }}"
-          echo "sourcepath: ${{ steps.config.outputs.sourcepath }}"
-          echo "buildpath: ${{ steps.config.outputs.buildpath }}"
-          echo "readmepath: ${{ steps.config.outputs.readmepath }}"
-          echo "changelogpath: ${{ steps.config.outputs.changelogpath }}"
-          echo "py-version: ${{ steps.config.outputs.py-version }}"
-          echo "buildcommand: ${{ steps.config.outputs.buildcommand }}"
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
         uses: actions/checkout@v2
       - name: Set up Python v${{ steps.config.outputs.py-version }} environment
