@@ -19,14 +19,14 @@
 # --------------------------------------------------------
 VENV_DIR=.venv
 
-PYTHON3_EXE=../$(VENV_DIR)/bin/python3
+PYTHON3_EXE=python3
 
 # --------------------------------------------------------
 #  fontmake compiler executable
 #    NOTE: this builds from a venv install to support
 #          pinned dependency versions
 # --------------------------------------------------------
-FONTMAKE_EXE=../$(VENV_DIR)/bin/fontmake
+FONTMAKE_EXE=fontmake
 
 # --------------------------------------------------------
 #  Source file path definitions
