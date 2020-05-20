@@ -1,0 +1,52 @@
+name: Static CI
+
+on: [push, pull_request]
+
+jobs:
+  static-font-ci-job:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+    name: Google Sans static font build CI
+    steps:
+      - name: Configuration
+        id: config
+        uses: f-actions/font-setup@master
+        with:
+          projectname: "Google Sans"
+          sourcepath: "src"
+          buildpath: "build/GoogleSans/static/expert/*.ttf" # static font build path
+          readmepath: "README.md"
+          changelogpath: "CHANGELOG.md"
+          dependpath: "requirements.txt"
+          py-version: ${{ matrix.python-version }}
+          buildcommand: "make gs-static" # static font make target
+      - name: Action environment variable definitions
+        run: |
+          echo "projectname: ${{ steps.config.outputs.projectname }}"
+          echo "sourcepath: ${{ steps.config.outputs.sourcepath }}"
+          echo "buildpath: ${{ steps.config.outputs.buildpath }}"
+          echo "readmepath: ${{ steps.config.outputs.readmepath }}"
+          echo "changelogpath: ${{ steps.config.outputs.changelogpath }}"
+          echo "py-version: ${{ steps.config.outputs.py-version }}"
+          echo "buildcommand: ${{ steps.config.outputs.buildcommand }}"
+      - name: Check out ${{ steps.config.outputs.projectname }} source repository
+        uses: actions/checkout@v2
+      - name: Set up Python v${{ steps.config.outputs.py-version }} environment
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ steps.config.outputs.py-version }}
+      - name: Python build dependency cache lookup
+        uses: actions/cache@v1
+        with:
+          path: ~/.cache/pip
+          # Check for requirements file cache hit
+          key: ${{ runner.os }}-pip-${{ hashFiles('${{ steps.config.outputs.dependpath }}') }}
+      - name: Install Python build dependencies
+        uses: py-actions/py-dependency-install@v1
+        with:
+          update-wheel: "true"
+          update-setuptools: "true"
+      - name: Build fonts
+        run: ${{ steps.config.outputs.buildcommand }}
