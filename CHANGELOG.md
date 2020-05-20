@@ -4,6 +4,7 @@
 
 ### Technical
 
+- Remove `build` directory and all build artifacts from version control (PR #8)
 - Added partial instancing support for `wght` axis only variable font builds (PR #5)
   - adds new scripts/gs-partial-instancer.py script
   - adds new gs-stat-partial.py script
