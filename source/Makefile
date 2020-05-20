@@ -22,6 +22,13 @@ VENV_DIR=.venv
 PYTHON3_EXE=python3
 
 # --------------------------------------------------------
+#  Variable font UPM value
+#    NOTE: used for scaling of variable font UFO sources
+#          at build time
+# --------------------------------------------------------
+UPM=2000
+
+# --------------------------------------------------------
 #  fontmake compiler executable
 #    NOTE: this builds from a venv install to support
 #          pinned dependency versions
@@ -78,21 +85,27 @@ UPRIGHT_DESIGNSPACE_PATH=$(MASTER_UFO_DIR)/$(UPRIGHT_DESIGNSPACE)
 ITALIC_DESIGNSPACE_PATH=$(MASTER_UFO_DIR)/$(ITALIC_DESIGNSPACE)
 
 # --------------------------------------------------------
-#  Master and instance intermediate UFO file paths
+#  Master intermediate UFO file paths
 # --------------------------------------------------------
-UFO_GS_REGULAR=$(MASTER_UFO_DIR)/GoogleSans-Regular.ufo
-UFO_GS_ITALIC=$(MASTER_UFO_DIR)/GoogleSans-Italic.ufo
-UFO_GS_MEDIUM=$(INSTANCE_UFO_DIR)/GoogleSans-Medium.ufo
-UFO_GS_MEDIUMITALIC=$(INSTANCE_UFO_DIR)/GoogleSans-MediumItalic.ufo
-UFO_GS_BOLD=$(MASTER_UFO_DIR)/GoogleSans-Bold.ufo
-UFO_GS_BOLDITALIC=$(MASTER_UFO_DIR)/GoogleSans-BoldItalic.ufo
+UFO_GS_REGULAR=$(MASTER_UFO_DIR)/GoogleSans-SansRegular.ufo
+UFO_GS_ITALIC=$(MASTER_UFO_DIR)/GoogleSans-SansItalic.ufo
+UFO_GS_BOLD=$(MASTER_UFO_DIR)/GoogleSans-SansBold.ufo
+UFO_GS_BOLDITALIC=$(MASTER_UFO_DIR)/GoogleSans-SansBoldItalic.ufo
 
 UFO_GS_TEXT_REGULAR=$(MASTER_UFO_DIR)/GoogleSans-TextRegular.ufo
 UFO_GS_TEXT_ITALIC=$(MASTER_UFO_DIR)/GoogleSans-TextItalic.ufo
+UFO_GS_TEXT_BOLD=$(MASTER_UFO_DIR)/GoogleSans-TextBold.ufo
+UFO_GS_TEXT_BOLDITALIC=$(MASTER_UFO_DIR)/GoogleSans-BoldTextItalic.ufo
+
+# --------------------------------------------------------
+#  Instance intermediate UFO file paths
+# --------------------------------------------------------
+
+UFO_GS_MEDIUM=$(INSTANCE_UFO_DIR)/GoogleSans-Medium.ufo
+UFO_GS_MEDIUMITALIC=$(INSTANCE_UFO_DIR)/GoogleSans-MediumItalic.ufo
+
 UFO_GS_TEXT_MEDIUM=$(INSTANCE_UFO_DIR)/GoogleSans-TextMedium.ufo
 UFO_GS_TEXT_MEDIUMITALIC=$(INSTANCE_UFO_DIR)/GoogleSans-TextMediumItalic.ufo
-UFO_GS_TEXT_BOLD=$(MASTER_UFO_DIR)/GoogleSans-TextBold.ufo
-UFO_GS_TEXT_BOLDITALIC=$(MASTER_UFO_DIR)/GoogleSans-TextBoldItalic.ufo
 
 # --------------------------------------------------------
 #  TARGETS
@@ -125,8 +138,27 @@ gs-static: $(FONT_BUILD_DIR)
 
 
 gs-vf: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -g $(UPRIGHT_SOURCE) -o variable --output-dir $(EXPERT_VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
-	$(FONTMAKE_EXE) -g $(ITALIC_SOURCE) -o variable --output-dir $(EXPERT_VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
+	@echo "================================"
+	@echo " Build variable artifacts..."
+	@echo "================================"
+	# Build to intermediate UFO + designspace files
+	$(FONTMAKE_EXE) -g $(UPRIGHT_SOURCE) --interpolate -o ufo --output-dir $(EXPERT_VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
+	$(FONTMAKE_EXE) -g $(ITALIC_SOURCE) --interpolate -o ufo --output-dir $(EXPERT_VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
+	# Scale intermediate master sources to 2000 UPM
+	# upright sources
+	$(PYTHON3_EXE) ../scripts/scale_ufo.py $(UFO_GS_REGULAR) $(UPM)
+	$(PYTHON3_EXE) ../scripts/scale_ufo.py $(UFO_GS_ITALIC) $(UPM)
+	$(PYTHON3_EXE) ../scripts/scale_ufo.py $(UFO_GS_BOLD) $(UPM)
+	$(PYTHON3_EXE) ../scripts/scale_ufo.py $(UFO_GS_BOLDITALIC) $(UPM)
+	# italic sources
+	$(PYTHON3_EXE) ../scripts/scale_ufo.py $(UFO_GS_TEXT_REGULAR) $(UPM)
+	$(PYTHON3_EXE) ../scripts/scale_ufo.py $(UFO_GS_TEXT_ITALIC) $(UPM)
+	$(PYTHON3_EXE) ../scripts/scale_ufo.py $(UFO_GS_TEXT_BOLD) $(UPM)
+	$(PYTHON3_EXE) ../scripts/scale_ufo.py $(UFO_GS_TEXT_BOLDITALIC) $(UPM)
+	# compile to ttf artifacts
+	$(FONTMAKE_EXE) -m $(UPRIGHT_DESIGNSPACE_PATH) -o variable --output-dir $(EXPERT_VARIABLE_BUILD_DIR)
+	$(FONTMAKE_EXE) -m $(ITALIC_DESIGNSPACE_PATH) -o variable --output-dir $(EXPERT_VARIABLE_BUILD_DIR)
+
 	@echo "================================"
 	@echo " Beginning post-compile edits..."
 	@echo "================================"
