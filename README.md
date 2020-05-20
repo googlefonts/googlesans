@@ -1,6 +1,7 @@
 # Google Sans
 
-[![Build Status](https://travis-ci.com/Colophon-Foundry/google-sans.svg?token=xM1gpyu7W7unaFXB86eV&branch=master)](https://travis-ci.com/Colophon-Foundry/google-sans)
+[![Static CI](https://github.com/googlefonts/googlesans/workflows/Static%20CI/badge.svg)](https://github.com/googlefonts/googlesans/actions?query=workflow%3A%22Static+CI%22)
+[![Variable CI](https://github.com/googlefonts/googlesans/workflows/Variable%20CI/badge.svg)](https://github.com/googlefonts/googlesans/actions?query=workflow%3A%22Variable+CI%22)
 
 Google Sans is a geometric sans-serif typeface for use as the corporate branding typeface. Originally based off of Product Sans (Design by Jesse Kaczmarek, Google Sans (Design by Colophon Foundry) has been modified for more general use.
 
