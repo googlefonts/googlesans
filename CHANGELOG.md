@@ -6,6 +6,9 @@
 
 - Remove `build` directory and all build artifacts from version control (PR #8)
 - Added partial instancing support for `wght` axis only variable font builds (PR #5)
+- Testing: transitioned fontbakery CI testing to GitHub Actions CI pipeline (PR #10)
+- Testing: added OpenType Sanitizer checks to CI test pipeline (PR #13)
+- Added support for git branch filtered test build artifact uploads (eliminates design team local build environment requirement) (PR #14)
   - adds new scripts/gs-partial-instancer.py script
   - adds new gs-stat-partial.py script
 - Dependency updates:
