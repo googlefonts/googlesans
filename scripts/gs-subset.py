@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # Copyright 2020 Google Sans Authors
 
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,6 +20,9 @@ import sys
 
 from fontTools.subset import main as subset_main
 
+STATIC_INPATH = "../build/GoogleSans/static/expert/*.ttf"
+VARIABLE_INPATH = "../build/GoogleSans/variable/expert/*.ttf"
+
 
 def main():
     # ===============================================
@@ -30,7 +34,7 @@ def main():
     # This build includes all shaping and OT feature support,
     # *including* all alternate designs supported through the
     # `aalt` OpenType feature
-    in_static_filepaths = glob.glob("../build/GoogleSans/static/expert/*.ttf")
+    in_static_filepaths = glob.glob(STATIC_INPATH)
 
     for rel_filepath in in_static_filepaths:
         print(f"[SUBSET] {rel_filepath} to Expert build...")
@@ -79,7 +83,7 @@ def main():
     # This build eliminates the OpenType `aalt` feature
     # support and all alternate glyph designs.
 
-    in_static_filepaths = glob.glob("../build/GoogleSans/static/expert/*.ttf")
+    in_static_filepaths = glob.glob(STATIC_INPATH)
 
     for rel_filepath in in_static_filepaths:
         print(f"[SUBSET] {rel_filepath} to Default build...")
