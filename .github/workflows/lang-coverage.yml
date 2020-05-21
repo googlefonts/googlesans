@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master # Push events on master branch
-      - chrissimpkins-cldr
+      - cldr-coverage # Push events on a cldr-coverage branch
 
 jobs:
   cldr-coverage-support:
