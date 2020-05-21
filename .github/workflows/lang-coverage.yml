@@ -1,0 +1,47 @@
+name: Script + Writing System Coverage
+
+on:
+  push:
+    branches:
+      - master # Push events on master branch
+
+jobs:
+  cldr-coverage-support:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+    name: PyICU Script and Writing System Coverage
+    steps:
+      - name: Configuration
+        id: config
+        uses: f-actions/font-setup@master
+        with:
+          projectname: "Google Sans"
+          buildpath: "build/GoogleSans/variable/expert/GoogleSansVF[opsz,wght].ttf"
+          dependpath: "requirements.txt"
+          py-version: ${{ matrix.python-version }}
+          buildcommand: "make gs-vf"
+      - name: Check out ${{ steps.config.outputs.projectname }} source repository
+        uses: actions/checkout@v2
+      - name: Set up Python v${{ steps.config.outputs.py-version }} environment
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ steps.config.outputs.py-version }}
+      - name: Python build dependency cache lookup
+        uses: actions/cache@v1
+        with:
+          path: ~/.cache/pip
+          # Check for requirements file cache hit
+          key: ${{ runner.os }}-pip-${{ hashFiles('${{ steps.config.outputs.dependpath }}') }}
+      - name: Install Python build dependencies
+        uses: py-actions/py-dependency-install@v1
+        with:
+          update-wheel: "true"
+          update-setuptools: "true"
+      - name: Build fonts
+        run: ${{ steps.config.outputs.buildcommand }}
+      - name: CLDR script/language coverage
+        uses: f-actions/cldr-coverage@master
+        with:
+          path: ${{ steps.config.outputs.buildpath }}
