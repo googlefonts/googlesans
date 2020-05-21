@@ -16,64 +16,93 @@
 from copy import deepcopy
 import logging
 from ufoLib2 import Font
-from fontMath import MathInfo, MathKerning, MathGlyph
+from ufo2ft.filters.transformations import TransformationsFilter
 
 
 __all__ = ["scale_ufo"]
 
 
-# fontinfo.plist attributes to exclude from fontMath's scaling operation
-EXCLUDE_INFO_ATTRIBUTES = {
-    "postscriptWeightName",
-    "openTypeHeadLowestRecPPEM",
-    "openTypeOS2WidthClass",
-    "openTypeOS2WeightClass",
-    "postscriptSlantAngle",
-    "postscriptBlueFuzz",
-    "postscriptBlueScale",
-    # TODO: check if other postcript hinting-related attributes should not be scaled
+# fontinfo.plist attributes to include in scaling operation
+INCLUDE_INFO_ATTRIBUTES = {
+    "unitsPerEm",
+    "descender",
+    "xHeight",
+    "capHeight",
+    "ascender",
+    "openTypeHheaAscender",
+    "openTypeHheaDescender",
+    "openTypeHheaLineGap",
+    "openTypeHheaCaretOffset",
+    "openTypeOS2TypoAscender",
+    "openTypeOS2TypoDescender",
+    "openTypeOS2TypoLineGap",
+    "openTypeOS2WinAscent",
+    "openTypeOS2WinDescent",
+    "openTypeOS2SubscriptXSize",
+    "openTypeOS2SubscriptYSize",
+    "openTypeOS2SubscriptXOffset",
+    "openTypeOS2SubscriptYOffset",
+    "openTypeOS2SuperscriptXSize",
+    "openTypeOS2SuperscriptYSize",
+    "openTypeOS2SuperscriptXOffset",
+    "openTypeOS2SuperscriptYOffset",
+    "openTypeOS2StrikeoutSize",
+    "openTypeOS2StrikeoutPosition",
+    "openTypeVheaVertTypoAscender",
+    "openTypeVheaVertTypoDescender",
+    "openTypeVheaVertTypoLineGap",
+    "openTypeVheaCaretOffset",
+    "postscriptUnderlineThickness",
+    "postscriptUnderlinePosition",
+    "postscriptBlueValues",
+    "postscriptOtherBlues",
+    "postscriptFamilyBlues",
+    "postscriptFamilyOtherBlues",
+    "postscriptStemSnapH",
+    "postscriptStemSnapV",
+    "postscriptBlueShift",
+    "postscriptDefaultWidthX",
+    "postscriptNominalWidthX",
 }
 
 
-def _scale_info(font, scale_factor, rounded=True):
-    minfo = MathInfo(font.info)
-    minfo *= scale_factor
-    if rounded:
-        minfo = minfo.round()
+def _scale_info(font, scale_factor):
 
-    excluded = {attr: getattr(font.info, attr) for attr in EXCLUDE_INFO_ATTRIBUTES}
-    minfo.extractInfo(font.info)
-    for attr, value in excluded.items():
-        setattr(font.info, attr, value)
+    def scale(v):
+        v *= scale_factor
+        if attr.startswith("openType"):
+            # ufoLib validators strictly require these to be formatted as integers
+            return round(v)
+        return v
 
-
-def _scale_kerning(font, scale_factor, rounded=True):
-    mkern = MathKerning(font.kerning)
-    mkern *= scale_factor
-    if rounded:
-        mkern.round()
-    mkern.extractKerning(font)
+    for attr in INCLUDE_INFO_ATTRIBUTES:
+        value = getattr(font.info, attr)
+        if isinstance(value, list):
+            setattr(font.info, attr, [scale(v) for v in value])
+        elif value is not None:
+            setattr(font.info, attr, scale(value))
 
 
-def _scale_glyphs(font, scale_factor, rounded=True):
-    for glyph_name in font.keys():
-        glyph = font[glyph_name]
-        # NOTE: 'scaleComponentTransform' option was added with fontMath 0.6.0
-        # https://github.com/robotools/fontMath/issues/193
-        mglyph = MathGlyph(glyph, scaleComponentTransform=False)
-        mglyph *= scale_factor
-        if rounded:
-            mglyph = mglyph.round()
-        mglyph.extractGlyph(glyph, onlyGeometry=True)
+def _scale_kerning(font, scale_factor):
+    for pair, value in font.kerning.items():
+        font.kerning[pair] = value * scale_factor
 
 
-def scale_ufo(font, scale_factor, rounded=True, inplace=True):
+def _scale_glyphs(font, scale_factor):
+    # ufo2ft transformations filter uses percentages for scale.
+    # NOTE: Make sure to use ufo2ft 2.14 as it fixes a bug with transformations of
+    # composite glyphs: https://github.com/googlefonts/ufo2ft/issues/378
+    scale = TransformationsFilter(ScaleX=scale_factor * 100, ScaleY=scale_factor * 100)
+    scale(font)
+
+
+def scale_ufo(font, scale_factor, inplace=True):
     if not inplace:
         font = deepcopy(font)
 
-    _scale_info(font, scale_factor, rounded=rounded)
-    _scale_kerning(font, scale_factor, rounded=rounded)
-    _scale_glyphs(font, scale_factor, rounded=rounded)
+    _scale_info(font, scale_factor)
+    _scale_kerning(font, scale_factor)
+    _scale_glyphs(font, scale_factor)
 
     return font
 
@@ -91,7 +120,6 @@ def main(args=None):
     parser.add_argument(
         "upem", metavar="UPEM", type=int, help="Units Per EM of the scaled UFO"
     )
-    parser.add_argument("--no-round", dest="rounded", action="store_false")
     options = parser.parse_args(args)
 
     logging.basicConfig(level="INFO")
@@ -99,10 +127,12 @@ def main(args=None):
     font = Font.open(options.input_ufo, lazy=False)
 
     scale_factor = options.upem / font.info.unitsPerEm
+    if scale_factor.is_integer():
+        scale_factor = int(scale_factor)
 
     logging.info("scale factor: %s", scale_factor)
 
-    scale_ufo(font, scale_factor, rounded=options.rounded)
+    scale_ufo(font, scale_factor)
 
     if options.output:
         font.save(options.output, overwrite=True)
