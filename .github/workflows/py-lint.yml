@@ -1,0 +1,22 @@
+name: Python script lints
+
+on: [push, pull_request]
+
+jobs:
+  flake8:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+    name: flake8 lints
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v2
+      - name: Set up Python v${{ matrix.python-version }} environment
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: flake8 lint of Python sources
+        uses: py-actions/flake8@master # uses flake8 configuration in repository setup.cfg file
+        with:
+          flake8-version: "latest"

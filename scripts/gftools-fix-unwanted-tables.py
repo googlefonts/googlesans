@@ -57,9 +57,8 @@ def main():
         for table in user_table_request:
             if table not in UNWANTED_TABLES:
                 sys.stderr.write(
-                    "'{}' table cannot be removed with this script because it is not defined as an unwanted table.{}".format(
-                        table, os.linesep
-                    )
+                    f"'{table}' table cannot be removed with this script because it "
+                    f"is not defined as an unwanted table.{os.linesep}"
                 )
                 sys.stderr.write(
                     "The unwanted table list includes the following tables: {}{}".format(
