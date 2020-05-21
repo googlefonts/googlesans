@@ -10,9 +10,9 @@ jobs:
         python-version: [3.8]
     name: flake8 lints
     steps:
-      - name: Check out ${{ steps.config.outputs.projectname }} source repository
+      - name: Check out source repository
         uses: actions/checkout@v2
-      - name: Set up Python v${{ steps.config.outputs.py-version }} environment
+      - name: Set up Python v${{ matrix.python-version }} environment
         uses: actions/setup-python@v1
         with:
           python-version: ${{ matrix.python-version }}
