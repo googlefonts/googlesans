@@ -12,6 +12,10 @@
 - Testing: added OpenType Sanitizer checks to CI test pipeline (PR #13)
 - Added support for git branch filtered test build artifact uploads (eliminates design team local build environment requirement) (PR #14)
 - Added CLDR-based script and writing system coverage reporting to GitHub Actions CI pipeline (#16, #17)
+- Added Python source file linting (flake8) to GitHub Actions CI pipeline (#18)
+- Added setup.cfg configuration file with flake8 configuration settings
+- Refactored Python scripts to address stylistic / logical linting issues identified by flake8
+- Added `black` executable Python source formatting make target
 - Dependency updates:
   - appdirs from 1.4.3 to 1.4.4
   - fontmake from 2.0.10 to 2.1.3
@@ -21,11 +25,12 @@
   - lxml from 4.5.0 to 4.5.1
   - pytz from 2019.3 to 2020.1
   - adds typing-extensions requirement at 3.7.4.2
-  - ufo2ft from 2.12.2 to 2.13.0
+  - ufo2ft from 2.12.2 to 2.14.0
   - ufolib2 from 0.6.1 to 0.7.1
   - unicodedata2 from 12.1.0 to 13.0.0.post2
 - Dependency management:
   - update wheel and setuptools on venv setup in make target
+- Removed `tools/vf2s` source
 
 ## Version 3.000
 
