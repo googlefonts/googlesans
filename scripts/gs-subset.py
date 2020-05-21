@@ -62,7 +62,8 @@ def main():
             subset_main(subset_args_expert)
         except Exception as e:
             sys.stderr.write(
-                f"ERROR: subsetting error during attempt to subset {local_filepath}- {str(e)}"
+                f"ERROR: subsetting error during attempt to subset {local_filepath}"
+                f"- {str(e)}"
             )
             sys.exit(1)
 
@@ -141,7 +142,8 @@ def main():
             subset_main(subset_args_default)
         except Exception as e:
             sys.stderr.write(
-                f"ERROR: subsetting error during attempt to subset {local_filepath}- {str(e)}"
+                f"ERROR: subsetting error during attempt to subset {local_filepath}"
+                f"- {str(e)}"
             )
             sys.exit(1)
 

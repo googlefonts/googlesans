@@ -57,16 +57,12 @@ def main():
         assert "wght" in pre_axis_tags
 
         # partial instance of min optical size design
-        print(
-            f"[PARTIAL INSTANCE] {fontpath} to min optical size partial instance builds..."
-        )
+        print(f"[PARTIAL INSTANCE] {fontpath} to min optical size instance builds...")
         vf_partial_min_opsz = instancer.instantiateVariableFont(
             vf_full, {"opsz": MIN_OPSZ_SIZE}
         )
         # partial instance of amx optical size design
-        print(
-            f"[PARTIAL INSTANCE] {fontpath} to max optical size partial instance builds..."
-        )
+        print(f"[PARTIAL INSTANCE] {fontpath} to max optical size instance builds...")
         vf_partial_max_opsz = instancer.instantiateVariableFont(
             vf_full, {"opsz": MAX_OPSZ_SIZE}
         )

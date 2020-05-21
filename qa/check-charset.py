@@ -15,10 +15,8 @@
 import os
 import sys
 
-from fontbakery.checkrunner import Section, PASS, FAIL, WARN, ERROR, INFO, SKIP
-from fontbakery.callable import condition, check, disable
-from fontbakery.constants import PriorityLevel
-from fontbakery.message import Message
+from fontbakery.checkrunner import Section, PASS, FAIL
+from fontbakery.callable import check
 from fontbakery.fonts_profile import profile_factory
 
 profile_imports = ()
@@ -34,7 +32,7 @@ excluded_check_ids = (
     "com.google.fonts/check/ftxvalidator_is_available",
     "com.google.fonts/check/dsig",
     "com.google.fonts/check/family/win_ascent_and_descent",  # replaced by custom checks
-    "com.google.fonts/check/varfont/regular_opsz_coord",  # we really do want our opsz definition on regular instance
+    "com.google.fonts/check/varfont/regular_opsz_coord",  # we want our opsz definition
     # "com.google.fonts/check/os2_metrics_match_hhea",
     # "com.google.fonts/check/unwanted_tables",
 )
@@ -76,7 +74,9 @@ def com_google_fonts_check_googlesans_glyphs_glyphset_contents(ttFonts):
                 glyph_list_raw = f.read()
 
             glyph_list = glyph_list_raw.split("\n")
-            # must have (1) glyph set contents & (2) glyph set order as defined in def file
+            # must have
+            # (1) glyph set contents &
+            # (2) glyph set order as defined in def file
             if not (tt.getGlyphOrder() == glyph_list):
                 tests_passed = False
                 yield FAIL, "{} failed expected glyph set check".format(
