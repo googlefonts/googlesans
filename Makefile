@@ -106,8 +106,14 @@ test-fb-vf-expert:
 	#  - partial instances do not repeat char set checks that were executed above in default build checks
 	fontbakery check-profile -C --loglevel WARN qa/check-googlesans.py $(EXPERT_VARIABLE_BUILD_DIR)/partial/*.ttf
 
+# ------------------------------
+# Python source formatting
+# ------------------------------
+black:
+	black --line-length 90 scripts/*.py qa/*.py
 
 .PHONY: all \
+black \
 clean \
 gs-static gs-vf \
 gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
