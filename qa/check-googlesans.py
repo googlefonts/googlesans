@@ -12,13 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os
-import sys
 
-from fontbakery.checkrunner import Section, PASS, FAIL, WARN, ERROR, INFO, SKIP
-from fontbakery.callable import condition, check, disable
-from fontbakery.constants import PriorityLevel
-from fontbakery.message import Message
+from fontbakery.checkrunner import Section, PASS, FAIL
+from fontbakery.callable import check, condition
 from fontbakery.fonts_profile import profile_factory
 from fontbakery.profiles.universal import UNIVERSAL_PROFILE_CHECKS
 
@@ -47,7 +43,7 @@ excluded_check_ids = (
     "com.google.fonts/check/ftxvalidator_is_available",
     "com.google.fonts/check/dsig",
     "com.google.fonts/check/family/win_ascent_and_descent",  # replaced by custom checks
-    "com.google.fonts/check/varfont/regular_opsz_coord",  # we really do want our opsz definition on regular instance
+    "com.google.fonts/check/varfont/regular_opsz_coord",  # we do want our opsz definition
     # "com.google.fonts/check/os2_metrics_match_hhea",
     # "com.google.fonts/check/unwanted_tables",
 )
@@ -56,8 +52,8 @@ ATTRIBUTES = {
     "os2_fsselection_bit7": 1,
     "ymax": 1115,  # defined at max across min + max opsz design space (from min opsz)
     "ymin": -292,  # defined at min across min + max opsz design space (from min opsz)
-    "os2_win_ascent": 1115,  # must be defined at yMax value (https://github.com/Colophon-Foundry/google-sans/issues/160)
-    "os2_win_descent": 292,  # must be defined at yMin value (https://github.com/Colophon-Foundry/google-sans/issues/160)
+    "os2_win_ascent": 1115,  # must be defined at yMax value
+    "os2_win_descent": 292,  # must be defined at yMin value
     "hhea_ascent": 966,  # set to match typo metrics values
     "hhea_descent": -286,
     "hhea_linegap": 0,
@@ -289,7 +285,11 @@ def com_google_fonts_check_googlesans_opentype_os2_fsselectionbit7(ttFonts):
             fail_list.append(tt.reader.file.name)
 
     if found_fail:
-        yield FAIL, f"The OS/2.fsSelection bit 7 (USE_TYPO_METRICS) was NOT set in the following fonts: {fail_list}."
+        yield (
+            FAIL,
+            f"The OS/2.fsSelection bit 7 (USE_TYPO_METRICS) was NOT set "
+            f"in the following fonts: {fail_list}.",
+        )
     else:
         yield PASS, "The OS/2.fsSelection bit 7 (USE_TYPO_METRICS) was set in all fonts."
 
@@ -307,9 +307,13 @@ def com_google_fonts_check_googlesans_opentype_os2_fsselectionbit7(ttFonts):
 def com_google_fonts_check_googlesans_opentype_os2_winascent(ttFont):
     """OS/2.winAscent is defined at yMax value across the entire design space"""
     if ttFont["OS/2"].usWinAscent != ATTRIBUTES["os2_win_ascent"]:
-        yield FAIL, f"The OS/2.winAscent value {ttFont['OS/2'].usWinAscent} does not match the required value {ATTRIBUTES['os2_win_ascent']}"
+        yield (
+            FAIL,
+            f"The OS/2.winAscent value {ttFont['OS/2'].usWinAscent} does not "
+            f"match the required value {ATTRIBUTES['os2_win_ascent']}",
+        )
     else:
-        yield PASS, f"The OS/2.winAscent value matches the required value."
+        yield PASS, "The OS/2.winAscent value matches the required value."
 
 
 # OS/2.winDescent check
@@ -323,9 +327,13 @@ def com_google_fonts_check_googlesans_opentype_os2_winascent(ttFont):
 def com_google_fonts_check_googlesans_opentype_os2_windescent(ttFont):
     """OS/2.winDescent is defined at yMin value across the entire design space"""
     if ttFont["OS/2"].usWinDescent != ATTRIBUTES["os2_win_descent"]:
-        yield FAIL, f"The OS/2.winDescent value {ttFont['OS/2'].usWinDescent} does not match the required value {ATTRIBUTES['os2_win_descent']}"
+        yield (
+            FAIL,
+            f"The OS/2.winDescent value {ttFont['OS/2'].usWinDescent} does not "
+            f"match the required value {ATTRIBUTES['os2_win_descent']}",
+        )
     else:
-        yield PASS, f"The OS/2.winDescent value matches the required value."
+        yield PASS, "The OS/2.winDescent value matches the required value."
 
 
 # hhea.Ascent check
@@ -338,9 +346,13 @@ def com_google_fonts_check_googlesans_opentype_os2_windescent(ttFont):
 def com_google_fonts_check_googlesans_opentype_hhea_ascent(ttFont):
     """hhea.ascent is defined as expected"""
     if ttFont["hhea"].ascent != ATTRIBUTES["hhea_ascent"]:
-        yield FAIL, f"The hhea.ascent value {ttFont['hhea'].ascent} does not match the required value {ATTRIBUTES['hhea_ascent']}"
+        yield (
+            FAIL,
+            f"The hhea.ascent value {ttFont['hhea'].ascent} does not "
+            f"match the required value {ATTRIBUTES['hhea_ascent']}",
+        )
     else:
-        yield PASS, f"The hhea.ascent value matches the required value."
+        yield PASS, "The hhea.ascent value matches the required value."
 
 
 # hhea.Descent check
@@ -353,9 +365,13 @@ def com_google_fonts_check_googlesans_opentype_hhea_ascent(ttFont):
 def com_google_fonts_check_googlesans_opentype_hhea_descent(ttFont):
     """hhea.descent is defined as expected"""
     if ttFont["hhea"].descent != ATTRIBUTES["hhea_descent"]:
-        yield FAIL, f"The hhea.descent value {ttFont['hhea'].descent} does not match the required value {ATTRIBUTES['hhea_descent']}"
+        yield (
+            FAIL,
+            f"The hhea.descent value {ttFont['hhea'].descent} does not "
+            f"match the required value {ATTRIBUTES['hhea_descent']}",
+        )
     else:
-        yield PASS, f"The hhea.descent value matches the required value."
+        yield PASS, "The hhea.descent value matches the required value."
 
 
 # hhea.lineGap check
@@ -368,9 +384,13 @@ def com_google_fonts_check_googlesans_opentype_hhea_descent(ttFont):
 def com_google_fonts_check_googlesans_opentype_hhea_linegap(ttFont):
     """hhea.linegap is defined as expected"""
     if ttFont["hhea"].lineGap != ATTRIBUTES["hhea_linegap"]:
-        yield FAIL, f"The hhea.lineGap value {ttFont['hhea'].lineGap} does not match the required value {ATTRIBUTES['hhea_linegap']}"
+        yield (
+            FAIL,
+            f"The hhea.lineGap value {ttFont['hhea'].lineGap} does not "
+            f"match the required value {ATTRIBUTES['hhea_linegap']}",
+        )
     else:
-        yield PASS, f"The hhea.lineGap value matches the required value."
+        yield PASS, "The hhea.lineGap value matches the required value."
 
 
 # OS/2.typoDescender check
@@ -383,9 +403,13 @@ def com_google_fonts_check_googlesans_opentype_hhea_linegap(ttFont):
 def com_google_fonts_check_googlesans_opentype_os2_typodescender(ttFont):
     """OS/2.typoDescender is defined as expected"""
     if ttFont["OS/2"].sTypoDescender != ATTRIBUTES["os2_typodescender"]:
-        yield FAIL, f"The OS/2.typoDescender value {ttFont['OS/2'].sTypoDescender} does not match the required value {ATTRIBUTES['os2_typodescender']}"
+        yield (
+            FAIL,
+            f"The OS/2.typoDescender value {ttFont['OS/2'].sTypoDescender} does not "
+            f"match the required value {ATTRIBUTES['os2_typodescender']}",
+        )
     else:
-        yield PASS, f"The OS/2.typoDescender value matches the required value."
+        yield PASS, "The OS/2.typoDescender value matches the required value."
 
 
 # OS/2.typoAscender check
@@ -398,9 +422,13 @@ def com_google_fonts_check_googlesans_opentype_os2_typodescender(ttFont):
 def com_google_fonts_check_googlesans_opentype_os2_typoascender(ttFont):
     """OS/2.typoAscender is defined as expected"""
     if ttFont["OS/2"].sTypoAscender != ATTRIBUTES["os2_typoascender"]:
-        yield FAIL, f"The OS/2.typoAscender value {ttFont['OS/2'].sTypoAscender} does not match the required value {ATTRIBUTES['os2_typoascender']}"
+        yield (
+            FAIL,
+            f"The OS/2.typoAscender value {ttFont['OS/2'].sTypoAscender} does not "
+            f"match the required value {ATTRIBUTES['os2_typoascender']}",
+        )
     else:
-        yield PASS, f"The OS/2.typoAscender value matches the required value."
+        yield PASS, "The OS/2.typoAscender value matches the required value."
 
 
 # OS/2.typoLineGap check
@@ -413,9 +441,13 @@ def com_google_fonts_check_googlesans_opentype_os2_typoascender(ttFont):
 def com_google_fonts_check_googlesans_opentype_os2_typolinegap(ttFont):
     """OS/2.typoLineGap is defined as expected"""
     if ttFont["OS/2"].sTypoLineGap != ATTRIBUTES["os2_typolinegap"]:
-        yield FAIL, f"The OS/2.typoLineGap value {ttFont['OS/2'].sTypoLineGap} does not match the required value {ATTRIBUTES['os2_typolinegap']}"
+        yield (
+            FAIL,
+            f"The OS/2.typoLineGap value {ttFont['OS/2'].sTypoLineGap} does not "
+            f"match the required value {ATTRIBUTES['os2_typolinegap']}",
+        )
     else:
-        yield PASS, f"The OS/2.typoLineGap value matches the required value."
+        yield PASS, "The OS/2.typoLineGap value matches the required value."
 
 
 # ================================================
@@ -447,7 +479,11 @@ def com_google_fonts_check_googlesans_features_static_uprights(ttFont):
     if sorted(fea_tags) == STATIC_UPRIGHT_FEA:
         yield PASS, f"{tt.reader.file.name} contains the expected feature tags"
     else:
-        yield FAIL, f"{tt.reader.file.name} does not contain the expected feature tags.\nFound:{sorted(fea_tags)}\nExpected:{STATIC_UPRIGHT_FEA}"
+        yield (
+            FAIL,
+            f"{tt.reader.file.name} does not contain the expected feature tags.\n"
+            f"Found:{sorted(fea_tags)}\nExpected:{STATIC_UPRIGHT_FEA}",
+        )
 
 
 @check(
@@ -474,7 +510,11 @@ def com_google_fonts_check_googlesans_features_static_italics(ttFont):
     if sorted(fea_tags) == STATIC_ITALICS_FEA:
         yield PASS, f"{tt.reader.file.name} contains the expected feature tags"
     else:
-        yield FAIL, f"{tt.reader.file.name} does not contain the expected feature tags.\nFound:{sorted(fea_tags)}\nExpected:{STATIC_ITALICS_FEA}"
+        yield (
+            FAIL,
+            f"{tt.reader.file.name} does not contain the expected feature tags.\n"
+            f"Found:{sorted(fea_tags)}\nExpected:{STATIC_ITALICS_FEA}",
+        )
 
 
 # VF
@@ -502,7 +542,11 @@ def com_google_fonts_check_googlesans_features_variable_uprights(ttFont):
     if sorted(fea_tags) == VAR_UPRIGHT_FEA:
         yield PASS, f"{tt.reader.file.name} contains the expected feature tags"
     else:
-        yield FAIL, f"{tt.reader.file.name} does not contain the expected feature tags.\nFound:{sorted(fea_tags)}\nExpected:{VAR_UPRIGHT_FEA}"
+        yield (
+            FAIL,
+            f"{tt.reader.file.name} does not contain the expected feature tags.\n"
+            f"Found:{sorted(fea_tags)}\nExpected:{VAR_UPRIGHT_FEA}",
+        )
 
 
 @check(
@@ -529,7 +573,11 @@ def com_google_fonts_check_googlesans_features_variable_italics(ttFont):
     if sorted(fea_tags) == VAR_ITALICS_FEA:
         yield PASS, f"{tt.reader.file.name} contains the expected feature tags"
     else:
-        yield FAIL, f"{tt.reader.file.name} does not contain the expected feature tags.\nFound:{sorted(fea_tags)}\nExpected:{VAR_ITALICS_FEA}"
+        yield (
+            FAIL,
+            f"{tt.reader.file.name} does not contain the expected feature tags.\n"
+            f"Found:{sorted(fea_tags)}\nExpected:{VAR_ITALICS_FEA}",
+        )
 
 
 # ================================================
