@@ -143,7 +143,7 @@ gs-vf: $(FONT_BUILD_DIR)
 	@echo "================================"
 	# Build to intermediate UFO + designspace files
 	$(FONTMAKE_EXE) -g $(UPRIGHT_SOURCE) -o ufo --output-dir $(EXPERT_VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
-	$(FONTMAKE_EXE) -g $(ITALIC_SOURCE) --interpolate -o ufo --output-dir $(EXPERT_VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
+	$(FONTMAKE_EXE) -g $(ITALIC_SOURCE) -o ufo --output-dir $(EXPERT_VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
 	# Scale intermediate master sources to 2000 UPM
 	# upright sources
 	$(PYTHON3_EXE) ../scripts/scale_ufo.py $(UFO_GS_REGULAR) $(UPM)
