@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master # Push events on master branch
+      - chrissimpkins-cldr
 
 jobs:
   cldr-coverage-support:
@@ -18,7 +19,6 @@ jobs:
         uses: f-actions/font-setup@master
         with:
           projectname: "Google Sans"
-          buildpath: "build/GoogleSans/variable/expert/GoogleSansVF[opsz,wght].ttf"
           dependpath: "requirements.txt"
           py-version: ${{ matrix.python-version }}
           buildcommand: "make gs-vf"
@@ -44,4 +44,4 @@ jobs:
       - name: CLDR script/language coverage
         uses: f-actions/cldr-coverage@master
         with:
-          path: ${{ steps.config.outputs.buildpath }}
+          path: "/github/workspace/build/GoogleSans/variable/expert/GoogleSans[opsz,wght].ttf"
