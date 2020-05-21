@@ -95,6 +95,10 @@ def _scale_glyphs(font, scale_factor):
     scale = TransformationsFilter(ScaleX=scale_factor * 100, ScaleY=scale_factor * 100)
     scale(font)
 
+    for glyph in font:
+        glyph.width *= scale_factor
+        glyph.height *= scale_factor
+
 
 def scale_ufo(font, scale_factor, inplace=True):
     if not inplace:
