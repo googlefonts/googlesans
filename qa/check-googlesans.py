@@ -35,6 +35,7 @@ GOOGLESANS_PROFILE_CHECKS = UNIVERSAL_PROFILE_CHECKS + [
     "com.google.fonts/check/googlesans/features/staticitalics",
     "com.google.fonts/check/googlesans/features/variableuprights",
     "com.google.fonts/check/googlesans/features/variableitalics",
+    "com.google.fonts/check/googlesans/vf/fvardefault",
 ]
 
 # define check ID's in the upstream `universal` profile
@@ -60,6 +61,8 @@ ATTRIBUTES = {
     "os2_typoascender": 966,  # set to match hhea metrics values
     "os2_typodescender": -286,
     "os2_typolinegap": 0,
+    "opsz_axis_default": 18.0,
+    "wght_axis_default": 400.0,
 }
 
 STATIC_UPRIGHT_FEA = [
@@ -578,6 +581,56 @@ def com_google_fonts_check_googlesans_features_variable_italics(ttFont):
             f"{tt.reader.file.name} does not contain the expected feature tags.\n"
             f"Found:{sorted(fea_tags)}\nExpected:{VAR_ITALICS_FEA}",
         )
+
+
+# ================================================
+# Variable build format specific
+# ================================================
+
+
+@check(
+    id="com.google.fonts/check/googlesans/vf/fvardefault",
+    conditions=["is_variable_font"],
+    rationale="""
+    Confirms that the variable font format builds include the expected fvar
+    default definitions of opsz = 18 and wght = 400
+    """,
+)
+def com_google_fonts_check_googlesans_variable_fvar_default(ttFont):
+    """Confirms that the variable font builds include correct fvar default."""
+    tt = ttFont
+    EXPECTED_OPSZ = ATTRIBUTES["opsz_axis_default"]
+    EXPECTED_WGHT = ATTRIBUTES["wght_axis_default"]
+
+    for axis in tt["fvar"].axes:
+        if axis.axisTag == "opsz":
+            if axis.defaultValue != EXPECTED_OPSZ:
+                yield (
+                    FAIL,
+                    f"{tt.reader.file.name} does not include the correct "
+                    f"fvar opsz axis default.\n"
+                    f"Found: `{axis.defaultValue}` and expected `{EXPECTED_OPSZ}`",
+                )
+            else:
+                yield (
+                    PASS,
+                    f"{tt.reader.file.name} contains the expected fvar "
+                    f"opsz default.",
+                )
+        elif axis.axisTag == "wght":
+            if axis.defaultValue != EXPECTED_WGHT:
+                yield (
+                    FAIL,
+                    f"{tt.reader.file.name} does not include the correct "
+                    f"fvar wght axis default.\n"
+                    f"Found: `{axis.defaultValue}` and expected `{EXPECTED_WGHT}`",
+                )
+            else:
+                yield (
+                    PASS,
+                    f"{tt.reader.file.name} contains the expected fvar "
+                    f"opsz default.",
+                )
 
 
 # ================================================
