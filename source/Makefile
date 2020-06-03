@@ -154,7 +154,9 @@ gs-vf: $(FONT_BUILD_DIR)
 	@echo "================================"
 	@echo " Add STAT tables"
 	@echo "================================"
-	# partial instance build VF STAT tables
+	# STAT tables for 2-axis VF build targets
+	$(PYTHON3_EXE) ../scripts/gs-stat.py
+	# STAT tables for 1-axis (wght) build targets
 	$(PYTHON3_EXE) ../scripts/gs-stat-partial.py
 
 #
