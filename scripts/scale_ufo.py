@@ -93,11 +93,13 @@ def _scale_glyphs(font, scale_factor):
     # NOTE: Make sure to use ufo2ft 2.14 as it fixes a bug with transformations of
     # composite glyphs: https://github.com/googlefonts/ufo2ft/issues/378
     scale = TransformationsFilter(ScaleX=scale_factor * 100, ScaleY=scale_factor * 100)
-    scale(font)
 
-    for glyph in font:
-        glyph.width *= scale_factor
-        glyph.height *= scale_factor
+    for layer in font.layers:
+        scale(font, glyphSet=layer)
+
+        for glyph in layer:
+            glyph.width *= scale_factor
+            glyph.height *= scale_factor
 
 
 def scale_ufo(font, scale_factor, inplace=True):
