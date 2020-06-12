@@ -29,34 +29,74 @@ elogoligature => e.logo
 
 ## Other OpenType features
 
-## TODO: Edd, Irene, Alexei
+### [`aalt`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_ae#tag-aalt)
 
-### `aalt`
+Expert build target alternate outline form support. Supports access to glyph outlines defined as `*.alt` in the source files.
 
-### `ccmp`
+### [`calt`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_ae#tag-calt)
 
-### `locl`
+Support for contextual alternates.
 
-**Cyrillic**
+Special use cases of the calt feature:
+
+#### Latin
+
+- Google logo as `[Gg]oogle_logo` sequence
+- Google super G as `google_G_logo` sequence
+
+#### Greek
+
+- Retain accent (tonos) in `ή` (disjunctive eta) in small caps transformation.
+
+### [`case`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_ae#tag-case)
+
+Supports substitution of upper case sequence forms.
+
+### [`ccmp`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_ae#tag-ccmp)
+
+Special handling of glyph decomposition and composition.
+
+### [`c2sc`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_ae#tag-c2sc)
+
+Capitals to small caps support.
+
+### [`dlig`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_ae#tag-dlig)
+
+Discretionary ligature support.
+
+### [`dnom`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_ae#tag-dnom)
+
+Denominator figure outlines.
+
+### [`frac`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_fj#tag-frac)
+
+Support for fraction presentation of figures separated by a slash pattern.
+
+### [`lnum`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_ko#tag-lnum)
+
+Support for non-lininig figure to lining figure transformations.
+
+### [`locl`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_ko#tag-locl)
+
+Support for localized writing system glyph forms.
+
+#### Cyrillic
+
 List of localized forms
 
-- Bashkir:
+##### Bashkir:
+
 ```
-Ғ 0x0492 Ghestroke-cy 
-ғ 0x0493 ghestroke-cy 
-Ҙ 0x0498 Zedescender-cy 
+Ғ 0x0492 Ghestroke-cy
+ғ 0x0493 ghestroke-cy
+Ҙ 0x0498 Zedescender-cy
 ҙ 0x0499 zedescender-cy
 Ҫ 0x04AA Esdescender-cy
 ҫ 0x04AB esdescender-cy
 ```
 
-- Chuvash:
-```
-Ҫ 0x04AA Esdescender-cy
-ҫ 0x04AB esdescender-cy
-```
+##### Bulgarian:
 
-- Bulgarian:
 ```
 Д 0x0414 De-cy
 Л 0x041B El-cy
@@ -83,24 +123,15 @@ List of localized forms
 ю 0x044E iu-cy
 ```
 
-* Serbian and Macedonian (Upright): 
-```
-б 0x0431 be-cy
-```
-
-* Serbian (Italic):
-```
-б 0x0431 be-cy
-г 0x0433 ge-cy
-ѓ 0x0433 gje-cy
-д 0x0434 de-cy
-п 0x043F pe-cy
-т 0x0442 te-cy
-ш 0x0448 sha-cy
+##### Chuvash:
 
 ```
+Ҫ 0x04AA Esdescender-cy
+ҫ 0x04AB esdescender-cy
+```
 
-* Macedonian (Italic):
+##### Macedonian (Italic):
+
 ```
 г 0x0433 ge-cy
 ѓ 0x0433 gje-cy
@@ -110,39 +141,55 @@ List of localized forms
 ш 0x0448 sha-cy
 ```
 
-### `frac`
+##### Serbian and Macedonian (Upright):
 
-### `numr`
+```
+б 0x0431 be-cy
+```
 
-### `dnom`
+##### Serbian (Italic):
 
-### `lnum`
+```
+б 0x0431 be-cy
+г 0x0433 ge-cy
+ѓ 0x0433 gje-cy
+д 0x0434 de-cy
+п 0x043F pe-cy
+т 0x0442 te-cy
+ш 0x0448 sha-cy
+```
 
-### `tnum`
+### [`numr`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_ko#tag-numr)
 
-### `ordn`
+Numerator figure outlines.
 
-### `case`
+### [`ordn`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_ko#tag-ordn)
 
-### `sups`
+Support for replacement of default alphabetic glyphs with their ordinal form after figures.
 
-### `subs`
+### [`pnum`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_pt#-tag-pnum)
 
-### `sinf`
+Proportional figure support.
 
-### `pnum`
+### [`sinf`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_pt#-tag-sinf)
 
-### `c2sc`
+Scientific inferior support.
 
-### `smcp`
+### [`smcp`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_pt#-tag-smcp)
 
-### `dlig`
+Small caps support.
 
-### `calt`
+### [`subs`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_pt#-tag-subs)
 
-**Greek**
+Subscript support.
 
-- Retain accent (tonos) in `ή` (disjunctive eta) in small caps transformation.
+### [`sups`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_pt#-tag-sups)
+
+Superscript support.
+
+### [`tnum`](https://docs.microsoft.com/en-us/typography/opentype/spec/features_pt#-tag-tnum)
+
+Support for tabular (monospaced) figures. Default figures are proportional width.
 
 ## Stylistic Sets
 
@@ -158,19 +205,19 @@ List of localized forms
 
 ### `ss06`
 
-**Greek**
+#### Greek
 
 - Accented Greek SC: keep all the accents in small caps transformation
 
 ### `ss07`
 
-**Greek**
+#### Greek
 
 - iota adscript: transform `subscript iota` to `adscript iota`
 
 ### `ss08`
 
--Bulgarian Locale
+#### Bulgarian Locale
 
-Includes Bulgarian localized variants for the following glyphs:
-`ДЛФ` (and their respective Small Caps), `вгджзийѝклптфцшщьъыю`. May be useful for applications that do not support `locl` OpenType feature.
+- Includes Bulgarian localized variants for the following glyphs:
+  `ДЛФ` (and their respective Small Caps), `вгджзийѝклптфцшщьъыю`. May be useful for applications that do not support `locl` OpenType feature.
