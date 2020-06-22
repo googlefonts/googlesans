@@ -195,15 +195,27 @@ Support for tabular (monospaced) figures. Default figures are proportional width
 
 ### `ss01`
 
+- Number pad asterisk
+
 ### `ss02`
+
+- Colon design for use in time displays
 
 ### `ss03`
 
+- Thin numbers
+
 ### `ss04`
+
+- Micro caps designs. These are the pre-v3.000 release "small caps" designs and are maintained for backward compatibility
 
 ### `ss05`
 
+- Alternate arrows
+
 ### `ss06`
+
+- Accented Greek small caps
 
 #### Greek
 
