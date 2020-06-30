@@ -25,9 +25,7 @@ UPRIGHT_AXES = [
             dict(
                 rangeMinValue=18, nominalValue=18, name="Max", flags=0x2
             ),  # Max opsz, use elided name of "Google Sans" without opsz identifier
-            dict(
-                rangeMinValue=6, nominalValue=17, rangeMaxValue=17, name="Text"
-            ),  # Text
+            dict(rangeMinValue=6, nominalValue=17, rangeMaxValue=17, name="Text"),  # Text
         ],
     ),
     dict(
@@ -57,9 +55,7 @@ ITALIC_AXES = [
             dict(
                 rangeMinValue=18, nominalValue=18, name="Max", flags=0x2
             ),  # Max opsz, use elided name of "Google Sans" without opsz identifier
-            dict(
-                rangeMinValue=6, nominalValue=17, rangeMaxValue=17, name="Text"
-            ),  # Text
+            dict(rangeMinValue=6, nominalValue=17, rangeMaxValue=17, name="Text"),  # Text
         ],
     ),
     dict(
