@@ -3296,6 +3296,7 @@ horizontalStems = (
 );
 id = "3E1A77A5-2AAF-4B97-842E-5802590C9619";
 italicAngle = 10;
+name = "Text Bold Italic";
 verticalStems = (
 131,
 95
@@ -3315,7 +3316,7 @@ alignmentZones = (
 );
 ascender = 716;
 capHeight = 716;
-custom = "Sans Italic";
+custom = Italic;
 customValue = 70;
 customParameters = (
 {
@@ -3392,7 +3393,7 @@ alignmentZones = (
 );
 ascender = 716;
 capHeight = 716;
-custom = "Sans Italic";
+custom = Italic;
 customValue = 70;
 customParameters = (
 {
@@ -3451,7 +3452,6 @@ horizontalStems = (
 );
 id = "E3D0AE35-FDA8-40C5-B77D-1233E980F611";
 italicAngle = 10;
-name = "Sans Bold Italic";
 verticalStems = (
 131,
 95
@@ -290507,7 +290507,7 @@ name = Autohint;
 value = 0;
 },
 {
-name = familyName;
+name = styleMapFamilyName;
 value = "Google Sans Text";
 },
 {
@@ -290517,6 +290517,14 @@ value = "3 1 0 0; Google;GoogleSansText-Italic";
 {
 name = "Name Table Entry";
 value = "3 3 1 1033; Google;GoogleSansText-Italic";
+},
+{
+name = WWSFamilyName;
+value = "Google Sans Text";
+},
+{
+name = WWSSubfamilyName;
+value = Italic;
 }
 );
 interpolationCustom = 300;
@@ -290527,7 +290535,7 @@ instanceInterpolations = {
 };
 isItalic = 1;
 linkStyle = Regular;
-name = Italic;
+name = "Text Italic";
 },
 {
 customParameters = (
@@ -290551,7 +290559,7 @@ name = Autohint;
 value = 0;
 },
 {
-name = familyName;
+name = styleMapFamilyName;
 value = "Google Sans Text";
 },
 {
@@ -290561,6 +290569,14 @@ value = "3 1 0 0; Google;GoogleSansText-MediumItalic";
 {
 name = "Name Table Entry";
 value = "3 3 1 1033; Google;GoogleSansText-MediumItalic";
+},
+{
+name = WWSFamilyName;
+value = "Google Sans Text";
+},
+{
+name = WWSSubfamilyName;
+value = "Medium Italic";
 }
 );
 interpolationCustom = 400;
@@ -290572,7 +290588,7 @@ instanceInterpolations = {
 };
 isItalic = 1;
 linkStyle = Medium;
-name = "Medium Italic";
+name = "Text Medium Italic";
 weightClass = Medium;
 },
 {
@@ -290597,7 +290613,7 @@ name = Autohint;
 value = 0;
 },
 {
-name = familyName;
+name = styleMapFamilyName;
 value = "Google Sans Text";
 },
 {
@@ -290607,6 +290623,14 @@ value = "3 1 0 0; Google;GoogleSansText-BoldItalic";
 {
 name = "Name Table Entry";
 value = "3 3 1 1033; Google;GoogleSansText-BoldItalic";
+},
+{
+name = WWSFamilyName;
+value = "Google Sans Text";
+},
+{
+name = WWSSubfamilyName;
+value = "Bold Italic";
 }
 );
 interpolationCustom = 300;
@@ -290618,7 +290642,7 @@ instanceInterpolations = {
 isBold = 1;
 isItalic = 1;
 linkStyle = Regular;
-name = "Bold Italic";
+name = "Text Bold Italic";
 weightClass = Bold;
 }
 );
