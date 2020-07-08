@@ -45,6 +45,16 @@ DEFAULT_VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable/default
 
 PARTIAL_INSTANCE_VARIABLE_BUILD_DIR=$(EXPERT_VARIABLE_BUILD_DIR)/partial
 
+# Static font expert Text opsz build artifacts
+#  - these paths are necessary for post compile path
+#    edits vs. what comes out of the compiler
+STATIC_TEXT_BUILD_PATH_REGULAR=$(EXPERT_STATIC_BUILD_DIR)/GoogleSansText-Regular.ttf
+STATIC_TEXT_BUILD_PATH_ITALIC=$(EXPERT_STATIC_BUILD_DIR)/GoogleSansText-Italic.ttf
+STATIC_TEXT_BUILD_PATH_BOLD=$(EXPERT_STATIC_BUILD_DIR)/GoogleSansText-Bold.ttf
+STATIC_TEXT_BUILD_PATH_BOLDITALIC=$(EXPERT_STATIC_BUILD_DIR)/GoogleSansText-BoldItalic.ttf
+STATIC_TEXT_BUILD_PATH_MEDIUM=$(EXPERT_STATIC_BUILD_DIR)/GoogleSansText-Medium.ttf
+STATIC_TEXT_BUILD_PATH_MEDIUMITALIC=$(EXPERT_STATIC_BUILD_DIR)/GoogleSansText-MediumItalic.ttf
+
 # Variable font build artifacts
 
 # upright
@@ -108,6 +118,13 @@ gs-static: $(FONT_BUILD_DIR)
 	@echo "================================"
 	@echo " Beginning post-compile edits..."
 	@echo "================================"
+	# edit Text opsz file paths
+	mv $(EXPERT_STATIC_BUILD_DIR)/GoogleSans-TextRegular.ttf $(STATIC_TEXT_BUILD_PATH_REGULAR)
+	mv $(EXPERT_STATIC_BUILD_DIR)/GoogleSans-TextItalic.ttf $(STATIC_TEXT_BUILD_PATH_ITALIC)
+	mv $(EXPERT_STATIC_BUILD_DIR)/GoogleSans-TextBold.ttf $(STATIC_TEXT_BUILD_PATH_BOLD)
+	mv $(EXPERT_STATIC_BUILD_DIR)/GoogleSans-TextBoldItalic.ttf $(STATIC_TEXT_BUILD_PATH_BOLDITALIC)
+	mv $(EXPERT_STATIC_BUILD_DIR)/GoogleSans-TextMedium.ttf $(STATIC_TEXT_BUILD_PATH_MEDIUM)
+	mv $(EXPERT_STATIC_BUILD_DIR)/GoogleSans-TextMediumItalic.ttf $(STATIC_TEXT_BUILD_PATH_MEDIUMITALIC)
 	@echo "================================"
 	@echo " Beginning font subsetting..."
 	@echo "================================"
