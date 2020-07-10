@@ -17,6 +17,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: flake8 lint of Python sources
-        uses: py-actions/flake8@master # uses flake8 configuration in repository setup.cfg file
+        uses: py-actions/flake8@v1 # uses flake8 configuration in repository setup.cfg file
         with:
           flake8-version: "latest"
