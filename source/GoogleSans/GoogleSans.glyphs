@@ -1300,8 +1300,8 @@ code = "lookup ccmp_Other_1 {
 	@CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb];
 	sub [i j]' @CombiningTopAccents by [idotless jdotless];
 	sub [i j]' @CombiningNonTopAccents @CombiningTopAccents by [idotless jdotless];
-	@Markscomb = [tonos psili koronis dasia dasiavaria psilioxia dasiaoxia psiliperispomeni dasiaperispomeni dialytikavaria dialytikaperispomeni varia oxia perispomeni psilivaria dialytikaoxia];
-	@MarkscombCase = [tonos.case psili.case koronis.case dasia.case dasiavaria.case psilioxia.case dasiaoxia.case psiliperispomeni.case dasiaperispomeni.case dialytikavaria.case dialytikaperispomeni.case varia.case oxia.case perispomeni.case psilivaria.case dialytikaoxia.case];
+	@Markscomb = [tonos psili koronis dasia dasiavaria psilioxia dasiaoxia psiliperispomeni dasiaperispomeni dialytikavaria dialytikaoxia dialytikaperispomeni varia oxia perispomeni psilivaria];
+	@MarkscombCase = [tonos.case psili.case koronis.case dasia.case dasiavaria.case psilioxia.case dasiaoxia.case psiliperispomeni.case dasiaperispomeni.case dialytikavaria.case dialytikaoxia.case dialytikaperispomeni.case varia.case oxia.case perispomeni.case psilivaria.case];
 	sub @Markscomb @Markscomb' by @MarkscombCase;
 	sub @Uppercase @Markscomb' by @MarkscombCase;
 } ccmp_Other_1;
@@ -1613,21 +1613,6 @@ name = liga;
 },
 {
 automatic = 1;
-code = "sub zero by zerosuperior;
-sub one by onesuperior;
-sub two by twosuperior;
-sub three by threesuperior;
-sub four by foursuperior;
-sub five by fivesuperior;
-sub six by sixsuperior;
-sub seven by sevensuperior;
-sub eight by eightsuperior;
-sub nine by ninesuperior;
-";
-name = sups;
-},
-{
-automatic = 1;
 code = "sub zero by zeroinferior;
 sub one by oneinferior;
 sub two by twoinferior;
@@ -1658,6 +1643,21 @@ name = sinf;
 },
 {
 automatic = 1;
+code = "sub zero by zerosuperior;
+sub one by onesuperior;
+sub two by twosuperior;
+sub three by threesuperior;
+sub four by foursuperior;
+sub five by fivesuperior;
+sub six by sixsuperior;
+sub seven by sevensuperior;
+sub eight by eightsuperior;
+sub nine by ninesuperior;
+";
+name = sups;
+},
+{
+automatic = 1;
 code = "sub zero.tf by zero;
 sub one.tf by one;
 sub two.tf by two;
@@ -1681,6 +1681,7 @@ sub dong.tf by dong;
 sub euro.tf by euro;
 sub florin.tf by florin;
 sub franc.tf by franc;
+sub hryvnia.tf by hryvnia;
 sub lira.tf by lira;
 sub liraTurkish.tf by liraTurkish;
 sub peso.tf by peso;
@@ -3105,7 +3106,6 @@ code = "featureNames {
 };
 	
 script cyrl;
-language BGR;
 sub De-cy by De-cy.loclBGR;
 sub El-cy by El-cy.loclBGR;
 sub Ef-cy by Ef-cy.loclBGR;

@@ -1301,8 +1301,8 @@ code = "lookup ccmp_Other_1 {
 	@CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb];
 	sub [i j]' @CombiningTopAccents by [idotless jdotless];
 	sub [i j]' @CombiningNonTopAccents @CombiningTopAccents by [idotless jdotless];
-	@Markscomb = [tonos psilivaria perispomeni oxia varia dialytikaperispomeni dialytikaoxia dialytikavaria dasiaperispomeni psiliperispomeni psili koronis dasia dasiavaria psilioxia dasiaoxia];
-	@MarkscombCase = [tonos.case psilivaria.case perispomeni.case oxia.case varia.case dialytikaperispomeni.case dialytikaoxia.case dialytikavaria.case dasiaperispomeni.case psiliperispomeni.case psili.case koronis.case dasia.case dasiavaria.case psilioxia.case dasiaoxia.case];
+	@Markscomb = [tonos psili koronis dasia dasiavaria psilioxia dasiaoxia psiliperispomeni dasiaperispomeni dialytikavaria dialytikaoxia dialytikaperispomeni varia oxia perispomeni psilivaria];
+	@MarkscombCase = [tonos.case psili.case koronis.case dasia.case dasiavaria.case psilioxia.case dasiaoxia.case psiliperispomeni.case dasiaperispomeni.case dialytikavaria.case dialytikaoxia.case dialytikaperispomeni.case varia.case oxia.case perispomeni.case psilivaria.case];
 	sub @Markscomb @Markscomb' by @MarkscombCase;
 	sub @Uppercase @Markscomb' by @MarkscombCase;
 } ccmp_Other_1;
@@ -3107,7 +3107,6 @@ code = "featureNames {
 };
 
 script cyrl;
-language BGR;
 sub De-cy by De-cy.loclBGR;
 sub El-cy by El-cy.loclBGR;
 sub Ef-cy by Ef-cy.loclBGR;
