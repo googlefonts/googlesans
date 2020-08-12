@@ -19,7 +19,7 @@ import os
 from fontTools.ttLib import TTFont
 from fontTools.varLib import instancer
 
-MIN_OPSZ_SIZE = 14
+MIN_OPSZ_SIZE = 17
 MAX_OPSZ_SIZE = 18
 
 VARIABLE_DIR = "../build/GoogleSans/variable/expert"
@@ -56,13 +56,23 @@ def main():
         assert "opsz" in pre_axis_tags
         assert "wght" in pre_axis_tags
 
-        # partial instance of min optical size design
-        print(f"[PARTIAL INSTANCE] {fontpath} to min optical size instance builds...")
+        # =================================================
+        # BUILD partial instance of min optical size design
+        # =================================================
+        print(
+            f"[PARTIAL INSTANCE] {fontpath} to min optical size instance "
+            f"builds defined at opsz {MIN_OPSZ_SIZE}..."
+        )
         vf_partial_min_opsz = instancer.instantiateVariableFont(
             vf_full, {"opsz": MIN_OPSZ_SIZE}
         )
-        # partial instance of amx optical size design
-        print(f"[PARTIAL INSTANCE] {fontpath} to max optical size instance builds...")
+        # =================================================
+        # BUILD partial instance of max optical size design
+        # =================================================
+        print(
+            f"[PARTIAL INSTANCE] {fontpath} to max optical size instance "
+            f"builds defined at opsz {MAX_OPSZ_SIZE}..."
+        )
         vf_partial_max_opsz = instancer.instantiateVariableFont(
             vf_full, {"opsz": MAX_OPSZ_SIZE}
         )
@@ -75,12 +85,14 @@ def main():
             assert "wght" in post_axis_tags
 
         # ========================================
-        # Fix name tables after partial instancing
+        # FIX name tables after partial instancing
         # ========================================
         namerecord_list_min_opsz = vf_partial_min_opsz["name"].names
         namerecord_list_max_opsz = vf_partial_max_opsz["name"].names
 
+        # -------------------------
         # *** min opsz name fix ***
+        # -------------------------
         new_min_opsz_namerecords = []
         for record in namerecord_list_min_opsz:
             skip_record = False
@@ -117,6 +129,19 @@ def main():
             elif record.nameID == 17:
                 # eliminate nameID 17
                 skip_record = True
+            elif (
+                record.nameID == 268
+                or record.nameID == 269
+                or record.nameID == 270
+                or record.nameID == 271
+            ):
+                # eliminate "Text" from the style names in the name table records
+                # 268, 269, 270, 271
+                # note that the space after Text must remain in the pre-string
+                # platformID = 1 replacements
+                record.string = record.string.replace(b"Text ", b"")
+                # platformID = 3 replacements
+                record.string = record.string.replace(b"\x00T\x00e\x00x\x00t\x00 ", b"")
 
             if not skip_record:
                 new_min_opsz_namerecords.append(record)
@@ -124,7 +149,9 @@ def main():
         # define new min opsz name records following above edits
         vf_partial_min_opsz["name"].names = new_min_opsz_namerecords
 
+        # -------------------------
         # *** max opsz name fix ***
+        # -------------------------
         new_max_opsz_namerecords = []
         for record in namerecord_list_max_opsz:
             skip_record = False
