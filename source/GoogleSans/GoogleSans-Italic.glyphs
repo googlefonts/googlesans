@@ -727,6 +727,74 @@ omegapsiliperispomeniypogegrammeni.sc.ss06
 omegadasiaperispomeniypogegrammeni.sc.ss06
 omegaperispomeniypogegrammeni.sc.ss06";
 name = grk_smallcaps;
+},
+{
+code = "vavvav-hb vavyod-hb yodyod-hb aleflamed-hb alef-hb bet-hb gimel-hb dalet-hb he-hb vav-hb zayin-hb het-hb tet-hb yod-hb finalkaf-hb finalkaf_sheva-hb finalkaf_qamats-hb kaf-hb lamed-hb lamed_holam-hb lamed_dagesh_holam-hb finalmem-hb mem-hb finalnun-hb nun-hb samekh-hb ayin-hb finalpe-hb pe-hb finaltsadi-hb tsadi-hb qof-hb resh-hb shin-hb tav-hb yodyodpatah-hb widealef-hb widedalet-hb widehe-hb widekaf-hb widelamed-hb finalwidemem-hb wideresh-hb widetav-hb shinshindot-hb shinsindot-hb shindageshshindot-hb shindageshsindot-hb alefpatah-hb alefqamats-hb alefdagesh-hb betdagesh-hb gimeldagesh-hb daletdagesh-hb hedagesh-hb vavdagesh-hb zayindagesh-hb tetdagesh-hb yoddagesh-hb finalkafdagesh-hb finalkafdagesh_sheva-hb finalkafdagesh_qamats-hb kafdagesh-hb lameddagesh-hb memdagesh-hb nundagesh-hb samekhdagesh-hb finalpedagesh-hb pedagesh-hb tsadidagesh-hb qofdagesh-hb reshdagesh-hb shindagesh-hb tavdagesh-hb vavholam-hb betrafe-hb kafrafe-hb perafe-hb";
+name = hb_AllHebrewLetters;
+},
+{
+code = "vav-hb vavdagesh-hb yod-hb yoddagesh-hb";
+name = hb_narrowHebrewLetters;
+},
+{
+code = "vav-hb vavdagesh-hb zayin-hb zayindagesh-hb yod-hb yoddagesh-hb gimel-hb gimeldagesh-hb lamed-hb lameddagesh-hb lamed_holam-hb lamed_dagesh_holam-hb nun-hb nundagesh-hb";
+name = hb_goesDownBefore;
+},
+{
+code = "dalet-hb daletdagesh-hb vav-hb vavdagesh-hb zayin-hb zayindagesh-hb yod-hb yoddagesh-hb qof-hb qofdagesh-hb resh-hb reshdagesh-hb";
+name = hb_goesDownAfter;
+},
+{
+code = "hatafsegol-hb hatafpatah-hb hatafqamats-hb tsere-hb segol-hb patah-hb qamats-hb qubuts-hb hiriq-hb sheva-hb";
+name = hb_bottomDiacritics;
+},
+{
+code = "hatafsegol-hb qamats-hb hatafqamats-hb tsere-hb segol-hb patah-hb qamatsqatan-hb hatafpatah-hb ";
+name = hb_wideMarks;
+},
+{
+code = "hatafsegol-hb hatafsegol_siluqleft-hb hatafpatah-hb hatafpatah_siluqleft-hb hatafqamats-hb hatafqamats_siluqleft-hb ";
+name = hb_veryWideMarks;
+},
+{
+code = "etnahtaleft-hb tipehaleft-hb tevirleft-hb atnahhafukh-hb munahleft-hb mahapakhleft-hb merkhaleft-hb merkhakefulaleft-hb dargaleft-hb yerahbenyomoleft-hb ";
+name = hb_goesDown;
+},
+{
+code = "segolta-hb shalshelet-hb zarqa-hb gereshaccent-hb gershayimaccent-hb qarneypara-hb pazer-hb telishaqetana-hb zinor-hb masoracircle-hb zaqefgadol-hb ";
+name = hb_wideTopCantillation;
+},
+{
+code = "siluqleft-hb etnahtaleft-hb tipehaleft-hb yetiv-hb tevirleft-hb atnahhafukh-hb munahleft-hb mahapakhleft-hb merkhaleft-hb merkhakefulaleft-hb dargaleft-hb yerahbenyomoleft-hb dehi-hb ";
+name = hb_bottomCantillation;
+},
+{
+code = "etnahtaleft-hb segolta-hb shalshelet-hb zaqefqatan-hb zaqefgadol-hb tipehaleft-hb reviamugrash-hb zarqa-hb pashta-hb yetiv-hb tevirleft-hb gereshaccent-hb gereshmuqdam-hb gershayimaccent-hb qarneypara-hb telishagedola-hb pazer-hb atnahhafukh-hb munahleft-hb mahapakhleft-hb merkhaleft-hb merkhakefulaleft-hb dargaleft-hb qadma-hb telishaqetana-hb yerahbenyomoleft-hb ole-hb iluy-hb dehi-hb zinor-hb masoracircle-hb siluqleft-hb rafe-hb upperdot-hb lowerdot-hb judeospanishvarika-hb ";
+name = hb_allCantillation;
+},
+{
+code = "telishaqetana-hb segolta-hb masoracircle-hb";
+name = hb_finalCantillationSrc;
+},
+{
+code = "telishaqetana-hb.final segolta-hb.final masoracircle-hb.final";
+name = hb_finalCantillationDst;
+},
+{
+code = "dalet-hb daletdagesh-hb he-hb hedagesh-hb vav-hb vavdagesh-hb lamed-hb lameddagesh-hb lamed_holam-hb lamed_dagesh_holam-hb ayin-hb resh-hb reshdagesh-hb shin-hb shinshindot-hb shinsindot-hb shindageshshindot-hb shindageshsindot-hb shindagesh-hb ";
+name = hb_finalCantillationLetters;
+},
+{
+code = "dagesh-hb";
+name = hb_dagesh;
+},
+{
+code = "shindot-hb sheva-hb hatafsegol-hb hatafsegol_siluqleft-hb hatafpatah-hb hatafpatah_siluqleft-hb hatafqamats-hb hatafqamats_siluqleft-hb hiriq-hb tsere-hb segol-hb patah-hb qamats-hb holam-hb holamhaser-hb qubuts-hb rafe-hb sindot-hb qamatsqatan-hb dagesh-hb";
+name = hb_diacriticMarks;
+},
+{
+code = "shindot-hb sindot-hb";
+name = hb_shinDots;
 }
 );
 copyright = "Copyright 2015 Google LLC. All Rights Reserved.";
