@@ -902,7 +902,11 @@ name = Languagesystems;
 );
 features = (
 {
-code = "    sub Ccedilla from [Ccedilla Ccedilla.alt];
+code = "    # ==============
+    # BEGIN LATIN
+    # ==============
+    
+    sub Ccedilla from [Ccedilla Ccedilla.alt];
     sub Ccedilla.alt from [Ccedilla.alt Ccedilla];
     sub euro from [euro euro.cap euro.tf];
     sub euro.tf from [euro.tf euro euro.cap];
@@ -1366,12 +1370,29 @@ code = "    sub Ccedilla from [Ccedilla Ccedilla.alt];
     sub zero.alt from [zero.alt zero.numerator zero.tf zero zero.alt.cap zero.cap zero.denominator];
     sub zero.denominator from [zero.denominator zero.alt zero.numerator zero.tf zero zero.alt.cap zero.cap];
     sub zero.cap from [zero.cap zero.denominator zero.alt zero.numerator zero.tf zero zero.alt.cap];
-    sub zero.alt.cap from [zero.alt.cap zero.cap zero.denominator zero.alt zero.numerator zero.tf zero];";
+    sub zero.alt.cap from [zero.alt.cap zero.cap zero.denominator zero.alt zero.numerator zero.tf zero];
+    
+    # ==============
+    # END LATIN
+    # ==============
+    
+    # ==============
+    # BEGIN HEBREW
+    # ==============
+    
+    feature jalt;
+    
+    # ==============
+    # END HEBREW
+    # ==============";
 name = aalt;
 },
 {
-automatic = 1;
-code = "lookup ccmp_Other_1 {
+code = "# ===============
+# BEGIN LATIN
+# ===============
+
+lookup ccmp_Other_1 {
 	@CombiningTopAccents = [acutecomb brevecomb caroncomb circumflexcomb commaturnedabovecomb dieresiscomb dotaccentcomb gravecomb hookabovecomb hungarumlautcomb macroncomb ringcomb tildecomb];
 	@CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb];
 	sub [i j]' @CombiningTopAccents by [idotless jdotless];
@@ -1414,9 +1435,97 @@ lookup ccmp_latn_1 {
 	sub circumflexcomb.cap tildecomb.cap by circumflexcomb_tildecomb.cap;
 	sub circumflexcomb.sc tildecomb.sc by circumflexcomb_tildecomb.sc;
 } ccmp_latn_1;
+# 
+# script latn;
+# lookup ccmp_latn_1;
 
-script latn;
-lookup ccmp_latn_1;
+# ===============
+# END LATIN
+# ===============
+
+# ===============
+# BEGIN HEBREW
+# ===============
+
+# script hebr;
+# language IWR;
+
+lookup hb_shinDots {
+	lookupflag 0;
+	lookupflag UseMarkFilteringSet @hb_shinDots;
+	sub shin-hb shindot-hb by shinshindot-hb;
+	sub shin-hb sindot-hb by shinsindot-hb;
+} hb_shinDots;
+
+lookup hb_dagesh {
+	lookupflag 0;
+	lookupflag MarkAttachmentType @hb_dagesh; 
+	sub alef-hb dagesh-hb by alefdagesh-hb;
+	sub bet-hb dagesh-hb by betdagesh-hb;
+	sub gimel-hb dagesh-hb by gimeldagesh-hb;
+	sub dalet-hb dagesh-hb by daletdagesh-hb;
+	sub he-hb dagesh-hb by hedagesh-hb;
+	sub vav-hb dagesh-hb by vavdagesh-hb;
+	sub zayin-hb dagesh-hb by zayindagesh-hb;
+	sub tet-hb dagesh-hb by tetdagesh-hb;
+	sub yod-hb dagesh-hb by yoddagesh-hb;
+	sub kaf-hb dagesh-hb by kafdagesh-hb;
+	sub finalkaf-hb dagesh-hb by finalkafdagesh-hb;
+	sub lamed-hb dagesh-hb by lameddagesh-hb;
+	sub mem-hb dagesh-hb by memdagesh-hb;
+	sub nun-hb dagesh-hb by nundagesh-hb;
+	sub samekh-hb dagesh-hb by samekhdagesh-hb;
+	sub pe-hb dagesh-hb by pedagesh-hb;
+	sub finalpe-hb dagesh-hb by finalpedagesh-hb;
+	sub tsadi-hb dagesh-hb by tsadidagesh-hb;
+	sub qof-hb dagesh-hb by qofdagesh-hb;
+	sub resh-hb dagesh-hb by reshdagesh-hb;
+	sub shinsindot-hb dagesh-hb by shindageshsindot-hb;
+	sub shinshindot-hb dagesh-hb by shindageshshindot-hb;
+	sub shin-hb dagesh-hb by shindagesh-hb;
+	sub tav-hb dagesh-hb by tavdagesh-hb;
+} hb_dagesh;
+	
+lookup hb_diacriticReplacements {
+	lookupflag 0;
+	lookupflag UseMarkFilteringSet @hb_diacriticMarks;
+	sub alef-hb patah-hb by alefpatah-hb;
+	sub alef-hb qamats-hb by alefqamats-hb;
+	sub finalkafdagesh-hb qamats-hb by finalkafdagesh_qamats-hb;
+	sub finalkafdagesh-hb sheva-hb by finalkafdagesh_sheva-hb;	
+	sub finalkaf-hb qamats-hb by finalkaf_qamats-hb;
+	sub finalkaf-hb sheva-hb by finalkaf_sheva-hb;
+	sub vav-hb holam-hb by vavholam-hb;
+	sub lameddagesh-hb holam-hb by lamed_dagesh_holam-hb;
+	sub lamed-hb holam-hb by lamed_holam-hb;
+} hb_diacriticReplacements;
+
+
+lookup hb_rafe {
+	lookupflag 0;
+# 	lookupflag UseMarkFilteringSet @hb_diacriticMarks;
+	sub pe-hb rafe-hb by perafe-hb;
+	sub kaf-hb rafe-hb by kafrafe-hb;
+	sub bet-hb rafe-hb by betrafe-hb;
+} hb_rafe;	
+
+lookup hb_siluqLeft {
+	# cantillation replacements		
+	sub hatafsegol-hb siluqleft-hb by hatafsegol_siluqleft-hb;
+	sub hatafpatah-hb siluqleft-hb by hatafpatah_siluqleft-hb;
+	sub hatafqamats-hb siluqleft-hb by hatafqamats_siluqleft-hb; 
+} hb_siluqLeft;
+
+#If specific letters appear at the end of the word, the cantillation will be replaced by a final alternative
+lookup hb_finalCantillationForms {
+	ignore sub @hb_finalCantillationLetters @hb_finalCantillationSrc' @hb_AllHebrewLetters;
+	sub @hb_finalCantillationLetters @hb_finalCantillationSrc' by @hb_finalCantillationDst;
+} hb_finalCantillationForms;
+
+# ==============
+# END HEBREW
+# ==============
+
 ";
 name = ccmp;
 },
@@ -2791,7 +2900,11 @@ sub brevecombcy by brevecombcy.sc;
 name = smcp;
 },
 {
-code = "sub f f b by f_f_b;
+code = "# ===============
+# BEGIN LATIN
+# ===============
+
+sub f f b by f_f_b;
 sub f f h by f_f_h;
 sub f f j by f_f_j;
 sub f f k by f_f_k;
@@ -2819,6 +2932,26 @@ sub [space hyphen softhyphen endash emdash underscore] kappa' alpha' iota' [spac
 sub [space hyphen.cap endash.cap emdash.cap] Kappa' Alpha' Iota' [space hyphen.cap endash.cap emdash.cap] by KaiSymbol ;
 
 sub [space hyphen softhyphen endash emdash underscore] kappa.sc' alpha.sc' iota.sc' [space hyphen softhyphen endash emdash underscore] by kaiSymbol.sc ;
+
+# ===============
+# END LATIN
+# ===============
+
+# ===============
+# BEGIN HEBREW
+# ===============
+
+lookup hb_yiddish {
+	lookupflag IgnoreMarks;
+	sub alef-hb lamed-hb by aleflamed-hb;
+	sub vav-hb vav-hb by vavvav-hb;
+	sub yod-hb vav-hb by vavyod-hb;
+	sub yod-hb yod-hb by yodyod-hb;
+} hb_yiddish;
+
+# ===============
+# END HEBREW
+# ===============
 ";
 name = dlig;
 },
@@ -3211,6 +3344,85 @@ sub el-cy.sc by el-cy.loclBGR.sc;
 sub ef-cy.sc by ef-cy.loclBGR.sc;
 ";
 name = ss08;
+},
+{
+code = "# ===============
+# BEGIN HEBREW
+# ===============
+
+sub alef-hb by widealef-hb;
+sub he-hb by widehe-hb;
+sub lamed-hb by widelamed-hb;
+sub dalet-hb by widedalet-hb;
+sub kaf-hb by widekaf-hb;
+sub finalmem-hb by finalwidemem-hb;
+sub resh-hb by wideresh-hb;
+sub tav-hb by widetav-hb;
+
+# ===============
+# END HEBREW
+# ===============";
+name = jalt;
+},
+{
+code = "# ==============
+# BEGIN HEBREW
+# ==============
+
+# script hebr;
+	lookupflag 0;
+	lookupflag RightToLeft;	
+	
+	# Kerning between narrow letters with wide marks			
+	pos [vav-hb yod-hb] @hb_wideMarks resh-hb' 60 @hb_wideMarks;
+	pos [vav-hb yod-hb] @hb_wideMarks @hb_narrowHebrewLetters' 60 @hb_wideMarks;
+	pos [vavdagesh-hb yoddagesh-hb] @hb_wideMarks resh-hb' 30 @hb_wideMarks;
+	pos [vavdagesh-hb yoddagesh-hb] @hb_wideMarks @hb_narrowHebrewLetters' 30 @hb_wideMarks;
+	
+	# Make it work with cantillation marks (changed the second group to include all bottom diacritics)
+	pos [vav-hb yod-hb] @hb_wideMarks @hb_allCantillation resh-hb' 60 @hb_bottomDiacritics;
+	pos [vav-hb yod-hb] @hb_wideMarks @hb_allCantillation @hb_narrowHebrewLetters' 60 @hb_bottomDiacritics;
+	pos [vavdagesh-hb yoddagesh-hb] @hb_wideMarks @hb_allCantillation resh-hb' 30 @hb_bottomDiacritics;
+	pos [vavdagesh-hb yoddagesh-hb] @hb_wideMarks @hb_allCantillation @hb_narrowHebrewLetters' 30 @hb_bottomDiacritics;
+			
+
+	# ---------- KERNING BETWEEN LAMED HOLAM AND SHINDOT
+	
+	pos [lamed_holam-hb lamed_dagesh_holam-hb] [shinshindot-hb shindageshshindot-hb ]' 60;
+	pos [lamed_holam-hb lamed_dagesh_holam-hb] @hb_allCantillation [shinshindot-hb shindageshshindot-hb ]' 60;
+	
+	
+	# ---------- KERNING BACK HOLAM IN BUSY PLACES
+	pos @hb_AllHebrewLetters holam-hb' < 50 0 0 0 > [shinshindot-hb shindageshshindot-hb vavholam-hb];
+	
+
+	# ---------- NARROW LETTER WITH HOLAM
+	
+	# Add kerning for holam after a wide cantillation sits on top of a narrow letter
+	pos @hb_narrowHebrewLetters [holam-hb holamhaser-hb] @hb_veryWideTopCantillation' < 50 0 0 0 >; 
+	pos @hb_narrowHebrewLetters [holam-hb holamhaser-hb]' < -30 0 0 0 > @hb_wideTopCantillation; 
+	
+	
+	# ---------- CANTILLATION GOES DOWN WHEN...		
+	
+	#1 between two wide diacritic marks
+	pos @hb_goesDownBefore [@hb_wideMarks hiriq-hb sheva-hb] @hb_goesDown' < 50 -160 0 0 > @hb_goesDownAfter [@hb_wideMarks sheva-hb hiriq-hb];	
+	pos @hb_goesDownBefore [@hb_wideMarks hiriq-hb sheva-hb] siluqleft-hb' < 20 -160 0 0 > @hb_goesDownAfter [@hb_wideMarks sheva-hb hiriq-hb];
+		
+	#2 between a wide mark and any letter with a very wide mark
+	pos [vav-hb yod-hb] @hb_wideMarks @hb_goesDown' < 120 -160 0 0 > @hb_AllHebrewLetters @hb_veryWideMarks;	
+	pos [vav-hb yod-hb] @hb_wideMarks siluqleft-hb' < 80 -160 0 0 > @hb_AllHebrewLetters @hb_veryWideMarks;
+					
+	#3 under the letter Qof
+	pos [qof-hb qofdagesh-hb] @hb_bottomDiacritics [@hb_goesDown siluqleft-hb]' < 50 -170 0 0 >;
+		
+	#4 before finalNun, finalKaf, finalPe
+	pos @hb_goesDown' < 0 -100 0 0 > [finalnun-hb finalpe-hb finalkaf-hb];
+
+# ==============
+# END HEBREW
+# ==============";
+name = kern;
 }
 );
 fontMaster = (
