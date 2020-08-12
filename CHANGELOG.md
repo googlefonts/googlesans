@@ -2,12 +2,31 @@
 
 ## Version 3.001
 
+### New
+
+The v3.001 release introduces production versions of the 2-axis variable font build format as our project default.
+
+### Changed
+
+- added `calt` feature support for figure centered colon position when the colon is set between numerals.  This addresses a request for always on/default behavior in time displays so that this appears when the SS02 design is not accessible in an environment
+
+### Fixes
+
+- Fix orientation of U+2998 and U+2999 arrow glyphs (PR #40)
+- Fix rightArrow.ss05 path in regular max opsz master (addressed a non-interpolatable path issue)
+
 ### Technical
 
+- Changed min optical size master definition to 17 px from 14 px to "remove" opsz axis interpolation
+- Eliminated all brace layers in the design
+- Move all bracket layers to 18 px
 - Remove `build` directory and all build artifacts from version control (PR #8)
 - Added partial instancing support for `wght` axis only variable font builds (PR #5)
   - adds new scripts/gs-partial-instancer.py script
   - adds new gs-stat-partial.py script
+- Added one and two axis STAT table write support to the build pipeline
+- Synchronized name, fvar, and STAT table naming so that there is a consistent naming approach across static and variable font format builds
+- Added glyphs source file "Variable Font Origin" custom parameter with definition set to regular max opsz master to define our fvar table default
 - Testing: transitioned fontbakery CI testing to GitHub Actions CI pipeline (PR #10)
 - Testing: added OpenType Sanitizer checks to CI test pipeline (PR #13)
 - Added support for git branch filtered test build artifact uploads (eliminates design team local build environment requirement) (PR #14)
