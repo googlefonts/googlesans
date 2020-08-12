@@ -1432,9 +1432,6 @@ lookup ccmp_latn_1 {
 	sub circumflexcomb.cap tildecomb.cap by circumflexcomb_tildecomb.cap;
 	sub circumflexcomb.sc tildecomb.sc by circumflexcomb_tildecomb.sc;
 } ccmp_latn_1;
-# 
-# script latn;
-# lookup ccmp_latn_1;
 
 # ===============
 # END LATIN
@@ -1443,9 +1440,6 @@ lookup ccmp_latn_1 {
 # ===============
 # BEGIN HEBREW
 # ===============
-
-# script hebr;
-# language IWR;
 
 lookup hb_shinDots {
 	lookupflag 0;
