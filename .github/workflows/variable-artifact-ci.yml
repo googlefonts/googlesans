@@ -69,13 +69,6 @@ jobs:
           subcmd: "check-profile"
           args: "-C --loglevel WARN qa/check-googlesans.py"
           path: "build/GoogleSans/variable/expert/partial/*.ttf"
-      - name: Font Bakery feature tag tests (1-axis Expert)
-        uses: f-actions/font-bakery@v1
-        with:
-          version: "latest"
-          subcmd: "check-profile"
-          args: "-C --loglevel WARN qa/check-fea.py"
-          path: "build/GoogleSans/variable/expert/partial/*.ttf"
       - name: OpenType Sanitizer checks (2-axis Expert)
         uses: f-actions/opentype-sanitizer@v1
         with:
