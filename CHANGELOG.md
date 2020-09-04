@@ -1,5 +1,19 @@
 # Google Sans Changelog
 
+## Verion 3.002
+
+### New
+
+The v3.002 release expands the Google Sans typeface with the Hebrew script (PR #76)
+
+### Changed
+
+- updated tabular zero design (`zero.tf`) to improve zero-zero spacing in time displays (#79)
+
+### Fixed
+
+- modified the `calt` feature source to use `colon.tf` as the replacement target in the contextual positioning of the colon between tabular figures (PR #80)
+
 ## Version 3.001
 
 ### New
