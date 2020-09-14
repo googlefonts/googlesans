@@ -43,11 +43,11 @@ jobs:
           update-setuptools: "true"
       - name: Build fonts
         run: ${{ steps.config.outputs.buildcommand }}
-      - name: Create build artifact zip archive
-        run: zip GoogleSans.zip -r ${{ steps.config.outputs.buildpath }}
       - name: Remove intermediate UFO master / instance directories
         run: |
           make clean-ufo
+      - name: Create build artifact zip archive
+        run: zip GoogleSans.zip -r ${{ steps.config.outputs.buildpath }}
       - name: Create Google Sans release
         id: create_release
         uses: actions/create-release@v1
