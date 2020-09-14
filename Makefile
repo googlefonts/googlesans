@@ -37,6 +37,11 @@ clean:
 clean-builds:
 	rm -rf "$(FONT_BUILD_DIR)"
 
+# clean intermediate UFO masters and instances
+clean-ufo:
+	rm -rf "$(MASTER_UFO_DIR)"
+	rm -rf "$(INSTANCE_UFO_DIR)"
+
 # ------------------------------
 # Compile
 # ------------------------------
@@ -116,7 +121,7 @@ black:
 
 .PHONY: all \
 black \
-clean \
+clean clean-builds clean-ufo\
 gs-static gs-vf \
 gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
