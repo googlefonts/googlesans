@@ -47,8 +47,7 @@ jobs:
         run: zip GoogleSans.zip -r ${{ steps.config.outputs.buildpath }}
       - name: Remove intermediate UFO master / instance directories
         run: |
-          rm -rf build/GoogleSans/master_ufo
-          rm -rf build/GoogleSans/instance_ufo
+          make clean-ufo
       - name: Create Google Sans release
         id: create_release
         uses: actions/create-release@v1
