@@ -55,13 +55,13 @@ jobs:
           subcmd: "check-profile"
           args: "-C --loglevel WARN qa/check-charset.py"
           path: "${{ steps.config.outputs.buildpath }}"
-      # - name: Font Bakery GS profile tests (Default artifacts)
-      #   uses: f-actions/font-bakery@master
-      #   with:
-      #     version: "latest"
-      #     subcmd: "check-profile"
-      #     args: "-C --loglevel WARN qa/check-googlesans.py"
-      #     path: "build/GoogleSans/static/default/*.ttf"
+      - name: Font Bakery feature tag tests (Expert artifacts)
+        uses: f-actions/font-bakery@v1
+        with:
+          version: "latest"
+          subcmd: "check-profile"
+          args: "-C --loglevel WARN qa/check-fea.py"
+          path: "${{ steps.config.outputs.buildpath }}"
       - name: OpenType Sanitizer checks (Expert artifacts)
         uses: f-actions/opentype-sanitizer@v1
         with:
