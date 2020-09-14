@@ -1,0 +1,73 @@
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
+
+name: Create Release
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+    steps:
+      - name: Configuration
+        id: config
+        uses: f-actions/font-setup@master
+        with:
+          projectname: "Google Sans"
+          sourcepath: "source"
+          buildpath: "build/GoogleSans"
+          dependpath: "requirements.txt"
+          py-version: ${{ matrix.python-version }}
+          buildcommand: "make"
+      - name: Check out ${{ steps.config.outputs.projectname }} source repository
+        uses: actions/checkout@v2
+      - name: Set up Python v${{ steps.config.outputs.py-version }} environment
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ steps.config.outputs.py-version }}
+      - name: Python build dependency cache lookup
+        uses: actions/cache@v1
+        with:
+          path: ~/.cache/pip
+          # Check for requirements file cache hit
+          key: ${{ runner.os }}-pip-${{ hashFiles('${{ steps.config.outputs.dependpath }}') }}
+      - name: Install Python build dependencies
+        uses: py-actions/py-dependency-install@v2
+        with:
+          update-wheel: "true"
+          update-setuptools: "true"
+      - name: Build fonts
+        run: ${{ steps.config.outputs.buildcommand }}
+      - name: Create build artifact zip archive
+        run: zip GoogleSans.zip -r ${{ steps.config.outputs.buildpath }}
+      - name: Remove intermediate UFO master / instance directories
+        run: |
+          rm -rf build/GoogleSans/master_ufo
+          rm -rf build/GoogleSans/instance_ufo
+      - name: Create Google Sans release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Google Sans ${{ github.ref }}
+          body: |
+            Please see the root of the repository for the CHANGELOG.md
+          draft: false
+          prerelease: false
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./GoogleSans.zip
+          asset_name: GoogleSans.zip
+          asset_content_type: application/zip
