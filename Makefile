@@ -119,6 +119,12 @@ test-fb-vf-expert:
 black:
 	black --line-length 90 scripts/*.py qa/*.py
 
+# --------------------------------------
+# Glyphs source formatting/normalization
+# --------------------------------------
+glyphs-norm:
+	python3 scripts/gs-glyphs-norm.py source/GoogleSans/*.glyphs
+
 .PHONY: all \
 black \
 clean clean-builds clean-ufo\
