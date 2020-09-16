@@ -1,6 +1,37 @@
 # Google Sans Changelog
 
-## Verion 3.002
+## Version 3.003
+
+### New
+
+- Add apostrophemod outline
+- Add tetse-cy.sc outline
+- Add ge-cy.loclSRB (italic only)
+- Add gje-cy.loclMKD (italic only)
+
+### Changed
+
+- `[Uu]trait*-cy` glyph names changed to `[Uu]straight*-cy` and feature code updated
+- Cyrillic kerning updates in Roman and Italic sets
+- minor updates in Cyrillic Roman and Italic outlines
+- glyphsLib normalization of *.glyphs type source files (addresses formatting inconsistencies between up/downstream files) with new Python source file and Makefile target
+- removed unnecessary Robofont and RMXScaler metadata in glyphs source files
+- updated attrs build dependency to v20.2.0
+- updated cffsubr build dependency to v0.2.7
+- updated fontmake build dependency to v2.2.0
+- updated fontTools build dependency to v4.14.0
+- updated glyphsLib build dependency to v5.1.11
+- updated lxml build dependency to v4.5.2
+- updated pyclipper build dependency to v1.2.0
+- updated six build dependency to v1.15.0
+- updated ufo2ft build dependency to v2.15.0
+- updated ufolib2 build dependency to v0.8.0
+
+### Fixed
+
+- Removed Bulgarian language registration in `ss08` feature code
+
+## Version 3.002
 
 ### New
 
