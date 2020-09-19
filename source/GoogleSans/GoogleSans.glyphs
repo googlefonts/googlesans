@@ -133,6 +133,18 @@ name = geor_lowercase;
 {
 code = "An-georgian\012Ban-georgian\012Gan-georgian\012Don-georgian\012En-georgian\012Vin-georgian\012Zen-georgian\012Tan-georgian\012In-georgian\012Kan-georgian\012Las-georgian\012Man-georgian\012Nar-georgian\012On-georgian\012Par-georgian\012Zhar-georgian\012Rae-georgian\012San-georgian\012Tar-georgian\012Un-georgian\012Phar-georgian\012Khar-georgian\012Ghan-georgian\012Qar-georgian\012Shin-georgian\012Chin-georgian\012Can-georgian\012Jil-georgian\012Cil-georgian\012Char-georgian\012Xan-georgian\012Jhan-georgian\012Hae-georgian\012He-georgian\012Hie-georgian\012We-georgian\012Har-georgian\012Hoe-georgian\012Fi-georgian\012Yn-georgian\012Elifi-georgian\012GanTurned-georgian\012Ain-georgian\012Aen-georgian\012HardSign-georgian\012Labial-georgian\012paragraph-georgian.case\012";
 name = geor_uppercase;
+},
+{
+code = "# used in Georgian feature source\012emquad\012emspace\012enquad\012enspace\012figurespace\012fourperemspace\012hairspace\012punctuationspace\012sixperemspace\012space\012nbspace\012thinspace\012threeperemspace\012zerowidthspace\012space.tf";
+name = spaces_all;
+},
+{
+code = "# used in Georgian feature source\012asterisk\012asterisk.num\012asterism\012\012backslash\012\012braceleft\012braceleft.cap\012braceright\012braceright.cap\012bracketleft\012bracketleft.cap\012bracketright\012bracketright.cap\012\012bullet\012bullet.cap\012\012colon\012colon.tf\012colon.time\012\012comma\012comma.alt\012comma.tf\012\012doublequestion\012\012ellipsis\012\012emdash\012emdash.cap\012endash\012endash.cap\012\012exclam\012exclamationquestion\012exclamdouble\012exclamdown\012exclamdown.cap\012\012flowerpunctuationmark\012\012guillemetleft\012guillemetleft.cap\012guillemetright\012guillemetright.cap\012guilsinglleft\012guilsinglleft.cap\012guilsinglright\012guilsinglright.cap\012\012horizontalbar\012\012hyphen\012hyphen.cap\012hyphenbullet\012\012lowasterisk\012\012numbersign\012numbersign.cap\012numbersign.tf\012\012parenleft\012parenleft.cap\012parenright\012parenright.cap\012\012period\012period.tf\012periodcentered\012\012question\012questiondown\012questiondown.cap\012questionexclamation\012\012quotedbl\012quotedblbase\012quotedblbase.alt\012quotedblleft\012quotedblleft.alt\012quotedblright\012quotedblright.alt\012quoteleft\012quoteleft.alt\012quoteright\012quoteright.alt\012quotesinglbase\012quotesinglbase.alt\012quotesingle\012\012\012semicolon\012semicolon.alt\012semicolon.tf\012\012slash\012\012softhyphen\012\012twoasterisksvertical\012\012underscore\012\012#Georgian\012paragraph-georgian\012paragraph-georgian.case\012colon.loclGEO\012semicolon.loclGEO";
+name = punctuation_all;
+},
+{
+code = "# used in Georgian feature source\012#regular punctuation\012periodcentered\012bullet\012hyphenbullet\012hyphen\012softhyphen\012endash\012emdash\012horizontalbar\012\012#mathematical symbols\012plus\012minus\012multiply\012equal\012notequal\012greater\012less\012approxequal\012asciitilde\012logicalnot\012infinity";
+name = punctuation_centered;
 }
 );
 copyright = "Copyright 2015 Google LLC. All Rights Reserved.";
