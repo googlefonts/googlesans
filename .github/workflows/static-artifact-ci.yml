@@ -15,7 +15,7 @@ jobs:
         uses: f-actions/font-setup@master
         with:
           projectname: "Google Sans"
-          sourcepath: "src"
+          sourcepath: "source"
           buildpath: "build/GoogleSans/static/expert/*.ttf" # static font build path
           readmepath: "README.md"
           changelogpath: "CHANGELOG.md"
