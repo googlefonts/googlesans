@@ -14,7 +14,7 @@
 
 
 from fontbakery.checkrunner import Section, PASS, FAIL
-from fontbakery.callable import check, condition
+from fontbakery.callable import check
 from fontbakery.fonts_profile import profile_factory
 from fontbakery.profiles.universal import UNIVERSAL_PROFILE_CHECKS
 
@@ -69,9 +69,8 @@ ATTRIBUTES = {
 # ================================================
 
 
-@condition
-def is_not_variable_font(ttFont):
-    return "fvar" not in ttFont.keys()
+# removed custom conditions that duplicated upstream fontbakery
+# condition names
 
 
 # ================================================
