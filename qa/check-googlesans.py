@@ -70,16 +70,6 @@ ATTRIBUTES = {
 
 
 @condition
-def is_italic(ttFont):
-    return "Italic" in ttFont.reader.file.name
-
-
-@condition
-def is_not_italic(ttFont):
-    return "Italic" not in ttFont.reader.file.name
-
-
-@condition
 def is_not_variable_font(ttFont):
     return "fvar" not in ttFont.keys()
 
