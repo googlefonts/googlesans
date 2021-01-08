@@ -15,13 +15,12 @@ fontmath==0.6.0           # via fontmake
 fonttools[lxml,ufo,unicode]==4.14.0  # via booleanoperations, cffsubr, compreffor, cu2qu, fontmake, fontmath, glyphslib, ufo2ft, ufolib2
 fs==2.4.11                # via fonttools
 glyphslib==5.1.11         # via fontmake
-lxml==4.5.2               # via fonttools
+lxml==4.6.2               # via fonttools
 pyclipper==1.2.0          # via booleanoperations
 pytz==2020.1              # via fs
 six==1.15.0               # via fs
 ufo2ft[cffsubr]==2.15.0   # via fontmake
 ufolib2==0.8.0            # via fontmake, glyphslib
-unicodedata2==13.0.0.post2  # via fonttools
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
