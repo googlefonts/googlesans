@@ -14,7 +14,7 @@
 
 
 from fontbakery.checkrunner import Section, PASS, FAIL
-from fontbakery.callable import check, condition
+from fontbakery.callable import check
 from fontbakery.fonts_profile import profile_factory
 from fontbakery.profiles.universal import UNIVERSAL_PROFILE_CHECKS
 
@@ -43,6 +43,8 @@ excluded_check_ids = (
     "com.google.fonts/check/varfont/regular_opsz_coord",  # we do want our opsz definition
     # "com.google.fonts/check/os2_metrics_match_hhea",
     # "com.google.fonts/check/unwanted_tables",
+    # https://github.com/googlefonts/googlesans/issues/108:
+    "com.google.fonts/check/glyf_nested_components",
 )
 
 ATTRIBUTES = {
@@ -69,19 +71,8 @@ ATTRIBUTES = {
 # ================================================
 
 
-@condition
-def is_italic(ttFont):
-    return "Italic" in ttFont.reader.file.name
-
-
-@condition
-def is_not_italic(ttFont):
-    return "Italic" not in ttFont.reader.file.name
-
-
-@condition
-def is_not_variable_font(ttFont):
-    return "fvar" not in ttFont.keys()
+# removed custom conditions that duplicated upstream fontbakery
+# condition names
 
 
 # ================================================
