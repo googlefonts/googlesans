@@ -31,8 +31,8 @@ FONTMAKE_EXE=fontmake
 # --------------------------------------------------------
 #  Source file path definitions
 # --------------------------------------------------------
-UPRIGHT_SOURCE=GoogleSans/GoogleSans.glyphs
-ITALIC_SOURCE=GoogleSans/GoogleSans-Italic.glyphs
+UPRIGHT_SOURCE=GoogleSans/GoogleSans.designspace
+ITALIC_SOURCE=GoogleSans/GoogleSans-Italic.designspace
 
 # --------------------------------------------------------
 #  Build directory and file path definitions
@@ -44,6 +44,8 @@ EXPERT_VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable/expert
 DEFAULT_VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable/default
 
 PARTIAL_INSTANCE_VARIABLE_BUILD_DIR=$(EXPERT_VARIABLE_BUILD_DIR)/partial
+
+STAGING_DIR=GoogleSans/staging
 
 # Static font expert Text opsz build artifacts
 #  - these paths are necessary for post compile path
@@ -79,30 +81,24 @@ VARIABLE_BUILD_PATH_PARTIAL_ITALIC_MIN_TARGET=$(PARTIAL_INSTANCE_VARIABLE_BUILD_
 # --------------------------------------------------------
 #  UFO intermediates and designspace paths
 # --------------------------------------------------------
-MASTER_UFO_DIR=$(FONT_BUILD_DIR)/master_ufo
 INSTANCE_UFO_DIR=$(FONT_BUILD_DIR)/instance_ufo
-
-UPRIGHT_DESIGNSPACE=GoogleSans.designspace
-ITALIC_DESIGNSPACE=GoogleSans-Italic.designspace
-UPRIGHT_DESIGNSPACE_PATH=$(MASTER_UFO_DIR)/$(UPRIGHT_DESIGNSPACE)
-ITALIC_DESIGNSPACE_PATH=$(MASTER_UFO_DIR)/$(ITALIC_DESIGNSPACE)
 
 # --------------------------------------------------------
 #  Master and instance intermediate UFO file paths
 # --------------------------------------------------------
-UFO_GS_REGULAR=$(MASTER_UFO_DIR)/GoogleSans-Regular.ufo
-UFO_GS_ITALIC=$(MASTER_UFO_DIR)/GoogleSans-Italic.ufo
+UFO_GS_REGULAR=GoogleSans/GoogleSans-Regular.ufo
+UFO_GS_ITALIC=GoogleSans/GoogleSans-Italic.ufo
 UFO_GS_MEDIUM=$(INSTANCE_UFO_DIR)/GoogleSans-Medium.ufo
 UFO_GS_MEDIUMITALIC=$(INSTANCE_UFO_DIR)/GoogleSans-MediumItalic.ufo
-UFO_GS_BOLD=$(MASTER_UFO_DIR)/GoogleSans-Bold.ufo
-UFO_GS_BOLDITALIC=$(MASTER_UFO_DIR)/GoogleSans-BoldItalic.ufo
+UFO_GS_BOLD=GoogleSans/GoogleSans-Bold.ufo
+UFO_GS_BOLDITALIC=GoogleSans/GoogleSans-BoldItalic.ufo
 
-UFO_GS_TEXT_REGULAR=$(MASTER_UFO_DIR)/GoogleSans-TextRegular.ufo
-UFO_GS_TEXT_ITALIC=$(MASTER_UFO_DIR)/GoogleSans-TextItalic.ufo
+UFO_GS_TEXT_REGULAR=GoogleSans/GoogleSans-TextRegular.ufo
+UFO_GS_TEXT_ITALIC=GoogleSans/GoogleSans-TextItalic.ufo
 UFO_GS_TEXT_MEDIUM=$(INSTANCE_UFO_DIR)/GoogleSans-TextMedium.ufo
 UFO_GS_TEXT_MEDIUMITALIC=$(INSTANCE_UFO_DIR)/GoogleSans-TextMediumItalic.ufo
-UFO_GS_TEXT_BOLD=$(MASTER_UFO_DIR)/GoogleSans-TextBold.ufo
-UFO_GS_TEXT_BOLDITALIC=$(MASTER_UFO_DIR)/GoogleSans-TextBoldItalic.ufo
+UFO_GS_TEXT_BOLD=GoogleSans/GoogleSans-TextBold.ufo
+UFO_GS_TEXT_BOLDITALIC=GoogleSans/GoogleSans-TextBoldItalic.ufo
 
 # --------------------------------------------------------
 #  TARGETS
@@ -113,8 +109,8 @@ UFO_GS_TEXT_BOLDITALIC=$(MASTER_UFO_DIR)/GoogleSans-TextBoldItalic.ufo
 #
 
 gs-static: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -g $(UPRIGHT_SOURCE) --interpolate -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
-	$(FONTMAKE_EXE) -g $(ITALIC_SOURCE) --interpolate -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
+	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) --interpolate -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
+	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) --interpolate -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
 	@echo "================================"
 	@echo " Beginning post-compile edits..."
 	@echo "================================"
@@ -142,8 +138,8 @@ gs-static: $(FONT_BUILD_DIR)
 
 
 gs-vf: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -g $(UPRIGHT_SOURCE) -o variable --output-dir $(EXPERT_VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
-	$(FONTMAKE_EXE) -g $(ITALIC_SOURCE) -o variable --output-dir $(EXPERT_VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
+	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -o variable --output-dir $(EXPERT_VARIABLE_BUILD_DIR)
+	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -o variable --output-dir $(EXPERT_VARIABLE_BUILD_DIR)
 	@echo "================================"
 	@echo " Beginning post-compile edits..."
 	@echo "================================"
@@ -176,50 +172,66 @@ gs-vf: $(FONT_BUILD_DIR)
 	# STAT tables for 1-axis (wght) build targets
 	$(PYTHON3_EXE) ../scripts/gs-stat-partial.py
 
+gs-vf-vendor: gs-vf-vendor-glyphs2designspace
+	$(foreach \
+		file, \
+		$(wildcard $(STAGING_DIR)/*.designspace), \
+		fontmake -m $(file) -o variable --output-dir $(STAGING_DIR); \
+	)
+
+gs-vf-vendor-glyphs2designspace: $(STAGING_DIR) $(wildcard GoogleSans/*.glyphs)
+	python ../scripts/gs-glyphs2ufo.py GoogleSans/*.glyphs --target-dir GoogleSans/staging
+
+gs-ufo2glyphs: $(wildcard GoogleSans/*.designspace)
+	$(foreach \
+		file, \
+		$(wildcard $(STAGING_DIR)/*.designspace), \
+		python ../scripts/gs-ufo2glyphs.py $(file); \
+	)
 #
 #  Individual static instance build targets
 #
 
 # Google Sans (max optical size)
-gs-regular: $(FONT_BUILD_DIR) build-designspace-upright
+gs-regular: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -u $(UFO_GS_REGULAR) -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
 
-gs-italic: $(FONT_BUILD_DIR) build-designspace-italic
+gs-italic: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -u $(UFO_GS_ITALIC) -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
 
-gs-medium: $(FONT_BUILD_DIR) build-designspace-upright
-	$(FONTMAKE_EXE) -m $(UPRIGHT_DESIGNSPACE_PATH) -i "Google Sans Medium" -o ufo
+gs-medium: $(FONT_BUILD_DIR)
+	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -i "Google Sans Medium" -o ufo
 	$(FONTMAKE_EXE) -u $(UFO_GS_MEDIUM) -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
 
-gs-medium-italic: $(FONT_BUILD_DIR) build-designspace-italic
-	$(FONTMAKE_EXE) -m $(ITALIC_DESIGNSPACE_PATH) -i "Google Sans Medium Italic" -o ufo
+gs-medium-italic: $(FONT_BUILD_DIR)
+	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -i "Google Sans Medium Italic" -o ufo
 	$(FONTMAKE_EXE) -u $(UFO_GS_MEDIUMITALIC) -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
 
-gs-bold: $(FONT_BUILD_DIR) build-designspace-upright
+gs-bold: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -u $(UFO_GS_BOLD) -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
 
-gs-bold-italic: $(FONT_BUILD_DIR) build-designspace-italic
+gs-bold-italic: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -u $(UFO_GS_BOLDITALIC) -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
 
 # Google Sans Text (min optical size)
-gst-regular: $(FONT_BUILD_DIR) build-designspace-upright
+gst-regular: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -u $(UFO_GS_TEXT_REGULAR) -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
 
-gst-italic: $(FONT_BUILD_DIR) build-designspace-italic
+gst-italic: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -u $(UFO_GS_TEXT_ITALIC) -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
 
-gst-medium: $(FONT_BUILD_DIR) build-designspace-upright
-	$(FONTMAKE_EXE) -m $(UPRIGHT_DESIGNSPACE_PATH) -i "Google Sans Text Medium" -o ufo
+gst-medium: $(FONT_BUILD_DIR)
+	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -i "Google Sans Text Medium" -o ufo
 	$(FONTMAKE_EXE) -u $(UFO_GS_TEXT_MEDIUM) -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
 
-gst-medium-italic: $(FONT_BUILD_DIR) build-designspace-italic
-	$(FONTMAKE_EXE) -m $(ITALIC_DESIGNSPACE_PATH) -i "Google Sans Text Medium Italic" -o ufo
+gst-medium-italic: $(FONT_BUILD_DIR)
+	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -i "Google Sans Text Medium Italic" -o ufo
 	$(FONTMAKE_EXE) -u $(UFO_GS_TEXT_MEDIUMITALIC) -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
 
-gst-bold: $(FONT_BUILD_DIR) build-designspace-upright
+gst-bold: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -u $(UFO_GS_TEXT_BOLD) -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
 
-gst-bold-italic: $(FONT_BUILD_DIR) build-designspace-italic
+gst-bold-italic: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -u $(UFO_GS_TEXT_BOLDITALIC) -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
 
 #
@@ -227,22 +239,10 @@ gst-bold-italic: $(FONT_BUILD_DIR) build-designspace-italic
 #
 
 gs-vf-upright: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -g $(UPRIGHT_SOURCE) -o variable --output-dir $(EXPERT_VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
+	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -o variable --output-dir $(EXPERT_VARIABLE_BUILD_DIR)
 
 gs-vf-italic: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -g $(ITALIC_SOURCE) -o variable --output-dir $(EXPERT_VARIABLE_BUILD_DIR) --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
-
-#
-#  Design space build targets
-#
-
-build-designspace-upright: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -g $(UPRIGHT_SOURCE) -o ufo --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
-
-
-build-designspace-italic: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -g $(ITALIC_SOURCE) -o ufo --master-dir $(MASTER_UFO_DIR) --instance-dir $(INSTANCE_UFO_DIR)
-
+	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -o variable --output-dir $(EXPERT_VARIABLE_BUILD_DIR)
 
 #
 # Utilities
@@ -254,8 +254,10 @@ $(FONT_BUILD_DIR):
 	mkdir -p $(EXPERT_VARIABLE_BUILD_DIR)
 	mkdir -p $(DEFAULT_VARIABLE_BUILD_DIR)
 
+$(STAGING_DIR):
+	mkdir -p $(STAGING_DIR)
+
 .PHONY: gs-static gs-vf \
 gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
-gs-vf-upright gs-vf-italic \
-build-designspace-upright build-designspace-italic
+gs-vf-upright gs-vf-italic

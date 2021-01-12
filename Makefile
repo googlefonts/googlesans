@@ -46,7 +46,7 @@ clean-ufo:
 # Compile
 # ------------------------------
 
-gs-static gs-vf:
+gs-static gs-vf gs-vf-vendor:
 	cd source && $(MAKE) $@
 
 gs-regular gs-medium gs-bold gs-italic gs-medium-italic gs-bold-italic:
@@ -56,6 +56,9 @@ gst-regular gst-medium gst-bold gst-italic gst-medium-italic gst-bold-italic:
 	cd source && $(MAKE) $@
 
 gs-vf-upright gs-vf-italic:
+	cd source && $(MAKE) $@
+
+gs-ufo2glyphs:
 	cd source && $(MAKE) $@
 
 # ------------------------------

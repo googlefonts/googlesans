@@ -47,3 +47,171 @@ $ make list-deps
 ```
 $ make sync-deps
 ```
+
+## Source Conventions
+
+The font sources we receive from vendors are scrubbed with custom scripts and stored as Designspaces and UFOs. The primary objective of the sources is to build the fonts and serve as a base for vendors to split off from to work on new scripts.
+
+Specifically, the sources are normalized to be formatted in the way ufoLib formats sources and contain only:
+
+* Foreground, intermediate (brace) and conditional (bracket) glyphs, no draft or background layers
+    * whose metadata (lib keys) contains only semantically relevant data like Glyphs.app's metrics keys, but not color marks.
+* Groups and kerning
+* Manually merged and arranged features
+* Manually maintained font info data
+* Automatically managed UFO lib.plist files, that contain:
+    * `public.glyphOrder` for determining the order of glyphs in the final fonts
+    * `public.postscriptNames` for determining the production glyph names in the final fonts
+    * `public.skipExportGlyphs` for listing glyph names that should not be exported to the final fonts
+    * `com.github.googlei18n.ufo2ft.filters` for listing filters and their options for compile-time font processing
+        * `propagateAnchors`: inherits anchors of base glyphs to their composites automatically to help with building the `mark` and `mkmk` features.
+    * `com.schriftgestaltung.customParameter.GSFont.Enforce Compatibility Check` for telling Glyphs.app to always run compatibility checks, not relevant for the build
+    * `com.schriftgestaltung.customParameter.GSFont.disablesLastChange` for telling Glyphs.app to not put "last changed" markers into glyphs, which we don't need in the UFO format
+    * `com.schriftgestaltung.fontMasterID` for making it easier to match vendor Glyphs.app files to be imported to the target UFOs
+* Automatically managed UFO layer layerinfo.plist files, that contain:
+    * `com.schriftgestaltung.layerId` for hopefully helping exchange with Glyphs.app.
+* Manually managed Designspace `<rules>` for describing conditional (bracket) glyphs
+* Automatically managed Designspace instance and global libs, that contain:
+    * Instances:
+        * `com.schriftgestaltung.customParameters` for carrying build-relevant metadata like PANOSE values
+    * Global:
+        * `GSDimensionPlugin.Dimensions` for storing Glyphs.app's metadata for stem thicknesses
+        * `com.github.googlei18n.ufo2ft.featureWriters` for build-relevant options on how to generate OpenType layout data
+        * `public.skipExportGlyphs` for listing glyph names that should not be exported to the final fonts
+
+### Normalizing Sources and Updating GDEF
+
+Normalize the sources (reset formatting, scrub data and remake the GDEF table) with
+
+```
+$ python3 scripts/gs-normalize-designspace.py
+```
+
+### Conventions for External Vendors
+
+To make merges into the main source base as seamless as possible, vendors should
+
+* Place their source files into the existing `source/GoogleSans/` directory but use different names from the base sources.
+* Ideally make no use of intermediate (brace) layers if the design allows it.
+* Name all glyphs according to the naming standard used by Glyphs.app and ideally not change them after the first time they've been imported to the base sources.
+* Keep the sources buildable with `fontmake`. Various advanced Glyphs.app features are off-limits because the open-source pipeline does not support them, among them smart components.
+* Provide a list of glyph names and group names to import into the base sources ([see below](#getting-a-list-of-glyphs-and-kerning-groups)).
+* Notify us if they want to change something in the base sources with their sources, as we will screen the changes out otherwise.
+* Bundle up test documents for checking the correct shaping of text and application of features, to have tests for functionality after merging.
+
+Additionally, some conventions should be followed for kerning group names and feature code:
+
+* Kerning groups should contain the name of the script they pertain to. Glyphs.app naming does this automatically by using the glyph name as a group name, which includes a script tag. Example: `boBaimai-thai`. This avoids name clashes.
+* The name or contents of existing groups should only be changed after Google gave the approval.
+* Feature code should be organized so that:
+    * feature blocks and lookups are declared separately. This makes merging much easier.
+    * lookups should have descriptive names and should include, where it makes sense, the language and feature tag where they are used. Example: `NLD_locl_ij_substitution` for a netherlandish lookup that replaces `i' j'` by `ij`. See https://docs.microsoft.com/en-us/typography/opentype/spec/languagetags for ISO 639 language tags.
+
+Feature file example:
+
+```
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem latn NLD;
+
+@FIG_DFLT = [zero one two three four five six seven eight nine];
+@FIG_ALT = [zero.alt one.alt two.alt three.alt four.alt five.alt six.alt seven.alt eight.alt nine.alt];
+
+lookup pnum_text {
+    sub @FIG_DFLT by @FIG_ALT;
+} pnum_text;
+
+lookup NLD_locl_ij_substitution {
+    sub i' j' by ij;
+    sub I' J' by IJ;
+} NLD_locl_ij_substitution;
+
+feature pnum {
+    lookup pnum_text;
+} pnum;
+
+feature locl {
+    script latn;
+    language NLD;
+    lookup NLD_locl_ij_substitution;
+} locl;
+```
+
+#### Getting a List Of Glyphs and (Kerning) Groups
+
+Getting a list of glyph names usually involves selecting everything relevant in the editor and looking for the "copy glyph names" menu entry. The list should be saved to a text file with one line per glyph name and appended to the PR. Example file contents:
+
+```
+koKai-thai
+thoThung-thai
+phoSamphao-thai
+```
+
+Getting a group list needs a script, as Glyphs.app and Fontlab name kerning groups differently, making retrieval tedious. For Glyphs.app files, use:
+
+```
+$ python3 scripts/gs-print-kerning-groups.py source/GoogleSans/GoogleSansSomeScript.glyphs > import_groups.txt
+```
+
+Example file contents:
+
+```
+public.kern1.saraE-thai
+public.kern1.space
+public.kern2.boBaimai-thai
+public.kern2.khoKhuat-thai
+```
+
+The resulting list in the file `import_groups.txt` should be screened to contain only what should be imported and appended to the PR. The name prefix `public.kern1.` marks groups "to the left" (RTL: right) and `public.kern2.` marks groups "to the right" (RTL: left).
+
+## Workflow
+
+Vendors can use Glyphs.app to work on *.glyphs source files or work directly on UFOs and Designspaces with any editor. Vendors can go off and work on their script and come back once it is ready to be merged or commit their changes regularly to a branch, where we will do the merge process.
+
+glyphsLib is used to generate Glyphs.app files for those who need it.
+
+![Script Workflow](assets/scripts.png)
+
+### Importing a Glyphs.app File
+
+![External Vendor Glyphs Workflow](assets/new_situation_glyphs.png)
+
+First, run the `gs-glyphs2ufo.py` script for the upright and italic source to convert the source files and place them into `source/GoogleSans/staging/`.
+
+```
+$ python3 scripts/gs-glyphs2ufo.py source/GoogleSans/GoogleSansSomeScript.glyphs --target-dir source/GoogleSans/staging/
+
+$ python3 scripts/gs-glyphs2ufo.py source/GoogleSans/GoogleSansSomeScript-Italic.glyphs --target-dir source/GoogleSans/staging/
+```
+
+Next, import the resulting Designspaces into their intended target Designspaces:
+
+```
+$ python3 scripts/gs-merge-designspace.py \
+    --source source/GoogleSans/staging/GoogleSansSomeScript.designspace \
+    --target source/GoogleSans/GoogleSans.designspace \
+    --import-glyphs-file import_glyphs.txt \
+    --import-groups-file import_groups.txt
+
+$ python3 scripts/gs-merge-designspace.py \
+    --source source/GoogleSans/staging/GoogleSansSomeScript-Italic.designspace \
+    --target source/GoogleSans/GoogleSans-Italic.designspace \
+    --import-glyphs-file import_glyphs_italic.txt \
+    --import-groups-file import_groups_italic.txt
+```
+
+Now extract the features from the staging UFOs and manually massage them into the existing sources. The font info may also need to be updated, chiefly Unicode and codepage ranges. Additionally, consider which of the imported glyphs need anchor propagation (the list is kept in `scripts/internal/normalize.py`, re-run `scripts/gs-normalize-designspace.py` when you modify it).
+
+![Quality Assurance Workflow](assets/merge_process.png)
+
+### Importing Designspaces with UFOs
+
+The same as the [Glyphs.app workflow](#importing-a-glyphsapp-file), except we don't convert anything beforehand.
+
+![External Vendor UFO Workflow](assets/new_situation_ufo.png)
+
+## Quality Assurance
+
+Relies on testing material provided by vendors. Testing material should serve as a reference for how text should look and how features work. For testing, the vendor provided font is swapped with the merged font; if everything stays the same, the test is considered passed.
+
+![Quality Assurance Workflow](assets/qa_process.png)
