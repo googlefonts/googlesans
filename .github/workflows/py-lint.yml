@@ -1,6 +1,6 @@
 name: Python script lints
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   flake8:
