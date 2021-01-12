@@ -71,6 +71,22 @@ $ make gs-medium
 
 Please refer to the `source/Makefile` for the full set of make build targets.
 
+#### Build incoming Glyphs.app sources
+
+Build incoming Glyphs.app sources dropped in by vendors into variable fonts by running the following command in the root of the repository:
+
+```
+$ make gs-vf-vendor
+```
+
+#### Build outgoing Glyphs.app sources
+
+Build outgoing Glyphs.app sources for vendors from the Designspaces by running the following command in the root of the repository:
+
+```
+$ make gs-ufo2glyphs
+```
+
 ### Remove temporary UFO source files
 
 The fontmake compiler builds UFO source file intermediates during the compilation of Google Sans fonts from Glyphs source files. These are found in directories on the paths `build/GoogleSans/instance_ufo` and `build/GoogleSans/master_ufo`.
