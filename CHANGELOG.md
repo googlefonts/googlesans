@@ -1,5 +1,30 @@
 # Google Sans Changelog
 
+## Version 3.004
+
+### New
+
+- [SCRIPTS] TKTKTK
+- GitHub Actions CI workflows: `build-incoming-files.yml` & `generate-glyphs-file.yml`
+- Add `scripts/gs-glyphs2ufo.py` script
+- Add `scripts/gs-merge-designspace.py` script
+- Add `scripts/gs-print-kerning-groups.py` script
+- Add `scripts/gs-ufo2glyphs.py` script
+
+### Changed
+
+- source files changed from glyphs v2 format to Unified Font Object (UFO) v3 format (#105)
+- removed deprecated design and script source files
+- scripts/gs-glyphs-norm.py: normalize with `Disable Last Change` custom parameter defined as True
+- Makefile: add `gs-vf-vendor` and `gs-ufo2glyphs` targets
+- source/Makefile: refactor font compile targets to support builds from designspaces & UFO source files
+- source/Makefile: add `gs-vf-vendor`, `gs-vf-vendor-glyphs2designspace`, and `gs-ufo2glyphs` make targets
+- upgrade glyphsLib dependency to v5.3.1
+
+### Fixed
+
+- ...
+
 ## Version 3.003
 
 ### New
