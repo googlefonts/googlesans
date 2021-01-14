@@ -96,16 +96,49 @@ To make merges into the main source base as seamless as possible, vendors should
 * Name all glyphs according to the naming standard used by Glyphs.app and ideally not change them after the first time they've been imported to the base sources.
 * Keep the sources buildable with `fontmake`. Various advanced Glyphs.app features are off-limits because the open-source pipeline does not support them, among them smart components.
 * Provide a list of glyph names and group names to import into the base sources ([see below](#getting-a-list-of-glyphs-and-kerning-groups)).
-* Notify us if they want to change something in the base sources with their sources, as we will screen the changes out otherwise.
+* Notify us if they want to change something in the base sources with their sources, as we will screen the changes out otherwise. This includes the names or contents of existing kerning groups or OpenType classes.
 * Bundle up test documents for checking the correct shaping of text and application of features, to have tests for functionality after merging.
 
 Additionally, some conventions should be followed for kerning group names and feature code:
 
-* Kerning groups should contain the name of the script they pertain to. Glyphs.app naming does this automatically by using the glyph name as a group name, which includes a script tag. Example: `boBaimai-thai`. This avoids name clashes.
-* The name or contents of existing groups should only be changed after Google gave the approval.
+* Below, script tags refer to codes in [OpenType Script Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/scripttags) and language tags to [OpenType Language System Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/languagetags).
+* Generally, all names should be lowercase (as seen in the examples), separated by underscores, except for what refers to glyph names. E.g. `Omega` should stay as is if it refers to the glyph name.
+* OpenType class naming uses the following format:
+    * A_B_C_D
+    * A - Context-dependent Script system tag - only for Non-Latin scripts
+    * B - Context-dependent language system tag
+    * C - Context-dependent feature tag
+    * D - Class Description string
+    * E.g.:
+        * C: `pnum`
+        * C_D: `pnum_currencies`
+        * C_D: `frac_precomposed`
+        * A_B_C: `cyrl_bgr_locl`
+        * A_C_D_D: `grek_calt_marks_context`
+
+    Lookup naming should use the following format:
+
+    * A_B_C_D
+    * A - Context-dependent Script system tag - only for Non-Latin scripts
+    * B - Context-dependent language system tag
+    * C - Feature tag
+    * D - Lookup description string
+    * E.g.:
+        * B_C_D_D: `rom_locl_cedilla_substitution`
+        * A_C_D_D: `grek_ccmp_recompose_dieresistonos`
+        * A_B_C_D: `cyrl_bgr_locl_alternates`
+        * C_D: `frac_precomposed`
+
+    In general:
+
+    * When a lookup/class is used by several scripts, list all scripts in the name.
+    * When a lookup/class is used by several languages, list all languages in the name.
+    * When a lookup/class is used in several features, list all feature tags in its name.
+    * Except if listing everything is too cumbersome and counterproductive, then drop that part of name but leave a comment instead, just above the lookup/class definition, to explain which scripts/languages/features are concerned
+* Kerning groups should contain the name of the script they pertain to. This avoids name clashes. The format is script_key_glyph_or_description, examples: `grek_Omega`, `armn_uc_topround_bottomstraight`, `thai_phoSamphao`.
 * Feature code should be organized so that:
     * feature blocks and lookups are declared separately. This makes merging much easier.
-    * lookups should have descriptive names and should include, where it makes sense, the language and feature tag where they are used. Example: `NLD_locl_ij_substitution` for a netherlandish lookup that replaces `i' j'` by `ij`. See https://docs.microsoft.com/en-us/typography/opentype/spec/languagetags for ISO 639 language tags.
+    * lookups should have descriptive names and should include, where it makes sense, the language and feature tag where they are used. Example: `nld_locl_ij_substitution` for a netherlandish lookup that replaces `i' j'` by `ij`. See https://docs.microsoft.com/en-us/typography/opentype/spec/languagetags for ISO 639 language tags.
 
 Feature file example:
 
@@ -114,17 +147,17 @@ languagesystem DFLT dflt;
 languagesystem latn dflt;
 languagesystem latn NLD;
 
-@FIG_DFLT = [zero one two three four five six seven eight nine];
-@FIG_ALT = [zero.alt one.alt two.alt three.alt four.alt five.alt six.alt seven.alt eight.alt nine.alt];
+@pnum_fig_dflt = [zero one two three four five six seven eight nine];
+@pnum_fig_alt = [zero.alt one.alt two.alt three.alt four.alt five.alt six.alt seven.alt eight.alt nine.alt];
 
 lookup pnum_text {
-    sub @FIG_DFLT by @FIG_ALT;
+    sub @fig_dflt by @fig_alt;
 } pnum_text;
 
-lookup NLD_locl_ij_substitution {
+lookup nld_locl_ij_substitution {
     sub i' j' by ij;
     sub I' J' by IJ;
-} NLD_locl_ij_substitution;
+} nld_locl_ij_substitution;
 
 feature pnum {
     lookup pnum_text;
@@ -133,7 +166,7 @@ feature pnum {
 feature locl {
     script latn;
     language NLD;
-    lookup NLD_locl_ij_substitution;
+    lookup nld_locl_ij_substitution;
 } locl;
 ```
 
@@ -142,9 +175,9 @@ feature locl {
 Getting a list of glyph names usually involves selecting everything relevant in the editor and looking for the "copy glyph names" menu entry. The list should be saved to a text file with one line per glyph name and appended to the PR. Example file contents:
 
 ```
-koKai-thai
-thoThung-thai
-phoSamphao-thai
+thai_koKai
+thai_thoThung
+thai_phoSamphao
 ```
 
 Getting a group list needs a script, as Glyphs.app and Fontlab name kerning groups differently, making retrieval tedious. For Glyphs.app files, use:
@@ -156,10 +189,10 @@ $ python3 scripts/gs-print-kerning-groups.py source/GoogleSans/GoogleSansSomeScr
 Example file contents:
 
 ```
-public.kern1.saraE-thai
+public.kern1.thai_saraE
 public.kern1.space
-public.kern2.boBaimai-thai
-public.kern2.khoKhuat-thai
+public.kern2.thai_boBaimai
+public.kern2.thai_khoKhuat
 ```
 
 The resulting list in the file `import_groups.txt` should be screened to contain only what should be imported and appended to the PR. The name prefix `public.kern1.` marks groups "to the left" (RTL: right) and `public.kern2.` marks groups "to the right" (RTL: left).
