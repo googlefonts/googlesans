@@ -23,7 +23,7 @@
 
 ### Fixed
 
-- ...
+- anchor propagation bug in the Display statics in the previous build pipeline
 
 ## Version 3.003
 
