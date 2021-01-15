@@ -43,8 +43,6 @@ excluded_check_ids = (
     "com.google.fonts/check/varfont/regular_opsz_coord",  # we do want our opsz definition
     # "com.google.fonts/check/os2_metrics_match_hhea",
     # "com.google.fonts/check/unwanted_tables",
-    # https://github.com/googlefonts/googlesans/issues/108:
-    "com.google.fonts/check/glyf_nested_components",
 )
 
 ATTRIBUTES = {

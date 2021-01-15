@@ -130,8 +130,8 @@ def scrub_ufo(ufo: ufoLib2.Font, skip_export_glyphs: Set[str]) -> None:
                 "ytilde.BRACKET.18",
             ],
         },
-        # Uncomment after attaining parity between Glyphs file and DS compilation.
-        # {"name": "flattenComponents", "pre": True},
+        # https://github.com/googlefonts/googlesans/issues/108
+        {"name": "flattenComponents", "pre": True},
     ]
 
     # Delete non-build-relevant layers.
