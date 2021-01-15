@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="aringacute.alt" format="2">
+  <advance width="641"/>
+  <anchor x="420" y="1000" name="top"/>
+  <outline>
+    <contour>
+      <point x="345" y="871" type="line"/>
+      <point x="454" y="871" type="line"/>
+      <point x="561" y="1018" type="line"/>
+      <point x="408" y="1018" type="line"/>
+    </contour>
+    <component base="a.alt"/>
+    <component base="ringcomb" xOffset="89"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>a.alt</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>ringcomb</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>a.alt</string>
+    </dict>
+  </lib>
+</glyph>
