@@ -1,0 +1,466 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<designspace format="4.1">
+  <axes>
+    <axis tag="opsz" name="Optical size" minimum="17" maximum="18" default="18"/>
+    <axis tag="wght" name="Weight" minimum="400" maximum="700" default="400">
+      <map input="400" output="380"/>
+      <map input="500" output="555"/>
+      <map input="700" output="734"/>
+    </axis>
+  </axes>
+  <rules>
+    <rule name="BRACKET.18.18">
+      <conditionset>
+        <condition name="Optical size" minimum="18" maximum="18"/>
+      </conditionset>
+      <sub name="G" with="G.BRACKET.18"/>
+      <sub name="Gbreve" with="Gbreve.BRACKET.18"/>
+      <sub name="Gcircumflex" with="Gcircumflex.BRACKET.18"/>
+      <sub name="Gcommaaccent" with="Gcommaaccent.BRACKET.18"/>
+      <sub name="Gcommaaccent.alt" with="Gcommaaccent.alt.BRACKET.18"/>
+      <sub name="Gdotaccent" with="Gdotaccent.BRACKET.18"/>
+      <sub name="Kcommaaccent" with="Kcommaaccent.BRACKET.18"/>
+      <sub name="Kcommaaccent.alt" with="Kcommaaccent.alt.BRACKET.18"/>
+      <sub name="Lcommaaccent" with="Lcommaaccent.BRACKET.18"/>
+      <sub name="Ncommaaccent" with="Ncommaaccent.BRACKET.18"/>
+      <sub name="Rcommaaccent" with="Rcommaaccent.BRACKET.18"/>
+      <sub name="Rcommaaccent.alt" with="Rcommaaccent.alt.BRACKET.18"/>
+      <sub name="Scommaaccent" with="Scommaaccent.BRACKET.18"/>
+      <sub name="Tcommaaccent" with="Tcommaaccent.BRACKET.18"/>
+      <sub name="comma" with="comma.BRACKET.18"/>
+      <sub name="commaaccentcomb" with="commaaccentcomb.BRACKET.18"/>
+      <sub name="commaturnedabovecomb" with="commaturnedabovecomb.BRACKET.18"/>
+      <sub name="finalpe-hb" with="finalpe-hb.BRACKET.18"/>
+      <sub name="finalpedagesh-hb" with="finalpedagesh-hb.BRACKET.18"/>
+      <sub name="g.sc" with="g.sc.BRACKET.18"/>
+      <sub name="g.sc.ss04" with="g.sc.ss04.BRACKET.18"/>
+      <sub name="gcommaaccent" with="gcommaaccent.BRACKET.18"/>
+      <sub name="kcommaaccent" with="kcommaaccent.BRACKET.18"/>
+      <sub name="kcommaaccent.alt" with="kcommaaccent.alt.BRACKET.18"/>
+      <sub name="lcommaaccent" with="lcommaaccent.BRACKET.18"/>
+      <sub name="ncommaaccent" with="ncommaaccent.BRACKET.18"/>
+      <sub name="pe-hb" with="pe-hb.BRACKET.18"/>
+      <sub name="pedagesh-hb" with="pedagesh-hb.BRACKET.18"/>
+      <sub name="perafe-hb" with="perafe-hb.BRACKET.18"/>
+      <sub name="questiongreek" with="questiongreek.BRACKET.18"/>
+      <sub name="quotedblbase" with="quotedblbase.BRACKET.18"/>
+      <sub name="quotedblleft" with="quotedblleft.BRACKET.18"/>
+      <sub name="quotedblright" with="quotedblright.BRACKET.18"/>
+      <sub name="quoteleft" with="quoteleft.BRACKET.18"/>
+      <sub name="quoteright" with="quoteright.BRACKET.18"/>
+      <sub name="quotesinglbase" with="quotesinglbase.BRACKET.18"/>
+      <sub name="rcommaaccent" with="rcommaaccent.BRACKET.18"/>
+      <sub name="rcommaaccent.alt" with="rcommaaccent.alt.BRACKET.18"/>
+      <sub name="samekh-hb" with="samekh-hb.BRACKET.18"/>
+      <sub name="samekhdagesh-hb" with="samekhdagesh-hb.BRACKET.18"/>
+      <sub name="scommaaccent" with="scommaaccent.BRACKET.18"/>
+      <sub name="semicolon" with="semicolon.BRACKET.18"/>
+      <sub name="tcommaaccent" with="tcommaaccent.BRACKET.18"/>
+      <sub name="tcommaaccent.alt" with="tcommaaccent.alt.BRACKET.18"/>
+      <sub name="y" with="y.BRACKET.18"/>
+      <sub name="y.sc.lc.ss04" with="y.sc.lc.ss04.BRACKET.18"/>
+      <sub name="yacute" with="yacute.BRACKET.18"/>
+      <sub name="ycircumflex" with="ycircumflex.BRACKET.18"/>
+      <sub name="ydieresis" with="ydieresis.BRACKET.18"/>
+      <sub name="ydotbelow" with="ydotbelow.BRACKET.18"/>
+      <sub name="ygrave" with="ygrave.BRACKET.18"/>
+      <sub name="yhookabove" with="yhookabove.BRACKET.18"/>
+      <sub name="ytilde" with="ytilde.BRACKET.18"/>
+    </rule>
+  </rules>
+  <sources>
+    <source filename="GoogleSans-TextRegular.ufo" name="Google Sans Text Regular" familyname="Google Sans" stylename="Text Regular">
+      <location>
+        <dimension name="Optical size" xvalue="17"/>
+        <dimension name="Weight" xvalue="380"/>
+      </location>
+    </source>
+    <source filename="GoogleSans-TextBold.ufo" name="Google Sans Text Bold" familyname="Google Sans" stylename="Text Bold">
+      <location>
+        <dimension name="Optical size" xvalue="17"/>
+        <dimension name="Weight" xvalue="734"/>
+      </location>
+    </source>
+    <source filename="GoogleSans-Regular.ufo" name="Google Sans Regular" familyname="Google Sans" stylename="Regular">
+      <lib copy="1"/>
+      <groups copy="1"/>
+      <features copy="1"/>
+      <info copy="1"/>
+      <location>
+        <dimension name="Optical size" xvalue="18"/>
+        <dimension name="Weight" xvalue="380"/>
+      </location>
+    </source>
+    <source filename="GoogleSans-Bold.ufo" name="Google Sans Bold" familyname="Google Sans" stylename="Bold">
+      <location>
+        <dimension name="Optical size" xvalue="18"/>
+        <dimension name="Weight" xvalue="734"/>
+      </location>
+    </source>
+  </sources>
+  <instances>
+    <instance name="Google Sans Regular" familyname="Google Sans" stylename="Regular" filename="../../build/GoogleSans/instance_ufo/GoogleSans-Regular.ufo">
+      <location>
+        <dimension name="Optical size" xvalue="18"/>
+        <dimension name="Weight" xvalue="380"/>
+      </location>
+      <kerning/>
+      <info/>
+      <lib>
+        <dict>
+          <key>com.schriftgestaltung.customParameters</key>
+          <array>
+            <array>
+              <string>panose</string>
+              <array>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>5</integer>
+                <integer>3</integer>
+                <integer>3</integer>
+                <integer>5</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+              </array>
+            </array>
+            <array>
+              <string>Autohint</string>
+              <integer>0</integer>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 1 0 0; Google;GoogleSans-Regular</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 3 1 1033; Google;GoogleSans-Regiular</string>
+            </array>
+          </array>
+        </dict>
+      </lib>
+    </instance>
+    <instance name="Google Sans Medium" familyname="Google Sans" stylename="Medium" filename="../../build/GoogleSans/instance_ufo/GoogleSans-Medium.ufo">
+      <location>
+        <dimension name="Optical size" xvalue="18"/>
+        <dimension name="Weight" xvalue="555"/>
+      </location>
+      <kerning/>
+      <info/>
+      <lib>
+        <dict>
+          <key>com.schriftgestaltung.customParameters</key>
+          <array>
+            <array>
+              <string>panose</string>
+              <array>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>6</integer>
+                <integer>3</integer>
+                <integer>3</integer>
+                <integer>5</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+              </array>
+            </array>
+            <array>
+              <string>Autohint</string>
+              <integer>0</integer>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 1 0 0; Google;GoogleSans-Medium</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 3 1 1033; Google;GoogleSans-Medium</string>
+            </array>
+          </array>
+        </dict>
+      </lib>
+    </instance>
+    <instance name="Google Sans Bold" familyname="Google Sans" stylename="Bold" filename="../../build/GoogleSans/instance_ufo/GoogleSans-Bold.ufo" stylemapfamilyname="Google Sans" stylemapstylename="bold">
+      <location>
+        <dimension name="Optical size" xvalue="18"/>
+        <dimension name="Weight" xvalue="734"/>
+      </location>
+      <kerning/>
+      <info/>
+      <lib>
+        <dict>
+          <key>com.schriftgestaltung.customParameters</key>
+          <array>
+            <array>
+              <string>panose</string>
+              <array>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>8</integer>
+                <integer>3</integer>
+                <integer>3</integer>
+                <integer>5</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+              </array>
+            </array>
+            <array>
+              <string>Autohint</string>
+              <integer>0</integer>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 1 0 0; Google;GoogleSans-Bold</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 3 1 1033; Google;GoogleSans-Bold</string>
+            </array>
+          </array>
+        </dict>
+      </lib>
+    </instance>
+    <instance name="Google Sans Text Regular" familyname="Google Sans" stylename="Text Regular" filename="../../build/GoogleSans/instance_ufo/GoogleSans-TextRegular.ufo">
+      <location>
+        <dimension name="Optical size" xvalue="17"/>
+        <dimension name="Weight" xvalue="380"/>
+      </location>
+      <kerning/>
+      <info/>
+      <lib>
+        <dict>
+          <key>com.schriftgestaltung.customParameters</key>
+          <array>
+            <array>
+              <string>panose</string>
+              <array>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>5</integer>
+                <integer>3</integer>
+                <integer>3</integer>
+                <integer>5</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+              </array>
+            </array>
+            <array>
+              <string>Autohint</string>
+              <integer>0</integer>
+            </array>
+            <array>
+              <string>styleMapFamilyName</string>
+              <string>Google Sans Text</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 1 0 0; Google;GoogleSansText-Regular</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 3 1 1033; Google;GoogleSansText-Regiular</string>
+            </array>
+            <array>
+              <string>preferredFamilyName</string>
+              <string>Google Sans Text</string>
+            </array>
+            <array>
+              <string>preferredSubfamilyName</string>
+              <string>Regular</string>
+            </array>
+          </array>
+        </dict>
+      </lib>
+    </instance>
+    <instance name="Google Sans Text Medium" familyname="Google Sans" stylename="Text Medium" filename="../../build/GoogleSans/instance_ufo/GoogleSans-TextMedium.ufo">
+      <location>
+        <dimension name="Optical size" xvalue="17"/>
+        <dimension name="Weight" xvalue="555"/>
+      </location>
+      <kerning/>
+      <info/>
+      <lib>
+        <dict>
+          <key>com.schriftgestaltung.customParameters</key>
+          <array>
+            <array>
+              <string>panose</string>
+              <array>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>6</integer>
+                <integer>3</integer>
+                <integer>3</integer>
+                <integer>5</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+              </array>
+            </array>
+            <array>
+              <string>Autohint</string>
+              <integer>0</integer>
+            </array>
+            <array>
+              <string>styleMapFamilyName</string>
+              <string>Google Sans Text Medium</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 1 0 0; Google;GoogleSansText-Medium</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 3 1 1033; Google;GoogleSansText-Medium</string>
+            </array>
+            <array>
+              <string>preferredFamilyName</string>
+              <string>Google Sans Text</string>
+            </array>
+            <array>
+              <string>preferredSubfamilyName</string>
+              <string>Medium</string>
+            </array>
+          </array>
+        </dict>
+      </lib>
+    </instance>
+    <instance name="Google Sans Text Bold" familyname="Google Sans" stylename="Text Bold" filename="../../build/GoogleSans/instance_ufo/GoogleSans-TextBold.ufo" stylemapfamilyname="Google Sans Text" stylemapstylename="bold">
+      <location>
+        <dimension name="Optical size" xvalue="17"/>
+        <dimension name="Weight" xvalue="734"/>
+      </location>
+      <kerning/>
+      <info/>
+      <lib>
+        <dict>
+          <key>com.schriftgestaltung.customParameters</key>
+          <array>
+            <array>
+              <string>panose</string>
+              <array>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>8</integer>
+                <integer>3</integer>
+                <integer>3</integer>
+                <integer>5</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+              </array>
+            </array>
+            <array>
+              <string>Autohint</string>
+              <integer>0</integer>
+            </array>
+            <array>
+              <string>styleMapFamilyName</string>
+              <string>Google Sans Text</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 1 0 0; Google;GoogleSansText-Bold</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 3 1 1033; Google;GoogleSansText-Bold</string>
+            </array>
+            <array>
+              <string>preferredFamilyName</string>
+              <string>Google Sans Text</string>
+            </array>
+            <array>
+              <string>preferredSubfamilyName</string>
+              <string>Bold</string>
+            </array>
+          </array>
+        </dict>
+      </lib>
+    </instance>
+  </instances>
+  <lib>
+    <dict>
+      <key>GSDimensionPlugin.Dimensions</key>
+      <dict>
+        <key>15F39A2A-7598-44C5-A4AA-18A6AD645EAA</key>
+        <dict>
+          <key>nV</key>
+          <string>84</string>
+          <key>nd</key>
+          <string>77</string>
+          <key>oH</key>
+          <string>77</string>
+          <key>oV</key>
+          <string>84</string>
+        </dict>
+        <key>3E1A77A5-2AAF-4B97-842E-5802590C9619</key>
+        <dict>
+          <key>HH</key>
+          <string>128</string>
+          <key>HV</key>
+          <string>134</string>
+          <key>OH</key>
+          <string>128</string>
+          <key>OV</key>
+          <string>136</string>
+          <key>nV</key>
+          <string>131</string>
+          <key>nd</key>
+          <string>122</string>
+        </dict>
+        <key>BE1166E3-1CAA-4651-A534-350E8BF10E0B</key>
+        <dict>
+          <key>HH</key>
+          <string>81</string>
+          <key>HV</key>
+          <string>85</string>
+          <key>OH</key>
+          <string>81</string>
+          <key>OV</key>
+          <string>86</string>
+        </dict>
+      </dict>
+      <key>com.github.googlei18n.ufo2ft.featureWriters</key>
+      <array>
+        <dict>
+          <key>class</key>
+          <string>KernFeatureWriter</string>
+          <key>options</key>
+          <dict>
+            <key>mode</key>
+            <string>append</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>class</key>
+          <string>MarkFeatureWriter</string>
+          <key>options</key>
+          <dict>
+            <key>mode</key>
+            <string>skip</string>
+          </dict>
+        </dict>
+      </array>
+      <key>public.skipExportGlyphs</key>
+      <array>
+        <string>G.ss06</string>
+        <string>__descender-cy</string>
+        <string>__descender-cy.case</string>
+        <string>apple</string>
+        <string>peace</string>
+        <string>whiteFrowningFace</string>
+        <string>whiteSmilingFace</string>
+      </array>
+    </dict>
+  </lib>
+</designspace>

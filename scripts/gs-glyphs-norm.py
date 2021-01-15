@@ -27,6 +27,8 @@ def main(argv):
 
         try:
             font = GSFont(fontpath)
+            font.customParameters["Disable Last Change"] = True
+
             print(f"Beginning normalization of {fontpath}")
             for glyph in font.glyphs:
                 # remove extraneous user data definitions
