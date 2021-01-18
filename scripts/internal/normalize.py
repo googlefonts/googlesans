@@ -131,17 +131,10 @@ def scrub_ufo(ufo: ufoLib2.Font, skip_export_glyphs: Set[str]) -> None:
             ],
         },
         # Remove component nesting to work around broken TrueType rasterizers:
-        # https://github.com/googlefonts/googlesans/issues/108. First, decompose
-        # glyphs with mixed contours and components, because what to do
-        # with them is poorly defined for ufo2ft's flattenComponents filter.
-        {
-            "name": "decomposeComponents",
-            "pre": True,
-            "include": [
-                glyph.name for glyph in ufo if glyph.contours and glyph.components
-            ],
-        },
-        {"name": "flattenComponents", "pre": True},
+        # https://github.com/googlefonts/googlesans/issues/108. Flatten after
+        # decomposition, because what to do with mixed outline/component glyphs
+        # is poorly defined for ufo2ft's flattenComponents filter.
+        {"name": "flattenComponents", "pre": False},
     ]
 
     # Delete non-build-relevant layers.
