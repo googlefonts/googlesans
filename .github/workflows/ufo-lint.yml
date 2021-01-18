@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: ${{ matrix.python-version }}
-      - name: flake8 lint of Python sources
+      - name: ufolint tests on UFO sources
         run: |
           pip install ufolint
           ufolint source/GoogleSans/*.ufo
