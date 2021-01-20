@@ -5,25 +5,25 @@
 ### New
 
 - [SCRIPTS] TKTKTK
-- GitHub Actions CI workflows: `build-incoming-files.yml` & `generate-glyphs-file.yml`
-- Add `scripts/gs-glyphs2ufo.py` script
-- Add `scripts/gs-merge-designspace.py` script
-- Add `scripts/gs-print-kerning-groups.py` script
-- Add `scripts/gs-ufo2glyphs.py` script
+- GitHub Actions CI workflows: `build-incoming-files.yml` (#105), `generate-glyphs-file.yml` (#105), `ufo-lint.yml` (#131)
+- Add `scripts/gs-glyphs2ufo.py` script (#105)
+- Add `scripts/gs-merge-designspace.py` script (#105)
+- Add `scripts/gs-print-kerning-groups.py` script (#105)
+- Add `scripts/gs-ufo2glyphs.py` script (#105)
 
 ### Changed
 
 - source files changed from glyphs v2 format to Unified Font Object (UFO) v3 format (#105)
-- removed deprecated design and script source files
-- scripts/gs-glyphs-norm.py: normalize with `Disable Last Change` custom parameter defined as True
-- Makefile: add `gs-vf-vendor` and `gs-ufo2glyphs` targets
-- source/Makefile: refactor font compile targets to support builds from designspaces & UFO source files
-- source/Makefile: add `gs-vf-vendor`, `gs-vf-vendor-glyphs2designspace`, and `gs-ufo2glyphs` make targets
+- removed deprecated design and script source files (#105)
+- scripts/gs-glyphs-norm.py: normalize with `Disable Last Change` custom parameter defined as True (#105)
+- Makefile: add `gs-vf-vendor` and `gs-ufo2glyphs` targets (#105)
+- source/Makefile: refactor font compile targets to support builds from designspaces & UFO source files (#105)
+- source/Makefile: add `gs-vf-vendor`, `gs-vf-vendor-glyphs2designspace`, and `gs-ufo2glyphs` make targets (#105)
 - upgrade glyphsLib dependency to v5.3.1
 
 ### Fixed
 
-- anchor propagation bug in the Display statics in the previous build pipeline
+- anchor propagation bug in the Display statics (#105)
 
 ## Version 3.003
 
