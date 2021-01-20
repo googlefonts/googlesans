@@ -147,6 +147,19 @@ for import_source in designspace_import.sources:
     import_font: ufoLib2.Font = import_source.font
     target_font: ufoLib2.Font = target_source.font
 
+    # Snatch up any bracket glyphs for glyphs without them being explicitly
+    # listed in the import file. ".BRACKET." is a glyphsLib convention.
+    for glyph in import_font:
+        if ".BRACKET." not in glyph.name:
+            continue
+        base = glyph.name.split(".BRACKET.")[0]
+        if base in import_glyphs:
+            import_glyphs.add(glyph.name)
+            logging.warning(
+                "Added bracket glyph '%s', manually add to the Designspace rules.",
+                glyph.name,
+            )
+
     for glyph_name in import_glyphs:
         try:
             target_font[glyph_name] = import_font[glyph_name]
