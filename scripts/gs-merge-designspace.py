@@ -149,15 +149,14 @@ for import_source in designspace_import.sources:
 
     # Snatch up any bracket glyphs for glyphs without them being explicitly
     # listed in the import file. ".BRACKET." is a glyphsLib convention.
-    for glyph in import_font:
-        if ".BRACKET." not in glyph.name:
+    for name in import_font.keys():
+        if ".BRACKET." not in name:
             continue
-        base = glyph.name.split(".BRACKET.")[0]
+        base = name.split(".BRACKET.")[0]
         if base in import_glyphs:
-            import_glyphs.add(glyph.name)
+            import_glyphs.add(name)
             logging.warning(
-                "Added bracket glyph '%s', manually add to the Designspace rules.",
-                glyph.name,
+                "Added bracket glyph '%s', manually add to the Designspace rules.", name
             )
 
     for glyph_name in import_glyphs:
