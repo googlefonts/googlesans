@@ -53,11 +53,11 @@ for glyphs_file_path in parsed_args.glyphs_file:
     # Clear out non-foreground layers to reduce noise.
     for glyph in glyphs_file.glyphs:
         for layer_id in [
-            l.layerId
-            for l in glyph.layers
-            if l.associatedMasterId != l.layerId  # Not a master layer
-            and "[" not in l.name  # and not a bracket layer
-            and "{" not in l.name  # and not a brace layer
+            layer.layerId
+            for layer in glyph.layers
+            if layer.associatedMasterId != layer.layerId  # Not a master layer
+            and "[" not in layer.name  # and not a bracket layer
+            and "{" not in layer.name  # and not a brace layer
         ]:
             del glyph.layers[layer_id]
         for layer in glyph.layers:
