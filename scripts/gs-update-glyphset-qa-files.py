@@ -1,0 +1,63 @@
+from fontTools.ttLib import TTFont
+
+for font_path, font_glyphset_path in (
+    (
+        "build/GoogleSans/static/expert/GoogleSans-Bold.ttf",
+        "qa/definitions/GoogleSans-Bold.ttf.glyphsetdef",
+    ),
+    (
+        "build/GoogleSans/static/expert/GoogleSans-BoldItalic.ttf",
+        "qa/definitions/GoogleSans-BoldItalic.ttf.glyphsetdef",
+    ),
+    (
+        "build/GoogleSans/static/expert/GoogleSans-Italic.ttf",
+        "qa/definitions/GoogleSans-Italic.ttf.glyphsetdef",
+    ),
+    (
+        "build/GoogleSans/static/expert/GoogleSans-Medium.ttf",
+        "qa/definitions/GoogleSans-Medium.ttf.glyphsetdef",
+    ),
+    (
+        "build/GoogleSans/static/expert/GoogleSans-MediumItalic.ttf",
+        "qa/definitions/GoogleSans-MediumItalic.ttf.glyphsetdef",
+    ),
+    (
+        "build/GoogleSans/static/expert/GoogleSans-Regular.ttf",
+        "qa/definitions/GoogleSans-Regular.ttf.glyphsetdef",
+    ),
+    (
+        "build/GoogleSans/static/expert/GoogleSansText-Bold.ttf",
+        "qa/definitions/GoogleSansText-Bold.ttf.glyphsetdef",
+    ),
+    (
+        "build/GoogleSans/static/expert/GoogleSansText-BoldItalic.ttf",
+        "qa/definitions/GoogleSansText-BoldItalic.ttf.glyphsetdef",
+    ),
+    (
+        "build/GoogleSans/static/expert/GoogleSansText-Italic.ttf",
+        "qa/definitions/GoogleSansText-Italic.ttf.glyphsetdef",
+    ),
+    (
+        "build/GoogleSans/static/expert/GoogleSansText-Medium.ttf",
+        "qa/definitions/GoogleSansText-Medium.ttf.glyphsetdef",
+    ),
+    (
+        "build/GoogleSans/static/expert/GoogleSansText-MediumItalic.ttf",
+        "qa/definitions/GoogleSansText-MediumItalic.ttf.glyphsetdef",
+    ),
+    (
+        "build/GoogleSans/static/expert/GoogleSansText-Regular.ttf",
+        "qa/definitions/GoogleSansText-Regular.ttf.glyphsetdef",
+    ),
+    (
+        "build/GoogleSans/variable/expert/GoogleSans-Italic[opsz,wght].ttf",
+        "qa/definitions/GoogleSans-Italic[opsz,wght].ttf.glyphsetdef",
+    ),
+    (
+        "build/GoogleSans/variable/expert/GoogleSans[opsz,wght].ttf",
+        "qa/definitions/GoogleSans[opsz,wght].ttf.glyphsetdef",
+    ),
+):
+    font = TTFont(font_path)
+    with open(font_glyphset_path, "w+") as f:
+        f.write("\n".join(font.getGlyphOrder()))
