@@ -49,6 +49,20 @@ for glyphs_file_path in parsed_args.glyphs_file:
 
     # Convert the file to be imported.
     glyphs_file = glyphsLib.GSFont(glyphs_file_path)
+
+    # Clear out non-foreground layers to reduce noise.
+    for glyph in glyphs_file.glyphs:
+        for layer_id in [
+            l.layerId
+            for l in glyph.layers
+            if l.associatedMasterId != l.layerId  # Not a master layer
+            and "[" not in l.name  # and not a bracket layer
+            and "{" not in l.name  # and not a brace layer
+        ]:
+            del glyph.layers[layer_id]
+        for layer in glyph.layers:
+            layer._background = None
+
     designspace = glyphsLib.to_designspace(
         glyphs_file,
         generate_GDEF=True,
