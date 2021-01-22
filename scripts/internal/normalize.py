@@ -1,14 +1,16 @@
 import copy
 from pathlib import Path
-from typing import Set
+from typing import List, Set
 
 import ufo2ft
 import ufoLib2
 from fontTools.designspaceLib import (
     DesignSpaceDocument,
     InstanceDescriptor,
+    RuleDescriptor,
     SourceDescriptor,
 )
+from glyphsLib.builder.builders import _expand_kerning_to_brackets
 
 from . import gdef
 
@@ -16,9 +18,10 @@ from . import gdef
 def scrub_designspace(designspace: DesignSpaceDocument, project_root: Path) -> None:
     designspace.loadSourceFonts(ufoLib2.Font.open)
     skip_export_glyphs = set(designspace.lib.get("public.skipExportGlyphs", []))
+    rules = designspace.rules
 
     for source in designspace.sources:
-        scrub_source(source, skip_export_glyphs)
+        scrub_source(source, skip_export_glyphs, rules)
 
     for instance in designspace.instances:
         scrub_instance(instance, project_root)
@@ -56,11 +59,15 @@ def scrub_instance(instance: InstanceDescriptor, project_root: Path) -> None:
     )
 
 
-def scrub_source(source: SourceDescriptor, skip_export_glyphs: Set[str]) -> None:
-    scrub_ufo(source.font, skip_export_glyphs)
+def scrub_source(
+    source: SourceDescriptor, skip_export_glyphs: Set[str], rules: List[RuleDescriptor]
+) -> None:
+    scrub_ufo(source.font, skip_export_glyphs, rules)
 
 
-def scrub_ufo(ufo: ufoLib2.Font, skip_export_glyphs: Set[str]) -> None:
+def scrub_ufo(
+    ufo: ufoLib2.Font, skip_export_glyphs: Set[str], rules: List[RuleDescriptor]
+) -> None:
     # Clean global lib.
     keys_to_keep = {
         # UFOs don't need lastChanged because glyphs are separate files, keep it disabled.
@@ -187,6 +194,12 @@ def scrub_ufo(ufo: ufoLib2.Font, skip_export_glyphs: Set[str]) -> None:
             new_kerning[key] = value
     ufo.kerning.clear()
     ufo.kerning.update(new_kerning)
+
+    # Bracket glyphs are a Glyphs.app construct that inherit the kerning from
+    # their parents.
+    for rule in rules:
+        for name, name_bracket in rule.subs:
+            _expand_kerning_to_brackets(name, name_bracket, ufo)
 
     # Update GDEF table. Anchors have to be propagated before we can construct
     # the GDEF table. Use the UFO copy so we can safely save the original with
