@@ -12,8 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from pathlib import Path
 
-from fontbakery.checkrunner import Section, PASS, FAIL
+from fontbakery.checkrunner import Section, PASS, FAIL, SKIP
 from fontbakery.callable import check, condition
 from fontbakery.fonts_profile import profile_factory
 
@@ -27,6 +28,7 @@ GOOGLESANS_PROFILE_CHECKS = [
     "com.google.fonts/check/googlesans/features/staticitalics",
     "com.google.fonts/check/googlesans/features/variableuprights",
     "com.google.fonts/check/googlesans/features/variableitalics",
+    "com.google.fonts/check/googlesans/features/armenian/min_opsz",
 ]
 
 STATIC_UPRIGHT_FEA = [
@@ -322,5 +324,73 @@ def com_google_fonts_check_googlesans_features_variable_italics(ttFont):
         )
 
 
+@check(id="com.google.fonts/check/googlesans/features/armenian/min_opsz",
+    conditions=["is_not_italic", "is_not_variable_font"],
+)
+def com_google_fonts_check_googlesans_features_armenian_min_opsz(ttFont):
+    """But does it shape?"""
+    tt = ttFont
+    
+    # if not tt.reader.file.name.endswith("GoogleSansText-Regular.ttf"):
+    #     yield SKIP, "..."
+    #     return
+    
+    import json
+    armn_shaping_basedir = Path("qa", "shaping", "armenian")
+    for input_file in armn_shaping_basedir.glob("*.txt"):
+        shaped_text = shape_text(tt.reader.file.name, input_file, {"ccmp": True})
+        shaped_text_expected = json.loads(input_file.with_suffix(".json").read_text())
+        if shaped_text == shaped_text_expected:
+            yield PASS, "..."
+        else:
+            yield FAIL, "..."
+
+
 profile.auto_register(globals())
 profile.test_expected_checks(GOOGLESANS_PROFILE_CHECKS, exclusive=True)
+
+from typing import Any, Dict, List
+
+import uharfbuzz as hb
+
+
+def shape_text(
+    font_path: str, text_path: str, features: Dict[str, bool]
+) -> List[Dict[str, Any]]:
+    """Return Harfbuzz-shaped text from input for font.
+    
+    NOTE: copy-pasta from harfbuzz.py because fontbakery doesn't knwo how to import it.
+    """
+
+    with open(font_path, "rb") as fontfile:
+        fontdata = fontfile.read()
+
+    with open(text_path, "r") as textfile:
+        text = textfile.read()
+
+    face = hb.Face(fontdata)
+    font = hb.Font(face)
+    upem = face.upem
+
+    font.scale = (upem, upem)
+    hb.ot_font_set_funcs(font)
+
+    buf = hb.Buffer()
+    buf.add_str(text)
+    buf.guess_segment_properties()
+    hb.shape(font, buf, features)
+
+    infos = buf.glyph_infos
+    positions = buf.glyph_positions
+
+    return [
+        {
+            "glyph": font.get_glyph_name(info.codepoint),
+            "cluster": info.cluster,
+            "x_offset": pos.x_offset,
+            "y_offset": pos.y_offset,
+            "x_advance": pos.x_advance,
+            "y_advance": pos.y_advance,
+        }
+        for info, pos in zip(infos, positions)
+    ]
