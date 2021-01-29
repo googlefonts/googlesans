@@ -48,7 +48,7 @@ This document details the source style guidelines for the Google Sans project.
 - All names should be lowercase, separated by underscores, except for the string that refers to glyph names. E.g. `Omega` should stay as is if it refers to the upper case glyph name
 - Kerning groups should contain the name of the script they pertain to. This avoids name clashes. The format is script_key_glyph_or_description
 
-#### Adobe feature code lookup names
+#### Adobe OpenType feature file lookup names
 
 - Adobe feature code lookup names should use the following format:
 
@@ -62,7 +62,7 @@ This document details the source style guidelines for the Google Sans project.
 - When a lookup is used in several features, list all feature tags in its name
 - Except if listing everything is too cumbersome and counterproductive, then drop that part of name but leave a comment instead, just above the lookup definition, to explain which scripts/languages/features are concerned
 
-### Adobe feature file source
+### Adobe OpenType feature file source
 
 - feature blocks and lookups should be declared separately
 - lookups should have descriptive names and include, where appropriate, the language and feature tag where they are used. Example: `nld_locl_ij_substitution` for a Netherlandish lookup that replaces `i' j'` by `ij`
@@ -100,7 +100,7 @@ This document details the source style guidelines for the Google Sans project.
 - A_B_C_D: `cyrl_bgr_locl_alternates`
 - C_D: `frac_precomposed`
   
-### Adobe feature file examples
+### Adobe OpenType feature file examples
 
 ```fea
 languagesystem DFLT dflt;
