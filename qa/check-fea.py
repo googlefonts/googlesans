@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional
 
 import uharfbuzz as hb
 from fontbakery.callable import check, condition
-from fontbakery.checkrunner import ERROR, FAIL, PASS, Section
+from fontbakery.checkrunner import FAIL, PASS, Section
 from fontbakery.fonts_profile import profile_factory
 from fontTools.ttLib import TTFont
 
