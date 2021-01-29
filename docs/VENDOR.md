@@ -1,6 +1,6 @@
 # Google Sans Vendor Documentation
 
- These docs summarize how vendors contribute changes to the Google Sans project.  Detailed [maintainer documentation](MAINTAINER.md) is available if you would like to review additional details about build dependency installation, virtual environment management, and the fontmake compiler based build approach.
+ These docs summarize how vendors contribute changes to the Google Sans project.  Detailed [maintainer documentation](MAINTAINER.md) is available if you would like to review additional details about build dependency installation, virtual environment management, and the fontmake compiler based build approach for local font testing.
 
 ## Source Format
 
