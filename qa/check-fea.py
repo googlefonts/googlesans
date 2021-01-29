@@ -20,6 +20,7 @@ import uharfbuzz as hb
 from fontbakery.callable import check, condition
 from fontbakery.checkrunner import ERROR, FAIL, PASS, Section
 from fontbakery.fonts_profile import profile_factory
+from fontTools.ttLib import TTFont
 
 profile_imports = ()
 profile = profile_factory(
@@ -335,38 +336,40 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
 
     shaping_basedir = Path("qa", "shaping")
     for shaping_file in shaping_basedir.glob("*.json"):
-        shaping_input = json.loads(shaping_file.read_text())
+        shaping_input_doc = json.loads(shaping_file.read_text())
 
+        try:
+            shaping_input = shaping_input_doc["input"]
+        except KeyError:
+            yield FAIL, (f"{shaping_file}: Must have an 'input' key dict.")
+            return
         try:
             shaping_texts = shaping_input["text"]
             shaping_features = shaping_input["features"]
-        except KeyError:
-            yield FAIL, (
-                f"{shaping_file}: Must have a 'text: list[str]' and "
-                "'features: dict[str, bool]' key."
-            )
+            shaping_script = shaping_input["script"]
+            shaping_language = shaping_input["language"]
+        except KeyError as e:
+            yield FAIL, (f"{shaping_file}: 'input' key dict is missing {str(e)} key.")
             return
         try:
-            shaping_texts_expected = shaping_input[filename.name]
+            shaping_output = shaping_input_doc["output"]
+        except KeyError:
+            yield FAIL, (f"{shaping_file}: Must have an 'output' key dict.")
+            return
+        try:
+            shaping_texts_expected = shaping_output[filename.name]
         except KeyError:
             yield FAIL, f"{shaping_file}: No entry found for {filename.name}"
             return
 
         if "fvar" in tt:
-            fvar = tt["fvar"]
-            shaped_texts = {}
-            for instance in fvar.instances:
-                coordinate_str = ",".join(
-                    f"{k}={v}" for k, v in instance.coordinates.items()
-                )
-                shaped_texts[coordinate_str] = [
-                    shape_text(filename, text, shaping_features, instance.coordinates)
-                    for text in shaping_texts
-                ]
+            shaped_texts = shape_variable(
+                tt, shaping_texts, shaping_script, shaping_language, shaping_features
+            )
         else:
-            shaped_texts = [
-                shape_text(filename, text, shaping_features) for text in shaping_texts
-            ]
+            shaped_texts = shape_static(
+                tt, shaping_texts, shaping_script, shaping_language, shaping_features
+            )
 
         if shaped_texts == shaping_texts_expected:
             yield PASS, "No regression detected"
@@ -381,6 +384,8 @@ profile.test_expected_checks(GOOGLESANS_PROFILE_CHECKS, exclusive=True)
 def shape_text(
     font_path: str,
     text: str,
+    script: str,
+    language: str,
     features: Dict[str, bool],
     variations: Optional[Dict[str, float]] = None,
 ) -> List[Dict[str, Any]]:
@@ -403,6 +408,8 @@ def shape_text(
 
     buf = hb.Buffer()
     buf.add_str(text)
+    buf.script = script
+    buf.language = language
     buf.guess_segment_properties()
     hb.shape(font, buf, features)
 
@@ -420,3 +427,33 @@ def shape_text(
         }
         for info, pos in zip(infos, positions)
     ]
+
+
+def shape_variable(
+    font: TTFont,
+    texts: List[str],
+    script: str,
+    language: str,
+    features: Dict[str, bool],
+) -> Dict[str, List[Dict[str, Any]]]:
+    filename = Path(font.reader.file.name)
+    fvar = font["fvar"]
+    result = {}
+    for instance in fvar.instances:
+        coordinate_str = ",".join(f"{k}={v}" for k, v in instance.coordinates.items())
+        result[coordinate_str] = [
+            shape_text(filename, text, script, language, features, instance.coordinates)
+            for text in texts
+        ]
+    return result
+
+
+def shape_static(
+    font: TTFont,
+    texts: List[str],
+    script: str,
+    language: str,
+    features: Dict[str, bool],
+) -> List[Dict[str, Any]]:
+    filename = Path(font.reader.file.name)
+    return [shape_text(filename, text, script, language, features) for text in texts]

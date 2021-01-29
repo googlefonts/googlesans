@@ -1,13 +1,17 @@
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import uharfbuzz as hb
+from fontTools.ttLib import TTFont
 
 
 def shape_text(
     font_path: str,
     text: str,
+    script: str,
+    language: str,
     features: Dict[str, bool],
     variations: Optional[Dict[str, float]] = None,
 ) -> List[Dict[str, Any]]:
@@ -25,6 +29,8 @@ def shape_text(
 
     buf = hb.Buffer()
     buf.add_str(text)
+    buf.script = script
+    buf.language = language
     buf.guess_segment_properties()
     hb.shape(font, buf, features)
 
@@ -44,12 +50,39 @@ def shape_text(
     ]
 
 
+def shape_variable(
+    font: TTFont,
+    texts: List[str],
+    script: str,
+    language: str,
+    features: Dict[str, bool],
+) -> Dict[str, List[Dict[str, Any]]]:
+    filename = Path(font.reader.file.name)
+    fvar = font["fvar"]
+    result = {}
+    for instance in fvar.instances:
+        coordinate_str = ",".join(f"{k}={v}" for k, v in instance.coordinates.items())
+        result[coordinate_str] = [
+            shape_text(filename, text, script, language, features, instance.coordinates)
+            for text in texts
+        ]
+    return result
+
+
+def shape_static(
+    font: TTFont,
+    texts: List[str],
+    script: str,
+    language: str,
+    features: Dict[str, bool],
+) -> List[Dict[str, Any]]:
+    filename = Path(font.reader.file.name)
+    return [shape_text(filename, text, script, language, features) for text in texts]
+
+
 if __name__ == "__main__":
     import argparse
     import json
-    from pathlib import Path
-
-    from fontTools.ttLib import TTFont
 
     parser = argparse.ArgumentParser()
     parser.add_argument("shaping_file", type=Path)
@@ -58,28 +91,26 @@ if __name__ == "__main__":
 
     shaping_file: Path = parsed_args.shaping_file
     shaping_input = json.loads(shaping_file.read_text())
-    shaping_texts = shaping_input["text"]
-    shaping_features = shaping_input["features"]
+    shaping_texts = shaping_input["input"]["text"]
+    shaping_features = shaping_input["input"]["features"]
+    shaping_script = shaping_input["input"]["script"]
+    shaping_language = shaping_input["input"]["language"]
+
+    if "output" not in shaping_input:
+        shaping_input["output"] = {}
 
     font: TTFont
     for font in parsed_args.fonts:
         filename = Path(font.reader.file.name)
         if "fvar" in font:
-            fvar = font["fvar"]
-            result = {}
-            for instance in fvar.instances:
-                coordinate_str = ",".join(
-                    f"{k}={v}" for k, v in instance.coordinates.items()
-                )
-                result[coordinate_str] = [
-                    shape_text(filename, text, shaping_features, instance.coordinates)
-                    for text in shaping_texts
-                ]
+            result = shape_variable(
+                font, shaping_texts, shaping_script, shaping_language, shaping_features
+            )
         else:
-            result = [
-                shape_text(filename, text, shaping_features) for text in shaping_texts
-            ]
+            result = shape_static(
+                font, shaping_texts, shaping_script, shaping_language, shaping_features
+            )
 
-        shaping_input[filename.name] = result
+        shaping_input["output"][filename.name] = result
 
     shaping_file.write_text(json.dumps(shaping_input, indent=2, ensure_ascii=False))
