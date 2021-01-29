@@ -4,11 +4,12 @@
 
 ## Source Format
 
-The Google Sans project uses [Unified Font Object](https://unifiedfontobject.org/) (UFO) version 3 formatted source files to build production fonts. Vendors may develop in glyphs version 2 or UFO version 3 formatted source files.  Scripts are provided to facilitate transformations between glyphs and UFO source file formats.
+The Google Sans project uses [Unified Font Object](https://unifiedfontobject.org/) (UFO) version 3 formatted source files to build production fonts. Vendors may develop in glyphs format version 2 or UFO format version 3 source files.  Scripts are provided in this repository to facilitate transformations between glyphs and UFO source file formats.
 
 ## UFO Source Conventions
 
-The font sources we receive from vendors are scrubbed with custom scripts and stored as Designspaces and UFOs. The primary objective of the upstream UFO sources is to build the production fonts and serve as a base for vendors to split off from to make project changes.
+The font sources that we receive from vendors are cleaned with custom scripts and stored as Designspaces and UFOs. The primary objective of the upstream UFO sources is to build the production fonts and serve as a basis for future updates.
+
 <details>
 <summary><strong>Source Normalization Details (click to open)</strong></summary>
 
