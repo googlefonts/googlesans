@@ -50,34 +50,41 @@ $ make sync-deps
 
 ## Source Conventions
 
+Our source code style guidance is documented in [STYLE.md](STYLE.md).
+
 The font sources we receive from vendors are scrubbed with custom scripts and stored as Designspaces and UFOs. The primary objective of the sources is to build the fonts and serve as a base for vendors to split off from to work on new scripts.
 
-Specifically, the sources are normalized to be formatted in the way ufoLib formats sources and contain only:
+<details>
+<summary><strong>Source Normalization Details (click to open)</strong></summary>
+
+The sources are normalized according to [fontTools.ufoLib](https://fonttools.readthedocs.io/en/latest/ufoLib/) formatting and contain only:
 
 * Foreground, intermediate (brace) and conditional (bracket) glyphs, no draft or background layers
-    * whose metadata (lib keys) contains only semantically relevant data like Glyphs.app's metrics keys, but not color marks.
+  * whose metadata (lib keys) contains only semantically relevant data like Glyphs.app's metrics keys, but not color marks.
 * Groups and kerning
 * Manually merged and arranged features
 * Manually maintained font info data
-* Automatically managed UFO lib.plist files, that contain:
-    * `public.glyphOrder` for determining the order of glyphs in the final fonts
-    * `public.postscriptNames` for determining the production glyph names in the final fonts
-    * `public.skipExportGlyphs` for listing glyph names that should not be exported to the final fonts
-    * `com.github.googlei18n.ufo2ft.filters` for listing filters and their options for compile-time font processing
-        * `propagateAnchors`: inherits anchors of base glyphs to their composites automatically to help with building the `mark` and `mkmk` features.
-    * `com.schriftgestaltung.customParameter.GSFont.Enforce Compatibility Check` for telling Glyphs.app to always run compatibility checks, not relevant for the build
-    * `com.schriftgestaltung.customParameter.GSFont.disablesLastChange` for telling Glyphs.app to not put "last changed" markers into glyphs, which we don't need in the UFO format
-    * `com.schriftgestaltung.fontMasterID` for making it easier to match vendor Glyphs.app files to be imported to the target UFOs
-* Automatically managed UFO layer layerinfo.plist files, that contain:
-    * `com.schriftgestaltung.layerId` for hopefully helping exchange with Glyphs.app.
+* Automatically managed UFO [lib.plist files](https://unifiedfontobject.org/versions/ufo3/lib.plist/), that contain:
+  * `public.glyphOrder` for determining the order of glyphs in the final fonts
+  * `public.postscriptNames` for determining the production glyph names in the final fonts
+  * `public.skipExportGlyphs` for listing glyph names that should not be exported to the final fonts
+  * `com.github.googlei18n.ufo2ft.filters` for listing filters and their options for compile-time font processing
+    * `propagateAnchors`: inherits anchors of base glyphs to their composites automatically to help with building the `mark` and `mkmk` features.
+  * `com.schriftgestaltung.customParameter.GSFont.Enforce Compatibility Check` for telling Glyphs.app to always run compatibility checks, not relevant for the build
+  * `com.schriftgestaltung.customParameter.GSFont.disablesLastChange` for telling Glyphs.app to not put "last changed" markers into glyphs, which we don't need in the UFO format
+  * `com.schriftgestaltung.fontMasterID` for making it easier to match vendor Glyphs.app files to be imported to the target UFOs
+* Automatically managed UFO layer [layerinfo.plist files](https://unifiedfontobject.org/versions/ufo3/glyphs/layerinfo.plist/), that contain:
+  * `com.schriftgestaltung.layerId` for hopefully helping exchange with Glyphs.app.
 * Manually managed Designspace `<rules>` for describing conditional (bracket) glyphs
 * Automatically managed Designspace instance and global libs, that contain:
-    * Instances:
-        * `com.schriftgestaltung.customParameters` for carrying build-relevant metadata like PANOSE values
-    * Global:
-        * `GSDimensionPlugin.Dimensions` for storing Glyphs.app's metadata for stem thicknesses
-        * `com.github.googlei18n.ufo2ft.featureWriters` for build-relevant options on how to generate OpenType layout data
-        * `public.skipExportGlyphs` for listing glyph names that should not be exported to the final fonts
+  * Instances:
+    * `com.schriftgestaltung.customParameters` for carrying build-relevant metadata like PANOSE values
+  * Global:
+    * `GSDimensionPlugin.Dimensions` for storing Glyphs.app's metadata for stem thicknesses
+    * `com.github.googlei18n.ufo2ft.featureWriters` for build-relevant options on how to generate OpenType layout data
+    * `public.skipExportGlyphs` for listing glyph names that should not be exported to the final fonts
+
+</details>
 
 ### Normalizing Sources and Updating GDEF
 
@@ -98,77 +105,6 @@ To make merges into the main source base as seamless as possible, vendors should
 * Provide a list of glyph names to import into the base sources ([see below](#getting-a-list-of-glyphs-and-kerning-groups)).
 * Notify us if they want to change something in the base sources with their sources, as we will screen the changes out otherwise. This includes the names or contents of existing kerning groups or OpenType classes.
 * Bundle up test documents for checking the correct shaping of text and application of features, to have tests for functionality after merging.
-
-Additionally, some conventions should be followed for kerning group names and feature code:
-
-* Below, script tags refer to codes in [OpenType Script Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/scripttags) and language tags to [OpenType Language System Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/languagetags).
-* Generally, all names should be lowercase (as seen in the examples), separated by underscores, except for what refers to glyph names. E.g. `Omega` should stay as is if it refers to the glyph name.
-* OpenType class naming uses the following format:
-    * A_B_C_D
-    * A - Context-dependent Script system tag - only for Non-Latin scripts
-    * B - Context-dependent language system tag
-    * C - Context-dependent feature tag
-    * D - Class Description string
-    * E.g.:
-        * C: `pnum`
-        * C_D: `pnum_currencies`
-        * C_D: `frac_precomposed`
-        * A_B_C: `cyrl_bgr_locl`
-        * A_C_D_D: `grek_calt_marks_context`
-
-    Lookup naming should use the following format:
-
-    * A_B_C_D
-    * A - Context-dependent Script system tag - only for Non-Latin scripts
-    * B - Context-dependent language system tag
-    * C - Feature tag
-    * D - Lookup description string
-    * E.g.:
-        * B_C_D_D: `rom_locl_cedilla_substitution`
-        * A_C_D_D: `grek_ccmp_recompose_dieresistonos`
-        * A_B_C_D: `cyrl_bgr_locl_alternates`
-        * C_D: `frac_precomposed`
-
-    In general:
-
-    * When a lookup/class is used by several scripts, list all scripts in the name.
-    * When a lookup/class is used by several languages, list all languages in the name.
-    * When a lookup/class is used in several features, list all feature tags in its name.
-    * Except if listing everything is too cumbersome and counterproductive, then drop that part of name but leave a comment instead, just above the lookup/class definition, to explain which scripts/languages/features are concerned
-* Kerning groups should contain the name of the script they pertain to. This avoids name clashes. The format is script_key_glyph_or_description, examples: `grek_Omega`, `armn_uc_topround_bottomstraight`, `thai_phoSamphao`.
-* Feature code should be organized so that:
-    * feature blocks and lookups are declared separately. This makes merging much easier.
-    * lookups should have descriptive names and should include, where it makes sense, the language and feature tag where they are used. Example: `nld_locl_ij_substitution` for a netherlandish lookup that replaces `i' j'` by `ij`. See https://docs.microsoft.com/en-us/typography/opentype/spec/languagetags for ISO 639 language tags.
-
-Feature file example:
-
-```
-languagesystem DFLT dflt;
-languagesystem latn dflt;
-languagesystem latn NLD;
-
-@pnum_fig_dflt = [zero one two three four five six seven eight nine];
-@pnum_fig_alt = [zero.alt one.alt two.alt three.alt four.alt five.alt six.alt seven.alt eight.alt nine.alt];
-
-lookup pnum_text {
-    sub @fig_dflt by @fig_alt;
-} pnum_text;
-
-lookup nld_locl_ij_substitution {
-    sub i' j' by ij;
-    sub I' J' by IJ;
-} nld_locl_ij_substitution;
-
-feature pnum {
-    lookup pnum_text;
-} pnum;
-
-feature locl {
-    script latn;
-    language NLD;
-    lookup nld_locl_ij_substitution;
-} locl;
-```
 
 #### Getting a List Of Glyphs and (Kerning) Groups
 
