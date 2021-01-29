@@ -12,11 +12,11 @@ This document details the source style guidelines for the Google Sans project.
 
 ### Script Tags
 
-"Script tags" in this document refer to the script tag strings defined in [OpenType Script Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/scripttags).
+"Script tags" refer to the script tag strings defined in [OpenType Script Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/scripttags).
 
 ### Language Tags
 
-"Language tags" in this document refer to the language tag strings defined in [OpenType Language System Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/languagetags).
+"Language tags" refer to the language tag strings defined in [OpenType Language System Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/languagetags).
 
 ## Style
 
