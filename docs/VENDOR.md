@@ -1,46 +1,16 @@
 # Google Sans Vendor Documentation
 
- These docs summarize how vendors contribute changes to the Google Sans project.  Detailed [maintainer documentation](MAINTAINER.md) is available if you would like to review additional details about build dependency installation, virtual environment management, and the fontmake compiler based build approach for local font testing.
+This document summarizes how vendors contribute changes to the Google Sans project.  Detailed [maintainer documentation](MAINTAINER.md) is available if you would like to review additional details about build dependency installation, virtual environment management, and the fontmake compiler based build approach.
 
 ## Source Format
 
-The Google Sans project uses [Unified Font Object](https://unifiedfontobject.org/) (UFO) version 3 formatted source files to build production fonts. Vendors may develop in glyphs format version 2 or UFO format version 3 source files.  Scripts are provided in this repository to facilitate transformations between glyphs and UFO source file formats.
+The Google Sans project uses [Unified Font Object](https://unifiedfontobject.org/) (UFO) version 3 formatted source files to build production fonts. Vendors may develop in glyphs format version 2 or UFO format version 3 source files. Scripts are provided in this repository to facilitate transformations between glyphs and UFO source file formats.
 
 ## UFO Source Conventions
 
-The font sources that we receive from vendors are cleaned with custom scripts and stored as Designspaces and UFOs. The primary objective of the upstream UFO sources is to build the production fonts and serve as a basis for future updates.
+The font sources that we receive from vendors are cleaned with custom scripts and stored as Designspaces and UFOs to create our production source files. The primary objective of the upstream UFO sources is to build the production fonts and serve as a basis for future development of the type software.
 
-<details>
-<summary><strong>Source Normalization Details (click to open)</strong></summary>
-
-The sources are normalized to be formatted in the way [fontTools.ufoLib](https://fonttools.readthedocs.io/en/latest/ufoLib/) formats sources and contain only:
-
-* Foreground, intermediate (brace) and conditional (bracket) glyphs, no draft or background layers
-  * whose metadata (lib keys) contains only semantically relevant data like Glyphs.app's metrics keys, but not color marks.
-* Groups and kerning
-* Manually merged and arranged features
-* Manually maintained font info data
-* Automatically managed UFO [lib.plist files](https://unifiedfontobject.org/versions/ufo3/lib.plist/), that contain:
-  * `public.glyphOrder` for determining the order of glyphs in the final fonts
-  * `public.postscriptNames` for determining the production glyph names in the final fonts
-  * `public.skipExportGlyphs` for listing glyph names that should not be exported to the final fonts
-  * `com.github.googlei18n.ufo2ft.filters` for listing filters and their options for compile-time font processing
-    * `propagateAnchors`: inherits anchors of base glyphs to their composites automatically to help with building the `mark` and `mkmk` features.
-  * `com.schriftgestaltung.customParameter.GSFont.Enforce Compatibility Check` for telling Glyphs.app to always run compatibility checks, not relevant for the build
-  * `com.schriftgestaltung.customParameter.GSFont.disablesLastChange` for telling Glyphs.app to not put "last changed" markers into glyphs, which we don't need in the UFO format
-  * `com.schriftgestaltung.fontMasterID` for making it easier to match vendor Glyphs.app files to be imported to the target UFOs
-* Automatically managed UFO layer [layerinfo.plist files](https://unifiedfontobject.org/versions/ufo3/glyphs/layerinfo.plist/), that contain:
-  * `com.schriftgestaltung.layerId` for hopefully helping exchange with Glyphs.app.
-* Manually managed Designspace `<rules>` for describing conditional (bracket) glyphs
-* Automatically managed Designspace instance and global libs, that contain:
-  * Instances:
-    * `com.schriftgestaltung.customParameters` for carrying build-relevant metadata like PANOSE values
-  * Global:
-    * `GSDimensionPlugin.Dimensions` for storing Glyphs.app's metadata for stem thicknesses
-    * `com.github.googlei18n.ufo2ft.featureWriters` for build-relevant options on how to generate OpenType layout data
-    * `public.skipExportGlyphs` for listing glyph names that should not be exported to the final fonts
-
-</details>
+Please refer to the [Source Normalization Details section of the MAINTAINER.md document](MAINTAINER.md#source-conventions) for additional information about the source normalization process.
 
 ## Font Format
 
@@ -49,6 +19,10 @@ We compile to OpenType variable and static instance fonts with quadratic outline
 ## Hinting
 
 We do not use TrueType instruction sets.
+
+## Style
+
+Please refer to [STYLE.md](STYLE.md) for source style guidelines.  The document includes information on how to format your source files in order to contribute to this project.
 
 ## Requirements for Vendors
 
