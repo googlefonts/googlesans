@@ -12,10 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import json
 from pathlib import Path
+from typing import Any, Dict, List, Optional
 
-from fontbakery.checkrunner import Section, PASS, FAIL, SKIP
+import uharfbuzz as hb
 from fontbakery.callable import check, condition
+from fontbakery.checkrunner import ERROR, FAIL, PASS, Section
 from fontbakery.fonts_profile import profile_factory
 
 profile_imports = ()
@@ -28,7 +31,7 @@ GOOGLESANS_PROFILE_CHECKS = [
     "com.google.fonts/check/googlesans/features/staticitalics",
     "com.google.fonts/check/googlesans/features/variableuprights",
     "com.google.fonts/check/googlesans/features/variableitalics",
-    "com.google.fonts/check/googlesans/features/armenian/min_opsz",
+    "com.google.fonts/check/googlesans/features/regression",
 ]
 
 STATIC_UPRIGHT_FEA = [
@@ -324,53 +327,76 @@ def com_google_fonts_check_googlesans_features_variable_italics(ttFont):
         )
 
 
-@check(id="com.google.fonts/check/googlesans/features/armenian/min_opsz",
-    conditions=["is_not_italic", "is_not_variable_font"],
-)
-def com_google_fonts_check_googlesans_features_armenian_min_opsz(ttFont):
+@check(id="com.google.fonts/check/googlesans/features/regression")
+def com_google_fonts_check_googlesans_features_regression(ttFont):
     """But does it shape?"""
     tt = ttFont
-    
-    # if not tt.reader.file.name.endswith("GoogleSansText-Regular.ttf"):
-    #     yield SKIP, "..."
-    #     return
-    
-    import json
-    armn_shaping_basedir = Path("qa", "shaping", "armenian")
-    for input_file in armn_shaping_basedir.glob("*.txt"):
-        shaped_text = shape_text(tt.reader.file.name, input_file, {"ccmp": True})
-        shaped_text_expected = json.loads(input_file.with_suffix(".json").read_text())
-        if shaped_text == shaped_text_expected:
-            yield PASS, "..."
+    filename = Path(tt.reader.file.name)
+
+    shaping_basedir = Path("qa", "shaping")
+    for shaping_file in shaping_basedir.glob("*.json"):
+        shaping_input = json.loads(shaping_file.read_text())
+
+        try:
+            shaping_texts = shaping_input["text"]
+            shaping_features = shaping_input["features"]
+        except KeyError:
+            yield ERROR, (
+                f"{shaping_file}: Must have a 'text: list[str]' and "
+                "'features: dict[str, bool]' key."
+            )
+            return
+        try:
+            shaping_texts_expected = shaping_input[filename.name]
+        except KeyError:
+            yield ERROR, f"{shaping_file}: No entry found for {filename.name}"
+            return
+
+        if "fvar" in tt:
+            fvar = tt["fvar"]
+            shaped_texts = {}
+            for instance in fvar.instances:
+                coordinate_str = ",".join(
+                    f"{k}={v}" for k, v in instance.coordinates.items()
+                )
+                shaped_texts[coordinate_str] = [
+                    shape_text(filename, text, shaping_features, instance.coordinates)
+                    for text in shaping_texts
+                ]
         else:
-            yield FAIL, "..."
+            shaped_texts = [
+                shape_text(filename, text, shaping_features) for text in shaping_texts
+            ]
+
+        if shaped_texts == shaping_texts_expected:
+            yield PASS, "No regression detected"
+        else:
+            yield FAIL, f"Expected and actual shaping not matching for {shaping_file}."
 
 
 profile.auto_register(globals())
 profile.test_expected_checks(GOOGLESANS_PROFILE_CHECKS, exclusive=True)
 
-from typing import Any, Dict, List
-
-import uharfbuzz as hb
-
 
 def shape_text(
-    font_path: str, text_path: str, features: Dict[str, bool]
+    font_path: str,
+    text: str,
+    features: Dict[str, bool],
+    variations: Optional[Dict[str, float]] = None,
 ) -> List[Dict[str, Any]]:
     """Return Harfbuzz-shaped text from input for font.
-    
-    NOTE: copy-pasta from harfbuzz.py because fontbakery doesn't knwo how to import it.
+
+    NOTE: copy-pasta from harfbuzz.py because fontbakery doesn't know how to import it.
     """
 
     with open(font_path, "rb") as fontfile:
         fontdata = fontfile.read()
 
-    with open(text_path, "r") as textfile:
-        text = textfile.read()
-
     face = hb.Face(fontdata)
     font = hb.Font(face)
     upem = face.upem
+    if variations is not None:
+        font.set_variations(variations)
 
     font.scale = (upem, upem)
     hb.ot_font_set_funcs(font)
