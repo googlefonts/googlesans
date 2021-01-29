@@ -184,6 +184,11 @@ for import_source in designspace_import.sources:
     # Import kerning where either side of a pair is an imported glyph or group:
     for key, value in import_font.kerning.items():
         first, second = key
+        if (first not in import_font and first not in import_font.groups) or (
+            second not in import_font and second not in import_font.groups
+        ):
+            # Skip spurious pairs.
+            continue
         if (
             first in import_groups
             or first in import_glyphs
