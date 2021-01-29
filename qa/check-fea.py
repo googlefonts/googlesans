@@ -341,7 +341,7 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
             shaping_texts = shaping_input["text"]
             shaping_features = shaping_input["features"]
         except KeyError:
-            yield ERROR, (
+            yield FAIL, (
                 f"{shaping_file}: Must have a 'text: list[str]' and "
                 "'features: dict[str, bool]' key."
             )
@@ -349,7 +349,7 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
         try:
             shaping_texts_expected = shaping_input[filename.name]
         except KeyError:
-            yield ERROR, f"{shaping_file}: No entry found for {filename.name}"
+            yield FAIL, f"{shaping_file}: No entry found for {filename.name}"
             return
 
         if "fvar" in tt:
