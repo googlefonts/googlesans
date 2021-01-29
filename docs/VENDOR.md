@@ -9,8 +9,10 @@ The Google Sans project uses [Unified Font Object](https://unifiedfontobject.org
 ## UFO Source Conventions
 
 The font sources we receive from vendors are scrubbed with custom scripts and stored as Designspaces and UFOs. The primary objective of the upstream UFO sources is to build the production fonts and serve as a base for vendors to split off from to make project changes.
+<details>
+<summary><strong>Source Normalization Details (click to open)</strong></summary>
 
-Specifically, the sources are normalized to be formatted in the way ufoLib formats sources and contain only:
+The sources are normalized to be formatted in the way [fontTools.ufoLib](https://fonttools.readthedocs.io/en/latest/ufoLib/) formats sources and contain only:
 
 * Foreground, intermediate (brace) and conditional (bracket) glyphs, no draft or background layers
   * whose metadata (lib keys) contains only semantically relevant data like Glyphs.app's metrics keys, but not color marks.
@@ -36,6 +38,8 @@ Specifically, the sources are normalized to be formatted in the way ufoLib forma
     * `GSDimensionPlugin.Dimensions` for storing Glyphs.app's metadata for stem thicknesses
     * `com.github.googlei18n.ufo2ft.featureWriters` for build-relevant options on how to generate OpenType layout data
     * `public.skipExportGlyphs` for listing glyph names that should not be exported to the final fonts
+
+</details>
 
 ## Font Format
 
