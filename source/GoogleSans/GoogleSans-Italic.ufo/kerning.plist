@@ -407,6 +407,18 @@
       <integer>-30</integer>
       <key>public.kern2.Y</key>
       <integer>-40</integer>
+      <key>public.kern2.arm_uc_Jheh</key>
+      <integer>-30</integer>
+      <key>public.kern2.arm_uc_diagonal</key>
+      <integer>-50</integer>
+      <key>public.kern2.arm_uc_topBar_bottomRound</key>
+      <integer>-80</integer>
+      <key>public.kern2.arm_uc_topRound_bottomRaised</key>
+      <integer>20</integer>
+      <key>public.kern2.arm_uc_topRound_bottomStraight_middleBar</key>
+      <integer>-40</integer>
+      <key>public.kern2.arm_uc_topStraight_bottomRaised</key>
+      <integer>-10</integer>
       <key>public.kern2.cyr_D</key>
       <integer>-50</integer>
       <key>public.kern2.cyr_Y</key>
@@ -5373,7 +5385,7 @@
     <key>public.kern1.arm_uc_Co.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>-50</integer>
+      <integer>-80</integer>
       <key>public.kern2.arm_uc_Feh.sc</key>
       <integer>10</integer>
       <key>public.kern2.arm_uc_Ja.sc</key>
@@ -5399,6 +5411,8 @@
     </dict>
     <key>public.kern1.arm_uc_Feh</key>
     <dict>
+      <key>public.kern2.arm_period.case</key>
+      <integer>10</integer>
       <key>public.kern2.arm_punc_comma</key>
       <integer>-80</integer>
       <key>public.kern2.arm_uc_Co</key>
@@ -5411,11 +5425,13 @@
       <integer>10</integer>
       <key>public.kern2.arm_uc_topRound_bottomRound</key>
       <integer>20</integer>
+      <key>public.kern2.colon</key>
+      <integer>10</integer>
     </dict>
     <key>public.kern1.arm_uc_Feh.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>-80</integer>
+      <integer>-100</integer>
       <key>public.kern2.arm_uc_Co.sc</key>
       <integer>20</integer>
       <key>public.kern2.arm_uc_Feh.sc</key>
@@ -5456,6 +5472,8 @@
     </dict>
     <key>public.kern1.arm_uc_Keh.sc</key>
     <dict>
+      <key>public.kern2.arm_punc_comma</key>
+      <integer>-80</integer>
       <key>public.kern2.arm_uc_bottomRound_topDiagonal.sc</key>
       <integer>10</integer>
       <key>public.kern2.arm_uc_topBar_bottomRound.sc</key>
@@ -5537,7 +5555,7 @@
     <key>public.kern1.arm_uc_Piwr.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>-50</integer>
+      <integer>-80</integer>
       <key>public.kern2.arm_uc_bottomRound_topBar.sc</key>
       <integer>15</integer>
       <key>public.kern2.arm_uc_bottomRound_topDiagonal.sc</key>
@@ -5615,7 +5633,7 @@
     <key>public.kern1.arm_uc_Tiwn.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>0</integer>
+      <integer>-50</integer>
       <key>public.kern2.arm_uc_Peh.sc</key>
       <integer>-30</integer>
       <key>public.kern2.arm_uc_bottomRound_topDiagonal.sc</key>
@@ -5632,12 +5650,16 @@
       <integer>-10</integer>
       <key>public.kern2.arm_uc_topStraight_bottomRound.sc</key>
       <integer>-10</integer>
+      <key>public.kern2.dash</key>
+      <integer>-20</integer>
     </dict>
     <key>public.kern1.arm_uc_Za_Jheh</key>
     <dict>
       <key>asterisk</key>
       <integer>20</integer>
       <key>bullet</key>
+      <integer>-20</integer>
+      <key>bullet.cap</key>
       <integer>-20</integer>
       <key>comma</key>
       <integer>0</integer>
@@ -5717,7 +5739,7 @@
     <key>public.kern1.arm_uc_Za_Jheh.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>20</integer>
+      <integer>-70</integer>
       <key>public.kern2.arm_uc_Feh.sc</key>
       <integer>15</integer>
       <key>public.kern2.arm_uc_Ja.sc</key>
@@ -5750,6 +5772,8 @@
       <integer>0</integer>
       <key>public.kern2.colon</key>
       <integer>20</integer>
+      <key>public.kern2.dash</key>
+      <integer>10</integer>
       <key>public.kern2.quoteright</key>
       <integer>20</integer>
     </dict>
@@ -5757,6 +5781,10 @@
     <dict>
       <key>asterisk</key>
       <integer>30</integer>
+      <key>bullet</key>
+      <integer>0</integer>
+      <key>bullet.cap</key>
+      <integer>0</integer>
       <key>minus</key>
       <integer>0</integer>
       <key>plus</key>
@@ -5856,6 +5884,8 @@
       <integer>20</integer>
       <key>public.kern2.arm_uc_topStraight_bottomRound.sc</key>
       <integer>20</integer>
+      <key>public.kern2.dash</key>
+      <integer>0</integer>
       <key>public.kern2.quoteright</key>
       <integer>20</integer>
     </dict>
@@ -5873,6 +5903,8 @@
       <integer>30</integer>
       <key>public.kern2.arm_lc_yi</key>
       <integer>-15</integer>
+      <key>public.kern2.arm_period.case</key>
+      <integer>10</integer>
       <key>public.kern2.arm_punc_comma</key>
       <integer>-20</integer>
       <key>public.kern2.arm_uc_Co</key>
@@ -5910,7 +5942,7 @@
       <key>public.kern2.arm_uc_topStraight_bottomRound</key>
       <integer>15</integer>
       <key>public.kern2.colon</key>
-      <integer>0</integer>
+      <integer>20</integer>
       <key>public.kern2.dash</key>
       <integer>30</integer>
       <key>public.kern2.dash.cap</key>
@@ -5927,7 +5959,7 @@
     <key>public.kern1.arm_uc_middleBar_topRound_bottomRound.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>-20</integer>
+      <integer>-100</integer>
       <key>public.kern2.arm_uc_Co.sc</key>
       <integer>10</integer>
       <key>public.kern2.arm_uc_Feh.sc</key>
@@ -5964,6 +5996,8 @@
       <integer>15</integer>
       <key>public.kern2.colon</key>
       <integer>0</integer>
+      <key>public.kern2.dash</key>
+      <integer>30</integer>
       <key>public.kern2.quoteright</key>
       <integer>-20</integer>
     </dict>
@@ -6041,7 +6075,7 @@
     <key>public.kern1.arm_uc_middleBar_topRound_bottomStraight.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>-50</integer>
+      <integer>-150</integer>
       <key>public.kern2.arm_uc_Feh.sc</key>
       <integer>20</integer>
       <key>public.kern2.arm_uc_Ja.sc</key>
@@ -6080,6 +6114,8 @@
       <integer>-10</integer>
       <key>public.kern2.arm_uc_topStraight_bottomRound.sc</key>
       <integer>10</integer>
+      <key>public.kern2.dash</key>
+      <integer>-10</integer>
       <key>public.kern2.quoteright</key>
       <integer>-80</integer>
     </dict>
@@ -6101,6 +6137,8 @@
       <integer>-10</integer>
       <key>public.kern2.arm_lc_topStraight_bottomRound_ascender</key>
       <integer>40</integer>
+      <key>public.kern2.arm_period.case</key>
+      <integer>10</integer>
       <key>public.kern2.arm_punc_comma</key>
       <integer>0</integer>
       <key>public.kern2.arm_uc_Peh</key>
@@ -6119,6 +6157,8 @@
       <integer>20</integer>
       <key>public.kern2.arm_uc_topStraight_bottomRound</key>
       <integer>15</integer>
+      <key>public.kern2.colon</key>
+      <integer>10</integer>
       <key>public.kern2.dash</key>
       <integer>-20</integer>
       <key>public.kern2.dash.cap</key>
@@ -6133,7 +6173,7 @@
     <key>public.kern1.arm_uc_middleBar_topStraight_bottomRound.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>0</integer>
+      <integer>-20</integer>
       <key>public.kern2.arm_uc_Peh.sc</key>
       <integer>30</integer>
       <key>public.kern2.arm_uc_bottomRound_topDiagonal.sc</key>
@@ -6150,6 +6190,10 @@
       <integer>20</integer>
       <key>public.kern2.arm_uc_topStraight_bottomRound.sc</key>
       <integer>15</integer>
+      <key>public.kern2.colon</key>
+      <integer>20</integer>
+      <key>public.kern2.dash</key>
+      <integer>20</integer>
       <key>public.kern2.quoteright</key>
       <integer>20</integer>
     </dict>
@@ -6158,6 +6202,8 @@
       <key>asterisk</key>
       <integer>-80</integer>
       <key>bullet</key>
+      <integer>-70</integer>
+      <key>bullet.cap</key>
       <integer>-70</integer>
       <key>comma</key>
       <integer>30</integer>
@@ -6189,6 +6235,8 @@
       <integer>-25</integer>
       <key>public.kern2.arm_lc_yi</key>
       <integer>-10</integer>
+      <key>public.kern2.arm_period.case</key>
+      <integer>-30</integer>
       <key>public.kern2.arm_punc_comma</key>
       <integer>-30</integer>
       <key>public.kern2.arm_uc_Feh</key>
@@ -6227,6 +6275,8 @@
       <integer>-70</integer>
       <key>public.kern2.arm_uc_topStraight_bottomRound</key>
       <integer>-30</integer>
+      <key>public.kern2.colon</key>
+      <integer>0</integer>
       <key>public.kern2.dash</key>
       <integer>-90</integer>
       <key>public.kern2.dash.cap</key>
@@ -6286,6 +6336,10 @@
       <integer>-70</integer>
       <key>public.kern2.arm_uc_topStraight_bottomRound.sc</key>
       <integer>-30</integer>
+      <key>public.kern2.colon</key>
+      <integer>0</integer>
+      <key>public.kern2.dash</key>
+      <integer>-70</integer>
       <key>public.kern2.quoteright</key>
       <integer>-50</integer>
     </dict>
@@ -6294,6 +6348,8 @@
       <key>asterisk</key>
       <integer>-30</integer>
       <key>bullet</key>
+      <integer>-10</integer>
+      <key>bullet.cap</key>
       <integer>-10</integer>
       <key>comma</key>
       <integer>30</integer>
@@ -6364,7 +6420,7 @@
       <key>public.kern2.dash</key>
       <integer>-50</integer>
       <key>public.kern2.dash.cap</key>
-      <integer>-120</integer>
+      <integer>-50</integer>
       <key>public.kern2.question</key>
       <integer>-60</integer>
       <key>public.kern2.quoteright</key>
@@ -6414,12 +6470,16 @@
       <integer>-70</integer>
       <key>public.kern2.arm_uc_topStraight_bottomRound.sc</key>
       <integer>-45</integer>
+      <key>public.kern2.dash</key>
+      <integer>-50</integer>
       <key>public.kern2.quoteright</key>
       <integer>-60</integer>
     </dict>
     <key>public.kern1.arm_uc_topBar_bottomDiagonal</key>
     <dict>
       <key>bullet</key>
+      <integer>-40</integer>
+      <key>bullet.cap</key>
       <integer>-40</integer>
       <key>comma</key>
       <integer>50</integer>
@@ -6441,18 +6501,26 @@
       <integer>10</integer>
       <key>public.kern2.arm_lc_yi</key>
       <integer>20</integer>
+      <key>public.kern2.arm_period.case</key>
+      <integer>-10</integer>
       <key>public.kern2.arm_uc_Jheh</key>
       <integer>30</integer>
       <key>public.kern2.arm_uc_Peh</key>
-      <integer>-60</integer>
+      <integer>-50</integer>
+      <key>public.kern2.arm_uc_Piwr</key>
+      <integer>-30</integer>
       <key>public.kern2.arm_uc_Tiwn</key>
       <integer>20</integer>
       <key>public.kern2.arm_uc_Za</key>
       <integer>30</integer>
       <key>public.kern2.arm_uc_bottomRound_topDiagonal</key>
-      <integer>-5</integer>
+      <integer>-35</integer>
+      <key>public.kern2.arm_uc_diagonal</key>
+      <integer>40</integer>
       <key>public.kern2.arm_uc_straight</key>
       <integer>10</integer>
+      <key>public.kern2.arm_uc_topBar_bottomRound</key>
+      <integer>-30</integer>
       <key>public.kern2.arm_uc_topLower_bottomRaised</key>
       <integer>-30</integer>
       <key>public.kern2.arm_uc_topRound_bottomRaised</key>
@@ -6470,7 +6538,7 @@
       <key>public.kern2.bracketright</key>
       <integer>50</integer>
       <key>public.kern2.colon</key>
-      <integer>50</integer>
+      <integer>20</integer>
       <key>public.kern2.dash</key>
       <integer>-40</integer>
       <key>public.kern2.dash.cap</key>
@@ -6494,14 +6562,20 @@
       <integer>30</integer>
       <key>public.kern2.arm_uc_Peh.sc</key>
       <integer>-60</integer>
+      <key>public.kern2.arm_uc_Piwr.sc</key>
+      <integer>-20</integer>
       <key>public.kern2.arm_uc_Tiwn.sc</key>
       <integer>20</integer>
       <key>public.kern2.arm_uc_Za.sc</key>
       <integer>30</integer>
       <key>public.kern2.arm_uc_bottomRound_topDiagonal.sc</key>
       <integer>-5</integer>
+      <key>public.kern2.arm_uc_diagonal.sc</key>
+      <integer>30</integer>
       <key>public.kern2.arm_uc_straight.sc</key>
       <integer>10</integer>
+      <key>public.kern2.arm_uc_topBar_bottomRound.sc</key>
+      <integer>-30</integer>
       <key>public.kern2.arm_uc_topLower_bottomRaised.sc</key>
       <integer>-30</integer>
       <key>public.kern2.arm_uc_topRound_bottomRaised.sc</key>
@@ -6517,13 +6591,17 @@
       <key>public.kern2.arm_uc_topStraight_bottomRound.sc</key>
       <integer>-20</integer>
       <key>public.kern2.colon</key>
-      <integer>50</integer>
+      <integer>20</integer>
+      <key>public.kern2.dash</key>
+      <integer>-40</integer>
       <key>public.kern2.quoteright</key>
       <integer>0</integer>
     </dict>
     <key>public.kern1.arm_uc_topBar_bottomRound</key>
     <dict>
       <key>bullet</key>
+      <integer>-80</integer>
+      <key>bullet.cap</key>
       <integer>-80</integer>
       <key>minus</key>
       <integer>-60</integer>
@@ -6600,7 +6678,7 @@
       <key>public.kern2.bracketright</key>
       <integer>30</integer>
       <key>public.kern2.colon</key>
-      <integer>-100</integer>
+      <integer>-80</integer>
       <key>public.kern2.dash</key>
       <integer>-80</integer>
       <key>public.kern2.dash.cap</key>
@@ -6657,13 +6735,17 @@
       <key>public.kern2.arm_uc_topRound_bottomStraight_middleBar.sc</key>
       <integer>-65</integer>
       <key>public.kern2.colon</key>
-      <integer>-100</integer>
+      <integer>-50</integer>
+      <key>public.kern2.dash</key>
+      <integer>-70</integer>
       <key>public.kern2.quoteright</key>
       <integer>20</integer>
     </dict>
     <key>public.kern1.arm_uc_topDiagonal_baselineBar</key>
     <dict>
       <key>bullet</key>
+      <integer>-50</integer>
+      <key>bullet.cap</key>
       <integer>-50</integer>
       <key>comma</key>
       <integer>40</integer>
@@ -6732,6 +6814,8 @@
     </dict>
     <key>public.kern1.arm_uc_topDiagonal_baselineBar.sc</key>
     <dict>
+      <key>public.kern2.arm_punc_comma</key>
+      <integer>-60</integer>
       <key>public.kern2.arm_uc_Feh.sc</key>
       <integer>0</integer>
       <key>public.kern2.arm_uc_Ja.sc</key>
@@ -6760,6 +6844,8 @@
       <integer>10</integer>
       <key>public.kern2.arm_uc_topStraight_bottomRound.sc</key>
       <integer>-20</integer>
+      <key>public.kern2.dash</key>
+      <integer>-50</integer>
     </dict>
     <key>public.kern1.arm_uc_topDiagonal_bottomRound</key>
     <dict>
@@ -6791,6 +6877,8 @@
       <integer>0</integer>
       <key>public.kern2.arm_lc_yi</key>
       <integer>-20</integer>
+      <key>public.kern2.arm_period.case</key>
+      <integer>10</integer>
       <key>public.kern2.arm_punc_comma</key>
       <integer>0</integer>
       <key>public.kern2.arm_uc_Peh</key>
@@ -6811,6 +6899,10 @@
       <integer>20</integer>
       <key>public.kern2.bracketright</key>
       <integer>20</integer>
+      <key>public.kern2.dash</key>
+      <integer>-10</integer>
+      <key>public.kern2.dash.cap</key>
+      <integer>0</integer>
       <key>public.kern2.question</key>
       <integer>-10</integer>
       <key>public.kern2.quoteright</key>
@@ -6819,7 +6911,7 @@
     <key>public.kern1.arm_uc_topDiagonal_bottomRound.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>0</integer>
+      <integer>-70</integer>
       <key>public.kern2.arm_uc_Peh.sc</key>
       <integer>10</integer>
       <key>public.kern2.arm_uc_Tiwn.sc</key>
@@ -6842,7 +6934,9 @@
     <key>public.kern1.arm_uc_topLower_bottomRaised</key>
     <dict>
       <key>bullet</key>
-      <integer>30</integer>
+      <integer>20</integer>
+      <key>bullet.cap</key>
+      <integer>20</integer>
       <key>minus</key>
       <integer>20</integer>
       <key>plus</key>
@@ -6877,6 +6971,8 @@
       <integer>15</integer>
       <key>public.kern2.arm_lc_topStraight_bottomRound_xheight</key>
       <integer>15</integer>
+      <key>public.kern2.arm_period.case</key>
+      <integer>10</integer>
       <key>public.kern2.arm_punc_comma</key>
       <integer>-30</integer>
       <key>public.kern2.arm_uc_Co</key>
@@ -6924,7 +7020,7 @@
       <key>public.kern2.arm_uc_topStraight_bottomRound</key>
       <integer>10</integer>
       <key>public.kern2.colon</key>
-      <integer>0</integer>
+      <integer>10</integer>
       <key>public.kern2.dash</key>
       <integer>20</integer>
       <key>public.kern2.dash.cap</key>
@@ -6985,7 +7081,9 @@
       <key>public.kern2.arm_uc_topStraight_bottomRound.sc</key>
       <integer>10</integer>
       <key>public.kern2.colon</key>
-      <integer>0</integer>
+      <integer>20</integer>
+      <key>public.kern2.dash</key>
+      <integer>20</integer>
       <key>public.kern2.quoteright</key>
       <integer>-20</integer>
     </dict>
@@ -6994,6 +7092,8 @@
       <key>asterisk</key>
       <integer>-40</integer>
       <key>bullet</key>
+      <integer>30</integer>
+      <key>bullet.cap</key>
       <integer>30</integer>
       <key>minus</key>
       <integer>10</integer>
@@ -7029,6 +7129,8 @@
       <integer>15</integer>
       <key>public.kern2.arm_lc_topStraight_bottomRound_xheight</key>
       <integer>15</integer>
+      <key>public.kern2.arm_period.case</key>
+      <integer>20</integer>
       <key>public.kern2.arm_punc_comma</key>
       <integer>-50</integer>
       <key>public.kern2.arm_uc_Co</key>
@@ -7078,7 +7180,7 @@
       <key>public.kern2.arm_uc_topStraight_bottomRound</key>
       <integer>10</integer>
       <key>public.kern2.colon</key>
-      <integer>30</integer>
+      <integer>20</integer>
       <key>public.kern2.dash</key>
       <integer>10</integer>
       <key>public.kern2.dash.cap</key>
@@ -7147,7 +7249,9 @@
       <key>public.kern2.arm_uc_topStraight_bottomRound.sc</key>
       <integer>10</integer>
       <key>public.kern2.colon</key>
-      <integer>30</integer>
+      <integer>20</integer>
+      <key>public.kern2.dash</key>
+      <integer>20</integer>
       <key>public.kern2.quoteright</key>
       <integer>-80</integer>
     </dict>
@@ -7221,7 +7325,7 @@
     <key>public.kern1.arm_uc_topLower_bottomStraight.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>-20</integer>
+      <integer>-70</integer>
       <key>public.kern2.arm_uc_Co.sc</key>
       <integer>10</integer>
       <key>public.kern2.arm_uc_Feh.sc</key>
@@ -7356,6 +7460,8 @@
       <integer>20</integer>
       <key>public.kern2.arm_uc_topRound_bottomStraight_middleBar.sc</key>
       <integer>-30</integer>
+      <key>public.kern2.dash</key>
+      <integer>20</integer>
       <key>public.kern2.quoteright</key>
       <integer>15</integer>
     </dict>
@@ -7470,6 +7576,8 @@
       <integer>20</integer>
       <key>public.kern2.arm_uc_topRound_bottomStraight_middleBar.sc</key>
       <integer>-20</integer>
+      <key>public.kern2.dash</key>
+      <integer>20</integer>
       <key>public.kern2.quoteright</key>
       <integer>-20</integer>
     </dict>
@@ -7553,7 +7661,7 @@
     <key>public.kern1.arm_uc_topLower_middleBar_bottomRound.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>0</integer>
+      <integer>-50</integer>
       <key>public.kern2.arm_uc_Co.sc</key>
       <integer>10</integer>
       <key>public.kern2.arm_uc_Feh.sc</key>
@@ -7601,6 +7709,8 @@
       <integer>-80</integer>
       <key>bullet</key>
       <integer>-70</integer>
+      <key>bullet.cap</key>
+      <integer>-70</integer>
       <key>comma</key>
       <integer>30</integer>
       <key>comma.BRACKET.18</key>
@@ -7627,6 +7737,8 @@
       <integer>-25</integer>
       <key>public.kern2.arm_lc_yi</key>
       <integer>-10</integer>
+      <key>public.kern2.arm_period.case</key>
+      <integer>-30</integer>
       <key>public.kern2.arm_punc_comma</key>
       <integer>-80</integer>
       <key>public.kern2.arm_uc_Feh</key>
@@ -7724,6 +7836,8 @@
       <integer>-70</integer>
       <key>public.kern2.arm_uc_topStraight_bottomRound.sc</key>
       <integer>-30</integer>
+      <key>public.kern2.dash</key>
+      <integer>-80</integer>
       <key>public.kern2.quoteright</key>
       <integer>-80</integer>
     </dict>
@@ -7821,7 +7935,7 @@
     <key>public.kern1.arm_uc_topRound_bottomDiagonal.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>20</integer>
+      <integer>-100</integer>
       <key>public.kern2.arm_uc_Co.sc</key>
       <integer>-10</integer>
       <key>public.kern2.arm_uc_Feh.sc</key>
@@ -7858,6 +7972,8 @@
       <integer>-5</integer>
       <key>public.kern2.colon</key>
       <integer>0</integer>
+      <key>public.kern2.dash</key>
+      <integer>-5</integer>
       <key>public.kern2.quoteright</key>
       <integer>0</integer>
     </dict>
@@ -7866,6 +7982,8 @@
       <key>asterisk</key>
       <integer>20</integer>
       <key>bullet</key>
+      <integer>20</integer>
+      <key>bullet.cap</key>
       <integer>20</integer>
       <key>minus</key>
       <integer>20</integer>
@@ -7886,6 +8004,8 @@
       <key>public.kern2.arm_lc_topStraight_bottomRound_ascender</key>
       <integer>50</integer>
       <key>public.kern2.arm_lc_topStraight_bottomRound_xheight</key>
+      <integer>20</integer>
+      <key>public.kern2.arm_period.case</key>
       <integer>20</integer>
       <key>public.kern2.arm_punc_comma</key>
       <integer>20</integer>
@@ -7949,7 +8069,7 @@
     <key>public.kern1.arm_uc_topRound_bottomRaised.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>20</integer>
+      <integer>0</integer>
       <key>public.kern2.arm_uc_Co.sc</key>
       <integer>20</integer>
       <key>public.kern2.arm_uc_Feh.sc</key>
@@ -7997,6 +8117,8 @@
       <key>public.kern2.arm_uc_topStraight_bottomRound.sc</key>
       <integer>10</integer>
       <key>public.kern2.colon</key>
+      <integer>20</integer>
+      <key>public.kern2.dash</key>
       <integer>20</integer>
       <key>public.kern2.quoteright</key>
       <integer>20</integer>
@@ -8052,6 +8174,8 @@
       <integer>-30</integer>
       <key>public.kern2.arm_uc_topRound_bottomRaised.sc</key>
       <integer>10</integer>
+      <key>public.kern2.dash</key>
+      <integer>0</integer>
       <key>public.kern2.quoteright</key>
       <integer>5</integer>
     </dict>
@@ -8109,6 +8233,8 @@
       <integer>-25</integer>
       <key>public.kern2.bracketright</key>
       <integer>60</integer>
+      <key>public.kern2.dash.cap</key>
+      <integer>10</integer>
       <key>public.kern2.period</key>
       <integer>-20</integer>
       <key>public.kern2.question</key>
@@ -8148,6 +8274,8 @@
       <integer>10</integer>
       <key>public.kern2.arm_uc_topRound_bottomStraight_middleBar.sc</key>
       <integer>-25</integer>
+      <key>public.kern2.dash</key>
+      <integer>10</integer>
       <key>public.kern2.quoteright</key>
       <integer>-10</integer>
     </dict>
@@ -8375,7 +8503,7 @@
     <key>public.kern1.arm_uc_topRound_middleBar_bottomRaised.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>20</integer>
+      <integer>-50</integer>
       <key>public.kern2.arm_uc_Co.sc</key>
       <integer>10</integer>
       <key>public.kern2.arm_uc_Ja.sc</key>
@@ -8414,6 +8542,8 @@
       <key>asterisk</key>
       <integer>-30</integer>
       <key>bullet</key>
+      <integer>-30</integer>
+      <key>bullet.cap</key>
       <integer>-30</integer>
       <key>comma</key>
       <integer>50</integer>
@@ -8496,7 +8626,7 @@
       <key>public.kern2.bracketright.cap</key>
       <integer>30</integer>
       <key>public.kern2.dash</key>
-      <integer>-30</integer>
+      <integer>-40</integer>
       <key>public.kern2.dash.cap</key>
       <integer>-40</integer>
       <key>public.kern2.period</key>
@@ -8517,7 +8647,7 @@
     <key>public.kern1.arm_uc_topStraight_bottomDiagonal.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>0</integer>
+      <integer>-30</integer>
       <key>public.kern2.arm_uc_Feh.sc</key>
       <integer>0</integer>
       <key>public.kern2.arm_uc_Ja.sc</key>
@@ -8558,6 +8688,8 @@
       <integer>-30</integer>
       <key>public.kern2.arm_uc_topStraight_bottomRound.sc</key>
       <integer>-20</integer>
+      <key>public.kern2.dash</key>
+      <integer>-40</integer>
       <key>public.kern2.quoteright</key>
       <integer>-43</integer>
     </dict>
@@ -8603,7 +8735,7 @@
     <key>public.kern1.arm_uc_topStraight_bottomRound.sc</key>
     <dict>
       <key>public.kern2.arm_punc_comma</key>
-      <integer>40</integer>
+      <integer>0</integer>
       <key>public.kern2.arm_uc_Piwr.sc</key>
       <integer>-5</integer>
       <key>public.kern2.arm_uc_bottomRound_topBar.sc</key>
@@ -9997,6 +10129,8 @@
       <integer>10</integer>
       <key>public.kern2.arm_uc_Jheh</key>
       <integer>-40</integer>
+      <key>public.kern2.arm_uc_Jheh.sc</key>
+      <integer>-40</integer>
       <key>public.kern2.arm_uc_Peh</key>
       <integer>-20</integer>
       <key>public.kern2.arm_uc_Za</key>
@@ -10005,17 +10139,35 @@
       <integer>0</integer>
       <key>public.kern2.arm_uc_bottomRound_topDiagonal</key>
       <integer>10</integer>
+      <key>public.kern2.arm_uc_bottomRound_topDiagonal.sc</key>
+      <integer>10</integer>
       <key>public.kern2.arm_uc_diagonal</key>
+      <integer>-50</integer>
+      <key>public.kern2.arm_uc_diagonal.sc</key>
       <integer>-50</integer>
       <key>public.kern2.arm_uc_topBar_bottomRound</key>
       <integer>-80</integer>
+      <key>public.kern2.arm_uc_topBar_bottomRound.sc</key>
+      <integer>-70</integer>
+      <key>public.kern2.arm_uc_topLower_bottomRaised.sc</key>
+      <integer>10</integer>
       <key>public.kern2.arm_uc_topLower_bottomRound</key>
       <integer>20</integer>
+      <key>public.kern2.arm_uc_topRound_bottomDiagonal.sc</key>
+      <integer>-10</integer>
       <key>public.kern2.arm_uc_topRound_bottomRaised</key>
       <integer>20</integer>
+      <key>public.kern2.arm_uc_topRound_bottomRaised.sc</key>
+      <integer>20</integer>
+      <key>public.kern2.arm_uc_topRound_bottomRound.sc</key>
+      <integer>10</integer>
       <key>public.kern2.arm_uc_topRound_bottomStraight_middleBar</key>
       <integer>-30</integer>
+      <key>public.kern2.arm_uc_topRound_bottomStraight_middleBar.sc</key>
+      <integer>-30</integer>
       <key>public.kern2.arm_uc_topStraight_bottomRaised</key>
+      <integer>-10</integer>
+      <key>public.kern2.arm_uc_topStraight_bottomRaised.sc</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_Y</key>
       <integer>-60</integer>
@@ -10075,7 +10227,7 @@
       <key>public.kern2.arm_uc_topRound_bottomRaised</key>
       <integer>20</integer>
       <key>public.kern2.arm_uc_topRound_bottomRound</key>
-      <integer>0</integer>
+      <integer>10</integer>
       <key>public.kern2.arm_uc_topRound_bottomStraight_middleBar</key>
       <integer>-30</integer>
       <key>public.kern2.arm_uc_topStraight_bottomRaised</key>
