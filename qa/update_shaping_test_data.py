@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import enum
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Dict, List, Optional, Union
 
 import uharfbuzz as hb
 from fontTools.ttLib import TTFont
@@ -21,15 +21,15 @@ class Direction(enum.Enum):
 
 
 def shape_run(
-    font_path: str,
+    font_path: Path,
     text: str,
-    script: str,
-    language: str,
+    script: Optional[str],
+    language: Optional[str],
     direction: Direction,
     features: Dict[str, bool],
     shaping_comparison_mode: ComparisonMode,
     variations: Optional[Dict[str, float]] = None,
-) -> List[str]:
+) -> str:
     with open(font_path, "rb") as fontfile:
         fontdata = fontfile.read()
 
@@ -45,8 +45,10 @@ def shape_run(
     buf = hb.Buffer()
     buf.add_str(text)
     buf.direction = direction.value
-    buf.script = script
-    buf.language = language
+    if script is not None:
+        buf.script = script
+    if language is not None:
+        buf.language = language
     buf.guess_segment_properties()
     hb.shape(font, buf, features)
 
@@ -72,12 +74,12 @@ def shape_run(
 def shape_texts(
     font: TTFont,
     texts: List[str],
-    script: str,
-    language: str,
+    script: Optional[str],
+    language: Optional[str],
     direction: Direction,
     features: Dict[str, bool],
     shaping_comparison_mode: ComparisonMode,
-) -> Dict[str, List[Dict[str, Any]]]:
+) -> Union[Dict[str, List[str]], List[str]]:
     filename = Path(font.reader.file.name)
     if "fvar" in font:
         result = {}
@@ -128,8 +130,8 @@ if __name__ == "__main__":
     shaping_input = shaping_input_doc["input"]
     shaping_texts = shaping_input["text"]
     shaping_features = shaping_input["features"]
-    shaping_script = shaping_input["script"]
-    shaping_language = shaping_input["language"]
+    shaping_script = shaping_input.get("script")
+    shaping_language = shaping_input.get("language")
     shaping_comparison_mode = ComparisonMode(
         shaping_input.get("comparison_mode", "full")
     )
