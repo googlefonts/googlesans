@@ -98,7 +98,7 @@
 @armn_symbols = [dram-arm];
 
 
-lookup armn_ccmp_combining_punctuation {	
+lookup armn_ccmp_combining_punctuation {
 	sub @armn_vowels_lowercase @armn_punctuation' by @armn_punctuation_comb;
 	sub @armn_vowels_uppercase @armn_punctuation' by @armn_punctuation_cap_comb;
 	sub @armn_vowels_uppercase_short @armn_punctuation' by @armn_punctuation_short_comb;
@@ -114,6 +114,8 @@ lookup armn_locl_shift_guillemet {
 lookup armn_case_substitution {
 	sub @armn_case_smcp_lowercase by @armn_uppercase;
 	sub period-arm by period-arm.case;
+	sub hyphen by hyphen.cap;
+	sub hyphen-arm by hyphen.cap;
 	sub apostrophe-arm by apostrophe-arm.case;
 } armn_case_substitution;
 
@@ -143,7 +145,7 @@ lookup armn_smcp_contextual_substitution {
 } armn_smcp_contextual_substitution;
 
 lookup armn_calt_ligatures {
-	# Ligatures 
+	# Ligatures
 	sub Men-arm Now-arm by Men_Now-arm.liga;
 	sub men-arm now-arm by men_now-arm.liga;
 } armn_calt_ligatures;
@@ -173,7 +175,7 @@ lookup armn_calt_contextual_substitution {
 	sub @armn_uppercase semicolon' by semicolon.loclARM;
 	sub @armn_lowercase semicolon' by semicolon.loclARM;
 	sub @armn_smallcaps semicolon' by semicolon.loclARM;
-	# Localized hyphen for Armenian 
+	# Localized hyphen for Armenian
 	sub @armn_uppercase hyphen' by hyphen-arm;
 	sub hyphen' @armn_uppercase by hyphen-arm;
 	sub @armn_lowercase hyphen' by hyphen-arm;
