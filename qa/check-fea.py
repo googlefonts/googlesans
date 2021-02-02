@@ -364,38 +364,27 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
             yield FAIL, (f"{shaping_file}: Must have an 'output' key dict.")
             return
         try:
-            shaping_texts_expected = shaping_output[filename.name]
+            shaped_texts_expected = shaping_output[filename.name]
         except KeyError:
             yield FAIL, f"{shaping_file}: No entry found for {filename.name}"
             return
 
-        if "fvar" in tt:
-            shaped_texts = shape_variable(
-                tt,
-                shaping_texts,
-                shaping_script,
-                shaping_language,
-                shaping_direction,
-                shaping_features,
-                shaping_comparison_mode,
-            )
-        else:
-            shaped_texts = shape_static(
-                tt,
-                shaping_texts,
-                shaping_script,
-                shaping_language,
-                shaping_direction,
-                shaping_features,
-                shaping_comparison_mode,
-            )
+        shaped_texts = shape_texts(
+            tt,
+            shaping_texts,
+            shaping_script,
+            shaping_language,
+            shaping_direction,
+            shaping_features,
+            shaping_comparison_mode,
+        )
 
-        if shaped_texts == shaping_texts_expected:
+        if shaped_texts == shaped_texts_expected:
             yield PASS, f"{shaping_file}: No regression detected"
         else:
             shaped_texts_json = json.dumps(shaped_texts, indent=2).split("\n")
-            shaping_texts_expected_json = json.dumps(
-                shaping_texts_expected, indent=2
+            shaped_texts_expected_json = json.dumps(
+                shaped_texts_expected, indent=2
             ).split("\n")
 
             with tempfile.NamedTemporaryFile(
@@ -403,7 +392,7 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
             ) as f:
                 f.write(
                     difflib.HtmlDiff().make_file(
-                        shaping_texts_expected_json,
+                        shaped_texts_expected_json,
                         shaped_texts_json,
                         f"Expected for {filename.name}",
                         "Actual",
@@ -435,7 +424,7 @@ class Direction(enum.Enum):
     BTT = "btt"
 
 
-def shape_text(
+def shape_run(
     font_path: str,
     text: str,
     script: str,
@@ -484,7 +473,7 @@ def shape_text(
         raise ValueError(f"Unknown comparison mode {shaping_comparison_mode}.")
 
 
-def shape_variable(
+def shape_texts(
     font: TTFont,
     texts: List[str],
     script: str,
@@ -494,12 +483,29 @@ def shape_variable(
     shaping_comparison_mode: ComparisonMode,
 ) -> Dict[str, List[Dict[str, Any]]]:
     filename = Path(font.reader.file.name)
-    fvar = font["fvar"]
-    result = {}
-    for instance in fvar.instances:
-        coordinate_str = ",".join(f"{k}={v}" for k, v in instance.coordinates.items())
-        result[coordinate_str] = [
-            shape_text(
+    if "fvar" in font:
+        result = {}
+        for instance in font["fvar"].instances:
+            coordinate_str = ",".join(
+                f"{k}={v}" for k, v in instance.coordinates.items()
+            )
+            result[coordinate_str] = [
+                shape_run(
+                    filename,
+                    text,
+                    script,
+                    language,
+                    direction,
+                    features,
+                    shaping_comparison_mode,
+                    instance.coordinates,
+                )
+                for text in texts
+            ]
+        return result
+    else:
+        return [
+            shape_run(
                 filename,
                 text,
                 script,
@@ -507,32 +513,6 @@ def shape_variable(
                 direction,
                 features,
                 shaping_comparison_mode,
-                instance.coordinates,
             )
             for text in texts
         ]
-    return result
-
-
-def shape_static(
-    font: TTFont,
-    texts: List[str],
-    script: str,
-    language: str,
-    direction: Direction,
-    features: Dict[str, bool],
-    shaping_comparison_mode: ComparisonMode,
-) -> List[Dict[str, Any]]:
-    filename = Path(font.reader.file.name)
-    return [
-        shape_text(
-            filename,
-            text,
-            script,
-            language,
-            direction,
-            features,
-            shaping_comparison_mode,
-        )
-        for text in texts
-    ]

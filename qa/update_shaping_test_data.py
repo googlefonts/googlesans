@@ -20,7 +20,7 @@ class Direction(enum.Enum):
     BTT = "btt"
 
 
-def shape_text(
+def shape_run(
     font_path: str,
     text: str,
     script: str,
@@ -69,7 +69,7 @@ def shape_text(
         raise ValueError(f"Unknown comparison mode {shaping_comparison_mode}.")
 
 
-def shape_variable(
+def shape_texts(
     font: TTFont,
     texts: List[str],
     script: str,
@@ -79,12 +79,29 @@ def shape_variable(
     shaping_comparison_mode: ComparisonMode,
 ) -> Dict[str, List[Dict[str, Any]]]:
     filename = Path(font.reader.file.name)
-    fvar = font["fvar"]
-    result = {}
-    for instance in fvar.instances:
-        coordinate_str = ",".join(f"{k}={v}" for k, v in instance.coordinates.items())
-        result[coordinate_str] = [
-            shape_text(
+    if "fvar" in font:
+        result = {}
+        for instance in font["fvar"].instances:
+            coordinate_str = ",".join(
+                f"{k}={v}" for k, v in instance.coordinates.items()
+            )
+            result[coordinate_str] = [
+                shape_run(
+                    filename,
+                    text,
+                    script,
+                    language,
+                    direction,
+                    features,
+                    shaping_comparison_mode,
+                    instance.coordinates,
+                )
+                for text in texts
+            ]
+        return result
+    else:
+        return [
+            shape_run(
                 filename,
                 text,
                 script,
@@ -92,35 +109,9 @@ def shape_variable(
                 direction,
                 features,
                 shaping_comparison_mode,
-                instance.coordinates,
             )
             for text in texts
         ]
-    return result
-
-
-def shape_static(
-    font: TTFont,
-    texts: List[str],
-    script: str,
-    language: str,
-    direction: Direction,
-    features: Dict[str, bool],
-    shaping_comparison_mode: ComparisonMode,
-) -> List[Dict[str, Any]]:
-    filename = Path(font.reader.file.name)
-    return [
-        shape_text(
-            filename,
-            text,
-            script,
-            language,
-            direction,
-            features,
-            shaping_comparison_mode,
-        )
-        for text in texts
-    ]
 
 
 if __name__ == "__main__":
@@ -150,27 +141,14 @@ if __name__ == "__main__":
     font: TTFont
     for font in parsed_args.fonts:
         filename = Path(font.reader.file.name)
-        if "fvar" in font:
-            result = shape_variable(
-                font,
-                shaping_texts,
-                shaping_script,
-                shaping_language,
-                shaping_direction,
-                shaping_features,
-                shaping_comparison_mode,
-            )
-        else:
-            result = shape_static(
-                font,
-                shaping_texts,
-                shaping_script,
-                shaping_language,
-                shaping_direction,
-                shaping_features,
-                shaping_comparison_mode,
-            )
-
-        shaping_input_doc["output"][filename.name] = result
+        shaping_input_doc["output"][filename.name] = shape_texts(
+            font,
+            shaping_texts,
+            shaping_script,
+            shaping_language,
+            shaping_direction,
+            shaping_features,
+            shaping_comparison_mode,
+        )
 
     shaping_file.write_text(json.dumps(shaping_input_doc, indent=2, ensure_ascii=False))
