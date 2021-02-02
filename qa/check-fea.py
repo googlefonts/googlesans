@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import enum
 import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -351,6 +352,10 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
         except KeyError as e:
             yield FAIL, (f"{shaping_file}: 'input' key dict is missing {str(e)} key.")
             return
+        if "comparison_mode" in shaping_input:
+            shaping_comparison_mode = ComparisonMode(shaping_input["comparison_mode"])
+        else:
+            shaping_comparison_mode = ComparisonMode.FULL
         try:
             shaping_output = shaping_input_doc["output"]
         except KeyError:
@@ -364,11 +369,21 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
 
         if "fvar" in tt:
             shaped_texts = shape_variable(
-                tt, shaping_texts, shaping_script, shaping_language, shaping_features
+                tt,
+                shaping_texts,
+                shaping_script,
+                shaping_language,
+                shaping_features,
+                shaping_comparison_mode,
             )
         else:
             shaped_texts = shape_static(
-                tt, shaping_texts, shaping_script, shaping_language, shaping_features
+                tt,
+                shaping_texts,
+                shaping_script,
+                shaping_language,
+                shaping_features,
+                shaping_comparison_mode,
             )
 
         if shaped_texts == shaping_texts_expected:
@@ -381,19 +396,23 @@ profile.auto_register(globals())
 profile.test_expected_checks(GOOGLESANS_PROFILE_CHECKS, exclusive=True)
 
 
+### XXX: Below is a copy-pasta of update_shaping_test_data.py because I can't seem to import it here.
+
+
+class ComparisonMode(enum.Enum):
+    FULL = "full"  # Record glyph names, offsets and advance widths.
+    GLYPHSTREAM = "glyphstream"  # Just glyph names.
+
+
 def shape_text(
     font_path: str,
     text: str,
     script: str,
     language: str,
     features: Dict[str, bool],
+    shaping_comparison_mode: ComparisonMode,
     variations: Optional[Dict[str, float]] = None,
 ) -> List[Dict[str, Any]]:
-    """Return Harfbuzz-shaped text from input for font.
-
-    NOTE: copy-pasta from harfbuzz.py because fontbakery doesn't know how to import it.
-    """
-
     with open(font_path, "rb") as fontfile:
         fontdata = fontfile.read()
 
@@ -416,17 +435,22 @@ def shape_text(
     infos = buf.glyph_infos
     positions = buf.glyph_positions
 
-    return [
-        {
-            "glyph": font.get_glyph_name(info.codepoint),
-            "cluster": info.cluster,
-            "x_offset": pos.x_offset,
-            "y_offset": pos.y_offset,
-            "x_advance": pos.x_advance,
-            "y_advance": pos.y_advance,
-        }
-        for info, pos in zip(infos, positions)
-    ]
+    if shaping_comparison_mode is ComparisonMode.FULL:
+        return [
+            {
+                "glyph": font.get_glyph_name(info.codepoint),
+                "cluster": info.cluster,
+                "x_offset": pos.x_offset,
+                "y_offset": pos.y_offset,
+                "x_advance": pos.x_advance,
+                "y_advance": pos.y_advance,
+            }
+            for info, pos in zip(infos, positions)
+        ]
+    elif shaping_comparison_mode is ComparisonMode.GLYPHSTREAM:
+        return [font.get_glyph_name(info.codepoint) for info in infos]
+    else:
+        raise ValueError(f"Unknown comparison mode {shaping_comparison_mode}.")
 
 
 def shape_variable(
@@ -435,6 +459,7 @@ def shape_variable(
     script: str,
     language: str,
     features: Dict[str, bool],
+    shaping_comparison_mode: ComparisonMode,
 ) -> Dict[str, List[Dict[str, Any]]]:
     filename = Path(font.reader.file.name)
     fvar = font["fvar"]
@@ -442,7 +467,15 @@ def shape_variable(
     for instance in fvar.instances:
         coordinate_str = ",".join(f"{k}={v}" for k, v in instance.coordinates.items())
         result[coordinate_str] = [
-            shape_text(filename, text, script, language, features, instance.coordinates)
+            shape_text(
+                filename,
+                text,
+                script,
+                language,
+                features,
+                shaping_comparison_mode,
+                instance.coordinates,
+            )
             for text in texts
         ]
     return result
@@ -454,6 +487,10 @@ def shape_static(
     script: str,
     language: str,
     features: Dict[str, bool],
+    shaping_comparison_mode: ComparisonMode,
 ) -> List[Dict[str, Any]]:
     filename = Path(font.reader.file.name)
-    return [shape_text(filename, text, script, language, features) for text in texts]
+    return [
+        shape_text(filename, text, script, language, features, shaping_comparison_mode)
+        for text in texts
+    ]
