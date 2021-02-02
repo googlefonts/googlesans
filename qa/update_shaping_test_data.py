@@ -21,7 +21,7 @@ class Direction(enum.Enum):
 
 
 def shape_run(
-    font_path: Path,
+    hb_face: hb.Face,
     text: str,
     script: Optional[str],
     language: Optional[str],
@@ -30,12 +30,8 @@ def shape_run(
     shaping_comparison_mode: ComparisonMode,
     variations: Optional[Dict[str, float]] = None,
 ) -> str:
-    with open(font_path, "rb") as fontfile:
-        fontdata = fontfile.read()
-
-    face = hb.Face(fontdata)
-    font = hb.Font(face)
-    upem = face.upem
+    font = hb.Font(hb_face)
+    upem = hb_face.upem
     if variations is not None:
         font.set_variations(variations)
 
@@ -73,6 +69,7 @@ def shape_run(
 
 def shape_texts(
     font: TTFont,
+    hb_face: hb.Face,
     texts: List[str],
     script: Optional[str],
     language: Optional[str],
@@ -80,7 +77,6 @@ def shape_texts(
     features: Dict[str, bool],
     shaping_comparison_mode: ComparisonMode,
 ) -> Union[Dict[str, List[str]], List[str]]:
-    filename = Path(font.reader.file.name)
     if "fvar" in font:
         result = {}
         for instance in font["fvar"].instances:
@@ -89,7 +85,7 @@ def shape_texts(
             )
             result[coordinate_str] = [
                 shape_run(
-                    filename,
+                    hb_face,
                     text,
                     script,
                     language,
@@ -104,7 +100,7 @@ def shape_texts(
     else:
         return [
             shape_run(
-                filename,
+                hb_face,
                 text,
                 script,
                 language,
@@ -143,8 +139,11 @@ if __name__ == "__main__":
     font: TTFont
     for font in parsed_args.fonts:
         filename = Path(font.reader.file.name)
+        with open(filename, "rb") as fontfile:
+            hb_face = hb.Face(fontfile.read())
         shaping_input_doc["output"][filename.name] = shape_texts(
             font,
+            hb_face,
             shaping_texts,
             shaping_script,
             shaping_language,

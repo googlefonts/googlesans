@@ -18,6 +18,7 @@ import sys
 import tempfile
 from pathlib import Path
 
+import uharfbuzz
 from fontbakery.callable import check, condition
 from fontbakery.checkrunner import FAIL, PASS, Section
 from fontbakery.fonts_profile import profile_factory
@@ -208,6 +209,13 @@ def is_variable_font(ttFont):
     return "fvar" in ttFont.keys()
 
 
+@condition
+def hb_font(font):
+    with open(font, "rb") as fontfile:
+        hb_face = uharfbuzz.Face(fontfile.read())
+    return hb_face
+
+
 # ================================================
 # Feature support
 # ================================================
@@ -339,7 +347,7 @@ def com_google_fonts_check_googlesans_features_variable_italics(ttFont):
 
 
 @check(id="com.google.fonts/check/googlesans/features/regression")
-def com_google_fonts_check_googlesans_features_regression(ttFont):
+def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
     """But does it shape?"""
     tt = ttFont
     filename = Path(tt.reader.file.name)
@@ -378,6 +386,7 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
 
         shaped_texts = shape_texts(
             tt,
+            hb_font,
             shaping_texts,
             shaping_script,
             shaping_language,
