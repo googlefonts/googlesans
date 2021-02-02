@@ -13,17 +13,24 @@
 # limitations under the License.
 
 import difflib
-import enum
 import json
+import sys
 import tempfile
 from pathlib import Path
-from typing import Any, Dict, List, Optional
 
-import uharfbuzz as hb
 from fontbakery.callable import check, condition
 from fontbakery.checkrunner import FAIL, PASS, Section
 from fontbakery.fonts_profile import profile_factory
-from fontTools.ttLib import TTFont
+
+# Make FontBakery able to find the update_shaping_test_data package.
+sys.path.append(str(Path(__file__).parent.parent))
+
+from qa.update_shaping_test_data import (  # noqa: E402
+    ComparisonMode,
+    Direction,
+    shape_texts,
+)
+
 
 profile_imports = ()
 profile = profile_factory(
@@ -349,11 +356,11 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
         try:
             shaping_texts = shaping_input["text"]
             shaping_features = shaping_input["features"]
-            shaping_script = shaping_input["script"]
-            shaping_language = shaping_input["language"]
         except KeyError as e:
             yield FAIL, (f"{shaping_file}: 'input' key dict is missing {str(e)} key.")
             return
+        shaping_script = shaping_input.get("script")
+        shaping_language = shaping_input.get("language")
         shaping_comparison_mode = ComparisonMode(
             shaping_input.get("comparison_mode", "full")
         )
@@ -406,113 +413,3 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
 
 profile.auto_register(globals())
 profile.test_expected_checks(GOOGLESANS_PROFILE_CHECKS, exclusive=True)
-
-
-# XXX: Below is a copy-pasta of update_shaping_test_data.py because I can't
-# seem to import it here.
-
-
-class ComparisonMode(enum.Enum):
-    FULL = "full"  # Record glyph names, offsets and advance widths.
-    GLYPHSTREAM = "glyphstream"  # Just glyph names.
-
-
-class Direction(enum.Enum):
-    LTR = "ltr"
-    RTL = "rtl"
-    TTB = "ttb"
-    BTT = "btt"
-
-
-def shape_run(
-    font_path: str,
-    text: str,
-    script: str,
-    language: str,
-    direction: Direction,
-    features: Dict[str, bool],
-    shaping_comparison_mode: ComparisonMode,
-    variations: Optional[Dict[str, float]] = None,
-) -> List[str]:
-    with open(font_path, "rb") as fontfile:
-        fontdata = fontfile.read()
-
-    face = hb.Face(fontdata)
-    font = hb.Font(face)
-    upem = face.upem
-    if variations is not None:
-        font.set_variations(variations)
-
-    font.scale = (upem, upem)
-    hb.ot_font_set_funcs(font)
-
-    buf = hb.Buffer()
-    buf.add_str(text)
-    buf.direction = direction.value
-    buf.script = script
-    buf.language = language
-    buf.guess_segment_properties()
-    hb.shape(font, buf, features)
-
-    infos = buf.glyph_infos
-    positions = buf.glyph_positions
-
-    if shaping_comparison_mode is ComparisonMode.FULL:
-        out = []
-        for info, pos in zip(infos, positions):
-            s = f"{font.get_glyph_name(info.codepoint)}={info.cluster}"
-            if pos.x_offset or pos.y_offset:
-                s += f"@{pos.x_offset},{pos.y_offset}"
-            if pos.x_advance or pos.y_advance:
-                s += f"+{pos.x_advance},{pos.y_advance}"
-            out.append(s)
-        return "|".join(out)
-    elif shaping_comparison_mode is ComparisonMode.GLYPHSTREAM:
-        return "|".join(font.get_glyph_name(info.codepoint) for info in infos)
-    else:
-        raise ValueError(f"Unknown comparison mode {shaping_comparison_mode}.")
-
-
-def shape_texts(
-    font: TTFont,
-    texts: List[str],
-    script: str,
-    language: str,
-    direction: Direction,
-    features: Dict[str, bool],
-    shaping_comparison_mode: ComparisonMode,
-) -> Dict[str, List[Dict[str, Any]]]:
-    filename = Path(font.reader.file.name)
-    if "fvar" in font:
-        result = {}
-        for instance in font["fvar"].instances:
-            coordinate_str = ",".join(
-                f"{k}={v}" for k, v in instance.coordinates.items()
-            )
-            result[coordinate_str] = [
-                shape_run(
-                    filename,
-                    text,
-                    script,
-                    language,
-                    direction,
-                    features,
-                    shaping_comparison_mode,
-                    instance.coordinates,
-                )
-                for text in texts
-            ]
-        return result
-    else:
-        return [
-            shape_run(
-                filename,
-                text,
-                script,
-                language,
-                direction,
-                features,
-                shaping_comparison_mode,
-            )
-            for text in texts
-        ]
