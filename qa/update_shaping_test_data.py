@@ -29,7 +29,7 @@ def shape_text(
     features: Dict[str, bool],
     shaping_comparison_mode: ComparisonMode,
     variations: Optional[Dict[str, float]] = None,
-) -> List[Dict[str, Any]]:
+) -> List[str]:
     with open(font_path, "rb") as fontfile:
         fontdata = fontfile.read()
 
@@ -54,19 +54,17 @@ def shape_text(
     positions = buf.glyph_positions
 
     if shaping_comparison_mode is ComparisonMode.FULL:
-        return [
-            {
-                "glyph": font.get_glyph_name(info.codepoint),
-                "cluster": info.cluster,
-                "x_offset": pos.x_offset,
-                "y_offset": pos.y_offset,
-                "x_advance": pos.x_advance,
-                "y_advance": pos.y_advance,
-            }
-            for info, pos in zip(infos, positions)
-        ]
+        out = []
+        for info, pos in zip(infos, positions):
+            s = f"{font.get_glyph_name(info.codepoint)}={info.cluster}"
+            if pos.x_offset or pos.y_offset:
+                s += f"@{pos.x_offset},{pos.y_offset}"
+            if pos.x_advance or pos.y_advance:
+                s += f"+{pos.x_advance},{pos.y_advance}"
+            out.append(s)
+        return "|".join(out)
     elif shaping_comparison_mode is ComparisonMode.GLYPHSTREAM:
-        return [font.get_glyph_name(info.codepoint) for info in infos]
+        return "|".join(font.get_glyph_name(info.codepoint) for info in infos)
     else:
         raise ValueError(f"Unknown comparison mode {shaping_comparison_mode}.")
 
