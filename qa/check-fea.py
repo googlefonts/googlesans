@@ -389,9 +389,9 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
             )
 
         if shaped_texts == shaping_texts_expected:
-            yield PASS, "No regression detected"
+            yield PASS, f"{shaping_file}: No regression detected"
         else:
-            yield FAIL, f"Expected and actual shaping not matching for {shaping_file}."
+            yield FAIL, f"{shaping_file}: Expected and actual shaping not matching."
 
 
 profile.auto_register(globals())
