@@ -30,6 +30,10 @@ This document details the source style guidelines for the Google Sans project.
 - In scripts that support upper case forms, please use title case glyph names for upper case glyph forms
 - Please do not change glyph names after they have been imported into the upstream source files
 
+Notes:
+- If your script, such as Burmese, already has conventions for localized forms in `glyphsData.xml`, then prefer the existing conventions.
+- If your script behaves in such a way that it's impractical to list all languages after the `.locl` suffix of the glyph name, then you don't have to list all the languages there; instead please use only `.locl` as a suffix and write a comment somewhere to explain which languages are concerned.
+
 #### OpenType class names
 
 - OpenType class naming should use the following format:
@@ -41,7 +45,7 @@ This document details the source style guidelines for the Google Sans project.
 - When a class is used by several scripts, list all scripts in the name
 - When a class is used by several languages, list all languages in the name
 - When a class is used in several features, list all feature tags in its name
-- Except if listing everything is too cumbersome and counterproductive, then drop that part of name but leave a comment instead, just above the class definition, to explain which scripts/languages/features are concerned
+- Except if listing everything is too cumbersome and counterproductive, then drop that part of the name but leave a comment instead, just above the class definition, to explain which scripts/languages/features are concerned
 
 #### Kerning group names
 
@@ -60,7 +64,7 @@ This document details the source style guidelines for the Google Sans project.
 - When a lookup is used by several scripts, list all scripts in the name
 - When a lookup is used by several languages, list all languages in the name
 - When a lookup is used in several features, list all feature tags in its name
-- Except if listing everything is too cumbersome and counterproductive, then drop that part of name but leave a comment instead, just above the lookup definition, to explain which scripts/languages/features are concerned
+- Except if listing everything is too cumbersome and counterproductive, then drop that part of the name but leave a comment instead, just above the lookup definition, to explain which scripts/languages/features are concerned
 
 ### Adobe OpenType feature file source
 
