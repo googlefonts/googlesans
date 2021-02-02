@@ -12,8 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import difflib
 import enum
 import json
+import tempfile
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -391,14 +393,34 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
         if shaped_texts == shaping_texts_expected:
             yield PASS, f"{shaping_file}: No regression detected"
         else:
-            yield FAIL, f"{shaping_file}: Expected and actual shaping not matching."
+            shaped_texts_json = json.dumps(shaped_texts, indent=2).split("\n")
+            shaping_texts_expected_json = json.dumps(
+                shaping_texts_expected, indent=2
+            ).split("\n")
+
+            with tempfile.NamedTemporaryFile(
+                mode="w+", suffix=".html", delete=False
+            ) as f:
+                f.write(
+                    difflib.HtmlDiff().make_file(
+                        shaping_texts_expected_json,
+                        shaped_texts_json,
+                        f"Expected for {filename.name}",
+                        "Actual",
+                    )
+                )
+            yield FAIL, (
+                f"{shaping_file}: Expected and actual shaping not matching. "
+                f"Open {f.name} in your browser for details."
+            )
 
 
 profile.auto_register(globals())
 profile.test_expected_checks(GOOGLESANS_PROFILE_CHECKS, exclusive=True)
 
 
-### XXX: Below is a copy-pasta of update_shaping_test_data.py because I can't seem to import it here.
+# XXX: Below is a copy-pasta of update_shaping_test_data.py because I can't
+# seem to import it here.
 
 
 class ComparisonMode(enum.Enum):
