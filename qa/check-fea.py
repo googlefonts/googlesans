@@ -352,10 +352,10 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
         except KeyError as e:
             yield FAIL, (f"{shaping_file}: 'input' key dict is missing {str(e)} key.")
             return
-        if "comparison_mode" in shaping_input:
-            shaping_comparison_mode = ComparisonMode(shaping_input["comparison_mode"])
-        else:
-            shaping_comparison_mode = ComparisonMode.FULL
+        shaping_comparison_mode = ComparisonMode(
+            shaping_input.get("comparison_mode", "full")
+        )
+        shaping_direction = Direction(shaping_input.get("direction", "ltr"))
         try:
             shaping_output = shaping_input_doc["output"]
         except KeyError:
@@ -373,6 +373,7 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
                 shaping_texts,
                 shaping_script,
                 shaping_language,
+                shaping_direction,
                 shaping_features,
                 shaping_comparison_mode,
             )
@@ -382,6 +383,7 @@ def com_google_fonts_check_googlesans_features_regression(ttFont):
                 shaping_texts,
                 shaping_script,
                 shaping_language,
+                shaping_direction,
                 shaping_features,
                 shaping_comparison_mode,
             )
@@ -404,11 +406,19 @@ class ComparisonMode(enum.Enum):
     GLYPHSTREAM = "glyphstream"  # Just glyph names.
 
 
+class Direction(enum.Enum):
+    LTR = "ltr"
+    RTL = "rtl"
+    TTB = "ttb"
+    BTT = "btt"
+
+
 def shape_text(
     font_path: str,
     text: str,
     script: str,
     language: str,
+    direction: Direction,
     features: Dict[str, bool],
     shaping_comparison_mode: ComparisonMode,
     variations: Optional[Dict[str, float]] = None,
@@ -427,6 +437,7 @@ def shape_text(
 
     buf = hb.Buffer()
     buf.add_str(text)
+    buf.direction = direction.value
     buf.script = script
     buf.language = language
     buf.guess_segment_properties()
@@ -458,6 +469,7 @@ def shape_variable(
     texts: List[str],
     script: str,
     language: str,
+    direction: Direction,
     features: Dict[str, bool],
     shaping_comparison_mode: ComparisonMode,
 ) -> Dict[str, List[Dict[str, Any]]]:
@@ -472,6 +484,7 @@ def shape_variable(
                 text,
                 script,
                 language,
+                direction,
                 features,
                 shaping_comparison_mode,
                 instance.coordinates,
@@ -486,11 +499,20 @@ def shape_static(
     texts: List[str],
     script: str,
     language: str,
+    direction: Direction,
     features: Dict[str, bool],
     shaping_comparison_mode: ComparisonMode,
 ) -> List[Dict[str, Any]]:
     filename = Path(font.reader.file.name)
     return [
-        shape_text(filename, text, script, language, features, shaping_comparison_mode)
+        shape_text(
+            filename,
+            text,
+            script,
+            language,
+            direction,
+            features,
+            shaping_comparison_mode,
+        )
         for text in texts
     ]

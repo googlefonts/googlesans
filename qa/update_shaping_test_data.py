@@ -13,11 +13,19 @@ class ComparisonMode(enum.Enum):
     GLYPHSTREAM = "glyphstream"  # Just glyph names.
 
 
+class Direction(enum.Enum):
+    LTR = "ltr"
+    RTL = "rtl"
+    TTB = "ttb"
+    BTT = "btt"
+
+
 def shape_text(
     font_path: str,
     text: str,
     script: str,
     language: str,
+    direction: Direction,
     features: Dict[str, bool],
     shaping_comparison_mode: ComparisonMode,
     variations: Optional[Dict[str, float]] = None,
@@ -36,6 +44,7 @@ def shape_text(
 
     buf = hb.Buffer()
     buf.add_str(text)
+    buf.direction = direction.value
     buf.script = script
     buf.language = language
     buf.guess_segment_properties()
@@ -67,6 +76,7 @@ def shape_variable(
     texts: List[str],
     script: str,
     language: str,
+    direction: Direction,
     features: Dict[str, bool],
     shaping_comparison_mode: ComparisonMode,
 ) -> Dict[str, List[Dict[str, Any]]]:
@@ -81,6 +91,7 @@ def shape_variable(
                 text,
                 script,
                 language,
+                direction,
                 features,
                 shaping_comparison_mode,
                 instance.coordinates,
@@ -95,12 +106,21 @@ def shape_static(
     texts: List[str],
     script: str,
     language: str,
+    direction: Direction,
     features: Dict[str, bool],
     shaping_comparison_mode: ComparisonMode,
 ) -> List[Dict[str, Any]]:
     filename = Path(font.reader.file.name)
     return [
-        shape_text(filename, text, script, language, features, shaping_comparison_mode)
+        shape_text(
+            filename,
+            text,
+            script,
+            language,
+            direction,
+            features,
+            shaping_comparison_mode,
+        )
         for text in texts
     ]
 
@@ -115,20 +135,19 @@ if __name__ == "__main__":
     parsed_args = parser.parse_args()
 
     shaping_file: Path = parsed_args.shaping_file
-    shaping_input = json.loads(shaping_file.read_text())
-    shaping_texts = shaping_input["input"]["text"]
-    shaping_features = shaping_input["input"]["features"]
-    shaping_script = shaping_input["input"]["script"]
-    shaping_language = shaping_input["input"]["language"]
-    if "comparison_mode" in shaping_input["input"]:
-        shaping_comparison_mode = ComparisonMode(
-            shaping_input["input"]["comparison_mode"]
-        )
-    else:
-        shaping_comparison_mode = ComparisonMode.FULL
+    shaping_input_doc = json.loads(shaping_file.read_text())
+    shaping_input = shaping_input_doc["input"]
+    shaping_texts = shaping_input["text"]
+    shaping_features = shaping_input["features"]
+    shaping_script = shaping_input["script"]
+    shaping_language = shaping_input["language"]
+    shaping_comparison_mode = ComparisonMode(
+        shaping_input.get("comparison_mode", "full")
+    )
+    shaping_direction = Direction(shaping_input.get("direction", "ltr"))
 
-    if "output" not in shaping_input:
-        shaping_input["output"] = {}
+    if "output" not in shaping_input_doc:
+        shaping_input_doc["output"] = {}
 
     font: TTFont
     for font in parsed_args.fonts:
@@ -139,6 +158,7 @@ if __name__ == "__main__":
                 shaping_texts,
                 shaping_script,
                 shaping_language,
+                shaping_direction,
                 shaping_features,
                 shaping_comparison_mode,
             )
@@ -148,10 +168,11 @@ if __name__ == "__main__":
                 shaping_texts,
                 shaping_script,
                 shaping_language,
+                shaping_direction,
                 shaping_features,
                 shaping_comparison_mode,
             )
 
-        shaping_input["output"][filename.name] = result
+        shaping_input_doc["output"][filename.name] = result
 
-    shaping_file.write_text(json.dumps(shaping_input, indent=2, ensure_ascii=False))
+    shaping_file.write_text(json.dumps(shaping_input_doc, indent=2, ensure_ascii=False))
