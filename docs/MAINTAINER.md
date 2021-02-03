@@ -255,7 +255,7 @@ To ensure adding and changing feature code does not break existing font function
 
 The directory `qa/shaping/` contains `.json` files of the following format:
 
-```json
+```json5
 {
   "input": {
     // Required, a list of strings to shape.
