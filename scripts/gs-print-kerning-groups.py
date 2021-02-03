@@ -21,12 +21,16 @@ the base sources.
 """
 
 import argparse
+from pathlib import Path
 
 import glyphsLib
 import glyphsLib.builder
 
 parser = argparse.ArgumentParser()
 parser.add_argument("input", type=glyphsLib.GSFont, help="Path to source .glyphs file.")
+parser.add_argument(
+    "--glyphs-list", type=Path, help="Only list groups with glyphs listed in this file."
+)
 parsed_args = parser.parse_args()
 
 builder = glyphsLib.builder.UFOBuilder(
@@ -39,4 +43,12 @@ builder = glyphsLib.builder.UFOBuilder(
 
 first_master = next(builder.masters)
 
-print("\n".join(sorted(first_master.groups)))
+if parsed_args.glyphs_list is not None:
+    import_glyphs = {
+        name.strip() for name in parsed_args.glyphs_list.read_text().split("\n") if name
+    }
+    for name, glyphs in sorted(first_master.groups.items()):
+        if any(g in import_glyphs for g in glyphs):
+            print(name)
+else:
+    print("\n".join(sorted(first_master.groups)))

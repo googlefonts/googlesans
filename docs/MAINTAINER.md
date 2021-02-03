@@ -108,7 +108,7 @@ To make merges into the main source base as seamless as possible, vendors should
 
 #### Getting a List Of Glyphs and (Kerning) Groups
 
-Getting a list of glyph names usually involves selecting everything relevant in the editor and looking for the "copy glyph names" menu entry. The list should be saved to a text file with one line per glyph name and appended to the PR. Example file contents:
+Getting a list of glyph names usually involves selecting everything relevant in the editor and looking for the "copy glyph names" menu entry. The list should be saved to a text file (e.g. `import_glyphs.txt`) with one line per glyph name and appended to the PR. Example file contents:
 
 ```
 thai_koKai
@@ -119,7 +119,7 @@ thai_phoSamphao
 Getting a group list needs a script, as Glyphs.app and Fontlab name kerning groups differently, making retrieval tedious. For Glyphs.app files, use:
 
 ```
-$ python3 scripts/gs-print-kerning-groups.py source/GoogleSans/GoogleSansSomeScript.glyphs > import_groups.txt
+$ python3 scripts/gs-print-kerning-groups.py source/GoogleSans/GoogleSansSomeScript.glyphs --glyphs-list import_glyphs.txt > import_groups.txt
 ```
 
 Example file contents:
@@ -131,7 +131,9 @@ public.kern2.thai_boBaimai
 public.kern2.thai_khoKhuat
 ```
 
-The resulting list in the file `import_groups.txt` should be screened to contain only what should be imported and appended to the PR. The name prefix `public.kern1.` marks groups "to the left" (RTL: right) and `public.kern2.` marks groups "to the right" (RTL: left).
+The resulting list in the file `import_groups.txt` will only contain groups that contain at least one glyph that is going to be imported. If you want to include more groups, add them manually. The name prefix `public.kern1.` marks groups "to the left" (RTL: right) and `public.kern2.` marks groups "to the right" (RTL: left). Note that the import process will grab all kerning pairs that include either a listed kerning group name or a glyph inside that kerning group.
+
+Typically, you need to do both lists just once for your script and only change them if you actually add or remove a glyph or kerning group. If something needs to be remerged, the existing lists will work fine.
 
 ## Workflow
 
