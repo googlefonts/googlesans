@@ -31,18 +31,15 @@ def shape_run(
     variations: Optional[Dict[str, float]] = None,
 ) -> str:
     font = hb.Font(hb_face)
-    upem = hb_face.upem
+    font.scale = (hb_face.upem, hb_face.upem)
     if variations is not None:
         font.set_variations(variations)
 
-    font.scale = (upem, upem)
-    hb.ot_font_set_funcs(font)
-
     buf = hb.Buffer()
     buf.add_str(text)
-    buf.direction = direction.value
     if script is not None:
         buf.script = script
+    buf.direction = direction.value
     if language is not None:
         buf.language = language
     buf.guess_segment_properties()
