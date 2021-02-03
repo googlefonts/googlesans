@@ -39,6 +39,7 @@ jobs:
         with:
           update-wheel: "true"
           update-setuptools: "true"
+          path: "requirements-dev.txt"
       - name: Build fonts
         run: ${{ steps.config.outputs.buildcommand }}
       - name: Font Bakery GS profile tests (2-axis Expert)

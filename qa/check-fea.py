@@ -12,10 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import json
+import sys
+import textwrap
+from pathlib import Path
 
-from fontbakery.checkrunner import Section, PASS, FAIL
+import uharfbuzz
 from fontbakery.callable import check, condition
+from fontbakery.checkrunner import FAIL, PASS, SKIP, Section
 from fontbakery.fonts_profile import profile_factory
+
+# Make FontBakery able to find the update_shaping_test_data package.
+sys.path.append(str(Path(__file__).parent.parent))
+
+from qa.update_shaping_test_data import (  # noqa: E402
+    ComparisonMode,
+    Direction,
+    shape_texts,
+)
+
 
 profile_imports = ()
 profile = profile_factory(
@@ -27,6 +42,7 @@ GOOGLESANS_PROFILE_CHECKS = [
     "com.google.fonts/check/googlesans/features/staticitalics",
     "com.google.fonts/check/googlesans/features/variableuprights",
     "com.google.fonts/check/googlesans/features/variableitalics",
+    "com.google.fonts/check/googlesans/features/regression",
 ]
 
 STATIC_UPRIGHT_FEA = [
@@ -192,6 +208,13 @@ def is_variable_font(ttFont):
     return "fvar" in ttFont.keys()
 
 
+@condition
+def hb_font(font):
+    with open(font, "rb") as fontfile:
+        hb_face = uharfbuzz.Face(fontfile.read())
+    return hb_face
+
+
 # ================================================
 # Feature support
 # ================================================
@@ -320,6 +343,96 @@ def com_google_fonts_check_googlesans_features_variable_italics(ttFont):
             f"{tt.reader.file.name} does not contain the expected feature tags.\n"
             f"Found:{sorted(fea_tags)}\nExpected:{VAR_ITALICS_FEA}",
         )
+
+
+@check(id="com.google.fonts/check/googlesans/features/regression")
+def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
+    """But does it shape?"""
+    tt = ttFont
+    filename = Path(tt.reader.file.name)
+
+    shaping_basedir = Path("qa", "shaping")
+    for shaping_file in shaping_basedir.glob("*.json"):
+        shaping_input_doc = json.loads(shaping_file.read_text())
+
+        try:
+            shaping_input = shaping_input_doc["input"]
+        except KeyError:
+            yield FAIL, (f"{shaping_file}: Must have an 'input' key dict.")
+            return
+        try:
+            shaping_texts = shaping_input["text"]
+            shaping_features = shaping_input["features"]
+        except KeyError as e:
+            yield FAIL, (f"{shaping_file}: 'input' key dict is missing {str(e)} key.")
+            return
+        shaping_script = shaping_input.get("script")
+        shaping_language = shaping_input.get("language")
+        shaping_comparison_mode = ComparisonMode(
+            shaping_input.get("comparison_mode", "full")
+        )
+        shaping_direction = Direction(shaping_input.get("direction", "ltr"))
+        try:
+            shaping_output = shaping_input_doc["output"]
+        except KeyError:
+            yield FAIL, (f"{shaping_file}: Must have an 'output' key dict.")
+            return
+        try:
+            shaped_texts_expected = shaping_output[filename.name]
+        except KeyError:
+            yield FAIL, f"{shaping_file}: No entry found for {filename.name}"
+            return
+
+        shaped_texts = shape_texts(
+            tt,
+            hb_font,
+            shaping_texts,
+            shaping_script,
+            shaping_language,
+            shaping_direction,
+            shaping_features,
+            shaping_comparison_mode,
+        )
+
+        if shaped_texts == shaped_texts_expected:
+            yield PASS, f"{shaping_file}: No regression detected"
+        else:
+            if "fvar" in tt:
+                assert isinstance(shaped_texts, dict)
+                assert isinstance(shaped_texts_expected, dict)
+
+                for key, shaped_text in shaped_texts.items():
+                    if shaped_text != shaped_texts_expected[key]:
+                        shaped_texts_str = textwrap.indent(
+                            "\n".join(shaped_text), "\t  "
+                        )
+                        shaped_texts_expected_str = textwrap.indent(
+                            "\n".join(shaped_texts_expected[key]), "\t  "
+                        )
+                        yield FAIL, (
+                            f"{shaping_file}: Expected and actual shaping not matching."
+                            f"\n\tExpected for {key}:\n"
+                            f"{shaped_texts_str}"
+                            "\n\tActual:\n"
+                            f"{shaped_texts_expected_str}"
+                        )
+            else:
+                assert isinstance(shaped_texts, list)
+                assert isinstance(shaped_texts_expected, list)
+
+                shaped_texts_str = textwrap.indent("\n".join(shaped_texts), "\t  ")
+                shaped_texts_expected_str = textwrap.indent(
+                    "\n".join(shaped_texts_expected), "\t  "
+                )
+                yield FAIL, (
+                    f"{shaping_file}: Expected and actual shaping not matching."
+                    "\n\tExpected:\n"
+                    f"{shaped_texts_str}"
+                    "\n\tActual:\n"
+                    f"{shaped_texts_expected_str}"
+                )
+    else:
+        yield SKIP, "No test files found."
 
 
 profile.auto_register(globals())
