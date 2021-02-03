@@ -12,10 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import difflib
 import json
 import sys
-import tempfile
+import textwrap
 from pathlib import Path
 
 import uharfbuzz
@@ -398,26 +397,40 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
         if shaped_texts == shaped_texts_expected:
             yield PASS, f"{shaping_file}: No regression detected"
         else:
-            shaped_texts_json = json.dumps(shaped_texts, indent=2).split("\n")
-            shaped_texts_expected_json = json.dumps(
-                shaped_texts_expected, indent=2
-            ).split("\n")
+            if "fvar" in tt:
+                assert isinstance(shaped_texts, dict)
+                assert isinstance(shaped_texts_expected, dict)
 
-            with tempfile.NamedTemporaryFile(
-                mode="w+", suffix=".html", delete=False
-            ) as f:
-                f.write(
-                    difflib.HtmlDiff().make_file(
-                        shaped_texts_expected_json,
-                        shaped_texts_json,
-                        f"Expected for {filename.name}",
-                        "Actual",
-                    )
+                for key, shaped_text in shaped_texts.items():
+                    if shaped_text != shaped_texts_expected[key]:
+                        shaped_texts_str = textwrap.indent(
+                            "\n".join(shaped_text), "\t  "
+                        )
+                        shaped_texts_expected_str = textwrap.indent(
+                            "\n".join(shaped_texts_expected[key]), "\t  "
+                        )
+                        yield FAIL, (
+                            f"{shaping_file}: Expected and actual shaping not matching."
+                            f"\n\tExpected for {key}:\n"
+                            f"{shaped_texts_str}"
+                            "\n\tActual:\n"
+                            f"{shaped_texts_expected_str}"
+                        )
+            else:
+                assert isinstance(shaped_texts, list)
+                assert isinstance(shaped_texts_expected, list)
+
+                shaped_texts_str = textwrap.indent("\n".join(shaped_texts), "\t  ")
+                shaped_texts_expected_str = textwrap.indent(
+                    "\n".join(shaped_texts_expected), "\t  "
                 )
-            yield FAIL, (
-                f"{shaping_file}: Expected and actual shaping not matching. "
-                f"Open {f.name} in your browser for details."
-            )
+                yield FAIL, (
+                    f"{shaping_file}: Expected and actual shaping not matching."
+                    "\n\tExpected:\n"
+                    f"{shaped_texts_str}"
+                    "\n\tActual:\n"
+                    f"{shaped_texts_expected_str}"
+                )
 
 
 profile.auto_register(globals())
