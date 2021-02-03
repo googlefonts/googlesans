@@ -35,6 +35,20 @@ We ask the following from vendors who contribute to the Google Sans project:
 
 ## Contributing to the Google Sans Project
 
+### Generating Glpyhs.app Source Files
+
+If you work in Glyphs.app and want to generate sources for modification, skip using Glyphs.app's built-in im- and exporter functionality. Instead, run:
+
+```
+$ python3 scripts/gs-ufo2glyphs.py source/GoogleSans/GoogleSans.designspace
+
+$ python3 scripts/gs-ufo2glyphs.py source/GoogleSans/GoogleSans-Italic.designspace
+```
+
+It's best to rename the files to include the script you're working on, e.g. "GoogleSans_Devanagari.glyphs".
+
+You can post those source files directly to us, no back-conversion necessary, see below.
+
 ### How to Submit Updates
 
 1. Open a new issue with the title `[YOUR SCRIPT] merge: [OPTIONAL BRIEF DESCRIPTION]` on our [issue tracker](https://github.com/googlefonts/googlesans/issues).
