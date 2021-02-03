@@ -31,7 +31,6 @@ def shape_run(
     variations: Optional[Dict[str, float]] = None,
 ) -> str:
     font = hb.Font(hb_face)
-    font.scale = (hb_face.upem, hb_face.upem)
     if variations is not None:
         font.set_variations(variations)
 
