@@ -109,8 +109,8 @@ UFO_GS_TEXT_BOLDITALIC=GoogleSans/GoogleSans-TextBoldItalic.ufo
 #
 
 gs-static: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) --interpolate -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) --interpolate -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR)
+	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) --interpolate -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR) --expand-features-to-instances
+	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) --interpolate -o ttf --output-dir $(EXPERT_STATIC_BUILD_DIR) --expand-features-to-instances
 	@echo "================================"
 	@echo " Beginning post-compile edits..."
 	@echo "================================"
