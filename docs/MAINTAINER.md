@@ -248,3 +248,48 @@ The same as the [Glyphs.app workflow](#importing-a-glyphsapp-file), except we do
 Relies on testing material provided by vendors. Testing material should serve as a reference for how text should look and how features work. For testing, the vendor provided font is swapped with the merged font; if everything stays the same, the test is considered passed.
 
 ![Quality Assurance Workflow](assets/qa_process.png)
+
+### Adding and Updating Text Shaping Regression Test Files
+
+To ensure adding and changing feature code does not break existing font functionality, text shaping comparisons are run using HarfBuzz.
+
+The directory `qa/shaping/` contains `.json` files of the following format:
+
+```json5
+{
+  "input": {
+    // Required, a list of strings to shape.
+    "text": [
+      "GS ĢȘ",
+      "ԵԳԶՋԷԾ,;"
+    ],
+    // Required, a dictionary of features to enable (true) or disable (false).
+    // Can be empty.
+    "features": {
+      "c2sc": true,
+      "ss04": true
+    },
+    // Optional, the ISO 15924 script tag for the text.
+    "script": "armn",
+    // Optional, the BCP 47 language tag for the text.
+    "language": "hy",
+    // Optional, the script direction, one of "ltr", "rtl", "ttb" or "btt".
+    "direction": "ltr",
+    // Optional, the shaping output. Either "full", which includes offsets and
+    // advance widths, or "glyphstream" for just the glyph names.
+    "comparison_mode": "full"
+  },
+  "output": {
+      // Per font file output goes here...
+  }
+}
+```
+
+The files currently have to be created by hand. Give them a descriptive name, ideally prefixed by the script they pertain to. To fill them with the shaping results of a list of fonts, essentially setting their output in stone, run:
+
+```
+$ python3 qa/update_shaping_test_data.py qa/shaping/my_file.json \
+    build/GoogleSans/variable/expert/*.ttf build/GoogleSans/static/expert/*.ttf
+```
+
+The FontBakery QA tests will pick up the file automatically.
