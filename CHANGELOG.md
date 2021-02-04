@@ -10,6 +10,7 @@
 - Add `scripts/gs-merge-designspace.py` script (#105)
 - Add `scripts/gs-print-kerning-groups.py` script (#105)
 - Add `scripts/gs-ufo2glyphs.py` script (#105)
+- Add shaping regression test suite (#140)
 
 ### Changed
 
