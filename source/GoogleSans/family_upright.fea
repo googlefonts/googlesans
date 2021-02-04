@@ -1690,9 +1690,10 @@ feature liga {
     sub r t by r_t;
     sub t f by t_f;
     sub t t by t_t;
-    sub [G g G.BRACKET.18 g.rvrn] o o [g g.rvrn] l e underscore l o g o by Google.logo;
 
+    sub [G g G.BRACKET.18 g.rvrn] o o [g g.rvrn] l e underscore l o [g g.rvrn] o by Google.logo;
     sub [G g G.BRACKET.18 g.rvrn] o o [g g.rvrn] l e l o [g g.rvrn] o l i [g g.rvrn] a t u r e by Google.logo;
+
     sub [G G.BRACKET.18] l o [g g.rvrn] o l i [g g.rvrn] a t u r e by G.logo;
     sub o l o [g g.rvrn] o l i [g g.rvrn] a t u r e by o.logo;
     sub [g g.rvrn] l o [g g.rvrn] o l i [g g.rvrn] a t u r e by g.logo;
