@@ -147,15 +147,48 @@ for import_source in designspace_import.sources:
     import_font: ufoLib2.Font = import_source.font
     target_font: ufoLib2.Font = target_source.font
 
+    # Snatch up any bracket glyphs for glyphs without them being explicitly
+    # listed in the import file. ".BRACKET." is a glyphsLib convention.
+    for name in import_font.keys():
+        if ".BRACKET." not in name:
+            continue
+        base = name.split(".BRACKET.")[0]
+        if base in import_glyphs:
+            import_glyphs.add(name)
+            logging.warning(
+                "Added bracket glyph '%s', manually add to the Designspace rules.", name
+            )
+
     for glyph_name in import_glyphs:
-        target_font[glyph_name] = import_font[glyph_name]
+        try:
+            target_font[glyph_name] = import_font[glyph_name]
+        except KeyError as e:
+            logging.error(
+                "Glyph '%s' does not exist in the source UFO %s, aborting.",
+                str(e),
+                str(import_source.filename),
+            )
+            sys.exit(1)
 
     for group_name in import_groups:
-        target_font.groups[group_name] = import_font.groups[group_name]
+        try:
+            target_font.groups[group_name] = import_font.groups[group_name]
+        except KeyError as e:
+            logging.warning(
+                "Kerning group %s does not exist in the source UFO %s, skipping.",
+                str(e),
+                str(import_source.filename),
+            )
+            continue
 
     # Import kerning where either side of a pair is an imported glyph or group:
     for key, value in import_font.kerning.items():
         first, second = key
+        if (first not in import_font and first not in import_font.groups) or (
+            second not in import_font and second not in import_font.groups
+        ):
+            # Skip spurious pairs.
+            continue
         if (
             first in import_groups
             or first in import_glyphs
