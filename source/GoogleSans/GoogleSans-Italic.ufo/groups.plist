@@ -103,6 +103,11 @@
       <string>Gcircumflex</string>
       <string>Gcommaaccent</string>
       <string>Gdotaccent</string>
+      <string>G.BRACKET.18</string>
+      <string>Gbreve.BRACKET.18</string>
+      <string>Gcircumflex.BRACKET.18</string>
+      <string>Gcommaaccent.BRACKET.18</string>
+      <string>Gdotaccent.BRACKET.18</string>
     </array>
     <key>public.kern1.G.alt</key>
     <array>
@@ -111,6 +116,7 @@
       <string>Gcircumflex.alt</string>
       <string>Gcommaaccent.alt</string>
       <string>Gdotaccent.alt</string>
+      <string>Gcommaaccent.alt.BRACKET.18</string>
     </array>
     <key>public.kern1.GRK_Alpha</key>
     <array>
@@ -950,6 +956,7 @@
       <string>Eng</string>
       <string>Ntilde</string>
       <string>M.alt</string>
+      <string>Ncommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern1.I.alt</key>
     <array>
@@ -988,6 +995,8 @@
       <string>Kcommaaccent</string>
       <string>K.alt</string>
       <string>Kcommaaccent.alt</string>
+      <string>Kcommaaccent.BRACKET.18</string>
+      <string>Kcommaaccent.alt.BRACKET.18</string>
     </array>
     <key>public.kern1.L</key>
     <array>
@@ -995,6 +1004,7 @@
       <string>Lacute</string>
       <string>Lcommaaccent</string>
       <string>Lslash</string>
+      <string>Lcommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern1.O</key>
     <array>
@@ -1050,6 +1060,7 @@
       <string>Racute</string>
       <string>Rcaron</string>
       <string>Rcommaaccent</string>
+      <string>Rcommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern1.R.alt</key>
     <array>
@@ -1057,6 +1068,7 @@
       <string>Racute.alt</string>
       <string>Rcaron.alt</string>
       <string>Rcommaaccent.alt</string>
+      <string>Rcommaaccent.alt.BRACKET.18</string>
     </array>
     <key>public.kern1.S</key>
     <array>
@@ -1068,6 +1080,7 @@
       <string>Scommaaccent</string>
       <string>Scedilla.alt</string>
       <string>Dze-cy</string>
+      <string>Scommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern1.T</key>
     <array>
@@ -1078,6 +1091,7 @@
       <string>Tcommaaccent</string>
       <string>Te-cy</string>
       <string>Tedescender-cy</string>
+      <string>Tcommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern1.U</key>
     <array>
@@ -1219,6 +1233,458 @@
       <string>alefqamats-hb</string>
       <string>alefdagesh-hb</string>
     </array>
+    <key>public.kern1.arm_lc_bar_xheight</key>
+    <array>
+      <string>ech-arm</string>
+      <string>eh-arm</string>
+      <string>men_ech-arm.liga</string>
+    </array>
+    <key>public.kern1.arm_lc_bar_xheight_bottomRound</key>
+    <array>
+      <string>zhe-arm</string>
+      <string>ca-arm</string>
+    </array>
+    <key>public.kern1.arm_lc_baselineBar</key>
+    <array>
+      <string>gim-arm</string>
+      <string>da-arm</string>
+      <string>ra-arm</string>
+      <string>yiwn-arm</string>
+      <string>ech_yiwn-arm</string>
+    </array>
+    <key>public.kern1.arm_lc_ben</key>
+    <array>
+      <string>ben-arm</string>
+    </array>
+    <key>public.kern1.arm_lc_cha</key>
+    <array>
+      <string>cha-arm</string>
+      <string>cha-arm.nonspacing.long</string>
+      <string>cha-arm.nonspacing.short</string>
+    </array>
+    <key>public.kern1.arm_lc_cheh</key>
+    <array>
+      <string>cheh-arm</string>
+    </array>
+    <key>public.kern1.arm_lc_descender_bar</key>
+    <array>
+      <string>za-arm</string>
+      <string>liwn-arm</string>
+      <string>ghad-arm</string>
+      <string>za-arm.nonspacing.long</string>
+      <string>ghad-arm.nonspacing.long</string>
+      <string>za-arm.spacing.short</string>
+      <string>liwn-arm.spacing.short</string>
+      <string>ghad-arm.spacing.short</string>
+      <string>vew-arm.spacing.short</string>
+    </array>
+    <key>public.kern1.arm_lc_descender_bar_ascender</key>
+    <array>
+      <string>vew-arm</string>
+      <string>vew-arm.nonspacing.long</string>
+    </array>
+    <key>public.kern1.arm_lc_diagonal_descenders</key>
+    <array>
+      <string>sha-arm</string>
+      <string>jheh-arm</string>
+      <string>sha-arm.nonspacing.short</string>
+      <string>jheh-arm.nonspacing.short</string>
+    </array>
+    <key>public.kern1.arm_lc_feh</key>
+    <array>
+      <string>feh-arm</string>
+    </array>
+    <key>public.kern1.arm_lc_ja</key>
+    <array>
+      <string>ja-arm</string>
+    </array>
+    <key>public.kern1.arm_lc_keh</key>
+    <array>
+      <string>keh-arm</string>
+    </array>
+    <key>public.kern1.arm_lc_liwn</key>
+    <array>
+      <string>liwn-arm.nonspacing.long</string>
+    </array>
+    <key>public.kern1.arm_lc_men</key>
+    <array>
+      <string>men-arm</string>
+      <string>men-arm.nonspacing.long</string>
+    </array>
+    <key>public.kern1.arm_lc_roundTop_bottomStraight_xheight</key>
+    <array>
+      <string>et-arm</string>
+      <string>ini-arm</string>
+      <string>ho-arm</string>
+      <string>vo-arm</string>
+      <string>tiwn-arm</string>
+      <string>reh-arm</string>
+      <string>piwr-arm</string>
+      <string>men_ini-arm.liga</string>
+      <string>et-arm.nonspacing.short</string>
+    </array>
+    <key>public.kern1.arm_lc_round_xheight</key>
+    <array>
+      <string>oh-arm</string>
+    </array>
+    <key>public.kern1.arm_lc_straight_descender</key>
+    <array>
+      <string>ken-arm</string>
+      <string>peh-arm</string>
+    </array>
+    <key>public.kern1.arm_lc_straight_xheight</key>
+    <array>
+      <string>ayb-arm</string>
+      <string>xeh-arm</string>
+      <string>now-arm</string>
+      <string>seh-arm</string>
+      <string>men_now-arm.liga</string>
+      <string>vew_now-arm.liga</string>
+      <string>men_xeh-arm.liga</string>
+      <string>now-arm.nonspacing.long</string>
+      <string>now-arm.nonspacing.short</string>
+    </array>
+    <key>public.kern1.arm_lc_to</key>
+    <array>
+      <string>to-arm</string>
+    </array>
+    <key>public.kern1.arm_lc_topStraight_bottomRound_descender</key>
+    <array>
+      <string>yi-arm</string>
+      <string>co-arm</string>
+    </array>
+    <key>public.kern1.arm_period.case</key>
+    <array>
+      <string>period-arm.case</string>
+    </array>
+    <key>public.kern1.arm_punc_comma</key>
+    <array>
+      <string>comma-arm</string>
+    </array>
+    <key>public.kern1.arm_punc_emphasis</key>
+    <array>
+      <string>emphasis-arm</string>
+      <string>emphasis-arm.comb</string>
+      <string>emphasis-arm.cap.comb</string>
+      <string>emphasis-arm.short.comb</string>
+      <string>emphasis-arm.comb.sc</string>
+      <string>emphasis-arm.short.comb.sc</string>
+    </array>
+    <key>public.kern1.arm_punc_exclam</key>
+    <array>
+      <string>exclam-arm</string>
+      <string>exclam-arm.comb</string>
+      <string>exclam-arm.cap.comb</string>
+      <string>exclam-arm.short.comb</string>
+      <string>exclam-arm.comb.sc</string>
+      <string>exclam-arm.short.comb.sc</string>
+    </array>
+    <key>public.kern1.arm_punc_question</key>
+    <array>
+      <string>question-arm</string>
+      <string>question-arm.comb</string>
+      <string>question-arm.cap.comb</string>
+      <string>question-arm.short.comb</string>
+      <string>question-arm.comb.sc</string>
+      <string>question-arm.short.comb.sc</string>
+    </array>
+    <key>public.kern1.arm_punc_ringhalfleft</key>
+    <array>
+      <string>ringhalfleft-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_Cha</key>
+    <array>
+      <string>Cha-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_Co</key>
+    <array>
+      <string>Co-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_Co.sc</key>
+    <array>
+      <string>co-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_Feh</key>
+    <array>
+      <string>Feh-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_Feh.sc</key>
+    <array>
+      <string>feh-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_Keh</key>
+    <array>
+      <string>Keh-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_Keh.sc</key>
+    <array>
+      <string>keh-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_Piwr</key>
+    <array>
+      <string>Piwr-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_Piwr.sc</key>
+    <array>
+      <string>piwr-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_Tiwn</key>
+    <array>
+      <string>Tiwn-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_Tiwn.sc</key>
+    <array>
+      <string>tiwn-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_Za_Jheh</key>
+    <array>
+      <string>Za-arm</string>
+      <string>Jheh-arm</string>
+      <string>Za-arm.BRACKET.18</string>
+      <string>Jheh-arm.BRACKET.18</string>
+    </array>
+    <key>public.kern1.arm_uc_Za_Jheh.sc</key>
+    <array>
+      <string>za-arm.sc</string>
+      <string>jheh-arm.sc</string>
+      <string>za-arm.sc.BRACKET.18</string>
+      <string>jheh-arm.sc.BRACKET.18</string>
+    </array>
+    <key>public.kern1.arm_uc_bottomRound_topBar</key>
+    <array>
+      <string>Ca-arm</string>
+      <string>Ca-arm.BRACKET.18</string>
+    </array>
+    <key>public.kern1.arm_uc_bottomRound_topBar.sc</key>
+    <array>
+      <string>ca-arm.sc</string>
+      <string>ca-arm.sc.BRACKET.18</string>
+    </array>
+    <key>public.kern1.arm_uc_middleBar_topRound_bottomRound</key>
+    <array>
+      <string>To-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_middleBar_topRound_bottomRound.sc</key>
+    <array>
+      <string>to-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_middleBar_topRound_bottomStraight</key>
+    <array>
+      <string>Gim-arm</string>
+      <string>Da-arm</string>
+      <string>Ra-arm</string>
+      <string>Gim-arm.BRACKET.18</string>
+    </array>
+    <key>public.kern1.arm_uc_middleBar_topRound_bottomStraight.sc</key>
+    <array>
+      <string>gim-arm.sc</string>
+      <string>da-arm.sc</string>
+      <string>ra-arm.sc</string>
+      <string>gim-arm.sc.BRACKET.18</string>
+    </array>
+    <key>public.kern1.arm_uc_middleBar_topStraight_bottomRound</key>
+    <array>
+      <string>Zhe-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_middleBar_topStraight_bottomRound.sc</key>
+    <array>
+      <string>zhe-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_straight_baselineBar</key>
+    <array>
+      <string>Vew-arm</string>
+      <string>Ech_Vew-arm.liga</string>
+    </array>
+    <key>public.kern1.arm_uc_straight_baselineBar.sc</key>
+    <array>
+      <string>vew-arm.sc</string>
+      <string>ech_vew-arm.liga.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_straight_baselineBar_long</key>
+    <array>
+      <string>Liwn-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_straight_baselineBar_long.sc</key>
+    <array>
+      <string>liwn-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topBar_bottomDiagonal</key>
+    <array>
+      <string>Cheh-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topBar_bottomDiagonal.sc</key>
+    <array>
+      <string>cheh-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topBar_bottomRound</key>
+    <array>
+      <string>Men-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topBar_bottomRound.sc</key>
+    <array>
+      <string>men-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topDiagonal_baselineBar</key>
+    <array>
+      <string>Ho-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topDiagonal_baselineBar.sc</key>
+    <array>
+      <string>ho-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topDiagonal_bottomRound</key>
+    <array>
+      <string>Sha-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topDiagonal_bottomRound.sc</key>
+    <array>
+      <string>sha-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topLower_bottomRaised</key>
+    <array>
+      <string>Ini-arm</string>
+      <string>Men_Ini-arm.liga</string>
+    </array>
+    <key>public.kern1.arm_uc_topLower_bottomRaised.sc</key>
+    <array>
+      <string>ini-arm.sc</string>
+      <string>men_ini-arm.liga.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topLower_bottomRound</key>
+    <array>
+      <string>Xeh-arm</string>
+      <string>Now-arm</string>
+      <string>Men_Xeh-arm.liga</string>
+      <string>Men_Now-arm.liga</string>
+      <string>Vew_Now-arm.liga</string>
+    </array>
+    <key>public.kern1.arm_uc_topLower_bottomRound.sc</key>
+    <array>
+      <string>xeh-arm.sc</string>
+      <string>now-arm.sc</string>
+      <string>men_now-arm.liga.sc</string>
+      <string>vew_now-arm.liga.sc</string>
+      <string>men_xeh-arm.liga.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topLower_bottomStraight</key>
+    <array>
+      <string>Ken-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topLower_bottomStraight.sc</key>
+    <array>
+      <string>ken-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topLower_middleBar_baselineBar</key>
+    <array>
+      <string>Eh-arm</string>
+      <string>Eh-arm.BRACKET.18</string>
+    </array>
+    <key>public.kern1.arm_uc_topLower_middleBar_baselineBar.sc</key>
+    <array>
+      <string>eh-arm.sc</string>
+      <string>eh-arm.sc.BRACKET.18</string>
+    </array>
+    <key>public.kern1.arm_uc_topLower_middleBar_bottomRaised</key>
+    <array>
+      <string>Yiwn-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topLower_middleBar_bottomRaised.sc</key>
+    <array>
+      <string>yiwn-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topLower_middleBar_bottomRound</key>
+    <array>
+      <string>Ech-arm</string>
+      <string>Men_Ech-arm.liga</string>
+    </array>
+    <key>public.kern1.arm_uc_topLower_middleBar_bottomRound.sc</key>
+    <array>
+      <string>ech-arm.sc</string>
+      <string>men_ech-arm.liga.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_baselineBar</key>
+    <array>
+      <string>Ghad-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_baselineBar.sc</key>
+    <array>
+      <string>ghad-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_bottomDiagonal</key>
+    <array>
+      <string>Ja-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_bottomDiagonal.sc</key>
+    <array>
+      <string>ja-arm.sc</string>
+      <string>cha-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_bottomRaised</key>
+    <array>
+      <string>Reh-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_bottomRaised.sc</key>
+    <array>
+      <string>reh-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_bottomRaised_baselineBar</key>
+    <array>
+      <string>Et-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_bottomRaised_baselineBar.sc</key>
+    <array>
+      <string>et-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_bottomRound</key>
+    <array>
+      <string>Oh-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_bottomRound.sc</key>
+    <array>
+      <string>oh-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_bottomRound_middleRift</key>
+    <array>
+      <string>Yi-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_bottomRound_middleRift.sc</key>
+    <array>
+      <string>yi-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_bottomStraight</key>
+    <array>
+      <string>Vo-arm</string>
+      <string>Peh-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_bottomStraight.sc</key>
+    <array>
+      <string>vo-arm.sc</string>
+      <string>peh-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_middleBar_bottomRaised</key>
+    <array>
+      <string>Ben-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topRound_middleBar_bottomRaised.sc</key>
+    <array>
+      <string>ben-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topStraight_bottomDiagonal</key>
+    <array>
+      <string>Ayb-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topStraight_bottomDiagonal.sc</key>
+    <array>
+      <string>ayb-arm.sc</string>
+    </array>
+    <key>public.kern1.arm_uc_topStraight_bottomRound</key>
+    <array>
+      <string>Seh-arm</string>
+    </array>
+    <key>public.kern1.arm_uc_topStraight_bottomRound.sc</key>
+    <array>
+      <string>seh-arm.sc</string>
+    </array>
     <key>public.kern1.ayin-hb</key>
     <array>
       <string>ayin-hb</string>
@@ -1332,7 +1798,13 @@
       <string>colon</string>
       <string>semicolon</string>
       <string>semicolon.alt</string>
+      <string>period-arm</string>
+      <string>semicolon.loclARM</string>
+      <string>period-arm.sc</string>
       <string>questiongreek</string>
+      <string>semicolon.BRACKET.18</string>
+      <string>semicolon.loclARM.BRACKET.18</string>
+      <string>questiongreek.BRACKET.18</string>
     </array>
     <key>public.kern1.copyright</key>
     <array>
@@ -1659,6 +2131,7 @@
       <string>endash</string>
       <string>emdash</string>
       <string>horizontalbar</string>
+      <string>hyphen-arm</string>
     </array>
     <key>public.kern1.dash.cap</key>
     <array>
@@ -1752,6 +2225,8 @@
     <array>
       <string>finalpe-hb</string>
       <string>finalpedagesh-hb</string>
+      <string>finalpe-hb.BRACKET.18</string>
+      <string>finalpedagesh-hb.BRACKET.18</string>
     </array>
     <key>public.kern1.finaltsadi-hb</key>
     <array>
@@ -1765,6 +2240,7 @@
       <string>gcommaaccent</string>
       <string>gdotaccent</string>
       <string>de-cy.loclBGR</string>
+      <string>gcommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern1.g.sc</key>
     <array>
@@ -1773,6 +2249,7 @@
       <string>gcircumflex.sc</string>
       <string>gcommaaccent.sc</string>
       <string>gdotaccent.sc</string>
+      <string>g.sc.BRACKET.18</string>
     </array>
     <key>public.kern1.geresh-hb</key>
     <array>
@@ -1920,6 +2397,8 @@
       <string>f_k</string>
       <string>f_f_k.alt</string>
       <string>f_k.alt</string>
+      <string>kcommaaccent.BRACKET.18</string>
+      <string>kcommaaccent.alt.BRACKET.18</string>
     </array>
     <key>public.kern1.k.sc</key>
     <array>
@@ -1934,6 +2413,7 @@
       <string>f_f_l</string>
       <string>f_l</string>
       <string>palochka-cy</string>
+      <string>lcommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern1.l.sc</key>
     <array>
@@ -2030,6 +2510,7 @@
       <string>shha-cy</string>
       <string>pe-cy.loclBGR</string>
       <string>te-cy.loclBGR</string>
+      <string>ncommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern1.o</key>
     <array>
@@ -2155,6 +2636,8 @@
       <string>pe-hb</string>
       <string>pedagesh-hb</string>
       <string>perafe-hb</string>
+      <string>pe-hb.BRACKET.18</string>
+      <string>pedagesh-hb.BRACKET.18</string>
     </array>
     <key>public.kern1.period</key>
     <array>
@@ -2162,6 +2645,7 @@
       <string>comma</string>
       <string>ellipsis</string>
       <string>comma.alt</string>
+      <string>comma.BRACKET.18</string>
     </array>
     <key>public.kern1.periodcentered</key>
     <array>
@@ -2189,6 +2673,8 @@
       <string>quotesinglbase.alt</string>
       <string>quotedblbase.alt</string>
       <string>lowernumeral-greek</string>
+      <string>quotedblbase.BRACKET.18</string>
+      <string>quotesinglbase.BRACKET.18</string>
     </array>
     <key>public.kern1.quoteleft</key>
     <array>
@@ -2196,6 +2682,8 @@
       <string>quoteleft</string>
       <string>quotedblleft.alt</string>
       <string>quoteleft.alt</string>
+      <string>quotedblleft.BRACKET.18</string>
+      <string>quoteleft.BRACKET.18</string>
     </array>
     <key>public.kern1.quoteright</key>
     <array>
@@ -2203,7 +2691,15 @@
       <string>quoteright</string>
       <string>quotedblright.alt</string>
       <string>quoteright.alt</string>
+      <string>apostrophe-arm</string>
+      <string>apostrophe-arm.case</string>
+      <string>apostrophe-arm.sc</string>
       <string>numeral-greek</string>
+      <string>quotedblright.BRACKET.18</string>
+      <string>quoteright.BRACKET.18</string>
+      <string>apostrophe-arm.BRACKET.18</string>
+      <string>apostrophe-arm.case.BRACKET.18</string>
+      <string>apostrophe-arm.sc.BRACKET.18</string>
     </array>
     <key>public.kern1.quotesingle</key>
     <array>
@@ -2220,6 +2716,8 @@
       <string>racute.alt</string>
       <string>rcaron.alt</string>
       <string>rcommaaccent.alt</string>
+      <string>rcommaaccent.BRACKET.18</string>
+      <string>rcommaaccent.alt.BRACKET.18</string>
     </array>
     <key>public.kern1.r.sc</key>
     <array>
@@ -2245,6 +2743,7 @@
       <string>scommaaccent</string>
       <string>scedilla.alt</string>
       <string>dze-cy</string>
+      <string>scommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern1.s.sc</key>
     <array>
@@ -2259,6 +2758,7 @@
     <key>public.kern1.samekh-hb</key>
     <array>
       <string>samekh-hb</string>
+      <string>samekh-hb.BRACKET.18</string>
     </array>
     <key>public.kern1.seven</key>
     <array>
@@ -2307,6 +2807,7 @@
       <string>f_t</string>
       <string>r_t</string>
       <string>t_t</string>
+      <string>tcommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern1.t.alt</key>
     <array>
@@ -2320,6 +2821,7 @@
       <string>f_t.alt</string>
       <string>r_t.alt</string>
       <string>t_t.alt</string>
+      <string>tcommaaccent.alt.BRACKET.18</string>
     </array>
     <key>public.kern1.t.sc</key>
     <array>
@@ -2475,6 +2977,13 @@
       <string>umacron-cy</string>
       <string>udieresis-cy</string>
       <string>uhungarumlaut-cy</string>
+      <string>y.BRACKET.18</string>
+      <string>yacute.BRACKET.18</string>
+      <string>ycircumflex.BRACKET.18</string>
+      <string>ydieresis.BRACKET.18</string>
+      <string>ygrave.BRACKET.18</string>
+      <string>yhookabove.BRACKET.18</string>
+      <string>ytilde.BRACKET.18</string>
     </array>
     <key>public.kern1.y.sc</key>
     <array>
@@ -3452,6 +3961,12 @@
       <string>Ef-cy.loclBGR</string>
       <string>Esdescender-cy.loclBSH</string>
       <string>Esdescender-cy.loclCHU</string>
+      <string>G.BRACKET.18</string>
+      <string>Gbreve.BRACKET.18</string>
+      <string>Gcircumflex.BRACKET.18</string>
+      <string>Gcommaaccent.BRACKET.18</string>
+      <string>Gcommaaccent.alt.BRACKET.18</string>
+      <string>Gdotaccent.BRACKET.18</string>
     </array>
     <key>public.kern2.Omega</key>
     <array>
@@ -3467,6 +3982,7 @@
       <string>Scommaaccent</string>
       <string>Scedilla.alt</string>
       <string>Dze-cy</string>
+      <string>Scommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern2.T</key>
     <array>
@@ -3482,6 +3998,7 @@
       <string>Kabashkir-cy</string>
       <string>Tedescender-cy</string>
       <string>Tetse-cy</string>
+      <string>Tcommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern2.Tonos</key>
     <array>
@@ -3634,6 +4151,396 @@
       <string>tsadi-hb</string>
       <string>tsadidagesh-hb</string>
     </array>
+    <key>public.kern2.arm_lc_cheh</key>
+    <array>
+      <string>cheh-arm</string>
+    </array>
+    <key>public.kern2.arm_lc_diagonal_descenders</key>
+    <array>
+      <string>cha-arm</string>
+      <string>cha-arm.nonspacing.long</string>
+      <string>cha-arm.nonspacing.short</string>
+    </array>
+    <key>public.kern2.arm_lc_feh</key>
+    <array>
+      <string>feh-arm</string>
+    </array>
+    <key>public.kern2.arm_lc_ja</key>
+    <array>
+      <string>ja-arm</string>
+    </array>
+    <key>public.kern2.arm_lc_jheh</key>
+    <array>
+      <string>jheh-arm</string>
+      <string>jheh-arm.nonspacing.short</string>
+    </array>
+    <key>public.kern2.arm_lc_keh</key>
+    <array>
+      <string>keh-arm</string>
+    </array>
+    <key>public.kern2.arm_lc_now</key>
+    <array>
+      <string>now-arm</string>
+    </array>
+    <key>public.kern2.arm_lc_round_xheight</key>
+    <array>
+      <string>gim-arm</string>
+      <string>za-arm</string>
+      <string>zhe-arm</string>
+      <string>co-arm</string>
+      <string>oh-arm</string>
+      <string>za-arm.nonspacing.long</string>
+      <string>za-arm.spacing.short</string>
+    </array>
+    <key>public.kern2.arm_lc_round_xheight_topBar</key>
+    <array>
+      <string>ca-arm</string>
+    </array>
+    <key>public.kern2.arm_lc_sha</key>
+    <array>
+      <string>sha-arm</string>
+      <string>sha-arm.nonspacing.short</string>
+    </array>
+    <key>public.kern2.arm_lc_straight_ascender</key>
+    <array>
+      <string>eh-arm</string>
+    </array>
+    <key>public.kern2.arm_lc_straight_ascender_descender</key>
+    <array>
+      <string>ini-arm</string>
+      <string>xeh-arm</string>
+    </array>
+    <key>public.kern2.arm_lc_straight_descender</key>
+    <array>
+      <string>ben-arm</string>
+      <string>et-arm</string>
+      <string>to-arm</string>
+      <string>liwn-arm</string>
+      <string>reh-arm</string>
+      <string>liwn-arm.nonspacing.long</string>
+      <string>et-arm.nonspacing.short</string>
+      <string>liwn-arm.spacing.short</string>
+    </array>
+    <key>public.kern2.arm_lc_straight_xheight</key>
+    <array>
+      <string>da-arm</string>
+      <string>ghad-arm</string>
+      <string>vo-arm</string>
+      <string>ra-arm</string>
+      <string>yiwn-arm</string>
+      <string>ghad-arm.nonspacing.long</string>
+      <string>ghad-arm.spacing.short</string>
+    </array>
+    <key>public.kern2.arm_lc_topRound_bottomStraight_ascender</key>
+    <array>
+      <string>ho-arm</string>
+    </array>
+    <key>public.kern2.arm_lc_topStraight_bottomRound_ascender</key>
+    <array>
+      <string>ech-arm</string>
+      <string>ken-arm</string>
+      <string>ech_yiwn-arm</string>
+      <string>now-arm.nonspacing.long</string>
+      <string>now-arm.nonspacing.short</string>
+    </array>
+    <key>public.kern2.arm_lc_topStraight_bottomRound_xheight</key>
+    <array>
+      <string>ayb-arm</string>
+      <string>men-arm</string>
+      <string>peh-arm</string>
+      <string>seh-arm</string>
+      <string>vew-arm</string>
+      <string>tiwn-arm</string>
+      <string>piwr-arm</string>
+      <string>men_now-arm.liga</string>
+      <string>men_ech-arm.liga</string>
+      <string>men_ini-arm.liga</string>
+      <string>vew_now-arm.liga</string>
+      <string>men_xeh-arm.liga</string>
+      <string>men-arm.nonspacing.long</string>
+      <string>vew-arm.nonspacing.long</string>
+      <string>vew-arm.spacing.short</string>
+    </array>
+    <key>public.kern2.arm_lc_yi</key>
+    <array>
+      <string>yi-arm</string>
+    </array>
+    <key>public.kern2.arm_period.case</key>
+    <array>
+      <string>period-arm.case</string>
+    </array>
+    <key>public.kern2.arm_punc_comma</key>
+    <array>
+      <string>comma-arm</string>
+      <string>comma-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_punc_emphasis</key>
+    <array>
+      <string>emphasis-arm</string>
+      <string>emphasis-arm.comb</string>
+      <string>emphasis-arm.cap.comb</string>
+      <string>emphasis-arm.short.comb</string>
+      <string>emphasis-arm.comb.sc</string>
+      <string>emphasis-arm.short.comb.sc</string>
+    </array>
+    <key>public.kern2.arm_punc_exclam</key>
+    <array>
+      <string>exclam-arm</string>
+      <string>exclam-arm.comb</string>
+      <string>exclam-arm.cap.comb</string>
+      <string>exclam-arm.short.comb</string>
+      <string>exclam-arm.comb.sc</string>
+      <string>exclam-arm.short.comb.sc</string>
+    </array>
+    <key>public.kern2.arm_punc_question</key>
+    <array>
+      <string>question-arm</string>
+      <string>question-arm.comb</string>
+      <string>question-arm.cap.comb</string>
+      <string>question-arm.short.comb</string>
+      <string>question-arm.comb.sc</string>
+      <string>question-arm.short.comb.sc</string>
+    </array>
+    <key>public.kern2.arm_punc_ringhalfleft</key>
+    <array>
+      <string>ringhalfleft-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_Co</key>
+    <array>
+      <string>Co-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_Co.sc</key>
+    <array>
+      <string>co-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_Feh</key>
+    <array>
+      <string>Feh-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_Feh.sc</key>
+    <array>
+      <string>feh-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_Ja</key>
+    <array>
+      <string>Ja-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_Ja.sc</key>
+    <array>
+      <string>ja-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_Jheh</key>
+    <array>
+      <string>Jheh-arm</string>
+      <string>Jheh-arm.BRACKET.18</string>
+    </array>
+    <key>public.kern2.arm_uc_Jheh.sc</key>
+    <array>
+      <string>jheh-arm.sc</string>
+      <string>jheh-arm.sc.BRACKET.18</string>
+    </array>
+    <key>public.kern2.arm_uc_Peh</key>
+    <array>
+      <string>Peh-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_Peh.sc</key>
+    <array>
+      <string>peh-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_Piwr</key>
+    <array>
+      <string>Piwr-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_Piwr.sc</key>
+    <array>
+      <string>piwr-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_Tiwn</key>
+    <array>
+      <string>Tiwn-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_Tiwn.sc</key>
+    <array>
+      <string>tiwn-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_Za</key>
+    <array>
+      <string>Za-arm</string>
+      <string>Za-arm.BRACKET.18</string>
+    </array>
+    <key>public.kern2.arm_uc_Za.sc</key>
+    <array>
+      <string>za-arm.sc</string>
+      <string>za-arm.sc.BRACKET.18</string>
+    </array>
+    <key>public.kern2.arm_uc_bottomRound_topBar</key>
+    <array>
+      <string>Ca-arm</string>
+      <string>Ca-arm.BRACKET.18</string>
+    </array>
+    <key>public.kern2.arm_uc_bottomRound_topBar.sc</key>
+    <array>
+      <string>ca-arm.sc</string>
+      <string>ca-arm.sc.BRACKET.18</string>
+    </array>
+    <key>public.kern2.arm_uc_bottomRound_topDiagonal</key>
+    <array>
+      <string>Cheh-arm</string>
+      <string>Sha-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_bottomRound_topDiagonal.sc</key>
+    <array>
+      <string>cheh-arm.sc</string>
+      <string>sha-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_diagonal</key>
+    <array>
+      <string>Ho-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_diagonal.sc</key>
+    <array>
+      <string>ho-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_straight</key>
+    <array>
+      <string>Eh-arm</string>
+      <string>Ini-arm</string>
+      <string>Liwn-arm</string>
+      <string>Xeh-arm</string>
+      <string>Yiwn-arm</string>
+      <string>Eh-arm.BRACKET.18</string>
+    </array>
+    <key>public.kern2.arm_uc_straight.sc</key>
+    <array>
+      <string>eh-arm.sc</string>
+      <string>ini-arm.sc</string>
+      <string>liwn-arm.sc</string>
+      <string>xeh-arm.sc</string>
+      <string>yiwn-arm.sc</string>
+      <string>eh-arm.sc.BRACKET.18</string>
+    </array>
+    <key>public.kern2.arm_uc_topBar_bottomRound</key>
+    <array>
+      <string>Now-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_topBar_bottomRound.sc</key>
+    <array>
+      <string>now-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_topLower_bottomRaised</key>
+    <array>
+      <string>Vew-arm</string>
+      <string>Vew_Now-arm.liga</string>
+    </array>
+    <key>public.kern2.arm_uc_topLower_bottomRaised.sc</key>
+    <array>
+      <string>vew-arm.sc</string>
+      <string>vew_now-arm.liga.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_topLower_bottomRound</key>
+    <array>
+      <string>Zhe-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_topLower_bottomRound.sc</key>
+    <array>
+      <string>zhe-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_topRound_bottomDiagonal</key>
+    <array>
+      <string>Cha-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_topRound_bottomDiagonal.sc</key>
+    <array>
+      <string>cha-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_topRound_bottomRaised</key>
+    <array>
+      <string>Da-arm</string>
+      <string>Ghad-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_topRound_bottomRaised.sc</key>
+    <array>
+      <string>da-arm.sc</string>
+      <string>ghad-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_topRound_bottomRound</key>
+    <array>
+      <string>Yi-arm</string>
+      <string>Oh-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_topRound_bottomRound.sc</key>
+    <array>
+      <string>yi-arm.sc</string>
+      <string>oh-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_topRound_bottomRound_bottomRaised</key>
+    <array>
+      <string>Gim-arm</string>
+      <string>Gim-arm.BRACKET.18</string>
+    </array>
+    <key>public.kern2.arm_uc_topRound_bottomRound_bottomRaised.sc</key>
+    <array>
+      <string>gim-arm.sc</string>
+      <string>gim-arm.sc.BRACKET.18</string>
+    </array>
+    <key>public.kern2.arm_uc_topRound_bottomStraight</key>
+    <array>
+      <string>Ben-arm</string>
+      <string>Et-arm</string>
+      <string>To-arm</string>
+      <string>Vo-arm</string>
+      <string>Ra-arm</string>
+      <string>Reh-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_topRound_bottomStraight.sc</key>
+    <array>
+      <string>ben-arm.sc</string>
+      <string>et-arm.sc</string>
+      <string>to-arm.sc</string>
+      <string>vo-arm.sc</string>
+      <string>ra-arm.sc</string>
+      <string>reh-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_topRound_bottomStraight_middleBar</key>
+    <array>
+      <string>Keh-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_topRound_bottomStraight_middleBar.sc</key>
+    <array>
+      <string>keh-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_topStraight_bottomRaised</key>
+    <array>
+      <string>Ken-arm</string>
+    </array>
+    <key>public.kern2.arm_uc_topStraight_bottomRaised.sc</key>
+    <array>
+      <string>ken-arm.sc</string>
+    </array>
+    <key>public.kern2.arm_uc_topStraight_bottomRound</key>
+    <array>
+      <string>Ayb-arm</string>
+      <string>Ech-arm</string>
+      <string>Men-arm</string>
+      <string>Seh-arm</string>
+      <string>Ech_Vew-arm.liga</string>
+      <string>Men_Ech-arm.liga</string>
+      <string>Men_Ini-arm.liga</string>
+      <string>Men_Xeh-arm.liga</string>
+      <string>Men_Now-arm.liga</string>
+    </array>
+    <key>public.kern2.arm_uc_topStraight_bottomRound.sc</key>
+    <array>
+      <string>ayb-arm.sc</string>
+      <string>ech-arm.sc</string>
+      <string>men-arm.sc</string>
+      <string>seh-arm.sc</string>
+      <string>ech_vew-arm.liga.sc</string>
+      <string>men_now-arm.liga.sc</string>
+      <string>men_ech-arm.liga.sc</string>
+      <string>men_ini-arm.liga.sc</string>
+      <string>men_xeh-arm.liga.sc</string>
+    </array>
     <key>public.kern2.bet-hb</key>
     <array>
       <string>bet-hb</string>
@@ -3686,7 +4593,13 @@
       <string>colon</string>
       <string>semicolon</string>
       <string>semicolon.alt</string>
+      <string>period-arm</string>
+      <string>semicolon.loclARM</string>
+      <string>period-arm.sc</string>
       <string>questiongreek</string>
+      <string>semicolon.BRACKET.18</string>
+      <string>semicolon.loclARM.BRACKET.18</string>
+      <string>questiongreek.BRACKET.18</string>
     </array>
     <key>public.kern2.copyright</key>
     <array>
@@ -3950,6 +4863,7 @@
       <string>endash</string>
       <string>emdash</string>
       <string>horizontalbar</string>
+      <string>hyphen-arm</string>
     </array>
     <key>public.kern2.dash.cap</key>
     <array>
@@ -4014,6 +4928,7 @@
       <string>gcommaaccent</string>
       <string>gdotaccent</string>
       <string>de-cy.loclBGR</string>
+      <string>gcommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern2.geresh-hb</key>
     <array>
@@ -4171,6 +5086,8 @@
       <string>reshdagesh-hb</string>
       <string>tav-hb</string>
       <string>tavdagesh-hb</string>
+      <string>finalpe-hb.BRACKET.18</string>
+      <string>finalpedagesh-hb.BRACKET.18</string>
     </array>
     <key>public.kern2.i</key>
     <array>
@@ -4233,6 +5150,9 @@
       <string>ve-cy.loclBGR</string>
       <string>ka-cy.loclBGR</string>
       <string>iu-cy.loclBGR</string>
+      <string>kcommaaccent.BRACKET.18</string>
+      <string>kcommaaccent.alt.BRACKET.18</string>
+      <string>lcommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern2.lamed-hb</key>
     <array>
@@ -4301,6 +5221,8 @@
       <string>te-cy.loclBGR</string>
       <string>ghestroke-cy.loclBSH</string>
       <string>gje-cy.loclMKD</string>
+      <string>ncommaaccent.BRACKET.18</string>
+      <string>rcommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern2.maqaf-hb</key>
     <array>
@@ -4340,6 +5262,9 @@
       <string>pe-hb</string>
       <string>pedagesh-hb</string>
       <string>perafe-hb</string>
+      <string>pe-hb.BRACKET.18</string>
+      <string>pedagesh-hb.BRACKET.18</string>
+      <string>samekh-hb.BRACKET.18</string>
     </array>
     <key>public.kern2.minute</key>
     <array>
@@ -4507,6 +5432,7 @@
       <string>ef-cy.loclBGR.sc</string>
       <string>esdescender-cy.loclBSH.sc</string>
       <string>esdescender-cy.loclCHU.sc</string>
+      <string>g.sc.BRACKET.18</string>
     </array>
     <key>public.kern2.o.sc.lc.ss04</key>
     <array>
@@ -4522,6 +5448,7 @@
       <string>g.sc.ss04</string>
       <string>o.sc.ss04</string>
       <string>q.sc.ss04</string>
+      <string>g.sc.ss04.BRACKET.18</string>
     </array>
     <key>public.kern2.one.superior</key>
     <array>
@@ -4561,6 +5488,7 @@
       <string>comma</string>
       <string>ellipsis</string>
       <string>comma.alt</string>
+      <string>comma.BRACKET.18</string>
     </array>
     <key>public.kern2.periodcentered</key>
     <array>
@@ -4582,6 +5510,8 @@
       <string>quotesinglbase.alt</string>
       <string>quotedblbase.alt</string>
       <string>lowernumeral-greek</string>
+      <string>quotedblbase.BRACKET.18</string>
+      <string>quotesinglbase.BRACKET.18</string>
     </array>
     <key>public.kern2.quoteleft</key>
     <array>
@@ -4589,6 +5519,8 @@
       <string>quoteleft</string>
       <string>quotedblleft.alt</string>
       <string>quoteleft.alt</string>
+      <string>quotedblleft.BRACKET.18</string>
+      <string>quoteleft.BRACKET.18</string>
     </array>
     <key>public.kern2.quoteright</key>
     <array>
@@ -4596,7 +5528,15 @@
       <string>quoteright</string>
       <string>quotedblright.alt</string>
       <string>quoteright.alt</string>
+      <string>apostrophe-arm</string>
+      <string>apostrophe-arm.case</string>
+      <string>apostrophe-arm.sc</string>
       <string>numeral-greek</string>
+      <string>quotedblright.BRACKET.18</string>
+      <string>quoteright.BRACKET.18</string>
+      <string>apostrophe-arm.BRACKET.18</string>
+      <string>apostrophe-arm.case.BRACKET.18</string>
+      <string>apostrophe-arm.sc.BRACKET.18</string>
     </array>
     <key>public.kern2.quotesingle</key>
     <array>
@@ -4612,6 +5552,7 @@
       <string>racute.alt</string>
       <string>rcaron.alt</string>
       <string>rcommaaccent.alt</string>
+      <string>rcommaaccent.alt.BRACKET.18</string>
     </array>
     <key>public.kern2.s</key>
     <array>
@@ -4623,6 +5564,7 @@
       <string>scommaaccent</string>
       <string>scedilla.alt</string>
       <string>dze-cy</string>
+      <string>scommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern2.s.sc</key>
     <array>
@@ -4672,6 +5614,7 @@
       <string>tcommaaccent</string>
       <string>t_f</string>
       <string>t_t</string>
+      <string>tcommaaccent.BRACKET.18</string>
     </array>
     <key>public.kern2.t.alt</key>
     <array>
@@ -4683,6 +5626,7 @@
       <string>tcommaaccent.alt</string>
       <string>t_f.alt</string>
       <string>t_t.alt</string>
+      <string>tcommaaccent.alt.BRACKET.18</string>
     </array>
     <key>public.kern2.t.sc</key>
     <array>
@@ -4846,6 +5790,14 @@
       <string>umacron-cy</string>
       <string>udieresis-cy</string>
       <string>uhungarumlaut-cy</string>
+      <string>y.BRACKET.18</string>
+      <string>yacute.BRACKET.18</string>
+      <string>ycircumflex.BRACKET.18</string>
+      <string>ydieresis.BRACKET.18</string>
+      <string>ydotbelow.BRACKET.18</string>
+      <string>ygrave.BRACKET.18</string>
+      <string>yhookabove.BRACKET.18</string>
+      <string>ytilde.BRACKET.18</string>
     </array>
     <key>public.kern2.y.sc</key>
     <array>
