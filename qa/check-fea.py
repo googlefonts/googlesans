@@ -414,9 +414,9 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
                         yield FAIL, (
                             f"{shaping_file}: Expected and actual shaping not matching."
                             f"\n\tExpected for {key}:\n"
-                            f"{shaped_texts_str}"
-                            "\n\tActual:\n"
                             f"{shaped_texts_expected_str}"
+                            "\n\tActual:\n"
+                            f"{shaped_texts_str}"
                         )
             else:
                 assert isinstance(shaped_texts, list)
@@ -429,9 +429,9 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
                 yield FAIL, (
                     f"{shaping_file}: Expected and actual shaping not matching."
                     "\n\tExpected:\n"
-                    f"{shaped_texts_str}"
-                    "\n\tActual:\n"
                     f"{shaped_texts_expected_str}"
+                    "\n\tActual:\n"
+                    f"{shaped_texts_str}"
                 )
 
     if not shaping_file_found:
