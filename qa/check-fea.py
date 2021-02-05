@@ -351,8 +351,10 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
     tt = ttFont
     filename = Path(tt.reader.file.name)
 
+    shaping_file_found = False
     shaping_basedir = Path("qa", "shaping")
     for shaping_file in shaping_basedir.glob("*.json"):
+        shaping_file_found = True
         shaping_input_doc = json.loads(shaping_file.read_text())
 
         try:
@@ -431,7 +433,8 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
                     "\n\tActual:\n"
                     f"{shaped_texts_expected_str}"
                 )
-    else:
+
+    if not shaping_file_found:
         yield SKIP, "No test files found."
 
 
