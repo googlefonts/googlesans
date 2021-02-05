@@ -182,7 +182,7 @@ feature aalt {
     sub acircumflexacute.alt from [acircumflexacute.alt acircumflexacute];
     sub acircumflexgrave from [acircumflexgrave acircumflexgrave.alt];
     sub acircumflexgrave.alt from [acircumflexgrave.alt acircumflexgrave];
-	sub acircumflexhookabove from [acircumflexhookabove acircumflexhookabove.alt];
+    sub acircumflexhookabove from [acircumflexhookabove acircumflexhookabove.alt];
     sub acircumflexhookabove.alt from [acircumflexhookabove.alt acircumflexhookabove];
     sub acircumflextilde from [acircumflextilde acircumflextilde.alt];
     sub acircumflextilde.alt from [acircumflextilde.alt acircumflextilde];
@@ -322,9 +322,9 @@ feature aalt {
     sub guilsinglleft.cap from [guilsinglleft.cap guilsinglleft];
     sub guilsinglright from [guilsinglright guilsinglright.cap];
     sub guilsinglright.cap from [guilsinglright.cap guilsinglright];
-	sub hookabovecomb from [hookabovecomb hookabovecomb.cap];
+    sub hookabovecomb from [hookabovecomb hookabovecomb.cap];
     sub hookabovecomb.cap from [hookabovecomb.cap hookabovecomb];
-	sub horncomb from [horncomb horncomb.cap];
+    sub horncomb from [horncomb horncomb.cap];
     sub horncomb.cap from [horncomb.cap horncomb];
     sub hungarumlaut from [hungarumlaut hungarumlautcomb hungarumlautcomb.cap];
     sub hungarumlautcomb.cap from [hungarumlautcomb.cap hungarumlautcomb hungarumlaut];
@@ -569,47 +569,47 @@ feature ccmp {
 # ===============
 
 lookup ccmp_Other_1 {
-	@CombiningTopAccents = [acutecomb brevecomb caroncomb circumflexcomb commaturnedabovecomb dieresiscomb dotaccentcomb gravecomb hookabovecomb hungarumlautcomb macroncomb ringcomb tildecomb];
-	@CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb];
-	sub [i j]' @CombiningTopAccents by [idotless jdotless];
-	sub [i j]' @CombiningNonTopAccents @CombiningTopAccents by [idotless jdotless];
-	@Markscomb = [tonos psili koronis dasia dasiavaria psilioxia dasiaoxia psiliperispomeni dasiaperispomeni dialytikavaria dialytikaperispomeni varia oxia perispomeni psilivaria dialytikaoxia];
-	@MarkscombCase = [tonos.case psili.case koronis.case dasia.case dasiavaria.case psilioxia.case dasiaoxia.case psiliperispomeni.case dasiaperispomeni.case dialytikavaria.case dialytikaperispomeni.case varia.case oxia.case perispomeni.case psilivaria.case dialytikaoxia.case];
-	sub @Markscomb @Markscomb' by @MarkscombCase;
-	sub @Uppercase @Markscomb' by @MarkscombCase;
+    @CombiningTopAccents = [acutecomb brevecomb caroncomb circumflexcomb commaturnedabovecomb dieresiscomb dotaccentcomb gravecomb hookabovecomb hungarumlautcomb macroncomb ringcomb tildecomb];
+    @CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb];
+    sub [i j]' @CombiningTopAccents by [idotless jdotless];
+    sub [i j]' @CombiningNonTopAccents @CombiningTopAccents by [idotless jdotless];
+    @Markscomb = [tonos psili koronis dasia dasiavaria psilioxia dasiaoxia psiliperispomeni dasiaperispomeni dialytikavaria dialytikaperispomeni varia oxia perispomeni psilivaria dialytikaoxia];
+    @MarkscombCase = [tonos.case psili.case koronis.case dasia.case dasiavaria.case psilioxia.case dasiaoxia.case psiliperispomeni.case dasiaperispomeni.case dialytikavaria.case dialytikaperispomeni.case varia.case oxia.case perispomeni.case psilivaria.case dialytikaoxia.case];
+    sub @Markscomb @Markscomb' by @MarkscombCase;
+    sub @Uppercase @Markscomb' by @MarkscombCase;
 } ccmp_Other_1;
 
 lookup ccmp_Other_2 {
-	sub @Markscomb' @MarkscombCase by @MarkscombCase;
-	sub @MarkscombCase @Markscomb' by @MarkscombCase;
+    sub @Markscomb' @MarkscombCase by @MarkscombCase;
+    sub @MarkscombCase @Markscomb' by @MarkscombCase;
 } ccmp_Other_2;
 
 lookup ccmp_latn_1 {
-	lookupflag 0;
-	sub brevecomb acutecomb by brevecomb_acutecomb;
-	sub brevecomb.cap acutecomb.cap by brevecomb_acutecomb.cap;
-	sub brevecomb.sc acutecomb.sc by brevecomb_acutecomb.sc;
-	sub brevecomb gravecomb by brevecomb_gravecomb;
-	sub brevecomb.cap gravecomb.cap by brevecomb_gravecomb.cap;
-	sub brevecomb.sc gravecomb.sc by brevecomb_gravecomb.sc;
-	sub brevecomb hookabovecomb by brevecomb_hookabovecomb;
-	sub brevecomb.cap hookabovecomb.cap by brevecomb_hookabovecomb.cap;
-	sub brevecomb.sc hookabovecomb.sc by brevecomb_hookabovecomb.sc;
-	sub brevecomb tildecomb by brevecomb_tildecomb;
-	sub brevecomb.cap tildecomb.cap by brevecomb_tildecomb.cap;
-	sub brevecomb.sc tildecomb.sc by brevecomb_tildecomb.sc;
-	sub circumflexcomb acutecomb by circumflexcomb_acutecomb;
-	sub circumflexcomb.cap acutecomb.cap by circumflexcomb_acutecomb.cap;
-	sub circumflexcomb.sc acutecomb.sc by circumflexcomb_acutecomb.sc;
-	sub circumflexcomb gravecomb by circumflexcomb_gravecomb;
-	sub circumflexcomb.cap gravecomb.cap by circumflexcomb_gravecomb.cap;
-	sub circumflexcomb.sc gravecomb.sc by circumflexcomb_gravecomb.sc;
-	sub circumflexcomb hookabovecomb by circumflexcomb_hookabovecomb;
-	sub circumflexcomb.cap hookabovecomb.cap by circumflexcomb_hookabovecomb.cap;
-	sub circumflexcomb.sc hookabovecomb.sc by circumflexcomb_hookabovecomb.sc;
-	sub circumflexcomb tildecomb by circumflexcomb_tildecomb;
-	sub circumflexcomb.cap tildecomb.cap by circumflexcomb_tildecomb.cap;
-	sub circumflexcomb.sc tildecomb.sc by circumflexcomb_tildecomb.sc;
+    lookupflag 0;
+    sub brevecomb acutecomb by brevecomb_acutecomb;
+    sub brevecomb.cap acutecomb.cap by brevecomb_acutecomb.cap;
+    sub brevecomb.sc acutecomb.sc by brevecomb_acutecomb.sc;
+    sub brevecomb gravecomb by brevecomb_gravecomb;
+    sub brevecomb.cap gravecomb.cap by brevecomb_gravecomb.cap;
+    sub brevecomb.sc gravecomb.sc by brevecomb_gravecomb.sc;
+    sub brevecomb hookabovecomb by brevecomb_hookabovecomb;
+    sub brevecomb.cap hookabovecomb.cap by brevecomb_hookabovecomb.cap;
+    sub brevecomb.sc hookabovecomb.sc by brevecomb_hookabovecomb.sc;
+    sub brevecomb tildecomb by brevecomb_tildecomb;
+    sub brevecomb.cap tildecomb.cap by brevecomb_tildecomb.cap;
+    sub brevecomb.sc tildecomb.sc by brevecomb_tildecomb.sc;
+    sub circumflexcomb acutecomb by circumflexcomb_acutecomb;
+    sub circumflexcomb.cap acutecomb.cap by circumflexcomb_acutecomb.cap;
+    sub circumflexcomb.sc acutecomb.sc by circumflexcomb_acutecomb.sc;
+    sub circumflexcomb gravecomb by circumflexcomb_gravecomb;
+    sub circumflexcomb.cap gravecomb.cap by circumflexcomb_gravecomb.cap;
+    sub circumflexcomb.sc gravecomb.sc by circumflexcomb_gravecomb.sc;
+    sub circumflexcomb hookabovecomb by circumflexcomb_hookabovecomb;
+    sub circumflexcomb.cap hookabovecomb.cap by circumflexcomb_hookabovecomb.cap;
+    sub circumflexcomb.sc hookabovecomb.sc by circumflexcomb_hookabovecomb.sc;
+    sub circumflexcomb tildecomb by circumflexcomb_tildecomb;
+    sub circumflexcomb.cap tildecomb.cap by circumflexcomb_tildecomb.cap;
+    sub circumflexcomb.sc tildecomb.sc by circumflexcomb_tildecomb.sc;
 } ccmp_latn_1;
 
 # ===============
@@ -621,75 +621,75 @@ lookup ccmp_latn_1 {
 # ===============
 
 lookup hb_shinDots {
-	lookupflag 0;
-	lookupflag UseMarkFilteringSet @hb_shinDots;
-	sub shin-hb shindot-hb by shinshindot-hb;
-	sub shin-hb sindot-hb by shinsindot-hb;
+    lookupflag 0;
+    lookupflag UseMarkFilteringSet @hb_shinDots;
+    sub shin-hb shindot-hb by shinshindot-hb;
+    sub shin-hb sindot-hb by shinsindot-hb;
 } hb_shinDots;
 
 lookup hb_dagesh {
-	lookupflag 0;
-	lookupflag MarkAttachmentType @hb_dagesh;
-	sub alef-hb dagesh-hb by alefdagesh-hb;
-	sub bet-hb dagesh-hb by betdagesh-hb;
-	sub gimel-hb dagesh-hb by gimeldagesh-hb;
-	sub dalet-hb dagesh-hb by daletdagesh-hb;
-	sub he-hb dagesh-hb by hedagesh-hb;
-	sub vav-hb dagesh-hb by vavdagesh-hb;
-	sub zayin-hb dagesh-hb by zayindagesh-hb;
-	sub tet-hb dagesh-hb by tetdagesh-hb;
-	sub yod-hb dagesh-hb by yoddagesh-hb;
-	sub kaf-hb dagesh-hb by kafdagesh-hb;
-	sub finalkaf-hb dagesh-hb by finalkafdagesh-hb;
-	sub lamed-hb dagesh-hb by lameddagesh-hb;
-	sub mem-hb dagesh-hb by memdagesh-hb;
-	sub nun-hb dagesh-hb by nundagesh-hb;
-	sub samekh-hb dagesh-hb by samekhdagesh-hb;
-	sub pe-hb dagesh-hb by pedagesh-hb;
-	sub finalpe-hb dagesh-hb by finalpedagesh-hb;
-	sub tsadi-hb dagesh-hb by tsadidagesh-hb;
-	sub qof-hb dagesh-hb by qofdagesh-hb;
-	sub resh-hb dagesh-hb by reshdagesh-hb;
-	sub shinsindot-hb dagesh-hb by shindageshsindot-hb;
-	sub shinshindot-hb dagesh-hb by shindageshshindot-hb;
-	sub shin-hb dagesh-hb by shindagesh-hb;
-	sub tav-hb dagesh-hb by tavdagesh-hb;
+    lookupflag 0;
+    lookupflag MarkAttachmentType @hb_dagesh;
+    sub alef-hb dagesh-hb by alefdagesh-hb;
+    sub bet-hb dagesh-hb by betdagesh-hb;
+    sub gimel-hb dagesh-hb by gimeldagesh-hb;
+    sub dalet-hb dagesh-hb by daletdagesh-hb;
+    sub he-hb dagesh-hb by hedagesh-hb;
+    sub vav-hb dagesh-hb by vavdagesh-hb;
+    sub zayin-hb dagesh-hb by zayindagesh-hb;
+    sub tet-hb dagesh-hb by tetdagesh-hb;
+    sub yod-hb dagesh-hb by yoddagesh-hb;
+    sub kaf-hb dagesh-hb by kafdagesh-hb;
+    sub finalkaf-hb dagesh-hb by finalkafdagesh-hb;
+    sub lamed-hb dagesh-hb by lameddagesh-hb;
+    sub mem-hb dagesh-hb by memdagesh-hb;
+    sub nun-hb dagesh-hb by nundagesh-hb;
+    sub samekh-hb dagesh-hb by samekhdagesh-hb;
+    sub pe-hb dagesh-hb by pedagesh-hb;
+    sub finalpe-hb dagesh-hb by finalpedagesh-hb;
+    sub tsadi-hb dagesh-hb by tsadidagesh-hb;
+    sub qof-hb dagesh-hb by qofdagesh-hb;
+    sub resh-hb dagesh-hb by reshdagesh-hb;
+    sub shinsindot-hb dagesh-hb by shindageshsindot-hb;
+    sub shinshindot-hb dagesh-hb by shindageshshindot-hb;
+    sub shin-hb dagesh-hb by shindagesh-hb;
+    sub tav-hb dagesh-hb by tavdagesh-hb;
 } hb_dagesh;
 
 lookup hb_diacriticReplacements {
-	lookupflag 0;
-	lookupflag UseMarkFilteringSet @hb_diacriticMarks;
-	sub alef-hb patah-hb by alefpatah-hb;
-	sub alef-hb qamats-hb by alefqamats-hb;
-	sub finalkafdagesh-hb qamats-hb by finalkafdagesh_qamats-hb;
-	sub finalkafdagesh-hb sheva-hb by finalkafdagesh_sheva-hb;
-	sub finalkaf-hb qamats-hb by finalkaf_qamats-hb;
-	sub finalkaf-hb sheva-hb by finalkaf_sheva-hb;
-	sub vav-hb holam-hb by vavholam-hb;
-	sub lameddagesh-hb holam-hb by lamed_dagesh_holam-hb;
-	sub lamed-hb holam-hb by lamed_holam-hb;
+    lookupflag 0;
+    lookupflag UseMarkFilteringSet @hb_diacriticMarks;
+    sub alef-hb patah-hb by alefpatah-hb;
+    sub alef-hb qamats-hb by alefqamats-hb;
+    sub finalkafdagesh-hb qamats-hb by finalkafdagesh_qamats-hb;
+    sub finalkafdagesh-hb sheva-hb by finalkafdagesh_sheva-hb;
+    sub finalkaf-hb qamats-hb by finalkaf_qamats-hb;
+    sub finalkaf-hb sheva-hb by finalkaf_sheva-hb;
+    sub vav-hb holam-hb by vavholam-hb;
+    sub lameddagesh-hb holam-hb by lamed_dagesh_holam-hb;
+    sub lamed-hb holam-hb by lamed_holam-hb;
 } hb_diacriticReplacements;
 
 
 lookup hb_rafe {
-	lookupflag 0;
+    lookupflag 0;
 # 	lookupflag UseMarkFilteringSet @hb_diacriticMarks;
-	sub pe-hb rafe-hb by perafe-hb;
-	sub kaf-hb rafe-hb by kafrafe-hb;
-	sub bet-hb rafe-hb by betrafe-hb;
+    sub pe-hb rafe-hb by perafe-hb;
+    sub kaf-hb rafe-hb by kafrafe-hb;
+    sub bet-hb rafe-hb by betrafe-hb;
 } hb_rafe;
 
 lookup hb_siluqLeft {
-	# cantillation replacements
-	sub hatafsegol-hb siluqleft-hb by hatafsegol_siluqleft-hb;
-	sub hatafpatah-hb siluqleft-hb by hatafpatah_siluqleft-hb;
-	sub hatafqamats-hb siluqleft-hb by hatafqamats_siluqleft-hb;
+    # cantillation replacements
+    sub hatafsegol-hb siluqleft-hb by hatafsegol_siluqleft-hb;
+    sub hatafpatah-hb siluqleft-hb by hatafpatah_siluqleft-hb;
+    sub hatafqamats-hb siluqleft-hb by hatafqamats_siluqleft-hb;
 } hb_siluqLeft;
 
 #If specific letters appear at the end of the word, the cantillation will be replaced by a final alternative
 lookup hb_finalCantillationForms {
-	ignore sub @hb_finalCantillationLetters @hb_finalCantillationSrc' @hb_AllHebrewLetters;
-	sub @hb_finalCantillationLetters @hb_finalCantillationSrc' by @hb_finalCantillationDst;
+    ignore sub @hb_finalCantillationLetters @hb_finalCantillationSrc' @hb_AllHebrewLetters;
+    sub @hb_finalCantillationLetters @hb_finalCantillationSrc' by @hb_finalCantillationDst;
 } hb_finalCantillationForms;
 
 # ==============
@@ -2116,11 +2116,11 @@ sub [space hyphen softhyphen endash emdash underscore] kappa.sc' alpha.sc' iota.
 # ===============
 
 lookup hb_yiddish {
-	lookupflag IgnoreMarks;
-	sub alef-hb lamed-hb by aleflamed-hb;
-	sub vav-hb vav-hb by vavvav-hb;
-	sub yod-hb vav-hb by vavyod-hb;
-	sub yod-hb yod-hb by yodyod-hb;
+    lookupflag IgnoreMarks;
+    sub alef-hb lamed-hb by aleflamed-hb;
+    sub vav-hb vav-hb by vavvav-hb;
+    sub yod-hb vav-hb by vavyod-hb;
+    sub yod-hb yod-hb by yodyod-hb;
 } hb_yiddish;
 
 # ===============
