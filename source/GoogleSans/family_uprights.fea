@@ -861,7 +861,6 @@ sub [O o] by ordmasculine;
 feature case {
 sub @cap_off by @cap_on;
 sub [space hyphen softhyphen endash emdash underscore] etatonos' [space hyphen softhyphen endash emdash underscore comma] by Etatonos;
-
 } case;
 
 feature ss04 {
@@ -2187,6 +2186,7 @@ featureNames {
     name "Alternate Arrows";
     name 1 "Alternate Arrows";
 };
+
 sub upArrow by upArrow.ss05;
 sub northEastArrow by northEastArrow.ss05;
 sub rightArrow by rightArrow.ss05;
