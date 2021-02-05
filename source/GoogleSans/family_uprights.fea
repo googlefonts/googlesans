@@ -702,6 +702,8 @@ lookup hb_finalCantillationForms {
 feature locl {
 sub [space hyphen softhyphen endash emdash underscore] etatonos' [space hyphen softhyphen endash emdash underscore comma] by Etatonos;
 script latn;
+language CAT;
+sub  L' periodcentered' L by Ldot;
 language ROM;
 sub Scedilla by Scommaaccent;
 sub scedilla by scommaaccent;
@@ -712,8 +714,6 @@ sub Scedilla by Scommaaccent;
 sub scedilla by scommaaccent;
 sub Tcedilla by Tcommaaccent;
 sub tcedilla by tcommaaccent;
-language CAT;
-sub  L' periodcentered' L by Ldot;
 
 script cyrl;
 language SRB;
