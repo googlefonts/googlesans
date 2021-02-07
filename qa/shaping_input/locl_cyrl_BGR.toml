@@ -1,0 +1,14 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+locl = true
+
+[input]
+script = "cyrl"
+language = "BGR"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "ДЛФвгджзийѝклфптцшщьъюы", # Bulgarian localized form in both Roman and Italic
+]
