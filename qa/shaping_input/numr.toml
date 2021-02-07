@@ -1,0 +1,17 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+numr = true
+
+[input]
+script = "DFLT"
+language = "dflt"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "0123456789", # replaced by numerator forms
+    "12/34", # fraction form includes all numerator and SOLIDUS without `frac` fea set
+    "12.34", # decimal form includes all numerator
+    "01/23/34 01-23-34 01.23.34", # date forms include all numerator
+]
