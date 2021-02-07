@@ -1,0 +1,16 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+locl = true
+
+[input]
+script = "cyrl"
+language = "SRB"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "б", # Serbian localized form in both Roman and Italic
+    "дптш", # Serbian localized form in Italic only
+    "г", # Macedonian localized form in Italic only
+]
