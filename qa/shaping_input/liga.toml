@@ -1,0 +1,39 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+liga = true
+
+[input]
+script = "DFLT"
+language = "dflt"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "fb", # two glyph -> one glyph
+    "ff",
+    "fh",
+    "fi",
+    "fj",
+    "fk",
+    "fl",
+    "ft",
+    "rf",
+    "rt",
+    "tf",
+    "tt",
+    "ffb", # three glyph -> one glyph
+    "ffh",
+    "ffi",
+    "ffj",
+    "ffk",
+    "ffl",
+    "fft",
+    "rff",
+    "Google_logo google_logo Googlelogoligature googlelogoligature", # logo ligatures
+    "Glogoligature", # `G` logo ligature
+    "ologoligature", # `o` logo ligature
+    "glogoligature", # `g` logo ligature
+    "llogoligature", # `l` logo ligature
+    "elogoligature", # `e` logo ligature
+]
