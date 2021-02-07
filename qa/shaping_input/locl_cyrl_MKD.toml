@@ -1,0 +1,15 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+locl = true
+
+[input]
+script = "cyrl"
+language = "MKD"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "гѓ", # Macedonian localized form in Italic only
+    "бдптш", # Serbian localized form in Italic only
+]
