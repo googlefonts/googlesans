@@ -1,0 +1,14 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+sinf = true
+
+[input]
+script = "DFLT"
+language = "dflt"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "0123456789", # inferior forms
+]
