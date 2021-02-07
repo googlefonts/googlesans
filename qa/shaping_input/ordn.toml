@@ -1,0 +1,16 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+ordn = true
+
+[input]
+script = "DFLT"
+language = "dflt"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "Aa", # feminine
+    "Oo", # masculine
+    "2.o", # secundo
+]
