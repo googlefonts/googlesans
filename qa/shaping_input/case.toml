@@ -1,0 +1,19 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+case = true
+
+[input]
+script = "DFLT"
+language = "dflt"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "0123456789", # figures
+    "09:30 1:20pm", # time values with `case` active should use colon.time centered colon
+    "@[](){}¿¡-–—‹›«»·•", # punctuation
+    "#%‰‱",
+    "°℉℃", # temperature symbols
+    "¢$₣£¤¥₤₩₫₮₸₹₺₽₱₴₪ƒ€", # currency
+]
