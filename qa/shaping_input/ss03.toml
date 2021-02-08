@@ -1,0 +1,15 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+ss03 = true
+
+[input]
+script = "DFLT"
+language = "dflt"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "01234567899",
+    "09:30 1:20pm",
+]
