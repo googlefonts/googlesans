@@ -1,0 +1,22 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+tnum = true
+pnum = true
+
+[input]
+script = "DFLT"
+language = "dflt"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "0123456789", # figures: should not be tabular forms
+    "12/34", # figures: should not be tabular forms
+    "12.34", # figures: should not be tabular forms
+    "01/23/34 01-23-34 01.23.34", # figures: should not be tabular forms
+    " .:;,",  # punctuation: should not be tabular forms
+    "¢$₣£¤¥₤₩₫₮₸₹₺₽₱₴₪ƒ€", # currency symbols: should not be tabular forms
+    "§¬#%",  # symbols: should not be tabular forms
+    "+−×÷±<=>≈≠≤≥", # math symbols: should not be tabular forms
+]

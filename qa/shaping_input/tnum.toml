@@ -1,0 +1,22 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+tnum = true
+
+[input]
+script = "DFLT"
+language = "dflt"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "0123456789", # figures: replaced by tabular forms
+    "12/34", # figures: fraction form includes all tabular and SOLIDUS without `frac` fea set
+    "12.34", # figures: decimal form includes all tabular
+    "09:30 1:20pm", # figures: should use colon.time form with calt off
+    "01/23/34 01-23-34 01.23.34", # figures: date forms include all tabular
+    " .:;,",  # punctuation tab forms (note includes lead space glyph)
+    "¢$₣£¤¥₤₩₫₮₸₹₺₽₱₴₪ƒ€", # currency symbols: tab forms
+    "§¬#%",  # symbols: tab forms
+    "+−×÷±<=>≈≠≤≥", # math symbols: tab forms
+]
