@@ -1,0 +1,33 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+dlig = true
+
+[input]
+script = "DFLT"
+language = "dflt"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "fb", # two glyph -> one glyph
+    "fh",
+    "fi",
+    "fj",
+    "fk",
+    "fl",
+    "ft",
+    "rf",
+    "rt",
+    "tf",
+    "tt",
+    "ffb", # three glyph -> one glyph
+    "ffh",
+    "ffj",
+    "ffk",
+    "fft",
+    "rff",
+    " και ", # Greek: small letter kappa, alpha, iota with space replaced by kaiSymbol
+    "_και_", # Greek: small letter kappa, alpha, iota with underscores replaced by kaiSymbol
+    " ΚΑΙ ", # Greek: capital letter kappa, alpha, iota with spaces replaced by KaiSymbol
+]
