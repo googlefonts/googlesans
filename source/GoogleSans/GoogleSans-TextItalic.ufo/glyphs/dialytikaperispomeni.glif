@@ -4,8 +4,50 @@
   <unicode hex="1FC1"/>
   <anchor x="241" y="526" name="_top"/>
   <outline>
-    <component base="dieresis"/>
-    <component base="perispomeni" xOffset="13" yOffset="153"/>
+    <contour>
+      <point x="314" y="929" type="curve" smooth="yes"/>
+      <point x="211" y="929"/>
+      <point x="161" y="877"/>
+      <point x="146" y="790" type="curve"/>
+      <point x="217" y="790" type="line"/>
+      <point x="226" y="840"/>
+      <point x="251" y="869"/>
+      <point x="302" y="869" type="curve" smooth="yes"/>
+      <point x="351" y="869"/>
+      <point x="378" y="840"/>
+      <point x="369" y="790" type="curve"/>
+      <point x="440" y="790" type="line"/>
+      <point x="455" y="877"/>
+      <point x="398" y="929"/>
+    </contour>
+    <contour>
+      <point x="187" y="648" type="curve"/>
+      <point x="218" y="648"/>
+      <point x="240" y="673"/>
+      <point x="240" y="702" type="curve" smooth="yes"/>
+      <point x="240" y="733"/>
+      <point x="218" y="755"/>
+      <point x="187" y="755" type="curve" smooth="yes"/>
+      <point x="158" y="755"/>
+      <point x="133" y="733"/>
+      <point x="133" y="702" type="curve" smooth="yes"/>
+      <point x="133" y="673"/>
+      <point x="158" y="648"/>
+    </contour>
+    <contour>
+      <point x="359" y="648" type="curve" smooth="yes"/>
+      <point x="390" y="648"/>
+      <point x="413" y="673"/>
+      <point x="413" y="702" type="curve" smooth="yes"/>
+      <point x="413" y="733"/>
+      <point x="390" y="755"/>
+      <point x="359" y="755" type="curve" smooth="yes"/>
+      <point x="331" y="755"/>
+      <point x="305" y="733"/>
+      <point x="305" y="702" type="curve" smooth="yes"/>
+      <point x="305" y="673"/>
+      <point x="331" y="648"/>
+    </contour>
   </outline>
   <lib>
     <dict>
