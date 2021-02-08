@@ -1,0 +1,14 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+jalt = true
+
+[input]
+script = "hebr"
+language = "IWR"
+direction = "rtl"
+comparison_mode = "full"
+text = [ 
+    "אהלדכםרת", # justification alternate forms for Hebrew
+]
