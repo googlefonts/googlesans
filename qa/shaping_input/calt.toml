@@ -1,0 +1,22 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+calt = true
+
+[input]
+script = "DFLT"
+language = "dflt"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "Google_logo google_logo", # logo
+    "google_G google_g", # G logo
+    "super_G_logo super_g_logo", # Super G logo
+    "G_logo", # G logo
+    "e_logo", # e logo
+    "g_logo", # g logo
+    "l_logo", # l logo
+    "o_logo", # o logo
+    "09:30 1:20pm", # colon time used between figures in calt feature
+]
