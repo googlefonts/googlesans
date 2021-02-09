@@ -1,14 +1,28 @@
-include(family.fea)
+# Prefix: Languagesystems
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem cyrl dflt;
+languagesystem hebr dflt;
 
-
+languagesystem latn ROM;
+languagesystem latn MOL;
+languagesystem latn CAT;
+languagesystem latn SRB;
+languagesystem cyrl BGR;
+languagesystem cyrl BSH;
+languagesystem cyrl CHU;
 languagesystem cyrl MKD;
+languagesystem cyrl SRB;
+languagesystem hebr IWR;
+
+
+include(family.fea)
 
 
 feature locl {
     script cyrl;
     language SRB;
     sub ge-cy by ge-cy.loclMKD;
-    sub be-cy by be-cy.loclSRB;
     sub de-cy by de-cy.loclSRB;
     sub pe-cy by pe-cy.loclSRB;
     sub te-cy by te-cy.loclSRB;
@@ -16,6 +30,7 @@ feature locl {
     language MKD;
     sub ge-cy by ge-cy.loclMKD;
     sub gje-cy by gje-cy.loclMKD;
+    sub be-cy by be-cy.loclSRB;
     sub de-cy by de-cy.loclSRB;
     sub pe-cy by pe-cy.loclSRB;
     sub te-cy by te-cy.loclSRB;
