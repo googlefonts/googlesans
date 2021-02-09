@@ -1,20 +1,3 @@
-# Prefix: Languagesystems
-languagesystem DFLT dflt;
-languagesystem latn dflt;
-languagesystem cyrl dflt;
-languagesystem hebr dflt;
-
-languagesystem latn ROM;
-languagesystem latn MOL;
-languagesystem latn CAT;
-languagesystem latn SRB;
-languagesystem cyrl BGR;
-languagesystem cyrl BSH;
-languagesystem cyrl CHU;
-languagesystem cyrl SRB;
-languagesystem hebr IWR;
-
-
 @figures = [zero one two three four five six seven eight nine];
 @figures_tab = [zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf];
 @multiply = [zero one two three four five six seven eight nine zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf zero.cap one.cap two.cap three.cap four.cap five.cap six.cap seven.cap eight.cap nine.cap];
