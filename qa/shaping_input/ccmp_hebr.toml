@@ -1,0 +1,17 @@
+[meta]
+build_commit = ""
+
+[input.features]
+ccmp = true
+
+[input]
+script = "hebr"
+language = "IWR"
+direction = "rtl"
+comparison_mode = "full"
+text = [ 
+    "פּשֵּווּווֹו", # should be a smaller Dagesh inside פ and ש, and generous spacing around vavdagesh
+    "ד֩ד֩ ה֒ה֒ ל֩ל֩ ע֯ע֯ ש֒ש֒", # lookup finalCantillationForms: diffrent cantillation positioning in final & normal forms
+    "רָ רֳ רֱ רַ רֻ רִ", # lookup hb_diacriticReplacements: confirms mark positioning across various marks
+    "קָ קִ קֵ קֻ קֳ קֲ קַ", # lookup hb_diacriticReplacements: confirms mark positioning across various marks
+]
