@@ -24,6 +24,7 @@
 
 ### Fixed
 
+- default feature support for Cyrillic Bahkir, Chuvash, and Serbian locales (#181)
 - anchor propagation bug in the Display statics (#105)
 
 ## Version 3.003
