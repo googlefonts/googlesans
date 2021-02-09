@@ -1,0 +1,14 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+locl = true
+
+[input]
+script = "cyrl"
+language = "ba"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "ҒҘҪғҗҫ", # Bashkir localized form in both Roman and Italic
+]
