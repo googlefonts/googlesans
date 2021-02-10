@@ -25,6 +25,7 @@
 ### Fixed
 
 - default feature support for Cyrillic Bahkir, Chuvash, and Serbian locales (#181)
+- variable font format scaled dagesh mark in Hebrew script (#134)
 - anchor propagation bug in the Display statics (#105)
 
 ## Version 3.003
