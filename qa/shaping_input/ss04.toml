@@ -1,0 +1,15 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+ss04 = true
+
+[input]
+script = "DFLT"
+language = "dflt"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz0123456789", # micro caps
+    "gy", # rvrn forms
+]
