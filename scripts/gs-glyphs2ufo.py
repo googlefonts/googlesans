@@ -88,5 +88,5 @@ for glyphs_file_path in parsed_args.glyphs_file:
 
         ufos[source.filename] = source.font
 
-    designspace.write(target_dir / designspace.filename)
+    designspace.write(target_dir / glyphs_file_path.with_suffix(".designspace").name)
     ###
