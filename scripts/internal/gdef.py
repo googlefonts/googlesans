@@ -4,6 +4,67 @@ from typing import List
 from glyphsLib.builder.constants import GLYPHLIB_PREFIX
 
 
+# TODO: Move this information into
+# https://unifiedfontobject.org/versions/ufo3/lib.plist/#publicopentypecategories
+KNOWN_BASES = {
+    "k_ssa-deva",
+    "j_nya-deva",
+    "k_ss-deva",
+    "k_ss-deva.alt2",
+    "k_ss-deva.alt3",
+    "k_ss-deva.alt4",
+    "k_ss-deva.alt5",
+    "k_ss-deva.alt6",
+    "k_ss-deva.alt7",
+    "j_ny-deva",
+    "j_ny-deva.alt2",
+    "j_ny-deva.alt3",
+    "j_ny-deva.alt4",
+    "j_ny-deva.alt5",
+    "j_ny-deva.alt6",
+    "j_ny-deva.alt7",
+    "j_ny-deva.alt8",
+    "ng_ya-deva",
+    "ch_ya-deva",
+    "tt_tta-deva",
+    "tt_ttha-deva",
+    "tt_ya-deva",
+    "tth_ttha-deva",
+    "tth_ya-deva",
+    "dd_dda-deva",
+    "dd_ddha-deva",
+    "dd_ya-deva",
+    "ddh_ddha-deva",
+    "ddh_ya-deva",
+    "t_ta-deva",
+    "t_ra-deva",
+    "d_ga-deva",
+    "d_gha-deva",
+    "d_da-deva",
+    "d_dha-deva",
+    "d_dh_ya-deva",
+    "d_ba-deva",
+    "d_bha-deva",
+    "d_ma-deva",
+    "d_ya-deva",
+    "d_ra-deva",
+    "d_va-deva",
+    "p_ta-deva",
+    "sh_ra-deva",
+    "ss_tta-deva",
+    "ss_ttha-deva",
+    "h_nna-deva",
+    "h_na-deva",
+    "h_ma-deva",
+    "h_ya-deva",
+    "h_ra-deva",
+    "h_la-deva",
+    "h_va-deva",
+    "h_ra_uMatra-deva",
+    "h_ra_uuMatra-deva",
+}
+
+
 # Lifted from glyphsLib v5.2.0 and made to return a list of str for splicing
 # (also wrapped glyph name lists for easier diffing).
 def build_gdef(ufo, skipExportGlyphs=None) -> List[str]:
@@ -49,7 +110,9 @@ def build_gdef(ufo, skipExportGlyphs=None) -> List[str]:
         category = glyph.lib.get(category_key) or glyphinfo.category
         subCategory = glyph.lib.get(subCategory_key) or glyphinfo.subCategory
 
-        if subCategory == "Ligature" and has_attaching_anchor:
+        if glyph.name in KNOWN_BASES:
+            bases.add(glyph.name)
+        elif subCategory == "Ligature" and has_attaching_anchor:
             ligatures.add(glyph.name)
         elif category == "Mark" and (
             subCategory == "Nonspacing" or subCategory == "Spacing Combining"
