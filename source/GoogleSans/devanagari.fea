@@ -1,3 +1,7 @@
+# ---------------------------------
+# Devanagari classes
+# ---------------------------------
+
 @dev2_dflt_pres_imatra_alt2_bases = [ ra-deva rra-deva marwaridda-deva tt_tta-deva tt_ttha-deva tth_ttha-deva d_da-deva ];
 
 @dev2_dflt_pres_imatra_alt3_bases = [ ka-deva qa-deva gha-deva nga-deva tta-deva ttha-deva dda-deva ddha-deva ta-deva da-deva dha-deva na-deva nnna-deva pa-deva pha-deva va-deva ssa-deva ha-deva dddha-deva rha-deva jha-deva.loclNEP ddda-deva bba-deva dd_dda-deva dd_ddha-deva ddh_ddha-deva t_ra-deva d_ga-deva ss_tta-deva ss_ttha-deva d_ba-deva d_ra-deva d_va-deva h_na-deva h_ra-deva h_va-deva ];
@@ -29,6 +33,10 @@
 @dev2_dflt_blws_mark_attachment_class_uMatra = [ uMatra-deva uMatra-deva.narrow ];
 
 
+# ---------------------------------
+# Lookups
+# ---------------------------------
+
 # Prefix: IndependentLookups
 lookup dev2_dflt_none_zwj_eyelash_ra {
 	sub ra-deva halant-deva zerowidthjoiner by eyelashReph-deva;
@@ -39,85 +47,7 @@ lookup dev2_dflt_none_zwj_eyelash_ra {
 #} dev2_dflt_none_decompose_nukta_glyphs;
 
 
-# ---------------------------------
-# Vowels with composite above marks
-# ---------------------------------
-
-lookup a_vowel {
-	sub [aCandra-deva aShort-deva] by a-deva;
-} a_vowel ;
-
-lookup e_vowel {
-	sub [ai-deva eCandra-deva eShort-deva] by e-deva;
-} e_vowel ;
-
-lookup aa_vowel {
-	sub [o-deva au-deva oCandra-deva oShort-deva] by aa-deva;
-} aa_vowel ;
-
-lookup i_vowel {
-	sub [ii-deva] by i-deva;
-} i_vowel ;
-
-lookup aa_matra_vowel {
-	sub [oMatra-deva auMatra-deva oCandraMatra-deva oShortMatra-deva] by aaMatra-deva;
-} aa_matra_vowel ;
-
-lookup eMatra_anusvara {
-	sub anusvara-deva by eMatra_anusvara-deva;
-} eMatra_anusvara ;
-
-lookup aiMatra_anusvara {
-	sub anusvara-deva by aiMatra_anusvara-deva;
-} aiMatra_anusvara ;
-
-lookup eCandra_anusvara {
-	sub anusvara-deva by eCandraMatra_anusvara-deva;
-} eCandra_anusvara ;
-
-lookup eShortMatra_anusvara {
-	sub anusvara-deva by eShortMatra_anusvara-deva;
-} eShortMatra_anusvara ;
-
-lookup reph_anusvara {
-	sub anusvara-deva by reph_anusvara-deva;
-} reph_anusvara ;
-
-# ---
-
-lookup eMatra_reph {
-	sub reph-deva by eMatra_reph-deva;
-} eMatra_reph ;
-
-lookup eMatra_reph_anusvara {
-	sub reph_anusvara-deva by eMatra_reph_anusvara-deva;
-} eMatra_reph_anusvara ;
-
-lookup aiMatra_reph {
-	sub reph-deva by aiMatra_reph-deva;
-} aiMatra_reph ;
-
-lookup aiMatra_reph_anusvara {
-	sub reph_anusvara-deva by aiMatra_reph_anusvara-deva;
-} aiMatra_reph_anusvara ;
-
-lookup eCandra_reph {
-	sub reph-deva by eCandraMatra_reph-deva;
-} eCandra_reph ;
-
-lookup eShortMatra_reph {
-	sub reph-deva by eShortMatra_reph-deva;
-} eShortMatra_reph ;
-
-lookup eShortMatra_reph_anusvara {
-	sub reph_anusvara-deva by eShortMatra_reph_anusvara-deva;
-} eShortMatra_reph_anusvara ;
-
-
-feature locl {
-script dev2;
-language MAR;
-
+#locl
 lookup dev2_mar_locl_localised_consonants { 
 	sub la-deva by la-deva.loclMAR;    # Marathi La
 	sub sha-deva by sha-deva.loclMAR;    # Marathi Sha
@@ -127,8 +57,6 @@ lookup dev2_mar_nep_locl_common_localised_numerals {
 	sub eight-deva by eight-deva.loclMARNEP;
 } dev2_mar_nep_locl_common_localised_numerals;
 
-language NEP;
-
 lookup dev2_nep_locl_localised_consonants_numerals { 
 	sub jha-deva by jha-deva.loclNEP;    # Nepali Jha
 	sub one-deva by one-deva.loclNEP;
@@ -136,13 +64,7 @@ lookup dev2_nep_locl_localised_consonants_numerals {
 	sub nine-deva by nine-deva.loclNEP;
 } dev2_nep_locl_localised_consonants_numerals;
 
-lookup dev2_mar_nep_locl_common_localised_numerals;
-
-} locl;
-
-feature nukt {
-script dev2;
-
+#nukt
 lookup dev2_dflt_mar_nep_nukt_all_nukta_forms {
 	sub ka-deva nukta-deva by qa-deva;
 	sub ra-deva nukta-deva by rra-deva;
@@ -156,17 +78,7 @@ lookup dev2_dflt_mar_nep_nukt_all_nukta_forms {
 	sub ya-deva nukta-deva by yya-deva;
 } dev2_dflt_mar_nep_nukt_all_nukta_forms;
 
-language MAR;
-lookup dev2_dflt_mar_nep_nukt_all_nukta_forms;
-
-language NEP;
-lookup dev2_dflt_mar_nep_nukt_all_nukta_forms;
-
-} nukt;
-
-feature akhn {
-script dev2;
-
+#akhn
 lookup dev2_dflt_mar_nep_akhn_akhand_forms {
 	sub ka-deva halant-deva ssa-deva by k_ssa-deva;
 	sub ja-deva halant-deva nya-deva by j_nya-deva;
@@ -177,34 +89,12 @@ lookup dev2_dflt_akhn_eyelash_reph {
 	sub ra-deva' lookup dev2_dflt_none_zwj_eyelash_ra halant-deva' zerowidthjoiner';
 } dev2_dflt_akhn_eyelash_reph;
 
-language MAR;
-lookup dev2_dflt_mar_nep_akhn_akhand_forms;
-lookup dev2_dflt_akhn_eyelash_reph;
-
-language NEP;
-lookup dev2_dflt_mar_nep_akhn_akhand_forms;
-lookup dev2_dflt_akhn_eyelash_reph;
-
-} akhn;
-
-feature rphf {
-script dev2;
-
+#rphf
 lookup dev2_dflt_mar_nep_rphf_reph {
 	sub ra-deva halant-deva by reph-deva;
 } dev2_dflt_mar_nep_rphf_reph ;
 
-language MAR;
-lookup dev2_dflt_mar_nep_rphf_reph;
-
-language NEP;
-lookup dev2_dflt_mar_nep_rphf_reph;
-
-} rphf;
-
-feature rkrf {
-script dev2;
-
+#rkrf
 lookup dev2_dflt_mar_nep_rkrf_rakar_forms {
 	sub da-deva halant-deva ra-deva by d_ra-deva;
 	sub ta-deva halant-deva ra-deva by t_ra-deva;
@@ -212,35 +102,16 @@ lookup dev2_dflt_mar_nep_rkrf_rakar_forms {
 	sub sha-deva halant-deva ra-deva by sh_ra-deva;
 } dev2_dflt_mar_nep_rkrf_rakar_forms;
 
-language MAR;
-lookup dev2_dflt_mar_nep_rkrf_rakar_forms;
 lookup dev2_mar_rkrf_rakar_forms {
 	sub sha-deva.loclMAR halant-deva ra-deva by sh_ra-deva;
 } dev2_mar_rkrf_rakar_forms;
 
-language NEP;
-lookup dev2_dflt_mar_nep_rkrf_rakar_forms;
-
-} rkrf;
-
-feature blwf {
-script dev2;
-
+#blwf
 lookup dev2_dflt_mar_nep_blwf_rakar_below {
 	sub halant-deva ra-deva by rakar-deva;
 } dev2_dflt_mar_nep_blwf_rakar_below ;
 
-language MAR;
-lookup dev2_dflt_mar_nep_blwf_rakar_below;
-
-language NEP;
-lookup dev2_dflt_mar_nep_blwf_rakar_below;
-
-} blwf;
-
-feature half {
-script dev2;
-
+#half
 lookup dev2_dflt_mar_nep_half_all_half_forms {
 lookupflag MarkAttachmentType @dev2_dflt_half_mark_attachment_class_halant;
 	sub ka-deva halant-deva by k-deva;
@@ -298,28 +169,18 @@ lookupflag MarkAttachmentType @dev2_dflt_half_mark_attachment_class_halant;
 	sub sh_ra-deva halant-deva by sh_r-deva;
 } dev2_dflt_mar_nep_half_all_half_forms;
 
-language MAR;
-
-lookup dev2_dflt_mar_nep_half_all_half_forms;
 lookup dev2_mar_half_marathi_consonant_half_forms {
 lookupflag MarkAttachmentType @dev2_dflt_half_mark_attachment_class_halant;
 	sub la-deva.loclMAR halant-deva by l-deva;
 	sub sha-deva.loclMAR halant-deva by sh-deva.loclMAR;
 }  dev2_mar_half_marathi_consonant_half_forms;
 
-language NEP;
-
-lookup dev2_dflt_mar_nep_half_all_half_forms;
 lookup dev2_nep_half_nepali_consonant_half_forms {
 lookupflag MarkAttachmentType @dev2_dflt_half_mark_attachment_class_halant;
 	sub jha-deva.loclNEP halant-deva by jh-deva.loclNEP;
 } dev2_nep_half_nepali_consonant_half_forms;
 
-} half;
-
-feature cjct {
-script dev2;
-
+#cjct
 lookup dev2_dflt_mar_nep_cjct_all_conjuncts {
 lookupflag IgnoreMarks;
 	sub ng-deva ya-deva by ng_ya-deva;
@@ -356,21 +217,12 @@ lookupflag IgnoreMarks;
 	sub h-deva va-deva by h_va-deva;
 } dev2_dflt_mar_nep_cjct_all_conjuncts;
 
-language MAR;
-lookup dev2_dflt_mar_nep_cjct_all_conjuncts;
 lookup dev2_mar_cjct_all_conjuncts {
 lookupflag IgnoreMarks;
 	sub h-deva la-deva.loclMAR by h_la-deva;
 } dev2_mar_cjct_all_conjuncts;
 
-language NEP;
-lookup dev2_dflt_mar_nep_cjct_all_conjuncts;
-
-} cjct;
-
-feature pres {
-script dev2;
-
+#pres
 lookup dev2_dflt_mar_nep_pres_contextual_half_forms {
 lookupflag IgnoreMarks;
 	sub [k-deva q-deva]' [cha-deva nga-deva jha-deva dda-deva pa-deva pha-deva ssa-deva ha-deva dddha-deva fa-deva ddda-deva nna-deva bba-deva ch-deva ng-deva jh-deva dd-deva p-deva ph-deva ss-deva h-deva dddh-deva f-deva ddd-deva nn-deva bb-deva] by [k-deva.alt2 q-deva.alt2];
@@ -495,7 +347,6 @@ lookup dev2_dflt_mar_nep_pres_half_form_conjuncts {
 	sub ss-deva ttha-deva by ss_ttha-deva;
 } dev2_dflt_mar_nep_pres_half_form_conjuncts;
 
-
 lookup dev2_dflt_mar_nep_pres_imatra_contexts {
 lookupflag MarkAttachmentType @dev2_dflt_pres_mark_attachment_class_top_marks;
 	sub iMatra-deva' @dev2_dflt_pres_imatra_alt2_bases [anusvara-deva candraBindu-deva reph-deva reph_anusvara-deva] by iMatra-deva.alt1;
@@ -516,7 +367,6 @@ lookupflag MarkAttachmentType @dev2_dflt_pres_mark_attachment_class_top_marks;
 	sub iMatra-deva' @dev2_dflt_pres_imatra_alt7_bases [anusvara-deva candraBindu-deva reph-deva reph_anusvara-deva] by iMatra-deva.alt6;
 	sub iMatra-deva' @dev2_dflt_pres_imatra_alt7_bases by iMatra-deva.alt7;    # Version 6
 } dev2_dflt_mar_nep_pres_imatra_contexts;
-
 
 lookup dev2_dflt_mar_nep_pres_imatra_contexts_half_forms {
 lookupflag MarkAttachmentType @dev2_dflt_pres_mark_attachment_class_top_marks;
@@ -930,20 +780,76 @@ lookupflag MarkAttachmentType @dev2_dflt_pres_mark_attachment_class_top_marks;
 	
 } dev2_dflt_mar_nep_pres_imatra_contexts_half_forms;
 
-language MAR;
-lookup dev2_dflt_mar_nep_pres_contextual_half_forms;
-lookup dev2_dflt_mar_nep_pres_half_form_conjuncts;
-lookup dev2_dflt_mar_nep_pres_imatra_contexts;
+#abvs
+# Vowels with composite above marks
 
-language NEP;
-lookup dev2_dflt_mar_nep_pres_contextual_half_forms;
-lookup dev2_dflt_mar_nep_pres_half_form_conjuncts;
-lookup dev2_dflt_mar_nep_pres_imatra_contexts;
+lookup dev2_dflt_abvs_a_vowel {
+	sub [aCandra-deva aShort-deva] by a-deva;
+} dev2_dflt_abvs_a_vowel;
 
-} pres;
+lookup dev2_dflt_abvs_e_vowel {
+	sub [ai-deva eCandra-deva eShort-deva] by e-deva;
+} dev2_dflt_abvs_e_vowel;
 
-feature abvs {
-script dev2;
+lookup dev2_dflt_abvs_aa_vowel {
+	sub [o-deva au-deva oCandra-deva oShort-deva] by aa-deva;
+} dev2_dflt_abvs_aa_vowel;
+
+lookup dev2_dflt_abvs_i_vowel {
+	sub [ii-deva] by i-deva;
+} dev2_dflt_abvs_i_vowel;
+
+lookup dev2_dflt_abvs_aa_matra_vowel {
+	sub [oMatra-deva auMatra-deva oCandraMatra-deva oShortMatra-deva] by aaMatra-deva;
+} dev2_dflt_abvs_aa_matra_vowel;
+
+lookup dev2_dflt_abvs_eMatra_anusvara {
+	sub anusvara-deva by eMatra_anusvara-deva;
+} dev2_dflt_abvs_eMatra_anusvara;
+
+lookup dev2_dflt_abvs_aiMatra_anusvara {
+	sub anusvara-deva by aiMatra_anusvara-deva;
+} dev2_dflt_abvs_aiMatra_anusvara;
+
+lookup dev2_dflt_abvs_eCandra_anusvara {
+	sub anusvara-deva by eCandraMatra_anusvara-deva;
+} dev2_dflt_abvs_eCandra_anusvara ;
+
+lookup dev2_dflt_abvs_eShortMatra_anusvara {
+	sub anusvara-deva by eShortMatra_anusvara-deva;
+} dev2_dflt_abvs_eShortMatra_anusvara ;
+
+lookup dev2_dflt_abvs_reph_anusvara {
+	sub anusvara-deva by reph_anusvara-deva;
+} dev2_dflt_abvs_reph_anusvara ;
+
+lookup dev2_dflt_abvs_eMatra_reph {
+	sub reph-deva by eMatra_reph-deva;
+} dev2_dflt_abvs_eMatra_reph ;
+
+lookup dev2_dflt_abvs_eMatra_reph_anusvara {
+	sub reph_anusvara-deva by eMatra_reph_anusvara-deva;
+} dev2_dflt_abvs_eMatra_reph_anusvara ;
+
+lookup dev2_dflt_abvs_aiMatra_reph {
+	sub reph-deva by aiMatra_reph-deva;
+} dev2_dflt_abvs_aiMatra_reph ;
+
+lookup dev2_dflt_abvs_aiMatra_reph_anusvara {
+	sub reph_anusvara-deva by aiMatra_reph_anusvara-deva;
+} dev2_dflt_abvs_aiMatra_reph_anusvara ;
+
+lookup dev2_dflt_abvs_eCandra_reph {
+	sub reph-deva by eCandraMatra_reph-deva;
+} dev2_dflt_abvs_eCandra_reph ;
+
+lookup dev2_dflt_abvs_eShortMatra_reph {
+	sub reph-deva by eShortMatra_reph-deva;
+} dev2_dflt_abvs_eShortMatra_reph ;
+
+lookup dev2_dflt_abvs_eShortMatra_reph_anusvara {
+	sub reph_anusvara-deva by eShortMatra_reph_anusvara-deva;
+} dev2_dflt_abvs_eShortMatra_reph_anusvara ;
 
 lookup dev2_dflt_mar_nep_abvs_top_mark_ligatures {
 #	ignore sub ra-deva eMatra-deva anusvara-deva;
@@ -970,47 +876,36 @@ lookup dev2_dflt_mar_nep_abvs_top_mark_ligatures {
 } dev2_dflt_mar_nep_abvs_top_mark_ligatures;
 
 lookup dev2_dflt_abvs_replaceCompositeMatras_top {
-	sub aCandra-deva' lookup a_vowel anusvara-deva' lookup eCandra_anusvara;
-	sub aShort-deva' lookup a_vowel anusvara-deva' lookup eShortMatra_anusvara;
+	sub aCandra-deva' lookup dev2_dflt_abvs_a_vowel anusvara-deva' lookup dev2_dflt_abvs_eCandra_anusvara;
+	sub aShort-deva' lookup dev2_dflt_abvs_a_vowel anusvara-deva' lookup dev2_dflt_abvs_eShortMatra_anusvara;
 	
-	sub ai-deva' lookup e_vowel anusvara-deva' lookup eMatra_anusvara;
-	sub eCandra-deva' lookup e_vowel anusvara-deva' lookup eCandra_anusvara;
-	sub eShort-deva' lookup e_vowel anusvara-deva' lookup eShortMatra_anusvara;
+	sub ai-deva' lookup dev2_dflt_abvs_e_vowel anusvara-deva' lookup dev2_dflt_abvs_eMatra_anusvara;
+	sub eCandra-deva' lookup dev2_dflt_abvs_e_vowel anusvara-deva' lookup dev2_dflt_abvs_eCandra_anusvara;
+	sub eShort-deva' lookup dev2_dflt_abvs_e_vowel anusvara-deva' lookup dev2_dflt_abvs_eShortMatra_anusvara;
 	
-	sub o-deva' lookup aa_vowel anusvara-deva' lookup eMatra_anusvara;
-	sub au-deva' lookup aa_vowel anusvara-deva' lookup aiMatra_anusvara;
-	sub oCandra-deva' lookup aa_vowel anusvara-deva' lookup eCandra_anusvara;
-	sub oShort-deva' lookup aa_vowel anusvara-deva' lookup eShortMatra_anusvara;
+	sub o-deva' lookup dev2_dflt_abvs_aa_vowel anusvara-deva' lookup dev2_dflt_abvs_eMatra_anusvara;
+	sub au-deva' lookup dev2_dflt_abvs_aa_vowel anusvara-deva' lookup dev2_dflt_abvs_aiMatra_anusvara;
+	sub oCandra-deva' lookup dev2_dflt_abvs_aa_vowel anusvara-deva' lookup dev2_dflt_abvs_eCandra_anusvara;
+	sub oShort-deva' lookup dev2_dflt_abvs_aa_vowel anusvara-deva' lookup dev2_dflt_abvs_eShortMatra_anusvara;
 	
-	sub ii-deva' lookup i_vowel anusvara-deva' lookup reph_anusvara;
+	sub ii-deva' lookup dev2_dflt_abvs_i_vowel anusvara-deva' lookup dev2_dflt_abvs_reph_anusvara;
 	
-	sub oMatra-deva' lookup aa_matra_vowel anusvara-deva' lookup eMatra_anusvara;
-	sub auMatra-deva' lookup aa_matra_vowel anusvara-deva' lookup aiMatra_anusvara;
-	sub oCandraMatra-deva' lookup aa_matra_vowel anusvara-deva' lookup eCandra_anusvara;
-	sub oShortMatra-deva' lookup aa_matra_vowel anusvara-deva' lookup eShortMatra_anusvara;
+	sub oMatra-deva' lookup dev2_dflt_abvs_aa_matra_vowel anusvara-deva' lookup dev2_dflt_abvs_eMatra_anusvara;
+	sub auMatra-deva' lookup dev2_dflt_abvs_aa_matra_vowel anusvara-deva' lookup dev2_dflt_abvs_aiMatra_anusvara;
+	sub oCandraMatra-deva' lookup dev2_dflt_abvs_aa_matra_vowel anusvara-deva' lookup dev2_dflt_abvs_eCandra_anusvara;
+	sub oShortMatra-deva' lookup dev2_dflt_abvs_aa_matra_vowel anusvara-deva' lookup dev2_dflt_abvs_eShortMatra_anusvara;
 	
-	sub oMatra-deva' lookup aa_matra_vowel reph-deva' lookup eMatra_reph;
-	sub auMatra-deva' lookup aa_matra_vowel reph-deva' lookup aiMatra_reph;
-	sub oCandraMatra-deva' lookup aa_matra_vowel reph-deva' lookup eCandra_reph;
-	sub oShortMatra-deva' lookup aa_matra_vowel reph-deva' lookup eShortMatra_reph;
+	sub oMatra-deva' lookup dev2_dflt_abvs_aa_matra_vowel reph-deva' lookup dev2_dflt_abvs_eMatra_reph;
+	sub auMatra-deva' lookup dev2_dflt_abvs_aa_matra_vowel reph-deva' lookup dev2_dflt_abvs_aiMatra_reph;
+	sub oCandraMatra-deva' lookup dev2_dflt_abvs_aa_matra_vowel reph-deva' lookup dev2_dflt_abvs_eCandra_reph;
+	sub oShortMatra-deva' lookup dev2_dflt_abvs_aa_matra_vowel reph-deva' lookup dev2_dflt_abvs_eShortMatra_reph;
 	
-	sub oMatra-deva' lookup aa_matra_vowel reph_anusvara-deva' lookup eMatra_reph_anusvara;
-	sub auMatra-deva' lookup aa_matra_vowel reph_anusvara-deva' lookup aiMatra_reph_anusvara;
-	sub oShortMatra-deva' lookup aa_matra_vowel reph_anusvara-deva' lookup eShortMatra_reph_anusvara;
+	sub oMatra-deva' lookup dev2_dflt_abvs_aa_matra_vowel reph_anusvara-deva' lookup dev2_dflt_abvs_eMatra_reph_anusvara;
+	sub auMatra-deva' lookup dev2_dflt_abvs_aa_matra_vowel reph_anusvara-deva' lookup dev2_dflt_abvs_aiMatra_reph_anusvara;
+	sub oShortMatra-deva' lookup dev2_dflt_abvs_aa_matra_vowel reph_anusvara-deva' lookup dev2_dflt_abvs_eShortMatra_reph_anusvara;
 } dev2_dflt_abvs_replaceCompositeMatras_top ;
 
-language MAR;
-lookup dev2_dflt_mar_nep_abvs_top_mark_ligatures;
-lookup dev2_dflt_abvs_replaceCompositeMatras_top;
-
-language NEP;
-lookup dev2_dflt_mar_nep_abvs_top_mark_ligatures;
-lookup dev2_dflt_abvs_replaceCompositeMatras_top;
-} abvs;
-
-feature blws {
-script dev2;
-
+#blws
 lookup dev2_dflt_mar_nep_blws_botom_mark_ligatures {
 	sub ra-deva uMatra-deva by ra_uMatra-deva;
 	sub ra-deva uuMatra-deva by ra_uuMatra-deva;
@@ -1044,52 +939,213 @@ lookupflag MarkAttachmentType @dev2_dflt_blws_mark_attachment_class_uMatra;
 	sub [jha-deva h_ma-deva h_ya-deva] uMatra-deva' by uMatra-deva.narrow;
 } dev2_dflt_blws_umatra_narrow ;
 
-language MAR;
-lookup dev2_dflt_mar_nep_blws_botom_mark_ligatures;
-lookup dev2_dflt_mar_nep_blws_rakaar_mark;
-#lookup dev2_dflt_decompose_nukta_glyphs_in_rakaar_context;
-lookup dev2_dflt_mar_nep_blws_umatra_short;
 lookup dev2_mar_blws_umatra_narrow {
 lookupflag MarkAttachmentType @dev2_dflt_blws_mark_attachment_class_uMatra;
 	sub jha-deva uMatra-deva' by uMatra-deva.narrow;
 	sub sha-deva.loclMAR uMatra-deva' by uMatra-deva.narrow;
 } dev2_mar_blws_umatra_narrow ;
 
-language NEP;
-lookup dev2_dflt_mar_nep_blws_botom_mark_ligatures;
-lookup dev2_dflt_mar_nep_blws_rakaar_mark;
-#lookup dev2_dflt_decompose_nukta_glyphs_in_rakaar_context;
-lookup dev2_dflt_mar_nep_blws_umatra_short;
-
-} blws;
-
-feature psts {
-script dev2;
-
+#psts
 lookup dev2_dflt_mar_nep_psts_iimatra_alternates {
 	sub [ka-deva qa-deva pha-deva fa-deva] rakar-deva.diagonal [iiMatra-deva iiMatra_reph-deva iiMatra_reph_anusvara-deva]' by [iiMatra-deva.alt2 iiMatra_reph-deva.alt2 iiMatra_reph_anusvara-deva.alt2];
 	sub [ka-deva qa-deva  pha-deva fa-deva] [iiMatra-deva iiMatra_reph-deva iiMatra_reph_anusvara-deva]' by [iiMatra-deva.alt2 iiMatra_reph-deva.alt2 iiMatra_reph_anusvara-deva.alt2];
 } dev2_dflt_mar_nep_psts_iimatra_alternates;
 
-language MAR;
-lookup dev2_dflt_mar_nep_psts_iimatra_alternates;
-
-language NEP;
-lookup dev2_dflt_mar_nep_psts_iimatra_alternates;
-
-} psts;
-
-feature rclt {
-script dev2;
-
+#rclt
 lookup dev2_dflt_mar_nep_rclt_alternate_ematra {
 	sub @dev2_dflt_rclt_all_above_matra_ligatures ra-deva eMatra-deva' by eMatra-deva.narrow;
 } dev2_dflt_mar_nep_rclt_alternate_ematra;
 
-language MAR;
-lookup dev2_dflt_mar_nep_rclt_alternate_ematra;
 
-language NEP;
-lookup dev2_dflt_mar_nep_rclt_alternate_ematra;
+# ---------------------------------
+# Features
+# ---------------------------------
+
+
+feature locl {
+	script dev2;
+	language MAR;
+	lookup dev2_mar_locl_localised_consonants;
+	lookup dev2_mar_nep_locl_common_localised_numerals;
+
+	language NEP;
+	lookup dev2_nep_locl_localised_consonants_numerals;
+	lookup dev2_mar_nep_locl_common_localised_numerals;
+
+} locl;
+
+feature nukt {
+	script dev2;
+	lookup dev2_dflt_mar_nep_nukt_all_nukta_forms;
+
+	language MAR;
+	lookup dev2_dflt_mar_nep_nukt_all_nukta_forms;
+
+	language NEP;
+	lookup dev2_dflt_mar_nep_nukt_all_nukta_forms;
+
+} nukt;
+
+feature akhn {
+	script dev2;
+	lookup dev2_dflt_mar_nep_akhn_akhand_forms;
+	lookup dev2_dflt_akhn_eyelash_reph;
+
+	language MAR;
+	lookup dev2_dflt_mar_nep_akhn_akhand_forms;
+	lookup dev2_dflt_akhn_eyelash_reph;
+
+	language NEP;
+	lookup dev2_dflt_mar_nep_akhn_akhand_forms;
+	lookup dev2_dflt_akhn_eyelash_reph;
+
+} akhn;
+
+feature rphf {
+	script dev2;
+	lookup dev2_dflt_mar_nep_rphf_reph;
+
+	language MAR;
+	lookup dev2_dflt_mar_nep_rphf_reph;
+
+	language NEP;
+	lookup dev2_dflt_mar_nep_rphf_reph;
+
+} rphf;
+
+feature rkrf {
+	script dev2;
+	lookup dev2_dflt_mar_nep_rkrf_rakar_forms;
+
+	language MAR;
+	lookup dev2_dflt_mar_nep_rkrf_rakar_forms;
+	lookup dev2_mar_rkrf_rakar_forms;
+
+	language NEP;
+	lookup dev2_dflt_mar_nep_rkrf_rakar_forms;
+
+} rkrf;
+
+feature blwf {
+	script dev2;
+
+	lookup dev2_dflt_mar_nep_blwf_rakar_below;
+
+	language MAR;
+	lookup dev2_dflt_mar_nep_blwf_rakar_below;
+
+	language NEP;
+	lookup dev2_dflt_mar_nep_blwf_rakar_below;
+
+} blwf;
+
+feature half {
+	script dev2;
+	lookup dev2_dflt_mar_nep_half_all_half_forms;
+
+	language MAR;
+	lookup dev2_dflt_mar_nep_half_all_half_forms;
+	lookup dev2_mar_half_marathi_consonant_half_forms;
+
+	language NEP;
+	lookup dev2_dflt_mar_nep_half_all_half_forms;
+	lookup dev2_nep_half_nepali_consonant_half_forms;
+
+} half;
+
+feature cjct {
+	script dev2;
+
+	lookup dev2_dflt_mar_nep_cjct_all_conjuncts;
+
+	language MAR;
+	lookup dev2_dflt_mar_nep_cjct_all_conjuncts;
+	lookup dev2_mar_cjct_all_conjuncts;
+
+	language NEP;
+	lookup dev2_dflt_mar_nep_cjct_all_conjuncts;
+
+} cjct;
+
+feature pres {
+	script dev2;
+
+	lookup dev2_dflt_mar_nep_pres_contextual_half_forms;
+	lookup dev2_dflt_mar_nep_pres_half_form_conjuncts;
+	lookup dev2_dflt_mar_nep_pres_imatra_contexts;
+	lookup dev2_dflt_mar_nep_pres_imatra_contexts_half_forms;
+
+	language MAR;
+	lookup dev2_dflt_mar_nep_pres_contextual_half_forms;
+	lookup dev2_dflt_mar_nep_pres_half_form_conjuncts;
+	lookup dev2_dflt_mar_nep_pres_imatra_contexts;
+
+	language NEP;
+	lookup dev2_dflt_mar_nep_pres_contextual_half_forms;
+	lookup dev2_dflt_mar_nep_pres_half_form_conjuncts;
+	lookup dev2_dflt_mar_nep_pres_imatra_contexts;
+
+} pres;
+
+feature abvs {
+	script dev2;
+
+	lookup dev2_dflt_mar_nep_abvs_top_mark_ligatures;
+	lookup dev2_dflt_abvs_replaceCompositeMatras_top;
+
+	language MAR;
+	lookup dev2_dflt_mar_nep_abvs_top_mark_ligatures;
+	lookup dev2_dflt_abvs_replaceCompositeMatras_top;
+
+	language NEP;
+	lookup dev2_dflt_mar_nep_abvs_top_mark_ligatures;
+	lookup dev2_dflt_abvs_replaceCompositeMatras_top;
+} abvs;
+
+feature blws {
+	script dev2;
+	lookup dev2_dflt_mar_nep_blws_botom_mark_ligatures;;
+	lookup dev2_dflt_mar_nep_blws_rakaar_mark;
+	#lookup dev2_dflt_decompose_nukta_glyphs_in_rakaar_context;
+
+	lookup dev2_dflt_mar_nep_blws_umatra_short;
+	lookup dev2_dflt_blws_umatra_narrow;
+
+	language MAR;
+	lookup dev2_dflt_mar_nep_blws_botom_mark_ligatures;
+	lookup dev2_dflt_mar_nep_blws_rakaar_mark;
+	#lookup dev2_dflt_decompose_nukta_glyphs_in_rakaar_context;
+	lookup dev2_dflt_mar_nep_blws_umatra_short;
+	lookup dev2_mar_blws_umatra_narrow;
+
+	language NEP;
+	lookup dev2_dflt_mar_nep_blws_botom_mark_ligatures;
+	lookup dev2_dflt_mar_nep_blws_rakaar_mark;
+	#lookup dev2_dflt_decompose_nukta_glyphs_in_rakaar_context;
+	lookup dev2_dflt_mar_nep_blws_umatra_short;
+
+} blws;
+
+feature psts {
+	script dev2;
+	lookup dev2_dflt_mar_nep_psts_iimatra_alternates;
+
+	language MAR;
+	lookup dev2_dflt_mar_nep_psts_iimatra_alternates;
+
+	language NEP;
+	lookup dev2_dflt_mar_nep_psts_iimatra_alternates;
+
+} psts;
+
+feature rclt {
+	script dev2;
+	lookup dev2_dflt_mar_nep_rclt_alternate_ematra;
+
+	language MAR;
+	lookup dev2_dflt_mar_nep_rclt_alternate_ematra;
+
+	language NEP;
+	lookup dev2_dflt_mar_nep_rclt_alternate_ematra;
 
 } rclt;
