@@ -164,7 +164,7 @@ for import_source in designspace_import.sources:
             target_font[glyph_name] = import_font[glyph_name]
         except KeyError as e:
             logging.error(
-                "Glyph '%s' does not exist in the source UFO %s, aborting.",
+                "Glyph %s does not exist in the source UFO %s, aborting.",
                 str(e),
                 str(import_source.filename),
             )
@@ -172,7 +172,7 @@ for import_source in designspace_import.sources:
 
     for group_name in import_groups:
         try:
-            target_font.groups[group_name] = import_font.groups[group_name]
+            group_glyphs = import_font.groups[group_name]
         except KeyError as e:
             logging.warning(
                 "Kerning group %s does not exist in the source UFO %s, skipping.",
@@ -180,6 +180,13 @@ for import_source in designspace_import.sources:
                 str(import_source.filename),
             )
             continue
+        if group_name in target_font.groups:
+            existing = set(target_font.groups[group_name])
+            for name in group_glyphs:
+                if name not in existing:
+                    target_font.groups[group_name].append(name)
+        else:
+            target_font.groups[group_name] = import_font.groups[group_name]
 
     # Import kerning where either side of a pair is an imported glyph or group:
     for key, value in import_font.kerning.items():
