@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nga-deva" format="2">
+  <advance width="720"/>
+  <unicode hex="0919"/>
+  <outline>
+    <contour>
+      <point x="562" y="596" type="line"/>
+      <point x="740" y="596" type="line"/>
+      <point x="740" y="690" type="line"/>
+      <point x="562" y="690" type="line"/>
+    </contour>
+    <component base="anusvara-deva" xOffset="530" yOffset="-505"/>
+    <component base="dda-deva"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>anusvara-deva</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>dda-deva</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>
