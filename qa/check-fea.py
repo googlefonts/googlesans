@@ -19,7 +19,7 @@ from pathlib import Path
 
 import uharfbuzz
 from fontbakery.callable import check, condition
-from fontbakery.checkrunner import FAIL, PASS, SKIP, Section
+from fontbakery.checkrunner import ERROR, FAIL, PASS, SKIP, Section
 from fontbakery.fonts_profile import profile_factory
 
 # Make FontBakery able to find the update_shaping_test_data package.
@@ -42,6 +42,7 @@ GOOGLESANS_PROFILE_CHECKS = [
     "com.google.fonts/check/googlesans/features/staticitalics",
     "com.google.fonts/check/googlesans/features/variableuprights",
     "com.google.fonts/check/googlesans/features/variableitalics",
+    "com.google.fonts/check/googlesans/features/rvrn_does_something",
     "com.google.fonts/check/googlesans/features/regression",
 ]
 
@@ -343,6 +344,63 @@ def com_google_fonts_check_googlesans_features_variable_italics(ttFont):
             f"{tt.reader.file.name} does not contain the expected feature tags.\n"
             f"Found:{sorted(fea_tags)}\nExpected:{VAR_ITALICS_FEA}",
         )
+
+
+@check(
+    id="com.google.fonts/check/googlesans/features/rvrn_does_something",
+    conditions=["is_variable_font"],
+    rationale="""
+        Confirms that the 'rvrn' feature is only used on glyphs with a cmap entry.
+
+        It may work on Apple platforms until Apple fixes a bug in CoreText. See
+        https://github.com/fonttools/fonttools/issues/2140.
+    """,
+)
+def com_google_fonts_check_googlesans_features_rvrn_does_something(ttFont):
+    """Confirms that the 'rvrn' feature is only used on glyphs with a cmap entry."""
+    tt = ttFont
+    gsub = tt["GSUB"].table
+    cmap = tt["cmap"]
+
+    if not hasattr(gsub, "FeatureVariations"):
+        yield SKIP, "Font has no feature variations."
+        return
+
+    rvrn_indices = set()
+    for index, record in enumerate(gsub.FeatureList.FeatureRecord):
+        if record.FeatureTag == "rvrn":
+            rvrn_indices.add(index)
+
+    rvrn_lookups = set()
+    for record in gsub.FeatureVariations.FeatureVariationRecord:
+        for substitution_record in record.FeatureTableSubstitution.SubstitutionRecord:
+            if substitution_record.FeatureIndex not in rvrn_indices:
+                continue
+            rvrn_lookups.update(substitution_record.Feature.LookupListIndex)
+
+    all_glyphs_have_cmap = True
+    glyphs_with_cmap_entry = {
+        name for table in cmap.tables for name in table.cmap.values()
+    }
+    for lookup_index in rvrn_lookups:
+        lookup = gsub.LookupList.Lookup[lookup_index]
+        for subtable_index, subtable in enumerate(lookup.SubTable):
+            if not hasattr(subtable, "mapping"):
+                yield ERROR, (
+                    f"Lookup index {lookup_index}, subtable {subtable_index}: "
+                    f"Unknown format {subtable.Format}",
+                )
+                continue
+            for sub_input in subtable.mapping.keys():
+                if sub_input not in glyphs_with_cmap_entry:
+                    all_glyphs_have_cmap = False
+                    yield FAIL, (
+                        f"Glyph '{sub_input}' does not have a cmap entry, "
+                        "the rvrn substitution will do nothing."
+                    )
+
+    if all_glyphs_have_cmap:
+        yield PASS, "All glyphs substituted by rvrn have cmap entries."
 
 
 @check(id="com.google.fonts/check/googlesans/features/regression")
