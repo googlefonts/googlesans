@@ -156,7 +156,7 @@ if __name__ == "__main__":
     if shaping_file_toml.exists():
         toml2json(shaping_file_toml)
     else:
-        sys.stderr.write(f"{shaping_file_toml} does not appear to be a valid file!")
+        sys.stderr.write(f"{shaping_file_toml} does not appear to be a valid file!\n")
         sys.exit(1)
 
     # open json file that was dumped above
