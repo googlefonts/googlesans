@@ -22,8 +22,8 @@ from pathlib import Path
 from typing import Dict, List, Optional, Union
 
 import toml
-import uharfbuzz as hb
-from fontTools.ttLib import TTFont
+import uharfbuzz as hb  # type: ignore
+from fontTools.ttLib import TTFont  # type: ignore
 
 
 class ComparisonMode(enum.Enum):
@@ -130,7 +130,7 @@ def toml2json(tomlpath: Path) -> None:
         json_filepath.write_text(json.dumps(toml.load(tf), indent=2, ensure_ascii=False))
 
 
-def get_json_filepath(tomlpath) -> Path:
+def get_json_filepath(tomlpath: Path) -> Path:
     return Path("shaping", f"{tomlpath.stem}.json")
 
 
