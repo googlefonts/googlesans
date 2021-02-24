@@ -131,7 +131,7 @@ def toml2json(tomlpath: Path) -> None:
 
 
 def get_json_filepath(tomlpath: Path) -> Path:
-    return Path("shaping", f"{tomlpath.stem}.json")
+    return Path("shaping", tomlpath.with_suffix(".json").name)
 
 
 if __name__ == "__main__":
