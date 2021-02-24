@@ -17,11 +17,13 @@
 from __future__ import annotations
 
 import enum
+import sys
 from pathlib import Path
 from typing import Dict, List, Optional, Union
 
-import uharfbuzz as hb
-from fontTools.ttLib import TTFont
+import toml
+import uharfbuzz as hb  # type: ignore
+from fontTools.ttLib import TTFont  # type: ignore
 
 
 class ComparisonMode(enum.Enum):
@@ -92,9 +94,7 @@ def shape_texts(
     if "fvar" in font:
         result = {}
         for instance in font["fvar"].instances:
-            coordinate_str = ",".join(
-                f"{k}={v}" for k, v in instance.coordinates.items()
-            )
+            coordinate_str = ",".join(f"{k}={v}" for k, v in instance.coordinates.items())
             result[coordinate_str] = [
                 shape_run(
                     hb_face,
@@ -124,13 +124,23 @@ def shape_texts(
         ]
 
 
+def toml2json(tomlpath: Path) -> None:
+    with tomlpath.open() as tf:
+        json_filepath = get_json_filepath(tomlpath)
+        json_filepath.write_text(json.dumps(toml.load(tf), indent=2, ensure_ascii=False))
+
+
+def get_json_filepath(tomlpath: Path) -> Path:
+    return Path("shaping", tomlpath.with_suffix(".json").name)
+
+
 if __name__ == "__main__":
     import argparse
     import json
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "shaping_file", type=Path, help="The testing .json file to update."
+        "shaping_file", type=Path, help="The .toml shaping definition file path."
     )
     parser.add_argument(
         "fonts",
@@ -140,16 +150,26 @@ if __name__ == "__main__":
     )
     parsed_args = parser.parse_args()
 
-    shaping_file: Path = parsed_args.shaping_file
-    shaping_input_doc = json.loads(shaping_file.read_text())
+    shaping_file_toml: Path = parsed_args.shaping_file
+    # convert toml definition file to
+    # JSON format used for CI tests
+    if shaping_file_toml.exists():
+        toml2json(shaping_file_toml)
+    else:
+        sys.stderr.write(f"{shaping_file_toml} does not appear to be a valid file!\n")
+        sys.exit(1)
+
+    # open json file that was dumped above
+    # and set the shaping data based on builds
+    # defined on the command line
+    shaping_file_json = get_json_filepath(shaping_file_toml)
+    shaping_input_doc = json.loads(shaping_file_json.read_text())
     shaping_input = shaping_input_doc["input"]
     shaping_texts = shaping_input["text"]
     shaping_features = shaping_input["features"]
     shaping_script = shaping_input.get("script")
     shaping_language = shaping_input.get("language")
-    shaping_comparison_mode = ComparisonMode(
-        shaping_input.get("comparison_mode", "full")
-    )
+    shaping_comparison_mode = ComparisonMode(shaping_input.get("comparison_mode", "full"))
     shaping_direction = Direction(shaping_input.get("direction", "ltr"))
 
     if "output" not in shaping_input_doc:
@@ -171,4 +191,6 @@ if __name__ == "__main__":
             shaping_comparison_mode,
         )
 
-    shaping_file.write_text(json.dumps(shaping_input_doc, indent=2, ensure_ascii=False))
+    shaping_file_json.write_text(
+        json.dumps(shaping_input_doc, indent=2, ensure_ascii=False)
+    )
