@@ -2,40 +2,40 @@ name: Build Incoming Files
 
 on:
   push:
-    # Sequence of patterns matched against refs/heads 
-    branches: 
-      - master # Push events on master branch 
-      - "build/**" # Push events to branches matching refs/heads/build/[ANYTHING] 
-      - "build-*" # Push events to branches matching refs/heads/build-[ANYTHING] 
+    # Sequence of patterns matched against refs/heads
+    branches:
+      - master # Push events on master branch
+      - "build/**" # Push events to branches matching refs/heads/build/[ANYTHING]
+      - "build-*" # Push events to branches matching refs/heads/build-[ANYTHING]
     paths:
-      - 'source/GoogleSans/*.glyphs'
+      - "source/GoogleSans/*.glyphs"
 
 jobs:
   build-incoming-files:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out ${{ steps.config.outputs.projectname }} source repository
-      uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
-    - name: Python build dependency cache lookup
-      uses: actions/cache@v1
-      with:
-        path: ~/.cache/pip
-        # Check for requirements file cache hit
-        key: ${{ runner.os }}-pip-${{ hashFiles('${{ steps.config.outputs.dependpath }}') }}
-    - name: Install Python build dependencies
-      uses: py-actions/py-dependency-install@v2
-      with:
-        update-wheel: "true"
-        update-setuptools: "true"
-    - name: Generate Glyphs.app file
-      run: |
-        make gs-vf-vendor
-    - uses: actions/upload-artifact@v2
-      with:	
-        name: 'Built variable fonts'	
-        path: 'source/GoogleSans/staging/**/*.ttf'
-        retention-days: 1
+      - name: Check out ${{ steps.config.outputs.projectname }} source repository
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Python build dependency cache lookup
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          # Check for requirements file cache hit
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements*.txt') }}
+      - name: Install Python build dependencies
+        uses: py-actions/py-dependency-install@v2
+        with:
+          update-wheel: "true"
+          update-setuptools: "true"
+      - name: Generate Glyphs.app file
+        run: |
+          make gs-vf-vendor
+      - uses: actions/upload-artifact@v2
+        with:
+          name: "Built variable fonts"
+          path: "source/GoogleSans/staging/**/*.ttf"
+          retention-days: 1
