@@ -1,0 +1,14 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+ss02 = true
+
+[input]
+script = "DFLT"
+language = "dflt"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    ":", # replaced with colon.time cap height centered form
+]
