@@ -52,7 +52,7 @@ def main():
 
         vf_full = TTFont(fontpath)
         pre_axis_tags = [a.axisTag for a in vf_full["fvar"].axes]
-        # assert len(pre_axis_tags) == 2
+        assert len(pre_axis_tags) == 3
         assert "opsz" in pre_axis_tags
         assert "wght" in pre_axis_tags
         assert "GRAD" in pre_axis_tags
@@ -65,7 +65,7 @@ def main():
             f"builds defined at opsz {MIN_OPSZ_SIZE}..."
         )
         vf_partial_min_opsz = instancer.instantiateVariableFont(
-            vf_full, {"opsz": MIN_OPSZ_SIZE}
+            vf_full, {"opsz": MIN_OPSZ_SIZE, "GRAD": None}
         )
         # =================================================
         # BUILD partial instance of max optical size design
@@ -75,14 +75,14 @@ def main():
             f"builds defined at opsz {MAX_OPSZ_SIZE}..."
         )
         vf_partial_max_opsz = instancer.instantiateVariableFont(
-            vf_full, {"opsz": MAX_OPSZ_SIZE}
+            vf_full, {"opsz": MAX_OPSZ_SIZE, "GRAD": None}
         )
 
         # verify that partial instance builds include the expected axis
         # definitions
         for vf_partial in (vf_partial_min_opsz, vf_partial_max_opsz):
             post_axis_tags = [a.axisTag for a in vf_partial["fvar"].axes]
-            # assert len(post_axis_tags) == 1
+            assert len(post_axis_tags) == 1
             assert "wght" in post_axis_tags
 
         # ========================================
