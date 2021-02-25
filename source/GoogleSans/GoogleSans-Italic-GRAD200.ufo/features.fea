@@ -80,35 +80,23 @@ table GDEF {
         Uhookabove Uhorn Uhornacute Uhorndotbelow Uhorngrave Uhornhookabove Uhorntilde
         Uhungarumlaut Umacron Uogonek Uring Utilde V W Wacute Wcircumflex Wdieresis
         Wgrave X Y Yacute Ycircumflex Ydieresis Ydotbelow Ygrave Yhookabove Ytilde Z
-        Zacute Zcaron Zdotaccent Ccedilla.alt G.alt Gbreve.alt Gcircumflex.alt
-        Gcommaaccent.alt Gdotaccent.alt I.alt Iacute.alt Ibreve.alt Icircumflex.alt
-        Idieresis.alt Idotaccent.alt Igrave.alt Imacron.alt Iogonek.alt Itilde.alt J.alt
-        Jcircumflex.alt M.alt R.alt Racute.alt Rcaron.alt Rcommaaccent.alt Scedilla.alt
-        W.alt Wacute.alt Wcircumflex.alt Wdieresis.alt Wgrave.alt a aacute abreve
-        abreveacute abrevedotbelow abrevegrave abrevehookabove abrevetilde acircumflex
-        acircumflexacute acircumflexdotbelow acircumflexgrave acircumflexhookabove
-        acircumflextilde adieresis adotbelow agrave ahookabove amacron aogonek aring
-        aringacute atilde b c cacute ccaron ccedilla ccircumflex cdotaccent d dcaron
-        dcroat e eacute ebreve ecaron ecircumflex ecircumflexacute ecircumflexdotbelow
-        ecircumflexgrave ecircumflexhookabove ecircumflextilde edieresis edotaccent
-        edotbelow egrave ehookabove emacron eogonek etilde schwa f hbar idotless iacute
-        ibreve icircumflex idieresis igrave ihookabove imacron iogonek itilde jdotless
+        Zacute Zcaron Zdotaccent a aacute abreve abreveacute abrevedotbelow abrevegrave
+        abrevehookabove abrevetilde acircumflex acircumflexacute acircumflexdotbelow
+        acircumflexgrave acircumflexhookabove acircumflextilde adieresis adotbelow
+        agrave ahookabove amacron aogonek aring aringacute atilde b c cacute ccaron
+        ccedilla ccircumflex cdotaccent d dcaron dcroat e eacute ebreve ecaron
+        ecircumflex ecircumflexacute ecircumflexdotbelow ecircumflexgrave
+        ecircumflexhookabove ecircumflextilde edieresis edotaccent edotbelow egrave
+        ehookabove emacron eogonek etilde schwa f hbar idotless iacute ibreve
+        icircumflex idieresis igrave ihookabove imacron iogonek itilde jdotless
         jcircumflex kgreenlandic lslash eng ohorn ohornacute ohorndotbelow ohorngrave
         ohornhookabove ohorntilde oslash oslashacute germandbls tbar uhorn uhornacute
-        uhorndotbelow uhorngrave uhornhookabove uhorntilde uogonek a.alt aacute.alt
-        abreve.alt abreveacute.alt abrevedotbelow.alt abrevegrave.alt
-        abrevehookabove.alt abrevetilde.alt acircumflex.alt acircumflexacute.alt
-        acircumflexdotbelow.alt acircumflexgrave.alt acircumflexhookabove.alt
-        acircumflextilde.alt adieresis.alt adotbelow.alt agrave.alt ahookabove.alt
-        amacron.alt aogonek.alt aring.alt aringacute.alt atilde.alt ccedilla.alt j.alt
-        jdotless.alt jcircumflex.alt k.alt kcommaaccent.alt r.alt racute.alt rcaron.alt
-        rcommaaccent.alt y.alt yacute.alt ycircumflex.alt ydieresis.alt ydotbelow.alt
-        ygrave.alt yhookabove.alt ytilde.alt A-cy Ge-cy Gje-cy Gheupturn-cy Ie-cy
-        Iegrave-cy Io-cy Zhe-cy Em-cy En-cy O-cy Pe-cy Er-cy Es-cy Te-cy U-cy Ushort-cy
-        Ha-cy Dze-cy I-cy Yi-cy Je-cy Fita-cy Ghestroke-cy Zhedescender-cy
-        Endescender-cy Pedescender-cy Esdescender-cy Tedescender-cy Ustraight-cy
-        Ustraightstroke-cy Hadescender-cy Palochka-cy Zhebreve-cy Entail-cy Emtail-cy
-        Abreve-cy Adieresis-cy Aie-cy Iebreve-cy Schwa-cy Schwadieresis-cy
+        uhorndotbelow uhorngrave uhornhookabove uhorntilde uogonek A-cy Ge-cy Gje-cy
+        Gheupturn-cy Ie-cy Iegrave-cy Io-cy Zhe-cy Em-cy En-cy O-cy Pe-cy Er-cy Es-cy
+        Te-cy U-cy Ushort-cy Ha-cy Dze-cy I-cy Yi-cy Je-cy Fita-cy Ghestroke-cy
+        Zhedescender-cy Endescender-cy Pedescender-cy Esdescender-cy Tedescender-cy
+        Ustraight-cy Ustraightstroke-cy Hadescender-cy Palochka-cy Zhebreve-cy Entail-cy
+        Emtail-cy Abreve-cy Adieresis-cy Aie-cy Iebreve-cy Schwa-cy Schwadieresis-cy
         Zhedieresis-cy Odieresis-cy Obarred-cy Obarreddieresis-cy Umacron-cy
         Udieresis-cy Uhungarumlaut-cy Gedescender-cy Gestrokehook-cy We-cy Ertick-cy
         Ghestroke-cy.loclBSH Esdescender-cy.loclBSH Esdescender-cy.loclCHU a-cy ge-cy
@@ -213,39 +201,37 @@ table GDEF {
         finalpe-hb.BRACKET.18 g.sc.BRACKET.18 ldot pe-hb.BRACKET.18 samekh-hb.BRACKET.18
         tcommaaccent.alt.BRACKET.18 y.BRACKET.18], # Base
         [f_b f_f f_f_b f_f_h f_f_i f_f_j f_f_k f_f_l f_f_t f_h f_i f_j f_k f_l f_t r_f r_f_f
-        r_t t_f t_t f_f_j.alt f_f_k.alt f_f_t.alt f_j.alt f_k.alt f_t.alt r_t.alt
-        t_f.alt t_t.alt vavvav-hb vavyod-hb yodyod-hb], # Liga
-        [dieresiscomb dotaccentcomb gravecomb acutecomb hungarumlautcomb caroncomb.alt
-        circumflexcomb caroncomb brevecomb ringcomb tildecomb macroncomb hookabovecomb
+        r_t t_f t_t vavvav-hb vavyod-hb yodyod-hb], # Liga
+        [dieresiscomb dotaccentcomb gravecomb acutecomb hungarumlautcomb circumflexcomb
+        caroncomb brevecomb ringcomb tildecomb macroncomb hookabovecomb
         commaturnedabovecomb horncomb dotbelowcomb dieresisbelowcomb commaaccentcomb
-        cedillacomb ogonekcomb brevebelowcomb macronbelowcomb cedillacomb.alt
-        dieresiscomb.cap dotaccentcomb.cap gravecomb.cap acutecomb.cap
-        hungarumlautcomb.cap caroncomb.alt.cap circumflexcomb.cap caroncomb.cap
-        brevecomb.cap ringcomb.cap tildecomb.cap macroncomb.cap hookabovecomb.cap
-        horncomb.cap dieresiscomb.sc dotaccentcomb.sc gravecomb.sc acutecomb.sc
-        hungarumlautcomb.sc circumflexcomb.sc caroncomb.sc brevecomb.sc ringcomb.sc
-        tildecomb.sc macroncomb.sc hookabovecomb.sc shindot-hb etnahtaleft-hb segolta-hb
-        shalshelet-hb zaqefqatan-hb zaqefgadol-hb tipehaleft-hb reviamugrash-hb zarqa-hb
-        pashta-hb yetiv-hb tevirleft-hb gereshaccent-hb gereshmuqdam-hb
-        gershayimaccent-hb qarneypara-hb telishagedola-hb pazer-hb atnahhafukh-hb
-        munahleft-hb mahapakhleft-hb merkhaleft-hb merkhakefulaleft-hb dargaleft-hb
-        qadma-hb telishaqetana-hb yerahbenyomoleft-hb ole-hb iluy-hb dehi-hb zinor-hb
-        masoracircle-hb sheva-hb hatafsegol-hb hatafsegol_siluqleft-hb hatafpatah-hb
-        hatafpatah_siluqleft-hb hatafqamats-hb hatafqamats_siluqleft-hb hiriq-hb
-        tsere-hb segol-hb patah-hb qamats-hb holam-hb holamhaser-hb qubuts-hb dagesh-hb
-        dagesh-hb.alt siluqleft-hb rafe-hb sindot-hb upperdot-hb lowerdot-hb
-        qamatsqatan-hb judeospanishvarika-hb segolta-hb.final telishaqetana-hb.final
-        masoracircle-hb.final brevecomb_acutecomb brevecomb_gravecomb
-        brevecomb_hookabovecomb brevecomb_tildecomb circumflexcomb_acutecomb
-        circumflexcomb_gravecomb circumflexcomb_hookabovecomb circumflexcomb_tildecomb
-        brevecomb_acutecomb.cap brevecomb_gravecomb.cap brevecomb_hookabovecomb.cap
-        brevecomb_tildecomb.cap circumflexcomb_acutecomb.cap
-        circumflexcomb_gravecomb.cap circumflexcomb_hookabovecomb.cap
-        circumflexcomb_tildecomb.cap brevecomb_acutecomb.sc brevecomb_gravecomb.sc
-        brevecomb_hookabovecomb.sc brevecomb_tildecomb.sc circumflexcomb_acutecomb.sc
-        circumflexcomb_gravecomb.sc circumflexcomb_hookabovecomb.sc
-        circumflexcomb_tildecomb.sc descender-cy tail-cy commaaccentcomb.BRACKET.18
-        commaturnedabovecomb.BRACKET.18], # Mark
+        cedillacomb ogonekcomb brevebelowcomb macronbelowcomb dieresiscomb.cap
+        dotaccentcomb.cap gravecomb.cap acutecomb.cap hungarumlautcomb.cap
+        circumflexcomb.cap caroncomb.cap brevecomb.cap ringcomb.cap tildecomb.cap
+        macroncomb.cap hookabovecomb.cap horncomb.cap dieresiscomb.sc dotaccentcomb.sc
+        gravecomb.sc acutecomb.sc hungarumlautcomb.sc circumflexcomb.sc caroncomb.sc
+        brevecomb.sc ringcomb.sc tildecomb.sc macroncomb.sc hookabovecomb.sc shindot-hb
+        etnahtaleft-hb segolta-hb shalshelet-hb zaqefqatan-hb zaqefgadol-hb
+        tipehaleft-hb reviamugrash-hb zarqa-hb pashta-hb yetiv-hb tevirleft-hb
+        gereshaccent-hb gereshmuqdam-hb gershayimaccent-hb qarneypara-hb
+        telishagedola-hb pazer-hb atnahhafukh-hb munahleft-hb mahapakhleft-hb
+        merkhaleft-hb merkhakefulaleft-hb dargaleft-hb qadma-hb telishaqetana-hb
+        yerahbenyomoleft-hb ole-hb iluy-hb dehi-hb zinor-hb masoracircle-hb sheva-hb
+        hatafsegol-hb hatafsegol_siluqleft-hb hatafpatah-hb hatafpatah_siluqleft-hb
+        hatafqamats-hb hatafqamats_siluqleft-hb hiriq-hb tsere-hb segol-hb patah-hb
+        qamats-hb holam-hb holamhaser-hb qubuts-hb dagesh-hb dagesh-hb.alt siluqleft-hb
+        rafe-hb sindot-hb upperdot-hb lowerdot-hb qamatsqatan-hb judeospanishvarika-hb
+        segolta-hb.final telishaqetana-hb.final masoracircle-hb.final
+        brevecomb_acutecomb brevecomb_gravecomb brevecomb_hookabovecomb
+        brevecomb_tildecomb circumflexcomb_acutecomb circumflexcomb_gravecomb
+        circumflexcomb_hookabovecomb circumflexcomb_tildecomb brevecomb_acutecomb.cap
+        brevecomb_gravecomb.cap brevecomb_hookabovecomb.cap brevecomb_tildecomb.cap
+        circumflexcomb_acutecomb.cap circumflexcomb_gravecomb.cap
+        circumflexcomb_hookabovecomb.cap circumflexcomb_tildecomb.cap
+        brevecomb_acutecomb.sc brevecomb_gravecomb.sc brevecomb_hookabovecomb.sc
+        brevecomb_tildecomb.sc circumflexcomb_acutecomb.sc circumflexcomb_gravecomb.sc
+        circumflexcomb_hookabovecomb.sc circumflexcomb_tildecomb.sc descender-cy tail-cy
+        commaaccentcomb.BRACKET.18 commaturnedabovecomb.BRACKET.18], # Mark
     ;
   LigatureCaretByPos f_b 270;
   LigatureCaretByPos f_f 270;
@@ -253,27 +239,18 @@ table GDEF {
   LigatureCaretByPos f_f_h 270 586;
   LigatureCaretByPos f_f_i 301 590;
   LigatureCaretByPos f_f_j 270 586;
-  LigatureCaretByPos f_f_j.alt 270 586;
   LigatureCaretByPos f_f_k 270 586;
-  LigatureCaretByPos f_f_k.alt 270 586;
   LigatureCaretByPos f_f_l 301 590;
   LigatureCaretByPos f_f_t 270 586;
-  LigatureCaretByPos f_f_t.alt 270 586;
   LigatureCaretByPos f_h 273;
   LigatureCaretByPos f_i 273;
   LigatureCaretByPos f_j 273;
-  LigatureCaretByPos f_j.alt 273;
   LigatureCaretByPos f_k 273;
-  LigatureCaretByPos f_k.alt 273;
   LigatureCaretByPos f_l 273;
   LigatureCaretByPos f_t 273;
-  LigatureCaretByPos f_t.alt 273;
   LigatureCaretByPos r_f 282;
   LigatureCaretByPos r_f_f 288 659;
   LigatureCaretByPos r_t 375;
-  LigatureCaretByPos r_t.alt 303;
   LigatureCaretByPos t_f 294;
-  LigatureCaretByPos t_f.alt 290;
   LigatureCaretByPos t_t 311;
-  LigatureCaretByPos t_t.alt 280;
 } GDEF;
