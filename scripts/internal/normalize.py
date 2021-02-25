@@ -152,6 +152,10 @@ def scrub_designspace(designspace: DesignSpaceDocument, project_root: Path) -> N
         n for n in designspace.default.font.glyphOrder if n in default_source.keys()
     ]
     glyph_order_set = set(glyph_order)
+    for glyph_name in default_source.keys():
+        if glyph_name not in glyph_order_set:
+            glyph_order.append(glyph_name)
+            glyph_order_set.add(glyph_name)
     postscript_names = {
         k: v
         for k, v in default_source.lib["public.postscriptNames"].items()
