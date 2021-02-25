@@ -3,27 +3,6 @@
   <advance width="566"/>
   <outline>
     <contour>
-      <point x="63" y="0" type="line"/>
-      <point x="262" y="0" type="line" smooth="yes"/>
-      <point x="412" y="0"/>
-      <point x="505" y="75"/>
-      <point x="505" y="198" type="curve" smooth="yes"/>
-      <point x="505" y="300"/>
-      <point x="429" y="362"/>
-      <point x="309" y="362" type="curve" smooth="yes"/>
-      <point x="212" y="362" type="line"/>
-      <point x="231" y="472" type="line"/>
-      <point x="367" y="472" type="line"/>
-      <point x="378" y="534" type="line"/>
-      <point x="242" y="534" type="line"/>
-      <point x="253" y="596" type="line"/>
-      <point x="168" y="596" type="line"/>
-      <point x="157" y="534" type="line"/>
-      <point x="48" y="534" type="line"/>
-      <point x="37" y="472" type="line"/>
-      <point x="146" y="472" type="line"/>
-    </contour>
-    <contour>
       <point x="162" y="78" type="line"/>
       <point x="198" y="285" type="line"/>
       <point x="306" y="285" type="line" smooth="yes"/>
@@ -34,12 +13,31 @@
       <point x="364" y="78"/>
       <point x="277" y="78" type="curve" smooth="yes"/>
     </contour>
+    <contour>
+      <point x="253" y="596" type="line"/>
+      <point x="168" y="596" type="line"/>
+      <point x="63" y="0" type="line"/>
+      <point x="262" y="0" type="line" smooth="yes"/>
+      <point x="412" y="0"/>
+      <point x="505" y="75"/>
+      <point x="505" y="198" type="curve" smooth="yes"/>
+      <point x="505" y="300"/>
+      <point x="429" y="362"/>
+      <point x="309" y="362" type="curve" smooth="yes"/>
+      <point x="212" y="362" type="line"/>
+    </contour>
+    <contour>
+      <point x="48" y="534" type="line"/>
+      <point x="37" y="472" type="line"/>
+      <point x="367" y="472" type="line"/>
+      <point x="378" y="534" type="line"/>
+    </contour>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>hbar.sc</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>softsign-cy.sc</string>
     </dict>
   </lib>

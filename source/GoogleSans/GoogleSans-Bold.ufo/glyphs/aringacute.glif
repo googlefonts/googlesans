@@ -2,22 +2,9 @@
 <glyph name="aringacute" format="2">
   <advance width="561"/>
   <unicode hex="01FB"/>
-  <anchor x="504" y="0" name="ogonek"/>
-  <anchor x="268" y="949" name="top"/>
   <outline>
-    <contour>
-      <point x="210" y="833" type="line"/>
-      <point x="326" y="833" type="line"/>
-      <point x="397" y="949" type="line"/>
-      <point x="244" y="949" type="line"/>
-    </contour>
     <component base="a"/>
-    <component base="ringcomb" xOffset="64"/>
+    <component base="ringcomb" xOffset="58"/>
+    <component base="aring-acute"/>
   </outline>
-  <lib>
-    <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.widthMetricsKey</key>
-      <string>a</string>
-    </dict>
-  </lib>
 </glyph>

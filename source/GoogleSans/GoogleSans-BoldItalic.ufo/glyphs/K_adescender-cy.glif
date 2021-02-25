@@ -3,19 +3,12 @@
   <advance width="675"/>
   <unicode hex="049A"/>
   <outline>
-    <contour>
-      <point x="472" y="-152" type="line"/>
-      <point x="601" y="-152" type="line"/>
-      <point x="651" y="128" type="line"/>
-      <point x="496" y="128" type="line"/>
-      <point x="473" y="0" type="line"/>
-      <point x="499" y="0" type="line"/>
-    </contour>
-    <component base="Ka-cy"/>
+    <component base="K.alt"/>
+    <component base="descender-cy" xOffset="-265"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>Ka-cy</string>
     </dict>
   </lib>

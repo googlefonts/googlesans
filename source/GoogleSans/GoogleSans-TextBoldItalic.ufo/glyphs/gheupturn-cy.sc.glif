@@ -2,22 +2,14 @@
 <glyph name="gheupturn-cy.sc" format="2">
   <advance width="481"/>
   <outline>
-    <contour>
-      <point x="26" y="0" type="line"/>
-      <point x="157" y="0" type="line"/>
-      <point x="238" y="458" type="line"/>
-      <point x="479" y="458" type="line"/>
-      <point x="522" y="698" type="line"/>
-      <point x="395" y="698" type="line"/>
-      <point x="374" y="580" type="line"/>
-      <point x="129" y="580" type="line"/>
-    </contour>
+    <component base="ge-cy.sc"/>
+    <component base="upturnsc-cy"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>en-cy.sc</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>ge-cy.sc</string>
     </dict>
   </lib>

@@ -2,26 +2,14 @@
 <glyph name="tedescender-cy.sc" format="2">
   <advance width="506"/>
   <outline>
-    <contour>
-      <point x="285" y="-123" type="line"/>
-      <point x="369" y="-123" type="line"/>
-      <point x="369" y="79" type="line"/>
-      <point x="295" y="79" type="line"/>
-      <point x="295" y="502" type="line"/>
-      <point x="477" y="502" type="line"/>
-      <point x="477" y="580" type="line"/>
-      <point x="29" y="580" type="line"/>
-      <point x="29" y="502" type="line"/>
-      <point x="210" y="502" type="line"/>
-      <point x="210" y="0" type="line"/>
-      <point x="285" y="0" type="line"/>
-    </contour>
+    <component base="te-cy.sc"/>
+    <component base="descender1sc-cy" xOffset="137"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>te-cy.sc</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>te-cy.sc</string>
     </dict>
   </lib>

@@ -48,7 +48,7 @@
       </dict>
     </array>
     <key>com.schriftgestaltung.customParameter.GSFont.Enforce Compatibility Check</key>
-    <integer>1</integer>
+    <true/>
     <key>com.schriftgestaltung.customParameter.GSFont.disablesLastChange</key>
     <true/>
     <key>com.schriftgestaltung.fontMasterID</key>
@@ -2842,12 +2842,8 @@
       <string>uni2163</string>
       <key>Gcommaaccent</key>
       <string>uni0122</string>
-      <key>Gcommaaccent.BRACKET.18</key>
-      <string>uni0122.BRACKET.18</string>
       <key>Gcommaaccent.alt</key>
       <string>uni0122.alt</string>
-      <key>Gcommaaccent.alt.BRACKET.18</key>
-      <string>uni0122.alt.BRACKET.18</string>
       <key>Ge-cy</key>
       <string>uni0413</string>
       <key>Gedescender-cy</key>
@@ -2864,6 +2860,12 @@
       <string>uni0490</string>
       <key>Gje-cy</key>
       <string>uni0403</string>
+      <key>Glogo</key>
+      <string>uniE000</string>
+      <key>Googlelogo</key>
+      <string>uniE006</string>
+      <key>Gsuper</key>
+      <string>uniE005</string>
       <key>Ha-cy</key>
       <string>uni0425</string>
       <key>Haabkhasian-cy</key>
@@ -2952,24 +2954,16 @@
       <string>uni049C</string>
       <key>Kcommaaccent</key>
       <string>uni0136</string>
-      <key>Kcommaaccent.BRACKET.18</key>
-      <string>uni0136.BRACKET.18</string>
       <key>Kcommaaccent.alt</key>
       <string>uni0136.alt</string>
-      <key>Kcommaaccent.alt.BRACKET.18</key>
-      <string>uni0136.alt.BRACKET.18</string>
       <key>Kje-cy</key>
       <string>uni040C</string>
       <key>Lcommaaccent</key>
       <string>uni013B</string>
-      <key>Lcommaaccent.BRACKET.18</key>
-      <string>uni013B.BRACKET.18</string>
       <key>Lje-cy</key>
       <string>uni0409</string>
       <key>Ncommaaccent</key>
       <string>uni0145</string>
-      <key>Ncommaaccent.BRACKET.18</key>
-      <string>uni0145.BRACKET.18</string>
       <key>Nine-roman</key>
       <string>uni2168</string>
       <key>Nje-cy</key>
@@ -3096,12 +3090,8 @@
       <string>uni051A</string>
       <key>Rcommaaccent</key>
       <string>uni0156</string>
-      <key>Rcommaaccent.BRACKET.18</key>
-      <string>uni0156.BRACKET.18</string>
       <key>Rcommaaccent.alt</key>
       <string>uni0156.alt</string>
-      <key>Rcommaaccent.alt.BRACKET.18</key>
-      <string>uni0156.alt.BRACKET.18</string>
       <key>Reversedze-cy</key>
       <string>uni0510</string>
       <key>Rhodasia</key>
@@ -3112,8 +3102,6 @@
       <string>uni04DA</string>
       <key>Scommaaccent</key>
       <string>uni0218</string>
-      <key>Scommaaccent.BRACKET.18</key>
-      <string>uni0218.BRACKET.18</string>
       <key>Semisoftsign-cy</key>
       <string>uni048C</string>
       <key>Seven-roman</key>
@@ -3134,8 +3122,6 @@
       <string>uni0162</string>
       <key>Tcommaaccent</key>
       <string>uni021A</string>
-      <key>Tcommaaccent.BRACKET.18</key>
-      <string>uni021A.BRACKET.18</string>
       <key>Te-cy</key>
       <string>uni0422</string>
       <key>Tedescender-cy</key>
@@ -3682,16 +3668,10 @@
       <string>uni03020303.sc</string>
       <key>commaaccentcomb</key>
       <string>uni0326</string>
-      <key>commaaccentcomb.BRACKET.18</key>
-      <string>uni0326.BRACKET.18</string>
       <key>commaturnedabovecomb</key>
       <string>uni0312</string>
-      <key>commaturnedabovecomb.BRACKET.18</key>
-      <string>uni0312.BRACKET.18</string>
       <key>dagesh-hb</key>
       <string>uni05BC</string>
-      <key>dagesh-hb.alt</key>
-      <string>uni05BC.alt</string>
       <key>dalet-hb</key>
       <string>uni05D3</string>
       <key>daletdagesh-hb</key>
@@ -3856,6 +3836,8 @@
       <string>uni0513</string>
       <key>elhook-cy.sc</key>
       <string>uni0513.sc</string>
+      <key>elogo</key>
+      <string>uniE004</string>
       <key>eltail-cy</key>
       <string>uni04C6</string>
       <key>eltail-cy.sc</key>
@@ -4187,27 +4169,23 @@
       <key>finalkaf-hb</key>
       <string>uni05DA</string>
       <key>finalkaf_qamats-hb</key>
-      <string>finalkaf_qamatshb</string>
+      <string>uni05DA05B8</string>
       <key>finalkaf_sheva-hb</key>
-      <string>finalkaf_shevahb</string>
+      <string>uni05DA05B0</string>
       <key>finalkafdagesh-hb</key>
       <string>uniFB3A</string>
       <key>finalkafdagesh_qamats-hb</key>
-      <string>finalkafdagesh_qamatshb</string>
+      <string>uniFB3A05B8</string>
       <key>finalkafdagesh_sheva-hb</key>
-      <string>finalkafdagesh_shevahb</string>
+      <string>uniFB3A05B0</string>
       <key>finalmem-hb</key>
       <string>uni05DD</string>
       <key>finalnun-hb</key>
       <string>uni05DF</string>
       <key>finalpe-hb</key>
       <string>uni05E3</string>
-      <key>finalpe-hb.BRACKET.18</key>
-      <string>uni05E3.BRACKET.18</string>
       <key>finalpedagesh-hb</key>
       <string>uniFB43</string>
-      <key>finalpedagesh-hb.BRACKET.18</key>
-      <string>uniFB43.BRACKET.18</string>
       <key>finaltsadi-hb</key>
       <string>uni05E5</string>
       <key>finalwidemem-hb</key>
@@ -4238,8 +4216,6 @@
       <string>uni2074</string>
       <key>gcommaaccent</key>
       <string>uni0123</string>
-      <key>gcommaaccent.BRACKET.18</key>
-      <string>uni0123.BRACKET.18</string>
       <key>gcommaaccent.sc</key>
       <string>uni0123.sc</string>
       <key>ge-cy</key>
@@ -4290,6 +4266,8 @@
       <string>uni0453</string>
       <key>gje-cy.sc</key>
       <string>uni0453.sc</string>
+      <key>glogo</key>
+      <string>uniE002</string>
       <key>guillemetleft</key>
       <string>guillemotleft</string>
       <key>guillemetleft.cap</key>
@@ -4329,15 +4307,15 @@
       <key>hatafpatah-hb</key>
       <string>uni05B2</string>
       <key>hatafpatah_siluqleft-hb</key>
-      <string>hatafpatah_siluqlefthb</string>
+      <string>uni05B205BD</string>
       <key>hatafqamats-hb</key>
       <string>uni05B3</string>
       <key>hatafqamats_siluqleft-hb</key>
-      <string>hatafqamats_siluqlefthb</string>
+      <string>uni05B305BD</string>
       <key>hatafsegol-hb</key>
       <string>uni05B1</string>
       <key>hatafsegol_siluqleft-hb</key>
-      <string>hatafsegol_siluqlefthb</string>
+      <string>uni05B105BD</string>
       <key>he-hb</key>
       <string>uni05D4</string>
       <key>heavyDoubleCommaQuotationMarkOrnament</key>
@@ -4391,7 +4369,7 @@
       <key>idieresis-cy.sc</key>
       <string>uni04E5.sc</string>
       <key>idotaccent.sc</key>
-      <string>i.loclTRK.sc</string>
+      <string>i.sc.loclTRK</string>
       <key>idotbelow</key>
       <string>uni1ECB</string>
       <key>idotbelow.sc</key>
@@ -4602,12 +4580,8 @@
       <string>uni049D.sc</string>
       <key>kcommaaccent</key>
       <string>uni0137</string>
-      <key>kcommaaccent.BRACKET.18</key>
-      <string>uni0137.BRACKET.18</string>
       <key>kcommaaccent.alt</key>
       <string>uni0137.alt</string>
-      <key>kcommaaccent.alt.BRACKET.18</key>
-      <string>uni0137.alt.BRACKET.18</string>
       <key>kcommaaccent.sc</key>
       <string>uni0137.sc</string>
       <key>kje-cy</key>
@@ -4623,17 +4597,15 @@
       <key>lamed-hb</key>
       <string>uni05DC</string>
       <key>lamed_dagesh_holam-hb</key>
-      <string>lamed_dagesh_holamhb</string>
+      <string>uni05DC05BC05B9</string>
       <key>lamed_holam-hb</key>
-      <string>lamed_holamhb</string>
+      <string>uni05DC05B9</string>
       <key>lameddagesh-hb</key>
       <string>uniFB3C</string>
       <key>lbbarsymbol</key>
       <string>uni2114</string>
       <key>lcommaaccent</key>
       <string>uni013C</string>
-      <key>lcommaaccent.BRACKET.18</key>
-      <string>uni013C.BRACKET.18</string>
       <key>lcommaaccent.sc</key>
       <string>uni013C.sc</string>
       <key>leftArrow</key>
@@ -4652,6 +4624,8 @@
       <string>uni0459</string>
       <key>lje-cy.sc</key>
       <string>uni0459.sc</string>
+      <key>llogo</key>
+      <string>uniE003</string>
       <key>lowasterisk</key>
       <string>uni204E</string>
       <key>lowerdot-hb</key>
@@ -4696,8 +4670,6 @@
       <string>uni00A0</string>
       <key>ncommaaccent</key>
       <string>uni0146</string>
-      <key>ncommaaccent.BRACKET.18</key>
-      <string>uni0146.BRACKET.18</string>
       <key>ncommaaccent.sc</key>
       <string>uni0146.sc</string>
       <key>nine.sansSerifBlackCircled</key>
@@ -4798,6 +4770,8 @@
       <string>uni1EE1.sc</string>
       <key>ole-hb</key>
       <string>uni05AB</string>
+      <key>ologo</key>
+      <string>uniE001</string>
       <key>omegadasia</key>
       <string>uni1F61</string>
       <key>omegadasia.sc</key>
@@ -5068,22 +5042,16 @@
       <string>uni043F.sc</string>
       <key>pe-hb</key>
       <string>uni05E4</string>
-      <key>pe-hb.BRACKET.18</key>
-      <string>uni05E4.BRACKET.18</string>
       <key>peace</key>
       <string>uni262E</string>
       <key>pedagesh-hb</key>
       <string>uniFB44</string>
-      <key>pedagesh-hb.BRACKET.18</key>
-      <string>uniFB44.BRACKET.18</string>
       <key>pedescender-cy</key>
       <string>uni0525</string>
       <key>pedescender-cy.sc</key>
       <string>uni0525.sc</string>
       <key>perafe-hb</key>
       <string>uniFB4E</string>
-      <key>perafe-hb.BRACKET.18</key>
-      <string>uniFB4E.BRACKET.18</string>
       <key>perispomeni</key>
       <string>uni1FC0</string>
       <key>perispomeni.case</key>
@@ -5154,18 +5122,12 @@
       <string>uni2048</string>
       <key>questiongreek</key>
       <string>uni037E</string>
-      <key>questiongreek.BRACKET.18</key>
-      <string>uni037E.BRACKET.18</string>
       <key>rafe-hb</key>
       <string>uni05BF</string>
       <key>rcommaaccent</key>
       <string>uni0157</string>
-      <key>rcommaaccent.BRACKET.18</key>
-      <string>uni0157.BRACKET.18</string>
       <key>rcommaaccent.alt</key>
       <string>uni0157.alt</string>
-      <key>rcommaaccent.alt.BRACKET.18</key>
-      <string>uni0157.alt.BRACKET.18</string>
       <key>rcommaaccent.sc</key>
       <string>uni0157.sc</string>
       <key>replacementCharacter</key>
@@ -5218,12 +5180,8 @@
       <string>uni20B9.tf</string>
       <key>samekh-hb</key>
       <string>uni05E1</string>
-      <key>samekh-hb.BRACKET.18</key>
-      <string>uni05E1.BRACKET.18</string>
       <key>samekhdagesh-hb</key>
       <string>uniFB41</string>
-      <key>samekhdagesh-hb.BRACKET.18</key>
-      <string>uniFB41.BRACKET.18</string>
       <key>schwa</key>
       <string>uni0259</string>
       <key>schwa-cy</key>
@@ -5236,8 +5194,6 @@
       <string>uni04DB.sc</string>
       <key>scommaaccent</key>
       <string>uni0219</string>
-      <key>scommaaccent.BRACKET.18</key>
-      <string>uni0219.BRACKET.18</string>
       <key>scommaaccent.sc</key>
       <string>uni0219.sc</string>
       <key>segol-hb</key>
@@ -5360,12 +5316,8 @@
       <string>uni0163.sc</string>
       <key>tcommaaccent</key>
       <string>uni021B</string>
-      <key>tcommaaccent.BRACKET.18</key>
-      <string>uni021B.BRACKET.18</string>
       <key>tcommaaccent.alt</key>
       <string>uni021B.alt</string>
-      <key>tcommaaccent.alt.BRACKET.18</key>
-      <string>uni021B.alt.BRACKET.18</string>
       <key>tcommaaccent.sc</key>
       <string>uni021B.sc</string>
       <key>te-cy</key>
@@ -5670,8 +5622,6 @@
       <string>uni0463.sc</string>
       <key>ydotbelow</key>
       <string>uni1EF5</string>
-      <key>ydotbelow.BRACKET.18</key>
-      <string>uni1EF5.BRACKET.18</string>
       <key>ydotbelow.alt</key>
       <string>uni1EF5.alt</string>
       <key>ydotbelow.sc</key>
@@ -5692,8 +5642,6 @@
       <string>uni059A</string>
       <key>yhookabove</key>
       <string>uni1EF7</string>
-      <key>yhookabove.BRACKET.18</key>
-      <string>uni1EF7.BRACKET.18</string>
       <key>yhookabove.alt</key>
       <string>uni1EF7.alt</string>
       <key>yhookabove.sc</key>
@@ -5714,8 +5662,6 @@
       <string>uni037A</string>
       <key>ytilde</key>
       <string>uni1EF9</string>
-      <key>ytilde.BRACKET.18</key>
-      <string>uni1EF9.BRACKET.18</string>
       <key>ytilde.alt</key>
       <string>uni1EF9.alt</string>
       <key>ytilde.sc</key>

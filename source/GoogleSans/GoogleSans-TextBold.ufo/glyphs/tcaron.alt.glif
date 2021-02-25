@@ -6,19 +6,12 @@
   <anchor x="261" y="654" name="top"/>
   <anchor x="365" y="510" name="topright"/>
   <outline>
-    <contour>
-      <point x="315" y="586" type="line"/>
-      <point x="406" y="586" type="line"/>
-      <point x="433" y="776" type="line"/>
-      <point x="315" y="776" type="line"/>
-    </contour>
     <component base="t.alt"/>
+    <component base="t-caron" xOffset="90"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
-      <string>t.alt</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.widthMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>t.alt</string>
     </dict>
   </lib>

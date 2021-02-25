@@ -2,8 +2,8 @@
 <glyph name="OE" format="2">
   <advance width="1166"/>
   <unicode hex="0152"/>
-  <anchor x="588" y="0" name="bottom"/>
-  <anchor x="714" y="716" name="top"/>
+  <anchor x="644" y="716" name="top"/>
+  <anchor x="518" y="0" name="bottom"/>
   <outline>
     <contour>
       <point x="383" y="-16" type="curve" smooth="yes"/>
@@ -15,10 +15,6 @@
       <point x="1064" y="0" type="line"/>
       <point x="1079" y="81" type="line"/>
       <point x="749" y="81" type="line"/>
-      <point x="791" y="318" type="line"/>
-      <point x="1089" y="318" type="line"/>
-      <point x="1103" y="398" type="line"/>
-      <point x="805" y="398" type="line"/>
       <point x="847" y="635" type="line"/>
       <point x="1177" y="635" type="line"/>
       <point x="1191" y="716" type="line"/>
@@ -48,12 +44,18 @@
       <point x="716" y="229"/>
       <point x="574" y="65"/>
     </contour>
+    <contour>
+      <point x="751" y="318" type="line"/>
+      <point x="1089" y="318" type="line"/>
+      <point x="1103" y="398" type="line"/>
+      <point x="765" y="398" type="line"/>
+    </contour>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>O</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>E</string>
     </dict>
   </lib>

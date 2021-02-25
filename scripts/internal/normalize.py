@@ -1,6 +1,6 @@
 import copy
 from pathlib import Path
-from typing import List, Set
+from typing import Dict, List, Set
 
 import ufo2ft
 import ufoLib2
@@ -14,14 +14,157 @@ from glyphsLib.builder.builders import _expand_kerning_to_brackets
 
 from . import gdef
 
+# Various alternatives are not exported because the `aalt` feature was to be
+# removed, but should be kept around in case someone wants them at some point.
+# TODO: delete from feature files
+SKIP_EXPORT_GLYPHS = {
+    #     "Ccedilla.alt",
+    #     "G.alt",
+    #     "Gbreve.alt",
+    #     "Gcircumflex.alt",
+    #     "Gcommaaccent.alt",
+    #     "Gdotaccent.alt",
+    #     "I.alt",
+    #     "Iacute.alt",
+    #     "Ibreve.alt",
+    #     "Icircumflex.alt",
+    #     "Idieresis.alt",
+    #     "Idotaccent.alt",
+    #     "Igrave.alt",
+    #     "Imacron.alt",
+    #     "Iogonek.alt",
+    #     "Itilde.alt",
+    #     "J.alt",
+    #     "Jcircumflex.alt",
+    #     "K.alt",
+    #     "Kcommaaccent.alt",
+    #     "M.alt",
+    #     "Q.alt",
+    #     "R.alt",
+    #     "Racute.alt",
+    #     "Rcaron.alt",
+    #     "Rcommaaccent.alt",
+    #     "Scedilla.alt",
+    #     "W.alt",
+    #     "Wacute.alt",
+    #     "Wcircumflex.alt",
+    #     "Wdieresis.alt",
+    #     "Wgrave.alt",
+    #     "a.alt",
+    #     "aacute.alt",
+    #     "abreve.alt",
+    #     "abreveacute.alt",
+    #     "abrevedotbelow.alt",
+    #     "abrevegrave.alt",
+    #     "abrevehookabove.alt",
+    #     "abrevetilde.alt",
+    #     "acircumflex.alt",
+    #     "acircumflexacute.alt",
+    #     "acircumflexdotbelow.alt",
+    #     "acircumflexgrave.alt",
+    #     "acircumflexhookabove.alt",
+    #     "acircumflextilde.alt",
+    #     "adieresis.alt",
+    #     "adotbelow.alt",
+    #     "ae.alt",
+    #     "aeacute.alt",
+    #     "agrave.alt",
+    #     "ahookabove.alt",
+    #     "amacron.alt",
+    #     "ampersand.alt",
+    #     "aogonek.alt",
+    #     "aring.alt",
+    #     "aringacute.alt",
+    #     "atilde.alt",
+    #     "caron.alt",
+    #     "caroncomb.alt",
+    #     "caroncomb.alt.cap",
+    #     "ccedilla.alt",
+    #     "cedilla.alt",
+    #     "cedillacomb.alt",
+    #     "comma.alt",
+    #     "copyright.alt",
+    #     "f_f_j.alt",
+    #     "f_f_k.alt",
+    #     "f_f_t.alt",
+    #     "f_j.alt",
+    #     "f_k.alt",
+    #     "f_t.alt",
+    #     "j.alt",
+    #     "jcircumflex.alt",
+    #     "jdotless.alt",
+    #     "k.alt",
+    #     "kcommaaccent.alt",
+    #     "nine.alt",
+    #     "nine.alt.cap",
+    #     "one.alt",
+    #     "one.alt.cap",
+    #     "published.alt",
+    #     "q.alt",
+    #     "quotedblbase.alt",
+    #     "quotedblleft.alt",
+    #     "quotedblright.alt",
+    #     "quoteleft.alt",
+    #     "quoteright.alt",
+    #     "quotesinglbase.alt",
+    #     "r.alt",
+    #     "r_t.alt",
+    #     "racute.alt",
+    #     "rcaron.alt",
+    #     "rcommaaccent.alt",
+    #     "registered.alt",
+    #     "scedilla.alt",
+    #     "semicolon.alt",
+    #     "servicemark.alt",
+    #     "servicemark.alt2",
+    #     "servicemark.alt3",
+    #     "seven.alt",
+    #     "seven.alt.cap",
+    #     "six.alt",
+    #     "six.alt.cap",
+    #     "t.alt",
+    #     "t_f.alt",
+    #     "t_t.alt",
+    #     "tbar.alt",
+    #     "tcaron.alt",
+    #     "tcedilla.alt",
+    #     "tcedilla.alt.2",
+    #     "tcommaaccent.alt",
+    #     "trademark.alt",
+    #     "trademark.alt2",
+    #     "trademark.alt3",
+    #     "y.alt",
+    #     "yacute.alt",
+    #     "ycircumflex.alt",
+    #     "ydieresis.alt",
+    #     "ydotbelow.alt",
+    #     "ygrave.alt",
+    #     "yhookabove.alt",
+    #     "ytilde.alt",
+    #     "zero.alt",
+    #     "zero.alt.cap",
+}
+
 
 def scrub_designspace(designspace: DesignSpaceDocument, project_root: Path) -> None:
     designspace.loadSourceFonts(ufoLib2.Font.open)
-    skip_export_glyphs = set(designspace.lib.get("public.skipExportGlyphs", []))
+    default_source = designspace.default.font
+    glyph_order = [
+        n for n in designspace.default.font.glyphOrder if n in default_source.keys()
+    ]
+    glyph_order_set = set(glyph_order)
+    postscript_names = {
+        k: v
+        for k, v in default_source.lib["public.postscriptNames"].items()
+        if k in glyph_order_set
+    }
+    skip_export_glyphs = set(designspace.lib.get("public.skipExportGlyphs", [])).union(
+        SKIP_EXPORT_GLYPHS
+    )
     rules = designspace.rules
 
     for source in designspace.sources:
-        scrub_source(source, skip_export_glyphs, rules)
+        scrub_source(source, glyph_order, postscript_names, skip_export_glyphs, rules)
 
     for instance in designspace.instances:
         scrub_instance(instance, project_root)
@@ -33,6 +176,9 @@ def scrub_designspace(designspace: DesignSpaceDocument, project_root: Path) -> N
         or k.startswith("com.github.googlei18n.ufo2ft.")
         or k == "GSDimensionPlugin.Dimensions"
     }
+
+    if skip_export_glyphs:
+        designspace.lib["public.skipExportGlyphs"] = sorted(skip_export_glyphs)
 
 
 def scrub_instance(instance: InstanceDescriptor, project_root: Path) -> None:
@@ -60,13 +206,21 @@ def scrub_instance(instance: InstanceDescriptor, project_root: Path) -> None:
 
 
 def scrub_source(
-    source: SourceDescriptor, skip_export_glyphs: Set[str], rules: List[RuleDescriptor]
+    source: SourceDescriptor,
+    glyph_order: List[str],
+    postscript_names: Dict[str, str],
+    skip_export_glyphs: Set[str],
+    rules: List[RuleDescriptor],
 ) -> None:
-    scrub_ufo(source.font, skip_export_glyphs, rules)
+    scrub_ufo(source.font, glyph_order, postscript_names, skip_export_glyphs, rules)
 
 
 def scrub_ufo(
-    ufo: ufoLib2.Font, skip_export_glyphs: Set[str], rules: List[RuleDescriptor]
+    ufo: ufoLib2.Font,
+    glyph_order: List[str],
+    postscript_names: Dict[str, str],
+    skip_export_glyphs: Set[str],
+    rules: List[RuleDescriptor],
 ) -> None:
     # Clean global lib.
     keys_to_keep = {
@@ -92,6 +246,8 @@ def scrub_ufo(
         and k not in keys_to_remove
     }
 
+    ufo.lib["public.glyphOrder"] = glyph_order
+    ufo.lib["public.postscriptNames"] = postscript_names
     ufo.lib["public.skipExportGlyphs"] = sorted(skip_export_glyphs)
 
     # Reset the ufo2ft filters.

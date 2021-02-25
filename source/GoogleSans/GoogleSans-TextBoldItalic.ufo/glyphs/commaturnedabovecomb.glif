@@ -1,10 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="commaturnedabovecomb" format="2">
+  <advance width="427"/>
   <unicode hex="0312"/>
-  <anchor x="234" y="526" name="_top"/>
-  <anchor x="291" y="852" name="top"/>
   <outline>
-    <component base="commaaccentcomb" xScale="-1" yScale="-1" xOffset="432" yOffset="560"/>
+    <contour>
+      <point x="424" y="852" type="line"/>
+      <point x="308" y="852" type="line"/>
+      <point x="171" y="632" type="line"/>
+      <point x="333" y="632" type="line"/>
+    </contour>
   </outline>
   <lib>
     <dict>
@@ -19,8 +23,6 @@
           <string>commaaccentcomb</string>
         </dict>
       </array>
-      <key>com.schriftgestaltung.Glyphs.originalWidth</key>
-      <integer>427</integer>
     </dict>
   </lib>
 </glyph>

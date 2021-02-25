@@ -2,7 +2,7 @@
 <glyph name="centigrade.cap" format="2">
   <advance width="1016"/>
   <outline>
-    <component base="degree.cap"/>
+    <component base="degree" xOffset="8" yOffset="29"/>
     <component base="C" xOffset="266"/>
   </outline>
   <lib>
@@ -26,7 +26,7 @@
           <string>C</string>
         </dict>
       </array>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>C</string>
     </dict>
   </lib>

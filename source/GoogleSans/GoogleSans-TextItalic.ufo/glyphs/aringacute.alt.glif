@@ -1,16 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="aringacute.alt" format="2">
   <advance width="601"/>
-  <anchor x="415" y="1000" name="top"/>
   <outline>
-    <contour>
-      <point x="354" y="865" type="line"/>
-      <point x="431" y="865" type="line"/>
-      <point x="527" y="1000" type="line"/>
-      <point x="428" y="1000" type="line"/>
-    </contour>
     <component base="a.alt"/>
     <component base="ringcomb" xOffset="89"/>
+    <component base="aring-acute" xOffset="25"/>
   </outline>
   <lib>
     <dict>
@@ -33,7 +27,7 @@
           <string>ringcomb</string>
         </dict>
       </array>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>a.alt</string>
     </dict>
   </lib>

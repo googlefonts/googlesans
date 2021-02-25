@@ -2,43 +2,14 @@
 <glyph name="zhedescender-cy.sc" format="2">
   <advance width="812"/>
   <outline>
-    <contour>
-      <point x="650" y="-123" type="line"/>
-      <point x="734" y="-123" type="line"/>
-      <point x="769" y="79" type="line"/>
-      <point x="680" y="79" type="line"/>
-      <point x="532" y="280" type="line"/>
-      <point x="824" y="576" type="line"/>
-      <point x="825" y="580" type="line"/>
-      <point x="715" y="580" type="line"/>
-      <point x="443" y="297" type="line"/>
-      <point x="438" y="297" type="line"/>
-      <point x="489" y="580" type="line"/>
-      <point x="404" y="580" type="line"/>
-      <point x="354" y="297" type="line"/>
-      <point x="350" y="297" type="line"/>
-      <point x="177" y="580" type="line"/>
-      <point x="77" y="580" type="line"/>
-      <point x="74" y="576" type="line"/>
-      <point x="258" y="291" type="line"/>
-      <point x="-30" y="4" type="line"/>
-      <point x="-31" y="0" type="line"/>
-      <point x="81" y="0" type="line"/>
-      <point x="346" y="268" type="line"/>
-      <point x="349" y="268" type="line"/>
-      <point x="302" y="0" type="line"/>
-      <point x="386" y="0" type="line"/>
-      <point x="434" y="268" type="line"/>
-      <point x="438" y="268" type="line"/>
-      <point x="631" y="0" type="line"/>
-      <point x="672" y="0" type="line"/>
-    </contour>
+    <component base="zhe-cy.sc" xOffset="-1"/>
+    <component base="descender1sc-cy" xOffset="342"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>zhe-cy.sc</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>hadescender-cy.sc</string>
     </dict>
   </lib>

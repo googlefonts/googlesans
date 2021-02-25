@@ -4,44 +4,14 @@
   <unicode hex="04CB"/>
   <guideline x="603" y="-152" angle="180"/>
   <outline>
-    <contour>
-      <point x="304" y="-152" type="line"/>
-      <point x="433" y="-152" type="line"/>
-      <point x="460" y="0" type="line"/>
-      <point x="546" y="0" type="line"/>
-      <point x="673" y="716" type="line"/>
-      <point x="538" y="716" type="line"/>
-      <point x="485" y="416" type="line"/>
-      <point x="446" y="397"/>
-      <point x="407" y="388"/>
-      <point x="355" y="388" type="curve" smooth="yes"/>
-      <point x="281" y="388"/>
-      <point x="231" y="419"/>
-      <point x="231" y="487" type="curve" smooth="yes"/>
-      <point x="231" y="494"/>
-      <point x="232" y="502"/>
-      <point x="233" y="511" type="curve" smooth="yes"/>
-      <point x="270" y="716" type="line"/>
-      <point x="135" y="716" type="line"/>
-      <point x="99" y="514" type="line" smooth="yes"/>
-      <point x="95" y="495"/>
-      <point x="94" y="476"/>
-      <point x="94" y="459" type="curve" smooth="yes"/>
-      <point x="94" y="337"/>
-      <point x="178" y="260"/>
-      <point x="312" y="260" type="curve" smooth="yes"/>
-      <point x="378" y="260"/>
-      <point x="422" y="268"/>
-      <point x="462" y="283" type="curve"/>
-      <point x="434" y="128" type="line"/>
-      <point x="353" y="128" type="line"/>
-    </contour>
+    <component base="Che-cy"/>
+    <component base="descender3-cy"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>Che-cy</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>En-cy</string>
     </dict>
   </lib>

@@ -3,26 +3,14 @@
   <advance width="481"/>
   <unicode hex="04AD"/>
   <outline>
-    <contour>
-      <point x="274" y="-152" type="line"/>
-      <point x="355" y="-152" type="line"/>
-      <point x="355" y="77" type="line"/>
-      <point x="282" y="77" type="line"/>
-      <point x="282" y="449" type="line"/>
-      <point x="451" y="449" type="line"/>
-      <point x="451" y="526" type="line"/>
-      <point x="30" y="526" type="line"/>
-      <point x="30" y="449" type="line"/>
-      <point x="198" y="449" type="line"/>
-      <point x="198" y="0" type="line"/>
-      <point x="274" y="0" type="line"/>
-    </contour>
+    <component base="te-cy"/>
+    <component base="descenderlc1-cy" xOffset="-382"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>te-cy</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>te-cy</string>
     </dict>
   </lib>

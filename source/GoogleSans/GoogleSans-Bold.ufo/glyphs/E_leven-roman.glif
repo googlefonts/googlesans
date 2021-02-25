@@ -3,50 +3,14 @@
   <advance width="975"/>
   <unicode hex="216A"/>
   <outline>
-    <contour>
-      <point x="24" y="0" type="line"/>
-      <point x="951" y="0" type="line"/>
-      <point x="951" y="119" type="line"/>
-      <point x="797" y="119" type="line"/>
-      <point x="797" y="565" type="line"/>
-      <point x="951" y="565" type="line"/>
-      <point x="951" y="684" type="line"/>
-      <point x="24" y="684" type="line"/>
-      <point x="24" y="565" type="line"/>
-      <point x="142" y="565" type="line"/>
-      <point x="291" y="339" type="line"/>
-      <point x="145" y="119" type="line"/>
-      <point x="24" y="119" type="line"/>
-    </contour>
-    <contour>
-      <point x="292" y="119" type="line"/>
-      <point x="339" y="191" type="line"/>
-      <point x="361" y="236" type="line"/>
-      <point x="368" y="236" type="line"/>
-      <point x="390" y="191" type="line"/>
-      <point x="437" y="119" type="line"/>
-    </contour>
-    <contour>
-      <point x="288" y="565" type="line"/>
-      <point x="441" y="565" type="line"/>
-      <point x="387" y="481" type="line"/>
-      <point x="368" y="440" type="line"/>
-      <point x="361" y="440" type="line"/>
-      <point x="343" y="481" type="line"/>
-    </contour>
-    <contour>
-      <point x="585" y="119" type="line"/>
-      <point x="439" y="339" type="line"/>
-      <point x="588" y="565" type="line"/>
-      <point x="666" y="565" type="line"/>
-      <point x="666" y="119" type="line"/>
-    </contour>
+    <component base="Ten-roman"/>
+    <component base="One-roman" xOffset="488"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>One-roman</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>One-roman</string>
     </dict>
   </lib>

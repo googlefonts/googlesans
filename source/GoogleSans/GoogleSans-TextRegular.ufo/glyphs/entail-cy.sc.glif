@@ -2,28 +2,12 @@
 <glyph name="entail-cy.sc" format="2">
   <advance width="637"/>
   <outline>
-    <contour>
-      <point x="454" y="-123" type="line"/>
-      <point x="542" y="-123" type="line"/>
-      <point x="612" y="79" type="line"/>
-      <point x="518" y="79" type="line"/>
-      <point x="518" y="580" type="line"/>
-      <point x="434" y="580" type="line"/>
-      <point x="434" y="336" type="line"/>
-      <point x="158" y="336" type="line"/>
-      <point x="158" y="580" type="line"/>
-      <point x="73" y="580" type="line"/>
-      <point x="73" y="0" type="line"/>
-      <point x="158" y="0" type="line"/>
-      <point x="158" y="258" type="line"/>
-      <point x="434" y="258" type="line"/>
-      <point x="434" y="0" type="line"/>
-      <point x="498" y="0" type="line"/>
-    </contour>
+    <component base="en-cy.sc"/>
+    <component base="tailsc-cy" xOffset="-21"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>en-cy.sc</string>
     </dict>
   </lib>

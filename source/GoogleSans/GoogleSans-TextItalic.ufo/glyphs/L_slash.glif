@@ -2,31 +2,13 @@
 <glyph name="Lslash" format="2">
   <advance width="644"/>
   <unicode hex="0141"/>
-  <anchor x="338" y="0" name="bottom"/>
-  <anchor x="339" y="358" name="center"/>
-  <anchor x="294" y="716" name="top"/>
-  <anchor x="477" y="510" name="topright"/>
   <outline>
-    <contour>
-      <point x="126" y="0" type="line"/>
-      <point x="559" y="0" type="line"/>
-      <point x="573" y="81" type="line"/>
-      <point x="225" y="81" type="line"/>
-      <point x="269" y="331" type="line"/>
-      <point x="470" y="445" type="line"/>
-      <point x="437" y="508" type="line"/>
-      <point x="285" y="421" type="line"/>
-      <point x="337" y="716" type="line"/>
-      <point x="252" y="716" type="line"/>
-      <point x="191" y="368" type="line"/>
-      <point x="60" y="293" type="line"/>
-      <point x="93" y="231" type="line"/>
-      <point x="175" y="277" type="line"/>
-    </contour>
+    <component base="L" xOffset="88"/>
+    <component base="L-slash"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>L</string>
     </dict>
   </lib>

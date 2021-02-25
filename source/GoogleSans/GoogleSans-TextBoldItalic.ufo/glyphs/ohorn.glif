@@ -2,55 +2,13 @@
 <glyph name="ohorn" format="2">
   <advance width="614"/>
   <unicode hex="01A1"/>
-  <anchor x="261" y="0" name="bottom"/>
   <anchor x="307" y="263" name="center"/>
   <anchor x="359" y="0" name="ogonek"/>
   <anchor x="353" y="526" name="top"/>
-  <anchor x="472" y="644" name="topright"/>
+  <anchor x="487" y="525" name="topright"/>
+  <anchor x="261" y="0" name="bottom"/>
   <outline>
-    <contour>
-      <point x="268" y="-16" type="curve" smooth="yes"/>
-      <point x="457" y="-16"/>
-      <point x="577" y="123"/>
-      <point x="577" y="299" type="curve" smooth="yes"/>
-      <point x="577" y="354"/>
-      <point x="566" y="389"/>
-      <point x="533" y="435" type="curve"/>
-      <point x="534" y="442" type="line"/>
-      <point x="545" y="436"/>
-      <point x="572" y="432"/>
-      <point x="586" y="432" type="curve" smooth="yes"/>
-      <point x="638" y="431"/>
-      <point x="668" y="462"/>
-      <point x="681" y="532" type="curve" smooth="yes"/>
-      <point x="701" y="644" type="line"/>
-      <point x="603" y="644" type="line"/>
-      <point x="589" y="563" type="line" smooth="yes"/>
-      <point x="585" y="538"/>
-      <point x="573" y="526"/>
-      <point x="538" y="526" type="curve" smooth="yes"/>
-      <point x="485" y="526"/>
-      <point x="430" y="542"/>
-      <point x="347" y="542" type="curve" smooth="yes"/>
-      <point x="157" y="542"/>
-      <point x="37" y="403"/>
-      <point x="37" y="227" type="curve" smooth="yes"/>
-      <point x="37" y="87"/>
-      <point x="133" y="-16"/>
-    </contour>
-    <contour>
-      <point x="282" y="106" type="curve" smooth="yes"/>
-      <point x="219" y="106"/>
-      <point x="169" y="155"/>
-      <point x="169" y="237" type="curve" smooth="yes"/>
-      <point x="169" y="338"/>
-      <point x="235" y="420"/>
-      <point x="332" y="420" type="curve" smooth="yes"/>
-      <point x="395" y="420"/>
-      <point x="445" y="372"/>
-      <point x="445" y="289" type="curve" smooth="yes"/>
-      <point x="445" y="188"/>
-      <point x="379" y="106"/>
-    </contour>
+    <component base="o"/>
+    <component base="o-horn" xOffset="77"/>
   </outline>
 </glyph>

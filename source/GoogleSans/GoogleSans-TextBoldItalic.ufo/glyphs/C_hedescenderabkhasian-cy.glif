@@ -2,21 +2,15 @@
 <glyph name="Chedescenderabkhasian-cy" format="2">
   <advance width="913"/>
   <unicode hex="04BE"/>
-  <anchor x="552" y="716" name="top"/>
   <outline>
-    <contour>
-      <point x="377" y="-152" type="line"/>
-      <point x="506" y="-152" type="line"/>
-      <point x="548" y="83" type="line"/>
-      <point x="419" y="83" type="line"/>
-    </contour>
     <component base="Cheabkhasian-cy"/>
+    <component base="descender2-cy" xOffset="190"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>Cheabkhasian-cy</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>Cheabkhasian-cy</string>
     </dict>
   </lib>

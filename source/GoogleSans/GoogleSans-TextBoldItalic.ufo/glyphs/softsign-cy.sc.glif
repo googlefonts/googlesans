@@ -3,6 +3,8 @@
   <advance width="579"/>
   <outline>
     <contour>
+      <point x="259" y="580" type="line"/>
+      <point x="128" y="580" type="line"/>
       <point x="26" y="0" type="line"/>
       <point x="259" y="0" type="line" smooth="yes"/>
       <point x="423" y="0"/>
@@ -11,13 +13,8 @@
       <point x="519" y="319"/>
       <point x="438" y="382"/>
       <point x="303" y="382" type="curve" smooth="yes"/>
-      <point x="224" y="382" type="line"/>
-      <point x="259" y="580" type="line"/>
-      <point x="128" y="580" type="line"/>
-    </contour>
-    <contour>
-      <point x="178" y="118" type="line"/>
-      <point x="204" y="266" type="line"/>
+      <point x="164" y="382" type="line"/>
+      <point x="144" y="266" type="line"/>
       <point x="297" y="266" type="line" smooth="yes"/>
       <point x="354" y="266"/>
       <point x="387" y="240"/>
@@ -25,11 +22,12 @@
       <point x="387" y="146"/>
       <point x="350" y="118"/>
       <point x="284" y="118" type="curve" smooth="yes"/>
+      <point x="178" y="118" type="line"/>
     </contour>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>en-cy.sc</string>
     </dict>
   </lib>

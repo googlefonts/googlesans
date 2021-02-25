@@ -8,8 +8,6 @@
       <point x="206" y="-216" type="line"/>
       <point x="291" y="-216" type="line"/>
       <point x="291" y="0" type="line"/>
-      <point x="437" y="0" type="line"/>
-      <point x="437" y="65" type="line"/>
       <point x="311" y="65" type="line"/>
       <point x="332" y="110" type="line"/>
       <point x="484" y="526" type="line"/>
@@ -20,16 +18,20 @@
       <point x="14" y="526" type="line"/>
       <point x="166" y="110" type="line"/>
       <point x="186" y="65" type="line"/>
-      <point x="59" y="65" type="line"/>
-      <point x="59" y="0" type="line"/>
       <point x="206" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="59" y="0" type="line"/>
+      <point x="437" y="0" type="line"/>
+      <point x="437" y="65" type="line"/>
+      <point x="59" y="65" type="line"/>
     </contour>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>ustraight-cy</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>=|</string>
     </dict>
   </lib>

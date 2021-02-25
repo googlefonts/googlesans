@@ -2,15 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
-    <key>Eldescender-cy</key>
-    <dict>
-      <key>EnLeftHook-cy</key>
-      <integer>30</integer>
-    </dict>
     <key>Ghestroke-cy</key>
     <dict>
       <key>public.kern2.v</key>
-      <integer>-80</integer>
+      <integer>-60</integer>
     </dict>
     <key>Kadescender-cy</key>
     <dict>
@@ -54,6 +49,8 @@
       <integer>-35</integer>
       <key>public.kern2.cyr_l</key>
       <integer>-70</integer>
+      <key>public.kern2.cyr_l.sc</key>
+      <integer>-65</integer>
       <key>public.kern2.o</key>
       <integer>-30</integer>
       <key>public.kern2.s</key>
@@ -70,7 +67,7 @@
       <key>v.sc.ss04</key>
       <integer>-50</integer>
       <key>w.sc.ss04</key>
-      <integer>-40</integer>
+      <integer>-20</integer>
       <key>y.sc.ss04</key>
       <integer>-60</integer>
     </dict>
@@ -109,10 +106,10 @@
     </dict>
     <key>apostrophemod</key>
     <dict>
+      <key>public.kern2.cyr_i_left</key>
+      <integer>30</integer>
       <key>public.kern2.cyr_ia</key>
-      <integer>-90</integer>
-      <key>public.kern2.o</key>
-      <integer>-125</integer>
+      <integer>-80</integer>
     </dict>
     <key>asterisk</key>
     <dict>
@@ -197,10 +194,8 @@
     </dict>
     <key>b.sc.ss04</key>
     <dict>
-      <key>a.sc.ss04</key>
-      <integer>-10</integer>
       <key>t.sc.ss04</key>
-      <integer>-10</integer>
+      <integer>-14</integer>
     </dict>
     <key>backslash</key>
     <dict>
@@ -326,11 +321,6 @@
       <key>public.kern2.cyr_Y</key>
       <integer>-50</integer>
     </dict>
-    <key>c.sc.ss04</key>
-    <dict>
-      <key>a.sc.ss04</key>
-      <integer>-10</integer>
-    </dict>
     <key>dong.cap</key>
     <dict>
       <key>one.alt.cap</key>
@@ -381,10 +371,12 @@
       <key>a.sc.ss04</key>
       <integer>-40</integer>
       <key>j.sc.ss04</key>
-      <integer>-30</integer>
+      <integer>-40</integer>
     </dict>
     <key>five</key>
     <dict>
+      <key>nine</key>
+      <integer>-28</integer>
       <key>nine.alt</key>
       <integer>-20</integer>
       <key>one</key>
@@ -501,8 +493,12 @@
     </dict>
     <key>g.sc.ss04</key>
     <dict>
-      <key>t.sc.ss04</key>
+      <key>v.sc.ss04</key>
       <integer>-30</integer>
+      <key>w.sc.ss04</key>
+      <integer>-30</integer>
+      <key>y.sc.ss04</key>
+      <integer>-50</integer>
     </dict>
     <key>greater</key>
     <dict>
@@ -520,11 +516,6 @@
       <key>public.kern2.GRK_zeta</key>
       <integer>20</integer>
     </dict>
-    <key>j.sc.ss04</key>
-    <dict>
-      <key>a.sc.ss04</key>
-      <integer>-14</integer>
-    </dict>
     <key>k.alt</key>
     <dict>
       <key>public.kern2.s</key>
@@ -533,14 +524,20 @@
     <key>k.sc.ss04</key>
     <dict>
       <key>public.kern2.o.sc.ss04</key>
-      <integer>-30</integer>
+      <integer>-40</integer>
+      <key>s.sc.ss04</key>
+      <integer>-16</integer>
     </dict>
     <key>l.sc.ss04</key>
     <dict>
       <key>public.kern2.o.sc.ss04</key>
       <integer>-20</integer>
+      <key>t.sc.ss04</key>
+      <integer>-50</integer>
       <key>v.sc.ss04</key>
-      <integer>-60</integer>
+      <integer>-50</integer>
+      <key>w.sc.ss04</key>
+      <integer>-30</integer>
       <key>y.sc.ss04</key>
       <integer>-60</integer>
     </dict>
@@ -628,8 +625,24 @@
     </dict>
     <key>nine</key>
     <dict>
+      <key>four</key>
+      <integer>-30</integer>
+      <key>public.kern2.A</key>
+      <integer>-30</integer>
+      <key>public.kern2.AE</key>
+      <integer>-50</integer>
       <key>public.kern2.GRK_Alpha</key>
       <integer>-30</integer>
+      <key>public.kern2.V</key>
+      <integer>-10</integer>
+      <key>public.kern2.period</key>
+      <integer>-50</integer>
+      <key>public.kern2.slash</key>
+      <integer>-20</integer>
+      <key>six</key>
+      <integer>-20</integer>
+      <key>six.alt</key>
+      <integer>-20</integer>
     </dict>
     <key>nine.alt</key>
     <dict>
@@ -645,6 +658,8 @@
       <integer>-10</integer>
       <key>public.kern2.J</key>
       <integer>-20</integer>
+      <key>six</key>
+      <integer>-10</integer>
       <key>six.alt</key>
       <integer>-10</integer>
     </dict>
@@ -711,6 +726,8 @@
     <dict>
       <key>five</key>
       <integer>10</integer>
+      <key>six</key>
+      <integer>5</integer>
       <key>two</key>
       <integer>10</integer>
     </dict>
@@ -722,6 +739,8 @@
       <integer>-50</integer>
       <key>fiveeighths</key>
       <integer>-40</integer>
+      <key>nine</key>
+      <integer>-50</integer>
       <key>nine.alt</key>
       <integer>-40</integer>
       <key>nine.numerator</key>
@@ -837,6 +856,8 @@
       <integer>-40</integer>
       <key>j.sc.ss04</key>
       <integer>-50</integer>
+      <key>x.sc.ss04</key>
+      <integer>-20</integer>
     </dict>
     <key>percent</key>
     <dict>
@@ -883,8 +904,12 @@
       <integer>-20</integer>
       <key>four.cap</key>
       <integer>-10</integer>
+      <key>hardsign-cy</key>
+      <integer>-40</integer>
       <key>lslash</key>
       <integer>-30</integer>
+      <key>nine</key>
+      <integer>-20</integer>
       <key>nine.alt</key>
       <integer>-20</integer>
       <key>nine.alt.cap</key>
@@ -912,25 +937,25 @@
       <key>public.kern2.copyright</key>
       <integer>-80</integer>
       <key>public.kern2.cyr-ze.sc</key>
-      <integer>-10</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_Che</key>
-      <integer>-55</integer>
+      <integer>-50</integer>
       <key>public.kern2.cyr_F</key>
-      <integer>-60</integer>
+      <integer>-50</integer>
       <key>public.kern2.cyr_Y</key>
-      <integer>-20</integer>
-      <key>public.kern2.cyr_Z</key>
-      <integer>-20</integer>
-      <key>public.kern2.cyr_b</key>
       <integer>-30</integer>
+      <key>public.kern2.cyr_Z</key>
+      <integer>-10</integer>
+      <key>public.kern2.cyr_b</key>
+      <integer>-25</integer>
       <key>public.kern2.cyr_che</key>
-      <integer>-45</integer>
+      <integer>-35</integer>
       <key>public.kern2.cyr_f.sc</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_ia</key>
       <integer>-5</integer>
       <key>public.kern2.cyr_t</key>
-      <integer>-50</integer>
+      <integer>-55</integer>
       <key>public.kern2.cyr_z</key>
       <integer>-10</integer>
       <key>public.kern2.dagger</key>
@@ -973,20 +998,18 @@
       <integer>-25</integer>
       <key>public.kern2.u-cy.sc</key>
       <integer>-15</integer>
-      <key>public.kern2.u.sc</key>
-      <integer>-4</integer>
       <key>public.kern2.v</key>
       <integer>-50</integer>
       <key>public.kern2.v.sc</key>
-      <integer>-50</integer>
+      <integer>-68</integer>
       <key>public.kern2.w</key>
       <integer>-40</integer>
       <key>public.kern2.w.sc</key>
-      <integer>-26</integer>
+      <integer>-30</integer>
       <key>public.kern2.y</key>
       <integer>-45</integer>
       <key>public.kern2.y.sc</key>
-      <integer>-70</integer>
+      <integer>-80</integer>
     </dict>
     <key>public.kern1.B</key>
     <dict>
@@ -1017,9 +1040,7 @@
       <key>public.kern2.cyr_D</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_Y</key>
-      <integer>-30</integer>
-      <key>public.kern2.cyr_Zhe</key>
-      <integer>-5</integer>
+      <integer>-25</integer>
       <key>public.kern2.cyr_de</key>
       <integer>-15</integer>
       <key>public.kern2.cyr_z</key>
@@ -1038,8 +1059,6 @@
       <integer>-10</integer>
       <key>public.kern2.x</key>
       <integer>-5</integer>
-      <key>public.kern2.x.sc</key>
-      <integer>-24</integer>
       <key>public.kern2.y</key>
       <integer>-10</integer>
     </dict>
@@ -1052,23 +1071,21 @@
       <key>nine.alt</key>
       <integer>-10</integer>
       <key>public.kern2.O</key>
-      <integer>-15</integer>
+      <integer>-16</integer>
       <key>public.kern2.a</key>
       <integer>-20</integer>
       <key>public.kern2.cyr_Che</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_D</key>
-      <integer>-30</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_F</key>
-      <integer>-25</integer>
-      <key>public.kern2.cyr_H_hook</key>
-      <integer>-40</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_Ia</key>
-      <integer>-20</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_L</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_Z</key>
-      <integer>-15</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_Zhe</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_b</key>
@@ -1076,13 +1093,15 @@
       <key>public.kern2.cyr_che</key>
       <integer>-30</integer>
       <key>public.kern2.cyr_de</key>
-      <integer>-25</integer>
+      <integer>-15</integer>
       <key>public.kern2.cyr_e</key>
       <integer>-10</integer>
+      <key>public.kern2.cyr_f.sc</key>
+      <integer>-15</integer>
       <key>public.kern2.cyr_ia</key>
       <integer>-20</integer>
       <key>public.kern2.cyr_t</key>
-      <integer>-20</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_z</key>
       <integer>-20</integer>
       <key>public.kern2.cyr_zhe</key>
@@ -1103,6 +1122,8 @@
       <integer>-10</integer>
       <key>public.kern2.o</key>
       <integer>-20</integer>
+      <key>public.kern2.o.sc</key>
+      <integer>-14</integer>
       <key>public.kern2.p</key>
       <integer>-10</integer>
       <key>public.kern2.question</key>
@@ -1125,6 +1146,8 @@
       <integer>-10</integer>
       <key>public.kern2.y</key>
       <integer>-39</integer>
+      <key>public.kern2.y.sc</key>
+      <integer>-30</integer>
       <key>public.kern2.z</key>
       <integer>-10</integer>
     </dict>
@@ -1155,13 +1178,11 @@
       <key>public.kern2.Y</key>
       <integer>-30</integer>
       <key>public.kern2.a.sc</key>
-      <integer>-15</integer>
+      <integer>-32</integer>
       <key>public.kern2.g</key>
       <integer>-10</integer>
       <key>public.kern2.j</key>
       <integer>-10</integer>
-      <key>public.kern2.j.sc</key>
-      <integer>-16</integer>
       <key>public.kern2.o</key>
       <integer>-15</integer>
       <key>public.kern2.ords</key>
@@ -1192,6 +1213,8 @@
       <integer>-10</integer>
       <key>public.kern2.y</key>
       <integer>-5</integer>
+      <key>public.kern2.y.sc</key>
+      <integer>-12</integer>
       <key>public.kern2.z</key>
       <integer>-10</integer>
       <key>questiondown</key>
@@ -1271,7 +1294,7 @@
       <key>public.kern2.a</key>
       <integer>-20</integer>
       <key>public.kern2.a.sc</key>
-      <integer>-44</integer>
+      <integer>-54</integer>
       <key>public.kern2.f</key>
       <integer>-10</integer>
       <key>public.kern2.g</key>
@@ -1284,12 +1307,16 @@
       <integer>5</integer>
       <key>public.kern2.i_right</key>
       <integer>-10</integer>
+      <key>public.kern2.j.sc</key>
+      <integer>-72</integer>
       <key>public.kern2.lc_straight</key>
       <integer>-10</integer>
       <key>public.kern2.marks</key>
       <integer>10</integer>
       <key>public.kern2.o</key>
       <integer>-30</integer>
+      <key>public.kern2.o.sc</key>
+      <integer>-8</integer>
       <key>public.kern2.p</key>
       <integer>-20</integer>
       <key>public.kern2.period</key>
@@ -1380,7 +1407,7 @@
       <key>public.kern2.y</key>
       <integer>-10</integer>
       <key>public.kern2.y.sc</key>
-      <integer>-10</integer>
+      <integer>-20</integer>
       <key>questiondown</key>
       <integer>-10</integer>
       <key>underscore</key>
@@ -2906,8 +2933,6 @@
       <integer>-15</integer>
       <key>public.kern2.a</key>
       <integer>-15</integer>
-      <key>public.kern2.cyr_che</key>
-      <integer>-10</integer>
       <key>public.kern2.f</key>
       <integer>-20</integer>
       <key>public.kern2.o</key>
@@ -2982,11 +3007,9 @@
       <key>public.kern2.AE</key>
       <integer>-20</integer>
       <key>public.kern2.J</key>
-      <integer>-19</integer>
+      <integer>-20</integer>
       <key>public.kern2.O</key>
       <integer>-10</integer>
-      <key>public.kern2.a.sc</key>
-      <integer>-22</integer>
       <key>public.kern2.cyr_D</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_b</key>
@@ -3067,7 +3090,7 @@
       <key>public.kern2.o</key>
       <integer>-20</integer>
       <key>public.kern2.o.sc</key>
-      <integer>-18</integer>
+      <integer>-28</integer>
       <key>public.kern2.ords</key>
       <integer>-20</integer>
       <key>public.kern2.quoteleft</key>
@@ -3078,22 +3101,22 @@
       <integer>-40</integer>
       <key>public.kern2.t.alt</key>
       <integer>-20</integer>
-      <key>public.kern2.t.sc</key>
-      <integer>-28</integer>
       <key>public.kern2.u</key>
       <integer>-20</integer>
+      <key>public.kern2.u.sc</key>
+      <integer>-12</integer>
       <key>public.kern2.v</key>
       <integer>-45</integer>
       <key>public.kern2.v.sc</key>
-      <integer>-20</integer>
+      <integer>-30</integer>
       <key>public.kern2.w</key>
       <integer>-30</integer>
       <key>public.kern2.w.sc</key>
-      <integer>-22</integer>
+      <integer>-20</integer>
       <key>public.kern2.y</key>
       <integer>-40</integer>
       <key>public.kern2.y.sc</key>
-      <integer>-34</integer>
+      <integer>-40</integer>
       <key>six.alt.cap</key>
       <integer>-10</integer>
       <key>six.cap</key>
@@ -3110,6 +3133,8 @@
       <key>eth</key>
       <integer>-20</integer>
       <key>lslash</key>
+      <integer>-30</integer>
+      <key>nine</key>
       <integer>-30</integer>
       <key>nine.alt</key>
       <integer>-50</integer>
@@ -3152,7 +3177,7 @@
       <key>public.kern2.o</key>
       <integer>-12</integer>
       <key>public.kern2.o.sc</key>
-      <integer>-24</integer>
+      <integer>-30</integer>
       <key>public.kern2.ords</key>
       <integer>-60</integer>
       <key>public.kern2.percent</key>
@@ -3172,13 +3197,13 @@
       <key>public.kern2.t.alt</key>
       <integer>-20</integer>
       <key>public.kern2.t.sc</key>
-      <integer>-60</integer>
+      <integer>-74</integer>
       <key>public.kern2.u</key>
       <integer>-10</integer>
       <key>public.kern2.v</key>
       <integer>-50</integer>
       <key>public.kern2.v.sc</key>
-      <integer>-70</integer>
+      <integer>-60</integer>
       <key>public.kern2.w</key>
       <integer>-30</integer>
       <key>public.kern2.w.sc</key>
@@ -3186,7 +3211,7 @@
       <key>public.kern2.y</key>
       <integer>-40</integer>
       <key>public.kern2.y.sc</key>
-      <integer>-70</integer>
+      <integer>-100</integer>
       <key>public.kern2.zero.cap</key>
       <integer>-10</integer>
     </dict>
@@ -3218,22 +3243,24 @@
       <integer>-35</integer>
       <key>public.kern2.Y</key>
       <integer>-40</integer>
+      <key>public.kern2.a.sc</key>
+      <integer>-28</integer>
       <key>public.kern2.cyr_D</key>
-      <integer>-30</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_E</key>
       <integer>-15</integer>
       <key>public.kern2.cyr_H_hook</key>
-      <integer>-20</integer>
+      <integer>-40</integer>
       <key>public.kern2.cyr_Ia</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_L</key>
-      <integer>-30</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_Y</key>
-      <integer>-5</integer>
+      <integer>-15</integer>
       <key>public.kern2.cyr_Z</key>
       <integer>-15</integer>
       <key>public.kern2.cyr_Zhe</key>
-      <integer>-35</integer>
+      <integer>-30</integer>
       <key>public.kern2.cyr_b</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_d.sc</key>
@@ -3245,7 +3272,7 @@
       <key>public.kern2.cyr_l</key>
       <integer>-15</integer>
       <key>public.kern2.cyr_z</key>
-      <integer>-20</integer>
+      <integer>-30</integer>
       <key>public.kern2.i</key>
       <integer>-5</integer>
       <key>public.kern2.i_left</key>
@@ -3279,7 +3306,7 @@
       <key>public.kern2.y</key>
       <integer>-10</integer>
       <key>public.kern2.y.sc</key>
-      <integer>-10</integer>
+      <integer>-12</integer>
       <key>questiondown</key>
       <integer>-20</integer>
       <key>underscore</key>
@@ -3352,9 +3379,9 @@
       <key>public.kern2.a</key>
       <integer>-20</integer>
       <key>public.kern2.a.sc</key>
-      <integer>-42</integer>
+      <integer>-72</integer>
       <key>public.kern2.cyr-ze.sc</key>
-      <integer>-10</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_D</key>
       <integer>-60</integer>
       <key>public.kern2.cyr_E</key>
@@ -3362,37 +3389,35 @@
       <key>public.kern2.cyr_Ia</key>
       <integer>-5</integer>
       <key>public.kern2.cyr_L</key>
-      <integer>-25</integer>
+      <integer>-40</integer>
       <key>public.kern2.cyr_Y</key>
-      <integer>-10</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_Zhe</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_b</key>
-      <integer>-5</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_d.sc</key>
-      <integer>-60</integer>
+      <integer>-40</integer>
       <key>public.kern2.cyr_de</key>
       <integer>-60</integer>
       <key>public.kern2.cyr_e</key>
-      <integer>-10</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_ia</key>
       <integer>-20</integer>
       <key>public.kern2.cyr_ia.sc</key>
-      <integer>-15</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_l</key>
       <integer>-35</integer>
       <key>public.kern2.cyr_l.sc</key>
-      <integer>-10</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_z</key>
-      <integer>-10</integer>
+      <integer>-15</integer>
       <key>public.kern2.f</key>
       <integer>5</integer>
       <key>public.kern2.g</key>
       <integer>-25</integer>
       <key>public.kern2.guillemotleft</key>
       <integer>-30</integer>
-      <key>public.kern2.j.sc</key>
-      <integer>-84</integer>
       <key>public.kern2.l</key>
       <integer>5</integer>
       <key>public.kern2.o</key>
@@ -3504,10 +3529,8 @@
       <integer>-30</integer>
       <key>public.kern2.cyr_Che</key>
       <integer>-10</integer>
-      <key>public.kern2.cyr_D</key>
-      <integer>-15</integer>
       <key>public.kern2.cyr_E</key>
-      <integer>-5</integer>
+      <integer>-15</integer>
       <key>public.kern2.cyr_Ia</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_Y</key>
@@ -3576,43 +3599,43 @@
       <key>public.kern2.a</key>
       <integer>-75</integer>
       <key>public.kern2.a.sc</key>
-      <integer>-100</integer>
+      <integer>-96</integer>
       <key>public.kern2.circle</key>
       <integer>-20</integer>
       <key>public.kern2.cyr-ze.sc</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_D</key>
-      <integer>-65</integer>
+      <integer>-70</integer>
       <key>public.kern2.cyr_F</key>
-      <integer>-45</integer>
+      <integer>-25</integer>
       <key>public.kern2.cyr_Ia</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_L</key>
       <integer>-45</integer>
       <key>public.kern2.cyr_Y</key>
-      <integer>15</integer>
+      <integer>20</integer>
       <key>public.kern2.cyr_b</key>
       <integer>-45</integer>
       <key>public.kern2.cyr_che</key>
-      <integer>-70</integer>
+      <integer>-50</integer>
       <key>public.kern2.cyr_d.sc</key>
-      <integer>-60</integer>
+      <integer>-40</integer>
       <key>public.kern2.cyr_de</key>
       <integer>-100</integer>
       <key>public.kern2.cyr_e</key>
-      <integer>-65</integer>
+      <integer>-60</integer>
       <key>public.kern2.cyr_f.sc</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_ia</key>
-      <integer>-80</integer>
+      <integer>-75</integer>
       <key>public.kern2.cyr_ia.sc</key>
-      <integer>-60</integer>
+      <integer>-40</integer>
       <key>public.kern2.cyr_l</key>
-      <integer>-95</integer>
+      <integer>-90</integer>
       <key>public.kern2.cyr_l.sc</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_t</key>
-      <integer>-70</integer>
+      <integer>-65</integer>
       <key>public.kern2.cyr_z</key>
       <integer>-70</integer>
       <key>public.kern2.cyr_zhe</key>
@@ -3632,7 +3655,7 @@
       <key>public.kern2.guillemotright</key>
       <integer>-30</integer>
       <key>public.kern2.h.sc</key>
-      <integer>-40</integer>
+      <integer>-50</integer>
       <key>public.kern2.i</key>
       <integer>-19</integer>
       <key>public.kern2.i_left</key>
@@ -3640,7 +3663,7 @@
       <key>public.kern2.i_right</key>
       <integer>-40</integer>
       <key>public.kern2.j.sc</key>
-      <integer>-92</integer>
+      <integer>-100</integer>
       <key>public.kern2.lc_straight</key>
       <integer>-60</integer>
       <key>public.kern2.mark.low</key>
@@ -3650,7 +3673,7 @@
       <key>public.kern2.o</key>
       <integer>-80</integer>
       <key>public.kern2.o.sc</key>
-      <integer>-68</integer>
+      <integer>-86</integer>
       <key>public.kern2.p</key>
       <integer>-80</integer>
       <key>public.kern2.period</key>
@@ -3662,7 +3685,7 @@
       <key>public.kern2.s</key>
       <integer>-80</integer>
       <key>public.kern2.s.sc</key>
-      <integer>-50</integer>
+      <integer>-40</integer>
       <key>public.kern2.slash</key>
       <integer>-110</integer>
       <key>public.kern2.t</key>
@@ -3670,17 +3693,19 @@
       <key>public.kern2.t.alt</key>
       <integer>-50</integer>
       <key>public.kern2.t.sc</key>
-      <integer>-40</integer>
+      <integer>-30</integer>
       <key>public.kern2.u</key>
       <integer>-60</integer>
+      <key>public.kern2.u.sc</key>
+      <integer>-40</integer>
       <key>public.kern2.v</key>
       <integer>-65</integer>
       <key>public.kern2.v.sc</key>
-      <integer>-50</integer>
+      <integer>-30</integer>
       <key>public.kern2.w</key>
       <integer>-70</integer>
       <key>public.kern2.w.sc</key>
-      <integer>-50</integer>
+      <integer>-40</integer>
       <key>public.kern2.x</key>
       <integer>-40</integer>
       <key>public.kern2.x.sc</key>
@@ -3688,7 +3713,7 @@
       <key>public.kern2.y</key>
       <integer>-60</integer>
       <key>public.kern2.y.sc</key>
-      <integer>-40</integer>
+      <integer>-50</integer>
       <key>public.kern2.z</key>
       <integer>-40</integer>
       <key>public.kern2.z.sc</key>
@@ -3699,6 +3724,8 @@
       <integer>-10</integer>
       <key>questiondown.cap</key>
       <integer>-30</integer>
+      <key>six</key>
+      <integer>-40</integer>
       <key>six.alt</key>
       <integer>-30</integer>
       <key>six.alt.cap</key>
@@ -3758,6 +3785,8 @@
       <integer>-60</integer>
       <key>lslash</key>
       <integer>-20</integer>
+      <key>nine</key>
+      <integer>-10</integer>
       <key>numbersign</key>
       <integer>-30</integer>
       <key>public.kern2.A</key>
@@ -3771,7 +3800,7 @@
       <key>public.kern2.a</key>
       <integer>-50</integer>
       <key>public.kern2.a.sc</key>
-      <integer>-100</integer>
+      <integer>-70</integer>
       <key>public.kern2.circle</key>
       <integer>-20</integer>
       <key>public.kern2.cyr_D</key>
@@ -3799,13 +3828,11 @@
       <key>public.kern2.guillemotleft.cap</key>
       <integer>-30</integer>
       <key>public.kern2.h.sc</key>
-      <integer>-10</integer>
+      <integer>-14</integer>
       <key>public.kern2.i</key>
       <integer>-20</integer>
       <key>public.kern2.i_right</key>
       <integer>-20</integer>
-      <key>public.kern2.j.sc</key>
-      <integer>-90</integer>
       <key>public.kern2.lc_straight</key>
       <integer>-40</integer>
       <key>public.kern2.mark.low</key>
@@ -3828,8 +3855,6 @@
       <integer>-30</integer>
       <key>public.kern2.s</key>
       <integer>-46</integer>
-      <key>public.kern2.s.sc</key>
-      <integer>-28</integer>
       <key>public.kern2.slash</key>
       <integer>-90</integer>
       <key>public.kern2.t</key>
@@ -3848,6 +3873,8 @@
       <integer>-10</integer>
       <key>questiondown.cap</key>
       <integer>-30</integer>
+      <key>six</key>
+      <integer>-40</integer>
       <key>six.alt</key>
       <integer>-40</integer>
       <key>six.alt.cap</key>
@@ -3892,7 +3919,7 @@
       <key>public.kern2.a</key>
       <integer>-40</integer>
       <key>public.kern2.a.sc</key>
-      <integer>-40</integer>
+      <integer>-76</integer>
       <key>public.kern2.circle</key>
       <integer>-20</integer>
       <key>public.kern2.colon</key>
@@ -3934,7 +3961,7 @@
       <key>public.kern2.j</key>
       <integer>-10</integer>
       <key>public.kern2.j.sc</key>
-      <integer>-40</integer>
+      <integer>-80</integer>
       <key>public.kern2.lc_straight</key>
       <integer>-40</integer>
       <key>public.kern2.mark.low</key>
@@ -3944,7 +3971,7 @@
       <key>public.kern2.o</key>
       <integer>-57</integer>
       <key>public.kern2.o.sc</key>
-      <integer>-30</integer>
+      <integer>-38</integer>
       <key>public.kern2.p</key>
       <integer>-30</integer>
       <key>public.kern2.period</key>
@@ -3955,6 +3982,8 @@
       <integer>-30</integer>
       <key>public.kern2.s</key>
       <integer>-40</integer>
+      <key>public.kern2.s.sc</key>
+      <integer>-14</integer>
       <key>public.kern2.slash</key>
       <integer>-70</integer>
       <key>public.kern2.t</key>
@@ -3975,6 +4004,8 @@
       <integer>-20</integer>
       <key>questiondown</key>
       <integer>-60</integer>
+      <key>six</key>
+      <integer>-20</integer>
       <key>six.alt</key>
       <integer>-30</integer>
       <key>six.alt.cap</key>
@@ -4021,21 +4052,21 @@
       <key>public.kern2.cyr_E</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_F</key>
-      <integer>-55</integer>
+      <integer>-35</integer>
       <key>public.kern2.cyr_Z</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_b</key>
-      <integer>-45</integer>
+      <integer>-25</integer>
       <key>public.kern2.cyr_che</key>
-      <integer>-55</integer>
+      <integer>-30</integer>
       <key>public.kern2.cyr_e</key>
-      <integer>-20</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_f.sc</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_ia</key>
-      <integer>-15</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_t</key>
-      <integer>-50</integer>
+      <integer>-30</integer>
       <key>public.kern2.cyr_z</key>
       <integer>-10</integer>
       <key>public.kern2.dagger</key>
@@ -4050,14 +4081,12 @@
       <integer>-40</integer>
       <key>public.kern2.guillemotleft.cap</key>
       <integer>-20</integer>
-      <key>public.kern2.j.sc</key>
-      <integer>-12</integer>
       <key>public.kern2.lc_straight</key>
       <integer>-10</integer>
       <key>public.kern2.o</key>
       <integer>-25</integer>
       <key>public.kern2.o.sc</key>
-      <integer>-32</integer>
+      <integer>-52</integer>
       <key>public.kern2.p</key>
       <integer>-10</integer>
       <key>public.kern2.question</key>
@@ -4074,16 +4103,10 @@
       <integer>-20</integer>
       <key>public.kern2.u</key>
       <integer>-20</integer>
-      <key>public.kern2.u.sc</key>
-      <integer>-8</integer>
       <key>public.kern2.v</key>
       <integer>-30</integer>
-      <key>public.kern2.v.sc</key>
-      <integer>-14</integer>
       <key>public.kern2.w</key>
       <integer>-30</integer>
-      <key>public.kern2.w.sc</key>
-      <integer>-20</integer>
       <key>public.kern2.y</key>
       <integer>-50</integer>
     </dict>
@@ -4132,7 +4155,7 @@
       <key>public.kern2.a</key>
       <integer>-85</integer>
       <key>public.kern2.a.sc</key>
-      <integer>-100</integer>
+      <integer>-140</integer>
       <key>public.kern2.circle</key>
       <integer>-40</integer>
       <key>public.kern2.colon</key>
@@ -4140,11 +4163,11 @@
       <key>public.kern2.cyr_D</key>
       <integer>-50</integer>
       <key>public.kern2.cyr_E</key>
-      <integer>-10</integer>
+      <integer>-30</integer>
       <key>public.kern2.cyr_F</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_Ia</key>
-      <integer>-60</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_L</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_Z</key>
@@ -4158,7 +4181,7 @@
       <key>public.kern2.cyr_e</key>
       <integer>-70</integer>
       <key>public.kern2.cyr_ia</key>
-      <integer>-75</integer>
+      <integer>-105</integer>
       <key>public.kern2.cyr_ia.sc</key>
       <integer>-80</integer>
       <key>public.kern2.cyr_l</key>
@@ -4186,7 +4209,7 @@
       <key>public.kern2.guillemotright</key>
       <integer>-30</integer>
       <key>public.kern2.h.sc</key>
-      <integer>-30</integer>
+      <integer>-50</integer>
       <key>public.kern2.i</key>
       <integer>-40</integer>
       <key>public.kern2.i_left</key>
@@ -4206,7 +4229,7 @@
       <key>public.kern2.o</key>
       <integer>-100</integer>
       <key>public.kern2.o.sc</key>
-      <integer>-50</integer>
+      <integer>-110</integer>
       <key>public.kern2.p</key>
       <integer>-70</integer>
       <key>public.kern2.period</key>
@@ -4220,7 +4243,7 @@
       <key>public.kern2.s</key>
       <integer>-85</integer>
       <key>public.kern2.s.sc</key>
-      <integer>-50</integer>
+      <integer>-68</integer>
       <key>public.kern2.slash</key>
       <integer>-100</integer>
       <key>public.kern2.t</key>
@@ -4233,10 +4256,14 @@
       <integer>-30</integer>
       <key>public.kern2.v</key>
       <integer>-50</integer>
+      <key>public.kern2.v.sc</key>
+      <integer>-30</integer>
       <key>public.kern2.w</key>
       <integer>-50</integer>
       <key>public.kern2.x</key>
       <integer>-40</integer>
+      <key>public.kern2.x.sc</key>
+      <integer>-30</integer>
       <key>public.kern2.y</key>
       <integer>-40</integer>
       <key>public.kern2.y.sc</key>
@@ -4244,7 +4271,7 @@
       <key>public.kern2.z</key>
       <integer>-50</integer>
       <key>public.kern2.z.sc</key>
-      <integer>-26</integer>
+      <integer>-20</integer>
       <key>questiondown.cap</key>
       <integer>-40</integer>
       <key>six.alt</key>
@@ -4274,8 +4301,6 @@
       <integer>-20</integer>
       <key>public.kern2.o</key>
       <integer>-10</integer>
-      <key>public.kern2.o.sc</key>
-      <integer>-18</integer>
       <key>public.kern2.t</key>
       <integer>-20</integer>
       <key>public.kern2.t.alt</key>
@@ -4295,10 +4320,8 @@
       <integer>-40</integer>
       <key>public.kern2.a</key>
       <integer>-5</integer>
-      <key>public.kern2.cyr_che</key>
-      <integer>-15</integer>
       <key>public.kern2.cyr_t</key>
-      <integer>-15</integer>
+      <integer>-20</integer>
       <key>public.kern2.f</key>
       <integer>-10</integer>
       <key>public.kern2.g</key>
@@ -4411,8 +4434,6 @@
     <dict>
       <key>public.kern2.a.sc</key>
       <integer>-10</integer>
-      <key>public.kern2.cyr_D</key>
-      <integer>-9</integer>
       <key>public.kern2.cyr_d.sc</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_zhe.sc</key>
@@ -4457,14 +4478,10 @@
       <integer>-10</integer>
       <key>public.kern2.a</key>
       <integer>-5</integer>
-      <key>public.kern2.cyr_de</key>
-      <integer>-5</integer>
       <key>public.kern2.cyr_ia</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_l</key>
-      <integer>-10</integer>
-      <key>public.kern2.cyr_lBGR</key>
-      <integer>-10</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_t</key>
       <integer>-5</integer>
       <key>public.kern2.cyr_z</key>
@@ -4493,17 +4510,17 @@
       <key>public.kern2.cyr_ia.sc</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_l.sc</key>
-      <integer>-10</integer>
+      <integer>-9</integer>
       <key>public.kern2.cyr_zhe.sc</key>
       <integer>-10</integer>
       <key>public.kern2.o.sc</key>
-      <integer>-15</integer>
+      <integer>-16</integer>
       <key>public.kern2.u-cy.sc</key>
       <integer>-20</integer>
       <key>public.kern2.x.sc</key>
-      <integer>-30</integer>
+      <integer>-20</integer>
       <key>public.kern2.y.sc</key>
-      <integer>-30</integer>
+      <integer>-20</integer>
     </dict>
     <key>public.kern1.circle</key>
     <dict>
@@ -4549,13 +4566,13 @@
     <key>public.kern1.cyr-ze.sc</key>
     <dict>
       <key>public.kern2.a.sc</key>
-      <integer>-10</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_d.sc</key>
       <integer>-10</integer>
       <key>public.kern2.t.sc</key>
       <integer>-10</integer>
       <key>public.kern2.u-cy.sc</key>
-      <integer>-10</integer>
+      <integer>-20</integer>
       <key>public.kern2.y.sc</key>
       <integer>-20</integer>
     </dict>
@@ -4568,7 +4585,7 @@
       <key>backslash</key>
       <integer>-30</integer>
       <key>public.kern2.A</key>
-      <integer>-25</integer>
+      <integer>-10</integer>
       <key>public.kern2.T</key>
       <integer>-60</integer>
       <key>public.kern2.V</key>
@@ -4578,9 +4595,9 @@
       <key>public.kern2.Y</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_Che</key>
-      <integer>-10</integer>
-      <key>public.kern2.cyr_D</key>
       <integer>-20</integer>
+      <key>public.kern2.cyr_D</key>
+      <integer>-10</integer>
       <key>public.kern2.cyr_F</key>
       <integer>-20</integer>
       <key>public.kern2.cyr_Ia</key>
@@ -4626,16 +4643,14 @@
       <integer>-5</integer>
       <key>public.kern2.T</key>
       <integer>-60</integer>
-      <key>public.kern2.V</key>
-      <integer>-20</integer>
       <key>public.kern2.cyr_Che</key>
-      <integer>-35</integer>
+      <integer>-25</integer>
       <key>public.kern2.cyr_F</key>
-      <integer>-15</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_Ia</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_Y</key>
-      <integer>-50</integer>
+      <integer>-35</integer>
       <key>public.kern2.cyr_t</key>
       <integer>-25</integer>
       <key>public.kern2.t.sc</key>
@@ -4645,7 +4660,7 @@
       <key>public.kern2.v</key>
       <integer>-20</integer>
       <key>public.kern2.y</key>
-      <integer>-10</integer>
+      <integer>-5</integer>
       <key>public.kern2.y.sc</key>
       <integer>-60</integer>
     </dict>
@@ -4654,17 +4669,21 @@
       <key>Yusbig-cy</key>
       <integer>-30</integer>
       <key>public.kern2.A</key>
-      <integer>-60</integer>
+      <integer>-50</integer>
+      <key>public.kern2.AE</key>
+      <integer>-40</integer>
       <key>public.kern2.J</key>
-      <integer>-25</integer>
+      <integer>-20</integer>
+      <key>public.kern2.O</key>
+      <integer>-20</integer>
       <key>public.kern2.T</key>
-      <integer>-35</integer>
+      <integer>-45</integer>
       <key>public.kern2.V</key>
-      <integer>-30</integer>
+      <integer>-40</integer>
       <key>public.kern2.X</key>
       <integer>-35</integer>
       <key>public.kern2.Y</key>
-      <integer>-40</integer>
+      <integer>-80</integer>
       <key>public.kern2.a.sc</key>
       <integer>-40</integer>
       <key>public.kern2.cyr-ze.sc</key>
@@ -4672,33 +4691,33 @@
       <key>public.kern2.cyr_Che</key>
       <integer>-5</integer>
       <key>public.kern2.cyr_D</key>
-      <integer>-30</integer>
+      <integer>-35</integer>
       <key>public.kern2.cyr_E</key>
-      <integer>-25</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_H_hook</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_Ia</key>
-      <integer>-10</integer>
+      <integer>-15</integer>
       <key>public.kern2.cyr_L</key>
       <integer>-60</integer>
       <key>public.kern2.cyr_Y</key>
-      <integer>-50</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_Z</key>
-      <integer>-20</integer>
+      <integer>-30</integer>
       <key>public.kern2.cyr_Zhe</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_d.sc</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_de</key>
-      <integer>-35</integer>
-      <key>public.kern2.cyr_ia</key>
-      <integer>-15</integer>
-      <key>public.kern2.cyr_l</key>
       <integer>-40</integer>
+      <key>public.kern2.cyr_ia</key>
+      <integer>-20</integer>
+      <key>public.kern2.cyr_l</key>
+      <integer>-20</integer>
       <key>public.kern2.cyr_l.sc</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_z</key>
-      <integer>-15</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_zhe</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_zhe.sc</key>
@@ -4706,30 +4725,30 @@
       <key>public.kern2.l</key>
       <integer>20</integer>
       <key>public.kern2.x</key>
-      <integer>-5</integer>
+      <integer>-15</integer>
     </dict>
     <key>public.kern1.cyr_G</key>
     <dict>
       <key>public.kern2.A</key>
-      <integer>-95</integer>
+      <integer>-90</integer>
       <key>public.kern2.AE</key>
-      <integer>-100</integer>
+      <integer>-80</integer>
       <key>public.kern2.J</key>
-      <integer>-140</integer>
+      <integer>-100</integer>
       <key>public.kern2.O</key>
       <integer>-30</integer>
       <key>public.kern2.a</key>
-      <integer>-90</integer>
+      <integer>-95</integer>
       <key>public.kern2.a.sc</key>
       <integer>-100</integer>
       <key>public.kern2.cyr-ze.sc</key>
       <integer>-60</integer>
       <key>public.kern2.cyr_D</key>
-      <integer>-40</integer>
+      <integer>-45</integer>
       <key>public.kern2.cyr_E</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_F</key>
-      <integer>-35</integer>
+      <integer>-25</integer>
       <key>public.kern2.cyr_Ia</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_L</key>
@@ -4737,74 +4756,74 @@
       <key>public.kern2.cyr_Z</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_b</key>
-      <integer>-60</integer>
+      <integer>-65</integer>
       <key>public.kern2.cyr_che</key>
-      <integer>-105</integer>
+      <integer>-100</integer>
       <key>public.kern2.cyr_d.sc</key>
-      <integer>-80</integer>
+      <integer>-40</integer>
       <key>public.kern2.cyr_de</key>
-      <integer>-110</integer>
+      <integer>-130</integer>
       <key>public.kern2.cyr_e</key>
-      <integer>-110</integer>
+      <integer>-80</integer>
       <key>public.kern2.cyr_f.sc</key>
       <integer>-80</integer>
       <key>public.kern2.cyr_ia</key>
-      <integer>-120</integer>
+      <integer>-100</integer>
       <key>public.kern2.cyr_ia.sc</key>
       <integer>-60</integer>
       <key>public.kern2.cyr_l</key>
-      <integer>-115</integer>
+      <integer>-120</integer>
       <key>public.kern2.cyr_l.sc</key>
       <integer>-60</integer>
       <key>public.kern2.cyr_t</key>
-      <integer>-85</integer>
+      <integer>-80</integer>
       <key>public.kern2.cyr_z</key>
-      <integer>-90</integer>
+      <integer>-125</integer>
       <key>public.kern2.cyr_zhe</key>
-      <integer>-85</integer>
+      <integer>-80</integer>
       <key>public.kern2.l</key>
       <integer>20</integer>
       <key>public.kern2.lc_straight</key>
       <integer>-85</integer>
       <key>public.kern2.o</key>
-      <integer>-125</integer>
+      <integer>-100</integer>
       <key>public.kern2.o.sc</key>
       <integer>-60</integer>
       <key>public.kern2.p</key>
-      <integer>-100</integer>
+      <integer>-85</integer>
       <key>public.kern2.period</key>
       <integer>-100</integer>
       <key>public.kern2.s</key>
-      <integer>-120</integer>
+      <integer>-110</integer>
       <key>public.kern2.s.sc</key>
       <integer>-40</integer>
       <key>public.kern2.u-cy.sc</key>
       <integer>-40</integer>
       <key>public.kern2.v</key>
-      <integer>-100</integer>
+      <integer>-80</integer>
       <key>public.kern2.w</key>
       <integer>-40</integer>
       <key>public.kern2.x</key>
-      <integer>-70</integer>
-      <key>public.kern2.y</key>
       <integer>-100</integer>
+      <key>public.kern2.y</key>
+      <integer>-80</integer>
       <key>public.kern2.y.sc</key>
       <integer>-60</integer>
     </dict>
     <key>public.kern1.cyr_K</key>
     <dict>
       <key>Cheabkhasian-cy</key>
-      <integer>-75</integer>
+      <integer>-70</integer>
       <key>public.kern2.O</key>
-      <integer>-35</integer>
+      <integer>-30</integer>
       <key>public.kern2.T</key>
       <integer>10</integer>
       <key>public.kern2.a</key>
-      <integer>-5</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr-ze.sc</key>
       <integer>-20</integer>
       <key>public.kern2.cyr_E</key>
-      <integer>-10</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_F</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_Ia</key>
@@ -4816,50 +4835,42 @@
       <key>public.kern2.cyr_b</key>
       <integer>-35</integer>
       <key>public.kern2.cyr_che</key>
-      <integer>-45</integer>
-      <key>public.kern2.cyr_de</key>
-      <integer>20</integer>
-      <key>public.kern2.cyr_e</key>
-      <integer>-5</integer>
+      <integer>-15</integer>
       <key>public.kern2.cyr_f.sc</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_ia</key>
-      <integer>-5</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_t</key>
-      <integer>-40</integer>
+      <integer>-45</integer>
       <key>public.kern2.cyr_z</key>
-      <integer>-5</integer>
+      <integer>-10</integer>
       <key>public.kern2.dash</key>
       <integer>-40</integer>
       <key>public.kern2.l</key>
       <integer>20</integer>
       <key>public.kern2.o</key>
-      <integer>-30</integer>
+      <integer>-40</integer>
       <key>public.kern2.o.sc</key>
       <integer>-20</integer>
       <key>public.kern2.s</key>
-      <integer>-15</integer>
+      <integer>-20</integer>
       <key>public.kern2.u-cy.sc</key>
       <integer>-20</integer>
       <key>public.kern2.v</key>
       <integer>-40</integer>
       <key>public.kern2.y</key>
-      <integer>-20</integer>
+      <integer>-30</integer>
       <key>public.kern2.y.sc</key>
       <integer>-40</integer>
     </dict>
     <key>public.kern1.cyr_Shha</key>
     <dict>
-      <key>Yat-cy</key>
-      <integer>-20</integer>
       <key>public.kern2.T</key>
-      <integer>-40</integer>
-      <key>public.kern2.V</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_t</key>
       <integer>-30</integer>
       <key>public.kern2.t.sc</key>
-      <integer>-45</integer>
+      <integer>-40</integer>
       <key>public.kern2.u-cy.sc</key>
       <integer>-40</integer>
       <key>public.kern2.v</key>
@@ -4874,31 +4885,29 @@
       <key>Ustraightstroke-cy</key>
       <integer>-40</integer>
       <key>Yat-cy</key>
-      <integer>-60</integer>
+      <integer>-40</integer>
       <key>public.kern2.A</key>
-      <integer>-15</integer>
+      <integer>-10</integer>
       <key>public.kern2.O</key>
       <integer>-10</integer>
       <key>public.kern2.T</key>
-      <integer>-95</integer>
+      <integer>-70</integer>
       <key>public.kern2.V</key>
-      <integer>-60</integer>
+      <integer>-55</integer>
       <key>public.kern2.X</key>
-      <integer>-25</integer>
+      <integer>-10</integer>
       <key>public.kern2.Y</key>
       <integer>-100</integer>
       <key>public.kern2.cyr_Che</key>
-      <integer>-30</integer>
+      <integer>-25</integer>
       <key>public.kern2.cyr_D</key>
       <integer>-10</integer>
-      <key>public.kern2.cyr_H_hook</key>
-      <integer>-25</integer>
       <key>public.kern2.cyr_Ia</key>
       <integer>-25</integer>
       <key>public.kern2.cyr_L</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_Y</key>
-      <integer>-50</integer>
+      <integer>-45</integer>
       <key>public.kern2.cyr_t</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_zhe</key>
@@ -4906,7 +4915,7 @@
       <key>public.kern2.cyr_zhe.sc</key>
       <integer>-25</integer>
       <key>public.kern2.marks</key>
-      <integer>-20</integer>
+      <integer>-40</integer>
       <key>public.kern2.t.sc</key>
       <integer>-40</integer>
       <key>public.kern2.u-cy.sc</key>
@@ -4920,65 +4929,61 @@
     </dict>
     <key>public.kern1.cyr_Tse</key>
     <dict>
-      <key>public.kern2.O</key>
-      <integer>-5</integer>
       <key>public.kern2.T</key>
-      <integer>-50</integer>
-      <key>public.kern2.V</key>
-      <integer>-40</integer>
+      <integer>-25</integer>
       <key>public.kern2.Y</key>
       <integer>-20</integer>
       <key>public.kern2.cyr_Che</key>
       <integer>-15</integer>
       <key>public.kern2.cyr_F</key>
-      <integer>-10</integer>
+      <integer>-25</integer>
       <key>public.kern2.cyr_Y</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_b</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_che</key>
-      <integer>-25</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_t</key>
-      <integer>-20</integer>
+      <integer>-10</integer>
       <key>public.kern2.o</key>
       <integer>-10</integer>
       <key>public.kern2.v</key>
       <integer>-20</integer>
       <key>public.kern2.y</key>
-      <integer>-20</integer>
+      <integer>-15</integer>
       <key>public.kern2.y.sc</key>
-      <integer>-20</integer>
+      <integer>-40</integer>
     </dict>
     <key>public.kern1.cyr_V</key>
     <dict>
       <key>public.kern2.A</key>
       <integer>-60</integer>
       <key>public.kern2.AE</key>
-      <integer>-100</integer>
+      <integer>-60</integer>
       <key>public.kern2.J</key>
       <integer>-60</integer>
       <key>public.kern2.a</key>
       <integer>-60</integer>
       <key>public.kern2.cyr_D</key>
-      <integer>-40</integer>
+      <integer>-60</integer>
       <key>public.kern2.cyr_F</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_Ia</key>
-      <integer>-20</integer>
+      <integer>-35</integer>
       <key>public.kern2.cyr_L</key>
-      <integer>-20</integer>
+      <integer>-35</integer>
       <key>public.kern2.cyr_Z</key>
       <integer>-5</integer>
       <key>public.kern2.cyr_b</key>
-      <integer>-20</integer>
-      <key>public.kern2.cyr_de</key>
       <integer>-40</integer>
+      <key>public.kern2.cyr_de</key>
+      <integer>-80</integer>
       <key>public.kern2.cyr_e</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_ia</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_l</key>
-      <integer>-60</integer>
+      <integer>-80</integer>
       <key>public.kern2.cyr_z</key>
       <integer>-40</integer>
       <key>public.kern2.o</key>
@@ -5025,21 +5030,21 @@
       <key>public.kern2.cyr_F</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_Ia</key>
-      <integer>-35</integer>
+      <integer>-25</integer>
       <key>public.kern2.cyr_L</key>
-      <integer>-40</integer>
+      <integer>-50</integer>
       <key>public.kern2.cyr_Z</key>
-      <integer>-30</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_b</key>
       <integer>-50</integer>
       <key>public.kern2.cyr_che</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_d.sc</key>
-      <integer>-60</integer>
+      <integer>-40</integer>
       <key>public.kern2.cyr_de</key>
-      <integer>-90</integer>
+      <integer>-80</integer>
       <key>public.kern2.cyr_e</key>
-      <integer>-70</integer>
+      <integer>-40</integer>
       <key>public.kern2.cyr_f.sc</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_ia</key>
@@ -5047,7 +5052,7 @@
       <key>public.kern2.cyr_ia.sc</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_l</key>
-      <integer>-80</integer>
+      <integer>-85</integer>
       <key>public.kern2.cyr_l.sc</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_t</key>
@@ -5055,7 +5060,7 @@
       <key>public.kern2.cyr_z</key>
       <integer>-80</integer>
       <key>public.kern2.cyr_zhe</key>
-      <integer>-20</integer>
+      <integer>-50</integer>
       <key>public.kern2.dash</key>
       <integer>-60</integer>
       <key>public.kern2.g</key>
@@ -5067,9 +5072,11 @@
       <key>public.kern2.guillemotright</key>
       <integer>-50</integer>
       <key>public.kern2.i</key>
-      <integer>-10</integer>
+      <integer>-25</integer>
       <key>public.kern2.i_right</key>
       <integer>-50</integer>
+      <key>public.kern2.l</key>
+      <integer>10</integer>
       <key>public.kern2.lc_straight</key>
       <integer>-60</integer>
       <key>public.kern2.mark.low</key>
@@ -5116,19 +5123,19 @@
     <key>public.kern1.cyr_Z</key>
     <dict>
       <key>public.kern2.A</key>
-      <integer>-25</integer>
+      <integer>-10</integer>
       <key>public.kern2.T</key>
-      <integer>-30</integer>
+      <integer>-10</integer>
       <key>public.kern2.X</key>
       <integer>-10</integer>
       <key>public.kern2.Y</key>
-      <integer>-20</integer>
+      <integer>-40</integer>
       <key>public.kern2.cyr_D</key>
-      <integer>-35</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_E</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_Y</key>
-      <integer>-15</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_Zhe</key>
       <integer>-15</integer>
     </dict>
@@ -5139,19 +5146,19 @@
       <key>public.kern2.cyr_che</key>
       <integer>-5</integer>
       <key>public.kern2.cyr_de</key>
-      <integer>-20</integer>
+      <integer>-15</integer>
       <key>public.kern2.cyr_ia</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_l</key>
-      <integer>-20</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_lBGR</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_t</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_z</key>
-      <integer>-15</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_zhe</key>
-      <integer>-15</integer>
+      <integer>-5</integer>
       <key>public.kern2.f</key>
       <integer>-10</integer>
       <key>public.kern2.question</key>
@@ -5167,7 +5174,7 @@
       <key>public.kern2.v</key>
       <integer>-10</integer>
       <key>public.kern2.x</key>
-      <integer>-20</integer>
+      <integer>-10</integer>
       <key>public.kern2.y</key>
       <integer>-10</integer>
       <key>underscore</key>
@@ -5186,11 +5193,11 @@
       <key>public.kern2.cyr_f.sc</key>
       <integer>-20</integer>
       <key>public.kern2.cyr_l.sc</key>
-      <integer>-10</integer>
+      <integer>-9</integer>
       <key>public.kern2.cyr_zhe.sc</key>
       <integer>-10</integer>
       <key>public.kern2.t.sc</key>
-      <integer>-60</integer>
+      <integer>-35</integer>
       <key>public.kern2.u-cy.sc</key>
       <integer>-20</integer>
       <key>public.kern2.v.sc</key>
@@ -5205,9 +5212,9 @@
       <key>public.kern2.cyr_che.sc</key>
       <integer>-15</integer>
       <key>public.kern2.t.sc</key>
-      <integer>-60</integer>
+      <integer>-52</integer>
       <key>public.kern2.u-cy.sc</key>
-      <integer>-40</integer>
+      <integer>-35</integer>
       <key>public.kern2.y.sc</key>
       <integer>-40</integer>
     </dict>
@@ -5224,7 +5231,7 @@
       <key>public.kern2.t.sc</key>
       <integer>-25</integer>
       <key>public.kern2.u-cy.sc</key>
-      <integer>-25</integer>
+      <integer>-20</integer>
       <key>public.kern2.v.sc</key>
       <integer>-30</integer>
       <key>public.kern2.x.sc</key>
@@ -5235,19 +5242,19 @@
     <key>public.kern1.cyr_g</key>
     <dict>
       <key>public.kern2.a</key>
-      <integer>-15</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_de</key>
-      <integer>-30</integer>
+      <integer>-40</integer>
       <key>public.kern2.cyr_e</key>
       <integer>-5</integer>
       <key>public.kern2.cyr_ia</key>
-      <integer>-15</integer>
-      <key>public.kern2.cyr_l</key>
       <integer>-25</integer>
+      <key>public.kern2.cyr_l</key>
+      <integer>-35</integer>
       <key>public.kern2.cyr_z</key>
       <integer>-5</integer>
       <key>public.kern2.o</key>
-      <integer>-35</integer>
+      <integer>-30</integer>
       <key>public.kern2.period</key>
       <integer>-120</integer>
     </dict>
@@ -5264,30 +5271,26 @@
       <key>public.kern2.cyr_ia.sc</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_l.sc</key>
-      <integer>-45</integer>
+      <integer>-39</integer>
       <key>public.kern2.j.sc</key>
       <integer>-80</integer>
       <key>public.kern2.o.sc</key>
-      <integer>-15</integer>
+      <integer>-25</integer>
     </dict>
     <key>public.kern1.cyr_gBGR</key>
     <dict>
       <key>public.kern2.cyr_che</key>
       <integer>-25</integer>
       <key>public.kern2.cyr_ia</key>
-      <integer>-25</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_lBGR</key>
       <integer>-5</integer>
       <key>public.kern2.cyr_t</key>
-      <integer>-35</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_z</key>
-      <integer>-20</integer>
-      <key>public.kern2.cyr_zhe</key>
-      <integer>-15</integer>
-      <key>public.kern2.o</key>
       <integer>-5</integer>
-      <key>public.kern2.x</key>
-      <integer>-15</integer>
+      <key>public.kern2.cyr_zhe</key>
+      <integer>-5</integer>
       <key>public.kern2.y</key>
       <integer>-10</integer>
     </dict>
@@ -5300,7 +5303,7 @@
       <key>public.kern2.cyr_b</key>
       <integer>-30</integer>
       <key>public.kern2.cyr_t</key>
-      <integer>-60</integer>
+      <integer>-40</integer>
     </dict>
     <key>public.kern1.cyr_i_right</key>
     <dict>
@@ -5320,19 +5323,19 @@
       <key>public.kern2.cyr_b</key>
       <integer>-15</integer>
       <key>public.kern2.cyr_gBGR</key>
-      <integer>-10</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_ia</key>
-      <integer>15</integer>
+      <integer>20</integer>
       <key>public.kern2.cyr_z</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_zhe</key>
       <integer>20</integer>
       <key>public.kern2.l</key>
-      <integer>15</integer>
+      <integer>10</integer>
       <key>public.kern2.o</key>
       <integer>-10</integer>
       <key>public.kern2.v</key>
-      <integer>5</integer>
+      <integer>10</integer>
       <key>public.kern2.w</key>
       <integer>10</integer>
       <key>public.kern2.x</key>
@@ -5345,7 +5348,7 @@
     <key>public.kern1.cyr_k.sc</key>
     <dict>
       <key>public.kern2.cyr-ze.sc</key>
-      <integer>-15</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_f.sc</key>
       <integer>-40</integer>
       <key>public.kern2.o.sc</key>
@@ -5359,59 +5362,51 @@
     </dict>
     <key>public.kern1.cyr_lBGR</key>
     <dict>
-      <key>public.kern2.a</key>
-      <integer>-10</integer>
       <key>public.kern2.cyr_b</key>
       <integer>-20</integer>
       <key>public.kern2.cyr_che</key>
-      <integer>-30</integer>
-      <key>public.kern2.cyr_e</key>
       <integer>-5</integer>
+      <key>public.kern2.cyr_e</key>
+      <integer>-10</integer>
       <key>public.kern2.cyr_gBGR</key>
       <integer>-15</integer>
-      <key>public.kern2.cyr_lBGR</key>
-      <integer>10</integer>
       <key>public.kern2.cyr_t</key>
       <integer>-60</integer>
       <key>public.kern2.cyr_z</key>
       <integer>-15</integer>
       <key>public.kern2.g</key>
       <integer>-15</integer>
-      <key>public.kern2.l</key>
-      <integer>-10</integer>
-      <key>public.kern2.lc_straight</key>
-      <integer>-15</integer>
       <key>public.kern2.o</key>
       <integer>-10</integer>
       <key>public.kern2.u</key>
-      <integer>-20</integer>
+      <integer>-5</integer>
       <key>public.kern2.y</key>
-      <integer>-20</integer>
+      <integer>-15</integer>
     </dict>
     <key>public.kern1.cyr_soft</key>
     <dict>
       <key>public.kern2.cyr_b</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_che</key>
-      <integer>-15</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_de</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_ia</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_t</key>
-      <integer>-50</integer>
+      <integer>-55</integer>
       <key>public.kern2.cyr_z</key>
-      <integer>-30</integer>
+      <integer>-15</integer>
       <key>public.kern2.cyr_zhe</key>
-      <integer>-10</integer>
+      <integer>-15</integer>
       <key>public.kern2.marks</key>
-      <integer>-120</integer>
+      <integer>-80</integer>
       <key>public.kern2.v</key>
       <integer>-25</integer>
       <key>public.kern2.x</key>
-      <integer>-25</integer>
+      <integer>-20</integer>
       <key>public.kern2.y</key>
-      <integer>-40</integer>
+      <integer>-30</integer>
       <key>ustraightstroke-cy</key>
       <integer>-15</integer>
     </dict>
@@ -5422,13 +5417,13 @@
       <key>public.kern2.cyr_ia.sc</key>
       <integer>-40</integer>
       <key>public.kern2.t.sc</key>
-      <integer>-82</integer>
+      <integer>-60</integer>
       <key>public.kern2.u-cy.sc</key>
       <integer>-45</integer>
       <key>public.kern2.v.sc</key>
       <integer>-60</integer>
       <key>public.kern2.x.sc</key>
-      <integer>-22</integer>
+      <integer>-9</integer>
       <key>public.kern2.y.sc</key>
       <integer>-80</integer>
       <key>ustraightstroke-cy.sc</key>
@@ -5443,26 +5438,26 @@
     </dict>
     <key>public.kern1.cyr_tse</key>
     <dict>
+      <key>apostrophemod</key>
+      <integer>-60</integer>
       <key>enlefthook-cy</key>
       <integer>10</integer>
       <key>public.kern2.cyr_b</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_che</key>
-      <integer>-20</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_t</key>
-      <integer>-20</integer>
-      <key>public.kern2.cyr_z</key>
       <integer>-15</integer>
-      <key>public.kern2.marks</key>
-      <integer>-10</integer>
+      <key>public.kern2.cyr_z</key>
+      <integer>-5</integer>
       <key>public.kern2.o</key>
       <integer>-15</integer>
-      <key>public.kern2.quoteleft</key>
-      <integer>-15</integer>
+      <key>public.kern2.quotesingle</key>
+      <integer>-40</integer>
       <key>public.kern2.v</key>
-      <integer>-20</integer>
+      <integer>-10</integer>
       <key>public.kern2.y</key>
-      <integer>-15</integer>
+      <integer>-5</integer>
     </dict>
     <key>public.kern1.cyr_tse.sc</key>
     <dict>
@@ -5475,7 +5470,7 @@
       <key>public.kern2.o.sc</key>
       <integer>-10</integer>
       <key>public.kern2.t.sc</key>
-      <integer>-26</integer>
+      <integer>-22</integer>
       <key>public.kern2.u-cy.sc</key>
       <integer>-10</integer>
       <key>public.kern2.y.sc</key>
@@ -5485,12 +5480,10 @@
     <dict>
       <key>backslash</key>
       <integer>-40</integer>
-      <key>public.kern2.a</key>
-      <integer>-5</integer>
       <key>public.kern2.cyr_che</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_de</key>
-      <integer>-20</integer>
+      <integer>-15</integer>
       <key>public.kern2.cyr_ia</key>
       <integer>-5</integer>
       <key>public.kern2.cyr_l</key>
@@ -5527,20 +5520,16 @@
     <dict>
       <key>public.kern2.cyr_lBGR</key>
       <integer>-5</integer>
-      <key>public.kern2.cyr_z</key>
-      <integer>-10</integer>
-      <key>public.kern2.y</key>
-      <integer>-10</integer>
     </dict>
     <key>public.kern1.cyr_z</key>
     <dict>
+      <key>apostrophemod</key>
+      <integer>-20</integer>
       <key>backslash</key>
       <integer>-50</integer>
       <key>lslash</key>
       <integer>-10</integer>
       <key>public.kern2.a</key>
-      <integer>-15</integer>
-      <key>public.kern2.cyr_che</key>
       <integer>-5</integer>
       <key>public.kern2.cyr_de</key>
       <integer>-10</integer>
@@ -5552,10 +5541,12 @@
       <integer>-10</integer>
       <key>public.kern2.quoteleft</key>
       <integer>-20</integer>
+      <key>public.kern2.quotesingle</key>
+      <integer>-20</integer>
       <key>public.kern2.v</key>
       <integer>-10</integer>
       <key>public.kern2.y</key>
-      <integer>-20</integer>
+      <integer>-15</integer>
       <key>underscore</key>
       <integer>-20</integer>
     </dict>
@@ -5589,6 +5580,8 @@
     </dict>
     <key>public.kern1.dalet-hb</key>
     <dict>
+      <key>public.kern2.alef-hb</key>
+      <integer>10</integer>
       <key>public.kern2.bet-hb</key>
       <integer>-70</integer>
       <key>public.kern2.dalet-hb</key>
@@ -5731,7 +5724,7 @@
       <key>public.kern2.bracketright</key>
       <integer>20</integer>
       <key>public.kern2.f</key>
-      <integer>-19</integer>
+      <integer>-20</integer>
       <key>public.kern2.g</key>
       <integer>-25</integer>
       <key>public.kern2.i</key>
@@ -5842,7 +5835,7 @@
       <key>public.kern2.dalet-hb</key>
       <integer>20</integer>
       <key>public.kern2.het-hb</key>
-      <integer>-40</integer>
+      <integer>-30</integer>
       <key>public.kern2.mem-hb</key>
       <integer>-20</integer>
     </dict>
@@ -5957,7 +5950,7 @@
       <key>public.kern2.j</key>
       <integer>-10</integer>
       <key>public.kern2.u-cy.sc</key>
-      <integer>-25</integer>
+      <integer>-15</integer>
       <key>public.kern2.x</key>
       <integer>-30</integer>
       <key>public.kern2.y</key>
@@ -6040,7 +6033,7 @@
       <key>public.kern2.g</key>
       <integer>-5</integer>
       <key>public.kern2.j</key>
-      <integer>19</integer>
+      <integer>20</integer>
       <key>public.kern2.o</key>
       <integer>-5</integer>
       <key>public.kern2.s</key>
@@ -6055,7 +6048,7 @@
       <key>public.kern2.cyr_d.sc</key>
       <integer>-10</integer>
       <key>public.kern2.j.sc</key>
-      <integer>-19</integer>
+      <integer>-20</integer>
       <key>public.kern2.o.sc</key>
       <integer>-10</integer>
     </dict>
@@ -6192,7 +6185,7 @@
     <key>public.kern1.n</key>
     <dict>
       <key>Hardsign-cy</key>
-      <integer>-50</integer>
+      <integer>-60</integer>
       <key>Yat-cy</key>
       <integer>-40</integer>
       <key>backslash</key>
@@ -6210,11 +6203,9 @@
       <key>public.kern2.a</key>
       <integer>-5</integer>
       <key>public.kern2.cyr_Che</key>
-      <integer>-40</integer>
-      <key>public.kern2.cyr_F</key>
-      <integer>-15</integer>
+      <integer>-35</integer>
       <key>public.kern2.cyr_Y</key>
-      <integer>-10</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_che</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_z</key>
@@ -6249,17 +6240,17 @@
       <key>backslash</key>
       <integer>-60</integer>
       <key>public.kern2.cyr_de</key>
-      <integer>-25</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_ia</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_l</key>
-      <integer>-15</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_lBGR</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_t</key>
-      <integer>-15</integer>
-      <key>public.kern2.cyr_z</key>
       <integer>-25</integer>
+      <key>public.kern2.cyr_z</key>
+      <integer>-20</integer>
       <key>public.kern2.cyr_zhe</key>
       <integer>-15</integer>
       <key>public.kern2.f</key>
@@ -6345,13 +6336,11 @@
       <key>a.sc.ss04</key>
       <integer>-20</integer>
       <key>t.sc.ss04</key>
-      <integer>-20</integer>
+      <integer>-16</integer>
       <key>v.sc.ss04</key>
       <integer>-20</integer>
-      <key>w.sc.ss04</key>
-      <integer>-10</integer>
       <key>x.sc.ss04</key>
-      <integer>-20</integer>
+      <integer>-30</integer>
       <key>y.sc.ss04</key>
       <integer>-30</integer>
     </dict>
@@ -6365,11 +6354,11 @@
       <key>backslash</key>
       <integer>-60</integer>
       <key>public.kern2.cyr_de</key>
-      <integer>-10</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_ia</key>
-      <integer>-10</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_lBGR</key>
-      <integer>-15</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_t</key>
       <integer>-5</integer>
       <key>public.kern2.cyr_z</key>
@@ -6428,7 +6417,7 @@
       <key>public.kern2.a.sc</key>
       <integer>-70</integer>
       <key>public.kern2.cyr-ze.sc</key>
-      <integer>-5</integer>
+      <integer>-15</integer>
       <key>public.kern2.cyr_D</key>
       <integer>-52</integer>
       <key>public.kern2.cyr_E</key>
@@ -6438,7 +6427,7 @@
       <key>public.kern2.cyr_d.sc</key>
       <integer>-60</integer>
       <key>public.kern2.cyr_l.sc</key>
-      <integer>-22</integer>
+      <integer>-34</integer>
       <key>public.kern2.cyr_zhe.sc</key>
       <integer>-10</integer>
       <key>public.kern2.j.sc</key>
@@ -6611,9 +6600,9 @@
       <key>public.kern2.cyr_Che</key>
       <integer>-60</integer>
       <key>public.kern2.cyr_che</key>
-      <integer>-40</integer>
+      <integer>-60</integer>
       <key>public.kern2.cyr_t</key>
-      <integer>-70</integer>
+      <integer>-30</integer>
       <key>public.kern2.f</key>
       <integer>-30</integer>
       <key>public.kern2.quotebase</key>
@@ -6671,6 +6660,8 @@
       <integer>-20</integer>
       <key>public.kern2.s</key>
       <integer>-40</integer>
+      <key>six</key>
+      <integer>-40</integer>
       <key>six.cap</key>
       <integer>-40</integer>
     </dict>
@@ -6719,7 +6710,7 @@
       <key>public.kern2.cyr_Ia</key>
       <integer>-20</integer>
       <key>public.kern2.cyr_L</key>
-      <integer>-60</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_de</key>
       <integer>-60</integer>
       <key>public.kern2.cyr_e</key>
@@ -6727,7 +6718,7 @@
       <key>public.kern2.cyr_ia</key>
       <integer>-30</integer>
       <key>public.kern2.cyr_l</key>
-      <integer>-65</integer>
+      <integer>-45</integer>
       <key>public.kern2.cyr_z</key>
       <integer>-40</integer>
       <key>public.kern2.f</key>
@@ -6780,7 +6771,9 @@
       <key>public.kern2.cyr_de</key>
       <integer>-30</integer>
       <key>public.kern2.cyr_ia</key>
-      <integer>-40</integer>
+      <integer>-50</integer>
+      <key>six</key>
+      <integer>-30</integer>
     </dict>
     <key>public.kern1.r</key>
     <dict>
@@ -6870,7 +6863,7 @@
       <key>public.kern2.cyr_che.sc</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_d.sc</key>
-      <integer>-25</integer>
+      <integer>-10</integer>
       <key>public.kern2.cyr_ia.sc</key>
       <integer>-10</integer>
       <key>public.kern2.t.sc</key>
@@ -6938,6 +6931,8 @@
       <integer>-70</integer>
       <key>public.kern2.zero</key>
       <integer>-10</integer>
+      <key>six</key>
+      <integer>-60</integer>
       <key>six.alt</key>
       <integer>-30</integer>
     </dict>
@@ -7115,6 +7110,8 @@
       <integer>-50</integer>
       <key>public.kern2.zero</key>
       <integer>-20</integer>
+      <key>six</key>
+      <integer>-40</integer>
     </dict>
     <key>public.kern1.space</key>
     <dict>
@@ -7236,19 +7233,19 @@
       <key>public.kern2.a.sc</key>
       <integer>-65</integer>
       <key>public.kern2.cyr-ze.sc</key>
-      <integer>-15</integer>
+      <integer>-25</integer>
       <key>public.kern2.cyr_D</key>
       <integer>-69</integer>
       <key>public.kern2.cyr_Ia</key>
       <integer>-9</integer>
       <key>public.kern2.cyr_d.sc</key>
-      <integer>-60</integer>
+      <integer>-45</integer>
       <key>public.kern2.cyr_f.sc</key>
       <integer>-25</integer>
       <key>public.kern2.cyr_ia.sc</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_l.sc</key>
-      <integer>-45</integer>
+      <integer>-39</integer>
       <key>public.kern2.j.sc</key>
       <integer>-110</integer>
       <key>public.kern2.o.sc</key>
@@ -7291,13 +7288,13 @@
     <key>public.kern1.u-cy.sc</key>
     <dict>
       <key>public.kern2.a.sc</key>
-      <integer>-50</integer>
+      <integer>-65</integer>
       <key>public.kern2.cyr-ze.sc</key>
-      <integer>-20</integer>
+      <integer>-45</integer>
       <key>public.kern2.cyr_d.sc</key>
-      <integer>-60</integer>
+      <integer>-55</integer>
       <key>public.kern2.cyr_f.sc</key>
-      <integer>-25</integer>
+      <integer>-30</integer>
       <key>public.kern2.cyr_ia.sc</key>
       <integer>-25</integer>
       <key>public.kern2.cyr_l.sc</key>
@@ -7305,9 +7302,9 @@
       <key>public.kern2.guillemotleft</key>
       <integer>-25</integer>
       <key>public.kern2.j.sc</key>
-      <integer>-60</integer>
+      <integer>-80</integer>
       <key>public.kern2.o.sc</key>
-      <integer>-5</integer>
+      <integer>-15</integer>
       <key>public.kern2.period</key>
       <integer>-25</integer>
     </dict>
@@ -7342,15 +7339,11 @@
       <key>public.kern2.a</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_de</key>
-      <integer>-20</integer>
-      <key>public.kern2.cyr_e</key>
-      <integer>-10</integer>
+      <integer>-25</integer>
       <key>public.kern2.cyr_ia</key>
-      <integer>-10</integer>
+      <integer>-25</integer>
       <key>public.kern2.cyr_l</key>
-      <integer>-20</integer>
-      <key>public.kern2.cyr_z</key>
-      <integer>-10</integer>
+      <integer>-30</integer>
       <key>public.kern2.g</key>
       <integer>-15</integer>
       <key>public.kern2.mark.low</key>
@@ -7436,9 +7429,7 @@
       <key>public.kern2.a</key>
       <integer>-10</integer>
       <key>public.kern2.cyr_b</key>
-      <integer>-10</integer>
-      <key>public.kern2.cyr_gBGR</key>
-      <integer>-10</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_z</key>
       <integer>-10</integer>
       <key>public.kern2.g</key>
@@ -7484,19 +7475,19 @@
       <key>public.kern2.a</key>
       <integer>-25</integer>
       <key>public.kern2.cyr_b</key>
-      <integer>-10</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_de</key>
       <integer>-40</integer>
       <key>public.kern2.cyr_e</key>
-      <integer>-15</integer>
+      <integer>-5</integer>
       <key>public.kern2.cyr_gBGR</key>
-      <integer>-20</integer>
+      <integer>-15</integer>
       <key>public.kern2.cyr_ia</key>
-      <integer>-30</integer>
+      <integer>-20</integer>
       <key>public.kern2.cyr_l</key>
-      <integer>-35</integer>
+      <integer>-30</integer>
       <key>public.kern2.cyr_lBGR</key>
-      <integer>-35</integer>
+      <integer>-40</integer>
       <key>public.kern2.cyr_z</key>
       <integer>-10</integer>
       <key>public.kern2.g</key>
@@ -7615,7 +7606,7 @@
       <key>public.kern2.maqaf-hb</key>
       <integer>40</integer>
       <key>public.kern2.mem-hb</key>
-      <integer>-30</integer>
+      <integer>-20</integer>
       <key>public.kern2.yod-hb</key>
       <integer>20</integer>
       <key>public.kern2.zayin-hb</key>
@@ -7728,11 +7719,6 @@
       <key>six.cap</key>
       <integer>-10</integer>
     </dict>
-    <key>s.sc.ss04</key>
-    <dict>
-      <key>t.sc.ss04</key>
-      <integer>-20</integer>
-    </dict>
     <key>seven.denominator</key>
     <dict>
       <key>four.denominator</key>
@@ -7749,15 +7735,51 @@
     </dict>
     <key>six</key>
     <dict>
+      <key>backslash</key>
+      <integer>-38</integer>
+      <key>five.numerator</key>
+      <integer>-10</integer>
+      <key>nine.numerator</key>
+      <integer>-10</integer>
+      <key>one</key>
+      <integer>-30</integer>
+      <key>onequarter</key>
+      <integer>-10</integer>
       <key>public.kern2.GRK_Psi</key>
       <integer>-30</integer>
       <key>public.kern2.GRK_Tau</key>
       <integer>-10</integer>
       <key>public.kern2.GRK_Upsilon</key>
       <integer>-30</integer>
+      <key>public.kern2.T</key>
+      <integer>-10</integer>
+      <key>public.kern2.V</key>
+      <integer>-20</integer>
+      <key>public.kern2.W</key>
+      <integer>-10</integer>
+      <key>public.kern2.Y</key>
+      <integer>-30</integer>
+      <key>public.kern2.fournum</key>
+      <integer>-10</integer>
+      <key>public.kern2.one.superior</key>
+      <integer>-20</integer>
+      <key>public.kern2.percent</key>
+      <integer>-20</integer>
+      <key>public.kern2.quoteleft</key>
+      <integer>-40</integer>
+      <key>public.kern2.seven</key>
+      <integer>-10</integer>
+      <key>six.numerator</key>
+      <integer>-10</integer>
+      <key>threeeighths</key>
+      <integer>-10</integer>
+      <key>zero.numerator</key>
+      <integer>-20</integer>
     </dict>
     <key>six.alt</key>
     <dict>
+      <key>nine</key>
+      <integer>-10</integer>
       <key>one</key>
       <integer>-20</integer>
       <key>public.kern2.GRK_Psi</key>
@@ -7857,7 +7879,7 @@
       <key>j.sc.ss04</key>
       <integer>-60</integer>
       <key>public.kern2.o.sc.ss04</key>
-      <integer>-20</integer>
+      <integer>-16</integer>
     </dict>
     <key>thorn.sc</key>
     <dict>
@@ -7950,7 +7972,7 @@
     <key>ustraightstroke-cy</key>
     <dict>
       <key>public.kern2.cyr_l</key>
-      <integer>-10</integer>
+      <integer>-20</integer>
     </dict>
     <key>v.sc.ss04</key>
     <dict>
@@ -7979,9 +8001,7 @@
     <key>w.sc.ss04</key>
     <dict>
       <key>a.sc.ss04</key>
-      <integer>-40</integer>
-      <key>public.kern2.o.sc.ss04</key>
-      <integer>-10</integer>
+      <integer>-20</integer>
     </dict>
     <key>won.cap</key>
     <dict>
@@ -8003,9 +8023,7 @@
     <key>x.sc.ss04</key>
     <dict>
       <key>public.kern2.o.sc.ss04</key>
-      <integer>-20</integer>
-      <key>s.sc.ss04</key>
-      <integer>-10</integer>
+      <integer>-30</integer>
     </dict>
     <key>y.sc.ss04</key>
     <dict>

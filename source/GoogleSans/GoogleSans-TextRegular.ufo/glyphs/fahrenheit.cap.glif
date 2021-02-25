@@ -2,45 +2,7 @@
 <glyph name="fahrenheit.cap" format="2">
   <advance width="872"/>
   <outline>
-    <contour>
-      <point x="404" y="0" type="line"/>
-      <point x="489" y="0" type="line"/>
-      <point x="489" y="310" type="line"/>
-      <point x="805" y="310" type="line"/>
-      <point x="805" y="390" type="line"/>
-      <point x="489" y="390" type="line"/>
-      <point x="489" y="635" type="line"/>
-      <point x="835" y="635" type="line"/>
-      <point x="835" y="716" type="line"/>
-      <point x="404" y="716" type="line"/>
-    </contour>
-    <contour>
-      <point x="172" y="466" type="curve" smooth="yes"/>
-      <point x="250" y="466"/>
-      <point x="304" y="523"/>
-      <point x="304" y="599" type="curve" smooth="yes"/>
-      <point x="304" y="675"/>
-      <point x="250" y="732"/>
-      <point x="172" y="732" type="curve" smooth="yes"/>
-      <point x="94" y="732"/>
-      <point x="38" y="675"/>
-      <point x="38" y="599" type="curve" smooth="yes"/>
-      <point x="38" y="523"/>
-      <point x="94" y="466"/>
-    </contour>
-    <contour>
-      <point x="172" y="525" type="curve" smooth="yes"/>
-      <point x="129" y="525"/>
-      <point x="101" y="555"/>
-      <point x="101" y="599" type="curve" smooth="yes"/>
-      <point x="101" y="643"/>
-      <point x="129" y="673"/>
-      <point x="172" y="673" type="curve" smooth="yes"/>
-      <point x="215" y="673"/>
-      <point x="241" y="643"/>
-      <point x="241" y="599" type="curve" smooth="yes"/>
-      <point x="241" y="555"/>
-      <point x="215" y="525"/>
-    </contour>
+    <component base="degree"/>
+    <component base="F" xOffset="320"/>
   </outline>
 </glyph>

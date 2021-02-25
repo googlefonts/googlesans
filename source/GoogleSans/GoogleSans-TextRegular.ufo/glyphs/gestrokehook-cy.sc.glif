@@ -2,30 +2,12 @@
 <glyph name="gestrokehook-cy.sc" format="2">
   <advance width="472"/>
   <outline>
-    <contour>
-      <point x="101" y="-123" type="line"/>
-      <point x="188" y="-123" type="line"/>
-      <point x="259" y="79" type="line"/>
-      <point x="165" y="79" type="line"/>
-      <point x="165" y="251" type="line"/>
-      <point x="325" y="251" type="line"/>
-      <point x="325" y="316" type="line"/>
-      <point x="165" y="316" type="line"/>
-      <point x="165" y="502" type="line"/>
-      <point x="442" y="502" type="line"/>
-      <point x="442" y="580" type="line"/>
-      <point x="80" y="580" type="line"/>
-      <point x="80" y="316" type="line"/>
-      <point x="18" y="316" type="line"/>
-      <point x="18" y="251" type="line"/>
-      <point x="80" y="251" type="line"/>
-      <point x="80" y="0" type="line"/>
-      <point x="144" y="0" type="line"/>
-    </contour>
+    <component base="ghestroke-cy.sc" xOffset="-4"/>
+    <component base="tailsc-cy" xOffset="-374"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>ge-cy.sc</string>
     </dict>
   </lib>

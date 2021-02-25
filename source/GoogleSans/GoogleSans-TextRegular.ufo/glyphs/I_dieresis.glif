@@ -7,39 +7,7 @@
   <anchor x="126" y="939" name="top"/>
   <anchor x="21" y="716" name="topleft"/>
   <outline>
-    <contour>
-      <point x="84" y="0" type="line"/>
-      <point x="169" y="0" type="line"/>
-      <point x="169" y="716" type="line"/>
-      <point x="84" y="716" type="line"/>
-    </contour>
-    <contour>
-      <point x="46" y="832" type="curve"/>
-      <point x="77" y="832"/>
-      <point x="99" y="857"/>
-      <point x="99" y="886" type="curve" smooth="yes"/>
-      <point x="99" y="917"/>
-      <point x="77" y="939"/>
-      <point x="46" y="939" type="curve" smooth="yes"/>
-      <point x="17" y="939"/>
-      <point x="-8" y="917"/>
-      <point x="-8" y="886" type="curve" smooth="yes"/>
-      <point x="-8" y="857"/>
-      <point x="17" y="832"/>
-    </contour>
-    <contour>
-      <point x="206" y="832" type="curve" smooth="yes"/>
-      <point x="237" y="832"/>
-      <point x="260" y="857"/>
-      <point x="260" y="886" type="curve" smooth="yes"/>
-      <point x="260" y="917"/>
-      <point x="237" y="939"/>
-      <point x="206" y="939" type="curve" smooth="yes"/>
-      <point x="178" y="939"/>
-      <point x="152" y="917"/>
-      <point x="152" y="886" type="curve" smooth="yes"/>
-      <point x="152" y="857"/>
-      <point x="178" y="832"/>
-    </contour>
+    <component base="I"/>
+    <component base="dieresis-Ukraine" yOffset="41"/>
   </outline>
 </glyph>

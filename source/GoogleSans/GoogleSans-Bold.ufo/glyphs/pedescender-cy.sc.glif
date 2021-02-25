@@ -2,30 +2,14 @@
 <glyph name="pedescender-cy.sc" format="2">
   <advance width="669"/>
   <outline>
-    <contour>
-      <point x="76" y="0" type="line"/>
-      <point x="207" y="0" type="line"/>
-      <point x="207" y="458" type="line"/>
-      <point x="436" y="458" type="line"/>
-      <point x="436" y="0" type="line"/>
-      <point x="567" y="0" type="line"/>
-      <point x="567" y="580" type="line"/>
-      <point x="76" y="580" type="line"/>
-    </contour>
-    <contour>
-      <point x="507" y="-123" type="line"/>
-      <point x="631" y="-123" type="line"/>
-      <point x="631" y="122" type="line"/>
-      <point x="555" y="122" type="line"/>
-      <point x="436" y="0" type="line"/>
-      <point x="507" y="0" type="line"/>
-    </contour>
+    <component base="pe-cy.sc"/>
+    <component base="descender1sc-cy" xOffset="389"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>h.sc</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>tse-cy.sc</string>
     </dict>
   </lib>

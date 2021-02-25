@@ -3,52 +3,16 @@
   <advance width="1549"/>
   <unicode hex="2167"/>
   <outline>
-    <contour>
-      <point x="24" y="0" type="line"/>
-      <point x="1525" y="0" type="line"/>
-      <point x="1525" y="119" type="line"/>
-      <point x="1371" y="119" type="line"/>
-      <point x="1371" y="565" type="line"/>
-      <point x="1525" y="565" type="line"/>
-      <point x="1525" y="684" type="line"/>
-      <point x="24" y="684" type="line"/>
-      <point x="24" y="565" type="line"/>
-      <point x="149" y="565" type="line"/>
-      <point x="291" y="119" type="line"/>
-      <point x="24" y="119" type="line"/>
-    </contour>
-    <contour>
-      <point x="388" y="190" type="line"/>
-      <point x="369" y="275" type="line"/>
-      <point x="285" y="565" type="line"/>
-      <point x="500" y="565" type="line"/>
-      <point x="415" y="275" type="line"/>
-      <point x="396" y="190" type="line"/>
-    </contour>
-    <contour>
-      <point x="493" y="119" type="line"/>
-      <point x="636" y="565" type="line"/>
-      <point x="720" y="565" type="line"/>
-      <point x="720" y="119" type="line"/>
-    </contour>
-    <contour>
-      <point x="851" y="119" type="line"/>
-      <point x="851" y="565" type="line"/>
-      <point x="980" y="565" type="line"/>
-      <point x="980" y="119" type="line"/>
-    </contour>
-    <contour>
-      <point x="1111" y="119" type="line"/>
-      <point x="1111" y="565" type="line"/>
-      <point x="1240" y="565" type="line"/>
-      <point x="1240" y="119" type="line"/>
-    </contour>
+    <component base="Five-roman"/>
+    <component base="One-roman" xOffset="544"/>
+    <component base="One-roman" xOffset="803"/>
+    <component base="One-roman" xOffset="1062"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>One-roman</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>One-roman</string>
     </dict>
   </lib>

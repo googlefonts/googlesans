@@ -4,24 +4,14 @@
   <unicode hex="04F6"/>
   <guideline x="602" y="-152" angle="180"/>
   <outline>
-    <contour>
-      <point x="95" y="-152" type="line"/>
-      <point x="224" y="-152" type="line"/>
-      <point x="273" y="128" type="line"/>
-      <point x="193" y="128" type="line"/>
-      <point x="274" y="588" type="line"/>
-      <point x="577" y="588" type="line"/>
-      <point x="600" y="716" type="line"/>
-      <point x="162" y="716" type="line"/>
-      <point x="36" y="0" type="line"/>
-      <point x="122" y="0" type="line"/>
-    </contour>
+    <component base="Ge-cy"/>
+    <component base="descender-cy" xOffset="-642"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>En-cy</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>Ge-cy</string>
     </dict>
   </lib>

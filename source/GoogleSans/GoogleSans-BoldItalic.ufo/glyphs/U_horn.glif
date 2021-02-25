@@ -2,46 +2,8 @@
 <glyph name="Uhorn" format="2">
   <advance width="734"/>
   <unicode hex="01AF"/>
-  <anchor x="301" y="0" name="bottom"/>
-  <anchor x="419" y="0" name="ogonek"/>
-  <anchor x="422" y="716" name="top"/>
-  <anchor x="707" y="716" name="topright"/>
   <outline>
-    <contour>
-      <point x="308" y="-16" type="curve" smooth="yes"/>
-      <point x="478" y="-16"/>
-      <point x="594" y="76"/>
-      <point x="628" y="269" type="curve" smooth="yes"/>
-      <point x="690" y="622" type="line"/>
-      <point x="701" y="622" type="line" smooth="yes"/>
-      <point x="804" y="622"/>
-      <point x="843" y="661"/>
-      <point x="860" y="756" type="curve" smooth="yes"/>
-      <point x="874" y="834" type="line"/>
-      <point x="776" y="834" type="line"/>
-      <point x="761" y="753" type="line" smooth="yes"/>
-      <point x="756" y="728"/>
-      <point x="743" y="716"/>
-      <point x="718" y="716" type="curve" smooth="yes"/>
-      <point x="572" y="716" type="line"/>
-      <point x="495" y="277" type="line" smooth="yes"/>
-      <point x="477" y="178"/>
-      <point x="417" y="112"/>
-      <point x="326" y="112" type="curve" smooth="yes"/>
-      <point x="242" y="112"/>
-      <point x="204" y="161"/>
-      <point x="204" y="234" type="curve" smooth="yes"/>
-      <point x="204" y="248"/>
-      <point x="205" y="262"/>
-      <point x="208" y="281" type="curve" smooth="yes"/>
-      <point x="285" y="716" type="line"/>
-      <point x="150" y="716" type="line"/>
-      <point x="78" y="304" type="line" smooth="yes"/>
-      <point x="71" y="267"/>
-      <point x="69" y="240"/>
-      <point x="69" y="220" type="curve" smooth="yes"/>
-      <point x="69" y="78"/>
-      <point x="167" y="-16"/>
-    </contour>
+    <component base="U"/>
+    <component base="U-horn" xOffset="662"/>
   </outline>
 </glyph>

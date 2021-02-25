@@ -2,7 +2,6 @@
 <glyph name="semicolon" format="2">
   <advance width="246"/>
   <unicode hex="003B"/>
-  <guideline x="189" y="298" angle="90"/>
   <outline>
     <contour>
       <point x="119" y="388" type="curve" smooth="yes"/>
@@ -18,6 +17,11 @@
       <point x="55" y="416"/>
       <point x="83" y="388"/>
     </contour>
-    <component base="comma"/>
+    <contour>
+      <point x="8" y="-98" type="line"/>
+      <point x="82" y="-98" type="line"/>
+      <point x="183" y="122" type="line"/>
+      <point x="83" y="122" type="line"/>
+    </contour>
   </outline>
 </glyph>

@@ -3,21 +3,14 @@
   <advance width="638"/>
   <unicode hex="04C6"/>
   <outline>
-    <contour>
-      <point x="413" y="-152" type="line"/>
-      <point x="538" y="-152" type="line"/>
-      <point x="628" y="112" type="line"/>
-      <point x="398" y="112" type="line"/>
-      <point x="398" y="0" type="line"/>
-      <point x="464" y="0" type="line"/>
-    </contour>
     <component base="el-cy"/>
+    <component base="taillc-cy" xOffset="-30"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>el-cy</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>entail-cy</string>
     </dict>
   </lib>

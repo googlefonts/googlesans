@@ -2,30 +2,12 @@
 <glyph name="kadescender-cy.sc" format="2">
   <advance width="603"/>
   <outline>
-    <contour>
-      <point x="476" y="-123" type="line"/>
-      <point x="601" y="-123" type="line"/>
-      <point x="601" y="122" type="line"/>
-      <point x="494" y="122" type="line"/>
-      <point x="347" y="290" type="line"/>
-      <point x="577" y="572" type="line"/>
-      <point x="577" y="580" type="line"/>
-      <point x="418" y="580" type="line"/>
-      <point x="215" y="316" type="line"/>
-      <point x="207" y="316" type="line"/>
-      <point x="207" y="580" type="line"/>
-      <point x="76" y="580" type="line"/>
-      <point x="76" y="0" type="line"/>
-      <point x="207" y="0" type="line"/>
-      <point x="207" y="251" type="line"/>
-      <point x="215" y="251" type="line"/>
-      <point x="431" y="0" type="line"/>
-      <point x="476" y="0" type="line"/>
-    </contour>
+    <component base="ka-cy.sc"/>
+    <component base="descender1sc-cy" xOffset="359"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>en-cy.sc</string>
     </dict>
   </lib>

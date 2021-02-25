@@ -2,26 +2,12 @@
 <glyph name="ghestroke-cy.sc" format="2">
   <advance width="476"/>
   <outline>
-    <contour>
-      <point x="84" y="0" type="line"/>
-      <point x="169" y="0" type="line"/>
-      <point x="169" y="251" type="line"/>
-      <point x="329" y="251" type="line"/>
-      <point x="329" y="316" type="line"/>
-      <point x="169" y="316" type="line"/>
-      <point x="169" y="502" type="line"/>
-      <point x="446" y="502" type="line"/>
-      <point x="446" y="580" type="line"/>
-      <point x="84" y="580" type="line"/>
-      <point x="84" y="316" type="line"/>
-      <point x="22" y="316" type="line"/>
-      <point x="22" y="251" type="line"/>
-      <point x="84" y="251" type="line"/>
-    </contour>
+    <component base="ge-cy.sc" xOffset="11"/>
+    <component base="ghe-stroke-cy.sc" xOffset="3"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>ge-cy.sc</string>
     </dict>
   </lib>

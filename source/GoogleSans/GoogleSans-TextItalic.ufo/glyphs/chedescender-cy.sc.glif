@@ -2,21 +2,14 @@
 <glyph name="chedescender-cy.sc" format="2">
   <advance width="567"/>
   <outline>
-    <contour>
-      <point x="382" y="-123" type="line"/>
-      <point x="465" y="-123" type="line"/>
-      <point x="501" y="79" type="line"/>
-      <point x="397" y="79" type="line"/>
-      <point x="328" y="0" type="line"/>
-      <point x="404" y="0" type="line"/>
-    </contour>
     <component base="che-cy.sc"/>
+    <component base="descender1sc-cy" xOffset="73"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>che-cy.sc</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>tse-cy.sc</string>
     </dict>
   </lib>

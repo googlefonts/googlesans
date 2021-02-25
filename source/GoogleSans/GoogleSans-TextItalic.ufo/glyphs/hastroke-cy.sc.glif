@@ -1,37 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="hastroke-cy.sc" format="2">
   <advance width="549"/>
-  <anchor x="229" y="0" name="bottom"/>
-  <anchor x="331" y="580" name="top"/>
   <outline>
-    <contour>
-      <point x="-23" y="0" type="line"/>
-      <point x="74" y="0" type="line"/>
-      <point x="269" y="234" type="line"/>
-      <point x="273" y="234" type="line"/>
-      <point x="391" y="0" type="line"/>
-      <point x="480" y="0" type="line"/>
-      <point x="327" y="301" type="line"/>
-      <point x="571" y="580" type="line"/>
-      <point x="473" y="580" type="line"/>
-      <point x="297" y="367" type="line"/>
-      <point x="293" y="367" type="line"/>
-      <point x="184" y="580" type="line"/>
-      <point x="91" y="580" type="line"/>
-      <point x="239" y="307" type="line"/>
-    </contour>
-    <contour>
-      <point x="121" y="270" type="line"/>
-      <point x="434" y="270" type="line"/>
-      <point x="446" y="333" type="line"/>
-      <point x="133" y="333" type="line"/>
-    </contour>
+    <component base="x.sc"/>
+    <component base="hastroke.sc"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>ha-cy.sc</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>ha-cy.sc</string>
     </dict>
   </lib>

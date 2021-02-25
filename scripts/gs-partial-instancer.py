@@ -52,9 +52,10 @@ def main():
 
         vf_full = TTFont(fontpath)
         pre_axis_tags = [a.axisTag for a in vf_full["fvar"].axes]
-        assert len(pre_axis_tags) == 2
+        # assert len(pre_axis_tags) == 2
         assert "opsz" in pre_axis_tags
         assert "wght" in pre_axis_tags
+        assert "GRAD" in pre_axis_tags
 
         # =================================================
         # BUILD partial instance of min optical size design
@@ -81,7 +82,7 @@ def main():
         # definitions
         for vf_partial in (vf_partial_min_opsz, vf_partial_max_opsz):
             post_axis_tags = [a.axisTag for a in vf_partial["fvar"].axes]
-            assert len(post_axis_tags) == 1
+            # assert len(post_axis_tags) == 1
             assert "wght" in post_axis_tags
 
         # ========================================

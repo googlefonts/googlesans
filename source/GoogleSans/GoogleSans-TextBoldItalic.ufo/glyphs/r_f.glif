@@ -1,13 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="r_f" format="2">
   <advance width="832"/>
-  <anchor x="92" y="0" name="bottom_1"/>
-  <anchor x="558" y="0" name="bottom_2"/>
   <anchor x="325" y="0" name="caret_1"/>
-  <anchor x="286" y="526" name="top_1"/>
-  <anchor x="746" y="734" name="top_2"/>
   <outline>
-    <component base="r.alt"/>
+    <component base="rlig"/>
     <component base="f" xOffset="428"/>
   </outline>
   <lib>
@@ -23,9 +19,9 @@
           <string>f</string>
         </dict>
       </array>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>r</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>f</string>
     </dict>
   </lib>

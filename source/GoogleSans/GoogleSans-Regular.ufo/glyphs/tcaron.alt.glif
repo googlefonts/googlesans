@@ -2,23 +2,16 @@
 <glyph name="tcaron.alt" format="2">
   <advance width="354"/>
   <anchor x="176" y="0" name="bottom"/>
-  <anchor x="199" y="255" name="center"/>
-  <anchor x="218" y="654" name="top"/>
-  <anchor x="285" y="510" name="topright"/>
+  <anchor x="179" y="255" name="center"/>
+  <anchor x="180" y="655" name="top"/>
+  <anchor x="283" y="511" name="topright"/>
   <outline>
-    <contour>
-      <point x="271" y="574" type="line"/>
-      <point x="330" y="574" type="line"/>
-      <point x="356" y="716" type="line"/>
-      <point x="271" y="716" type="line"/>
-    </contour>
     <component base="t.alt"/>
+    <component base="t-caron"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
-      <string>t.alt</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.widthMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>t.alt</string>
     </dict>
   </lib>

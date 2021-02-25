@@ -11,46 +11,14 @@
   <anchor x="363" y="526" name="topright_1"/>
   <anchor x="714" y="526" name="topright_2"/>
   <outline>
-    <contour>
-      <point x="130" y="0" type="line"/>
-      <point x="261" y="0" type="line"/>
-      <point x="261" y="414" type="line"/>
-      <point x="481" y="414" type="line"/>
-      <point x="481" y="0" type="line"/>
-      <point x="612" y="0" type="line"/>
-      <point x="612" y="414" type="line"/>
-      <point x="732" y="414" type="line"/>
-      <point x="732" y="526" type="line"/>
-      <point x="612" y="526" type="line"/>
-      <point x="612" y="599" type="line" smooth="yes"/>
-      <point x="612" y="643"/>
-      <point x="639" y="670"/>
-      <point x="681" y="670" type="curve" smooth="yes"/>
-      <point x="707" y="670"/>
-      <point x="728" y="663"/>
-      <point x="745" y="655" type="curve"/>
-      <point x="745" y="781" type="line"/>
-      <point x="727" y="787"/>
-      <point x="696" y="792"/>
-      <point x="664" y="792" type="curve" smooth="yes"/>
-      <point x="558" y="792"/>
-      <point x="481" y="726"/>
-      <point x="481" y="607" type="curve" smooth="yes"/>
-      <point x="481" y="526" type="line"/>
-      <point x="261" y="526" type="line"/>
-      <point x="261" y="670" type="line"/>
-      <point x="130" y="670" type="line"/>
-      <point x="130" y="526" type="line"/>
-      <point x="28" y="526" type="line"/>
-      <point x="28" y="414" type="line"/>
-      <point x="130" y="414" type="line"/>
-    </contour>
+    <component base="t-lig"/>
+    <component base="f" xOffset="364"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>t.alt</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>f</string>
     </dict>
   </lib>

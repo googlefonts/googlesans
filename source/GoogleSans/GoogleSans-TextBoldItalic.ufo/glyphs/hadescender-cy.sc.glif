@@ -2,34 +2,12 @@
 <glyph name="hadescender-cy.sc" format="2">
   <advance width="624"/>
   <outline>
-    <contour>
-      <point x="-22" y="0" type="line"/>
-      <point x="149" y="0" type="line"/>
-      <point x="304" y="187" type="line"/>
-      <point x="312" y="187" type="line"/>
-      <point x="406" y="0" type="line"/>
-      <point x="561" y="0" type="line"/>
-      <point x="413" y="296" type="line"/>
-      <point x="650" y="580" type="line"/>
-      <point x="482" y="580" type="line"/>
-      <point x="343" y="412" type="line"/>
-      <point x="335" y="412" type="line"/>
-      <point x="251" y="580" type="line"/>
-      <point x="94" y="580" type="line"/>
-      <point x="237" y="308" type="line"/>
-    </contour>
-    <contour>
-      <point x="425" y="-123" type="line"/>
-      <point x="549" y="-123" type="line"/>
-      <point x="593" y="122" type="line"/>
-      <point x="478" y="122" type="line"/>
-      <point x="417" y="0" type="line"/>
-      <point x="447" y="0" type="line"/>
-    </contour>
+    <component base="x.sc"/>
+    <component base="descender1sc-cy" xOffset="147"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>x.sc</string>
     </dict>
   </lib>

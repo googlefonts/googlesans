@@ -3,13 +3,18 @@
   <advance width="440"/>
   <unicode hex="0375"/>
   <outline>
-    <component base="quoteright.alt" xScale="-1" yScale="-1" xOffset="382" yOffset="618"/>
+    <contour>
+      <point x="343" y="111" type="line"/>
+      <point x="272" y="111" type="line"/>
+      <point x="155" y="-98" type="line"/>
+      <point x="261" y="-98" type="line"/>
+    </contour>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>=acute</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>=acute</string>
     </dict>
   </lib>

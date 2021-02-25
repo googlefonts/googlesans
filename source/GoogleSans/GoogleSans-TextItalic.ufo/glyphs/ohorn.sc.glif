@@ -1,56 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ohorn.sc" format="2">
   <advance width="635"/>
-  <anchor x="287" y="0" name="bottom"/>
-  <anchor x="323" y="290" name="center"/>
-  <anchor x="346" y="0" name="ogonek"/>
-  <anchor x="362" y="580" name="top"/>
-  <anchor x="73" y="580" name="topleft"/>
-  <anchor x="475" y="688" name="topright"/>
   <outline>
-    <contour>
-      <point x="287" y="-16" type="curve" smooth="yes"/>
-      <point x="477" y="-16"/>
-      <point x="601" y="146"/>
-      <point x="601" y="335" type="curve" smooth="yes"/>
-      <point x="601" y="406"/>
-      <point x="578" y="476"/>
-      <point x="532" y="520" type="curve"/>
-      <point x="532" y="525" type="line"/>
-      <point x="548" y="519"/>
-      <point x="569" y="516"/>
-      <point x="583" y="516" type="curve" smooth="yes"/>
-      <point x="660" y="516"/>
-      <point x="686" y="544"/>
-      <point x="698" y="614" type="curve" smooth="yes"/>
-      <point x="711" y="688" type="line"/>
-      <point x="643" y="688" type="line"/>
-      <point x="631" y="620" type="line" smooth="yes"/>
-      <point x="626" y="592"/>
-      <point x="612" y="580"/>
-      <point x="573" y="580" type="curve" smooth="yes"/>
-      <point x="488" y="580"/>
-      <point x="429" y="596"/>
-      <point x="359" y="596" type="curve" smooth="yes"/>
-      <point x="162" y="596"/>
-      <point x="44" y="435"/>
-      <point x="44" y="246" type="curve" smooth="yes"/>
-      <point x="44" y="85"/>
-      <point x="149" y="-16"/>
-    </contour>
-    <contour>
-      <point x="297" y="63" type="curve" smooth="yes"/>
-      <point x="196" y="63"/>
-      <point x="129" y="134"/>
-      <point x="129" y="252" type="curve" smooth="yes"/>
-      <point x="129" y="392"/>
-      <point x="209" y="517"/>
-      <point x="349" y="517" type="curve" smooth="yes"/>
-      <point x="450" y="517"/>
-      <point x="517" y="445"/>
-      <point x="517" y="328" type="curve" smooth="yes"/>
-      <point x="517" y="181"/>
-      <point x="437" y="63"/>
-    </contour>
+    <component base="o.sc"/>
+    <component base="o-horn.sc" xOffset="-15"/>
   </outline>
 </glyph>

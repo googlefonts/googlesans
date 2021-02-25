@@ -2,19 +2,14 @@
 <glyph name="theta.sc" format="2">
   <advance width="670"/>
   <outline>
-    <contour>
-      <point x="226" y="234" type="line"/>
-      <point x="435" y="234" type="line"/>
-      <point x="455" y="346" type="line"/>
-      <point x="246" y="346" type="line"/>
-    </contour>
     <component base="o.sc"/>
+    <component base="thetabar.sc"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>=o.sc</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>=o.sc</string>
     </dict>
   </lib>

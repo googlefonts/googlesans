@@ -2,7 +2,7 @@
 <glyph name="fahrenheit.cap" format="2">
   <advance width="860"/>
   <outline>
-    <component base="degree.cap"/>
+    <component base="degree" xOffset="5" yOffset="30"/>
     <component base="F" xOffset="287"/>
   </outline>
   <lib>
@@ -18,7 +18,7 @@
           <string>F</string>
         </dict>
       </array>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>F</string>
     </dict>
   </lib>

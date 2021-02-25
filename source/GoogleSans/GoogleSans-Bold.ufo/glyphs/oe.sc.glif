@@ -13,10 +13,6 @@
       <point x="918" y="0" type="line"/>
       <point x="918" y="122" type="line"/>
       <point x="647" y="122" type="line"/>
-      <point x="647" y="229" type="line"/>
-      <point x="891" y="229" type="line"/>
-      <point x="891" y="351" type="line"/>
-      <point x="647" y="351" type="line"/>
       <point x="647" y="458" type="line"/>
       <point x="918" y="458" type="line"/>
       <point x="918" y="580" type="line"/>
@@ -30,6 +26,12 @@
       <point x="42" y="290" type="curve" smooth="yes"/>
       <point x="42" y="120"/>
       <point x="169" y="-16"/>
+    </contour>
+    <contour>
+      <point x="597" y="229" type="line"/>
+      <point x="891" y="229" type="line"/>
+      <point x="891" y="351" type="line"/>
+      <point x="597" y="351" type="line"/>
     </contour>
     <contour>
       <point x="344" y="109" type="curve" smooth="yes"/>
@@ -48,9 +50,9 @@
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>o.sc</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>e.sc</string>
     </dict>
   </lib>

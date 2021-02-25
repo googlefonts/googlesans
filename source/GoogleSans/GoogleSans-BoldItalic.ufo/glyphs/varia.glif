@@ -3,13 +3,18 @@
   <advance width="511"/>
   <unicode hex="1FEF"/>
   <outline>
-    <component base="tonos" xScale="-1" xOffset="635"/>
+    <contour>
+      <point x="440" y="608" type="line"/>
+      <point x="370" y="774" type="line"/>
+      <point x="207" y="774" type="line"/>
+      <point x="325" y="608" type="line"/>
+    </contour>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>=|tonos</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>=|tonos</string>
     </dict>
   </lib>

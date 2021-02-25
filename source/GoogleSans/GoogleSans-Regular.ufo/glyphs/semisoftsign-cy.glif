@@ -12,21 +12,8 @@
       <point x="463" y="260"/>
       <point x="387" y="331"/>
       <point x="286" y="331" type="curve" smooth="yes"/>
-      <point x="173" y="331" type="line"/>
-      <point x="173" y="558" type="line"/>
-      <point x="308" y="558" type="line"/>
-      <point x="308" y="625" type="line"/>
-      <point x="173" y="625" type="line"/>
-      <point x="173" y="716" type="line"/>
-      <point x="88" y="716" type="line"/>
-      <point x="88" y="625" type="line"/>
-      <point x="-1" y="625" type="line"/>
-      <point x="-1" y="558" type="line"/>
-      <point x="88" y="558" type="line"/>
-    </contour>
-    <contour>
-      <point x="173" y="77" type="line"/>
-      <point x="173" y="254" type="line"/>
+      <point x="133" y="331" type="line"/>
+      <point x="133" y="254" type="line"/>
       <point x="284" y="254" type="line" smooth="yes"/>
       <point x="337" y="254"/>
       <point x="378" y="215"/>
@@ -34,13 +21,22 @@
       <point x="378" y="115"/>
       <point x="337" y="77"/>
       <point x="284" y="77" type="curve" smooth="yes"/>
+      <point x="173" y="77" type="line"/>
+      <point x="173" y="716" type="line"/>
+      <point x="88" y="716" type="line"/>
+    </contour>
+    <contour>
+      <point x="-1" y="625" type="line"/>
+      <point x="-1" y="558" type="line"/>
+      <point x="308" y="558" type="line"/>
+      <point x="308" y="625" type="line"/>
     </contour>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>hbar</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>softsign-cy</string>
     </dict>
   </lib>

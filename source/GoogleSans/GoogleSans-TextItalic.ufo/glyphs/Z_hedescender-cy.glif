@@ -3,21 +3,14 @@
   <advance width="925"/>
   <unicode hex="0496"/>
   <outline>
-    <contour>
-      <point x="755" y="-152" type="line"/>
-      <point x="840" y="-152" type="line"/>
-      <point x="881" y="81" type="line"/>
-      <point x="747" y="81" type="line"/>
-      <point x="733" y="0" type="line"/>
-      <point x="782" y="0" type="line"/>
-    </contour>
     <component base="Zhe-cy"/>
+    <component base="descender-cy" xOffset="6"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
       <string>Zhe-cy</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
       <string>Kadescender-cy</string>
     </dict>
   </lib>
