@@ -76,9 +76,9 @@ ITALIC_AXES = [
     ),
 ]
 
-VARIABLE_DIR = "../build/GoogleSans/variable/expert"
-GS_UPRIGHT = f"{VARIABLE_DIR}/GoogleSans[opsz,wght].ttf"
-GS_ITALIC = f"{VARIABLE_DIR}/GoogleSans-Italic[opsz,wght].ttf"
+VARIABLE_DIR = "../build/GoogleSans/variable"
+GS_UPRIGHT = f"{VARIABLE_DIR}/GoogleSans[GRAD,opsz,wght].ttf"
+GS_ITALIC = f"{VARIABLE_DIR}/GoogleSans-Italic[GRAD,opsz,wght].ttf"
 
 
 def main():

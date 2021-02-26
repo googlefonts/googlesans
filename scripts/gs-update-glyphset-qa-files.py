@@ -3,20 +3,20 @@ from pathlib import Path
 from fontTools.ttLib import TTFont
 
 for font_path in (
-    "build/GoogleSans/static/expert/GoogleSans-Bold.ttf",
-    "build/GoogleSans/static/expert/GoogleSans-BoldItalic.ttf",
-    "build/GoogleSans/static/expert/GoogleSans-Italic.ttf",
-    "build/GoogleSans/static/expert/GoogleSans-Medium.ttf",
-    "build/GoogleSans/static/expert/GoogleSans-MediumItalic.ttf",
-    "build/GoogleSans/static/expert/GoogleSans-Regular.ttf",
-    "build/GoogleSans/static/expert/GoogleSansText-Bold.ttf",
-    "build/GoogleSans/static/expert/GoogleSansText-BoldItalic.ttf",
-    "build/GoogleSans/static/expert/GoogleSansText-Italic.ttf",
-    "build/GoogleSans/static/expert/GoogleSansText-Medium.ttf",
-    "build/GoogleSans/static/expert/GoogleSansText-MediumItalic.ttf",
-    "build/GoogleSans/static/expert/GoogleSansText-Regular.ttf",
-    "build/GoogleSans/variable/expert/GoogleSans-Italic[opsz,wght].ttf",
-    "build/GoogleSans/variable/expert/GoogleSans[opsz,wght].ttf",
+    "build/GoogleSans/static/GoogleSans-Bold.ttf",
+    "build/GoogleSans/static/GoogleSans-BoldItalic.ttf",
+    "build/GoogleSans/static/GoogleSans-Italic.ttf",
+    "build/GoogleSans/static/GoogleSans-Medium.ttf",
+    "build/GoogleSans/static/GoogleSans-MediumItalic.ttf",
+    "build/GoogleSans/static/GoogleSans-Regular.ttf",
+    "build/GoogleSans/static/GoogleSansText-Bold.ttf",
+    "build/GoogleSans/static/GoogleSansText-BoldItalic.ttf",
+    "build/GoogleSans/static/GoogleSansText-Italic.ttf",
+    "build/GoogleSans/static/GoogleSansText-Medium.ttf",
+    "build/GoogleSans/static/GoogleSansText-MediumItalic.ttf",
+    "build/GoogleSans/static/GoogleSansText-Regular.ttf",
+    "build/GoogleSans/variable/GoogleSans-Italic[GRAD,opsz,wght].ttf",
+    "build/GoogleSans/variable/GoogleSans[GRAD,opsz,wght].ttf",
 ):
     font = TTFont(font_path)
     font_glyphsetdef = Path(
