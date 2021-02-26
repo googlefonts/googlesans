@@ -44,4 +44,4 @@ jobs:
       - name: CLDR script/language coverage
         uses: f-actions/cldr-coverage@master
         with:
-          path: "/github/workspace/build/GoogleSans/variable/expert/GoogleSans[opsz,wght].ttf"
+          path: "/github/workspace/build/GoogleSans/variable/GoogleSans[GRAD,opsz,wght].ttf"
