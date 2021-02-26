@@ -26,6 +26,9 @@ jobs:
           buildcommand: "make"
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
         uses: actions/checkout@v2
+      - name: Set env variables
+        id: vars
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - name: Set up Python v${{ steps.config.outputs.py-version }} environment
         uses: actions/setup-python@v1
         with:
@@ -47,7 +50,7 @@ jobs:
         run: |
           make clean-ufo
       - name: Create build artifact zip archive
-        run: zip GoogleSans.zip -r ${{ steps.config.outputs.buildpath }}
+        run: zip GoogleSans-${{ steps.vars.outputs.tag }}.zip -r ${{ steps.config.outputs.buildpath }}
       - name: Create Google Sans release
         id: create_release
         uses: actions/create-release@v1
@@ -67,6 +70,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./GoogleSans.zip
-          asset_name: GoogleSans.zip
+          asset_path: ./GoogleSans-${{ steps.vars.outputs.tag }}.zip
+          asset_name: GoogleSans-${{ steps.vars.outputs.tag }}.zip
           asset_content_type: application/zip
