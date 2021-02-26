@@ -16,10 +16,10 @@ jobs:
         with:
           projectname: "Google Sans"
           sourcepath: "source"
-          buildpath: "build/GoogleSans/static/expert/*.ttf" # static font build path
+          buildpath: "build/GoogleSans/static/*.ttf" # static font build path
           readmepath: "README.md"
           changelogpath: "CHANGELOG.md"
-          dependpath: "requirements.txt"
+          dependpath: "requirements-dev.txt"
           py-version: ${{ matrix.python-version }}
           buildcommand: "make gs-static" # static font make target
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
@@ -39,35 +39,31 @@ jobs:
         with:
           update-wheel: "true"
           update-setuptools: "true"
-          path: "requirements-dev.txt"
+          path: ${{ steps.config.outputs.dependpath }}
       - name: Build fonts
         run: ${{ steps.config.outputs.buildcommand }}
-      - name: Font Bakery GS profile tests (Expert artifacts)
+      - name: Font Bakery GS profile tests
         uses: f-actions/font-bakery@v1
         with:
           version: "latest"
           subcmd: "check-profile"
           args: "-C --loglevel WARN qa/check-googlesans.py"
           path: "${{ steps.config.outputs.buildpath }}"
-      - name: Font Bakery character set profile tests (Expert artifacts)
+      - name: Font Bakery character set profile tests
         uses: f-actions/font-bakery@v1
         with:
           version: "latest"
           subcmd: "check-profile"
           args: "-C --loglevel WARN qa/check-charset.py"
           path: "${{ steps.config.outputs.buildpath }}"
-      - name: Font Bakery feature tag tests (Expert artifacts)
+      - name: Font Bakery feature tag and shaping tests
         uses: f-actions/font-bakery@v1
         with:
           version: "latest"
           subcmd: "check-profile"
           args: "-C --loglevel WARN qa/check-fea.py"
           path: "${{ steps.config.outputs.buildpath }}"
-      - name: OpenType Sanitizer checks (Expert artifacts)
+      - name: OpenType Sanitizer checks
         uses: f-actions/opentype-sanitizer@v1
         with:
           path: "${{ steps.config.outputs.buildpath }}"
-      - name: OpenType Sanitizer checks (Default artifacts)
-        uses: f-actions/opentype-sanitizer@v1
-        with:
-          path: "build/GoogleSans/static/default/*.ttf"
