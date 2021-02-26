@@ -9,6 +9,18 @@
     </axis>
     <axis tag="GRAD" name="Grade" minimum="-50" maximum="200" default="0"/>
   </axes>
+  <rules>
+    <rule name="BRACKET.18.18">
+      <conditionset>
+        <condition name="Optical size" minimum="18" maximum="18"/>
+      </conditionset>
+      <sub name="finalpe-hb" with="finalpe-hb.BRACKET.18"/>
+      <sub name="finalpedagesh-hb" with="finalpedagesh-hb.BRACKET.18"/>
+      <sub name="pe-hb" with="pe-hb.BRACKET.18"/>
+      <sub name="pedagesh-hb" with="pedagesh-hb.BRACKET.18"/>
+      <sub name="samekh-hb" with="samekh-hb.BRACKET.18"/>
+    </rule>
+  </rules>
   <sources>
     <source filename="GoogleSans-TextItalic.ufo" name="Google Sans Text Italic" familyname="Google Sans" stylename="Text Italic">
       <location>
