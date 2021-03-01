@@ -4,7 +4,7 @@ on:
   push:
     # Sequence of patterns matched against refs/heads
     branches:
-      - master # Push events on master branch
+      - main # Push events on main branch
       - "build/**" # Push events to branches matching refs/heads/build/[ANYTHING]
       - "build-*" # Push events to branches matching refs/heads/build-[ANYTHING]
     paths:
