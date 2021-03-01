@@ -3,7 +3,7 @@ name: Script + Writing System Coverage
 on:
   push:
     branches:
-      - master # Push events on master branch
+      - main # Push events on main branch
       - cldr-coverage # Push events on a cldr-coverage branch
 
 jobs:
