@@ -6,44 +6,8 @@
   <anchor x="644" y="0" name="ogonek"/>
   <anchor x="432" y="716" name="top"/>
   <outline>
-    <contour>
-      <point x="552" y="-234" type="curve" smooth="yes"/>
-      <point x="575" y="-234"/>
-      <point x="602" y="-230"/>
-      <point x="619" y="-221" type="curve"/>
-      <point x="635" y="-126" type="line"/>
-      <point x="620" y="-134"/>
-      <point x="604" y="-139"/>
-      <point x="590" y="-139" type="curve" smooth="yes"/>
-      <point x="569" y="-139"/>
-      <point x="553" y="-125"/>
-      <point x="553" y="-102" type="curve" smooth="yes"/>
-      <point x="553" y="-60"/>
-      <point x="598" y="-29"/>
-      <point x="644" y="0" type="curve"/>
-      <point x="509" y="716" type="line"/>
-      <point x="352" y="716" type="line"/>
-      <point x="-32" y="0" type="line"/>
-      <point x="123" y="0" type="line"/>
-      <point x="210" y="171" type="line"/>
-      <point x="471" y="171" type="line"/>
-      <point x="498" y="0" type="line"/>
-      <point x="518" y="0" type="line"/>
-      <point x="519" y="-5" type="line"/>
-      <point x="478" y="-26"/>
-      <point x="438" y="-66"/>
-      <point x="438" y="-126" type="curve" smooth="yes"/>
-      <point x="438" y="-193"/>
-      <point x="478" y="-234"/>
-    </contour>
-    <contour>
-      <point x="274" y="295" type="line"/>
-      <point x="365" y="474" type="line"/>
-      <point x="404" y="560" type="line"/>
-      <point x="412" y="560" type="line"/>
-      <point x="422" y="474" type="line"/>
-      <point x="451" y="295" type="line"/>
-    </contour>
+    <component base="A"/>
+    <component base="ogonekcomb" xOffset="392"/>
   </outline>
   <lib>
     <dict>

@@ -1,106 +1,98 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <designspace format="4.1">
   <axes>
-    <axis tag="opsz" name="Optical size" minimum="17" maximum="18" default="18"/>
+    <axis tag="opsz" name="Size" minimum="17" maximum="18" default="18">
+      <map input="17" output="17"/>
+      <map input="17.990000" output="17.100000"/>
+      <map input="18" output="18"/>
+    </axis>
     <axis tag="wght" name="Weight" minimum="400" maximum="700" default="400">
       <map input="400" output="380"/>
       <map input="500" output="555"/>
       <map input="700" output="734"/>
     </axis>
+    <axis tag="GRAD" name="Grade" minimum="-50" maximum="200" default="0"/>
   </axes>
   <rules>
     <rule name="BRACKET.18.18">
       <conditionset>
-        <condition name="Optical size" minimum="18" maximum="18"/>
+        <condition name="Size" minimum="18" maximum="18"/>
       </conditionset>
-      <sub name="G" with="G.BRACKET.18"/>
-      <sub name="Gbreve" with="Gbreve.BRACKET.18"/>
-      <sub name="Gcircumflex" with="Gcircumflex.BRACKET.18"/>
-      <sub name="Gcommaaccent" with="Gcommaaccent.BRACKET.18"/>
-      <sub name="Gcommaaccent.alt" with="Gcommaaccent.alt.BRACKET.18"/>
-      <sub name="Gdotaccent" with="Gdotaccent.BRACKET.18"/>
-      <sub name="Kcommaaccent" with="Kcommaaccent.BRACKET.18"/>
-      <sub name="Kcommaaccent.alt" with="Kcommaaccent.alt.BRACKET.18"/>
-      <sub name="Lcommaaccent" with="Lcommaaccent.BRACKET.18"/>
-      <sub name="Ncommaaccent" with="Ncommaaccent.BRACKET.18"/>
-      <sub name="Rcommaaccent" with="Rcommaaccent.BRACKET.18"/>
-      <sub name="Rcommaaccent.alt" with="Rcommaaccent.alt.BRACKET.18"/>
-      <sub name="Scommaaccent" with="Scommaaccent.BRACKET.18"/>
-      <sub name="Tcommaaccent" with="Tcommaaccent.BRACKET.18"/>
-      <sub name="comma" with="comma.BRACKET.18"/>
-      <sub name="commaaccentcomb" with="commaaccentcomb.BRACKET.18"/>
-      <sub name="commaturnedabovecomb" with="commaturnedabovecomb.BRACKET.18"/>
       <sub name="finalpe-hb" with="finalpe-hb.BRACKET.18"/>
       <sub name="finalpedagesh-hb" with="finalpedagesh-hb.BRACKET.18"/>
-      <sub name="g.sc" with="g.sc.BRACKET.18"/>
-      <sub name="g.sc.ss04" with="g.sc.ss04.BRACKET.18"/>
-      <sub name="gcommaaccent" with="gcommaaccent.BRACKET.18"/>
-      <sub name="kcommaaccent" with="kcommaaccent.BRACKET.18"/>
-      <sub name="kcommaaccent.alt" with="kcommaaccent.alt.BRACKET.18"/>
-      <sub name="lcommaaccent" with="lcommaaccent.BRACKET.18"/>
-      <sub name="ncommaaccent" with="ncommaaccent.BRACKET.18"/>
       <sub name="pe-hb" with="pe-hb.BRACKET.18"/>
       <sub name="pedagesh-hb" with="pedagesh-hb.BRACKET.18"/>
-      <sub name="questiongreek" with="questiongreek.BRACKET.18"/>
-      <sub name="quotedblbase" with="quotedblbase.BRACKET.18"/>
-      <sub name="quotedblleft" with="quotedblleft.BRACKET.18"/>
-      <sub name="quotedblright" with="quotedblright.BRACKET.18"/>
-      <sub name="quoteleft" with="quoteleft.BRACKET.18"/>
-      <sub name="quoteright" with="quoteright.BRACKET.18"/>
-      <sub name="quotesinglbase" with="quotesinglbase.BRACKET.18"/>
-      <sub name="rcommaaccent" with="rcommaaccent.BRACKET.18"/>
-      <sub name="rcommaaccent.alt" with="rcommaaccent.alt.BRACKET.18"/>
       <sub name="samekh-hb" with="samekh-hb.BRACKET.18"/>
-      <sub name="scommaaccent" with="scommaaccent.BRACKET.18"/>
-      <sub name="semicolon" with="semicolon.BRACKET.18"/>
-      <sub name="tcommaaccent" with="tcommaaccent.BRACKET.18"/>
-      <sub name="tcommaaccent.alt" with="tcommaaccent.alt.BRACKET.18"/>
-      <sub name="y" with="y.BRACKET.18"/>
-      <sub name="y.sc.lc.ss04" with="y.sc.lc.ss04.BRACKET.18"/>
-      <sub name="yacute" with="yacute.BRACKET.18"/>
-      <sub name="ycircumflex" with="ycircumflex.BRACKET.18"/>
-      <sub name="ydieresis" with="ydieresis.BRACKET.18"/>
-      <sub name="ydotbelow" with="ydotbelow.BRACKET.18"/>
-      <sub name="ygrave" with="ygrave.BRACKET.18"/>
-      <sub name="yhookabove" with="yhookabove.BRACKET.18"/>
-      <sub name="ytilde" with="ytilde.BRACKET.18"/>
     </rule>
   </rules>
   <sources>
-    <source filename="GoogleSansItalic-opsz17-wght380-GRAD0.ufo" name="Google Sans Text Italic" familyname="Google Sans" stylename="Text Italic">
+    <source filename="GoogleSansItalic-opsz18-wght734-GRAD0.ufo" familyname="Google Sans" stylename="Bold Italic">
       <location>
-        <dimension name="Optical size" xvalue="17"/>
-        <dimension name="Weight" xvalue="380"/>
-      </location>
-    </source>
-    <source filename="GoogleSansItalic-opsz17-wght734-GRAD0.ufo" name="Google Sans Text Bold Italic" familyname="Google Sans" stylename="Text Bold Italic">
-      <location>
-        <dimension name="Optical size" xvalue="17"/>
         <dimension name="Weight" xvalue="734"/>
+        <dimension name="Size" xvalue="18"/>
+        <dimension name="Grade" xvalue="0"/>
       </location>
     </source>
-    <source filename="GoogleSansItalic-opsz18-wght380-GRAD0.ufo" name="Google Sans Italic" familyname="Google Sans" stylename="Italic">
+    <source filename="GoogleSansItalic-opsz18-wght380-GRAD200.ufo" familyname="Google Sans" stylename="opsz18-wght380-GRAD200">
+      <location>
+        <dimension name="Weight" xvalue="380"/>
+        <dimension name="Size" xvalue="18"/>
+        <dimension name="Grade" xvalue="200"/>
+      </location>
+    </source>
+    <source filename="GoogleSansItalic-opsz18-wght380-GRAD0.ufo" familyname="Google Sans" stylename="Italic">
       <lib copy="1"/>
       <groups copy="1"/>
       <features copy="1"/>
       <info copy="1"/>
       <location>
-        <dimension name="Optical size" xvalue="18"/>
         <dimension name="Weight" xvalue="380"/>
+        <dimension name="Size" xvalue="18"/>
+        <dimension name="Grade" xvalue="0"/>
       </location>
     </source>
-    <source filename="GoogleSansItalic-opsz18-wght734-GRAD0.ufo" name="Google Sans Bold Italic" familyname="Google Sans" stylename="Bold Italic">
+    <source filename="GoogleSansItalic-opsz18-wght380-GRAD-50.ufo" familyname="Google Sans" stylename="opsz18-wght380-GRAD-50">
       <location>
-        <dimension name="Optical size" xvalue="18"/>
+        <dimension name="Weight" xvalue="380"/>
+        <dimension name="Size" xvalue="18"/>
+        <dimension name="Grade" xvalue="-50"/>
+      </location>
+    </source>
+    <source filename="GoogleSansItalic-opsz17-wght734-GRAD0.ufo" familyname="Google Sans" stylename="Text Bold Italic">
+      <location>
         <dimension name="Weight" xvalue="734"/>
+        <dimension name="Size" xvalue="17"/>
+        <dimension name="Grade" xvalue="0"/>
+      </location>
+    </source>
+    <source filename="GoogleSansItalic-opsz17-wght380-GRAD0.ufo" familyname="Google Sans" stylename="Text Italic">
+      <location>
+        <dimension name="Weight" xvalue="380"/>
+        <dimension name="Size" xvalue="17"/>
+        <dimension name="Grade" xvalue="0"/>
+      </location>
+    </source>
+    <source filename="GoogleSansItalic-opsz17-wght380-GRAD200.ufo" familyname="Google Sans" stylename="opsz17-wght380-GRAD200">
+      <location>
+        <dimension name="Weight" xvalue="380"/>
+        <dimension name="Size" xvalue="17"/>
+        <dimension name="Grade" xvalue="200"/>
+      </location>
+    </source>
+    <source filename="GoogleSansItalic-opsz17-wght380-GRAD-50.ufo" familyname="Google Sans" stylename="opsz17-wght380-GRAD-50">
+      <location>
+        <dimension name="Weight" xvalue="380"/>
+        <dimension name="Size" xvalue="17"/>
+        <dimension name="Grade" xvalue="-50"/>
       </location>
     </source>
   </sources>
   <instances>
     <instance name="Google Sans Italic" familyname="Google Sans" stylename="Italic" filename="../../build/GoogleSans/instance_ufo/GoogleSans-Italic.ufo" stylemapfamilyname="Google Sans" stylemapstylename="italic">
       <location>
-        <dimension name="Optical size" xvalue="18"/>
         <dimension name="Weight" xvalue="380"/>
+        <dimension name="Size" xvalue="18"/>
+        <dimension name="Grade" xvalue="0"/>
       </location>
       <kerning/>
       <info/>
@@ -128,10 +120,6 @@
               <integer>0</integer>
             </array>
             <array>
-              <string>note</string>
-              <string>Android variant</string>
-            </array>
-            <array>
               <string>Name Table Entry</string>
               <string>3 1 0 0; Google;GoogleSans-Italic</string>
             </array>
@@ -145,8 +133,9 @@
     </instance>
     <instance name="Google Sans Medium Italic" familyname="Google Sans" stylename="Medium Italic" filename="../../build/GoogleSans/instance_ufo/GoogleSans-MediumItalic.ufo" stylemapfamilyname="Google Sans Medium" stylemapstylename="italic">
       <location>
-        <dimension name="Optical size" xvalue="18"/>
         <dimension name="Weight" xvalue="555"/>
+        <dimension name="Size" xvalue="18"/>
+        <dimension name="Grade" xvalue="0"/>
       </location>
       <kerning/>
       <info/>
@@ -174,10 +163,6 @@
               <integer>0</integer>
             </array>
             <array>
-              <string>note</string>
-              <string>Android variant</string>
-            </array>
-            <array>
               <string>Name Table Entry</string>
               <string>3 1 0 0; Google;GoogleSans-MediumItalic</string>
             </array>
@@ -191,8 +176,9 @@
     </instance>
     <instance name="Google Sans Bold Italic" familyname="Google Sans" stylename="Bold Italic" filename="../../build/GoogleSans/instance_ufo/GoogleSans-BoldItalic.ufo" stylemapfamilyname="Google Sans" stylemapstylename="bold italic">
       <location>
-        <dimension name="Optical size" xvalue="18"/>
         <dimension name="Weight" xvalue="734"/>
+        <dimension name="Size" xvalue="18"/>
+        <dimension name="Grade" xvalue="0"/>
       </location>
       <kerning/>
       <info/>
@@ -220,10 +206,6 @@
               <integer>0</integer>
             </array>
             <array>
-              <string>note</string>
-              <string>Android variant</string>
-            </array>
-            <array>
               <string>Name Table Entry</string>
               <string>3 1 0 0; Google;GoogleSans-BoldItalic</string>
             </array>
@@ -237,8 +219,9 @@
     </instance>
     <instance name="Google Sans Text Italic" familyname="Google Sans" stylename="Text Italic" filename="../../build/GoogleSans/instance_ufo/GoogleSans-TextItalic.ufo" stylemapfamilyname="Google Sans Text" stylemapstylename="italic">
       <location>
-        <dimension name="Optical size" xvalue="17"/>
         <dimension name="Weight" xvalue="380"/>
+        <dimension name="Size" xvalue="17"/>
+        <dimension name="Grade" xvalue="0"/>
       </location>
       <kerning/>
       <info/>
@@ -291,8 +274,9 @@
     </instance>
     <instance name="Google Sans Text Medium Italic" familyname="Google Sans" stylename="Text Medium Italic" filename="../../build/GoogleSans/instance_ufo/GoogleSans-TextMediumItalic.ufo" stylemapfamilyname="Google Sans Medium" stylemapstylename="italic">
       <location>
-        <dimension name="Optical size" xvalue="17"/>
         <dimension name="Weight" xvalue="555"/>
+        <dimension name="Size" xvalue="17"/>
+        <dimension name="Grade" xvalue="0"/>
       </location>
       <kerning/>
       <info/>
@@ -345,8 +329,9 @@
     </instance>
     <instance name="Google Sans Text Bold Italic" familyname="Google Sans" stylename="Text Bold Italic" filename="../../build/GoogleSans/instance_ufo/GoogleSans-TextBoldItalic.ufo" stylemapfamilyname="Google Sans Text Regular" stylemapstylename="bold italic">
       <location>
-        <dimension name="Optical size" xvalue="17"/>
         <dimension name="Weight" xvalue="734"/>
+        <dimension name="Size" xvalue="17"/>
+        <dimension name="Grade" xvalue="0"/>
       </location>
       <kerning/>
       <info/>
@@ -400,13 +385,6 @@
   </instances>
   <lib>
     <dict>
-      <key>GSDimensionPlugin.Dimensions</key>
-      <dict>
-        <key>15F39A2A-7598-44C5-A4AA-18A6AD645EAA</key>
-        <dict/>
-        <key>3E1A77A5-2AAF-4B97-842E-5802590C9619</key>
-        <dict/>
-      </dict>
       <key>com.github.googlei18n.ufo2ft.featureWriters</key>
       <array>
         <dict>
@@ -430,12 +408,112 @@
       </array>
       <key>public.skipExportGlyphs</key>
       <array>
-        <string>__descender-cy</string>
-        <string>__descender-cy.case</string>
-        <string>apple</string>
         <string>peace</string>
         <string>whiteFrowningFace</string>
         <string>whiteSmilingFace</string>
+        <string>apple</string>
+        <string>__descender-cy.case</string>
+        <string>__descender-cy</string>
+        <string>G.BRACKET.18</string>
+        <string>Gcircumflex.BRACKET.18</string>
+        <string>Gbreve.BRACKET.18</string>
+        <string>Gdotaccent.BRACKET.18</string>
+        <string>Gcommaaccent.BRACKET.18</string>
+        <string>Kcommaaccent.BRACKET.18</string>
+        <string>Lcommaaccent.BRACKET.18</string>
+        <string>Ncommaaccent.BRACKET.18</string>
+        <string>Rcommaaccent.BRACKET.18</string>
+        <string>Scommaaccent.BRACKET.18</string>
+        <string>Tcommaaccent.BRACKET.18</string>
+        <string>Gcommaaccent.alt.BRACKET.18</string>
+        <string>Kcommaaccent.alt.BRACKET.18</string>
+        <string>Rcommaaccent.alt.BRACKET.18</string>
+        <string>gcommaaccent.BRACKET.18</string>
+        <string>kcommaaccent.BRACKET.18</string>
+        <string>lcommaaccent.BRACKET.18</string>
+        <string>ncommaaccent.BRACKET.18</string>
+        <string>rcommaaccent.BRACKET.18</string>
+        <string>scommaaccent.BRACKET.18</string>
+        <string>tcommaaccent.BRACKET.18</string>
+        <string>y.BRACKET.18</string>
+        <string>yacute.BRACKET.18</string>
+        <string>ydieresis.BRACKET.18</string>
+        <string>ydotbelow.BRACKET.18</string>
+        <string>ycircumflex.BRACKET.18</string>
+        <string>yhookabove.BRACKET.18</string>
+        <string>ytilde.BRACKET.18</string>
+        <string>ygrave.BRACKET.18</string>
+        <string>kcommaaccent.alt.BRACKET.18</string>
+        <string>rcommaaccent.alt.BRACKET.18</string>
+        <string>tcommaaccent.alt.BRACKET.18</string>
+        <string>g.sc.BRACKET.18</string>
+        <string>y.sc.lc.ss04.BRACKET.18</string>
+        <string>g.sc.ss04.BRACKET.18</string>
+        <string>commaturnedabovecomb.BRACKET.18</string>
+        <string>commaaccentcomb.BRACKET.18</string>
+        <string>quotesinglbase.BRACKET.18</string>
+        <string>quotedblbase.BRACKET.18</string>
+        <string>quoteleft.BRACKET.18</string>
+        <string>quotedblleft.BRACKET.18</string>
+        <string>quoteright.BRACKET.18</string>
+        <string>quotedblright.BRACKET.18</string>
+        <string>comma.BRACKET.18</string>
+        <string>semicolon.BRACKET.18</string>
+        <string>questiongreek.BRACKET.18</string>
+        <string>a.sc.lc.ss04</string>
+        <string>b.sc.lc.ss04</string>
+        <string>c.sc.lc.ss04</string>
+        <string>d.sc.lc.ss04</string>
+        <string>e.sc.lc.ss04</string>
+        <string>f.sc.lc.ss04</string>
+        <string>g.sc.lc.ss04</string>
+        <string>h.sc.lc.ss04</string>
+        <string>i.sc.lc.ss04</string>
+        <string>j.sc.lc.ss04</string>
+        <string>l.sc.lc.ss04</string>
+        <string>m.sc.lc.ss04</string>
+        <string>n.sc.lc.ss04</string>
+        <string>o.sc.lc.ss04</string>
+        <string>p.sc.lc.ss04</string>
+        <string>q.sc.lc.ss04</string>
+        <string>r.sc.lc.ss04</string>
+        <string>s.sc.lc.ss04</string>
+        <string>t.sc.lc.ss04</string>
+        <string>u.sc.lc.ss04</string>
+        <string>v.sc.lc.ss04</string>
+        <string>w.sc.lc.ss04</string>
+        <string>x.sc.lc.ss04</string>
+        <string>y.sc.lc.ss04</string>
+        <string>z.sc.lc.ss04</string>
+        <string>a.sc.ss04</string>
+        <string>c.sc.ss04</string>
+        <string>d.sc.ss04</string>
+        <string>f.sc.ss04</string>
+        <string>h.sc.ss04</string>
+        <string>i.sc.ss04</string>
+        <string>j.sc.ss04</string>
+        <string>l.sc.ss04</string>
+        <string>n.sc.ss04</string>
+        <string>o.sc.ss04</string>
+        <string>q.sc.ss04</string>
+        <string>r.sc.ss04</string>
+        <string>s.sc.ss04</string>
+        <string>u.sc.ss04</string>
+        <string>v.sc.ss04</string>
+        <string>w.sc.ss04</string>
+        <string>x.sc.ss04</string>
+        <string>y.sc.ss04</string>
+        <string>z.sc.ss04</string>
+        <string>zero.sc.ss04</string>
+        <string>one.sc.ss04</string>
+        <string>two.sc.ss04</string>
+        <string>three.sc.ss04</string>
+        <string>four.sc.ss04</string>
+        <string>five.sc.ss04</string>
+        <string>six.sc.ss04</string>
+        <string>seven.sc.ss04</string>
+        <string>eight.sc.ss04</string>
+        <string>nine.sc.ss04</string>
       </array>
     </dict>
   </lib>
