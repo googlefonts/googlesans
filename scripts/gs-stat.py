@@ -82,7 +82,7 @@ ITALIC_AXES = [
             dict(value=700, name="Bold"),  # Bold
         ],
     ),
-        {
+    {
         "tag": "GRAD",
         "name": "Grade",
         "ordering": 2,
