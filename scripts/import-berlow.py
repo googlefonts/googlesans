@@ -1,5 +1,6 @@
 # flake8: noqa
 
+import uuid
 from pathlib import Path
 from typing import List
 
@@ -35,6 +36,17 @@ DEFAULT = {
     "GoogleSansItalic-opsz18-wght380-GRAD200.ufo": "GoogleSansItalic-opsz18-wght380-GRAD0.ufo",
 }
 
+STYLE_SUFFIX = {
+    "GoogleSans-opsz17-wght380-GRAD-50.ufo": "GRAD-50",
+    "GoogleSans-opsz17-wght380-GRAD200.ufo": "GRAD200",
+    "GoogleSans-opsz18-wght380-GRAD-50.ufo": "GRAD-50",
+    "GoogleSans-opsz18-wght380-GRAD200.ufo": "GRAD200",
+    "GoogleSansItalic-opsz17-wght380-GRAD-50.ufo": "GRAD-50",
+    "GoogleSansItalic-opsz17-wght380-GRAD200.ufo": "GRAD200",
+    "GoogleSansItalic-opsz18-wght380-GRAD-50.ufo": "GRAD-50",
+    "GoogleSansItalic-opsz18-wght380-GRAD200.ufo": "GRAD200",
+}
+
 SOURCE_DIR = Path("../GoogleSans-fb/sources/GS Cubic Sources/")
 TARGET_DIR = Path("source/GoogleSans/")
 
@@ -55,7 +67,9 @@ for src, dst in MAPPING.items():
 
         if target.info.guidelines:
             target.info.guidelines.clear()
-        # TODO: change fontinfo styleName
+
+        target.info.styleName += " " + STYLE_SUFFIX[dst]
+        target.lib["com.schriftgestaltung.fontMasterID"] = str(uuid.uuid4())
     else:
         target = Font(TARGET_DIR / dst)
 
@@ -65,14 +79,16 @@ for src, dst in MAPPING.items():
     postscript_names_source = source.lib["public.postscriptNames"]
     postscript_names_target = target.lib["public.postscriptNames"]
     for k, v in postscript_names_source.items():
-        if k.startswith("uniE"):
+        if v.startswith("uniE"):
             continue  # Skip PUA names
         if k not in postscript_names_target:
             postscript_names_target[k] = v
 
     glyph_order: List[str] = target.lib["public.glyphOrder"]
     for glyph in source:
-        # TODO: delete PUAs
+        # Clear out PUA codepoints.
+        if glyph.unicode in range(0xE000, 0xF8FF + 1):
+            glyph.unicode = None
         if glyph.name not in target:
             target.layers.defaultLayer.insertGlyph(glyph)
             glyph_order.append(glyph.name)
