@@ -403,7 +403,10 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
                     try:
                         expected = shaped_texts_expected[key]
                     except KeyError as e:
-                        yield FAIL, f"{shaping_file}: No entry found for {filename.name}, instance {e}"
+                        yield FAIL, (
+                            f"{shaping_file}: No entry found for {filename.name}, "
+                            f" instance {e}"
+                        )
                         continue
                     if shaped_text != expected:
                         shaped_texts_str = textwrap.indent(
