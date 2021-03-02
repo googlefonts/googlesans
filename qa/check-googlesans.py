@@ -67,6 +67,7 @@ ATTRIBUTES = {
     "post_underline_position": -160,
     "post_underline_thickness": 84,
     "wght_axis_default": 400.0,
+    "grad_axis_default": 0.0,
 }
 
 
@@ -392,7 +393,7 @@ def com_google_fonts_check_googlesans_opentype_os2_strikeout(ttFont):
     conditions=["is_variable_font"],
     rationale="""
     Confirms that the variable font format builds include the expected fvar
-    default definitions of opsz = 18 and wght = 400
+    default definitions for the Google Sans design axes
     """,
 )
 def com_google_fonts_check_googlesans_variable_fvar_default(ttFont):
@@ -400,6 +401,7 @@ def com_google_fonts_check_googlesans_variable_fvar_default(ttFont):
     tt = ttFont
     EXPECTED_OPSZ = ATTRIBUTES["opsz_axis_default"]
     EXPECTED_WGHT = ATTRIBUTES["wght_axis_default"]
+    EXPECTED_GRAD = ATTRIBUTES["grad_axis_default"]
 
     for axis in tt["fvar"].axes:
         if axis.axisTag == "opsz":
@@ -427,6 +429,19 @@ def com_google_fonts_check_googlesans_variable_fvar_default(ttFont):
                 yield (
                     PASS,
                     f"{tt.reader.file.name} contains the expected fvar " f"opsz default.",
+                )
+        elif axis.axisTag == "GRAD":
+            if axis.defaultValue != EXPECTED_GRAD:
+                yield (
+                    FAIL,
+                    f"{tt.reader.file.name} does not include the correct "
+                    f"fvar GRAD axis default.\n"
+                    f"Found: `{axis.defaultValue}` and expected `{EXPECTED_GRAD}`",
+                )
+            else:
+                yield (
+                    PASS,
+                    f"{tt.reader.file.name} contains the expected fvar " f"GRAD default.",
                 )
 
 
