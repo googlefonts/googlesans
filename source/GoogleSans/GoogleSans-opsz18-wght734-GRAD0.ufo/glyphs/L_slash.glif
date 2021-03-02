@@ -7,22 +7,8 @@
   <anchor x="230" y="716" name="top"/>
   <anchor x="492" y="510" name="topright"/>
   <outline>
-    <contour>
-      <point x="163" y="0" type="line"/>
-      <point x="601" y="0" type="line"/>
-      <point x="601" y="128" type="line"/>
-      <point x="298" y="128" type="line"/>
-      <point x="298" y="337" type="line"/>
-      <point x="466" y="442" type="line"/>
-      <point x="409" y="534" type="line"/>
-      <point x="298" y="465" type="line"/>
-      <point x="298" y="716" type="line"/>
-      <point x="163" y="716" type="line"/>
-      <point x="163" y="378" type="line"/>
-      <point x="50" y="307" type="line"/>
-      <point x="109" y="214" type="line"/>
-      <point x="163" y="247" type="line"/>
-    </contour>
+    <component base="L" xOffset="74"/>
+    <component base="L-slash"/>
   </outline>
   <lib>
     <dict>

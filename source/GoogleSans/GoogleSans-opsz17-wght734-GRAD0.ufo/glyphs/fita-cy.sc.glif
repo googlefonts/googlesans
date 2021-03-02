@@ -3,38 +3,8 @@
   <advance width="670"/>
   <anchor x="335" y="580" name="top"/>
   <outline>
-    <contour>
-      <point x="335" y="-16" type="curve" smooth="yes"/>
-      <point x="510" y="-16"/>
-      <point x="618" y="112"/>
-      <point x="618" y="290" type="curve" smooth="yes"/>
-      <point x="618" y="468"/>
-      <point x="510" y="596"/>
-      <point x="335" y="596" type="curve" smooth="yes"/>
-      <point x="159" y="596"/>
-      <point x="52" y="468"/>
-      <point x="52" y="290" type="curve" smooth="yes"/>
-      <point x="52" y="112"/>
-      <point x="159" y="-16"/>
-    </contour>
-    <contour>
-      <point x="335" y="109" type="curve" smooth="yes"/>
-      <point x="258" y="109"/>
-      <point x="205" y="154"/>
-      <point x="189" y="234" type="curve"/>
-      <point x="481" y="234" type="line"/>
-      <point x="465" y="154"/>
-      <point x="412" y="109"/>
-    </contour>
-    <contour>
-      <point x="189" y="346" type="line"/>
-      <point x="205" y="426"/>
-      <point x="258" y="471"/>
-      <point x="335" y="471" type="curve" smooth="yes"/>
-      <point x="412" y="471"/>
-      <point x="465" y="426"/>
-      <point x="481" y="346" type="curve"/>
-    </contour>
+    <component base="o.sc"/>
+    <component base="obarredbarsc"/>
   </outline>
   <lib>
     <dict>

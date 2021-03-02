@@ -808,72 +808,17 @@ feature case {
 
 feature ss04 {
     featureNames {
-        name "Micro Caps";
-        name 1 "Micro Caps";
+        name "File Size Units";
+        name 1 "File Size Units";
     };
-
-    sub A by a.sc.ss04;
     sub B by b.sc.ss04;
-    sub C by c.sc.ss04;
-    sub D by d.sc.ss04;
     sub E by e.sc.ss04;
-    sub F by f.sc.ss04;
     sub G by g.sc.ss04;
-    sub H by h.sc.ss04;
-    sub I by i.sc.ss04;
-    sub J by j.sc.ss04;
     sub K by k.sc.ss04;
-    sub L by l.sc.ss04;
     sub M by m.sc.ss04;
-    sub N by n.sc.ss04;
-    sub O by o.sc.ss04;
     sub P by p.sc.ss04;
-    sub Q by q.sc.ss04;
-    sub R by r.sc.ss04;
-    sub S by s.sc.ss04;
     sub T by t.sc.ss04;
-    sub U by u.sc.ss04;
-    sub V by v.sc.ss04;
-    sub W by w.sc.ss04;
-    sub X by x.sc.ss04;
-    sub Y by y.sc.ss04;
-    sub Z by z.sc.ss04;
-    sub a by a.sc.lc.ss04;
-    sub b by b.sc.lc.ss04;
-    sub c by c.sc.lc.ss04;
-    sub d by d.sc.lc.ss04;
-    sub e by e.sc.lc.ss04;
-    sub f by f.sc.lc.ss04;
-    sub g by g.sc.lc.ss04;
-    sub h by h.sc.lc.ss04;
-    sub i by i.sc.lc.ss04;
-    sub j by j.sc.lc.ss04;
     sub k by k.sc.lc.ss04;
-    sub l by l.sc.lc.ss04;
-    sub m by m.sc.lc.ss04;
-    sub n by n.sc.lc.ss04;
-    sub o by o.sc.lc.ss04;
-    sub p by p.sc.lc.ss04;
-    sub q by q.sc.lc.ss04;
-    sub r by r.sc.lc.ss04;
-    sub s by s.sc.lc.ss04;
-    sub t by t.sc.lc.ss04;
-    sub u by u.sc.lc.ss04;
-    sub v by v.sc.lc.ss04;
-    sub w by w.sc.lc.ss04;
-    sub x by x.sc.lc.ss04;
-    sub y by y.sc.lc.ss04;
-    sub z by z.sc.lc.ss04;
-    sub zero.sc by zero.sc.ss04;
-    sub one.sc by one.sc.ss04;
-    sub two.sc by two.sc.ss04;
-    sub three.sc by three.sc.ss04;
-    sub four.sc by four.sc.ss04;
-    sub five.sc by five.sc.ss04;
-    sub six.sc by six.sc.ss04;
-    sub seven.sc by seven.sc.ss04;
-    sub eight.sc by eight.sc.ss04;
-    sub nine.sc by nine.sc.ss04;
 } ss04;
 
 feature liga {
@@ -1063,6 +1008,7 @@ feature c2sc {
     sub Gcircumflex by gcircumflex.sc;
     sub Gcommaaccent by gcommaaccent.sc;
     sub Gdotaccent by gdotaccent.sc;
+    sub Germandbls by Germandbls.sc;
     sub H by h.sc;
     sub Hbar by hbar.sc;
     sub Hcircumflex by hcircumflex.sc;
@@ -2386,41 +2332,6 @@ feature ss07 {
     sub omegadasiaperispomeniypogegrammeni.sc.ss06 by omegadasiaperispomeniypogegrammeni.sc.ad.ss06;
     sub omegaperispomeniypogegrammeni.sc.ss06 by omegaperispomeniypogegrammeni.sc.ad.ss06;
 } ss07;
-
-feature ss08 {
-    featureNames {
-        name "Bulgarian Locale";
-        name 1 "Bulgarian Locale";
-    };
-
-    script cyrl;
-    sub De-cy by De-cy.loclBGR;
-    sub El-cy by El-cy.loclBGR;
-    sub Ef-cy by Ef-cy.loclBGR;
-    sub ve-cy by ve-cy.loclBGR;
-    sub ge-cy by ge-cy.loclBGR;
-    sub de-cy by de-cy.loclBGR;
-    sub zhe-cy by zhe-cy.loclBGR;
-    sub ze-cy by ze-cy.loclBGR;
-    sub ii-cy by ii-cy.loclBGR;
-    sub iishort-cy by iishort-cy.loclBGR;
-    sub iigrave-cy by iigrave-cy.loclBGR;
-    sub ka-cy by ka-cy.loclBGR;
-    sub el-cy by el-cy.loclBGR;
-    sub ef-cy by ef-cy.loclBGR;
-    sub pe-cy by pe-cy.loclBGR;
-    sub te-cy by te-cy.loclBGR;
-    sub tse-cy by tse-cy.loclBGR;
-    sub sha-cy by sha-cy.loclBGR;
-    sub shcha-cy by shcha-cy.loclBGR;
-    sub softsign-cy by softsign-cy.loclBGR;
-    sub hardsign-cy by hardsign-cy.loclBGR;
-    sub iu-cy by iu-cy.loclBGR;
-    sub yeru-cy by yeru-cy.loclBGR;
-    sub de-cy.sc by de-cy.loclBGR.sc;
-    sub el-cy.sc by el-cy.loclBGR.sc;
-    sub ef-cy.sc by ef-cy.loclBGR.sc;
-} ss08;
 
 feature jalt {
     # ===============

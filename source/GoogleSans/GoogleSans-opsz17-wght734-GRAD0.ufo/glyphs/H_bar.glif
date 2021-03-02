@@ -5,25 +5,7 @@
   <anchor x="370" y="0" name="bottom"/>
   <anchor x="370" y="716" name="top"/>
   <outline>
-    <contour>
-      <point x="85" y="0" type="line"/>
-      <point x="219" y="0" type="line"/>
-      <point x="219" y="302" type="line"/>
-      <point x="517" y="302" type="line"/>
-      <point x="517" y="0" type="line"/>
-      <point x="651" y="0" type="line"/>
-      <point x="651" y="716" type="line"/>
-      <point x="517" y="716" type="line"/>
-      <point x="517" y="430" type="line"/>
-      <point x="219" y="430" type="line"/>
-      <point x="219" y="716" type="line"/>
-      <point x="85" y="716" type="line"/>
-    </contour>
-    <contour>
-      <point x="11" y="509" type="line"/>
-      <point x="724" y="509" type="line"/>
-      <point x="724" y="607" type="line"/>
-      <point x="11" y="607" type="line"/>
-    </contour>
+    <component base="H" xOffset="-3"/>
+    <component base="Hbar-bar"/>
   </outline>
 </glyph>
