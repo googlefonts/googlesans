@@ -46,7 +46,6 @@ GOOGLESANS_PROFILE_CHECKS = [
 ]
 
 STATIC_UPRIGHT_FEA = [
-    "aalt",
     "c2sc",
     "calt",
     "case",
@@ -79,7 +78,6 @@ STATIC_UPRIGHT_FEA = [
 ]
 
 STATIC_ITALICS_FEA = [
-    "aalt",
     "c2sc",
     "calt",
     "case",
@@ -111,7 +109,6 @@ STATIC_ITALICS_FEA = [
 ]
 
 VAR_UPRIGHT_FEA = [
-    "aalt",
     "c2sc",
     "calt",
     "case",
@@ -145,7 +142,6 @@ VAR_UPRIGHT_FEA = [
 ]
 
 VAR_ITALICS_FEA = [
-    "aalt",
     "c2sc",
     "calt",
     "case",
