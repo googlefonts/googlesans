@@ -37,7 +37,7 @@ def main():
     in_static_filepaths = glob.glob(STATIC_INPATH)
 
     for rel_filepath in in_static_filepaths:
-        print(f"[SUBSET] {rel_filepath} to Expert build...")
+        print(f"[SUBSET] {rel_filepath} PASS 1...")
 
         local_filepath = os.path.abspath(rel_filepath)
         local_filepath_subset = f"{local_filepath}.subset"
