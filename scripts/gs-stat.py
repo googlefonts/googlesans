@@ -25,9 +25,7 @@ UPRIGHT_AXES = [
             dict(
                 rangeMinValue=18, nominalValue=18, name="Max", flags=0x2
             ),  # Max opsz, use elided name of "Google Sans" without opsz identifier
-            dict(
-                rangeMinValue=6, nominalValue=17, rangeMaxValue=17, name="Text"
-            ),  # Text
+            dict(rangeMinValue=6, nominalValue=17, rangeMaxValue=17, name="Text"),  # Text
         ],
     ),
     dict(
@@ -45,9 +43,9 @@ UPRIGHT_AXES = [
         "name": "Grade",
         "ordering": 2,
         "values": [
-            {"value": -50, "name": "-50"},
+            {"value": -50, "name": "Grade-50"},
             {"value": 0, "name": "0", "flags": 0x2},
-            {"value": 200, "name": "200"},
+            {"value": 200, "name": "Grade200"},
         ],
     },
     dict(
@@ -67,9 +65,7 @@ ITALIC_AXES = [
             dict(
                 rangeMinValue=18, nominalValue=18, name="Max", flags=0x2
             ),  # Max opsz, use elided name of "Google Sans" without opsz identifier
-            dict(
-                rangeMinValue=6, nominalValue=17, rangeMaxValue=17, name="Text"
-            ),  # Text
+            dict(rangeMinValue=6, nominalValue=17, rangeMaxValue=17, name="Text"),  # Text
         ],
     ),
     dict(
@@ -87,9 +83,9 @@ ITALIC_AXES = [
         "name": "Grade",
         "ordering": 2,
         "values": [
-            {"value": -50, "name": "-50"},
+            {"value": -50, "name": "Grade-50"},
             {"value": 0, "name": "0", "flags": 0x2},
-            {"value": 200, "name": "200"},
+            {"value": 200, "name": "Grade200"},
         ],
     },
     dict(
