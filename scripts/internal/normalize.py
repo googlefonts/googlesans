@@ -26,7 +26,6 @@ def scrub_designspace(designspace: DesignSpaceDocument, project_root: Path) -> N
     for instance in designspace.instances:
         scrub_instance(instance, project_root)
 
-
     if skip_export_glyphs:
         designspace.lib["public.skipExportGlyphs"] = sorted(skip_export_glyphs)
     designspace.lib = {
