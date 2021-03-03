@@ -110,6 +110,9 @@ test-fb-vf-expert:
 	fontbakery check-profile -C --loglevel WARN qa/check-fea.py $(VARIABLE_BUILD_DIR)/*.ttf
 	fontbakery check-profile -C --loglevel WARN qa/check-charset.py $(VARIABLE_BUILD_DIR)/*.ttf
 
+update-glyphset-defs:
+	python3 scripts/gs-update-glyphset-qa-files.py
+
 # ------------------------------
 # Python source formatting
 # ------------------------------
