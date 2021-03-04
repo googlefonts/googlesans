@@ -28,6 +28,7 @@ GOOGLESANS_PROFILE_CHECKS = UNIVERSAL_PROFILE_CHECKS + [
     "com.google.fonts/check/googlesans/opentype/hhea/ascent",
     "com.google.fonts/check/googlesans/opentype/hhea/descent",
     "com.google.fonts/check/googlesans/opentype/hhea/linegap",
+    "com.google.fonts/check/googlesans/opentype/os2/strikeout",
     "com.google.fonts/check/googlesans/opentype/os2/typodescender",
     "com.google.fonts/check/googlesans/opentype/os2/typoascender",
     "com.google.fonts/check/googlesans/opentype/os2/typolinegap",
@@ -57,6 +58,8 @@ ATTRIBUTES = {
     "hhea_ascent": 966,  # set to match typo metrics values
     "hhea_descent": -286,
     "hhea_linegap": 0,
+    "os2_strikeout_position": 306,
+    "os2_strikeout_size": 84,
     "os2_typoascender": 966,  # set to match hhea metrics values
     "os2_typodescender": -286,
     "os2_typolinegap": 0,
@@ -198,39 +201,6 @@ def com_google_fonts_check_googlesans_opentype_os2_windescent(ttFont):
         yield PASS, "The OS/2.winDescent value matches the required value."
 
 
-# post underline checks
-# OS/2.winDescent check
-@check(
-    id="com.google.fonts/check/googlesans/opentype/post/underline",
-    rationale="""
-    Confirms that the post table underline thickness and position are
-    set to the correct values
-    """,
-)
-def com_google_fonts_check_googlesans_opentype_post_underline(ttFont):
-    """Post table underline thickness and position are set to correct values"""
-
-    # underline position
-    if ttFont["post"].underlinePosition != ATTRIBUTES["post_underline_position"]:
-        yield (
-            FAIL,
-            f"The post underline position value {ttFont['post'].underlinePosition} "
-            f"does not match the required value {ATTRIBUTES['post_underline_position']}",
-        )
-    else:
-        yield PASS, "The post underline position value matches the required value."
-
-    # underline thickness
-    if ttFont["post"].underlineThickness != ATTRIBUTES["post_underline_thickness"]:
-        yield (
-            FAIL,
-            f"The post underline thickness value {ttFont['post'].underlineThickness} "
-            f"does not match the required value {ATTRIBUTES['post_underline_thickness']}",
-        )
-    else:
-        yield PASS, "The post underline position value matches the required value."
-
-
 # hhea.Ascent check
 @check(
     id="com.google.fonts/check/googlesans/opentype/hhea/ascent",
@@ -343,6 +313,73 @@ def com_google_fonts_check_googlesans_opentype_os2_typolinegap(ttFont):
         )
     else:
         yield PASS, "The OS/2.typoLineGap value matches the required value."
+
+
+# ::::::::::::::::::::::::::::::::::::::::::::::::
+# Other metrics
+# ::::::::::::::::::::::::::::::::::::::::::::::::
+
+# post underline checks
+@check(
+    id="com.google.fonts/check/googlesans/opentype/post/underline",
+    rationale="""
+    Confirms that the post table underline thickness and position are
+    set to the correct values
+    """,
+)
+def com_google_fonts_check_googlesans_opentype_post_underline(ttFont):
+    """Post table underline thickness and position are set to correct values"""
+
+    # underline position
+    if ttFont["post"].underlinePosition != ATTRIBUTES["post_underline_position"]:
+        yield (
+            FAIL,
+            f"The post underline position value {ttFont['post'].underlinePosition} "
+            f"does not match the required value {ATTRIBUTES['post_underline_position']}",
+        )
+    else:
+        yield PASS, "The post underline position value matches the required value."
+
+    # underline thickness
+    if ttFont["post"].underlineThickness != ATTRIBUTES["post_underline_thickness"]:
+        yield (
+            FAIL,
+            f"The post underline thickness value {ttFont['post'].underlineThickness} "
+            f"does not match the required value {ATTRIBUTES['post_underline_thickness']}",
+        )
+    else:
+        yield PASS, "The post underline thickness value matches the required value."
+
+
+@check(
+    id="com.google.fonts/check/googlesans/opentype/os2/strikeout",
+    rationale="""
+    Confirms that the OS/2 table strikeout size and position are
+    set to the correct values
+    """,
+)
+def com_google_fonts_check_googlesans_opentype_os2_strikeout(ttFont):
+    """OS/2 table strikeout size and position are set to correct values"""
+
+    # strikeout position
+    if ttFont["OS/2"].yStrikeoutPosition != ATTRIBUTES["os2_strikeout_position"]:
+        yield (
+            FAIL,
+            f"The OS/2 strikeout position value {ttFont['OS/2'].yStrikeoutPosition} "
+            f"does not match the required value {ATTRIBUTES['os2_strikeout_position']}",
+        )
+    else:
+        yield PASS, "The OS/2 strikeout position value matches the required value."
+
+    # strikeout thickness
+    if ttFont["OS/2"].yStrikeoutSize != ATTRIBUTES["os2_strikeout_size"]:
+        yield (
+            FAIL,
+            f"The OS/2 strikeout size value {ttFont['OS/2'].yStrikeoutSize} "
+            f"does not match the required value {ATTRIBUTES['os2_strikeout_size']}",
+        )
+    else:
+        yield PASS, "The OS/2 strikeout size value matches the required value."
 
 
 # ================================================
