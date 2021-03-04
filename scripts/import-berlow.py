@@ -86,6 +86,15 @@ for src, dst in MAPPING.items():
 
     glyph_order: List[str] = target.lib["public.glyphOrder"]
     for glyph in source:
+        if glyph.name in {
+            "finalpedagesh-hb",
+            "pedagesh-hb",
+            "shindageshshindot-hb",
+            "shindageshsindot-hb",
+            "shindagesh-hb",
+        }:
+            # Upstream is better than downstream.
+            continue
         # Clear out PUA codepoints.
         if glyph.unicode in range(0xE000, 0xF8FF + 1):
             glyph.unicode = None
