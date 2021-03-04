@@ -1,3 +1,5 @@
+# flake8: noqa
+
 from pathlib import Path
 
 from ufoLib2 import Font
