@@ -49,7 +49,6 @@ def main():
             "--notdef-outline",
             "--layout-features=*",
             "--drop-tables= ",
-            "--passthrough-tables",
             "--name-IDs=*",
             "--name-languages=*",
             "--glyph-names",
