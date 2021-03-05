@@ -38,10 +38,20 @@ UPRIGHT_AXES = [
             dict(value=700, name="Bold"),  # Bold
         ],
     ),
+    {
+        "tag": "GRAD",
+        "name": "Grade",
+        "ordering": 2,
+        "values": [
+            {"value": -50, "name": "Grade-50"},
+            {"value": 0, "name": "0", "flags": 0x2},
+            {"value": 200, "name": "Grade200"},
+        ],
+    },
     dict(
         tag="ital",
         name="Italic",
-        ordering=2,
+        ordering=3,
         values=[dict(value=0, name="Regular", flags=0x2, linkedValue=1)],  # Regular
     ),
 ]
@@ -68,17 +78,27 @@ ITALIC_AXES = [
             dict(value=700, name="Bold"),  # Bold
         ],
     ),
+    {
+        "tag": "GRAD",
+        "name": "Grade",
+        "ordering": 2,
+        "values": [
+            {"value": -50, "name": "Grade-50"},
+            {"value": 0, "name": "0", "flags": 0x2},
+            {"value": 200, "name": "Grade200"},
+        ],
+    },
     dict(
         tag="ital",
         name="Italic",
-        ordering=2,
+        ordering=3,
         values=[dict(value=1, name="Italic")],  # Italic
     ),
 ]
 
-VARIABLE_DIR = "../build/GoogleSans/variable/expert"
-GS_UPRIGHT = f"{VARIABLE_DIR}/GoogleSans[opsz,wght].ttf"
-GS_ITALIC = f"{VARIABLE_DIR}/GoogleSans-Italic[opsz,wght].ttf"
+VARIABLE_DIR = "../build/GoogleSans/variable"
+GS_UPRIGHT = f"{VARIABLE_DIR}/GoogleSans[GRAD,opsz,wght].ttf"
+GS_ITALIC = f"{VARIABLE_DIR}/GoogleSans-Italic[GRAD,opsz,wght].ttf"
 
 
 def main():

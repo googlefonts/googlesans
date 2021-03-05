@@ -22,7 +22,7 @@ jobs:
           projectname: "Google Sans"
           sourcepath: "src"
           buildpath: "build/GoogleSans/static" # static font dir
-          dependpath: "requirements.txt"
+          dependpath: "requirements-dev.txt"
           py-version: ${{ matrix.python-version }}
           buildcommand: "make gs-static" # static font make target
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
@@ -42,6 +42,7 @@ jobs:
         with:
           update-wheel: "true"
           update-setuptools: "true"
+          path: ${{ steps.config.outputs.dependpath }}
       - name: Build fonts
         run: ${{ steps.config.outputs.buildcommand }}
       - name: Push static font artifacts
@@ -64,7 +65,7 @@ jobs:
           projectname: "Google Sans"
           sourcepath: "src"
           buildpath: "build/GoogleSans/variable" # variable font dir
-          dependpath: "requirements.txt"
+          dependpath: "requirements-dev.txt"
           py-version: ${{ matrix.python-version }}
           buildcommand: "make gs-vf" # static font make target
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
@@ -84,6 +85,7 @@ jobs:
         with:
           update-wheel: "true"
           update-setuptools: "true"
+          path: ${{ steps.config.outputs.dependpath }}
       - name: Build fonts
         run: ${{ steps.config.outputs.buildcommand }}
       - name: Push variable font artifacts

@@ -46,7 +46,6 @@ GOOGLESANS_PROFILE_CHECKS = [
 ]
 
 STATIC_UPRIGHT_FEA = [
-    "aalt",
     "c2sc",
     "calt",
     "case",
@@ -73,14 +72,12 @@ STATIC_UPRIGHT_FEA = [
     "ss05",
     "ss06",
     "ss07",
-    "ss08",
     "subs",
     "sups",
     "tnum",
 ]
 
 STATIC_ITALICS_FEA = [
-    "aalt",
     "c2sc",
     "calt",
     "case",
@@ -106,14 +103,12 @@ STATIC_ITALICS_FEA = [
     "ss05",
     "ss06",
     "ss07",
-    "ss08",
     "subs",
     "sups",
     "tnum",
 ]
 
 VAR_UPRIGHT_FEA = [
-    "aalt",
     "c2sc",
     "calt",
     "case",
@@ -141,14 +136,12 @@ VAR_UPRIGHT_FEA = [
     "ss05",
     "ss06",
     "ss07",
-    "ss08",
     "subs",
     "sups",
     "tnum",
 ]
 
 VAR_ITALICS_FEA = [
-    "aalt",
     "c2sc",
     "calt",
     "case",
@@ -175,7 +168,6 @@ VAR_ITALICS_FEA = [
     "ss05",
     "ss06",
     "ss07",
-    "ss08",
     "subs",
     "sups",
     "tnum",
@@ -404,12 +396,20 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
                 assert isinstance(shaped_texts_expected, dict)
 
                 for key, shaped_text in shaped_texts.items():
-                    if shaped_text != shaped_texts_expected[key]:
+                    try:
+                        expected = shaped_texts_expected[key]
+                    except KeyError as e:
+                        yield FAIL, (
+                            f"{shaping_file}: No entry found for {filename.name}, "
+                            f" instance {e}"
+                        )
+                        continue
+                    if shaped_text != expected:
                         shaped_texts_str = textwrap.indent(
                             "\n".join(shaped_text), "\t  "
                         )
                         shaped_texts_expected_str = textwrap.indent(
-                            "\n".join(shaped_texts_expected[key]), "\t  "
+                            "\n".join(expected), "\t  "
                         )
                         yield FAIL, (
                             f"{shaping_file}: Expected and actual shaping not matching."
