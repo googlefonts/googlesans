@@ -54,7 +54,7 @@ ITALIC_AXES = [
     ),
 ]
 
-VARIABLE_DIR = "../build/GoogleSans/variable/expert/partial"
+VARIABLE_DIR = "../build/GoogleSans/variable/partial"
 GS_UPRIGHT = f"{VARIABLE_DIR}/GoogleSans[wght].ttf"
 GS_ITALIC = f"{VARIABLE_DIR}/GoogleSans-Italic[wght].ttf"
 GST_UPRIGHT = f"{VARIABLE_DIR}/GoogleSansText[wght].ttf"

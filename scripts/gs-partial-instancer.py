@@ -22,7 +22,7 @@ from fontTools.varLib import instancer
 MIN_OPSZ_SIZE = 17
 MAX_OPSZ_SIZE = 18
 
-VARIABLE_DIR = "../build/GoogleSans/variable/expert"
+VARIABLE_DIR = "../build/GoogleSans/variable"
 VARIABLE_INPATH = f"{VARIABLE_DIR}/*.ttf"
 
 FAMILY_MAX = "Google Sans"

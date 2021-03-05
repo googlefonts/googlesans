@@ -16,10 +16,10 @@ jobs:
         with:
           projectname: "Google Sans"
           sourcepath: "source"
-          buildpath: "build/GoogleSans/variable/expert/*.ttf" # variable font build path
+          buildpath: "build/GoogleSans/variable/*.ttf" # variable font build path
           readmepath: "README.md"
           changelogpath: "CHANGELOG.md"
-          dependpath: "requirements.txt"
+          dependpath: "requirements-dev.txt"
           py-version: ${{ matrix.python-version }}
           buildcommand: "make gs-vf" # variable font make target
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
@@ -39,42 +39,31 @@ jobs:
         with:
           update-wheel: "true"
           update-setuptools: "true"
-          path: "requirements-dev.txt"
+          path: ${{ steps.config.outputs.dependpath }}
       - name: Build fonts
         run: ${{ steps.config.outputs.buildcommand }}
-      - name: Font Bakery GS profile tests (2-axis Expert)
+      - name: Font Bakery GS profile tests
         uses: f-actions/font-bakery@v1
         with:
           version: "latest"
           subcmd: "check-profile"
           args: "-C --loglevel WARN qa/check-googlesans.py"
           path: "${{ steps.config.outputs.buildpath }}"
-      - name: Font Bakery character set profile tests (2-axis Expert)
+      - name: Font Bakery character set profile tests
         uses: f-actions/font-bakery@v1
         with:
           version: "latest"
           subcmd: "check-profile"
           args: "-C --loglevel WARN qa/check-charset.py"
           path: "${{ steps.config.outputs.buildpath }}"
-      - name: Font Bakery feature tag tests (2-axis Expert)
+      - name: Font Bakery feature tag and shaping tests
         uses: f-actions/font-bakery@v1
         with:
           version: "latest"
           subcmd: "check-profile"
           args: "-C --loglevel WARN qa/check-fea.py"
           path: "${{ steps.config.outputs.buildpath }}"
-      - name: Font Bakery GS profile tests (1-axis Expert)
-        uses: f-actions/font-bakery@v1
-        with:
-          version: "latest"
-          subcmd: "check-profile"
-          args: "-C --loglevel WARN qa/check-googlesans.py"
-          path: "build/GoogleSans/variable/expert/partial/*.ttf"
-      - name: OpenType Sanitizer checks (2-axis Expert)
+      - name: OpenType Sanitizer checks
         uses: f-actions/opentype-sanitizer@v1
         with:
           path: "${{ steps.config.outputs.buildpath }}"
-      - name: OpenType Sanitizer checks (1-axis Expert)
-        uses: f-actions/opentype-sanitizer@v1
-        with:
-          path: "build/GoogleSans/variable/expert/partial/*.ttf"
