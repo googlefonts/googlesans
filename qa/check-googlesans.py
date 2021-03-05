@@ -33,6 +33,7 @@ GOOGLESANS_PROFILE_CHECKS = UNIVERSAL_PROFILE_CHECKS + [
     "com.google.fonts/check/googlesans/opentype/os2/typoascender",
     "com.google.fonts/check/googlesans/opentype/os2/typolinegap",
     "com.google.fonts/check/googlesans/opentype/post/underline",
+    "com.google.fonts/check/googlesans/vf/fvaraxes",
     "com.google.fonts/check/googlesans/vf/fvardefault",
 ]
 
@@ -63,10 +64,12 @@ ATTRIBUTES = {
     "os2_typoascender": 966,  # set to match hhea metrics values
     "os2_typodescender": -286,
     "os2_typolinegap": 0,
+    "expected_fvar_axes": ["opsz", "wght", "GRAD"],
     "opsz_axis_default": 18.0,
     "post_underline_position": -160,
     "post_underline_thickness": 84,
     "wght_axis_default": 400.0,
+    "grad_axis_default": 0.0,
 }
 
 
@@ -388,11 +391,43 @@ def com_google_fonts_check_googlesans_opentype_os2_strikeout(ttFont):
 
 
 @check(
+    id="com.google.fonts/check/googlesans/vf/fvaraxes",
+    conditions=["is_variable_font"],
+    rationale="""
+    Confirms that the variable font format builds include
+    all expected axis tags
+    """,
+)
+def com_google_fonts_check_googlesans_variable_fvar_axes(ttFont):
+    """Confirms that the variable font builds include expected axes."""
+    tt = ttFont
+    observed_axis_list = []
+    for axis in tt["fvar"].axes:
+        observed_axis_list.append(axis.axisTag)
+
+    if len(observed_axis_list) != len(ATTRIBUTES["expected_fvar_axes"]):
+        yield (
+            FAIL,
+            f"{tt.reader.file.name} does not include the correct axis tags. \n"
+            f"Observed: {observed_axis_list}\n"
+            f"Expected: {ATTRIBUTES['expected_fvar_axes']}",
+        )
+
+    for axis_tag in ATTRIBUTES["expected_fvar_axes"]:
+        if axis_tag in observed_axis_list:
+            pass
+        else:
+            yield (FAIL, f"{tt.reader.file.name} does not include axis tag {axis_tag}")
+
+    yield (PASS, f"{tt.reader.file.name} includes all expected axis tags")
+
+
+@check(
     id="com.google.fonts/check/googlesans/vf/fvardefault",
     conditions=["is_variable_font"],
     rationale="""
     Confirms that the variable font format builds include the expected fvar
-    default definitions of opsz = 18 and wght = 400
+    default definitions for the Google Sans design axes
     """,
 )
 def com_google_fonts_check_googlesans_variable_fvar_default(ttFont):
@@ -400,6 +435,7 @@ def com_google_fonts_check_googlesans_variable_fvar_default(ttFont):
     tt = ttFont
     EXPECTED_OPSZ = ATTRIBUTES["opsz_axis_default"]
     EXPECTED_WGHT = ATTRIBUTES["wght_axis_default"]
+    EXPECTED_GRAD = ATTRIBUTES["grad_axis_default"]
 
     for axis in tt["fvar"].axes:
         if axis.axisTag == "opsz":
@@ -427,6 +463,19 @@ def com_google_fonts_check_googlesans_variable_fvar_default(ttFont):
                 yield (
                     PASS,
                     f"{tt.reader.file.name} contains the expected fvar " f"opsz default.",
+                )
+        elif axis.axisTag == "GRAD":
+            if axis.defaultValue != EXPECTED_GRAD:
+                yield (
+                    FAIL,
+                    f"{tt.reader.file.name} does not include the correct "
+                    f"fvar GRAD axis default.\n"
+                    f"Found: `{axis.defaultValue}` and expected `{EXPECTED_GRAD}`",
+                )
+            else:
+                yield (
+                    PASS,
+                    f"{tt.reader.file.name} contains the expected fvar " f"GRAD default.",
                 )
 
 
