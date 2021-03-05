@@ -25,8 +25,9 @@
 
 ### Fixed
 
-- fix logo ligatures
+- fix logo ligatures have incorrect letter forms
 - fix small caps `G` and `y` form bugs
+- fix ligatures inappropriately exist in small caps
 - eliminate transformed components, Cyrillic glyph set
 - eliminate recursive component definitions
 
