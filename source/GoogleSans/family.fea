@@ -1470,6 +1470,27 @@ feature smcp {
     sub circumflexcomb_hookabovecomb by circumflexcomb_hookabovecomb.sc;
     sub circumflexcomb_tildecomb by circumflexcomb_tildecomb.sc;
     sub brevecombcy by brevecombcy.sc;
+    # ligature decomposition
+    sub f_f_b by f.sc f.sc b.sc;
+    sub f_f_h by f.sc f.sc h.sc;
+    sub f_f_i by f.sc f.sc i.sc;
+    sub f_f_j by f.sc f.sc j.sc;
+    sub f_f_k by f.sc f.sc k.sc;
+    sub f_f_l by f.sc f.sc l.sc;
+    sub f_f_t by f.sc f.sc t.sc;
+    sub r_f_f by r.sc f.sc f.sc;
+    sub f_b by f.sc b.sc;
+    sub f_f by f.sc f.sc;
+    sub f_h by f.sc h.sc;
+    sub f_i by f.sc i.sc;
+    sub f_j by f.sc j.sc;
+    sub f_k by f.sc k.sc;
+    sub f_l by f.sc l.sc;
+    sub f_t by f.sc t.sc;
+    sub r_f by r.sc f.sc;
+    sub r_t by r.sc t.sc;
+    sub t_f by t.sc f.sc;
+    sub t_t by t.sc t.sc;
 } smcp;
 
 feature dlig {
