@@ -1,5 +1,35 @@
 # Google Sans Changelog
 
+## Version 4.000
+
+### New
+
+- new grade axis with a range of -50 to 200
+- add LATIN CAPITAL LETTER SHARP S (U+1E9E)
+- add LATIN CAPITAL LETTER SHARP S small cap form
+- add c2sc feature support for new U+1E9E glyph
+- add LATIN SMALL LETTER L WITH MIDDLE DOT (U+0140)
+
+### Changed
+
+- remove stylistic alternates
+- remove `aalt` feature code
+- reduce `ss04` character set to support only letters required for file size unit abbreviations
+- rename `ss04` to "File Size Units"
+- remove `ss08` Bulgarian locale stylistic set
+- transition Latin and punctuation rvrn substitutions to interpolated forms with a sharp avar table
+- improve location and scale of dagesh mark across the weight axis
+- punctuation kerning improvements
+- minor dollar, percent, and ampersand symbol design refinements
+- execute subsetter on variable font format files (file size improvement)
+
+### Fixed
+
+- fix logo ligatures
+- fix small caps `G` and `y` form bugs
+- eliminate transformed components, Cyrillic glyph set
+- eliminate recursive component definitions
+
 ## Version 3.003
 
 ### New
