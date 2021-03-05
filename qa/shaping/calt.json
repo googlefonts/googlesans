@@ -1,6 +1,6 @@
 {
   "meta": {
-    "build_commit": "617d313bb59de7969f34439975febc98f7378403"
+    "build_commit": ""
   },
   "input": {
     "features": {
@@ -23,74 +23,8 @@
     ]
   },
   "output": {
-    "GoogleSans-Bold.ttf": [
-      "Google.logo|space|Google.logo",
-      "G.logo|space|G.logo",
-      "G.super|space|G.super",
-      "G.logo",
-      "e.logo",
-      "g.logo",
-      "l.logo",
-      "o.logo",
-      "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-    ],
-    "GoogleSans-BoldItalic.ttf": [
-      "Google.logo|space|Google.logo",
-      "G.logo|space|G.logo",
-      "G.super|space|G.super",
-      "G.logo",
-      "e.logo",
-      "g.logo",
-      "l.logo",
-      "o.logo",
-      "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-    ],
-    "GoogleSans-Italic.ttf": [
-      "Google.logo|space|Google.logo",
-      "G.logo|space|G.logo",
-      "G.super|space|G.super",
-      "G.logo",
-      "e.logo",
-      "g.logo",
-      "l.logo",
-      "o.logo",
-      "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-    ],
-    "GoogleSans-Italic[GRAD,opsz,wght].ttf": {
-      "opsz=18.0,wght=400.0": [
-        "G.BRACKET.18|o|o|g|l|e.logo|space|Google.logo",
-        "g|o|o|g|l|e|underscore|G.BRACKET.18|space|G.logo",
-        "s|u|p|e|r|underscore|G.BRACKET.18|underscore|l|o|g|o|space|G.super",
-        "G.BRACKET.18|underscore|l|o|g|o",
-        "e.logo",
-        "g.logo",
-        "l.logo",
-        "o.logo",
-        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-      ],
-      "opsz=18.0,wght=500.0": [
-        "G.BRACKET.18|o|o|g|l|e.logo|space|Google.logo",
-        "g|o|o|g|l|e|underscore|G.BRACKET.18|space|G.logo",
-        "s|u|p|e|r|underscore|G.BRACKET.18|underscore|l|o|g|o|space|G.super",
-        "G.BRACKET.18|underscore|l|o|g|o",
-        "e.logo",
-        "g.logo",
-        "l.logo",
-        "o.logo",
-        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-      ],
-      "opsz=18.0,wght=700.0": [
-        "G.BRACKET.18|o|o|g|l|e.logo|space|Google.logo",
-        "g|o|o|g|l|e|underscore|G.BRACKET.18|space|G.logo",
-        "s|u|p|e|r|underscore|G.BRACKET.18|underscore|l|o|g|o|space|G.super",
-        "G.BRACKET.18|underscore|l|o|g|o",
-        "e.logo",
-        "g.logo",
-        "l.logo",
-        "o.logo",
-        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-      ],
-      "opsz=17.0,wght=400.0": [
+    "GoogleSans[GRAD,opsz,wght].ttf": {
+      "opsz=18.0,wght=400.0,GRAD=0.0": [
         "Google.logo|space|Google.logo",
         "G.logo|space|G.logo",
         "G.super|space|G.super",
@@ -101,7 +35,7 @@
         "o.logo",
         "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
       ],
-      "opsz=17.0,wght=500.0": [
+      "opsz=18.0,wght=500.0,GRAD=0.0": [
         "Google.logo|space|Google.logo",
         "G.logo|space|G.logo",
         "G.super|space|G.super",
@@ -112,7 +46,40 @@
         "o.logo",
         "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
       ],
-      "opsz=17.0,wght=700.0": [
+      "opsz=18.0,wght=700.0,GRAD=0.0": [
+        "Google.logo|space|Google.logo",
+        "G.logo|space|G.logo",
+        "G.super|space|G.super",
+        "G.logo",
+        "e.logo",
+        "g.logo",
+        "l.logo",
+        "o.logo",
+        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+      ],
+      "opsz=17.0,wght=400.0,GRAD=0.0": [
+        "Google.logo|space|Google.logo",
+        "G.logo|space|G.logo",
+        "G.super|space|G.super",
+        "G.logo",
+        "e.logo",
+        "g.logo",
+        "l.logo",
+        "o.logo",
+        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+      ],
+      "opsz=17.0,wght=500.0,GRAD=0.0": [
+        "Google.logo|space|Google.logo",
+        "G.logo|space|G.logo",
+        "G.super|space|G.super",
+        "G.logo",
+        "e.logo",
+        "g.logo",
+        "l.logo",
+        "o.logo",
+        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+      ],
+      "opsz=17.0,wght=700.0,GRAD=0.0": [
         "Google.logo|space|Google.logo",
         "G.logo|space|G.logo",
         "G.super|space|G.super",
@@ -124,39 +91,74 @@
         "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
       ]
     },
-    "GoogleSans-Medium.ttf": [
-      "Google.logo|space|Google.logo",
-      "G.logo|space|G.logo",
-      "G.super|space|G.super",
-      "G.logo",
-      "e.logo",
-      "g.logo",
-      "l.logo",
-      "o.logo",
-      "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-    ],
-    "GoogleSans-MediumItalic.ttf": [
-      "Google.logo|space|Google.logo",
-      "G.logo|space|G.logo",
-      "G.super|space|G.super",
-      "G.logo",
-      "e.logo",
-      "g.logo",
-      "l.logo",
-      "o.logo",
-      "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-    ],
-    "GoogleSans-Regular.ttf": [
-      "Google.logo|space|Google.logo",
-      "G.logo|space|G.logo",
-      "G.super|space|G.super",
-      "G.logo",
-      "e.logo",
-      "g.logo",
-      "l.logo",
-      "o.logo",
-      "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-    ],
+    "GoogleSans-Italic[GRAD,opsz,wght].ttf": {
+      "opsz=18.0,wght=400.0,GRAD=0.0": [
+        "Google.logo|space|Google.logo",
+        "G.logo|space|G.logo",
+        "G.super|space|G.super",
+        "G.logo",
+        "e.logo",
+        "g.logo",
+        "l.logo",
+        "o.logo",
+        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+      ],
+      "opsz=18.0,wght=500.0,GRAD=0.0": [
+        "Google.logo|space|Google.logo",
+        "G.logo|space|G.logo",
+        "G.super|space|G.super",
+        "G.logo",
+        "e.logo",
+        "g.logo",
+        "l.logo",
+        "o.logo",
+        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+      ],
+      "opsz=18.0,wght=700.0,GRAD=0.0": [
+        "Google.logo|space|Google.logo",
+        "G.logo|space|G.logo",
+        "G.super|space|G.super",
+        "G.logo",
+        "e.logo",
+        "g.logo",
+        "l.logo",
+        "o.logo",
+        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+      ],
+      "opsz=17.0,wght=400.0,GRAD=0.0": [
+        "Google.logo|space|Google.logo",
+        "G.logo|space|G.logo",
+        "G.super|space|G.super",
+        "G.logo",
+        "e.logo",
+        "g.logo",
+        "l.logo",
+        "o.logo",
+        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+      ],
+      "opsz=17.0,wght=500.0,GRAD=0.0": [
+        "Google.logo|space|Google.logo",
+        "G.logo|space|G.logo",
+        "G.super|space|G.super",
+        "G.logo",
+        "e.logo",
+        "g.logo",
+        "l.logo",
+        "o.logo",
+        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+      ],
+      "opsz=17.0,wght=700.0,GRAD=0.0": [
+        "Google.logo|space|Google.logo",
+        "G.logo|space|G.logo",
+        "G.super|space|G.super",
+        "G.logo",
+        "e.logo",
+        "g.logo",
+        "l.logo",
+        "o.logo",
+        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+      ]
+    },
     "GoogleSansText-Bold.ttf": [
       "Google.logo|space|Google.logo",
       "G.logo|space|G.logo",
@@ -223,73 +225,71 @@
       "o.logo",
       "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
     ],
-    "GoogleSans[GRAD,opsz,wght].ttf": {
-      "opsz=18.0,wght=400.0": [
-        "G.BRACKET.18|o|o|g|l|e.logo|space|Google.logo",
-        "g|o|o|g|l|e|underscore|G.BRACKET.18|space|G.logo",
-        "s|u|p|e|r|underscore|G.BRACKET.18|underscore|l|o|g|o|space|G.super",
-        "G.BRACKET.18|underscore|l|o|g|o",
-        "e.logo",
-        "g.logo",
-        "l.logo",
-        "o.logo",
-        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-      ],
-      "opsz=18.0,wght=500.0": [
-        "G.BRACKET.18|o|o|g|l|e.logo|space|Google.logo",
-        "g|o|o|g|l|e|underscore|G.BRACKET.18|space|G.logo",
-        "s|u|p|e|r|underscore|G.BRACKET.18|underscore|l|o|g|o|space|G.super",
-        "G.BRACKET.18|underscore|l|o|g|o",
-        "e.logo",
-        "g.logo",
-        "l.logo",
-        "o.logo",
-        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-      ],
-      "opsz=18.0,wght=700.0": [
-        "G.BRACKET.18|o|o|g|l|e.logo|space|Google.logo",
-        "g|o|o|g|l|e|underscore|G.BRACKET.18|space|G.logo",
-        "s|u|p|e|r|underscore|G.BRACKET.18|underscore|l|o|g|o|space|G.super",
-        "G.BRACKET.18|underscore|l|o|g|o",
-        "e.logo",
-        "g.logo",
-        "l.logo",
-        "o.logo",
-        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-      ],
-      "opsz=17.0,wght=400.0": [
-        "Google.logo|space|Google.logo",
-        "G.logo|space|G.logo",
-        "G.super|space|G.super",
-        "G.logo",
-        "e.logo",
-        "g.logo",
-        "l.logo",
-        "o.logo",
-        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-      ],
-      "opsz=17.0,wght=500.0": [
-        "Google.logo|space|Google.logo",
-        "G.logo|space|G.logo",
-        "G.super|space|G.super",
-        "G.logo",
-        "e.logo",
-        "g.logo",
-        "l.logo",
-        "o.logo",
-        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-      ],
-      "opsz=17.0,wght=700.0": [
-        "Google.logo|space|Google.logo",
-        "G.logo|space|G.logo",
-        "G.super|space|G.super",
-        "G.logo",
-        "e.logo",
-        "g.logo",
-        "l.logo",
-        "o.logo",
-        "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
-      ]
-    }
+    "GoogleSans-Bold.ttf": [
+      "Google.logo|space|Google.logo",
+      "G.logo|space|G.logo",
+      "G.super|space|G.super",
+      "G.logo",
+      "e.logo",
+      "g.logo",
+      "l.logo",
+      "o.logo",
+      "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+    ],
+    "GoogleSans-BoldItalic.ttf": [
+      "Google.logo|space|Google.logo",
+      "G.logo|space|G.logo",
+      "G.super|space|G.super",
+      "G.logo",
+      "e.logo",
+      "g.logo",
+      "l.logo",
+      "o.logo",
+      "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+    ],
+    "GoogleSans-Italic.ttf": [
+      "Google.logo|space|Google.logo",
+      "G.logo|space|G.logo",
+      "G.super|space|G.super",
+      "G.logo",
+      "e.logo",
+      "g.logo",
+      "l.logo",
+      "o.logo",
+      "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+    ],
+    "GoogleSans-Medium.ttf": [
+      "Google.logo|space|Google.logo",
+      "G.logo|space|G.logo",
+      "G.super|space|G.super",
+      "G.logo",
+      "e.logo",
+      "g.logo",
+      "l.logo",
+      "o.logo",
+      "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+    ],
+    "GoogleSans-MediumItalic.ttf": [
+      "Google.logo|space|Google.logo",
+      "G.logo|space|G.logo",
+      "G.super|space|G.super",
+      "G.logo",
+      "e.logo",
+      "g.logo",
+      "l.logo",
+      "o.logo",
+      "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+    ],
+    "GoogleSans-Regular.ttf": [
+      "Google.logo|space|Google.logo",
+      "G.logo|space|G.logo",
+      "G.super|space|G.super",
+      "G.logo",
+      "e.logo",
+      "g.logo",
+      "l.logo",
+      "o.logo",
+      "zero|nine|colon.time|three|zero|space|one|colon.time|two|zero|p|m"
+    ]
   }
 }

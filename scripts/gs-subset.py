@@ -13,18 +13,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import glob
-import os
+import argparse
 import shutil
 import sys
+from pathlib import Path
 
 from fontTools.subset import main as subset_main
 
-STATIC_INPATH = "../build/GoogleSans/static/*.ttf"
-# VARIABLE_INPATH = "../build/GoogleSans/variable/*.ttf"
-
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("dir", type=Path, help="Directory of fonts to subset.")
+    parsed_args = parser.parse_args()
+
     # ===============================================
     #
     #  Subset build
@@ -34,23 +35,20 @@ def main():
     # This build includes all shaping and OT feature support,
     # *including* all alternate designs supported through the
     # `aalt` OpenType feature. It will remove unused glyphs.
-    in_static_filepaths = glob.glob(STATIC_INPATH)
+    for rel_filepath in parsed_args.dir.glob("*.ttf"):
+        print(f"[SUBSET] {rel_filepath} PASS 1...")
 
-    for rel_filepath in in_static_filepaths:
-        print(f"[SUBSET] {rel_filepath} to Expert build...")
-
-        local_filepath = os.path.abspath(rel_filepath)
+        local_filepath = rel_filepath.resolve()
         local_filepath_subset = f"{local_filepath}.subset"
 
         # Expert subset argument definitions
         subset_args_expert = [
-            local_filepath,
+            str(local_filepath),
             "--unicodes=*",
             "--no-ignore-missing-glyphs",
             "--notdef-outline",
             "--layout-features=*",
             "--drop-tables= ",
-            "--passthrough-tables",
             "--name-IDs=*",
             "--name-languages=*",
             "--glyph-names",

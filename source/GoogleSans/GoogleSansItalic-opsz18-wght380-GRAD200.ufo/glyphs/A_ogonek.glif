@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Aogonek" format="2">
+  <advance width="669"/>
+  <unicode hex="0104"/>
+  <anchor x="293" y="0" name="bottom"/>
+  <anchor x="608" y="0" name="ogonek"/>
+  <anchor x="412" y="716" name="top"/>
+  <outline>
+    <component base="A"/>
+    <component base="ogonekcomb" xOffset="413"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>A</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.widthMetricsKey</key>
+      <string>A</string>
+    </dict>
+  </lib>
+</glyph>

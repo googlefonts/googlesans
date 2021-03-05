@@ -92,9 +92,9 @@ update-deps:
 # Testing
 # ------------------------------
 
-test-fb: test-fb-static-expert test-fb-vf-expert
+test-fb: test-fb-static test-fb-vf
 
-test-fb-static-expert:
+test-fb-static:
 	@echo "========================================================="
 	@echo " fontbakery v`fontbakery --version` static font checks"
 	@echo "========================================================="
@@ -102,13 +102,16 @@ test-fb-static-expert:
 	fontbakery check-profile -C --loglevel WARN qa/check-fea.py $(STATIC_BUILD_DIR)/*.ttf
 	fontbakery check-profile -C --loglevel WARN qa/check-charset.py $(STATIC_BUILD_DIR)/*.ttf
 
-test-fb-vf-expert:
+test-fb-vf:
 	@echo "========================================================="
 	@echo " fontbakery v`fontbakery --version` variable font checks"
 	@echo "========================================================="
 	fontbakery check-profile -C --loglevel WARN qa/check-googlesans.py $(VARIABLE_BUILD_DIR)/*.ttf
 	fontbakery check-profile -C --loglevel WARN qa/check-fea.py $(VARIABLE_BUILD_DIR)/*.ttf
 	fontbakery check-profile -C --loglevel WARN qa/check-charset.py $(VARIABLE_BUILD_DIR)/*.ttf
+
+update-glyphset-defs:
+	python3 scripts/gs-update-glyphset-qa-files.py
 
 # ------------------------------
 # Python source formatting
