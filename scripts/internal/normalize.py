@@ -140,7 +140,7 @@ def scrub_ufo(
             ],
         },
         # Uncomment after attaining parity between Glyphs file and DS compilation.
-        # {"name": "flattenComponents", "pre": True},
+        {"name": "flattenComponents", "pre": True},
     ]
 
     # Delete non-build-relevant layers.
