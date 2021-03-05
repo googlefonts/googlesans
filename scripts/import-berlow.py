@@ -108,17 +108,23 @@ for src, dst in MAPPING.items():
         }:
             # Upstream is better than downstream.
             continue
-        # Clear out PUA codepoints.
-        if glyph.unicode in range(0xE000, 0xF8FF + 1):
-            glyph.unicode = None
+        # If source glyph does not exist upstream, just import it wholesale.
         if glyph.name not in target:
             target.layers.defaultLayer.insertGlyph(glyph)
             glyph_order.append(glyph.name)
             continue
+        # Otherwise just import width, contours and components.
         target_glyph = target[glyph.name]
-        # if glyph.getLeftMargin(source) != target_glyph.getLeftMargin(target):
-        #     logging.warning(f"UFO {src} has different width for ")
-        target_glyph.width = glyph.width
+        # Glyphs.app convention: marks have a non-zero width to make fiddling
+        # easier. The width should be copied into a lib key and then zeroed out
+        # for production.
+        target_original_width = target_glyph.lib.get(
+            "com.schriftgestaltung.Glyphs.originalWidth"
+        )
+        if target_original_width is not None and glyph.width == target_original_width:
+            target_glyph.width = 0
+        else:
+            target_glyph.width = glyph.width
         target_glyph.contours = glyph.contours
         target_glyph.components = glyph.components
 
