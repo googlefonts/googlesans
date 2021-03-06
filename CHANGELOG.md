@@ -1,6 +1,6 @@
 # Google Sans Changelog
 
-## Version 4.000
+## Version 4.000 RELEASE CANDIDATE 1
 
 ### New
 
