@@ -4,7 +4,7 @@
 
 ### New
 
-- new grade axis with a range of -50 to 200
+- new Latin, Greek, and Cyrillic script grade axis with a range of -50 to 200
 - add LATIN CAPITAL LETTER SHARP S (U+1E9E)
 - add LATIN CAPITAL LETTER SHARP S small cap form
 - add c2sc feature support for new U+1E9E glyph
