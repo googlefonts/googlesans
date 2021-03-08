@@ -25,6 +25,7 @@ def main(argv):
     total_encoded_glyphs = 0
     total_glyphs = 0
 
+    print(f"\n\nFILE SIZE REPORT{'='*62}\n")
     for filepath in sorted(argv):
         tt = TTFont(filepath)
         this_file_size = os.path.getsize(filepath)
