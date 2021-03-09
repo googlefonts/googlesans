@@ -67,3 +67,7 @@ jobs:
         uses: f-actions/opentype-sanitizer@v1
         with:
           path: "${{ steps.config.outputs.buildpath }}"
+      - name: File size analysis
+        run: |
+          pip install --upgrade rich
+          python qa/report-filesize.py ${{ steps.config.outputs.buildpath }}
