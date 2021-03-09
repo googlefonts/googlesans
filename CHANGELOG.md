@@ -22,6 +22,10 @@
 - punctuation kerning improvements (includes double and single quote kerning changes)
 - minor dollar, percent, and ampersand symbol design refinements
 - execute subsetter on variable font format files (file size improvement)
+- update fonttools dependency to v4.19.1
+- update ufo2ft dependency to v2.19.2
+- update glyphsLib dependency to v5.3.1
+
 
 ### Fixed
 
