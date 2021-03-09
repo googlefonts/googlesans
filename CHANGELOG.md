@@ -1,10 +1,10 @@
 # Google Sans Changelog
 
-## Version 4.000 RELEASE CANDIDATE 1
+## Version 4.000
 
 ### New
 
-- new Latin, Greek, and Cyrillic script grade axis with a range of -50 to 200
+- new Latin, Greek, and Cyrillic script grade axis with a range of -50 to 200, variable font format only
 - add LATIN CAPITAL LETTER SHARP S (U+1E9E)
 - add LATIN CAPITAL LETTER SHARP S small cap form
 - add c2sc feature support for new U+1E9E glyph
@@ -19,9 +19,13 @@
 - remove `ss08` Bulgarian locale stylistic set
 - transition Latin and punctuation rvrn substitutions to interpolated forms with a sharp avar table
 - improve location and scale of dagesh mark across the weight axis
-- punctuation kerning improvements
+- punctuation kerning improvements (includes double and single quote kerning changes)
 - minor dollar, percent, and ampersand symbol design refinements
 - execute subsetter on variable font format files (file size improvement)
+- update fonttools dependency to v4.19.1
+- update ufo2ft dependency to v2.19.2
+- update glyphsLib dependency to v5.3.1
+
 
 ### Fixed
 
