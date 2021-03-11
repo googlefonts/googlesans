@@ -356,10 +356,10 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
             return
         try:
             shaping_texts = shaping_input["text"]
-            shaping_features = shaping_input["features"]
         except KeyError as e:
             yield FAIL, (f"{shaping_file}: 'input' key dict is missing {str(e)} key.")
             return
+        shaping_features = shaping_input.get("features", {})
         shaping_script = shaping_input.get("script")
         shaping_language = shaping_input.get("language")
         shaping_comparison_mode = ComparisonMode(
