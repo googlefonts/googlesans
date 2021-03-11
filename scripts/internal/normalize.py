@@ -1,6 +1,7 @@
+import collections
 import copy
 from pathlib import Path
-from typing import List, Set
+from typing import Dict, List, Set, Tuple
 
 import ufo2ft
 import ufoLib2
@@ -14,6 +15,8 @@ from glyphsLib.builder.builders import _expand_kerning_to_brackets
 
 from . import gdef
 
+MASTER_ID_KEY = "com.schriftgestaltung.fontMasterID"
+
 
 def scrub_designspace(designspace: DesignSpaceDocument, project_root: Path) -> None:
     designspace.loadSourceFonts(ufoLib2.Font.open)
@@ -22,6 +25,8 @@ def scrub_designspace(designspace: DesignSpaceDocument, project_root: Path) -> N
 
     for source in designspace.sources:
         scrub_source(source, skip_export_glyphs, rules)
+
+    scrub_graded_sources(designspace.sources)
 
     for instance in designspace.instances:
         scrub_instance(instance, project_root)
@@ -77,7 +82,7 @@ def scrub_ufo(
         # May be useful for Glyphs.
         "com.schriftgestaltung.customParameter.GSFont.Enforce Compatibility Check",
         # Cuts down on ufo2glyphs Git diffs slightly.
-        "com.schriftgestaltung.fontMasterID",
+        MASTER_ID_KEY,
     }
     keys_to_remove = {
         # Using production names is fontmake's default.
@@ -229,3 +234,38 @@ def scrub_ufo(
         features.extend(gdef_table_lines)
         features.append("")  # newline.
     ufo.features.text = "\n".join(features)
+
+
+def location_to_key(
+    location: Dict[str, float], skip_axis: str = "Grade"
+) -> Tuple[Tuple[str, float], ...]:
+    return tuple((k, v) for k, v in location.items() if k != skip_axis)
+
+
+def scrub_graded_sources(sources: List[SourceDescriptor]):
+    default_grades = []
+    grade_mapping = collections.defaultdict(list)
+    for source in sources:
+        if source.location["Grade"]:
+            grade_mapping[location_to_key(source.location)].append(source)
+        else:
+            default_grades.append(source)
+
+    for source in default_grades:
+        all_glyphs = set(source.font.keys())
+        for graded_source in grade_mapping[location_to_key(source.location)]:
+            # NOTE: This copies missing glyphs from the base masters to graded ones.
+            # It only works the first time around!
+            graded_glyphs = set(graded_source.font.keys())
+            graded_default_layer = graded_source.font.layers.defaultLayer
+            for glyph_name in all_glyphs - graded_glyphs:
+                graded_default_layer.insertGlyph(
+                    source.font[glyph_name], overwrite=True
+                )
+
+            graded_source.font.groups = source.font.groups
+            graded_source.font.kerning = source.font.kerning
+
+            graded_master_id = graded_source.font.lib.get(MASTER_ID_KEY)
+            graded_source.font.lib = copy.copy(source.font.lib)
+            graded_source.font.lib[MASTER_ID_KEY] = graded_master_id
