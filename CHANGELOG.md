@@ -1,5 +1,11 @@
 # Google Sans Changelog
 
+## Version 4.001
+
+### Fixed
+
+- added missing ldot (U+0140) small caps feature support (#276)
+
 ## Version 4.000
 
 ### New
