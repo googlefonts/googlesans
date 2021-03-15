@@ -58,7 +58,6 @@ ITALIC_SOURCES := \
 	$(wildcard GoogleSans/GoogleSansItalic-*.ufo/glyphs/contents.plist)
 
 
-all: gs-vf gs-static
 gs-vf: gs-vf-upright gs-vf-italic
 gs-vf-upright: $(VARIABLE_BUILD_PATH_UPRIGHT_TARGET)
 gs-vf-italic: $(VARIABLE_BUILD_PATH_ITALIC_TARGET)
