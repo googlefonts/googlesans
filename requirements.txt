@@ -26,7 +26,7 @@ cu2qu==1.6.7
     # via
     #   fontmake
     #   ufo2ft
-fontmake==2.3.1
+fontmake[pathops]==2.3.1
     # via -r requirements.in
 fontmath==0.6.0
     # via fontmake
@@ -54,6 +54,8 @@ pytz==2021.1
     # via fs
 six==1.15.0
     # via fs
+skia-pathops==0.6.0.post2
+    # via fontmake
 statmake==0.3.0
     # via -r requirements.in
 ufo2ft[cffsubr]==2.19.2
