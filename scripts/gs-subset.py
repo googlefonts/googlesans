@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # Copyright 2020 Google Sans Authors
-
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-
+#
 #     http://www.apache.org/licenses/LICENSE-2.0
-
+#
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,59 +20,41 @@ from pathlib import Path
 
 from fontTools.subset import main as subset_main
 
-
-def main():
+if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("dir", type=Path, help="Directory of fonts to subset.")
+    parser.add_argument("font", type=Path, help="Font to subset in-place.")
     parsed_args = parser.parse_args()
 
-    # ===============================================
-    #
-    #  Subset build
-    #
-    # ===============================================
-    #
-    # This build includes all shaping and OT feature support,
-    # *including* all alternate designs supported through the
-    # `aalt` OpenType feature. It will remove unused glyphs.
-    for rel_filepath in parsed_args.dir.glob("*.ttf"):
-        print(f"[SUBSET] {rel_filepath} PASS 1...")
+    local_filepath = parsed_args.font.resolve()
+    local_filepath_subset = f"{local_filepath}.subset"
 
-        local_filepath = rel_filepath.resolve()
-        local_filepath_subset = f"{local_filepath}.subset"
+    subset_args_expert = [
+        str(local_filepath),
+        "--unicodes=*",
+        "--no-ignore-missing-glyphs",
+        "--notdef-outline",
+        "--layout-features=*",
+        "--drop-tables=MVAR",
+        "--name-IDs=*",
+        "--name-languages=*",
+        "--glyph-names",
+        "--no-prune-unicode-ranges",
+        f"--output-file={local_filepath_subset}",
+    ]
 
-        # Expert subset argument definitions
-        subset_args_expert = [
-            str(local_filepath),
-            "--unicodes=*",
-            "--no-ignore-missing-glyphs",
-            "--notdef-outline",
-            "--layout-features=*",
-            "--drop-tables= ",
-            "--name-IDs=*",
-            "--name-languages=*",
-            "--glyph-names",
-            "--no-prune-unicode-ranges",
-            f"--output-file={local_filepath_subset}",
-        ]
+    try:
+        subset_main(subset_args_expert)
+    except Exception as e:
+        sys.stderr.write(
+            f"ERROR: subsetting error during attempt to subset {local_filepath}"
+            f"- {str(e)}"
+        )
+        sys.exit(1)
 
-        try:
-            subset_main(subset_args_expert)
-        except Exception as e:
-            sys.stderr.write(
-                f"ERROR: subsetting error during attempt to subset {local_filepath}"
-                f"- {str(e)}"
-            )
-            sys.exit(1)
-
-        try:
-            shutil.move(local_filepath_subset, local_filepath)
-        except Exception as e:
-            sys.stderr.write(
-                f"ERROR: during move of subset file {local_filepath} - {str(e)}"
-            )
-            sys.exit(1)
-
-
-if __name__ == "__main__":
-    main()
+    try:
+        shutil.move(local_filepath_subset, local_filepath)
+    except Exception as e:
+        sys.stderr.write(
+            f"ERROR: during move of subset file {local_filepath} - {str(e)}"
+        )
+        sys.exit(1)

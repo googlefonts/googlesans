@@ -219,7 +219,7 @@
         </dict>
       </lib>
     </instance>
-    <instance name="Google Sans Text Regular" familyname="Google Sans" stylename="Text Regular" filename="../../build/GoogleSans/instance_ufo/GoogleSans-TextRegular.ufo">
+    <instance name="Google Sans Text Regular" familyname="Google Sans" stylename="Text Regular" filename="../../build/GoogleSans/instance_ufo/GoogleSansText-Regular.ufo">
       <location>
         <dimension name="Size" xvalue="17"/>
         <dimension name="Weight" xvalue="380"/>
@@ -274,7 +274,7 @@
         </dict>
       </lib>
     </instance>
-    <instance name="Google Sans Text Medium" familyname="Google Sans" stylename="Text Medium" filename="../../build/GoogleSans/instance_ufo/GoogleSans-TextMedium.ufo">
+    <instance name="Google Sans Text Medium" familyname="Google Sans" stylename="Text Medium" filename="../../build/GoogleSans/instance_ufo/GoogleSansText-Medium.ufo">
       <location>
         <dimension name="Size" xvalue="17"/>
         <dimension name="Weight" xvalue="555"/>
@@ -329,7 +329,7 @@
         </dict>
       </lib>
     </instance>
-    <instance name="Google Sans Text Bold" familyname="Google Sans" stylename="Text Bold" filename="../../build/GoogleSans/instance_ufo/GoogleSans-TextBold.ufo" stylemapfamilyname="Google Sans Text" stylemapstylename="bold">
+    <instance name="Google Sans Text Bold" familyname="Google Sans" stylename="Text Bold" filename="../../build/GoogleSans/instance_ufo/GoogleSansText-Bold.ufo" stylemapfamilyname="Google Sans Text" stylemapstylename="bold">
       <location>
         <dimension name="Size" xvalue="17"/>
         <dimension name="Weight" xvalue="734"/>
@@ -643,6 +643,13 @@
         <string>zero.alt.cap</string>
         <string>zero.sc.ss04</string>
       </array>
+      <key>org.statmake.stylespacePath</key>
+      <string>GoogleSans.stylespace</string>
+      <key>org.statmake.additionalLocations</key>
+      <dict>
+        <key>Italic</key>
+        <integer>0</integer>
+      </dict>
     </dict>
   </lib>
 </designspace>

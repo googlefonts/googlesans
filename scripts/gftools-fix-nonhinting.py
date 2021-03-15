@@ -45,6 +45,8 @@
 Fixes TTF GASP table so that its program
 contains the minimal recommended instructions.
 """
+
+import logging
 import sys
 
 import os
@@ -63,20 +65,20 @@ def main(argv):
         )
         # print "Saving to ", backupfont
         font.save(backupfont)
-        print(backupfont, " saved.")
+        logging.info(backupfont, " saved.")
 
         # Print the Gasp table
         if "gasp" in font:
-            print("GASP was: ", font["gasp"].gaspRange)
+            logging.info("GASP was: ", font["gasp"].gaspRange)
         else:
-            print("GASP wasn't there")
+            logging.info("GASP wasn't there")
 
         # Print the PREP table
         if "prep" in font:
             old_program = ttProgram.Program.getAssembly(font["prep"].program)
-            print("PREP was:\n\t" + "\n\t".join(old_program))
+            logging.info("PREP was:\n\t" + "\n\t".join(old_program))
         else:
-            print("PREP wasn't there")
+            logging.info("PREP wasn't there")
 
         # Create a new GASP table
         gasp = ttLib.newTable("gasp")
@@ -101,16 +103,16 @@ def main(argv):
         font["prep"] = prep
 
         # Print the Gasp table
-        print("GASP now: ", font["gasp"].gaspRange)
+        logging.info("GASP now: ", font["gasp"].gaspRange)
 
         # Print the PREP table
         current_program = ttProgram.Program.getAssembly(font["prep"].program)
-        print("PREP now:\n\t" + "\n\t".join(current_program))
+        logging.info("PREP now:\n\t" + "\n\t".join(current_program))
 
         # Save the new file with the name of the input file
         fontfile_out = os.path.abspath(fontpath)
         font.save(fontfile_out)
-        print(fontfile_out, " saved.")
+        logging.info(fontfile_out, " saved.")
 
 
 if __name__ == "__main__":
