@@ -19,6 +19,8 @@ import sys
 from pathlib import Path
 
 from fontTools.designspaceLib import DesignSpaceDocument, InstanceDescriptor
+from fontTools.misc.fixedTools import otRound
+from fontTools.ttLib import TTFont
 from fontTools.varLib.instancer import main as instancer_main
 
 if __name__ == "__main__":
@@ -35,6 +37,7 @@ if __name__ == "__main__":
     font_target: Path = parsed_args.font_target
     designspace: DesignSpaceDocument = parsed_args.designspace
 
+    # Take the instance location from the instance with the same filename stem.
     instance: InstanceDescriptor = next(
         (i for i in designspace.instances if Path(i.filename).stem == font_target.stem),
         None,
@@ -65,3 +68,31 @@ if __name__ == "__main__":
     except Exception as e:
         logging.error(f"Failed to cut instance: {str(e)}")
         sys.exit(1)
+
+    # Post-processing:
+    font = TTFont(font_target)
+
+    # 1. Set OS/2.fsSelection:
+    os2 = font["OS/2"]
+    head = font["head"]
+    if instance.styleMapStyleName == "bold":
+        os2.fsSelection &= ~0b1000000
+        os2.fsSelection |= 0b100000
+        head.macStyle |= 0b1
+    elif instance.styleMapStyleName == "bold italic":
+        os2.fsSelection &= ~0b1000000
+        os2.fsSelection |= 0b100001
+        head.macStyle |= 0b11
+    elif instance.styleMapStyleName == "italic":
+        os2.fsSelection &= ~0b1000000
+        os2.fsSelection |= 0b1
+        head.macStyle |= 0b10
+
+    # 2. Recompute xAvgCharWidth
+    hmtx = font.get("hmtx")
+    if hmtx is not None:
+        widths = [width for width, _ in hmtx.metrics.values() if width > 0]
+        if widths:
+            os2.xAvgCharWidth = otRound(sum(widths) / len(widths))
+
+    font.save(font_target)

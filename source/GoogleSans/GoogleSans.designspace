@@ -133,7 +133,7 @@
         </dict>
       </lib>
     </instance>
-    <instance name="Google Sans Medium" familyname="Google Sans" stylename="Medium" filename="../../build/GoogleSans/instance_ufo/GoogleSans-Medium.ufo">
+    <instance name="Google Sans Medium" familyname="Google Sans" stylename="Medium" filename="../../build/GoogleSans/instance_ufo/GoogleSans-Medium.ufo" stylemapfamilyname="Google Sans Medium">
       <location>
         <dimension name="Size" xvalue="18"/>
         <dimension name="Weight" xvalue="555"/>
@@ -176,7 +176,7 @@
         </dict>
       </lib>
     </instance>
-    <instance name="Google Sans Bold" familyname="Google Sans" stylename="Bold" filename="../../build/GoogleSans/instance_ufo/GoogleSans-Bold.ufo" stylemapfamilyname="Google Sans" stylemapstylename="bold">
+    <instance name="Google Sans Bold" familyname="Google Sans" stylename="Bold" filename="../../build/GoogleSans/instance_ufo/GoogleSans-Bold.ufo" stylemapstylename="bold">
       <location>
         <dimension name="Size" xvalue="18"/>
         <dimension name="Weight" xvalue="734"/>
@@ -219,7 +219,7 @@
         </dict>
       </lib>
     </instance>
-    <instance name="Google Sans Text Regular" familyname="Google Sans" stylename="Text Regular" filename="../../build/GoogleSans/instance_ufo/GoogleSansText-Regular.ufo">
+    <instance name="Google Sans Text Regular" familyname="Google Sans" stylename="Text Regular" filename="../../build/GoogleSans/instance_ufo/GoogleSansText-Regular.ufo" stylemapfamilyname="Google Sans Text">
       <location>
         <dimension name="Size" xvalue="17"/>
         <dimension name="Weight" xvalue="380"/>
@@ -251,10 +251,6 @@
               <integer>0</integer>
             </array>
             <array>
-              <string>styleMapFamilyName</string>
-              <string>Google Sans Text</string>
-            </array>
-            <array>
               <string>Name Table Entry</string>
               <string>3 1 0 0; Google;GoogleSansText-Regular</string>
             </array>
@@ -274,7 +270,7 @@
         </dict>
       </lib>
     </instance>
-    <instance name="Google Sans Text Medium" familyname="Google Sans" stylename="Text Medium" filename="../../build/GoogleSans/instance_ufo/GoogleSansText-Medium.ufo">
+    <instance name="Google Sans Text Medium" familyname="Google Sans" stylename="Text Medium" filename="../../build/GoogleSans/instance_ufo/GoogleSansText-Medium.ufo" stylemapfamilyname="Google Sans Text Medium">
       <location>
         <dimension name="Size" xvalue="17"/>
         <dimension name="Weight" xvalue="555"/>
@@ -304,10 +300,6 @@
             <array>
               <string>Autohint</string>
               <integer>0</integer>
-            </array>
-            <array>
-              <string>styleMapFamilyName</string>
-              <string>Google Sans Text Medium</string>
             </array>
             <array>
               <string>Name Table Entry</string>
@@ -361,10 +353,6 @@
               <integer>0</integer>
             </array>
             <array>
-              <string>styleMapFamilyName</string>
-              <string>Google Sans Text</string>
-            </array>
-            <array>
               <string>Name Table Entry</string>
               <string>3 1 0 0; Google;GoogleSansText-Bold</string>
             </array>
@@ -408,6 +396,13 @@
           </dict>
         </dict>
       </array>
+      <key>org.statmake.additionalLocations</key>
+      <dict>
+        <key>Italic</key>
+        <integer>0</integer>
+      </dict>
+      <key>org.statmake.stylespacePath</key>
+      <string>GoogleSans.stylespace</string>
       <key>public.skipExportGlyphs</key>
       <array>
         <string>Ccedilla.alt</string>
@@ -643,13 +638,6 @@
         <string>zero.alt.cap</string>
         <string>zero.sc.ss04</string>
       </array>
-      <key>org.statmake.stylespacePath</key>
-      <string>GoogleSans.stylespace</string>
-      <key>org.statmake.additionalLocations</key>
-      <dict>
-        <key>Italic</key>
-        <integer>0</integer>
-      </dict>
     </dict>
   </lib>
 </designspace>
