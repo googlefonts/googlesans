@@ -23,6 +23,8 @@ from fontTools.misc.fixedTools import otRound
 from fontTools.ttLib import TTFont
 from fontTools.varLib.instancer import main as instancer_main
 
+from internal.clean_font import main as main_clean_font
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("font_source", type=Path, help="Font to cut instance from.")
@@ -96,3 +98,6 @@ if __name__ == "__main__":
             os2.xAvgCharWidth = otRound(sum(widths) / len(widths))
 
     font.save(font_target)
+
+    # 3. Subset again
+    main_clean_font([str(font_target)])

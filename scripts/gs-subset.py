@@ -13,48 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import argparse
-import shutil
-import sys
-from pathlib import Path
-
-from fontTools.subset import main as subset_main
+from internal.clean_font import main as main_clean_font
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("font", type=Path, help="Font to subset in-place.")
-    parsed_args = parser.parse_args()
-
-    local_filepath = parsed_args.font.resolve()
-    local_filepath_subset = f"{local_filepath}.subset"
-
-    subset_args_expert = [
-        str(local_filepath),
-        "--unicodes=*",
-        "--no-ignore-missing-glyphs",
-        "--notdef-outline",
-        "--layout-features=*",
-        "--drop-tables=MVAR",
-        "--name-IDs=*",
-        "--name-languages=*",
-        "--glyph-names",
-        "--no-prune-unicode-ranges",
-        f"--output-file={local_filepath_subset}",
-    ]
-
-    try:
-        subset_main(subset_args_expert)
-    except Exception as e:
-        sys.stderr.write(
-            f"ERROR: subsetting error during attempt to subset {local_filepath}"
-            f"- {str(e)}"
-        )
-        sys.exit(1)
-
-    try:
-        shutil.move(local_filepath_subset, local_filepath)
-    except Exception as e:
-        sys.stderr.write(
-            f"ERROR: during move of subset file {local_filepath} - {str(e)}"
-        )
-        sys.exit(1)
+    main_clean_font()
