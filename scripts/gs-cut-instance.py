@@ -97,6 +97,9 @@ if __name__ == "__main__":
         if widths:
             os2.xAvgCharWidth = otRound(sum(widths) / len(widths))
 
+    # 3. Set PANOSE
+    # ...
+
     font.save(font_target)
 
     # 3. Subset again
