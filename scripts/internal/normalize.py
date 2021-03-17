@@ -100,6 +100,9 @@ def scrub_ufo(
     }
 
     ufo.lib["public.skipExportGlyphs"] = sorted(skip_export_glyphs)
+    ufo.lib["public.postscriptNames"] = {
+        k: v for k, v in ufo.lib["public.postscriptNames"].items() if k in ufo
+    }
 
     # Reset the ufo2ft filters.
     ufo.lib["com.github.googlei18n.ufo2ft.filters"] = [
