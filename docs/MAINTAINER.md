@@ -95,7 +95,7 @@ To make merges into the main source base as seamless as possible, vendors should
 * Ideally make no use of intermediate (brace) layers if the design allows it.
 * Name all glyphs according to the naming standard used by Glyphs.app and ideally not change them after the first time they've been imported to the base sources.
 * Keep the sources buildable with `fontmake`. Various advanced Glyphs.app features are off-limits because the open-source pipeline does not support them, among them smart components.
-* Provide a list of glyph names and group names to import into the base sources ([see below](#getting-a-list-of-glyphs-and-kerning-groups)).
+* Provide a list of glyph names to import into the base sources ([see below](#getting-a-list-of-glyphs-and-kerning-groups)).
 * Notify us if they want to change something in the base sources with their sources, as we will screen the changes out otherwise. This includes the names or contents of existing kerning groups or OpenType classes.
 * Bundle up test documents for checking the correct shaping of text and application of features, to have tests for functionality after merging.
 
@@ -180,7 +180,9 @@ thai_thoThung
 thai_phoSamphao
 ```
 
-Getting a group list needs a script, as Glyphs.app and Fontlab name kerning groups differently, making retrieval tedious. For Glyphs.app files, use:
+A glyph list is enough for the import. The import script will grab all kerning groups and pairs that contain any of the imported glyphs.
+
+If you want more control over what groups are imported, you can provide a group list. Getting a group list needs a script, as Glyphs.app and Fontlab name kerning groups differently, making retrieval tedious. For Glyphs.app files, use:
 
 ```
 $ python3 scripts/gs-print-kerning-groups.py source/GoogleSans/GoogleSansSomeScript.glyphs > import_groups.txt
@@ -223,15 +225,15 @@ Next, import the resulting Designspaces into their intended target Designspaces:
 $ python3 scripts/gs-merge-designspace.py \
     --source source/GoogleSans/staging/GoogleSansSomeScript.designspace \
     --target source/GoogleSans/GoogleSans.designspace \
-    --import-glyphs-file import_glyphs.txt \
-    --import-groups-file import_groups.txt
+    --import-glyphs-file import_glyphs.txt
 
 $ python3 scripts/gs-merge-designspace.py \
     --source source/GoogleSans/staging/GoogleSansSomeScript-Italic.designspace \
     --target source/GoogleSans/GoogleSans-Italic.designspace \
-    --import-glyphs-file import_glyphs_italic.txt \
-    --import-groups-file import_groups_italic.txt
+    --import-glyphs-file import_glyphs_italic.txt
 ```
+
+(Note: if you also have a group list, specify it as an additional switch like so: `--import-groups-file import_groups_italic.txt`)
 
 Now extract the features from the staging UFOs and manually massage them into the existing sources. The font info may also need to be updated, chiefly Unicode and codepage ranges. Additionally, consider which of the imported glyphs need anchor propagation (the list is kept in `scripts/internal/normalize.py`, re-run `scripts/gs-normalize-designspace.py` when you modify it).
 

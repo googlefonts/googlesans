@@ -170,7 +170,23 @@ for import_source in designspace_import.sources:
             )
             sys.exit(1)
 
-    for group_name in import_groups:
+    # If no group import list has been specified, gather all groups that mention
+    # any of the imported glyphs. They can already exist in the target font
+    # (adding new glyphs to existing groups) or not (new script-specific
+    # groups).
+    import_font_groups = set()
+    if not import_groups:
+        for group, glyphs in import_font.groups.items():
+            if any(n in import_glyphs for n in glyphs):
+                import_font_groups.add(group)
+
+    # Use global groups list or, if non passed in, font specific one for checks below.
+    import_groups_to_check = import_groups or import_font_groups
+
+    # Importing a group that already exists should extend the existing group with
+    # imported glyphs instead of overwriting the group.
+    target_groups_extended = set()
+    for group_name in import_groups_to_check:
         try:
             group_glyphs = import_font.groups[group_name]
         except KeyError as e:
@@ -181,14 +197,25 @@ for import_source in designspace_import.sources:
             )
             continue
         if group_name in target_font.groups:
+            target_groups_extended.add(group_name)
             existing = set(target_font.groups[group_name])
-            for name in group_glyphs:
-                if name not in existing:
+            for name in sorted(group_glyphs):
+                if name not in existing and name in import_glyphs:
                     target_font.groups[group_name].append(name)
         else:
             target_font.groups[group_name] = import_font.groups[group_name]
 
-    # Import kerning where either side of a pair is an imported glyph or group:
+    # Import kerning where either side of a pair is an imported glyph or group.
+    # NOTE: Existing groups extended with new glyphs are a special case, as they
+    #       "contaminate" the below logic and would also let through a pair of
+    #       extended group and completely script-unrelated group. I.e., if
+    #       Armenian extended `public.kern2.dash` with new glyphs and
+    #       accidentally changed the pair `public.kern1.L, public.kern2.dash`,
+    #       The change would be picked up even though it had nothing to do with
+    #       the script in question. This is the more relevant the more out-of-sync
+    #       a source font is relative to the target font. One solution is to
+    #       remove extended groups from the set of groups to check for inclusion.
+    import_groups_to_check = import_groups_to_check - target_groups_extended
     for key, value in import_font.kerning.items():
         first, second = key
         if (first not in import_font and first not in import_font.groups) or (
@@ -197,9 +224,9 @@ for import_source in designspace_import.sources:
             # Skip spurious pairs.
             continue
         if (
-            first in import_groups
+            first in import_groups_to_check
             or first in import_glyphs
-            or second in import_groups
+            or second in import_groups_to_check
             or second in import_glyphs
         ):
             target_font.kerning[key] = value
