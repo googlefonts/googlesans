@@ -393,8 +393,13 @@ table GDEF {
         shindageshsindot-hb shindagesh-hb tav-hb tavdagesh-hb yodyodpatah-hb widealef-hb
         widedalet-hb widehe-hb widekaf-hb widelamed-hb finalwidemem-hb wideresh-hb
         widetav-hb nunhafukha-hb Ohm product numero centigrade.cap fahrenheit.cap
-        Ustrait-cy Ustraitstroke-cy ldot ustrait-cy.sc finalpe-hb.BRACKET.18
-        pe-hb.BRACKET.18 samekh-hb.BRACKET.18], # Base
+        Ustrait-cy Ustraitstroke-cy ldot ustrait-cy.sc Ayb-arm Ech-arm Eh-arm Et-arm
+        Ini-arm Vo-arm Yiwn-arm Oh-arm Ech_Vew-arm.liga Men_Ech-arm.liga
+        Men_Ini-arm.liga ayb-arm ech-arm eh-arm et-arm ini-arm vo-arm yiwn-arm oh-arm
+        ech_yiwn-arm men_ech-arm.liga men_ini-arm.liga et-arm.nonspacing.short
+        ayb-arm.sc ech-arm.sc eh-arm.sc et-arm.sc ini-arm.sc vo-arm.sc yiwn-arm.sc
+        oh-arm.sc ech_vew-arm.liga.sc men_ech-arm.liga.sc men_ini-arm.liga.sc
+        finalpe-hb.BRACKET.18 pe-hb.BRACKET.18 samekh-hb.BRACKET.18], # Base
         [f_b f_f f_f_b f_f_h f_f_i f_f_j f_f_k f_f_l f_f_t f_h f_i f_j f_k f_l f_t r_f r_f_f
         r_t t_f t_t vavvav-hb vavyod-hb yodyod-hb], # Liga
         [dieresiscomb dotaccentcomb gravecomb acutecomb hungarumlautcomb circumflexcomb
@@ -425,8 +430,12 @@ table GDEF {
         circumflexcomb_hookabovecomb.cap circumflexcomb_tildecomb.cap
         brevecomb_acutecomb.sc brevecomb_gravecomb.sc brevecomb_hookabovecomb.sc
         brevecomb_tildecomb.sc circumflexcomb_acutecomb.sc circumflexcomb_gravecomb.sc
-        circumflexcomb_hookabovecomb.sc circumflexcomb_tildecomb.sc descender-cy
-        tail-cy], # Mark
+        circumflexcomb_hookabovecomb.sc circumflexcomb_tildecomb.sc descender-cy tail-cy
+        emphasis-arm.comb exclam-arm.comb question-arm.comb emphasis-arm.cap.comb
+        exclam-arm.cap.comb question-arm.cap.comb emphasis-arm.short.comb
+        exclam-arm.short.comb question-arm.short.comb emphasis-arm.comb.sc
+        exclam-arm.comb.sc question-arm.comb.sc emphasis-arm.short.comb.sc
+        exclam-arm.short.comb.sc question-arm.short.comb.sc], # Mark
     ;
   LigatureCaretByPos f_b 503;
   LigatureCaretByPos f_f 298;
