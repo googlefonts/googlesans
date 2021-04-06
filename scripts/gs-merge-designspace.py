@@ -121,12 +121,18 @@ for import_source in designspace_import.sources:
         logging.error("Brace layers not supported currently.")
         sys.exit(1)
 
+    # Fill in the defaults if the import DS does not have e.g. a GRAD axis.
+    import_source_location = {
+        **designspace_target.default.location,
+        **import_source.location,
+    }
+
     # Match import to target UFO.
     try:
         target_source = next(
             s
             for s in designspace_target.sources
-            if s.location == import_source.location
+            if s.location == import_source_location
         )
     except StopIteration:
         try:
@@ -140,7 +146,7 @@ for import_source in designspace_import.sources:
                 "Cannot find target for source %s because there's no target location %s "
                 "and no target with a matching master ID.",
                 import_source.name,
-                import_source.location,
+                import_source_location,
             )
             sys.exit(1)
 
