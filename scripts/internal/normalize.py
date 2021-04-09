@@ -26,7 +26,8 @@ def scrub_designspace(designspace: DesignSpaceDocument, project_root: Path) -> N
     for source in designspace.sources:
         scrub_source(source, skip_export_glyphs, rules)
 
-    scrub_graded_sources(designspace.sources)
+    if any(a.tag == "GRAD" for a in designspace.axes):
+        scrub_graded_sources(designspace.sources)
 
     for instance in designspace.instances:
         scrub_instance(instance, project_root)
