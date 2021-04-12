@@ -394,7 +394,11 @@ def com_google_fonts_check_googlesans_opentype_os2_strikeout(ttFont):
 @check(
     id="com.google.fonts/check/googlesans/opentype/os2/unicode_range_bits",
     rationale="""
-        When the UnicodeRange bits on the OS/2 table are not properly set, some programs running on Windows may not recognize the font and use a system fallback font instead. For that reason, this check calculates the proper settings by inspecting the glyphs declared on the cmap table and then ensures that their corresponding ranges are enabled.
+        When the UnicodeRange bits on the OS/2 table are not properly set, some programs
+        running on Windows may not recognize the font and use a system fallback font
+        instead. For that reason, this check calculates the proper settings by inspecting
+        the glyphs declared on the cmap table and then ensures that their corresponding
+        ranges are enabled.
     """,
     conditions=["unicoderange"],
 )
@@ -417,15 +421,17 @@ def com_google_fonts_check_googlesans_unicode_range_bits(ttFont, unicoderange):
                     num_chars = "none"
                     yield FAIL, Message(
                         "bad-range-bit",
-                        f'UnicodeRange bit {bit} "{range_name}" should be {set_unset} because'
-                        f" cmap has {num_chars} of the {range_size} codepoints in this range.",
+                        f"UnicodeRange bit {bit} '{range_name}' should be {set_unset} "
+                        f"because cmap has {num_chars} of the {range_size} codepoints "
+                        f"in this range.",
                     )
                 else:
                     set_unset = "1"
                     yield WARN, Message(
                         "bad-range-bit",
-                        f'UnicodeRange bit {bit} "{range_name}" should be {set_unset} because'
-                        f" cmap has {num_chars} of the {range_size} codepoints in this range.",
+                        f"UnicodeRange bit {bit} '{range_name}' should be {set_unset} "
+                        f"because cmap has {num_chars} of the {range_size} codepoints "
+                        f"in this range.",
                     )
 
 
