@@ -158,9 +158,10 @@ gs-vf-vendor-glyphs2designspace: $(STAGING_DIR) $(wildcard GoogleSans/*.glyphs)
 gs-ufo2glyphs: $(wildcard GoogleSans/*.designspace)
 	$(foreach \
 		file, \
-		$(wildcard $(STAGING_DIR)/*.designspace), \
+		$(wildcard GoogleSans/*.designspace), \
 		python ../scripts/gs-ufo2glyphs.py $(file); \
 	)
+
 #
 #  Individual static instance build targets
 #
@@ -231,4 +232,8 @@ $(STAGING_DIR):
 .PHONY: gs-static gs-vf \
 gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
-gs-vf-upright gs-vf-italic
+gs-vf-upright gs-vf-italic gs-ufo2glyphs
+
+# Disable built-in rules to speed up source globbing.
+MAKEFLAGS += --no-builtin-rules
+.SUFFIXES:
