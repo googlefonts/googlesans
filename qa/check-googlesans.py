@@ -13,10 +13,17 @@
 # limitations under the License.
 
 
-from fontbakery.checkrunner import Section, PASS, FAIL
+from fontbakery.checkrunner import Section, PASS, FAIL, WARN
 from fontbakery.callable import check
 from fontbakery.fonts_profile import profile_factory
 from fontbakery.profiles.universal import UNIVERSAL_PROFILE_CHECKS
+from fontbakery.constants import UNICODERANGE_DATA
+from fontbakery.utils import (
+    compute_unicoderange_bits,
+    unicoderange_bit_name,
+    chars_in_range,
+)
+from fontbakery.message import Message
 
 profile_imports = ("fontbakery.profiles.universal",)
 profile = profile_factory(default_section=Section("Google Sans Custom Checks"))
@@ -32,6 +39,7 @@ GOOGLESANS_PROFILE_CHECKS = UNIVERSAL_PROFILE_CHECKS + [
     "com.google.fonts/check/googlesans/opentype/os2/typodescender",
     "com.google.fonts/check/googlesans/opentype/os2/typoascender",
     "com.google.fonts/check/googlesans/opentype/os2/typolinegap",
+    "com.google.fonts/check/googlesans/opentype/os2/unicode_range_bits",
     "com.google.fonts/check/googlesans/opentype/post/underline",
     "com.google.fonts/check/googlesans/vf/fvaraxes",
     "com.google.fonts/check/googlesans/vf/fvardefault",
@@ -381,6 +389,50 @@ def com_google_fonts_check_googlesans_opentype_os2_strikeout(ttFont):
         )
     else:
         yield PASS, "The OS/2 strikeout size value matches the required value."
+
+
+@check(
+    id="com.google.fonts/check/googlesans/opentype/os2/unicode_range_bits",
+    rationale="""
+        When the UnicodeRange bits on the OS/2 table are not properly set, some programs
+        running on Windows may not recognize the font and use a system fallback font
+        instead. For that reason, this check calculates the proper settings by inspecting
+        the glyphs declared on the cmap table and then ensures that their corresponding
+        ranges are enabled.
+    """,
+    conditions=["unicoderange"],
+)
+def com_google_fonts_check_googlesans_unicode_range_bits(ttFont, unicoderange):
+    """Ensure UnicodeRange bits are properly set."""
+    expected_unicoderange = compute_unicoderange_bits(ttFont)
+    difference = unicoderange ^ expected_unicoderange
+    if not difference:
+        yield PASS, "Unicode range bits are properly set"
+    else:
+        for bit in range(128):
+            if difference & (1 << bit):
+                range_name = unicoderange_bit_name(bit)
+                num_chars = len(chars_in_range(ttFont, bit))
+                range_size = sum(
+                    entry[3] - entry[2] + 1 for entry in UNICODERANGE_DATA[bit]
+                )
+                if num_chars == 0:
+                    set_unset = "0"
+                    num_chars = "none"
+                    yield FAIL, Message(
+                        "bad-range-bit",
+                        f"UnicodeRange bit {bit} '{range_name}' should be {set_unset} "
+                        f"because cmap has {num_chars} of the {range_size} codepoints "
+                        f"in this range.",
+                    )
+                else:
+                    set_unset = "1"
+                    yield WARN, Message(
+                        "bad-range-bit",
+                        f"UnicodeRange bit {bit} '{range_name}' should be {set_unset} "
+                        f"because cmap has {num_chars} of the {range_size} codepoints "
+                        f"in this range.",
+                    )
 
 
 # ================================================
