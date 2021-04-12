@@ -158,9 +158,10 @@ gs-vf-vendor-glyphs2designspace: $(STAGING_DIR) $(wildcard GoogleSans/*.glyphs)
 gs-ufo2glyphs: $(wildcard GoogleSans/*.designspace)
 	$(foreach \
 		file, \
-		$(wildcard $(STAGING_DIR)/*.designspace), \
+		$(wildcard GoogleSans/*.designspace), \
 		python ../scripts/gs-ufo2glyphs.py $(file); \
 	)
+
 #
 #  Individual static instance build targets
 #
