@@ -134,3 +134,7 @@ gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
 gs-vf-upright gs-vf-italic \
 setup update-deps sync-deps list-deps \
 test-fb test-fb-static-expert test-fb-vf-expert
+
+# Disable built-in rules to speed up source globbing.
+MAKEFLAGS += --no-builtin-rules
+.SUFFIXES:

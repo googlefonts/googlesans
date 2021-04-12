@@ -231,4 +231,8 @@ $(STAGING_DIR):
 .PHONY: gs-static gs-vf \
 gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
-gs-vf-upright gs-vf-italic
+gs-vf-upright gs-vf-italic gs-ufo2glyphs
+
+# Disable built-in rules to speed up source globbing.
+MAKEFLAGS += --no-builtin-rules
+.SUFFIXES:
