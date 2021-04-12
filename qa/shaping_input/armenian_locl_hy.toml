@@ -3,8 +3,10 @@ build_commit = ""
 
 [input]
 text = [
-    "‹nhq›‹ոիզ›",
-    "«գնում եմ NYC։»"
+    "‹nhq›‹ոիզ›", # guillemets shift down when language is set to armenian.  (https://github.com/gorjious/google-sans-armenian/issues/9)
+    "«գնում եմ NYC։»",
+    "«գնում եմ NYC»", # both guillemets should shift down in mixed script settings
+    "«New York-եմ գնում։»"
 ]
 script = "armn"
 language = "hy"
