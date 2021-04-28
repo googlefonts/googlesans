@@ -1,0 +1,211 @@
+@armn_lowercase = [ayb-arm ben-arm gim-arm da-arm ech-arm za-arm za-arm.nonspacing.long za-arm.spacing.short eh-arm et-arm et-arm.nonspacing.short to-arm zhe-arm ini-arm liwn-arm liwn-arm.nonspacing.long liwn-arm.spacing.short xeh-arm ca-arm ken-arm ho-arm ja-arm ghad-arm ghad-arm.nonspacing.long ghad-arm.spacing.short cheh-arm men-arm men-arm.nonspacing.long yi-arm now-arm now-arm.nonspacing.long now-arm.nonspacing.short sha-arm vo-arm cha-arm cha-arm.nonspacing.long cha-arm.nonspacing.short peh-arm jheh-arm ra-arm seh-arm vew-arm vew-arm.nonspacing.long vew-arm.spacing.short tiwn-arm reh-arm co-arm yiwn-arm piwr-arm keh-arm oh-arm feh-arm ech_yiwn-arm men_ech-arm.liga men_ini-arm.liga men_now-arm.liga men_xeh-arm.liga vew_now-arm.liga period-arm period-arm.sc period-arm.case comma-arm comma-arm.sc hyphen-arm semicolon.loclARM apostrophe-arm apostrophe-arm.sc apostrophe-arm.case ringhalfleft-arm dram-arm dram-arm.cap dram-arm.tf emphasis-arm exclam-arm question-arm emphasis-arm.comb exclam-arm.comb question-arm.comb emphasis-arm.cap.comb exclam-arm.cap.comb question-arm.cap.comb emphasis-arm.comb.sc exclam-arm.comb.sc question-arm.comb.sc emphasis-arm.short.comb exclam-arm.short.comb question-arm.short.comb emphasis-arm.short.comb.sc exclam-arm.short.comb.sc question-arm.short.comb.sc];
+#Feature(s) used in: calt
+
+@armn_uppercase = [Ayb-arm Ben-arm Gim-arm Da-arm Ech-arm Za-arm Eh-arm Et-arm To-arm Zhe-arm Ini-arm Liwn-arm Xeh-arm Ca-arm Ken-arm Ho-arm Ja-arm Ghad-arm Cheh-arm Men-arm Yi-arm Now-arm Sha-arm Vo-arm Cha-arm Peh-arm Jheh-arm Ra-arm Seh-arm Vew-arm Tiwn-arm Reh-arm Co-arm Yiwn-arm Piwr-arm Keh-arm Oh-arm Feh-arm Ech_Vew-arm.liga Men_Now-arm.liga Men_Ech-arm.liga Men_Ini-arm.liga Men_Xeh-arm.liga Vew_Now-arm.liga];
+#Feature(s) used in: case, c2sc, smcp, calt
+
+@armn_case_smcp_lowercase = [ayb-arm ben-arm gim-arm da-arm ech-arm za-arm eh-arm et-arm to-arm zhe-arm ini-arm liwn-arm xeh-arm ca-arm ken-arm ho-arm ja-arm ghad-arm cheh-arm men-arm yi-arm now-arm sha-arm vo-arm cha-arm peh-arm jheh-arm ra-arm seh-arm vew-arm tiwn-arm reh-arm co-arm yiwn-arm piwr-arm keh-arm oh-arm feh-arm ech_yiwn-arm men_now-arm.liga men_ech-arm.liga men_ini-arm.liga men_xeh-arm.liga vew_now-arm.liga];
+#Feature(s) used in: case, smcp
+
+@armn_smallcaps = [ayb-arm.sc ben-arm.sc gim-arm.sc da-arm.sc ech-arm.sc za-arm.sc eh-arm.sc et-arm.sc to-arm.sc zhe-arm.sc ini-arm.sc liwn-arm.sc xeh-arm.sc ca-arm.sc ken-arm.sc ho-arm.sc ja-arm.sc ghad-arm.sc cheh-arm.sc men-arm.sc yi-arm.sc now-arm.sc sha-arm.sc vo-arm.sc cha-arm.sc peh-arm.sc jheh-arm.sc ra-arm.sc seh-arm.sc vew-arm.sc tiwn-arm.sc reh-arm.sc co-arm.sc yiwn-arm.sc piwr-arm.sc keh-arm.sc oh-arm.sc feh-arm.sc ech_vew-arm.liga.sc men_now-arm.liga.sc men_ech-arm.liga.sc men_ini-arm.liga.sc men_xeh-arm.liga.sc vew_now-arm.liga.sc];
+#Feature(s) used in: c2sc, smcp, calt
+
+@armn_tails = [liwn-arm za-arm ghad-arm vew-arm];
+#Feature(s) used in: calt
+
+@armn_tails_misc = [cha-arm sha-arm jheh-arm et-arm];
+#Feature(s) used in: calt
+
+@armn_tails_nonspacing_long = [liwn-arm.nonspacing.long za-arm.nonspacing.long ghad-arm.nonspacing.long vew-arm.nonspacing.long];
+#Feature(s) used in: calt
+
+@armn_tails_spacing_short = [liwn-arm.spacing.short za-arm.spacing.short ghad-arm.spacing.short vew-arm.spacing.short];
+#Feature(s) used in: calt
+
+@armn_descenders_left = [ben-arm et-arm to-arm ini-arm liwn-arm xeh-arm reh-arm keh-arm sha-arm cha-arm jheh-arm yi-arm co-arm];
+#Feature(s) used in: calt
+
+@armn_descenders_misc = [keh-arm cha-arm sha-arm jheh-arm yi-arm co-arm];
+#Feature(s) used in: calt
+
+@armn_no_descenders_left = [ayb-arm gim-arm da-arm ech-arm za-arm eh-arm zhe-arm ca-arm ken-arm ho-arm ja-arm ghad-arm cheh-arm men-arm now-arm vo-arm peh-arm ra-arm seh-arm vew-arm tiwn-arm yiwn-arm piwr-arm oh-arm feh-arm ech_yiwn-arm men_now-arm.liga men_ech-arm.liga men_ini-arm.liga men_xeh-arm.liga vew_now-arm.liga];
+#Feature(s) used in: calt
+
+@armn_no_ascenders_left = [ayb-arm ben-arm gim-arm da-arm za-arm za-arm.nonspacing.long za-arm.spacing.short et-arm to-arm zhe-arm liwn-arm liwn-arm.nonspacing.long liwn-arm.spacing.short ja-arm ghad-arm ghad-arm.nonspacing.long ghad-arm.spacing.short cheh-arm men-arm men-arm.nonspacing.long yi-arm sha-arm sha-arm.nonspacing.short vo-arm cha-arm cha-arm.nonspacing.long cha-arm.nonspacing.short peh-arm jheh-arm jheh-arm.nonspacing.short ra-arm seh-arm vew-arm vew-arm.nonspacing.long vew-arm.spacing.short tiwn-arm reh-arm co-arm yiwn-arm piwr-arm keh-arm oh-arm men_now-arm.liga men_ech-arm.liga men_ini-arm.liga men_xeh-arm.liga vew_now-arm.liga];
+#Feature(s) used in: calt
+
+@armn_no_ascenders_right = [ayb-arm ben-arm gim-arm da-arm ech-arm za-arm za-arm.nonspacing.long eh-arm et-arm to-arm ini-arm liwn-arm liwn-arm.nonspacing.long xeh-arm ken-arm ho-arm ghad-arm ghad-arm.nonspacing.long yi-arm now-arm now-arm.nonspacing.long sha-arm vo-arm cha-arm cha-arm.nonspacing.long peh-arm jheh-arm ra-arm seh-arm tiwn-arm reh-arm co-arm yiwn-arm piwr-arm keh-arm oh-arm feh-arm ech_yiwn-arm men_now-arm.liga men_ech-arm.liga men_ini-arm.liga men_xeh-arm.liga vew_now-arm.liga];
+#Feature(s) used in: calt
+
+@armn_vowels_lowercase = [ayb-arm vo-arm ech-arm eh-arm et-arm oh-arm ini-arm yiwn-arm ech_yiwn-arm men_ini-arm.liga men_ech-arm.liga];
+#Feature(s) used in: ccmp
+
+@armn_vowels_uppercase = [Ech-arm Eh-arm Yiwn-arm Men_Ech-arm.liga Ech_Vew-arm.liga];
+#Feature(s) used in: ccmp, calt
+
+@armn_vowels_uppercase_short = [Ayb-arm Vo-arm Et-arm Oh-arm Ini-arm Men_Ini-arm.liga];
+#Feature(s) used in: ccmp, case
+
+@armn_vowels_uppercase_sc = [ech-arm.sc eh-arm.sc yiwn-arm.sc men_ech-arm.liga.sc ech_vew-arm.liga.sc];
+#Feature(s) used in: smcp
+
+@armn_vowels_uppercase_sc_short = [ayb-arm.sc et-arm.sc ini-arm.sc vo-arm.sc oh-arm.sc men_ini-arm.liga.sc];
+#Feature(s) used in: smcp
+
+@armn_vowels_uppercase_now_long = [Ini-arm Eh-arm Ech-arm Ayb-arm];
+#Feature(s) used in: calt
+
+@armn_vowels_uppercase_now_short = [Oh-arm Vo-arm Et-arm Yiwn-arm];
+#Feature(s) used in: calt
+
+@armn_punctuation = [emphasis-arm exclam-arm question-arm];
+#Feature(s) used in: ccmp
+
+@armn_punctuation_comb = [emphasis-arm.comb exclam-arm.comb question-arm.comb];
+#Feature(s) used in: ccmp, case, smcp, calt
+
+@armn_punctuation_cap_comb = [emphasis-arm.cap.comb exclam-arm.cap.comb question-arm.cap.comb];
+#Feature(s) used in: ccmp, c2sc
+
+@armn_punctuation_comb_sc = [emphasis-arm.comb.sc exclam-arm.comb.sc question-arm.comb.sc];
+#Feature(s) used in: c2sc, smcp
+
+@armn_punctuation_short_comb = [emphasis-arm.short.comb exclam-arm.short.comb question-arm.short.comb];
+#Feature(s) used in: ccmp, case, c2sc
+
+@armn_punctuation_short_comb_sc = [emphasis-arm.short.comb.sc exclam-arm.short.comb.sc question-arm.short.comb.sc];
+#Feature(s) used in: c2sc, smcp
+
+@armn_calt_spaces_all = [emquad emspace enquad enspace figurespace fourperemspace hairspace punctuationspace sixperemspace space nbspace thinspace threeperemspace zerowidthspace space.tf];
+#Feature(s) used in: calt
+
+@armn_calt_punctuation_all = [apostrophe-arm comma-arm dram-arm eternity-arm-lf eternity-arm-rf hyphen-arm period-arm period-arm.case ringhalfleft-arm semicolon.loclARM question-arm exclam-arm emphasis-arm emphasis-arm.comb exclam-arm.comb question-arm.comb asterisk asterisk.num asterism backslash braceleft braceleft.cap braceright braceright.cap bracketleft bracketleft.cap bracketright bracketright.cap bullet bullet.cap colon colon.tf colon.time comma comma.tf doublequestion ellipsis emdash emdash.cap endash endash.cap exclam exclamationquestion exclamdouble exclamdown exclamdown.cap flowerpunctuationmark guillemetleft guillemetleft.cap guillemetright guillemetright.cap guilsinglleft guilsinglleft.cap guilsinglright guilsinglright.cap horizontalbar hyphen hyphen.cap hyphenbullet lowasterisk numbersign numbersign.cap numbersign.tf parenleft parenleft.cap parenright parenright.cap period period.tf periodcentered question questiondown questiondown.cap questionexclamation quotedbl quotedblbase quotedblleft quotedblright quoteleft quoteright quotesinglbase quotesingle semicolon semicolon.tf slash softhyphen twoasterisksvertical underscore];
+#Feature(s) used in: calt
+#Armenian punctuation marks and symbols
+#General punctuation marks and symbols
+
+@armn_calt_punctuation_centered = [hyphen-arm periodcentered bullet hyphenbullet hyphen softhyphen endash emdash horizontalbar plus minus multiply equal notequal greater less approxequal asciitilde logicalnot infinity];
+#Feature(s) used in: calt
+#Armenian punctuation
+#General punctuation
+
+@armn_cap_on = [dram-arm.cap];
+
+@armn_cap_off = [dram-arm];
+
+@armn_symbols_tab = [dram-arm.tf];
+
+@armn_symbols = [dram-arm];
+
+
+lookup armn_ccmp_combining_punctuation {
+	sub @armn_vowels_lowercase @armn_punctuation' by @armn_punctuation_comb;
+	sub @armn_vowels_uppercase @armn_punctuation' by @armn_punctuation_cap_comb;
+	sub @armn_vowels_uppercase_short @armn_punctuation' by @armn_punctuation_short_comb;
+} armn_ccmp_combining_punctuation;
+
+lookup armn_locl_shift_guillemet {
+	pos guillemetleft' <0 -16 0 0>;
+	pos guillemetright' <0 -16 0 0>;
+	pos guilsinglleft' <0 -16 0 0>;
+	pos guilsinglright' <0 -16 0 0>;
+} armn_locl_shift_guillemet;
+
+lookup armn_case_substitution {
+	sub @armn_case_smcp_lowercase by @armn_uppercase;
+	sub period-arm by period-arm.case;
+	sub hyphen by hyphen.cap;
+	sub hyphen-arm by hyphen.cap;
+	sub apostrophe-arm by apostrophe-arm.case;
+} armn_case_substitution;
+
+lookup armn_case_contextual_substitution {
+	sub @armn_vowels_uppercase_short @armn_punctuation_comb' by @armn_punctuation_short_comb;
+} armn_case_contextual_substitution;
+
+lookup armn_c2sc_substitution {
+	sub @armn_uppercase by @armn_smallcaps;
+	sub @armn_punctuation_cap_comb by @armn_punctuation_comb_sc;
+	sub @armn_punctuation_short_comb by @armn_punctuation_short_comb_sc;
+	sub apostrophe-arm by apostrophe-arm.sc;
+	sub comma-arm by comma-arm.sc;
+	sub period-arm by period-arm.sc;
+} armn_c2sc_substitution;
+
+lookup armn_smcp_substitution {
+	sub @armn_case_smcp_lowercase by @armn_smallcaps;
+	sub apostrophe-arm by apostrophe-arm.sc;
+	sub comma-arm by comma-arm.sc;
+	sub period-arm by period-arm.sc;
+} armn_smcp_substitution;
+
+lookup armn_smcp_contextual_substitution {
+	sub @armn_vowels_uppercase_sc @armn_punctuation_comb' by @armn_punctuation_comb_sc;
+	sub @armn_vowels_uppercase_sc_short @armn_punctuation_comb' by @armn_punctuation_short_comb_sc;
+} armn_smcp_contextual_substitution;
+
+lookup armn_calt_ligatures {
+	# Ligatures
+	sub Men-arm Now-arm by Men_Now-arm.liga;
+	sub men-arm now-arm by men_now-arm.liga;
+} armn_calt_ligatures;
+
+lookup armn_calt_contextual_substitution {
+	# Alternates for letters with tails
+	sub @armn_tails' @armn_calt_punctuation_centered by @armn_tails_nonspacing_long;
+	sub @armn_tails' @armn_no_descenders_left by @armn_tails_nonspacing_long;
+	sub @armn_tails' @armn_descenders_misc by @armn_tails_spacing_short;
+	sub @armn_tails' @armn_uppercase by @armn_tails_nonspacing_long;
+	sub cha-arm' @armn_calt_punctuation_centered by cha-arm.nonspacing.long;
+	sub cha-arm' @armn_no_descenders_left by cha-arm.nonspacing.long;
+	sub cha-arm' @armn_descenders_left by cha-arm.nonspacing.short;
+	sub cha-arm' @armn_descenders_misc by cha-arm.nonspacing.short;
+	sub jheh-arm' yi-arm by jheh-arm.nonspacing.short;
+	sub sha-arm' yi-arm by sha-arm.nonspacing.short;
+	sub et-arm' @armn_descenders_left by et-arm.nonspacing.short;
+	sub et-arm' @armn_descenders_misc by et-arm.nonspacing.short;
+	sub @armn_calt_punctuation_centered now-arm' by now-arm.nonspacing.long;
+	sub @armn_no_ascenders_right now-arm' by now-arm.nonspacing.long;
+	sub @armn_vowels_uppercase now-arm' by now-arm.nonspacing.long;
+	sub @armn_vowels_uppercase_short now-arm' by now-arm.nonspacing.long;
+	sub @armn_punctuation_comb now-arm' by now-arm.nonspacing.short;
+	sub men-arm' @armn_calt_punctuation_centered by men-arm.nonspacing.long;
+	sub men-arm' @armn_no_ascenders_left  by men-arm.nonspacing.long;
+	# Localized semicolon for Armenian
+	sub @armn_uppercase semicolon' by semicolon.loclARM;
+	sub @armn_lowercase semicolon' by semicolon.loclARM;
+	sub @armn_smallcaps semicolon' by semicolon.loclARM;
+	# Localized hyphen for Armenian
+	sub @armn_uppercase hyphen' by hyphen-arm;
+	sub hyphen' @armn_uppercase by hyphen-arm;
+	sub @armn_lowercase hyphen' by hyphen-arm;
+	sub hyphen' @armn_lowercase by hyphen-arm;
+	sub @armn_smallcaps hyphen' by hyphen-arm;
+	sub hyphen' @armn_smallcaps by hyphen-arm;
+} armn_calt_contextual_substitution;
+
+lookup armn_calt_now_with_uppercase {
+	lookupflag IgnoreMarks;
+	sub @armn_vowels_uppercase_now_long now-arm' by now-arm.nonspacing.long;
+	sub @armn_vowels_uppercase_now_short now-arm' by now-arm.nonspacing.short;
+} armn_calt_now_with_uppercase;
+
+lookup armn_calt_shift_punctuation {
+	# Shifting punctuation to lower x-height
+	pos @armn_lowercase @armn_calt_punctuation_centered' <0 -16 0 0>;
+	pos @armn_lowercase @armn_calt_spaces_all @armn_calt_punctuation_centered' <0 -16 0 0>;
+	pos @armn_lowercase @armn_calt_spaces_all @armn_calt_punctuation_centered @armn_calt_punctuation_centered' <0 -16 0 0>;
+	pos @armn_lowercase @armn_calt_punctuation_centered @armn_calt_spaces_all @armn_calt_punctuation_centered' <0 -16 0 0>;
+	pos @armn_lowercase @armn_calt_punctuation_centered @armn_calt_punctuation_centered' <0 -16 0 0>;
+	pos @armn_calt_punctuation_centered' @armn_lowercase <0 -16 0 0>;
+	pos @armn_calt_punctuation_centered' @armn_calt_spaces_all @armn_lowercase <0 -16 0 0>;
+	pos @armn_calt_punctuation_centered' @armn_calt_spaces_all @armn_calt_punctuation_centered @armn_lowercase <0 -16 0 0>;
+	pos @armn_lowercase @armn_calt_punctuation_all @armn_calt_spaces_all @armn_calt_punctuation_centered' <0 -16 0 0>;
+	pos @armn_calt_punctuation_centered' @armn_calt_spaces_all @armn_calt_punctuation_all @armn_lowercase <0 -16 0 0>;
+	pos @armn_lowercase @armn_calt_punctuation_all @armn_calt_punctuation_centered' <0 -16 0 0>;
+	pos @armn_calt_punctuation_centered' @armn_calt_punctuation_all @armn_lowercase <0 -16 0 0>;
+	pos @armn_lowercase @armn_calt_punctuation_all @armn_calt_punctuation_all @armn_calt_punctuation_centered' <0 -16 0 0>;
+	pos @armn_lowercase @armn_calt_punctuation_all @armn_calt_punctuation_all @armn_calt_spaces_all @armn_calt_punctuation_centered' <0 -16 0 0>;
+	pos @armn_calt_punctuation_centered' @armn_calt_punctuation_all @armn_calt_punctuation_all @armn_lowercase <0 -16 0 0>;
+	pos @armn_calt_punctuation_centered' @armn_calt_spaces_all @armn_calt_punctuation_all @armn_calt_punctuation_all @armn_lowercase <0 -16 0 0>;
+} armn_calt_shift_punctuation;

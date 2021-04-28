@@ -1,0 +1,11 @@
+[meta]
+build_commit = ""
+
+[input]
+text = [
+    "ա-մ", # hyphen used between armenian lowercase – shifts down
+    "Ա-Մ", # hypohen used between armenian uppercase – no shift
+    "ա֊մ", # hyphen-arm used between armenian lowercase – shifts down
+    "Ա֊Մ" # hyphen-arm used between armenian uppercase – no shift
+]
+comparison_mode = "glyphstream"

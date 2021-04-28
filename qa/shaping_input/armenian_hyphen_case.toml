@@ -1,0 +1,14 @@
+[meta]
+build_commit = ""
+
+[input.features]
+case = true
+
+[input]
+text = [
+    "ա-մ",
+    "Ա-Մ",
+    "ա֊մ",
+    "Ա֊Մ"
+]
+comparison_mode = "glyphstream"
