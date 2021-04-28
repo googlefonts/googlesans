@@ -1,0 +1,18 @@
+[meta]
+build_commit = ""
+
+[input.features]
+calt = true
+
+[input]
+text = [
+    "x; ե;", # semicolon after armenian letters use semicolon.loclARM – dot shifts down
+    "ա-ր a-p", # hyphen/dashes between armenian shift down
+    "ե+ւ=և", # math symbols i.e. plus, equal, etc. shift down
+    "Ո՞ն Ը՞ն Օ՞ն Ե՞ն Է՞ն Ւ՞ն Ա՞ն", # combining marks i.e. question-arm should not create gap between letter. Ո Ը Օ Ա use a short version of question-arm.  
+    "զոզիզյ", # contextual alternates of the horizonal elements in the descenders – short and long versions. 
+    "ղողիղյ",
+    "վովիվյ",
+    "լոլիլյ",
+    "զջյ"
+]

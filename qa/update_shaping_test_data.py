@@ -166,7 +166,7 @@ if __name__ == "__main__":
     shaping_input_doc = json.loads(shaping_file_json.read_text())
     shaping_input = shaping_input_doc["input"]
     shaping_texts = shaping_input["text"]
-    shaping_features = shaping_input["features"]
+    shaping_features = shaping_input.get("features", {})
     shaping_script = shaping_input.get("script")
     shaping_language = shaping_input.get("language")
     shaping_comparison_mode = ComparisonMode(shaping_input.get("comparison_mode", "full"))

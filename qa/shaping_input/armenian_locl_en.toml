@@ -1,0 +1,12 @@
+[meta]
+build_commit = ""
+
+[input]
+text = [
+    "‹nhq›‹ոիզ›", # guillemets do not shift down when language is set to english.  (https://github.com/gorjious/google-sans-armenian/issues/9)
+    "«գնում եմ NYC։»",
+    "«գնում եմ NYC»",
+    "«New York-եմ գնում։»"
+]
+script = "armn"
+language = "en"

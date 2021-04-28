@@ -1,0 +1,14 @@
+[meta]
+build_commit = ""
+
+[input.features]
+case = true
+
+[input]
+text = [
+    "՚ի և՝ մ։", # apostrophe-arm, comma-arm, period-arm case variants
+    "ﬓ ﬔ ﬕ ﬖ ﬗ", # armenian ligatures in unicode
+    "և՛ ﬔ՛ ﬕ՛", # ligatures with combining mark
+    "գէծզջ", # letters with opsz form variants
+    "0֏5ն" # dram currency alignment with numerals
+]
