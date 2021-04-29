@@ -2,6 +2,10 @@
 
 ## Version 4.001
 
+### New
+
+- Add Armenian script support (#274)
+
 ### Fixed
 
 - added missing ldot (U+0140) small caps feature support (#276)
