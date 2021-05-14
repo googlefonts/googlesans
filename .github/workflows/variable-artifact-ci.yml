@@ -7,12 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8]
+        python-version: ["pypy-3.7"]
     name: Google Sans variable font build CI
     steps:
       - name: Configuration
         id: config
         uses: f-actions/font-setup@master
+        env:
+          CU2QU_WITH_CYTHON: "0"
         with:
           projectname: "Google Sans"
           sourcepath: "source"
