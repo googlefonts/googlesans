@@ -1,0 +1,18 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+locl = true
+blwf = true
+half = true
+blws = true
+dist = true
+blwm = true
+
+[input]
+script = "dev2"
+language = "ne"
+comparison_mode = "full"
+text = [
+	"झ झ्म झ्ल झ्र ५ ८ ९" # Nepali Localisation
+]
