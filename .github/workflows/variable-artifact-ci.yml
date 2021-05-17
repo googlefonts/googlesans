@@ -27,7 +27,7 @@ jobs:
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
         uses: actions/checkout@v2
       - name: Set up Python v${{ steps.config.outputs.py-version }} environment
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2
         with:
           python-version: ${{ steps.config.outputs.py-version }}
       - name: Python build dependency cache lookup
