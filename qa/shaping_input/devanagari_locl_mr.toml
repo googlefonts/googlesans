@@ -1,0 +1,20 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+locl = true
+rkrf = true
+blwf = true
+half = true
+pres = true
+blws = true
+dist = true
+blwm = true
+
+[input]
+script = "deva"
+language = "mr"
+comparison_mode = "full"
+text = [
+	"ल श ल्म ल्क ल्र श्ल श्म श्र ऱ्म ऱ्ड" # Marathi Localisation
+]

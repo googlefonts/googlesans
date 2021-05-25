@@ -1,0 +1,20 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+cjct = true
+
+[input]
+script = "deva"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ङ्य", # Nga conjuncts
+    "छ्य", # Cha conjuncts
+    "ट्ट ट्ठ ट्य", # Tta conjuncts
+    "ठ्ठ ठ्य", # Ttha conjuncts
+    "ड्ड ड्ढ ड्य", # Dda conjuncts
+    "ढ्ढ ढ्य", # Ddha conjuncts
+    "द्ग द्घ द्द द्ध द्ब द्भ द्म द्य द्व द्ध्य", # Da conjuncts
+    "ह्म ह्ण ह्न ह्य ह्म ह्ल ह्व" # Ha Half-form conjuncts
+]
