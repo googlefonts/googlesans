@@ -1,0 +1,17 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+rkrf = true
+blwf = true
+blws = true
+dist = true
+blwm = true
+
+[input]
+script = "deva"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "क्र ख्र ग्र घ्र ङ्र च्र छ्र ज्र झ्र ञ्र ट्र ठ्र ड्र ढ्र ण्र त्र थ्र द्र ध्र प्र फ्र ब्र भ्र म्र य्र ल्र व्र श्र ष्र स्र ह्र ळ्र झ्र ॻ्र ॾ्र ॼ्र ॿ्र क्ष्र ज्ञ्र क़्र ख़्र ग़्र ज़्र ड़्र ढ़्र फ़्र य़्र" # Base rakaar forms
+]

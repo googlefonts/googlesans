@@ -1,0 +1,34 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+half = true
+pres = true
+
+[input]
+script = "deva"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "क्क क्प क्ग क्त क्स क्ज क्य क्घ क्ञ क्च", # Ka Half-form conjuncts
+    "ख्त ख्च ख्ग ख्घ", # Kha Half-form conjuncts
+    "ग्य ग्म", # Ga Half-form conjuncts
+    "घ्य घ्ह", # Gha Half-form conjuncts
+    "च्य च्ड", # Ca Half-form conjuncts
+    "ज्प ज्ग ज्ड ज्स ज्थ ज्ध ज्ज ज्च", # Ja Half-form conjuncts
+    "झ्य झ्च झ्स", # Jha Half-form conjuncts
+    "ञ्क ञ्स", # Nya Half-form conjuncts
+    "त्प त्ख त्द त्य", # Ta Half-form conjuncts
+    "थ्क थ्ह थ्प थ्थ", # Tha Half-form conjuncts
+    "ध्य ध्ह ध्प ध्थ", # Dha Half-form conjuncts
+    "न्त न्थ न्ज न्म", # Na Half-form conjuncts
+    "प्प प्ड प्ह", # Pa Half-form conjuncts
+    "फ्क फ्प फ्ग फ्ट फ्स फ्ज फ्य फ्घ फ्ञ फ्च", # Pha Half-form conjuncts
+    "ब्य ब्च ब्ग ब्ध ब्ह", # Ba Half-form conjuncts
+    "भ्क भ्ड भ्च भ्ग", # Bha Half-form conjuncts
+    "म्त म्ड म्च म्ख", # Ma Half-form conjuncts
+    "य्म य्ड य्ह", # Ya Half-form conjuncts
+    "ल्त ल्स ल्भ ल्घ ल्च ल्ज ल्ञ ल्थ", # La Half-form conjuncts
+    "व्प व्च व्व व्घ व्छ", # Va Half-form conjuncts
+    "स्त स्स" # Sa Half-form conjuncts
+]
