@@ -45,7 +45,6 @@ DOWNLOADS = (Path(__file__) / "../../../downloads").resolve()
 TEST_OUTPUT = (Path(__file__) / "../test_output/").resolve()
 
 # TODO:
-# - Use HarfBuzz to excercise kerning in all corners of the designspace
 # - Use HarfBuzz to excercise kerning with various features (alternates, smcp)
 # - Add more words and sentences from different languages
 #   (http://unicode.org/udhr/downloads.html)
