@@ -9,6 +9,10 @@
 ### Fixed
 
 - added missing ldot (U+0140) small caps feature support (#276)
+- swap outlines of K.alt into Ka-cy (#306)
+- remove descender-cy and descender-cy.case outlines (#306)
+- remove ustraight-cy (#306)
+- remove unrequired localization ge-cy.loclSRB (#306)
 
 ## Version 4.000
 
