@@ -3250,6 +3250,20 @@
       <string>quotedblright.loclDEVA</string>
       <string>quoteleft.loclDEVA</string>
       <string>quoteright.loclDEVA</string>
+      <string>graphemejoinercomb</string>
+      <string>mark-ar</string>
+      <string>lefttorightmark</string>
+      <string>righttoleftmark</string>
+      <string>lefttorightembedding</string>
+      <string>righttoleftembedding</string>
+      <string>popdirectionalformatting</string>
+      <string>lefttorightoverride</string>
+      <string>righttoleftoverride</string>
+      <string>lefttorightisolate</string>
+      <string>righttoleftisolate</string>
+      <string>firststrongisolate</string>
+      <string>popdirectionalisolate</string>
+      <string>zeroWidthNoBreakSpace</string>
     </array>
     <key>public.postscriptNames</key>
     <dict>
@@ -5305,6 +5319,8 @@
       <string>uni05E5</string>
       <key>finalwidemem-hb</key>
       <string>uniFB26</string>
+      <key>firststrongisolate</key>
+      <string>uni2068</string>
       <key>fita-cy</key>
       <string>uni0473</string>
       <key>fita-cy.sc</key>
@@ -5425,6 +5441,8 @@
       <string>uni0453.sc</string>
       <key>glottalstop-deva</key>
       <string>uni097D</string>
+      <key>graphemejoinercomb</key>
+      <string>uni034F</string>
       <key>guillemetleft</key>
       <string>guillemotleft</string>
       <key>guillemetleft.cap</key>
@@ -6007,6 +6025,14 @@
       <string>arrowleft</string>
       <key>leftArrow.ss05</key>
       <string>arrowleft.ss05</string>
+      <key>lefttorightembedding</key>
+      <string>uni202A</string>
+      <key>lefttorightisolate</key>
+      <string>uni2066</string>
+      <key>lefttorightmark</key>
+      <string>uni200E</string>
+      <key>lefttorightoverride</key>
+      <string>uni202D</string>
       <key>liraTurkish</key>
       <string>uni20BA</string>
       <key>liraTurkish.cap</key>
@@ -6067,6 +6093,8 @@
       <string>uni05A4</string>
       <key>maqaf-hb</key>
       <string>uni05BE</string>
+      <key>mark-ar</key>
+      <string>uni061C</string>
       <key>marwaridda-deva</key>
       <string>marwariddadeva</string>
       <key>masoracircle-hb</key>
@@ -6645,6 +6673,10 @@
       <string>uni0583</string>
       <key>piwr-arm.sc</key>
       <string>uni0583.sc</string>
+      <key>popdirectionalformatting</key>
+      <string>uni202C</string>
+      <key>popdirectionalisolate</key>
+      <string>uni2069</string>
       <key>prishthaMatraE-deva</key>
       <string>uni094E</string>
       <key>prosgegrammeni</key>
@@ -6811,6 +6843,14 @@
       <string>arrowright.ss05</string>
       <key>rightOverLeftArrow</key>
       <string>uni21C4</string>
+      <key>righttoleftembedding</key>
+      <string>uni202B</string>
+      <key>righttoleftisolate</key>
+      <string>uni2067</string>
+      <key>righttoleftmark</key>
+      <string>uni200F</string>
+      <key>righttoleftoverride</key>
+      <string>uni202E</string>
       <key>ringcomb</key>
       <string>uni030A</string>
       <key>ringcomb.cap</key>
@@ -7585,6 +7625,8 @@
       <string>uni04DF.sc</string>
       <key>zero-deva</key>
       <string>uni0966</string>
+      <key>zeroWidthNoBreakSpace</key>
+      <string>uniFEFF</string>
       <key>zeroinferior</key>
       <string>uni2080</string>
       <key>zerosuperior</key>
