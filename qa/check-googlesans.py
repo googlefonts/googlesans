@@ -54,6 +54,8 @@ excluded_check_ids = (
     "com.google.fonts/check/varfont/regular_opsz_coord",  # we do want our opsz definition
     # "com.google.fonts/check/os2_metrics_match_hhea",
     # "com.google.fonts/check/unwanted_tables",
+    "com.google.fonts/check/outline_jaggy_segments",  # too many unactionable warnings
+    "com.google.fonts/check/outline_semi_vertical",  # design rather than QA problem
 )
 
 ATTRIBUTES = {
