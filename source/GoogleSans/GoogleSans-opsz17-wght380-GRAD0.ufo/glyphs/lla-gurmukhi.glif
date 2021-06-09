@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lla-gurmukhi" format="2">
+  <advance width="770"/>
+  <unicode hex="0A33"/>
+  <outline>
+    <contour>
+      <point x="740" y="607" type="line"/>
+      <point x="790" y="607" type="line"/>
+      <point x="790" y="679" type="line"/>
+      <point x="740" y="679" type="line"/>
+    </contour>
+    <component base="la-gurmukhi"/>
+    <component base="nukta-gurmukhi" xOffset="655" yOffset="118"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>la-gurmukhi</string>
+    </dict>
+  </lib>
+</glyph>
