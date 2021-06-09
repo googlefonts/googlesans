@@ -5,14 +5,31 @@
 ### New
 
 - Add Armenian script support (#274)
+- Add zero advance width control characters (issue #280, added in #306)
+
+### Changed
+
+- convert logo forms to components (#306)
+- remove unnecessary outline data in U+00AD (soft hyphen)
+- remove unnecessary outline data in U+200C (zero width nonjoiner)
+- remove unnecessary outline data in U+200D (zero width joiner)
 
 ### Fixed
 
 - added missing ldot (U+0140) small caps feature support (#276)
 - swap outlines of K.alt into Ka-cy (#306)
-- remove descender-cy and descender-cy.case outlines (#306)
-- remove ustraight-cy (#306)
-- remove unrequired localization ge-cy.loclSRB (#306)
+- remove unneeded descender-cy and descender-cy.case glyphs (#306)
+- remove unneeded ustraight-cy glyph (#306)
+- remove unneeded localization ge-cy.loclSRB glyph (#306)
+- remove unneeded G.ss06 glyph (#306)
+- remove unneeded peace glyph (#306)
+- remove unneeded whiteFrowningFace glyph (#306)
+- remove unneeded whiteSmilingFace glyph (#306)
+- remove unneeded apple glyph (#306)
+- remove proprietary `#exit` anchor in Armenian designs (#306)
+- remove duplicate logo glyph forms (#306)
+
+
 
 ## Version 4.000
 
