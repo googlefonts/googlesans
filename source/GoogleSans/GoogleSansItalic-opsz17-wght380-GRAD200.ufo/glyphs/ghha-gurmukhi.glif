@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ghha-gurmukhi" format="2">
+  <advance width="855"/>
+  <unicode hex="0A5A"/>
+  <outline>
+    <contour>
+      <point x="30" y="607" type="line"/>
+      <point x="106" y="607" type="line"/>
+      <point x="118" y="679" type="line"/>
+      <point x="42" y="679" type="line"/>
+    </contour>
+    <component base="ga-gurmukhi" xOffset="58"/>
+    <component base="nukta-gurmukhi" xOffset="21" yOffset="118"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>ga-gurmukhi</string>
+    </dict>
+  </lib>
+</glyph>
