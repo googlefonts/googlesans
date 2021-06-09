@@ -3251,6 +3251,20 @@
       <string>quotedblright.loclDEVA</string>
       <string>quoteleft.loclDEVA</string>
       <string>quoteright.loclDEVA</string>
+      <string>graphemejoinercomb</string>
+      <string>mark-ar</string>
+      <string>lefttorightmark</string>
+      <string>righttoleftmark</string>
+      <string>lefttorightembedding</string>
+      <string>righttoleftembedding</string>
+      <string>popdirectionalformatting</string>
+      <string>lefttorightoverride</string>
+      <string>righttoleftoverride</string>
+      <string>lefttorightisolate</string>
+      <string>righttoleftisolate</string>
+      <string>firststrongisolate</string>
+      <string>popdirectionalisolate</string>
+      <string>zeroWidthNoBreakSpace</string>
     </array>
     <key>public.postscriptNames</key>
     <dict>
@@ -4352,8 +4366,6 @@
       <string>uni055A.sc</string>
       <key>apostrophemod</key>
       <string>uni02BC</string>
-      <key>apple</key>
-      <string>uniF8FF</string>
       <key>asterism</key>
       <string>uni2042</string>
       <key>atnahhafukh-hb</key>
@@ -5308,6 +5320,8 @@
       <string>uni05E5</string>
       <key>finalwidemem-hb</key>
       <string>uniFB26</string>
+      <key>firststrongisolate</key>
+      <string>uni2068</string>
       <key>fita-cy</key>
       <string>uni0473</string>
       <key>fita-cy.sc</key>
@@ -5428,6 +5442,8 @@
       <string>uni0453.sc</string>
       <key>glottalstop-deva</key>
       <string>uni097D</string>
+      <key>graphemejoinercomb</key>
+      <string>uni034F</string>
       <key>guillemetleft</key>
       <string>guillemotleft</string>
       <key>guillemetleft.cap</key>
@@ -6010,6 +6026,14 @@
       <string>arrowleft</string>
       <key>leftArrow.ss05</key>
       <string>arrowleft.ss05</string>
+      <key>lefttorightembedding</key>
+      <string>uni202A</string>
+      <key>lefttorightisolate</key>
+      <string>uni2066</string>
+      <key>lefttorightmark</key>
+      <string>uni200E</string>
+      <key>lefttorightoverride</key>
+      <string>uni202D</string>
       <key>liraTurkish</key>
       <string>uni20BA</string>
       <key>liraTurkish.cap</key>
@@ -6070,6 +6094,8 @@
       <string>uni05A4</string>
       <key>maqaf-hb</key>
       <string>uni05BE</string>
+      <key>mark-ar</key>
+      <string>uni061C</string>
       <key>marwaridda-deva</key>
       <string>marwariddadeva</string>
       <key>masoracircle-hb</key>
@@ -6586,8 +6612,6 @@
       <string>uni05E4</string>
       <key>pe-hb.BRACKET.18</key>
       <string>uni05E4.BRACKET.18</string>
-      <key>peace</key>
-      <string>uni262E</string>
       <key>pedagesh-hb</key>
       <string>uniFB44</string>
       <key>pedagesh-hb.BRACKET.18</key>
@@ -6650,6 +6674,10 @@
       <string>uni0583</string>
       <key>piwr-arm.sc</key>
       <string>uni0583.sc</string>
+      <key>popdirectionalformatting</key>
+      <string>uni202C</string>
+      <key>popdirectionalisolate</key>
+      <string>uni2069</string>
       <key>prishthaMatraE-deva</key>
       <string>uni094E</string>
       <key>prosgegrammeni</key>
@@ -6816,6 +6844,14 @@
       <string>arrowright.ss05</string>
       <key>rightOverLeftArrow</key>
       <string>uni21C4</string>
+      <key>righttoleftembedding</key>
+      <string>uni202B</string>
+      <key>righttoleftisolate</key>
+      <string>uni2067</string>
+      <key>righttoleftmark</key>
+      <string>uni200F</string>
+      <key>righttoleftoverride</key>
+      <string>uni202E</string>
       <key>ringcomb</key>
       <string>uni030A</string>
       <key>ringcomb.cap</key>
@@ -7418,10 +7454,6 @@
       <string>uni051D.sc</string>
       <key>whiteCircle</key>
       <string>circle</string>
-      <key>whiteFrowningFace</key>
-      <string>uni2639</string>
-      <key>whiteSmilingFace</key>
-      <string>smileface</string>
       <key>whiteSquare</key>
       <string>uni25A1</string>
       <key>widealef-hb</key>
@@ -7594,6 +7626,8 @@
       <string>uni04DF.sc</string>
       <key>zero-deva</key>
       <string>uni0966</string>
+      <key>zeroWidthNoBreakSpace</key>
+      <string>uniFEFF</string>
       <key>zeroinferior</key>
       <string>uni2080</string>
       <key>zerosuperior</key>
@@ -7652,7 +7686,6 @@
       <string>Ccedilla.alt</string>
       <string>G.BRACKET.18</string>
       <string>G.alt</string>
-      <string>G.ss06</string>
       <string>Gbreve.BRACKET.18</string>
       <string>Gbreve.alt</string>
       <string>Gcircumflex.BRACKET.18</string>
@@ -7721,7 +7754,6 @@
       <string>amacron.alt</string>
       <string>ampersand.alt</string>
       <string>aogonek.alt</string>
-      <string>apple</string>
       <string>aring.alt</string>
       <string>aringacute.alt</string>
       <string>atilde.alt</string>
@@ -7786,7 +7818,6 @@
       <string>one.alt.cap</string>
       <string>one.sc.ss04</string>
       <string>p.sc.lc.ss04</string>
-      <string>peace</string>
       <string>published.alt</string>
       <string>q.alt</string>
       <string>q.sc.lc.ss04</string>
@@ -7851,8 +7882,6 @@
       <string>v.sc.ss04</string>
       <string>w.sc.lc.ss04</string>
       <string>w.sc.ss04</string>
-      <string>whiteFrowningFace</string>
-      <string>whiteSmilingFace</string>
       <string>x.sc.lc.ss04</string>
       <string>x.sc.ss04</string>
       <string>y.BRACKET.18</string>
