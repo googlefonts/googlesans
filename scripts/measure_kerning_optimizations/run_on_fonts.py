@@ -20,6 +20,7 @@ Prints a command line for https://github.com/sharkdp/hyperfine for the actual te
 from __future__ import annotations
 
 import argparse
+from pathlib import Path
 from typing import Any, List, Set
 
 from fontTools.ttLib.ttFont import TTFont
@@ -40,15 +41,16 @@ def main() -> None:
     reference: TTFont = parsed_args.reference_font
     fonts: List[TTFont] = parsed_args.fonts
 
-    all_sentences, _ = get_sentences_and_words()
-    code_points = get_code_points(reference)
-    sentences = filter_all_code_points_covered(code_points, all_sentences)
+    if not Path("sentences.txt").exists():
+        all_sentences, _ = get_sentences_and_words()
+        code_points = get_code_points(reference)
+        sentences = filter_all_code_points_covered(code_points, all_sentences)
 
-    with open("sentences.txt", "w") as f:
-        f.write("\n".join(s.strip() for s in sentences))
+        with open("sentences.txt", "w") as f:
+            f.write("\n".join(s.strip() for s in sentences))
 
-    hyperfine_cmd = "hyperfine --warmup 1 --min-runs 5 {cmds}"
-    cmd_line = 'hb-shape --text-file sentences.txt --variations {variations} "{font}"'
+    hyperfine_cmd = "hyperfine --warmup 1 --min-runs 2 {cmds}"
+    cmd_line = 'hb-shape --text-file sentences.txt -n 100 -O "" -o /dev/null --variations {variations} "{font}"'
     for location in TEST_LOCATIONS:
         variations = ",".join(f"{k}={v}" for k, v in location.location)
         cmd_lines = [
