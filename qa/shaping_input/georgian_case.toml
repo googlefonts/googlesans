@@ -1,0 +1,12 @@
+[meta]
+build_commit = ""
+
+[input.features]
+case = true
+
+[input]
+text = [
+    "აბგ ᲐᲑᲒ",  # It is like abc ABC
+    "ამო჻ ᲐᲛᲝ჻", # the paragraph separator should be shifted up too
+    "₾",  # lari currency symbol should have lari.cap form
+]
