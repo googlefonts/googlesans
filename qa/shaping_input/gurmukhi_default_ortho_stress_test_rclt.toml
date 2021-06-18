@@ -1,0 +1,20 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+nukt = true
+blwf = true
+pstf = true
+abvs = true
+rclt = true
+
+[input]
+script = "guru"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ਕੌਠੇ ਕੌਂਠੇ ਔਠੇ ਔਂਠੇ ਕੌਕਿ ਠੌਕਿ ਠੌਂਕਿ ਕੌਂਕਿ ਔਕਿ ਔਂਕਿ ਏਂਕਿ ਐਂਕਿ ਓਂਕਿ ਈਂਕਿ ਔਂਕਿ ਊਂਕਿ", # Bindi test 1
+	"ਕੰ ਕੰ। ਠੰ ਠੰ। ਕ੍ਰੰ ਠ੍ਰੰ ਇੰ ਇੰਠੇ ਇੰਠ੍ਰੇ ਕਿੰ ਠਿੰ ਕਿੰਠੇ ਕਿੰਠ੍ਰੇ ਕਿੰ ਕ੍ਰਿੰ ਠ੍ਰਿੰ", # Tippi test 1
+	"ਕੇੱਕਿ ਠੇੱਕਿ ਕੇਁਕਿ ਠੇਁਕਿ ਕ੍ਰੇੱਕਿ ਕ੍ਰੇਁਕਿ ਠ੍ਰੇੱਕਿ ਠ੍ਰੇਁਕਿ", # Addak test 1
+	"ਕੇਁਕ ਕੇਁਕੇ ਕੇਁਕੈ ਕੇਁਕੋ ਕੇਁਕੌ ਕੇਁਕੰ ਕੇਁਕ੍ਰ ਕੇਁਕ੍ਰੇ ਕੇਁਕ੍ਰੰ ਕੇਁਠੂਂਕੇ ਕੇਁਠੇ ਕੇਁਠੈ ਕੇਁਠੋ ਕੇਁਠੌ ਕੇਁਠੰ ਕੇਁਠ੍ਰ ਕੇਁਠ੍ਰੇ ਕੇਁਠ੍ਰੰ" # Addak-Bindi test 1
+]

@@ -1,0 +1,367 @@
+@gur2_dflt_rclt_all_top_matras = [eeMatra-gurmukhi aiMatra-gurmukhi ooMatra-gurmukhi auMatra-gurmukhi];
+@gur2_dflt_rclt_all_top_matras_short = [eeMatra-gurmukhi.short aiMatra-gurmukhi.short ooMatra-gurmukhi.short auMatra-gurmukhi.short];
+@gur2_dflt_rclt_top_matras_left_facing = [eeMatra-gurmukhi aiMatra-gurmukhi ooMatra-gurmukhi];
+@gur2_dflt_rclt_wide_consonants = [ka-gurmukhi kha-gurmukhi ga-gurmukhi gha-gurmukhi nga-gurmukhi ca-gurmukhi cha-gurmukhi ja-gurmukhi jha-gurmukhi nya-gurmukhi tta-gurmukhi dda-gurmukhi ddha-gurmukhi nna-gurmukhi ta-gurmukhi tha-gurmukhi da-gurmukhi dha-gurmukhi pa-gurmukhi pha-gurmukhi ba-gurmukhi bha-gurmukhi ma-gurmukhi ya-gurmukhi ra-gurmukhi la-gurmukhi lla-gurmukhi va-gurmukhi sha-gurmukhi sa-gurmukhi ha-gurmukhi khha-gurmukhi ghha-gurmukhi za-gurmukhi rra-gurmukhi fa-gurmukhi ya-gurmukhi.psts aaMatra-gurmukhi];
+@gur2_dflt_rclt_short_consonants = [ttha-gurmukhi na-gurmukhi];
+@gur2_dflt_rclt_all_below_marks = [nukta-gurmukhi uMatra-gurmukhi uuMatra-gurmukhi halant-gurmukhi udaat-gurmukhi yakash-gurmukhi rakar-gurmukhi va-gurmukhi.below ha-gurmukhi.below ca-gurmukhi.below tta-gurmukhi.below ta-gurmukhi.below];
+@gur2_dflt_rclt_bottom_consonants = [rakar-gurmukhi va-gurmukhi.below ha-gurmukhi.below ca-gurmukhi.below tta-gurmukhi.below ta-gurmukhi.below];
+@gur2_dflt_rclt_punctuation_after = [space danda-deva.loclGURM dbldanda-deva.loclGURM comma.loclGURM colon.loclGURM semicolon.loclGURM exclam.loclGURM question.loclGURM ellipsis.loclGURM parenright.loclGURM bracketright.loclGURM braceright.loclGURM quoteright.loclGURM quotedblright.loclGURM];
+@gur2_dflt_rclt_MFS_top_addak_adakbindi = [addak-gurmukhi adakbindi-gurmukhi eeMatra-gurmukhi aiMatra-gurmukhi ooMatra-gurmukhi auMatra-gurmukhi];
+@gur2_dflt_rclt_MFS_addak_adakbindi = [addak-gurmukhi adakbindi-gurmukhi];
+@gur2_dflt_rclt_MFS_top_bindi_addaks = [adakbindi-gurmukhi addak-gurmukhi addak-gurmukhi.short bindi-gurmukhi eeMatra-gurmukhi aiMatra-gurmukhi ooMatra-gurmukhi auMatra-gurmukhi];
+@gur2_dflt_rclt_MFS_top_bindi_tippi = [eeMatra-gurmukhi aiMatra-gurmukhi ooMatra-gurmukhi auMatra-gurmukhi bindi-gurmukhi tippi-gurmukhi];
+@gur2_dflt_rclt_MFS_top_tippis = [tippi-gurmukhi tippi-gurmukhi.short eeMatra-gurmukhi aiMatra-gurmukhi ooMatra-gurmukhi auMatra-gurmukhi];
+
+
+# Prefix: IndependentLookups
+lookup gur2_dflt_blwf_below_base_consonant_forms {
+    sub halant-gurmukhi ra-gurmukhi by rakar-gurmukhi;
+    sub halant-gurmukhi ha-gurmukhi by ha-gurmukhi.below;
+    sub halant-gurmukhi va-gurmukhi by va-gurmukhi.below;
+} gur2_dflt_blwf_below_base_consonant_forms;
+
+lookup gur2_dflt_ss01_historical_below_base_consonant_forms {
+    sub halant-gurmukhi ca-gurmukhi by ca-gurmukhi.below;
+    sub halant-gurmukhi tta-gurmukhi by tta-gurmukhi.below;
+    sub halant-gurmukhi ta-gurmukhi by ta-gurmukhi.below;
+} gur2_dflt_ss01_historical_below_base_consonant_forms;
+
+
+feature locl {
+    script gur2;
+    lookup gurmukhi_punctuation {
+        sub [period comma colon semicolon ellipsis exclam question asterisk parenleft parenright braceleft braceright bracketleft bracketright quotedblleft quotedblright quoteleft quoteright] by [period.loclGURM comma.loclGURM colon.loclGURM semicolon.loclGURM ellipsis.loclGURM exclam.loclGURM question.loclGURM asterisk.loclGURM parenleft.loclGURM parenright.loclGURM braceleft.loclGURM braceright.loclGURM bracketleft.loclGURM bracketright.loclGURM quotedblleft.loclGURM quotedblright.loclGURM quoteleft.loclGURM quoteright.loclGURM];
+        sub danda-deva by danda-deva.loclGURM;
+        sub dbldanda-deva by dbldanda-deva.loclGURM;
+    } gurmukhi_punctuation;
+} locl;
+
+feature nukt {
+    script gur2;
+    lookup gur2_dflt_nukt_nukta_forms {
+        sub la-gurmukhi nukta-gurmukhi by lla-gurmukhi;
+        sub kha-gurmukhi nukta-gurmukhi by khha-gurmukhi;
+        sub gha-gurmukhi nukta-gurmukhi by ghha-gurmukhi;
+        sub ja-gurmukhi nukta-gurmukhi by za-gurmukhi;
+        sub pha-gurmukhi nukta-gurmukhi by fa-gurmukhi;
+    } gur2_dflt_nukt_nukta_forms;
+
+} nukt;
+
+feature blwf {
+    script gur2;
+    lookup gur2_dflt_blwf_below_base_forms {
+        ignore sub [rakar-gurmukhi va-gurmukhi.below ha-gurmukhi.below yakash-gurmukhi] halant-gurmukhi' [ra-gurmukhi va-gurmukhi ha-gurmukhi]';
+        sub halant-gurmukhi' lookup gur2_dflt_blwf_below_base_consonant_forms [ra-gurmukhi va-gurmukhi ha-gurmukhi]';
+    } gur2_dflt_blwf_below_base_forms;
+
+} blwf;
+
+feature pstf {
+    script gur2;
+    lookup gur2_dflt_psts_post_base_forms {
+        sub halant-gurmukhi ya-gurmukhi by ya-gurmukhi.psts;
+    } gur2_dflt_psts_post_base_forms;
+
+} pstf;
+
+feature abvs {
+    script gur2;
+    lookup test_abvs {
+        sub @gur2_dflt_rclt_all_top_matras adakbindi-gurmukhi' by addak-gurmukhi.short bindi-gurmukhi;
+        sub @gur2_dflt_rclt_all_top_matras addak-gurmukhi' by addak-gurmukhi.short;
+    } test_abvs;
+
+    lookup test_abvs_2 {
+        sub [u-gurmukhi uu-gurmukhi ii-gurmukhi iiMatra-gurmukhi] adakbindi-gurmukhi' by addak-gurmukhi.short bindi-gurmukhi;
+        sub [u-gurmukhi uu-gurmukhi ii-gurmukhi iiMatra-gurmukhi] addak-gurmukhi' by addak-gurmukhi.short;
+    } test_abvs_2;
+
+} abvs;
+
+feature rclt {
+    script gur2;
+    # ---------------
+    # Contexts: Addak
+    # ---------------
+    lookup gur2_dflt_rclt_addak_bindi_default {
+        # Addak-Bindi
+        ignore sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' [@gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_short_consonants] @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras;
+        ignore sub @gur2_dflt_rclt_short_consonants [@gur2_dflt_rclt_top_matras_left_facing auMatra-gurmukhi] addak-gurmukhi.short bindi-gurmukhi' [@gur2_dflt_rclt_wide_consonants ttha-gurmukhi] @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras;
+        ignore sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' [@gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_short_consonants] @gur2_dflt_rclt_all_top_matras;
+        ignore sub @gur2_dflt_rclt_short_consonants [@gur2_dflt_rclt_top_matras_left_facing auMatra-gurmukhi] addak-gurmukhi.short bindi-gurmukhi' [@gur2_dflt_rclt_wide_consonants ttha-gurmukhi] @gur2_dflt_rclt_all_top_matras;
+        sub addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi.shorter;
+        sub addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi headline-gurmukhi.shorter;
+        sub addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi.shorter;
+        sub addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi headline-gurmukhi.shorter;
+        sub addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+    } gur2_dflt_rclt_addak_bindi_default;
+
+    lookup gur2_dflt_rclt_addak_default {
+        # Addak
+        ignore sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short' [@gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_short_consonants] @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras;
+        ignore sub @gur2_dflt_rclt_short_consonants [@gur2_dflt_rclt_top_matras_left_facing auMatra-gurmukhi] addak-gurmukhi.short' [@gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_short_consonants] @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras;
+        ignore sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short' [@gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_short_consonants] @gur2_dflt_rclt_all_top_matras;
+        ignore sub @gur2_dflt_rclt_short_consonants [@gur2_dflt_rclt_top_matras_left_facing auMatra-gurmukhi] addak-gurmukhi.short' [@gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_short_consonants] @gur2_dflt_rclt_all_top_matras;
+        sub addak-gurmukhi.short' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi.shorter;
+        sub addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.shorter;
+        sub addak-gurmukhi.short' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi.shorter;
+        sub addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.shorter;
+        sub addak-gurmukhi.short headline-gurmukhi.shorter @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub addak-gurmukhi.short headline-gurmukhi.shorter @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+    } gur2_dflt_rclt_addak_default;
+
+    lookup gur2_dflt_rclt_addak_bindi_exceptions {
+        # Addak-Bindi
+        sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi;
+        sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi;
+        sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi headline-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi headline-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi headline-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi headline-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+    } gur2_dflt_rclt_addak_bindi_exceptions;
+
+    lookup gur2_dflt_rclt_addak_exceptions {
+        # Addak
+        sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi;
+        sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi;
+        sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short headline-gurmukhi @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short headline-gurmukhi @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi headline-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi headline-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short headline-gurmukhi headline-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_below_marks @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short headline-gurmukhi headline-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+    } gur2_dflt_rclt_addak_exceptions;
+
+    lookup gur2_dflt_rclt_addak_bindi_aumatra_exceptions {
+        # Addak-Bindi
+        ignore sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks tippi-gurmukhi;
+        ignore sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants tippi-gurmukhi;
+        ignore sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' [@gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_short_consonants] @gur2_dflt_rclt_all_below_marks tippi-gurmukhi;
+        ignore sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' [@gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_short_consonants] tippi-gurmukhi;
+        sub auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_below_marks tippi-gurmukhi by bindi-gurmukhi headline-gurmukhi.short;
+        sub auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_wide_consonants tippi-gurmukhi by bindi-gurmukhi headline-gurmukhi.short;
+        sub auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks tippi-gurmukhi by bindi-gurmukhi headline-gurmukhi headline-gurmukhi.short;
+        sub auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants tippi-gurmukhi by bindi-gurmukhi headline-gurmukhi headline-gurmukhi.short;
+        sub @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks tippi-gurmukhi by bindi-gurmukhi headline-gurmukhi.short headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants tippi-gurmukhi by bindi-gurmukhi headline-gurmukhi.short headline-gurmukhi.shorter;
+    } gur2_dflt_rclt_addak_bindi_aumatra_exceptions;
+
+    lookup gur2_dflt_rclt_addak_aumatra_exceptions {
+        # Addak
+        ignore sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks tippi-gurmukhi;
+        ignore sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants tippi-gurmukhi;
+        ignore sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short' [@gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_short_consonants] @gur2_dflt_rclt_all_below_marks tippi-gurmukhi;
+        ignore sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short' [@gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_short_consonants] tippi-gurmukhi;
+        sub auMatra-gurmukhi addak-gurmukhi.short' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_below_marks tippi-gurmukhi by addak-gurmukhi.short headline-gurmukhi.short;
+        sub auMatra-gurmukhi addak-gurmukhi.short' @gur2_dflt_rclt_wide_consonants tippi-gurmukhi by addak-gurmukhi.short headline-gurmukhi.short;
+        sub auMatra-gurmukhi addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks tippi-gurmukhi by addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.short;
+        sub auMatra-gurmukhi addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants tippi-gurmukhi by addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.short;
+        sub @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks tippi-gurmukhi by addak-gurmukhi.short headline-gurmukhi.short headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants tippi-gurmukhi by addak-gurmukhi.short headline-gurmukhi.short headline-gurmukhi.shorter;
+    } gur2_dflt_rclt_addak_aumatra_exceptions;
+
+    lookup gur2_dflt_rclt_addak_bindi_aumatra_short_consonant_exceptions {
+        # Addak-Bindi
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks tippi-gurmukhi by bindi-gurmukhi headline-gurmukhi.short;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' @gur2_dflt_rclt_short_consonants tippi-gurmukhi by bindi-gurmukhi headline-gurmukhi.short;
+    } gur2_dflt_rclt_addak_bindi_aumatra_short_consonant_exceptions;
+
+    lookup gur2_dflt_rclt_addak_aumatra_short_consonant_exceptions {
+        # Addak
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_below_marks tippi-gurmukhi by addak-gurmukhi.short headline-gurmukhi.short;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short' @gur2_dflt_rclt_short_consonants tippi-gurmukhi by addak-gurmukhi.short headline-gurmukhi.short;
+    } gur2_dflt_rclt_addak_aumatra_short_consonant_exceptions;
+
+    lookup gur2_dflt_rclt_addak_bindi_iivowel_iiMatra {
+        #Addak-Bindi
+        sub [ii-gurmukhi iiMatra-gurmukhi] addak-gurmukhi.short bindi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by bindi-gurmukhi headline-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_bottom_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short bindi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by bindi-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_bottom_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by bindi-gurmukhi headline-gurmukhi.short headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short bindi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by bindi-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by bindi-gurmukhi headline-gurmukhi.short headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_bottom_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short bindi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by bindi-gurmukhi headline-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_bottom_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by bindi-gurmukhi headline-gurmukhi.short headline-gurmukhi headline-gurmukhi.short;
+        sub @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short bindi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by bindi-gurmukhi headline-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short bindi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by bindi-gurmukhi headline-gurmukhi.short headline-gurmukhi headline-gurmukhi.short;
+    } gur2_dflt_rclt_addak_bindi_iivowel_iiMatra;
+
+    lookup gur2_dflt_rclt_addak_iivowel_iiMatra {
+        #Addak
+        sub [ii-gurmukhi iiMatra-gurmukhi] addak-gurmukhi.short' [i-gurmukhi iMatra-gurmukhi] by addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_bottom_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short' [i-gurmukhi iMatra-gurmukhi] by addak-gurmukhi.short headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_bottom_consonants auMatra-gurmukhi addak-gurmukhi.short' [i-gurmukhi iMatra-gurmukhi] by addak-gurmukhi.short headline-gurmukhi.short headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short' [i-gurmukhi iMatra-gurmukhi] by addak-gurmukhi.short headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi addak-gurmukhi.short' [i-gurmukhi iMatra-gurmukhi] by addak-gurmukhi.short headline-gurmukhi.short headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_bottom_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short' [i-gurmukhi iMatra-gurmukhi] by addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_bottom_consonants auMatra-gurmukhi addak-gurmukhi.short' [i-gurmukhi iMatra-gurmukhi] by addak-gurmukhi.short headline-gurmukhi.short headline-gurmukhi headline-gurmukhi.short;
+        sub @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_top_matras_left_facing addak-gurmukhi.short' [i-gurmukhi iMatra-gurmukhi] by addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi addak-gurmukhi.short' [i-gurmukhi iMatra-gurmukhi] by addak-gurmukhi.short headline-gurmukhi.short headline-gurmukhi headline-gurmukhi.short;
+    } gur2_dflt_rclt_addak_iivowel_iiMatra;
+
+    # -------
+    # Spacing
+    # -------
+    lookup gur2_dflt_rclt_contextual_kerning_tippi {
+        pos u-gurmukhi tippi-gurmukhi.short headline-gurmukhi' <35 0 35 0> [u-gurmukhi uu-gurmukhi ura-gurmukhi];
+        pos u-gurmukhi tippi-gurmukhi.short headline-gurmukhi [u-gurmukhi uu-gurmukhi ura-gurmukhi]' <20 0 20 0>;
+        pos u-gurmukhi tippi-gurmukhi.short headline-gurmukhi' <35 0 35 0> [i-gurmukhi iMatra-gurmukhi];
+        pos u-gurmukhi tippi-gurmukhi.short headline-gurmukhi [i-gurmukhi iMatra-gurmukhi]' <35 0 35 0>;
+        pos @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi bindi-gurmukhi headline-gurmukhi' <35 0 35 0> [i-gurmukhi iMatra-gurmukhi];
+        pos au-gurmukhi bindi-gurmukhi headline-gurmukhi' <35 0 35 0> [i-gurmukhi iMatra-gurmukhi];
+    } gur2_dflt_rclt_contextual_kerning_tippi;
+
+    # -----------------------------------
+    # -----------------------------------
+    # All lookups with Mark Filtering Set
+    # -----------------------------------
+    # -----------------------------------
+    # ---------------
+    # Contexts: Addak
+    # ---------------
+    lookup addak_simple {
+        lookupflag UseMarkFilteringSet @gur2_dflt_rclt_MFS_top_addak_adakbindi;
+        sub @gur2_dflt_rclt_wide_consonants addak-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants adakbindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by adakbindi-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants addak-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_wide_consonants adakbindi-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+    } addak_simple;
+
+    lookup addak_iMatra {
+        lookupflag UseMarkFilteringSet @gur2_dflt_rclt_MFS_addak_adakbindi;
+        sub @gur2_dflt_rclt_wide_consonants addak-gurmukhi' [iMatra-gurmukhi i-gurmukhi] by addak-gurmukhi headline-gurmukhi.shorter;
+        sub @gur2_dflt_rclt_wide_consonants adakbindi-gurmukhi' [iMatra-gurmukhi i-gurmukhi] by adakbindi-gurmukhi headline-gurmukhi.shorter;
+    } addak_iMatra;
+
+    lookup auVowel_addak_adakbindi {
+        lookupflag UseMarkFilteringSet @gur2_dflt_rclt_MFS_top_bindi_addaks;
+        sub [ee-gurmukhi ai-gurmukhi] adakbindi-gurmukhi' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi.short;
+        sub [ee-gurmukhi ai-gurmukhi] adakbindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi headline-gurmukhi.shorter;
+        sub [au-gurmukhi] adakbindi-gurmukhi' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi;
+        sub [au-gurmukhi] adakbindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi headline-gurmukhi;
+        sub [ee-gurmukhi ai-gurmukhi] addak-gurmukhi' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi.short;
+        sub [ee-gurmukhi ai-gurmukhi] addak-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.shorter;
+        sub au-gurmukhi addak-gurmukhi' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi;
+        sub au-gurmukhi addak-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by addak-gurmukhi.short headline-gurmukhi headline-gurmukhi;
+        sub [ee-gurmukhi ai-gurmukhi] adakbindi-gurmukhi' @gur2_dflt_rclt_wide_consonants by addak-gurmukhi.short bindi-gurmukhi;
+        sub au-gurmukhi adakbindi-gurmukhi' @gur2_dflt_rclt_wide_consonants by addak-gurmukhi.short bindi-gurmukhi;
+        sub [ee-gurmukhi ai-gurmukhi] addak-gurmukhi' @gur2_dflt_rclt_wide_consonants by addak-gurmukhi.short;
+        sub au-gurmukhi addak-gurmukhi' @gur2_dflt_rclt_wide_consonants by addak-gurmukhi.short;
+        sub [ee-gurmukhi ai-gurmukhi au-gurmukhi] adakbindi-gurmukhi' by addak-gurmukhi.short bindi-gurmukhi;
+        sub [ee-gurmukhi ai-gurmukhi au-gurmukhi] addak-gurmukhi' by addak-gurmukhi.short;
+        sub [ee-gurmukhi ai-gurmukhi] addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi.short @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub [ee-gurmukhi ai-gurmukhi] addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub [au-gurmukhi] addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub [au-gurmukhi] addak-gurmukhi.short bindi-gurmukhi headline-gurmukhi headline-gurmukhi @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub [ee-gurmukhi ai-gurmukhi] addak-gurmukhi.short headline-gurmukhi.short @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub [ee-gurmukhi ai-gurmukhi] addak-gurmukhi.short headline-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub au-gurmukhi addak-gurmukhi.short headline-gurmukhi @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub au-gurmukhi addak-gurmukhi.short headline-gurmukhi headline-gurmukhi @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+    } auVowel_addak_adakbindi;
+
+    # ---------------
+    # Contexts: Bindi
+    # ---------------
+    lookup bindi_basics {
+        lookupflag UseMarkFilteringSet @gur2_dflt_rclt_MFS_top_bindi_tippi;
+        ignore sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras;
+        #	ignore sub @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_top_matras_right_facing bindi-gurmukhi' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras; 
+        sub [ii-gurmukhi iiMatra-gurmukhi] bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi.short;
+        sub @gur2_dflt_rclt_top_matras_left_facing bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi.shorter;
+        sub [ee-gurmukhi ai-gurmukhi] bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi.shorter;
+        sub [u-gurmukhi] bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi.shorter;
+        sub [au-gurmukhi auMatra-gurmukhi] bindi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by bindi-gurmukhi headline-gurmukhi;
+        sub [au-gurmukhi auMatra-gurmukhi] bindi-gurmukhi' @gur2_dflt_rclt_short_consonants tippi-gurmukhi by bindi-gurmukhi headline-gurmukhi;
+        sub [ii-gurmukhi iiMatra-gurmukhi] bindi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by bindi-gurmukhi headline-gurmukhi.short;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi bindi-gurmukhi' @gur2_dflt_rclt_punctuation_after by bindi-gurmukhi headline-gurmukhi;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi bindi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by bindi-gurmukhi headline-gurmukhi;
+        sub [u-gurmukhi] bindi-gurmukhi' @gur2_dflt_rclt_punctuation_after by bindi-gurmukhi headline-gurmukhi.shorter;
+        sub [u-gurmukhi] bindi-gurmukhi' [u-gurmukhi uu-gurmukhi] by bindi-gurmukhi headline-gurmukhi.shorter;
+        sub [au-gurmukhi] bindi-gurmukhi' @gur2_dflt_rclt_punctuation_after by bindi-gurmukhi headline-gurmukhi.short;
+        sub [au-gurmukhi] bindi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by bindi-gurmukhi headline-gurmukhi;
+        sub [oo-gurmukhi ee-gurmukhi] bindi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by bindi-gurmukhi headline-gurmukhi.shorter;
+        sub [uu-gurmukhi ai-gurmukhi] bindi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by bindi-gurmukhi headline-gurmukhi.short;
+        sub [ii-gurmukhi iiMatra-gurmukhi] bindi-gurmukhi headline-gurmukhi.short @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_top_matras_left_facing bindi-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub [ee-gurmukhi ai-gurmukhi] bindi-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub [u-gurmukhi] bindi-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub [au-gurmukhi auMatra-gurmukhi] bindi-gurmukhi headline-gurmukhi @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub [oo-gurmukhi] bindi-gurmukhi @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+    } bindi_basics;
+
+    lookup aumatra_bindi_short_consonants {
+        lookupflag UseMarkFilteringSet @gur2_dflt_rclt_MFS_top_bindi_tippi;
+        sub @gur2_dflt_rclt_short_consonants auMatra-gurmukhi bindi-gurmukhi @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+    } aumatra_bindi_short_consonants;
+
+    # ---------------
+    # Contexts: Tippi
+    # ---------------
+    # Contexts with vowels (inherent) 'a', 'i', 'u', and 'uu' in final position.
+    lookup imatra_tippi {
+        lookupflag UseMarkFilteringSet @gur2_dflt_rclt_MFS_top_tippis;
+        sub iMatra-gurmukhi @gur2_dflt_rclt_wide_consonants tippi-gurmukhi @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_wide_consonants tippi-gurmukhi @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub i-gurmukhi tippi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by tippi-gurmukhi headline-gurmukhi.shorter;
+        sub iMatra-gurmukhi @gur2_dflt_rclt_short_consonants tippi-gurmukhi' by tippi-gurmukhi.short;
+        sub u-gurmukhi tippi-gurmukhi' @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras by tippi-gurmukhi.short headline-gurmukhi.shorter;
+        sub u-gurmukhi tippi-gurmukhi' @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras by tippi-gurmukhi.short headline-gurmukhi headline-gurmukhi.short;
+        sub u-gurmukhi tippi-gurmukhi' @gur2_dflt_rclt_short_consonants tippi-gurmukhi by tippi-gurmukhi.short headline-gurmukhi.short;
+        sub u-gurmukhi tippi-gurmukhi' [@gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_short_consonants] by tippi-gurmukhi.short;
+        sub u-gurmukhi tippi-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by tippi-gurmukhi.short headline-gurmukhi;
+        sub [u-gurmukhi uu-gurmukhi] tippi-gurmukhi' @gur2_dflt_rclt_punctuation_after by tippi-gurmukhi.short headline-gurmukhi;
+        sub u-gurmukhi tippi-gurmukhi' [u-gurmukhi uu-gurmukhi] by tippi-gurmukhi.short headline-gurmukhi;
+        sub i-gurmukhi tippi-gurmukhi headline-gurmukhi.shorter @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub u-gurmukhi tippi-gurmukhi.short headline-gurmukhi.shorter @gur2_dflt_rclt_wide_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub u-gurmukhi tippi-gurmukhi.short headline-gurmukhi headline-gurmukhi.short @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub u-gurmukhi tippi-gurmukhi.short headline-gurmukhi.short @gur2_dflt_rclt_short_consonants tippi-gurmukhi' by tippi-gurmukhi.short;
+    } imatra_tippi;
+
+    # --------------------
+    # Contexts: Top Matras
+    # --------------------
+    lookup gur2_dflt_rclt_simple_mark_adjustments {
+        lookupflag UseMarkFilteringSet @gur2_dflt_rclt_all_top_matras;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub @gur2_dflt_rclt_wide_consonants auMatra-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by auMatra-gurmukhi headline-gurmukhi.shorter;
+        sub au-gurmukhi @gur2_dflt_rclt_short_consonants @gur2_dflt_rclt_all_top_matras' by @gur2_dflt_rclt_all_top_matras_short;
+        sub au-gurmukhi' [i-gurmukhi iMatra-gurmukhi] by au-gurmukhi headline-gurmukhi.shorter;
+    } gur2_dflt_rclt_simple_mark_adjustments;
+
+} rclt;
+
+feature hist {
+    script gur2;
+    lookup gur2_dflt_hist_historical_sunscript_consonants {
+        ignore sub [rakar-gurmukhi va-gurmukhi.below ha-gurmukhi.below yakash-gurmukhi ca-gurmukhi.below tta-gurmukhi.below ta-gurmukhi.below] halant-gurmukhi' [ca-gurmukhi tta-gurmukhi ta-gurmukhi]';
+        sub halant-gurmukhi' lookup gur2_dflt_ss01_historical_below_base_consonant_forms [ca-gurmukhi tta-gurmukhi ta-gurmukhi]';
+    } gur2_dflt_hist_historical_sunscript_consonants;
+
+} hist;

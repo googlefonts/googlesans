@@ -445,8 +445,17 @@ table GDEF {
         ra_uMatra-deva ra_uuMatra-deva ha_uMatra-deva ha_uuMatra-deva
         ha_rVocalicMatra-deva ha_rrVocalicMatra-deva h_ra_uMatra-deva h_ra_uuMatra-deva
         iiMatra-deva.alt2 iiMatra_reph-deva iiMatra_reph-deva.alt2
-        iiMatra_reph_anusvara-deva iiMatra_reph_anusvara-deva.alt2 finalpe-hb.BRACKET.18
-        pe-hb.BRACKET.18 samekh-hb.BRACKET.18], # Base
+        iiMatra_reph_anusvara-deva iiMatra_reph_anusvara-deva.alt2 a-gurmukhi
+        aa-gurmukhi i-gurmukhi ii-gurmukhi u-gurmukhi uu-gurmukhi ee-gurmukhi
+        ai-gurmukhi oo-gurmukhi au-gurmukhi ka-gurmukhi kha-gurmukhi ga-gurmukhi
+        gha-gurmukhi nga-gurmukhi ca-gurmukhi cha-gurmukhi ja-gurmukhi jha-gurmukhi
+        nya-gurmukhi tta-gurmukhi ttha-gurmukhi dda-gurmukhi ddha-gurmukhi nna-gurmukhi
+        ta-gurmukhi tha-gurmukhi da-gurmukhi dha-gurmukhi na-gurmukhi pa-gurmukhi
+        pha-gurmukhi ba-gurmukhi bha-gurmukhi ma-gurmukhi ya-gurmukhi ra-gurmukhi
+        la-gurmukhi lla-gurmukhi va-gurmukhi sha-gurmukhi sa-gurmukhi ha-gurmukhi
+        aaMatra-gurmukhi iiMatra-gurmukhi khha-gurmukhi ghha-gurmukhi za-gurmukhi
+        rra-gurmukhi fa-gurmukhi iri-gurmukhi ura-gurmukhi ya-gurmukhi.psts
+        finalpe-hb.BRACKET.18 pe-hb.BRACKET.18 samekh-hb.BRACKET.18], # Base
         [f_b f_f f_f_b f_f_h f_f_i f_f_j f_f_k f_f_l f_f_t f_h f_i f_j f_k f_l f_t r_f r_f_f
         r_t t_f t_t vavvav-hb vavyod-hb yodyod-hb], # Liga
         [dieresiscomb dotaccentcomb gravecomb acutecomb hungarumlautcomb circumflexcomb
@@ -493,7 +502,14 @@ table GDEF {
         aiMatra_reph-deva aiMatra_reph_anusvara-deva eCandraMatra_anusvara-deva
         eCandraMatra_reph-deva eShortMatra_anusvara-deva eShortMatra_candraBindu-deva
         eShortMatra_reph-deva eShortMatra_reph_anusvara-deva reph_anusvara-deva
-        graphemejoinercomb], # Mark
+        graphemejoinercomb adakbindi-gurmukhi bindi-gurmukhi visarga-gurmukhi
+        nukta-gurmukhi uMatra-gurmukhi uuMatra-gurmukhi eeMatra-gurmukhi
+        aiMatra-gurmukhi ooMatra-gurmukhi auMatra-gurmukhi halant-gurmukhi
+        udaat-gurmukhi tippi-gurmukhi addak-gurmukhi yakash-gurmukhi rakar-gurmukhi
+        va-gurmukhi.below ha-gurmukhi.below ca-gurmukhi.below tta-gurmukhi.below
+        ta-gurmukhi.below eeMatra-gurmukhi.short aiMatra-gurmukhi.short
+        ooMatra-gurmukhi.short auMatra-gurmukhi.short tippi-gurmukhi.short
+        addak-gurmukhi.short], # Mark
     ;
   LigatureCaretByPos f_b 484;
   LigatureCaretByPos f_f 274;
