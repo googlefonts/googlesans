@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="fa-gurmukhi" format="2">
+  <advance width="648"/>
+  <unicode hex="0A5E"/>
+  <outline>
+    <contour>
+      <point x="-20" y="607" type="line"/>
+      <point x="40" y="607" type="line"/>
+      <point x="40" y="679" type="line"/>
+      <point x="-20" y="679" type="line"/>
+    </contour>
+    <component base="pha-gurmukhi" xOffset="44"/>
+    <component base="nukta-gurmukhi" xOffset="-6" yOffset="118"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>pha-gurmukhi</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>pha-gurmukhi</string>
+    </dict>
+  </lib>
+</glyph>
