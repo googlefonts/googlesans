@@ -4,7 +4,9 @@
 
 ### New
 
-- Add Armenian script support (#274)
+- Add Armenian script (#274)
+- Add Devanagari script (#277)
+- Add Gurmukhi script (#295)
 - Add zero advance width control characters (issue #280, added in #306)
 
 ### Changed
