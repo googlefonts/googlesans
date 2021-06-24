@@ -38,7 +38,7 @@ from fontTools.designspaceLib import DesignSpaceDocument
 from fontTools.ttLib.ttFont import TTFont
 from tqdm import tqdm
 
-from . import compact_kern_feature_writer, drop_kerning
+from . import compact_kern_feature_writer, drop_kerning, tighten
 
 PACKAGE_DIR = Path(__file__).parent
 DOWNLOADS = (Path(__file__) / "../../../downloads").resolve()
@@ -345,6 +345,16 @@ INPUTS = [
                 lambda source: ufo2ft.compileVariableTTF(source),
             ),
             Configuration(
+                "Drop kerning < 10 font units",
+                lambda source: drop_kerning.drop_threshold(source, 10),
+                lambda source: ufo2ft.compileVariableTTF(source),
+            ),
+            Configuration(
+                "Drop kerning < 10 font units and tighten all side-bearings by 1 fU",
+                lambda source: tighten.drop_and_tighten(source),
+                lambda source: ufo2ft.compileVariableTTF(source),
+            ),
+            Configuration(
                 "Drop kerning < 20 font units",
                 lambda source: drop_kerning.drop_threshold(source, 20),
                 lambda source: ufo2ft.compileVariableTTF(source),
@@ -425,6 +435,7 @@ def full_report(
     path_woff2 = path.with_suffix(".woff2")
 
     change_family_name(font, filename_stem)
+    path.parent.mkdir(parents=True, exist_ok=True)
     font.save(path)
     total_size = path.stat().st_size
     gpos_size = len(font.getTableData("GPOS"))
