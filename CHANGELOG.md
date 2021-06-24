@@ -12,6 +12,7 @@
 ### Changed
 
 - convert logo forms to components (#306)
+- transition Hebrew rvrn forms to compatible forms + avar (#281)
 - remove unnecessary outline data in U+00AD (soft hyphen)
 - remove unnecessary outline data in U+200C (zero width nonjoiner)
 - remove unnecessary outline data in U+200D (zero width joiner)
