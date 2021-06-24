@@ -13,18 +13,6 @@
     </axis>
     <axis tag="GRAD" name="Grade" minimum="-50" maximum="200" default="0"/>
   </axes>
-  <rules>
-    <rule name="BRACKET.18.18">
-      <conditionset>
-        <condition name="Size" minimum="18" maximum="18"/>
-      </conditionset>
-      <sub name="finalpe-hb" with="finalpe-hb.BRACKET.18"/>
-      <sub name="finalpedagesh-hb" with="finalpedagesh-hb.BRACKET.18"/>
-      <sub name="pe-hb" with="pe-hb.BRACKET.18"/>
-      <sub name="pedagesh-hb" with="pedagesh-hb.BRACKET.18"/>
-      <sub name="samekh-hb" with="samekh-hb.BRACKET.18"/>
-    </rule>
-  </rules>
   <sources>
     <source filename="GoogleSansItalic-opsz18-wght734-GRAD0.ufo" familyname="Google Sans" stylename="Bold Italic">
       <location>
@@ -508,6 +496,8 @@
         <string>f_j.alt</string>
         <string>f_k.alt</string>
         <string>f_t.alt</string>
+        <string>finalpe-hb.BRACKET.18</string>
+        <string>finalpedagesh-hb.BRACKET.18</string>
         <string>five.sc.ss04</string>
         <string>four.sc.ss04</string>
         <string>g.sc.BRACKET.18</string>
@@ -543,6 +533,8 @@
         <string>one.alt.cap</string>
         <string>one.sc.ss04</string>
         <string>p.sc.lc.ss04</string>
+        <string>pe-hb.BRACKET.18</string>
+        <string>pedagesh-hb.BRACKET.18</string>
         <string>published.alt</string>
         <string>q.alt</string>
         <string>q.sc.lc.ss04</string>
@@ -572,6 +564,7 @@
         <string>registered.alt</string>
         <string>s.sc.lc.ss04</string>
         <string>s.sc.ss04</string>
+        <string>samekh-hb.BRACKET.18</string>
         <string>scedilla.alt</string>
         <string>scommaaccent.BRACKET.18</string>
         <string>semicolon.BRACKET.18</string>
