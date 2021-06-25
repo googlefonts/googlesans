@@ -20,11 +20,11 @@ lookup gur2_dflt_blwf_below_base_consonant_forms {
     sub halant-gurmukhi va-gurmukhi by va-gurmukhi.below;
 } gur2_dflt_blwf_below_base_consonant_forms;
 
-lookup gur2_dflt_ss01_historical_below_base_consonant_forms {
+lookup gur2_dflt_historical_below_base_consonant_forms {
     sub halant-gurmukhi ca-gurmukhi by ca-gurmukhi.below;
     sub halant-gurmukhi tta-gurmukhi by tta-gurmukhi.below;
     sub halant-gurmukhi ta-gurmukhi by ta-gurmukhi.below;
-} gur2_dflt_ss01_historical_below_base_consonant_forms;
+} gur2_dflt_historical_below_base_consonant_forms;
 
 
 feature locl {
@@ -361,7 +361,7 @@ feature hist {
     script gur2;
     lookup gur2_dflt_hist_historical_sunscript_consonants {
         ignore sub [rakar-gurmukhi va-gurmukhi.below ha-gurmukhi.below yakash-gurmukhi ca-gurmukhi.below tta-gurmukhi.below ta-gurmukhi.below] halant-gurmukhi' [ca-gurmukhi tta-gurmukhi ta-gurmukhi]';
-        sub halant-gurmukhi' lookup gur2_dflt_ss01_historical_below_base_consonant_forms [ca-gurmukhi tta-gurmukhi ta-gurmukhi]';
+        sub halant-gurmukhi' lookup gur2_dflt_historical_below_base_consonant_forms [ca-gurmukhi tta-gurmukhi ta-gurmukhi]';
     } gur2_dflt_hist_historical_sunscript_consonants;
 
 } hist;
