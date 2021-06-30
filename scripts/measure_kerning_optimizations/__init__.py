@@ -33,7 +33,7 @@ import requests
 import ufo2ft
 import ufoLib2
 import uharfbuzz as hb
-from fontTools import designspaceLib
+from fontTools import designspaceLib, unicodedata
 from fontTools.designspaceLib import DesignSpaceDocument
 from fontTools.ttLib.ttFont import TTFont
 from tqdm import tqdm
@@ -702,9 +702,12 @@ def get_sentences_and_words():
     aosp = json.loads(json_string)
     # Keys are strings, values are where the string came from
     for s in aosp:
-        if len(s) > 20:
-            sentences.add(s)
-        for w in s.split():
+        # Upstream string sources may contain questionable data. Filter those to
+        # avoid unrenderable sentences and words with zero length -> division by zero.
+        s_filtered = "".join(c for c in s if not unicodedata.category(c).startswith("C"))
+        if len(s_filtered) > 20:
+            sentences.add(s_filtered)
+        for w in s_filtered.split():
             if len(w) > 1:
                 words.add(w)
 
