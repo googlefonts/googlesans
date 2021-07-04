@@ -1,0 +1,16 @@
+@geor_lowercase = [an-georgian ban-georgian gan-georgian don-georgian en-georgian vin-georgian zen-georgian tan-georgian in-georgian kan-georgian las-georgian man-georgian nar-georgian on-georgian par-georgian zhar-georgian rae-georgian san-georgian tar-georgian un-georgian phar-georgian khar-georgian ghan-georgian qar-georgian shin-georgian chin-georgian can-georgian jil-georgian cil-georgian char-georgian xan-georgian jhan-georgian hae-georgian he-georgian hie-georgian we-georgian har-georgian hoe-georgian fi-georgian yn-georgian elifi-georgian turnedgan-georgian ain-georgian aen-georgian hardsign-georgian labial-georgian paragraph-georgian];
+@geor_uppercase = [An-georgian Ban-georgian Gan-georgian Don-georgian En-georgian Vin-georgian Zen-georgian Tan-georgian In-georgian Kan-georgian Las-georgian Man-georgian Nar-georgian On-georgian Par-georgian Zhar-georgian Rae-georgian San-georgian Tar-georgian Un-georgian Phar-georgian Khar-georgian Ghan-georgian Qar-georgian Shin-georgian Chin-georgian Can-georgian Jil-georgian Cil-georgian Char-georgian Xan-georgian Jhan-georgian Hae-georgian He-georgian Hie-georgian We-georgian Har-georgian Hoe-georgian Fi-georgian Yn-georgian Elifi-georgian GanTurned-georgian Ain-georgian Aen-georgian HardSign-georgian Labial-georgian paragraph-georgian.case];
+@geor_symbols = [lari];
+@geor_symbols_tab = [lari.tf];
+
+feature locl {
+    script geor;
+    language KAT;
+    sub semicolon' by semicolon.loclGEO;
+    sub colon' by colon.loclGEO;
+} locl;
+
+feature case {
+    sub @geor_lowercase by @geor_uppercase;
+    sub lari by lari.cap;
+} case;

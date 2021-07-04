@@ -27,6 +27,8 @@ supported.
 """
 
 import argparse
+import collections
+import copy
 import logging
 import sys
 from pathlib import Path
@@ -34,6 +36,8 @@ from typing import Dict, List
 
 import ufoLib2
 from fontTools.designspaceLib import DesignSpaceDocument
+
+from internal.normalize import location_to_key
 
 MASTER_ID_KEY = "com.schriftgestaltung.fontMasterID"
 SKIP_EXPORT_GLYPHS_KEY = "public.skipExportGlyphs"
@@ -114,12 +118,17 @@ skip_export_glyphs = sorted(skip_export_glyphs_target)
 if skip_export_glyphs_target:
     designspace_target.lib[SKIP_EXPORT_GLYPHS_KEY] = skip_export_glyphs
 
+# Whether any of the sources to be imported is ungraded.
+import_is_ungraded = False
 
 # Actually import now.
 for import_source in designspace_import.sources:
     if import_source.layerName is not None:
         logging.error("Brace layers not supported currently.")
         sys.exit(1)
+
+    if "GRAD" not in import_source.location:
+        import_is_ungraded = True
 
     # Fill in the defaults if the import DS does not have e.g. a GRAD axis.
     import_source_location = {
@@ -254,5 +263,35 @@ for import_source in designspace_import.sources:
     target_font.lib[SKIP_EXPORT_GLYPHS_KEY] = skip_export_glyphs
 
     target_font.save()
+
+
+# If we import sources that don't have a GRAD axis yet, copy all imported glyphs
+# and other data from above over to our existing GRAD sources.
+if import_is_ungraded:
+    default_grades = []
+    grade_mapping = collections.defaultdict(list)
+    for source in designspace_target.sources:
+        if source.location["Grade"]:
+            grade_mapping[location_to_key(source.location)].append(source)
+        else:
+            default_grades.append(source)
+
+    for source in default_grades:
+        for graded_source in grade_mapping[location_to_key(source.location)]:
+            graded_default_layer = graded_source.font.layers.defaultLayer
+            for glyph_name in import_glyphs:
+                graded_default_layer.insertGlyph(
+                    source.font[glyph_name], overwrite=True
+                )
+
+            graded_source.font.groups = source.font.groups
+            graded_source.font.kerning = source.font.kerning
+
+            graded_master_id = graded_source.font.lib.get(MASTER_ID_KEY)
+            graded_source.font.lib = copy.copy(source.font.lib)
+            graded_source.font.lib[MASTER_ID_KEY] = graded_master_id
+
+            graded_source.font.save()
+
 
 designspace_target.write(parsed_args.target)

@@ -38,3 +38,4 @@ for font_path in (
     )
     with open(font_glyphsetdef, "w+") as f:
         f.write("\n".join(font.getGlyphOrder()))
+        f.write("\n")

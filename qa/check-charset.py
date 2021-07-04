@@ -71,7 +71,7 @@ def com_google_fonts_check_googlesans_glyphs_glyphset_contents(ttFonts):
                 glyph_definition_basedir, base_file_path
             )
             with open(expected_glyph_definition_path, "r") as f:
-                glyph_list_raw = f.read()
+                glyph_list_raw = f.read().rstrip()
 
             glyph_list = glyph_list_raw.split("\n")
             # must have
