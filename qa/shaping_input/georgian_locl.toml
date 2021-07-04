@@ -1,0 +1,16 @@
+[meta]
+build_commit = ""
+
+[input.features]
+calt = true
+locl = true
+
+[input]
+script = "geor"
+language = "kat"
+comparison_mode = "full"
+text = [
+    "abo: აბო:", # after the Georgian lowercase letters should be used colon.loclGEO and NOT the colon
+    "abo; აბო;", # after the Georgian lowercase letters should be used semicolon.loclGEO and NOT the semicolon
+    "მეო.:", # confirm that the localized semicolon forms are displayed after periods
+]
