@@ -6,6 +6,7 @@
 
 - Add Armenian script (#274)
 - Add Devanagari script (#277)
+- Add Georgian script (#310)
 - Add Gurmukhi script (#295)
 - Add zero advance width control characters (issue #280, added in #306)
 
