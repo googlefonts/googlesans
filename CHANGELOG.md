@@ -9,6 +9,7 @@
 - Add Georgian script (#310)
 - Add Gurmukhi script (#295)
 - Add zero advance width control characters (issue #280, added in #306)
+- GPOS table optimizations to reduce file size (#325), note: requires fontTools >= 4.25.0
 
 ### Changed
 
