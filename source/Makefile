@@ -26,7 +26,7 @@ PYTHON3_EXE=python3
 #    NOTE: this builds from a venv install to support
 #          pinned dependency versions
 # --------------------------------------------------------
-FONTMAKE_EXE=fontmake --verbose WARNING
+FONTMAKE_EXE=FONTTOOLS_GPOS_COMPACT_MODE=5 fontmake --verbose WARNING
 
 # --------------------------------------------------------
 #  Source file path definitions
