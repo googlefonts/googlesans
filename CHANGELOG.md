@@ -18,6 +18,7 @@
 - remove unnecessary outline data in U+00AD (soft hyphen)
 - remove unnecessary outline data in U+200C (zero width nonjoiner)
 - remove unnecessary outline data in U+200D (zero width joiner)
+- update scripts/internal/normalize.py with unused kerning group cleanup source (#317)
 
 ### Fixed
 
