@@ -33,6 +33,21 @@
 - remove proprietary `#exit` anchor in Armenian designs (#306)
 - remove duplicate logo glyph forms (#306)
 
+### Dependencies
+
+- add unicodedata2 at v13.0.0.post2
+- update attrs to v21.2.0 from v20.2.0
+- update cffsubr to v0.2.8 from v0.2.7
+- update compreffor to v0.5.0 from v0.2.8
+- update fontmake to v2.4.0 from v2.2.0
+- update fontmath to v0.8.1 from v0.6.0
+- update fonttools to v4.25.0 from v4.19.1
+- update fs to v2.4.13 from v2.4.11
+- update pyclipper to v1.3.0 from v1.2.0
+- update pytz to v2021.1 from v2020.1
+- update six to v1.16.0 from v1.15.0
+- update ufo2ft to v2.21.0 from v2.19.2
+- update ufolib2 to v0.11.1 from v0.8.0
 
 
 ## Version 4.000
