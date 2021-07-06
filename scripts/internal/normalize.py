@@ -26,6 +26,8 @@ def scrub_designspace(designspace: DesignSpaceDocument, project_root: Path) -> N
     for source in designspace.sources:
         scrub_source(source, skip_export_glyphs, rules)
 
+    scrub_groups(designspace.default, designspace.sources)
+
     if any(a.tag == "GRAD" for a in designspace.axes):
         scrub_graded_sources(designspace.sources)
 
@@ -246,7 +248,7 @@ def location_to_key(
     return tuple((k, v) for k, v in location.items() if k != skip_axis)
 
 
-def scrub_graded_sources(sources: List[SourceDescriptor]):
+def scrub_graded_sources(sources: List[SourceDescriptor]) -> None:
     default_grades = []
     grade_mapping = collections.defaultdict(list)
     for source in sources:
@@ -273,3 +275,21 @@ def scrub_graded_sources(sources: List[SourceDescriptor]):
             graded_master_id = graded_source.font.lib.get(MASTER_ID_KEY)
             graded_source.font.lib = copy.copy(source.font.lib)
             graded_source.font.lib[MASTER_ID_KEY] = graded_master_id
+
+
+def scrub_groups(
+    default_source: SourceDescriptor, all_sources: List[SourceDescriptor]
+) -> None:
+    """Remove unused kerning groups."""
+
+    used = set()
+    for source in all_sources:
+        for (first, second) in source.font.kerning:
+            if first.startswith("public.kern1."):
+                used.add(first)
+            if second.startswith("public.kern2."):
+                used.add(second)
+    scrubbed_groups = {k: v for k, v in default_source.font.groups.items() if k in used}
+    for source in all_sources:
+        source.font.groups.clear()
+        source.font.groups.update(scrubbed_groups)
