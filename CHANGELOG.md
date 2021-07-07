@@ -23,6 +23,7 @@
 ### Fixed
 
 - added missing ldot (U+0140) small caps feature support (#276)
+- added 1-200 GRAD support for Kai symbol (U+03CF) (#283)
 - swap outlines of K.alt into Ka-cy (#306)
 - remove unneeded descender-cy and descender-cy.case glyphs (#306)
 - remove unneeded ustraight-cy glyph (#306)
