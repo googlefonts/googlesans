@@ -193,19 +193,10 @@ lookup armn_calt_now_with_uppercase {
 lookup armn_calt_shift_punctuation {
 	# Shifting punctuation to lower x-height
 	pos @armn_lowercase @armn_calt_punctuation_centered' <0 -16 0 0>;
-	pos @armn_lowercase @armn_calt_spaces_all @armn_calt_punctuation_centered' <0 -16 0 0>;
-	pos @armn_lowercase @armn_calt_spaces_all @armn_calt_punctuation_centered @armn_calt_punctuation_centered' <0 -16 0 0>;
-	pos @armn_lowercase @armn_calt_punctuation_centered @armn_calt_spaces_all @armn_calt_punctuation_centered' <0 -16 0 0>;
-	pos @armn_lowercase @armn_calt_punctuation_centered @armn_calt_punctuation_centered' <0 -16 0 0>;
-	pos @armn_calt_punctuation_centered' @armn_lowercase <0 -16 0 0>;
-	pos @armn_calt_punctuation_centered' @armn_calt_spaces_all @armn_lowercase <0 -16 0 0>;
-	pos @armn_calt_punctuation_centered' @armn_calt_spaces_all @armn_calt_punctuation_centered @armn_lowercase <0 -16 0 0>;
-	pos @armn_lowercase @armn_calt_punctuation_all @armn_calt_spaces_all @armn_calt_punctuation_centered' <0 -16 0 0>;
-	pos @armn_calt_punctuation_centered' @armn_calt_spaces_all @armn_calt_punctuation_all @armn_lowercase <0 -16 0 0>;
 	pos @armn_lowercase @armn_calt_punctuation_all @armn_calt_punctuation_centered' <0 -16 0 0>;
-	pos @armn_calt_punctuation_centered' @armn_calt_punctuation_all @armn_lowercase <0 -16 0 0>;
 	pos @armn_lowercase @armn_calt_punctuation_all @armn_calt_punctuation_all @armn_calt_punctuation_centered' <0 -16 0 0>;
-	pos @armn_lowercase @armn_calt_punctuation_all @armn_calt_punctuation_all @armn_calt_spaces_all @armn_calt_punctuation_centered' <0 -16 0 0>;
+
+	pos @armn_calt_punctuation_centered' @armn_lowercase <0 -16 0 0>;
+	pos @armn_calt_punctuation_centered' @armn_calt_punctuation_all @armn_lowercase <0 -16 0 0>;
 	pos @armn_calt_punctuation_centered' @armn_calt_punctuation_all @armn_calt_punctuation_all @armn_lowercase <0 -16 0 0>;
-	pos @armn_calt_punctuation_centered' @armn_calt_spaces_all @armn_calt_punctuation_all @armn_calt_punctuation_all @armn_lowercase <0 -16 0 0>;
 } armn_calt_shift_punctuation;

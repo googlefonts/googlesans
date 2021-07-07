@@ -1,7 +1,20 @@
+@geor_calt_punctuation_all = [asterisk asterisk.num asterism backslash braceleft braceleft.cap braceright braceright.cap bracketleft bracketleft.cap bracketright bracketright.cap bullet bullet.cap colon colon.tf colon.time comma comma.tf doublequestion ellipsis emdash emdash.cap endash endash.cap exclam exclamationquestion exclamdouble exclamdown exclamdown.cap flowerpunctuationmark guillemetleft guillemetleft.cap guillemetright guillemetright.cap guilsinglleft guilsinglleft.cap guilsinglright guilsinglright.cap horizontalbar hyphen hyphen.cap hyphenbullet lowasterisk numbersign numbersign.cap numbersign.tf parenleft parenleft.cap parenright parenright.cap period period.tf periodcentered question questiondown questiondown.cap questionexclamation quotedbl quotedblbase quotedblleft quotedblright quoteleft quoteright quotesinglbase quotesingle semicolon semicolon.tf slash softhyphen twoasterisksvertical underscore paragraph-georgian paragraph-georgian.case colon.loclGEO semicolon.loclGEO];
+@geor_calt_punctuation_centered = [periodcentered bullet hyphenbullet hyphen softhyphen endash emdash horizontalbar plus minus multiply equal notequal greater less approxequal asciitilde logicalnot infinity];
 @geor_lowercase = [an-georgian ban-georgian gan-georgian don-georgian en-georgian vin-georgian zen-georgian tan-georgian in-georgian kan-georgian las-georgian man-georgian nar-georgian on-georgian par-georgian zhar-georgian rae-georgian san-georgian tar-georgian un-georgian phar-georgian khar-georgian ghan-georgian qar-georgian shin-georgian chin-georgian can-georgian jil-georgian cil-georgian char-georgian xan-georgian jhan-georgian hae-georgian he-georgian hie-georgian we-georgian har-georgian hoe-georgian fi-georgian yn-georgian elifi-georgian turnedgan-georgian ain-georgian aen-georgian hardsign-georgian labial-georgian paragraph-georgian];
 @geor_uppercase = [An-georgian Ban-georgian Gan-georgian Don-georgian En-georgian Vin-georgian Zen-georgian Tan-georgian In-georgian Kan-georgian Las-georgian Man-georgian Nar-georgian On-georgian Par-georgian Zhar-georgian Rae-georgian San-georgian Tar-georgian Un-georgian Phar-georgian Khar-georgian Ghan-georgian Qar-georgian Shin-georgian Chin-georgian Can-georgian Jil-georgian Cil-georgian Char-georgian Xan-georgian Jhan-georgian Hae-georgian He-georgian Hie-georgian We-georgian Har-georgian Hoe-georgian Fi-georgian Yn-georgian Elifi-georgian GanTurned-georgian Ain-georgian Aen-georgian HardSign-georgian Labial-georgian paragraph-georgian.case];
 @geor_symbols = [lari];
 @geor_symbols_tab = [lari.tf];
+
+feature calt {
+    # Shifting punctuation to lower x-height
+    pos @geor_lowercase @geor_calt_punctuation_centered' <0 -25 0 0>;
+    pos @geor_lowercase @geor_calt_punctuation_all @geor_calt_punctuation_centered' <0 -25 0 0>;
+    pos @geor_lowercase @geor_calt_punctuation_all @geor_calt_punctuation_all @geor_calt_punctuation_centered' <0 -25 0 0>;
+
+    pos @geor_calt_punctuation_centered' @geor_lowercase <0 -25 0 0>;
+    pos @geor_calt_punctuation_centered' @geor_calt_punctuation_all @geor_lowercase <0 -25 0 0>;
+    pos @geor_calt_punctuation_centered' @geor_calt_punctuation_all @geor_calt_punctuation_all @geor_lowercase <0 -25 0 0>;
+} calt;
 
 feature locl {
     script geor;
