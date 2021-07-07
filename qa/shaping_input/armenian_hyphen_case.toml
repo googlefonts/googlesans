@@ -1,8 +1,9 @@
 [meta]
-build_commit = ""
+build_commit = "55336dd03493f41ff2427f970568120c8bcfdcd1"
 
 [input.features]
 case = true
+calt = true
 
 [input]
 text = [
@@ -11,4 +12,3 @@ text = [
     "ա֊մ",
     "Ա֊Մ"
 ]
-comparison_mode = "glyphstream"
