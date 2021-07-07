@@ -1,5 +1,8 @@
 [meta]
-build_commit = ""
+build_commit = "55336dd03493f41ff2427f970568120c8bcfdcd1"
+
+[input.features]
+calt = true
 
 [input]
 text = [
@@ -8,4 +11,3 @@ text = [
     "ա֊մ", # hyphen-arm used between armenian lowercase – shifts down
     "Ա֊Մ" # hyphen-arm used between armenian uppercase – no shift
 ]
-comparison_mode = "glyphstream"
