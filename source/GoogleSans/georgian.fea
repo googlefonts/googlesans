@@ -6,6 +6,10 @@
 @geor_symbols_tab = [lari.tf];
 
 feature calt {
+    # Replace (semi)colon with localized variant because `locl` may not work in Adobe apps.
+    sub @geor_lowercase semicolon' by semicolon.loclGEO;
+    sub @geor_lowercase colon' by colon.loclGEO;
+
     # Shifting punctuation to lower x-height
     pos @geor_lowercase @geor_calt_punctuation_centered' <0 -25 0 0>;
     pos @geor_lowercase @geor_calt_punctuation_all @geor_calt_punctuation_centered' <0 -25 0 0>;
@@ -19,8 +23,8 @@ feature calt {
 feature locl {
     script geor;
     language KAT;
-    sub semicolon' by semicolon.loclGEO;
-    sub colon' by colon.loclGEO;
+    sub semicolon by semicolon.loclGEO;
+    sub colon by colon.loclGEO;
 } locl;
 
 feature case {
