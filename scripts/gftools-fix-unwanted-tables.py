@@ -18,6 +18,7 @@
 #
 
 import argparse
+import logging
 import os
 import sys
 
@@ -43,27 +44,31 @@ def parse_tables(table_string):
 def main():
     description = "Removes unwanted tables from one or more font files"
     parser = argparse.ArgumentParser(description=description)
-
     parser.add_argument(
         "-t", "--tables", type=str, help="One or more comma separated table names"
     )
+    parser.add_argument("--verbose", action="store_true")
     parser.add_argument("FONTPATH", nargs="+", help="One or more font files")
-
     args = parser.parse_args()
+
+    logging.basicConfig(format="%(levelname)s: %(message)s", level=logging.WARNING)
+    LOGGER = logging.getLogger(__name__)
+    if args.verbose:
+        LOGGER.setLevel(logging.INFO)
 
     if args.tables:
         user_table_request = parse_tables(args.tables)
         # validate user table removal request
         for table in user_table_request:
             if table not in UNWANTED_TABLES:
-                sys.stderr.write(
-                    f"'{table}' table cannot be removed with this script because it "
-                    f"is not defined as an unwanted table.{os.linesep}"
+                LOGGER.error(
+                    "'%s' table cannot be removed with this script because it "
+                    "is not defined as an unwanted table.",
+                    table,
                 )
-                sys.stderr.write(
-                    "The unwanted table list includes the following tables: {}{}".format(
-                        UNWANTED_TABLES, os.linesep
-                    )
+                LOGGER.error(
+                    "The unwanted table list includes the following tables: %s",
+                    UNWANTED_TABLES,
                 )
                 sys.exit(1)
     else:
@@ -72,11 +77,7 @@ def main():
     for fontpath in args.FONTPATH:
         # validate file
         if not os.path.exists(fontpath):
-            sys.stderr.write(
-                "The file path '{}' does not appear to be valid.{}".format(
-                    fontpath, os.linesep
-                )
-            )
+            LOGGER.error("The file path '%s' does not appear to be valid.", fontpath)
             sys.exit(1)
 
         try:
@@ -88,7 +89,7 @@ def main():
                     removed_table_list.append(table)
                     del tt[table]
                 else:
-                    print("'{}' table was not found in '{}'".format(table, fontpath))
+                    LOGGER.info("'%s' table was not found in '%s'", table, fontpath)
 
             # save edited font
             tt.save(fontpath)
@@ -97,9 +98,9 @@ def main():
             tt_edited = TTFont(fontpath)
             for removed_table in removed_table_list:
                 assert removed_table not in tt_edited
-                print("'{}' table removed from '{}'".format(removed_table, fontpath))
+                LOGGER.info("'%s' table removed from '%s'", removed_table, fontpath)
         except Exception as e:
-            sys.stderr.write("Error during execution: {}{}".format(str(e), os.linesep))
+            LOGGER.error("Error during execution: %s", str(e))
             sys.exit(1)
 
 
