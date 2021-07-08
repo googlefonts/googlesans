@@ -121,6 +121,22 @@ if skip_export_glyphs_target:
 # Whether any of the sources to be imported is ungraded.
 import_is_ungraded = False
 
+
+def canonical_location(
+    location: Dict[str, float], designspace: DesignSpaceDocument
+) -> Dict[str, float]:
+    """Returns a canonical location from a raw Designspace location.
+
+    Vendor sources are inconsistent, so using user values and tags to match
+    source axes is hopefully more reliable.
+    """
+    name_to_axis = {a.name: a for a in designspace.axes}
+    name_to_tag = {a.name: a.tag for a in designspace.axes}
+    return {
+        name_to_tag[k]: name_to_axis[k].map_backward(v) for k, v in location.items()
+    }
+
+
 # Actually import now.
 for import_source in designspace_import.sources:
     if import_source.layerName is not None:
@@ -131,9 +147,10 @@ for import_source in designspace_import.sources:
         import_is_ungraded = True
 
     # Fill in the defaults if the import DS does not have e.g. a GRAD axis.
+    # Match axes by tags because those are more consistent across vendor sources.
     import_source_location = {
-        **designspace_target.default.location,
-        **import_source.location,
+        **canonical_location(designspace_target.default.location, designspace_target),
+        **canonical_location(import_source.location, designspace_import),
     }
 
     # Match import to target UFO.
@@ -141,7 +158,10 @@ for import_source in designspace_import.sources:
         target_source = next(
             s
             for s in designspace_target.sources
-            if s.location == import_source_location
+            if (
+                canonical_location(s.location, designspace_target)
+                == import_source_location
+            )
         )
     except StopIteration:
         try:
