@@ -40,20 +40,31 @@
 #
 # $ gftools fix-nonhinting FontIn.ttf FontOut.ttf
 
-# Import our system library and fontTools ttLib
 """
 Fixes TTF GASP table so that its program
 contains the minimal recommended instructions.
 """
-import sys
 
+import argparse
+import logging
 import os
+
 from fontTools import ttLib
 from fontTools.ttLib.tables import ttProgram
 
 
-def main(argv):
-    for fontpath in argv:
+def main(argv=None):
+    parser = argparse.ArgumentParser()
+    parser.add_argument("fonts", nargs="+")
+    parser.add_argument("--verbose", action="store_true")
+    parsed_args = parser.parse_args(argv)
+
+    logging.basicConfig(format="%(levelname)s: %(message)s", level=logging.WARNING)
+    LOGGER = logging.getLogger(__name__)
+    if parsed_args.verbose:
+        LOGGER.setLevel(logging.INFO)
+
+    for fontpath in parsed_args.fonts:
         fontfile_in = os.path.abspath(fontpath)
         font = ttLib.TTFont(fontfile_in)
 
@@ -61,22 +72,21 @@ def main(argv):
         backupfont = "{}-backup-fonttools-prep-gasp{}".format(
             fontfile_in[0:-4], fontfile_in[-4:]
         )
-        # print "Saving to ", backupfont
         font.save(backupfont)
-        print(backupfont, " saved.")
+        LOGGER.info("%s saved.", backupfont)
 
         # Print the Gasp table
         if "gasp" in font:
-            print("GASP was: ", font["gasp"].gaspRange)
+            LOGGER.info("GASP was: %s", font["gasp"].gaspRange)
         else:
-            print("GASP wasn't there")
+            LOGGER.info("GASP wasn't there")
 
         # Print the PREP table
         if "prep" in font:
             old_program = ttProgram.Program.getAssembly(font["prep"].program)
-            print("PREP was:\n\t" + "\n\t".join(old_program))
+            LOGGER.info("PREP was:\n\t%s", "\n\t".join(old_program))
         else:
-            print("PREP wasn't there")
+            LOGGER.info("PREP wasn't there")
 
         # Create a new GASP table
         gasp = ttLib.newTable("gasp")
@@ -101,17 +111,17 @@ def main(argv):
         font["prep"] = prep
 
         # Print the Gasp table
-        print("GASP now: ", font["gasp"].gaspRange)
+        LOGGER.info("GASP now: %s", font["gasp"].gaspRange)
 
         # Print the PREP table
         current_program = ttProgram.Program.getAssembly(font["prep"].program)
-        print("PREP now:\n\t" + "\n\t".join(current_program))
+        LOGGER.info("PREP now:\n\t%s", "\n\t".join(current_program))
 
         # Save the new file with the name of the input file
         fontfile_out = os.path.abspath(fontpath)
         font.save(fontfile_out)
-        print(fontfile_out, " saved.")
+        LOGGER.info("%s saved.", fontfile_out)
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    main()
