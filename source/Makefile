@@ -109,7 +109,7 @@ gs-static: $(FONT_BUILD_DIR)
 	@echo "================================"
 	@echo " Beginning font subsetting..."
 	@echo "================================"
-	$(PYTHON3_EXE) ../scripts/gs-subset.py $(STATIC_BUILD_DIR)
+	$(PYTHON3_EXE) ../scripts/gs-subset.py $(STATIC_BUILD_DIR)/*.ttf
 	@echo "================================"
 	@echo " Set Unicode range bits..."
 	@echo "================================"
@@ -131,7 +131,7 @@ gs-vf: $(FONT_BUILD_DIR)
 	@echo "================================"
 	@echo " Beginning font subsetting..."
 	@echo "================================"
-	$(PYTHON3_EXE) ../scripts/gs-subset.py $(VARIABLE_BUILD_DIR)
+	$(PYTHON3_EXE) ../scripts/gs-subset.py $(VARIABLE_BUILD_DIR)/*.ttf
 	@echo "================================"
 	@echo " Set Unicode range bits..."
 	@echo "================================"
