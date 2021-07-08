@@ -1,0 +1,21 @@
+[meta]
+build_commit = "55336dd03493f41ff2427f970568120c8bcfdcd1"
+
+[input.features]
+calt = true
+
+[input]
+comparison_mode = "full"
+text = [
+    "abo- აბო-", # the dash and other marks located in punctuation.centered should be shifted down with 25 point more as same symbol next to the Latin character
+    "abo· აბო·",
+    "abo— აბო—",
+    "abo+ აბო+",
+    "abo - აბო -", # it should not shift when space is used between letters and marks (caused side effects in other scripts)
+    "abo,- აბო,-", # it should work when other mark is used between letters and marks
+    "·ო•ო⁃ო-ო–ო—ო―ო+ო−ო×ო=ო≠ო>ო<ო≈ო~ო¬ო∞", # math symbols i.e. plus, equal, etc. shift down
+    "Ე-Ე",  # hyphen between uppercase letters: no down-shift
+    "ი-ი",  # hyphen between lowercase case letters: shift down
+    "Ე-ი",  # hyphen between mixed letters: shift down
+    "ი-Ე",  # hyphen between mixed letters: shift down
+]
