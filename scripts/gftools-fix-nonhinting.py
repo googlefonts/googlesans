@@ -68,13 +68,6 @@ def main(argv=None):
         fontfile_in = os.path.abspath(fontpath)
         font = ttLib.TTFont(fontfile_in)
 
-        # Save a backup
-        backupfont = "{}-backup-fonttools-prep-gasp{}".format(
-            fontfile_in[0:-4], fontfile_in[-4:]
-        )
-        font.save(backupfont)
-        LOGGER.info("%s saved.", backupfont)
-
         # Print the Gasp table
         if "gasp" in font:
             LOGGER.info("GASP was: %s", font["gasp"].gaspRange)
