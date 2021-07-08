@@ -13,65 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import argparse
-import shutil
-import sys
-from pathlib import Path
-
-from fontTools.subset import main as subset_main
-
-
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("dir", type=Path, help="Directory of fonts to subset.")
-    parsed_args = parser.parse_args()
-
-    # ===============================================
-    #
-    #  Subset build
-    #
-    # ===============================================
-    #
-    # The subsetter configuration preserves all OT feature support.
-    # It will remove unused, unencoded glyphs.
-    for rel_filepath in parsed_args.dir.glob("*.ttf"):
-        print(f"[SUBSET] {rel_filepath} PASS 1...")
-
-        local_filepath = rel_filepath.resolve()
-        local_filepath_subset = f"{local_filepath}.subset"
-
-        # Expert subset argument definitions
-        subset_args_expert = [
-            str(local_filepath),
-            "--unicodes=*",
-            "--no-ignore-missing-glyphs",
-            "--notdef-outline",
-            "--layout-features=*",
-            "--drop-tables= ",
-            "--name-IDs=*",
-            "--name-languages=*",
-            "--glyph-names",
-            "--no-prune-unicode-ranges",
-            f"--output-file={local_filepath_subset}",
-        ]
-
-        try:
-            subset_main(subset_args_expert)
-        except Exception as e:
-            sys.stderr.write(
-                f"ERROR: subsetting error during attempt to subset {local_filepath}"
-                f"- {str(e)}"
-            )
-            sys.exit(1)
-
-        try:
-            shutil.move(local_filepath_subset, local_filepath)
-        except Exception as e:
-            sys.stderr.write(
-                f"ERROR: during move of subset file {local_filepath} - {str(e)}"
-            )
-            sys.exit(1)
-
+from internal.prune_font_binary import main as main_prune_font_binary
 
 if __name__ == "__main__":
-    main()
+    main_prune_font_binary()
