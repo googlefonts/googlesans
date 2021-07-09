@@ -10,7 +10,8 @@
 - Add Gurmukhi script (#295)
 - Add zero advance width control characters (issue #280, added in #306)
 - GPOS table optimizations to reduce file size (#325), note: requires fontTools >= 4.25.0
-
+- Add METADATA.pb file (defines Fonts API web font subsetter definitions) (#339)
+ 
 ### Changed
 
 - convert logo forms to components (#306)
