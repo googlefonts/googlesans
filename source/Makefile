@@ -93,33 +93,19 @@ UFO_GS_TEXT_BOLDITALIC=GoogleSans/GoogleSans-TextBoldItalic.ufo
 # Full font family build targets
 #
 
-gs-static: $(FONT_BUILD_DIR)
+gs-static: gs-static-upright gs-static-italic
+
+gs-static-upright: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) --interpolate -o ttf --output-dir $(STATIC_BUILD_DIR) --expand-features-to-instances
+	$(PYTHON3_EXE) ../scripts/gs-subset.py $(STATIC_TEXT_BUILD_PATH_REGULAR) $(STATIC_TEXT_BUILD_PATH_BOLD) $(STATIC_TEXT_BUILD_PATH_MEDIUM)
+	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $(STATIC_TEXT_BUILD_PATH_REGULAR) $(STATIC_TEXT_BUILD_PATH_BOLD) $(STATIC_TEXT_BUILD_PATH_MEDIUM)
+	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(STATIC_TEXT_BUILD_PATH_REGULAR) $(STATIC_TEXT_BUILD_PATH_BOLD) $(STATIC_TEXT_BUILD_PATH_MEDIUM)
+
+gs-static-italic: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) --interpolate -o ttf --output-dir $(STATIC_BUILD_DIR) --expand-features-to-instances
-	@echo "================================"
-	@echo " Beginning post-compile edits..."
-	@echo "================================"
-	# edit Text opsz file paths
-	mv $(STATIC_BUILD_DIR)/GoogleSans-TextRegular.ttf $(STATIC_TEXT_BUILD_PATH_REGULAR)
-	mv $(STATIC_BUILD_DIR)/GoogleSans-TextItalic.ttf $(STATIC_TEXT_BUILD_PATH_ITALIC)
-	mv $(STATIC_BUILD_DIR)/GoogleSans-TextBold.ttf $(STATIC_TEXT_BUILD_PATH_BOLD)
-	mv $(STATIC_BUILD_DIR)/GoogleSans-TextBoldItalic.ttf $(STATIC_TEXT_BUILD_PATH_BOLDITALIC)
-	mv $(STATIC_BUILD_DIR)/GoogleSans-TextMedium.ttf $(STATIC_TEXT_BUILD_PATH_MEDIUM)
-	mv $(STATIC_BUILD_DIR)/GoogleSans-TextMediumItalic.ttf $(STATIC_TEXT_BUILD_PATH_MEDIUMITALIC)
-	@echo "================================"
-	@echo " Beginning font subsetting..."
-	@echo "================================"
-	$(PYTHON3_EXE) ../scripts/gs-subset.py $(STATIC_BUILD_DIR)/*.ttf
-	@echo "================================"
-	@echo " Set Unicode range bits..."
-	@echo "================================"
-	python3 ../scripts/set-unicoderange.py $(STATIC_BUILD_DIR)/*.ttf
-	@echo "================================"
-	@echo " Add gasp & prep tables"
-	@echo "================================"
-	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(STATIC_BUILD_DIR)/*.ttf
-	# remove the backups that the script leaves behind
-	rm $(STATIC_BUILD_DIR)/*prep-gasp.ttf
+	$(PYTHON3_EXE) ../scripts/gs-subset.py $(STATIC_TEXT_BUILD_PATH_ITALIC) $(STATIC_TEXT_BUILD_PATH_BOLDITALIC) $(STATIC_TEXT_BUILD_PATH_MEDIUMITALIC)
+	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $(STATIC_TEXT_BUILD_PATH_ITALIC) $(STATIC_TEXT_BUILD_PATH_BOLDITALIC) $(STATIC_TEXT_BUILD_PATH_MEDIUMITALIC)
+	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(STATIC_TEXT_BUILD_PATH_ITALIC) $(STATIC_TEXT_BUILD_PATH_BOLDITALIC) $(STATIC_TEXT_BUILD_PATH_MEDIUMITALIC)
 
 gs-vf: gs-vf-upright gs-vf-italic
 
