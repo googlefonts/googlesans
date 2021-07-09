@@ -13,6 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import argparse
+import logging
+from pathlib import Path
+
 from fontTools.otlLib.builder import buildStatTable
 from fontTools.ttLib import TTFont
 
@@ -25,7 +29,9 @@ UPRIGHT_AXES = [
             dict(
                 rangeMinValue=18, nominalValue=18, name="Max", flags=0x2
             ),  # Max opsz, use elided name of "Google Sans" without opsz identifier
-            dict(rangeMinValue=6, nominalValue=17, rangeMaxValue=17, name="Text"),  # Text
+            dict(
+                rangeMinValue=6, nominalValue=17, rangeMaxValue=17, name="Text"
+            ),  # Text
         ],
     ),
     dict(
@@ -65,7 +71,9 @@ ITALIC_AXES = [
             dict(
                 rangeMinValue=18, nominalValue=18, name="Max", flags=0x2
             ),  # Max opsz, use elided name of "Google Sans" without opsz identifier
-            dict(rangeMinValue=6, nominalValue=17, rangeMaxValue=17, name="Text"),  # Text
+            dict(
+                rangeMinValue=6, nominalValue=17, rangeMaxValue=17, name="Text"
+            ),  # Text
         ],
     ),
     dict(
@@ -96,25 +104,28 @@ ITALIC_AXES = [
     ),
 ]
 
-VARIABLE_DIR = "../build/GoogleSans/variable"
-GS_UPRIGHT = f"{VARIABLE_DIR}/GoogleSans[GRAD,opsz,wght].ttf"
-GS_ITALIC = f"{VARIABLE_DIR}/GoogleSans-Italic[GRAD,opsz,wght].ttf"
-
 
 def main():
-    # process upright files
-    filepath = GS_UPRIGHT
-    tt = TTFont(filepath)
-    buildStatTable(tt, UPRIGHT_AXES)
-    tt.save(filepath)
-    print(f"[STAT TABLE] Added STAT table to {filepath}")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("font", type=Path)
+    parser.add_argument("--verbose", action="store_true")
+    parsed_args = parser.parse_args()
+    font_path = parsed_args.font
+    font: TTFont = TTFont(font_path)
 
-    # process italics files
-    filepath = GS_ITALIC
-    tt = TTFont(filepath)
-    buildStatTable(tt, ITALIC_AXES)
-    tt.save(filepath)
-    print(f"[STAT TABLE] Added STAT table to {filepath}")
+    logging.basicConfig(format="%(levelname)s: %(message)s", level=logging.WARNING)
+    LOGGER = logging.getLogger(__name__)
+    if parsed_args.verbose:
+        LOGGER.setLevel(logging.INFO)
+
+    if font["name"].getDebugName(nameID=2) == "Italic":
+        buildStatTable(font, ITALIC_AXES)
+        LOGGER.info("[STAT TABLE] Added italic STAT table to %s", font_path)
+    else:
+        buildStatTable(font, UPRIGHT_AXES)
+        LOGGER.info("[STAT TABLE] Added upright STAT table to %s", font_path)
+
+    font.save(font_path)
 
 
 if __name__ == "__main__":
