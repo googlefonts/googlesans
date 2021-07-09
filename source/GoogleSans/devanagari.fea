@@ -32,6 +32,10 @@
 
 @dev2_dflt_blws_mark_attachment_class_uMatra = [uMatra-deva uMatra-deva.narrow];
 
+@dev2_dflt_locl_localised_punctuation_dflt = [asterisk braceleft braceright bracketleft bracketright colon comma ellipsis exclam parenleft parenright period question quotedblleft quotedblright quoteleft quoteright semicolon]
+
+@dev2_dflt_locl_localised_punctuation_deva = [asterisk.loclDEVA braceleft.loclDEVA braceright.loclDEVA bracketleft.loclDEVA bracketright.loclDEVA colon.loclDEVA comma.loclDEVA ellipsis.loclDEVA exclam.loclDEVA parenleft.loclDEVA parenright.loclDEVA period.loclDEVA question.loclDEVA quotedblleft.loclDEVA quotedblright.loclDEVA quoteleft.loclDEVA quoteright.loclDEVAsemicolon.loclDEVA]
+
 
 # ---------------------------------
 # Lookups
@@ -120,6 +124,11 @@ lookup eShortMatra_reph_anusvara {
 
 feature locl {
     script dev2;
+    lookup dev2_locl_localised_punctuation {
+    # Localised puntuation for Devanagari
+    	sub @dev2_dflt_locl_localised_punctuation_dflt by @dev2_dflt_locl_localised_punctuation_deva;
+    } dev2_locl_localised_punctuation;
+
     language MAR;
     lookup dev2_mar_locl_localised_consonants {
         sub la-deva by la-deva.loclMAR;
@@ -131,7 +140,8 @@ feature locl {
     lookup dev2_mar_nep_locl_common_localised_numerals {
         sub eight-deva by eight-deva.loclMARNEP;
     } dev2_mar_nep_locl_common_localised_numerals;
-
+	lookup dev2_locl_localised_punctuation;
+	
     language NEP;
     lookup dev2_nep_locl_localised_consonants_numerals {
         sub jha-deva by jha-deva.loclNEP;
@@ -142,6 +152,7 @@ feature locl {
     } dev2_nep_locl_localised_consonants_numerals;
 
     lookup dev2_mar_nep_locl_common_localised_numerals;
+    lookup dev2_locl_localised_punctuation;
 } locl;
 
 feature nukt {
