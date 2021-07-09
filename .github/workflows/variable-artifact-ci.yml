@@ -21,7 +21,7 @@ jobs:
           changelogpath: "CHANGELOG.md"
           dependpath: "requirements-dev.txt"
           py-version: ${{ matrix.python-version }}
-          buildcommand: "make gs-vf" # variable font make target
+          buildcommand: "make -j gs-vf" # variable font make target
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
         uses: actions/checkout@v2
       - name: Set up Python v${{ steps.config.outputs.py-version }} environment
