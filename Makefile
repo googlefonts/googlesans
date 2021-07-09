@@ -44,7 +44,10 @@ clean-ufo:
 # Compile
 # ------------------------------
 
-gs-static gs-vf gs-vf-vendor:
+gs-vf:
+	cd source && $(MAKE) -j $@
+
+gs-static gs-vf-vendor:
 	cd source && $(MAKE) $@
 
 gs-regular gs-medium gs-bold gs-italic gs-medium-italic gs-bold-italic:

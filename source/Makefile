@@ -121,37 +121,25 @@ gs-static: $(FONT_BUILD_DIR)
 	# remove the backups that the script leaves behind
 	rm $(STATIC_BUILD_DIR)/*prep-gasp.ttf
 
+gs-vf: gs-vf-upright gs-vf-italic
 
-gs-vf: $(FONT_BUILD_DIR)
+VARIABLE_BUILD_PATH_UPRIGHT_TARGET: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -o variable --output-dir $(VARIABLE_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -o variable --output-dir $(VARIABLE_BUILD_DIR)
-	@echo "================================"
-	@echo " Beginning post-compile edits..."
-	@echo "================================"
-	@echo "================================"
-	@echo " Beginning font subsetting..."
-	@echo "================================"
-	$(PYTHON3_EXE) ../scripts/gs-subset.py $(VARIABLE_BUILD_DIR)/*.ttf
-	@echo "================================"
-	@echo " Set Unicode range bits..."
-	@echo "================================"
-	python3 ../scripts/set-unicoderange.py $(VARIABLE_BUILD_DIR)/*.ttf
-	@echo "================================"
-	@echo " MVAR table removal"
-	@echo "================================"
-	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py --tables MVAR $(VARIABLE_BUILD_DIR)/*.ttf
+	$(PYTHON3_EXE) ../scripts/gs-subset.py $(VARIABLE_BUILD_PATH_UPRIGHT)
+	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $(VARIABLE_BUILD_PATH_UPRIGHT)
+	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py --tables MVAR $(VARIABLE_BUILD_PATH_UPRIGHT)
+	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(VARIABLE_BUILD_PATH_UPRIGHT)
+	$(PYTHON3_EXE) ../scripts/gs-stat.py $(VARIABLE_BUILD_PATH_UPRIGHT)
 	mv $(VARIABLE_BUILD_PATH_UPRIGHT) "$(VARIABLE_BUILD_PATH_UPRIGHT_TARGET)"
+
+VARIABLE_BUILD_PATH_ITALIC_TARGET: $(FONT_BUILD_DIR)
+	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -o variable --output-dir $(VARIABLE_BUILD_DIR)
+	$(PYTHON3_EXE) ../scripts/gs-subset.py $(VARIABLE_BUILD_PATH_ITALIC)
+	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $(VARIABLE_BUILD_PATH_ITALIC)
+	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py --tables MVAR $(VARIABLE_BUILD_PATH_ITALIC)
+	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(VARIABLE_BUILD_PATH_ITALIC)
+	$(PYTHON3_EXE) ../scripts/gs-stat.py $(VARIABLE_BUILD_PATH_ITALIC)
 	mv $(VARIABLE_BUILD_PATH_ITALIC) "$(VARIABLE_BUILD_PATH_ITALIC_TARGET)"
-	@echo "================================"
-	@echo " Add gasp & prep tables"
-	@echo "================================"
-	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(VARIABLE_BUILD_DIR)/*.ttf
-	# remove the backups that the script leaves behind
-	rm $(VARIABLE_BUILD_DIR)/*prep-gasp.ttf
-	@echo "================================"
-	@echo " Add STAT tables"
-	@echo "================================"
-	$(PYTHON3_EXE) ../scripts/gs-stat.py
 
 gs-vf-vendor: gs-vf-vendor-glyphs2designspace
 	$(foreach \
@@ -220,11 +208,9 @@ gst-bold-italic: $(FONT_BUILD_DIR)
 # Individual variable font build targets
 #
 
-gs-vf-upright: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -o variable --output-dir $(VARIABLE_BUILD_DIR)
+gs-vf-upright: VARIABLE_BUILD_PATH_UPRIGHT_TARGET
 
-gs-vf-italic: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -o variable --output-dir $(VARIABLE_BUILD_DIR)
+gs-vf-italic: VARIABLE_BUILD_PATH_ITALIC_TARGET
 
 #
 # Utilities
