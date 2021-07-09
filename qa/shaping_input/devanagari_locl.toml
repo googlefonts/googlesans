@@ -1,0 +1,14 @@
+[meta]
+build_commit = ""
+
+[input.features]
+locl = true
+
+[input]
+script = "deva"
+text = [
+	"*:,!.?;",
+    "()[]{}",
+    '“”"‘’',
+    "…"
+]
