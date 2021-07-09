@@ -1,5 +1,70 @@
 # Google Sans Changelog
 
+## Version 5.000
+
+### New
+
+- Add Armenian script (#274)
+- Add Devanagari script (#277)
+- Add Georgian script (#310)
+- Add Gurmukhi script (#295)
+- Add zero advance width control characters (issue #280, added in #306)
+- GPOS table optimizations to reduce file size (#325), note: requires fontTools >= 4.25.0
+- Add METADATA.pb file (defines Fonts API web font subsetter definitions) (#339)
+ 
+### Changed
+
+- convert logo forms to components (#306)
+- transition Hebrew rvrn forms to compatible forms + avar (#281)
+- remove unnecessary outline data in U+00AD (soft hyphen)
+- remove unnecessary outline data in U+200C (zero width nonjoiner)
+- remove unnecessary outline data in U+200D (zero width joiner)
+- update scripts/internal/normalize.py with unused kerning group cleanup source (#317)
+
+### Fixed
+
+- added missing ldot (U+0140) small caps feature support (#276)
+- added 1-200 GRAD support for Kai symbol (U+03CF) (#283)
+- elimninate inappropriate tail movement across grade axis in italic kahook-cy (#282)
+- fix Eng tail position (#332)
+- fix grade support numerator figures (#326)
+- fix grade support denominator figures (#326)
+- fix grade support fraction figures (#326)
+- fix grade support in circled sans serif digit dingbats (#326)
+- fix grade support in negative circled sans serif digit dingbats (#326)
+- fix inappropriate off curve points default figure two (#326)
+- fix inappropriate off curve points tabular figure two (#326)
+- fix inappropriate off curve points case figure two (#326)
+- fix inappropriate off curve points small caps figure two (#326)
+- swap outlines of K.alt into Ka-cy (#306)
+- remove unneeded descender-cy and descender-cy.case glyphs (#306)
+- remove unneeded ustraight-cy glyph (#306)
+- remove unneeded localization ge-cy.loclSRB glyph (#306)
+- remove unneeded G.ss06 glyph (#306)
+- remove unneeded peace glyph (#306)
+- remove unneeded whiteFrowningFace glyph (#306)
+- remove unneeded whiteSmilingFace glyph (#306)
+- remove unneeded apple glyph (#306)
+- remove proprietary `#exit` anchor in Armenian designs (#306)
+- remove duplicate logo glyph forms (#306)
+
+### Dependencies
+
+- add unicodedata2 at v13.0.0.post2
+- update attrs to v21.2.0 from v20.2.0
+- update cffsubr to v0.2.8 from v0.2.7
+- update compreffor to v0.5.0 from v0.2.8
+- update fontmake to v2.4.0 from v2.2.0
+- update fontmath to v0.8.1 from v0.6.0
+- update fonttools to v4.25.0 from v4.19.1
+- update fs to v2.4.13 from v2.4.11
+- update pyclipper to v1.3.0 from v1.2.0
+- update pytz to v2021.1 from v2020.1
+- update six to v1.16.0 from v1.15.0
+- update ufo2ft to v2.21.0 from v2.19.2
+- update ufolib2 to v0.11.1 from v0.8.0
+
+
 ## Version 4.000
 
 ### New
