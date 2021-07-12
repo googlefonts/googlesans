@@ -1,0 +1,21 @@
+name: UFO source kerning checks across GRAD masters
+
+on: [push]
+
+jobs:
+  ufolint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+    name: ufolint
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v2
+      - name: Set up Python v${{ matrix.python-version }} environment
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: check kerns across GRAD masters
+        run: |
+          python qa/check-kerning.py
