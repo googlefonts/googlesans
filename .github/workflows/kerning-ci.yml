@@ -1,4 +1,4 @@
-name: UFO source kerning checks across GRAD masters
+name: UFO source kerning checks
 
 on: [push]
 
@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         python-version: [3.9]
-    name: ufolint
+    name: kerning-checks
     steps:
       - name: Check out source repository
         uses: actions/checkout@v2
