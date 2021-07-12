@@ -47,17 +47,17 @@ def main():
         zero = SOURCES[space][1]
         twohundred = SOURCES[space][2]
 
-        with open(Path(fifty).resolve(), "rb") as f50:
+        with open(Path(fifty), "rb") as f50:
             bytes = f50.read()
             hash_50 = hashlib.sha256(bytes).hexdigest()
             print(f"{hash_50} : {fifty}")
 
-        with open(Path(zero).resolve(), "rb") as f0:
+        with open(Path(zero), "rb") as f0:
             bytes = f0.read()
             hash_0 = hashlib.sha256(bytes).hexdigest()
             print(f"{hash_0} : {zero}")
 
-        with open(Path(twohundred).resolve(), "rb") as f200:
+        with open(Path(twohundred), "rb") as f200:
             bytes = f200.read()
             hash_200 = hashlib.sha256(bytes).hexdigest()
             print(f"{hash_200} : {twohundred}")
