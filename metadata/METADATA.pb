@@ -35,7 +35,7 @@ subsets: "latin-ext"
 subsets: "menu"
 subsets: "vietnamese"
 experiments: "dont_send_all_subset_through_subsetter"
-experiments: "layout_features=tnum,pnum,lnum,ss02"
+experiments: "layout_features=tnum,pnum,lnum,ss02,hist"
 foundry: "GOOGLE"
 android_version: "v26"
 axes {
