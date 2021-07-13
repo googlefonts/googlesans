@@ -11,6 +11,7 @@
 - Add zero advance width control characters (issue #280, added in #306)
 - GPOS table optimizations to reduce file size (#325), note: requires fontTools >= 4.25.0
 - Add METADATA.pb file (defines Fonts API web font subsetter definitions) (#339)
+- Add new metadata-builder.py script to automate METADATA.pb file generation (#349)
  
 ### Changed
 
@@ -36,6 +37,7 @@
 - fix inappropriate off curve points tabular figure two (#326)
 - fix inappropriate off curve points case figure two (#326)
 - fix inappropriate off curve points small caps figure two (#326)
+- use consistent menu name casing in stylistic set names (#350)
 - swap outlines of K.alt into Ka-cy (#306)
 - remove unneeded descender-cy and descender-cy.case glyphs (#306)
 - remove unneeded ustraight-cy glyph (#306)
