@@ -45,6 +45,8 @@ KEEP_FEATURES = (
     "tnum",
 )
 
+ANDROID_VERSION = "v26"
+
 TEMPLATE = """name: "Google Sans"
 designer: "Google"
 license: "GOOGLE_RESTRICTED"
@@ -74,7 +76,7 @@ fonts {
 experiments: "dont_send_all_subset_through_subsetter"
 experiments: "layout_features={{features}}"
 foundry: "GOOGLE"
-android_version: "v26"
+android_version: "{{androidversion}}"
 axes {
   tag: "GRAD"
   min_value: -50
@@ -135,6 +137,7 @@ def main():
     template = TEMPLATE
     template = template.replace("{{subsets}}", subset_str)
     template = template.replace("{{features}}", feature_str)
+    template = template.replace("{{androidversion}}", ANDROID_VERSION)
     template = template.replace("{{filesize}}", str(total_filesize))
     template = template.replace("{{gitcommit}}", get_git_commit_sha())
 
