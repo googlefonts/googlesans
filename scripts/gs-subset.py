@@ -32,9 +32,8 @@ def main():
     #
     # ===============================================
     #
-    # This build includes all shaping and OT feature support,
-    # *including* all alternate designs supported through the
-    # `aalt` OpenType feature. It will remove unused glyphs.
+    # The subsetter configuration preserves all OT feature support.
+    # It will remove unused, unencoded glyphs.
     for rel_filepath in parsed_args.dir.glob("*.ttf"):
         print(f"[SUBSET] {rel_filepath} PASS 1...")
 
