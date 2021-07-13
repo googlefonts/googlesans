@@ -23,8 +23,8 @@ import os
 import subprocess
 from pathlib import Path
 
-# Subset strings are defined script subset definitions by matching the names
-# in https://github.com/googlefonts/gftools/tree/main/Lib/gftools/encodings
+# Subset definitions are defined by matching the names in
+# https://github.com/googlefonts/gftools/tree/main/Lib/gftools/encodings
 # with `_unique-glyphs.nam` suffix removed
 SUBSETS = (
     "armenian",
