@@ -37,6 +37,7 @@
 - fix inappropriate off curve points tabular figure two (#326)
 - fix inappropriate off curve points case figure two (#326)
 - fix inappropriate off curve points small caps figure two (#326)
+- use consistent menu name casing in stylistic set names (#350)
 - swap outlines of K.alt into Ka-cy (#306)
 - remove unneeded descender-cy and descender-cy.case glyphs (#306)
 - remove unneeded ustraight-cy glyph (#306)
