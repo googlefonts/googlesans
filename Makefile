@@ -125,6 +125,15 @@ black:
 glyphs-norm:
 	python3 scripts/gs-glyphs-norm.py source/GoogleSans/*.glyphs
 
+
+# -------------------------------------
+# Release targets
+# -------------------------------------
+
+# METADATA.pb file gen for Fonts API configuration
+metadata:
+	cd metadata && python metadata-builder.py
+
 .PHONY: all \
 black \
 clean clean-builds clean-ufo\
@@ -133,7 +142,8 @@ gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
 gs-vf-upright gs-vf-italic \
 setup update-deps sync-deps list-deps \
-test-fb test-fb-static-expert test-fb-vf-expert
+test-fb test-fb-static-expert test-fb-vf-expert \
+metadata
 
 # Disable built-in rules to speed up source globbing.
 MAKEFLAGS += --no-builtin-rules
