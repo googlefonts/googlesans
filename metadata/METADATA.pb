@@ -4,7 +4,7 @@ license: "GOOGLE_RESTRICTED"
 visibility: "INTERNAL"
 category: "SANS_SERIF"
 date_added: 1496646000000  # 2017-06-05
-version: "v30"  # repository commit: e276609
+version: "v31"  # repository commit: 034df16c9bb8ae899e21cf7687342d93a0d42c45
 fonts {
   name: "Google Sans"
   style: "normal"
@@ -35,7 +35,7 @@ subsets: "latin-ext"
 subsets: "menu"
 subsets: "vietnamese"
 experiments: "dont_send_all_subset_through_subsetter"
-experiments: "layout_features=tnum,pnum,lnum,ss02,hist"
+experiments: "layout_features=hist,lnum,pnum,ss02,tnum"
 foundry: "GOOGLE"
 android_version: "v26"
 axes {
@@ -57,4 +57,5 @@ registry_default_overrides {
   key: "opsz"
   value: 18
 }
-[google.fonts.size]: 1326248
+[google.fonts.size]: 2004872
+
