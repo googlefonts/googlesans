@@ -21,6 +21,7 @@
 - remove unnecessary outline data in U+200C (zero width nonjoiner)
 - remove unnecessary outline data in U+200D (zero width joiner)
 - update scripts/internal/normalize.py with unused kerning group cleanup source (#317)
+- added new `metadata` Makefile target that generates the release METADATA.pb configuration file
 
 ### Fixed
 
