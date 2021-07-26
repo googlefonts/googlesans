@@ -341,7 +341,7 @@ feature tnum {
 } tnum;
 
 feature ordn {
-    sub [A a] by ordfeminine;
+    sub [A a a.alt] by ordfeminine;
     sub [O o] by ordmasculine;
 } ordn;
 
@@ -962,7 +962,7 @@ feature c2sc {
 } c2sc;
 
 feature smcp {
-    
+
     sub [a a.alt] by a.sc;
     sub [aacute aacute.alt] by aacute.sc;
     sub [abreve abreve.alt] by abreve.sc;
