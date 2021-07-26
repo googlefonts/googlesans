@@ -352,20 +352,6 @@ feature case {
     lookup armn_case_contextual_substitution;
 } case;
 
-feature ss04 {
-    featureNames {
-        name "File Size Units";
-        name 1 "File Size Units";
-    };
-    sub B by b.sc.ss04;
-    sub E by e.sc.ss04;
-    sub G by g.sc.ss04;
-    sub K by k.sc.ss04;
-    sub M by m.sc.ss04;
-    sub P by p.sc.ss04;
-    sub T by t.sc.ss04;
-    sub k by k.sc.lc.ss04;
-} ss04;
 
 feature liga {
     sub f f b by f_f_b;
@@ -1590,6 +1576,26 @@ feature calt {
     lookup armn_calt_shift_punctuation;
 } calt;
 
+
+feature jalt {
+    # ===============
+    # BEGIN HEBREW
+    # ===============
+    sub alef-hb by widealef-hb;
+    sub he-hb by widehe-hb;
+    sub lamed-hb by widelamed-hb;
+    sub dalet-hb by widedalet-hb;
+    sub kaf-hb by widekaf-hb;
+    sub finalmem-hb by finalwidemem-hb;
+    sub resh-hb by wideresh-hb;
+    sub tav-hb by widetav-hb;
+    # ===============
+    # END HEBREW
+    # ===============
+} jalt;
+
+# Stylistic sets
+
 feature ss01 {
     featureNames {
         name "Number Pad Asterisk";
@@ -1607,6 +1613,23 @@ feature ss02 {
 
     sub colon by colon.time;
 } ss02;
+
+# Note: ss03 defined in family_uprights.fea feature file
+
+feature ss04 {
+    featureNames {
+        name "File Size Units";
+        name 1 "File Size Units";
+    };
+    sub B by b.sc.ss04;
+    sub E by e.sc.ss04;
+    sub G by g.sc.ss04;
+    sub K by k.sc.ss04;
+    sub M by m.sc.ss04;
+    sub P by p.sc.ss04;
+    sub T by t.sc.ss04;
+    sub k by k.sc.lc.ss04;
+} ss04;
 
 feature ss05 {
     featureNames {
@@ -1906,20 +1929,3 @@ feature ss07 {
     sub omegadasiaperispomeniypogegrammeni.sc.ss06 by omegadasiaperispomeniypogegrammeni.sc.ad.ss06;
     sub omegaperispomeniypogegrammeni.sc.ss06 by omegaperispomeniypogegrammeni.sc.ad.ss06;
 } ss07;
-
-feature jalt {
-    # ===============
-    # BEGIN HEBREW
-    # ===============
-    sub alef-hb by widealef-hb;
-    sub he-hb by widehe-hb;
-    sub lamed-hb by widelamed-hb;
-    sub dalet-hb by widedalet-hb;
-    sub kaf-hb by widekaf-hb;
-    sub finalmem-hb by finalwidemem-hb;
-    sub resh-hb by wideresh-hb;
-    sub tav-hb by widetav-hb;
-    # ===============
-    # END HEBREW
-    # ===============
-} jalt;
