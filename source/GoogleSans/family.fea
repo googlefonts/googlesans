@@ -1929,3 +1929,36 @@ feature ss07 {
     sub omegadasiaperispomeniypogegrammeni.sc.ss06 by omegadasiaperispomeniypogegrammeni.sc.ad.ss06;
     sub omegaperispomeniypogegrammeni.sc.ss06 by omegaperispomeniypogegrammeni.sc.ad.ss06;
 } ss07;
+
+feature ss08 {
+    featureNames {
+        name "Single Story a";
+        name 1 "Single Story a";
+    };
+
+    sub a by a.alt;
+    sub aacute by aacute.alt;
+    sub abreve by abreve.alt;
+    sub abreveacute by abreveacute.alt;
+    sub abrevedotbelow by abrevedotbelow.alt;
+    sub abrevegrave by abrevegrave.alt;
+    sub abrevehookabove by abrevehookabove.alt;
+    sub abrevetilde by abrevetilde.alt;
+    sub acircumflex by acircumflex.alt;
+    sub acircumflexacute by acircumflexacute.alt;
+    sub acircumflexdotbelow by acircumflexdotbelow.alt;
+    sub acircumflexgrave by acircumflexgrave.alt; 
+    sub acircumflexhookabove by acircumflexhookabove.alt;
+    sub acircumflextilde by acircumflextilde.alt;
+    sub adieresis by adieresis.alt;
+    sub adotbelow by adotbelow.alt;
+    sub agrave by agrave.alt;
+    sub ahookabove by ahookabove.alt;
+    sub amacron by amacron.alt;
+    sub aogonek by aogonek.alt;
+    sub aring by aring.alt;
+    sub aringacute by aringacute.alt;
+    sub atilde by atilde.alt;
+    sub ae by ae.alt;
+    sub aeacute by aeacute.alt;
+} ss08;
