@@ -962,32 +962,32 @@ feature c2sc {
 } c2sc;
 
 feature smcp {
-    # automatic
-    sub a by a.sc;
-    sub aacute by aacute.sc;
-    sub abreve by abreve.sc;
-    sub abreveacute by abreveacute.sc;
-    sub abrevedotbelow by abrevedotbelow.sc;
-    sub abrevegrave by abrevegrave.sc;
-    sub abrevehookabove by abrevehookabove.sc;
-    sub abrevetilde by abrevetilde.sc;
-    sub acircumflex by acircumflex.sc;
-    sub acircumflexacute by acircumflexacute.sc;
-    sub acircumflexdotbelow by acircumflexdotbelow.sc;
-    sub acircumflexgrave by acircumflexgrave.sc;
-    sub acircumflexhookabove by acircumflexhookabove.sc;
-    sub acircumflextilde by acircumflextilde.sc;
-    sub adieresis by adieresis.sc;
-    sub adotbelow by adotbelow.sc;
-    sub agrave by agrave.sc;
-    sub ahookabove by ahookabove.sc;
-    sub amacron by amacron.sc;
-    sub aogonek by aogonek.sc;
-    sub aring by aring.sc;
-    sub aringacute by aringacute.sc;
-    sub atilde by atilde.sc;
-    sub ae by ae.sc;
-    sub aeacute by aeacute.sc;
+    
+    sub [a a.alt] by a.sc;
+    sub [aacute aacute.alt] by aacute.sc;
+    sub [abreve abreve.alt] by abreve.sc;
+    sub [abreveacute abreveacute.alt] by abreveacute.sc;
+    sub [abrevedotbelow abrevedotbelow.alt] by abrevedotbelow.sc;
+    sub [abrevegrave abrevegrave.alt] by abrevegrave.sc;
+    sub [abrevehookabove abrevehookabove.alt] by abrevehookabove.sc;
+    sub [abrevetilde abrevetilde.alt] by abrevetilde.sc;
+    sub [acircumflex acircumflex.alt] by acircumflex.sc;
+    sub [acircumflexacute acircumflexacute.alt] by acircumflexacute.sc;
+    sub [acircumflexdotbelow acircumflexdotbelow.alt] by acircumflexdotbelow.sc;
+    sub [acircumflexgrave acircumflexgrave.alt] by acircumflexgrave.sc;
+    sub [acircumflexhookabove acircumflexhookabove.alt] by acircumflexhookabove.sc;
+    sub [acircumflextilde acircumflextilde.alt] by acircumflextilde.sc;
+    sub [adieresis adieresis.alt] by adieresis.sc;
+    sub [adotbelow adotbelow.alt] by adotbelow.sc;
+    sub [agrave agrave.alt] by agrave.sc;
+    sub [ahookabove ahookabove.alt] by ahookabove.sc;
+    sub [amacron amacron.alt] by amacron.sc;
+    sub [aogonek aogonek.alt] by aogonek.sc;
+    sub [aring aring.alt] by aring.sc;
+    sub [aringacute aringacute.alt] by aringacute.sc;
+    sub [atilde atilde.alt] by atilde.sc;
+    sub [ae ae.alt] by ae.sc;
+    sub [aeacute aeacute.alt] by aeacute.sc;
     sub b by b.sc;
     sub c by c.sc;
     sub cacute by cacute.sc;
