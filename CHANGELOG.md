@@ -1,5 +1,17 @@
 # Google Sans Changelog
 
+## Version 6.000
+
+### New
+
+### Changed
+
+### Fixed
+
+- fix vav/yod `dlig` feature (addressed incorrect glyph order in feature code, #355)
+
+### Dependencies
+
 ## Version 5.000
 
 ### New
