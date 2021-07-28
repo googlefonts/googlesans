@@ -12,6 +12,8 @@
 
 ### Dependencies
 
+- GH Actions: actions/setup-python to "v2" release line for expanded pypy3 interpreter support (#363)
+
 ## Version 5.000
 
 ### New
