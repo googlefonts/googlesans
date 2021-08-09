@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8]
+        python-version: ["pypy-3.7"]
     name: Google Sans static font build CI
     steps:
       - name: Configuration
