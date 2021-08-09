@@ -35,7 +35,7 @@ value = "Google offers many fonts on open source terms. Google Sans is not one o
 },
 {
 name = note;
-value = "# Adjustment notes\012\012- All legacy marks have been made out of components to reduce the repetition in hinting\012- All accent marks have been slightly modified in height and position to align better. This is true in ALL optical sizes\012\012- Numbers (0123456789) (+tf variants) jump at optical size 14 to avoid a form morphing in interim steps (Angled to straight forms), which can look strange.\012\012\012– symbols – fixed minor spacing errors (tabular forms in the period.tf comma.tf colon.tf)\012\012– tcommaaccent.alt had an incorrect form \012– tcedilla.alt was missing. Added in!\012– jdotless.alt jcircumflex.alt added\012– t_f t_f.alt – changed the f terminal to be inline with all of the other f components";
+value = "Kerning group name has been changed";
 },
 {
 name = Axes;
@@ -191,7 +191,7 @@ value = (
 );
 }
 );
-date = "2021-07-25 20:21:50 +0000";
+date = "2021-08-06 04:29:52 +0000";
 designer = "Cadson Demak Co.,Ltd.";
 familyName = "Google Sans TH Looped";
 featurePrefixes = (
@@ -206,7 +206,7 @@ code = "feature locl;\012";
 name = aalt;
 },
 {
-code = "lookup ccmp_thai_1 {\012	sub saraAm-thai by nikhahit-thai saraAa-thai;\012} ccmp_thai_1;\012\012lookup ccmp_thai_2 {\012sub maiEk-thai nikhahit-thai by nikhahit_maiEk-thai;\012sub maiTho-thai nikhahit-thai by nikhahit_maiTho-thai;\012sub maiTri-thai nikhahit-thai by nikhahit_maiTri-thai;\012sub maiChattawa-thai nikhahit-thai by nikhahit_maiChattawa-thai;\012sub maiEk-thai.narrow nikhahit-thai.narrow by nikhahit_maiEk-thai.narrow;\012sub maiTho-thai.narrow nikhahit-thai.narrow by nikhahit_maiTho-thai.narrow;\012sub maiTri-thai.narrow nikhahit-thai.narrow by nikhahit_maiTri-thai.narrow;\012sub maiChattawa-thai.narrow nikhahit-thai.narrow by nikhahit_maiChattawa-thai.narrow;\012sub nikhahit-thai maiEk-thai by nikhahit_maiEk-thai;\012sub nikhahit-thai maiTho-thai by nikhahit_maiTho-thai;\012sub nikhahit-thai maiTri-thai by nikhahit_maiTri-thai;\012sub nikhahit-thai maiChattawa-thai by nikhahit_maiChattawa-thai;\012sub nikhahit-thai.narrow maiEk-thai.narrow by nikhahit_maiEk-thai.narrow;\012sub nikhahit-thai.narrow maiTho-thai.narrow by nikhahit_maiTho-thai.narrow;\012sub nikhahit-thai.narrow maiTri-thai.narrow by nikhahit_maiTri-thai.narrow;\012sub nikhahit-thai.narrow maiChattawa-thai.narrow by nikhahit_maiChattawa-thai.narrow;\012} ccmp_thai_2;\012\012lookup ccmp_thai_3 {\012sub [yoYing-thai thoThan-thai doChada-thai toPatak-thai]' [saraU-thai saraUu-thai phinthu-thai] by [yoYing-thai.less thoThan-thai.less doChada-thai.short toPatak-thai.short];\012sub [doChada-thai.short toPatak-thai.short] [phinthu-thai saraU-thai saraUu-thai]' by [phinthu-thai.small saraU-thai.small saraUu-thai.small];\012sub [nikhahit-thai nikhahit-thai.narrow maiHanaKat-thai maitaikhu-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai yamakkan-thai saraI-thai saraIi-thai saraUe-thai saraUee-thai maiHanaKat-thai.narrow maitaikhu-thai.narrow saraI-thai.narrow saraIi-thai.narrow saraUe-thai.narrow saraUee-thai.narrow saraI-thai.mid saraIi-thai.mid saraUe-thai.mid saraUee-thai.mid] [maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai maitaikhu-thai]' by [maiEk-thai.small maiTho-thai.small maiTri-thai.small maiChattawa-thai.small thanthakhat-thai.small maitaikhu-thai.small];\012sub loChula-thai' [nikhahit-thai maiHanaKat-thai maitaikhu-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai yamakkan-thai saraI-thai saraIi-thai saraUe-thai saraUee-thai nikhahit_maiEk-thai nikhahit_maiTho-thai nikhahit_maiTri-thai nikhahit_maiChattawa-thai] by loChula-thai.short;\012sub [foFan-thai loChula-thai.short] [maiHanaKat-thai thanthakhat-thai nikhahit-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai maitaikhu-thai]' by [maiHanaKat-thai.narrow thanthakhat-thai.narrow nikhahit-thai.narrow maiEk-thai.narrow maiTho-thai.narrow maiTri-thai.narrow maiChattawa-thai.narrow maitaikhu-thai.narrow];\012sub [poPla-thai foFa-thai] [maiHanaKat-thai thanthakhat-thai nikhahit-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai maitaikhu-thai saraI-thai saraIi-thai saraUe-thai saraUee-thai]' by [maiHanaKat-thai.narrow thanthakhat-thai.narrow nikhahit-thai.narrow maiEk-thai.narrow maiTho-thai.narrow maiTri-thai.narrow maiChattawa-thai.narrow maitaikhu-thai.narrow saraI-thai.narrow saraIi-thai.narrow saraUe-thai.narrow saraUee-thai.narrow];\012sub [poPla-thai foFa-thai foFan-thai loChula-thai.short] [nikhahit_maiEk-thai nikhahit_maiTho-thai nikhahit_maiTri-thai nikhahit_maiChattawa-thai]' by [nikhahit_maiEk-thai.narrow nikhahit_maiTho-thai.narrow nikhahit_maiTri-thai.narrow nikhahit_maiChattawa-thai.narrow];\012sub [maiEk-thai.narrow maiTho-thai.narrow maiTri-thai.narrow maiChattawa-thai.narrow thanthakhat-thai.narrow] [maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai]' by [maiEk-thai.small maiTho-thai.small maiTri-thai.small maiChattawa-thai.small thanthakhat-thai.small];\012sub [poPla-thai foFa-thai foFan-thai] [saraU-thai saraUu-thai phinthu-thai] [maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai]' by [maiEk-thai.narrow maiTho-thai.narrow maiTri-thai.narrow maiChattawa-thai.narrow thanthakhat-thai.narrow];\012sub [maiHanaKat-thai.narrow maitaikhu-thai.narrow saraI-thai.narrow saraIi-thai.narrow saraUe-thai.narrow saraUee-thai.narrow] [maiHanaKat-thai maitaikhu-thai saraI-thai saraIi-thai saraUe-thai saraUee-thai]' by [maiHanaKat-thai.narrow maitaikhu-thai.narrow saraI-thai.narrow saraIi-thai.narrow saraUe-thai.narrow saraUee-thai.narrow];\012sub [maiTho-thai maiTri-thai]' [saraAiMaimalai-thai saraAiMaimuan-thai saraO-thai] by [maiTho-thai.narrow maiTri-thai.narrow];\012sub thanthakhat-thai' saraO-thai by thanthakhat-thai.narrow;\012sub [roRua-thai woWaen-thai ngoNgu-thai ngoNgu_underscore-thai] [saraI-thai saraIi-thai saraUe-thai saraUee-thai]' by [saraI-thai.mid saraIi-thai.mid saraUe-thai.mid saraUee-thai.mid];\012} ccmp_thai_3;\012\012script thai;\012lookup ccmp_thai_1;\012lookup ccmp_thai_2;\012lookup ccmp_thai_3;";
+code = "lookup ccmp_thai_1 {\012	sub saraAm-thai by nikhahit-thai saraAa-thai;\012} ccmp_thai_1;\012\012lookup ccmp_thai_2 {\012sub maiEk-thai nikhahit-thai by nikhahit_maiEk-thai;\012sub maiTho-thai nikhahit-thai by nikhahit_maiTho-thai;\012sub maiTri-thai nikhahit-thai by nikhahit_maiTri-thai;\012sub maiChattawa-thai nikhahit-thai by nikhahit_maiChattawa-thai;\012sub maiEk-thai.narrow nikhahit-thai.narrow by nikhahit_maiEk-thai.narrow;\012sub maiTho-thai.narrow nikhahit-thai.narrow by nikhahit_maiTho-thai.narrow;\012sub maiTri-thai.narrow nikhahit-thai.narrow by nikhahit_maiTri-thai.narrow;\012sub maiChattawa-thai.narrow nikhahit-thai.narrow by nikhahit_maiChattawa-thai.narrow;\012sub nikhahit-thai maiEk-thai by nikhahit_maiEk-thai;\012sub nikhahit-thai maiTho-thai by nikhahit_maiTho-thai;\012sub nikhahit-thai maiTri-thai by nikhahit_maiTri-thai;\012sub nikhahit-thai maiChattawa-thai by nikhahit_maiChattawa-thai;\012sub nikhahit-thai.narrow maiEk-thai.narrow by nikhahit_maiEk-thai.narrow;\012sub nikhahit-thai.narrow maiTho-thai.narrow by nikhahit_maiTho-thai.narrow;\012sub nikhahit-thai.narrow maiTri-thai.narrow by nikhahit_maiTri-thai.narrow;\012sub nikhahit-thai.narrow maiChattawa-thai.narrow by nikhahit_maiChattawa-thai.narrow;\012} ccmp_thai_2;\012\012lookup ccmp_thai_3 {\012sub [yoYing-thai thoThan-thai doChada-thai toPatak-thai]' [saraU-thai saraUu-thai phinthu-thai] by [yoYing-thai.less thoThan-thai.less doChada-thai.short toPatak-thai.short];\012sub [doChada-thai.short toPatak-thai.short] [phinthu-thai saraU-thai saraUu-thai]' by [phinthu-thai.small saraU-thai.small saraUu-thai.small];\012sub [nikhahit-thai nikhahit-thai.narrow maiHanaKat-thai maitaikhu-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai yamakkan-thai saraI-thai saraIi-thai saraUe-thai saraUee-thai maiHanaKat-thai.narrow maitaikhu-thai.narrow saraI-thai.narrow saraIi-thai.narrow saraUe-thai.narrow saraUee-thai.narrow saraI-thai.mid saraIi-thai.mid saraUe-thai.mid saraUee-thai.mid] [maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai maitaikhu-thai]' by [maiEk-thai.small maiTho-thai.small maiTri-thai.small maiChattawa-thai.small thanthakhat-thai.small maitaikhu-thai.small];\012sub loChula-thai' [nikhahit-thai maiHanaKat-thai maitaikhu-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai yamakkan-thai saraI-thai saraIi-thai saraUe-thai saraUee-thai nikhahit_maiEk-thai nikhahit_maiTho-thai nikhahit_maiTri-thai nikhahit_maiChattawa-thai] by loChula-thai.short;\012sub loChula-thai' [saraU-thai saraUu-thai phinthu-thai] [saraI-thai saraIi-thai saraUe-thai saraUee-thai maiHanaKat-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai maitaikhu-thai yamakkan-thai] by loChula-thai.short;\012sub [foFan-thai loChula-thai.short] [maiHanaKat-thai thanthakhat-thai nikhahit-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai maitaikhu-thai]' by [maiHanaKat-thai.narrow thanthakhat-thai.narrow nikhahit-thai.narrow maiEk-thai.narrow maiTho-thai.narrow maiTri-thai.narrow maiChattawa-thai.narrow maitaikhu-thai.narrow];\012sub [poPla-thai foFa-thai] [maiHanaKat-thai thanthakhat-thai nikhahit-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai maitaikhu-thai saraI-thai saraIi-thai saraUe-thai saraUee-thai]' by [maiHanaKat-thai.narrow thanthakhat-thai.narrow nikhahit-thai.narrow maiEk-thai.narrow maiTho-thai.narrow maiTri-thai.narrow maiChattawa-thai.narrow maitaikhu-thai.narrow saraI-thai.narrow saraIi-thai.narrow saraUe-thai.narrow saraUee-thai.narrow];\012sub [poPla-thai foFa-thai foFan-thai loChula-thai.short] [nikhahit_maiEk-thai nikhahit_maiTho-thai nikhahit_maiTri-thai nikhahit_maiChattawa-thai]' by [nikhahit_maiEk-thai.narrow nikhahit_maiTho-thai.narrow nikhahit_maiTri-thai.narrow nikhahit_maiChattawa-thai.narrow];\012sub [maiEk-thai.narrow maiTho-thai.narrow maiTri-thai.narrow maiChattawa-thai.narrow thanthakhat-thai.narrow] [maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai]' by [maiEk-thai.small maiTho-thai.small maiTri-thai.small maiChattawa-thai.small thanthakhat-thai.small];\012sub [poPla-thai foFa-thai foFan-thai] [saraU-thai saraUu-thai phinthu-thai] [maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai]' by [maiEk-thai.narrow maiTho-thai.narrow maiTri-thai.narrow maiChattawa-thai.narrow thanthakhat-thai.narrow];\012sub [maiHanaKat-thai.narrow maitaikhu-thai.narrow saraI-thai.narrow saraIi-thai.narrow saraUe-thai.narrow saraUee-thai.narrow] [maiHanaKat-thai maitaikhu-thai saraI-thai saraIi-thai saraUe-thai saraUee-thai]' by [maiHanaKat-thai.narrow maitaikhu-thai.narrow saraI-thai.narrow saraIi-thai.narrow saraUe-thai.narrow saraUee-thai.narrow];\012sub [maiTho-thai maiTri-thai]' [saraAiMaimalai-thai saraAiMaimuan-thai saraO-thai] by [maiTho-thai.narrow maiTri-thai.narrow];\012sub thanthakhat-thai' saraO-thai by thanthakhat-thai.narrow;\012sub [roRua-thai woWaen-thai ngoNgu-thai ngoNgu_underscore-thai] [saraI-thai saraIi-thai saraUe-thai saraUee-thai]' by [saraI-thai.mid saraIi-thai.mid saraUe-thai.mid saraUee-thai.mid];\012sub loChula-thai' [saraU-thai saraUu-thai phinthu-thai] [saraI-thai saraIi-thai saraUe-thai saraUee-thai maiHanaKat-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai maitaikhu-thai yamakkan-thai] by loChula-thai.short;\012} ccmp_thai_3;\012\012script thai;\012lookup ccmp_thai_1;\012lookup ccmp_thai_2;\012lookup ccmp_thai_3;";
 name = ccmp;
 },
 {
@@ -5745,7 +5745,7 @@ unicode = 0E02;
 },
 {
 glyphname = "khoKhuat-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:24:06 +0000";
 layers = (
 {
 anchors = (
@@ -6080,7 +6080,7 @@ nodes = (
 width = 567;
 }
 );
-leftKerningGroup = "khoKhuat-thai";
+leftKerningGroup = "thai-khoKhuat";
 unicode = 0E03;
 },
 {
@@ -6432,7 +6432,7 @@ unicode = 0E0A;
 },
 {
 glyphname = "soSo-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:24:12 +0000";
 layers = (
 {
 anchors = (
@@ -6811,7 +6811,7 @@ nodes = (
 width = 569;
 }
 );
-leftKerningGroup = "khoKhuat-thai";
+leftKerningGroup = "thai-khoKhuat";
 unicode = 0E0B;
 },
 {
@@ -8471,7 +8471,7 @@ unicode = 0E15;
 },
 {
 glyphname = "thoThahan-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:25 +0000";
 layers = (
 {
 anchors = (
@@ -8758,12 +8758,12 @@ nodes = (
 width = 642;
 }
 );
-leftKerningGroup = "boBaimai-thai";
+leftKerningGroup = "thai-boBaimai";
 unicode = 0E17;
 },
 {
 glyphname = "thoNangmontho-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:29:22 +0000";
 layers = (
 {
 anchors = (
@@ -9086,7 +9086,7 @@ unicode = 0E11;
 },
 {
 glyphname = "noNu-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:25 +0000";
 layers = (
 {
 anchors = (
@@ -9493,12 +9493,12 @@ nodes = (
 width = 625;
 }
 );
-leftKerningGroup = "boBaimai-thai";
+leftKerningGroup = "thai-boBaimai";
 unicode = 0E19;
 },
 {
 glyphname = "noNu_underscore-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:25 +0000";
 layers = (
 {
 anchors = (
@@ -9605,6 +9605,7 @@ nodes = (
 width = 625;
 }
 );
+leftKerningGroup = "thai-boBaimai";
 leftMetricsKey = "noNu-thai";
 rightMetricsKey = "noNu-thai";
 script = thai;
@@ -15672,7 +15673,7 @@ unicode = 0E2A;
 },
 {
 glyphname = "boBaimai-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:25 +0000";
 layers = (
 {
 anchors = (
@@ -15907,12 +15908,12 @@ nodes = (
 width = 633;
 }
 );
-leftKerningGroup = "boBaimai-thai";
+leftKerningGroup = "thai-boBaimai";
 unicode = 0E1A;
 },
 {
 glyphname = "poPla-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:25 +0000";
 layers = (
 {
 anchors = (
@@ -16147,12 +16148,12 @@ nodes = (
 width = 633;
 }
 );
-leftKerningGroup = "boBaimai-thai";
+leftKerningGroup = "thai-boBaimai";
 unicode = 0E1B;
 },
 {
 glyphname = "soRusi-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:25 +0000";
 layers = (
 {
 anchors = (
@@ -16619,7 +16620,7 @@ nodes = (
 width = 673;
 }
 );
-leftKerningGroup = "boBaimai-thai";
+leftKerningGroup = "thai-boBaimai";
 unicode = 0E29;
 },
 {
@@ -17517,7 +17518,7 @@ unicode = 0E1D;
 },
 {
 glyphname = "foFan-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:25 +0000";
 layers = (
 {
 anchors = (
@@ -17808,12 +17809,12 @@ nodes = (
 width = 685;
 }
 );
-leftKerningGroup = "boBaimai-thai";
+leftKerningGroup = "thai-boBaimai";
 unicode = 0E1F;
 },
 {
 glyphname = "phoPhan-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:25 +0000";
 layers = (
 {
 anchors = (
@@ -18104,12 +18105,12 @@ nodes = (
 width = 685;
 }
 );
-leftKerningGroup = "boBaimai-thai";
+leftKerningGroup = "thai-boBaimai";
 unicode = 0E1E;
 },
 {
 glyphname = "hoHip-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:25 +0000";
 layers = (
 {
 anchors = (
@@ -18536,12 +18537,12 @@ nodes = (
 width = 638;
 }
 );
-leftKerningGroup = "boBaimai-thai";
+leftKerningGroup = "thai-boBaimai";
 unicode = 0E2B;
 },
 {
 glyphname = "loChula-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:25 +0000";
 layers = (
 {
 anchors = (
@@ -18864,12 +18865,12 @@ nodes = (
 width = 685;
 }
 );
-leftKerningGroup = "boBaimai-thai";
+leftKerningGroup = "thai-boBaimai";
 unicode = 0E2C;
 },
 {
 glyphname = "loChula-thai.short";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:25 +0000";
 layers = (
 {
 anchors = (
@@ -19208,7 +19209,7 @@ nodes = (
 width = 683;
 }
 );
-leftKerningGroup = "boBaimai-thai";
+leftKerningGroup = "thai-boBaimai";
 },
 {
 glyphname = "oAng-thai";
@@ -20706,7 +20707,7 @@ unicode = 0E30;
 },
 {
 glyphname = "saraE-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:49 +0000";
 layers = (
 {
 layerId = "415A20EC-3A1A-4D83-BAA0-C826781CFE6A";
@@ -20885,12 +20886,12 @@ nodes = (
 width = 322;
 }
 );
-rightKerningGroup = "saraE-thai";
+rightKerningGroup = "thai-saraE";
 unicode = 0E40;
 },
 {
 glyphname = "saraAe-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:49 +0000";
 layers = (
 {
 layerId = "415A20EC-3A1A-4D83-BAA0-C826781CFE6A";
@@ -21221,12 +21222,12 @@ nodes = (
 width = 618;
 }
 );
-rightKerningGroup = "saraE-thai";
+rightKerningGroup = "thai-saraE";
 unicode = 0E41;
 },
 {
 glyphname = "saraAiMaimalai-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:49 +0000";
 layers = (
 {
 layerId = "415A20EC-3A1A-4D83-BAA0-C826781CFE6A";
@@ -21485,12 +21486,12 @@ nodes = (
 width = 359;
 }
 );
-rightKerningGroup = "saraE-thai";
+rightKerningGroup = "thai-saraE";
 unicode = 0E44;
 },
 {
 glyphname = "saraAiMaimuan-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:49 +0000";
 layers = (
 {
 layerId = "415A20EC-3A1A-4D83-BAA0-C826781CFE6A";
@@ -21845,12 +21846,12 @@ nodes = (
 width = 358;
 }
 );
-rightKerningGroup = "saraE-thai";
+rightKerningGroup = "thai-saraE";
 unicode = 0E43;
 },
 {
 glyphname = "saraO-thai";
-lastChange = "2021-07-26 13:30:35 +0000";
+lastChange = "2021-08-06 04:23:49 +0000";
 layers = (
 {
 layerId = "415A20EC-3A1A-4D83-BAA0-C826781CFE6A";
@@ -22121,7 +22122,7 @@ nodes = (
 width = 359;
 }
 );
-rightKerningGroup = "saraE-thai";
+rightKerningGroup = "thai-saraE";
 unicode = 0E42;
 },
 {
@@ -38154,9 +38155,9 @@ weightClass = Bold;
 keepAlternatesTogether = 1;
 kerning = {
 "415A20EC-3A1A-4D83-BAA0-C826781CFE6A" = {
-"@MMK_L_saraE-thai" = {
-"@MMK_R_boBaimai-thai" = -20;
-"@MMK_R_khoKhuat-thai" = -10;
+"@MMK_L_thai-saraE" = {
+"@MMK_R_thai-boBaimai" = -20;
+"@MMK_R_thai-khoKhuat" = -10;
 "choChan-thai" = -10;
 "choChang-thai" = -10;
 "choChoe-thai" = -10;
@@ -38204,9 +38205,9 @@ kerning = {
 };
 };
 "80CCADDA-227B-41C2-953A-89D81AB7A938" = {
-"@MMK_L_saraE-thai" = {
-"@MMK_R_boBaimai-thai" = -15;
-"@MMK_R_khoKhuat-thai" = -10;
+"@MMK_L_thai-saraE" = {
+"@MMK_R_thai-boBaimai" = -15;
+"@MMK_R_thai-khoKhuat" = -10;
 "choChang-thai" = -10;
 "choChoe-thai" = -10;
 "khoKhai-thai" = -10;
@@ -38247,9 +38248,9 @@ kerning = {
 };
 };
 "7DC837FD-8087-4B6D-BE02-845ABE6FF608" = {
-"@MMK_L_saraE-thai" = {
-"@MMK_R_boBaimai-thai" = -10;
-"@MMK_R_khoKhuat-thai" = -5;
+"@MMK_L_thai-saraE" = {
+"@MMK_R_thai-boBaimai" = -10;
+"@MMK_R_thai-khoKhuat" = -5;
 "choChoe-thai" = -10;
 "koKai-thai" = -10;
 "noNen-thai" = -10;
@@ -38288,9 +38289,9 @@ kerning = {
 };
 };
 "21256F03-0C21-4A53-B8E8-011368C94DE3" = {
-"@MMK_L_saraE-thai" = {
-"@MMK_R_boBaimai-thai" = -10;
-"@MMK_R_khoKhuat-thai" = -10;
+"@MMK_L_thai-saraE" = {
+"@MMK_R_thai-boBaimai" = -10;
+"@MMK_R_thai-khoKhuat" = -10;
 "choChoe-thai" = -5;
 "koKai-thai" = -5;
 "noNen-thai" = -5;
