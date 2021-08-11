@@ -4,6 +4,8 @@
 
 ### New
 
+- add new stylistic set 08 with single story `a` forms (#360)
+
 ### Changed
 
 ### Fixed
