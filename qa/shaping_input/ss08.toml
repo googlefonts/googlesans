@@ -1,0 +1,16 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+ss08 = true
+
+[input]
+script = "DFLT"
+language = "dflt"
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [ 
+    "aáăắặằẳẵâấậầẩẫäạàảāąåǻãæǽ",
+]
+
+

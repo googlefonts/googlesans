@@ -341,7 +341,7 @@ feature tnum {
 } tnum;
 
 feature ordn {
-    sub [A a] by ordfeminine;
+    sub [A a a.alt] by ordfeminine;
     sub [O o] by ordmasculine;
 } ordn;
 
@@ -352,20 +352,6 @@ feature case {
     lookup armn_case_contextual_substitution;
 } case;
 
-feature ss04 {
-    featureNames {
-        name "File Size Units";
-        name 1 "File Size Units";
-    };
-    sub B by b.sc.ss04;
-    sub E by e.sc.ss04;
-    sub G by g.sc.ss04;
-    sub K by k.sc.ss04;
-    sub M by m.sc.ss04;
-    sub P by p.sc.ss04;
-    sub T by t.sc.ss04;
-    sub k by k.sc.lc.ss04;
-} ss04;
 
 feature liga {
     sub f f b by f_f_b;
@@ -976,32 +962,32 @@ feature c2sc {
 } c2sc;
 
 feature smcp {
-    # automatic
-    sub a by a.sc;
-    sub aacute by aacute.sc;
-    sub abreve by abreve.sc;
-    sub abreveacute by abreveacute.sc;
-    sub abrevedotbelow by abrevedotbelow.sc;
-    sub abrevegrave by abrevegrave.sc;
-    sub abrevehookabove by abrevehookabove.sc;
-    sub abrevetilde by abrevetilde.sc;
-    sub acircumflex by acircumflex.sc;
-    sub acircumflexacute by acircumflexacute.sc;
-    sub acircumflexdotbelow by acircumflexdotbelow.sc;
-    sub acircumflexgrave by acircumflexgrave.sc;
-    sub acircumflexhookabove by acircumflexhookabove.sc;
-    sub acircumflextilde by acircumflextilde.sc;
-    sub adieresis by adieresis.sc;
-    sub adotbelow by adotbelow.sc;
-    sub agrave by agrave.sc;
-    sub ahookabove by ahookabove.sc;
-    sub amacron by amacron.sc;
-    sub aogonek by aogonek.sc;
-    sub aring by aring.sc;
-    sub aringacute by aringacute.sc;
-    sub atilde by atilde.sc;
-    sub ae by ae.sc;
-    sub aeacute by aeacute.sc;
+
+    sub [a a.alt] by a.sc;
+    sub [aacute aacute.alt] by aacute.sc;
+    sub [abreve abreve.alt] by abreve.sc;
+    sub [abreveacute abreveacute.alt] by abreveacute.sc;
+    sub [abrevedotbelow abrevedotbelow.alt] by abrevedotbelow.sc;
+    sub [abrevegrave abrevegrave.alt] by abrevegrave.sc;
+    sub [abrevehookabove abrevehookabove.alt] by abrevehookabove.sc;
+    sub [abrevetilde abrevetilde.alt] by abrevetilde.sc;
+    sub [acircumflex acircumflex.alt] by acircumflex.sc;
+    sub [acircumflexacute acircumflexacute.alt] by acircumflexacute.sc;
+    sub [acircumflexdotbelow acircumflexdotbelow.alt] by acircumflexdotbelow.sc;
+    sub [acircumflexgrave acircumflexgrave.alt] by acircumflexgrave.sc;
+    sub [acircumflexhookabove acircumflexhookabove.alt] by acircumflexhookabove.sc;
+    sub [acircumflextilde acircumflextilde.alt] by acircumflextilde.sc;
+    sub [adieresis adieresis.alt] by adieresis.sc;
+    sub [adotbelow adotbelow.alt] by adotbelow.sc;
+    sub [agrave agrave.alt] by agrave.sc;
+    sub [ahookabove ahookabove.alt] by ahookabove.sc;
+    sub [amacron amacron.alt] by amacron.sc;
+    sub [aogonek aogonek.alt] by aogonek.sc;
+    sub [aring aring.alt] by aring.sc;
+    sub [aringacute aringacute.alt] by aringacute.sc;
+    sub [atilde atilde.alt] by atilde.sc;
+    sub [ae ae.alt] by ae.sc;
+    sub [aeacute aeacute.alt] by aeacute.sc;
     sub b by b.sc;
     sub c by c.sc;
     sub cacute by cacute.sc;
@@ -1590,6 +1576,26 @@ feature calt {
     lookup armn_calt_shift_punctuation;
 } calt;
 
+
+feature jalt {
+    # ===============
+    # BEGIN HEBREW
+    # ===============
+    sub alef-hb by widealef-hb;
+    sub he-hb by widehe-hb;
+    sub lamed-hb by widelamed-hb;
+    sub dalet-hb by widedalet-hb;
+    sub kaf-hb by widekaf-hb;
+    sub finalmem-hb by finalwidemem-hb;
+    sub resh-hb by wideresh-hb;
+    sub tav-hb by widetav-hb;
+    # ===============
+    # END HEBREW
+    # ===============
+} jalt;
+
+# Stylistic sets
+
 feature ss01 {
     featureNames {
         name "Number Pad Asterisk";
@@ -1607,6 +1613,23 @@ feature ss02 {
 
     sub colon by colon.time;
 } ss02;
+
+# Note: ss03 defined in family_uprights.fea feature file
+
+feature ss04 {
+    featureNames {
+        name "File Size Units";
+        name 1 "File Size Units";
+    };
+    sub B by b.sc.ss04;
+    sub E by e.sc.ss04;
+    sub G by g.sc.ss04;
+    sub K by k.sc.ss04;
+    sub M by m.sc.ss04;
+    sub P by p.sc.ss04;
+    sub T by t.sc.ss04;
+    sub k by k.sc.lc.ss04;
+} ss04;
 
 feature ss05 {
     featureNames {
@@ -1907,19 +1930,35 @@ feature ss07 {
     sub omegaperispomeniypogegrammeni.sc.ss06 by omegaperispomeniypogegrammeni.sc.ad.ss06;
 } ss07;
 
-feature jalt {
-    # ===============
-    # BEGIN HEBREW
-    # ===============
-    sub alef-hb by widealef-hb;
-    sub he-hb by widehe-hb;
-    sub lamed-hb by widelamed-hb;
-    sub dalet-hb by widedalet-hb;
-    sub kaf-hb by widekaf-hb;
-    sub finalmem-hb by finalwidemem-hb;
-    sub resh-hb by wideresh-hb;
-    sub tav-hb by widetav-hb;
-    # ===============
-    # END HEBREW
-    # ===============
-} jalt;
+feature ss08 {
+    featureNames {
+        name "Single Story a";
+        name 1 "Single Story a";
+    };
+
+    sub a by a.alt;
+    sub aacute by aacute.alt;
+    sub abreve by abreve.alt;
+    sub abreveacute by abreveacute.alt;
+    sub abrevedotbelow by abrevedotbelow.alt;
+    sub abrevegrave by abrevegrave.alt;
+    sub abrevehookabove by abrevehookabove.alt;
+    sub abrevetilde by abrevetilde.alt;
+    sub acircumflex by acircumflex.alt;
+    sub acircumflexacute by acircumflexacute.alt;
+    sub acircumflexdotbelow by acircumflexdotbelow.alt;
+    sub acircumflexgrave by acircumflexgrave.alt; 
+    sub acircumflexhookabove by acircumflexhookabove.alt;
+    sub acircumflextilde by acircumflextilde.alt;
+    sub adieresis by adieresis.alt;
+    sub adotbelow by adotbelow.alt;
+    sub agrave by agrave.alt;
+    sub ahookabove by ahookabove.alt;
+    sub amacron by amacron.alt;
+    sub aogonek by aogonek.alt;
+    sub aring by aring.alt;
+    sub aringacute by aringacute.alt;
+    sub atilde by atilde.alt;
+    sub ae by ae.alt;
+    sub aeacute by aeacute.alt;
+} ss08;
