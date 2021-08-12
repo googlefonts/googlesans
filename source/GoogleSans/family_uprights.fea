@@ -51,3 +51,61 @@ feature ss03 {
 feature calt {
     sub [zero.ss03 one.ss03 two.ss03 three.ss03 four.ss03 five.ss03 six.ss03 seven.ss03 eight.ss03 nine.ss03] colon' [zero.ss03 one.ss03 two.ss03 three.ss03 four.ss03 five.ss03 six.ss03 seven.ss03 eight.ss03 nine.ss03] by colon.time;
 } calt;
+
+feature kern {
+    # ==============
+    # BEGIN HEBREW
+    # ==============
+	lookupflag 0;
+	lookupflag RightToLeft;
+
+	# Kerning between narrow letters with wide marks
+	pos [vav-hb yod-hb] @hb_wideMarks resh-hb' 60 @hb_wideMarks;
+	pos [vav-hb yod-hb] @hb_wideMarks @hb_narrowHebrewLetters' 60 @hb_wideMarks;
+	pos [vavdagesh-hb yoddagesh-hb] @hb_wideMarks resh-hb' 30 @hb_wideMarks;
+	pos [vavdagesh-hb yoddagesh-hb] @hb_wideMarks @hb_narrowHebrewLetters' 30 @hb_wideMarks;
+
+	# Make it work with cantillation marks (changed the second group to include all bottom diacritics)
+	pos [vav-hb yod-hb] @hb_wideMarks @hb_allCantillation resh-hb' 60 @hb_bottomDiacritics;
+	pos [vav-hb yod-hb] @hb_wideMarks @hb_allCantillation @hb_narrowHebrewLetters' 60 @hb_bottomDiacritics;
+	pos [vavdagesh-hb yoddagesh-hb] @hb_wideMarks @hb_allCantillation resh-hb' 30 @hb_bottomDiacritics;
+	pos [vavdagesh-hb yoddagesh-hb] @hb_wideMarks @hb_allCantillation @hb_narrowHebrewLetters' 30 @hb_bottomDiacritics;
+
+
+	# ---------- KERNING BETWEEN LAMED HOLAM AND SHINDOT
+
+	pos [lamed_holam-hb lamed_dagesh_holam-hb] [shinshindot-hb shindageshshindot-hb ]' 60;
+	pos [lamed_holam-hb lamed_dagesh_holam-hb] @hb_allCantillation [shinshindot-hb shindageshshindot-hb ]' 60;
+
+
+	# ---------- KERNING BACK HOLAM IN BUSY PLACES
+	pos @hb_AllHebrewLetters holam-hb' < 50 0 0 0 > [shinshindot-hb shindageshshindot-hb vavholam-hb];
+
+
+	# ---------- NARROW LETTER WITH HOLAM
+
+	# Add kerning for holam after a wide cantillation sits on top of a narrow letter
+	pos @hb_narrowHebrewLetters [holam-hb holamhaser-hb] @hb_veryWideTopCantillation' < 50 0 0 0 >;
+	pos @hb_narrowHebrewLetters [holam-hb holamhaser-hb]' < -30 0 0 0 > @hb_wideTopCantillation;
+
+
+	# ---------- CANTILLATION GOES DOWN WHEN...
+
+	#1 between two wide diacritic marks
+	pos @hb_goesDownBefore [@hb_wideMarks hiriq-hb sheva-hb] @hb_goesDown' < 50 -160 0 0 > @hb_goesDownAfter [@hb_wideMarks sheva-hb hiriq-hb];
+	pos @hb_goesDownBefore [@hb_wideMarks hiriq-hb sheva-hb] siluqleft-hb' < 20 -160 0 0 > @hb_goesDownAfter [@hb_wideMarks sheva-hb hiriq-hb];
+
+	#2 between a wide mark and any letter with a very wide mark
+	pos [vav-hb yod-hb] @hb_wideMarks @hb_goesDown' < 120 -160 0 0 > @hb_AllHebrewLetters @hb_veryWideMarks;
+	pos [vav-hb yod-hb] @hb_wideMarks siluqleft-hb' < 80 -160 0 0 > @hb_AllHebrewLetters @hb_veryWideMarks;
+
+	#3 under the letter Qof
+	pos [qof-hb qofdagesh-hb] @hb_bottomDiacritics [@hb_goesDown siluqleft-hb]' < 50 -170 0 0 >;
+
+	#4 before finalNun, finalKaf, finalPe
+	pos @hb_goesDown' < 0 -100 0 0 > [finalnun-hb finalpe-hb finalkaf-hb];
+
+    # ==============
+    # END HEBREW
+    # ==============
+} kern;
