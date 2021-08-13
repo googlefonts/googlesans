@@ -15,7 +15,7 @@ from fontTools.designspaceLib import (
 )
 from glyphsLib.builder.builders import _expand_kerning_to_brackets
 
-from . import gdef2
+from . import gdef
 
 MASTER_ID_KEY = "com.schriftgestaltung.fontMasterID"
 
@@ -289,4 +289,4 @@ def infer_opentype_categories(source: ufoLib2.Font) -> Dict[str, str]:
     for pf in pre_filter:
         pf(font=ufo_copy)
 
-    return gdef2.update_opentype_categories(ufo_copy)
+    return gdef.update_opentype_categories(ufo_copy)
