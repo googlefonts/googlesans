@@ -2,6 +2,36 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
+    <key>com.github.googlei18n.ufo2ft.featureWriters</key>
+    <array>
+      <dict>
+        <key>class</key>
+        <string>KernFeatureWriter</string>
+        <key>options</key>
+        <dict>
+          <key>mode</key>
+          <string>append</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>class</key>
+        <string>MarkFeatureWriter</string>
+        <key>options</key>
+        <dict>
+          <key>mode</key>
+          <string>skip</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>class</key>
+        <string>GdefFeatureWriter</string>
+        <key>options</key>
+        <dict>
+          <key>mode</key>
+          <string>append</string>
+        </dict>
+      </dict>
+    </array>
     <key>com.github.googlei18n.ufo2ft.filters</key>
     <array>
       <dict>
@@ -3651,7 +3681,11 @@
       <string>base</string>
       <key>Che-cy</key>
       <string>base</string>
+      <key>Cheabkhasian-cy</key>
+      <string>base</string>
       <key>Chedescender-cy</key>
+      <string>base</string>
+      <key>Chedescenderabkhasian-cy</key>
       <string>base</string>
       <key>Chedieresis-cy</key>
       <string>base</string>
@@ -3946,8 +3980,6 @@
       <key>Iotavrachy</key>
       <string>base</string>
       <key>Itilde</key>
-      <string>base</string>
-      <key>Iu-cy</key>
       <string>base</string>
       <key>J</key>
       <string>base</string>
@@ -4274,6 +4306,10 @@
       <key>Ustraight-cy</key>
       <string>base</string>
       <key>Ustraightstroke-cy</key>
+      <string>base</string>
+      <key>Ustrait-cy</key>
+      <string>base</string>
+      <key>Ustraitstroke-cy</key>
       <string>base</string>
       <key>Utilde</key>
       <string>base</string>
@@ -5073,6 +5109,8 @@
       <string>base</string>
       <key>de-cy.loclBGR</key>
       <string>base</string>
+      <key>de-cy.loclSRB</key>
+      <string>base</string>
       <key>dehi-hb</key>
       <string>mark</string>
       <key>descender-cy</key>
@@ -5122,6 +5160,8 @@
       <key>e-deva</key>
       <string>base</string>
       <key>e.sc</key>
+      <string>base</string>
+      <key>e.sc.ss04</key>
       <string>base</string>
       <key>eCandra-deva</key>
       <string>base</string>
@@ -5705,6 +5745,8 @@
       <string>base</string>
       <key>ge-cy</key>
       <string>base</string>
+      <key>ge-cy.loclMKD</key>
+      <string>base</string>
       <key>ge-cy.sc</key>
       <string>base</string>
       <key>gedescender-cy</key>
@@ -5723,11 +5765,11 @@
       <string>base</string>
       <key>gestrokehook-cy.sc</key>
       <string>base</string>
-      <key>gg-deva</key>
-      <string>base</string>
       <key>gga-deva</key>
       <string>base</string>
       <key>gh-deva</key>
+      <string>base</string>
+      <key>gh-deva.alt2</key>
       <string>base</string>
       <key>gha-deva</key>
       <string>base</string>
@@ -5754,6 +5796,8 @@
       <key>gimeldagesh-hb</key>
       <string>base</string>
       <key>gje-cy</key>
+      <string>base</string>
+      <key>gje-cy.loclMKD</key>
       <string>base</string>
       <key>gje-cy.sc</key>
       <string>base</string>
@@ -6217,6 +6261,8 @@
       <string>base</string>
       <key>k.sc</key>
       <string>base</string>
+      <key>k.sc.ss04</key>
+      <string>base</string>
       <key>k_ss-deva</key>
       <string>base</string>
       <key>k_ss-deva.alt2</key>
@@ -6373,6 +6419,8 @@
       <string>base</string>
       <key>m.sc</key>
       <string>base</string>
+      <key>m.sc.ss04</key>
+      <string>base</string>
       <key>ma-deva</key>
       <string>base</string>
       <key>ma-gurmukhi</key>
@@ -6387,8 +6435,6 @@
       <string>mark</string>
       <key>mahapakhleft-hb</key>
       <string>mark</string>
-      <key>marwaridda-deva</key>
-      <string>base</string>
       <key>masoracircle-hb</key>
       <string>mark</string>
       <key>masoracircle-hb.final</key>
@@ -6500,8 +6546,6 @@
       <key>o-cy.sc</key>
       <string>base</string>
       <key>o-deva</key>
-      <string>base</string>
-      <key>o-obarred-cy</key>
       <string>base</string>
       <key>o.sc</key>
       <string>base</string>
@@ -6929,6 +6973,8 @@
       <string>base</string>
       <key>pe-cy.loclBGR</key>
       <string>base</string>
+      <key>pe-cy.loclSRB</key>
+      <string>base</string>
       <key>pe-hb</key>
       <string>base</string>
       <key>pedagesh-hb</key>
@@ -7037,6 +7083,8 @@
       <string>base</string>
       <key>ra-gurmukhi</key>
       <string>base</string>
+      <key>ra_uMatra-deva</key>
+      <string>base</string>
       <key>ra_uuMatra-deva</key>
       <string>base</string>
       <key>racute</key>
@@ -7097,6 +7145,8 @@
       <string>mark</string>
       <key>ringcomb.sc</key>
       <string>mark</string>
+      <key>rrVocalic-deva</key>
+      <string>base</string>
       <key>rrVocalicMatra-deva</key>
       <string>mark</string>
       <key>rra-deva</key>
@@ -7199,9 +7249,9 @@
       <string>base</string>
       <key>t</key>
       <string>base</string>
-      <key>t-lig</key>
-      <string>base</string>
       <key>t.sc</key>
+      <string>base</string>
+      <key>t.sc.ss04</key>
       <string>base</string>
       <key>t_f</key>
       <string>ligature</string>
@@ -7557,11 +7607,7 @@
       <string>base</string>
       <key>ushort-cy.sc</key>
       <string>base</string>
-      <key>ustraight-cy</key>
-      <string>base</string>
       <key>ustraight-cy.sc</key>
-      <string>base</string>
-      <key>ustraightstroke-cy</key>
       <string>base</string>
       <key>ustraightstroke-cy.sc</key>
       <string>base</string>
@@ -7704,6 +7750,8 @@
       <key>yerahbenyomoleft-hb</key>
       <string>mark</string>
       <key>yeru-cy</key>
+      <string>base</string>
+      <key>yeru-cy.loclBGR</key>
       <string>base</string>
       <key>yeru-cy.sc</key>
       <string>base</string>
