@@ -9,10 +9,13 @@
 ### Changed
 
 - refactored Makefile based build workflow to support parallel format x slant builds (#335)
+- use `public.openTypeCategories` to organize GDEF table (#367)
+- store GDEF data in UFO's (#367)
 
 ### Fixed
 
 - fix vav/yod `dlig` feature (addressed incorrect glyph order in feature code, #355)
+- fix ligature caret positions in static instances (#367)
 
 ### Dependencies
 
