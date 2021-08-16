@@ -1,3 +1,5 @@
+# pyright: basic
+
 import collections
 import copy
 from pathlib import Path
@@ -22,9 +24,10 @@ def scrub_designspace(designspace: DesignSpaceDocument, project_root: Path) -> N
     designspace.loadSourceFonts(ufoLib2.Font.open)
     skip_export_glyphs = set(designspace.lib.get("public.skipExportGlyphs", []))
     rules = designspace.rules
+    ot_categories = infer_opentype_categories(designspace.default.font)
 
     for source in designspace.sources:
-        scrub_source(source, skip_export_glyphs, rules)
+        scrub_source(source, skip_export_glyphs, rules, ot_categories)
 
     scrub_groups(designspace.default, designspace.sources)
 
@@ -70,13 +73,19 @@ def scrub_instance(instance: InstanceDescriptor, project_root: Path) -> None:
 
 
 def scrub_source(
-    source: SourceDescriptor, skip_export_glyphs: Set[str], rules: List[RuleDescriptor]
+    source: SourceDescriptor,
+    skip_export_glyphs: Set[str],
+    rules: List[RuleDescriptor],
+    ot_categories: Dict[str, str],
 ) -> None:
-    scrub_ufo(source.font, skip_export_glyphs, rules)
+    scrub_ufo(source.font, skip_export_glyphs, rules, ot_categories)
 
 
 def scrub_ufo(
-    ufo: ufoLib2.Font, skip_export_glyphs: Set[str], rules: List[RuleDescriptor]
+    ufo: ufoLib2.Font,
+    skip_export_glyphs: Set[str],
+    rules: List[RuleDescriptor],
+    ot_categories: Dict[str, str],
 ) -> None:
     # Clean global lib.
     keys_to_keep = {
@@ -214,32 +223,8 @@ def scrub_ufo(
         for name, name_bracket in rule.subs:
             _expand_kerning_to_brackets(name, name_bracket, ufo)
 
-    # Update GDEF table. Anchors have to be propagated before we can construct
-    # the GDEF table. Use the UFO copy so we can safely save the original with
-    # just updated features.
-    ufo_copy = copy.deepcopy(ufo)
-    skip_export_glyphs_copy = copy.copy(skip_export_glyphs)
-    pre_filter, _ = ufo2ft.filters.loadFilters(ufo_copy)
-    for pf in pre_filter:
-        # Treat excluded glyphs as if they are skipped glpyhs to ensure they don't
-        # show up in the feature file and cause a compilation error.
-        if pf.name == "PropagateAnchorsFilter":
-            skip_export_glyphs_copy.update(
-                g.name for g in ufo_copy if not pf.include(g)
-            )
-        pf(font=ufo_copy)
-
-    # Generate GDEF definition string.
-    gdef_table_lines = gdef.build_gdef(ufo_copy, skip_export_glyphs_copy)
-    features = ufo.features.text.split("\n")
-    try:
-        gdef_start = features.index("table GDEF {")
-        gdef_end = features.index("} GDEF;") + 1
-        features[gdef_start:gdef_end] = gdef_table_lines
-    except ValueError:
-        features.extend(gdef_table_lines)
-        features.append("")  # newline.
-    ufo.features.text = "\n".join(features)
+    # Use OpenType GDEF categories inferred from default source.
+    ufo.lib["public.openTypeCategories"] = ot_categories
 
 
 def location_to_key(
@@ -293,3 +278,15 @@ def scrub_groups(
     for source in all_sources:
         source.font.groups.clear()
         source.font.groups.update(scrubbed_groups)
+
+
+def infer_opentype_categories(source: ufoLib2.Font) -> Dict[str, str]:
+    # Update GDEF table. Anchors have to be propagated before we can construct
+    # the GDEF table. Use the UFO copy so we can safely save the original with
+    # just updated features.
+    ufo_copy = copy.deepcopy(source)
+    pre_filter, _ = ufo2ft.filters.loadFilters(ufo_copy)
+    for pf in pre_filter:
+        pf(font=ufo_copy)
+
+    return gdef.update_opentype_categories(ufo_copy)
