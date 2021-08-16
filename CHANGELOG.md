@@ -8,6 +8,8 @@
 
 ### Changed
 
+- refactored Makefile based build workflow to support parallel format x slant builds (#335)
+
 ### Fixed
 
 - fix vav/yod `dlig` feature (addressed incorrect glyph order in feature code, #355)
