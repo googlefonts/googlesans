@@ -1,6 +1,14 @@
 name: Static CI
 
-on: [push]
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:
+      - main # Push events on main branch
+      - "build/**" # Push events to branches matching refs/heads/build/[ANYTHING]
+      - "build-*" # Push events to branches matching refs/heads/build-[ANYTHING]
+  # Manual trigger
+  workflow_dispatch:
 
 jobs:
   static-font-ci-job:
@@ -21,7 +29,7 @@ jobs:
           changelogpath: "CHANGELOG.md"
           dependpath: "requirements-dev.txt"
           py-version: ${{ matrix.python-version }}
-          buildcommand: "make gs-static" # static font make target
+          buildcommand: "make -j gs-static" # static font make target
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
         uses: actions/checkout@v2
       - name: Set up Python v${{ steps.config.outputs.py-version }} environment

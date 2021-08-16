@@ -33,6 +33,8 @@
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+import argparse
+import logging
 import os
 import re
 import sys
@@ -331,10 +333,21 @@ def green(pre_string):
     return f"\033[32m{pre_string}\033[0m"
 
 
-def main(argv):
-    for fontpath in argv:
+def main(argv=None):
+    parser = argparse.ArgumentParser()
+    parser.add_argument("fonts", nargs="+")
+    parser.add_argument("-v", "--version", action="version", version=VERSION)
+    parser.add_argument("--verbose", action="store_true")
+    parsed_args = parser.parse_args(argv)
+
+    logging.basicConfig(format="%(levelname)s: %(message)s", level=logging.WARNING)
+    LOGGER = logging.getLogger(__name__)
+    if parsed_args.verbose:
+        LOGGER.setLevel(logging.INFO)
+
+    for fontpath in parsed_args.fonts:
         if not os.path.isfile(fontpath):
-            sys.stderr.write(f"{fontpath} does not appear to be a valid file path\n")
+            LOGGER.error("%s does not appear to be a valid file path.", fontpath)
             sys.exit(1)
         # font os2, cmap
         tt = TTFont(fontpath)
@@ -393,15 +406,12 @@ def main(argv):
                 else:
                     colored_change_string += c
 
-            print(f"{fontpath}:")
-            print(f" PRE: {formatted_obs}")
-            print(f"POST: {colored_change_string}\n")
+            LOGGER.info("%s:", fontpath)
+            LOGGER.info(" PRE: %s", formatted_obs)
+            LOGGER.info("POST: %s", colored_change_string)
         else:
-            print(f"No change required in {fontpath}\n")
+            LOGGER.info("No change required in %s", fontpath)
 
 
 if __name__ == "__main__":
-    if sys.argv[1] == "-v" or sys.argv[1] == "--version":
-        print(VERSION)
-    else:
-        main(sys.argv[1:])
+    main()
