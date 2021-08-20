@@ -71,6 +71,7 @@ for glyphs_file_path in parsed_args.glyphs_file:
         propagate_anchors=False,  # Not in my sources you don't.
         write_skipexportglyphs=True,
     )
+    designspace.findDefault()
 
     normalize.scrub_designspace(designspace, ROOT_DIR)
 
