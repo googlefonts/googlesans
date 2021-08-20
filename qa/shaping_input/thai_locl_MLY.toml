@@ -1,0 +1,12 @@
+[meta]
+build_commit  = ""
+
+[input]
+script = "thai"
+language = "ms"  # Malay
+direction = "ltr"
+comparison_mode = "glyphstream"
+text = [
+    "ญ_ น_ ม_ ง_",
+    "ญ ฐ ญฐ"
+]
