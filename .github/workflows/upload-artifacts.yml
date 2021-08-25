@@ -24,7 +24,7 @@ jobs:
           buildpath: "build/GoogleSans/static" # static font dir
           dependpath: "requirements-dev.txt"
           py-version: ${{ matrix.python-version }}
-          buildcommand: "make gs-static" # static font make target
+          buildcommand: "make -j gs-static" # static font make target
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
         uses: actions/checkout@v2
       - name: Set up Python v${{ steps.config.outputs.py-version }} environment
@@ -67,7 +67,7 @@ jobs:
           buildpath: "build/GoogleSans/variable" # variable font dir
           dependpath: "requirements-dev.txt"
           py-version: ${{ matrix.python-version }}
-          buildcommand: "make gs-vf" # static font make target
+          buildcommand: "make -j gs-vf" # var font make target
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
         uses: actions/checkout@v2
       - name: Set up Python v${{ steps.config.outputs.py-version }} environment
