@@ -237,7 +237,11 @@ $ python3 scripts/gs-merge-designspace.py \
 
 (Note: if you also have a group list, specify it as an additional switch like so: `--import-groups-file import_groups_italic.txt`)
 
-Now extract the features from the staging UFOs and manually massage them into the existing sources. The font info may also need to be updated, chiefly Unicode and codepage ranges. Additionally, consider which of the imported glyphs need anchor propagation (the list is kept in `scripts/internal/normalize.py`, re-run `scripts/gs-normalize-designspace.py` when you modify it).
+4. Extract the features from the staging UFOs and manually merge them into the existing sources. The font info may also need to be updated, chiefly Unicode and codepage ranges.
+
+5. Consider which of the imported glyphs need anchor propagation; edit the list kept in `scripts/internal/normalize.py`
+
+6. Run `scripts/gs-normalize-designspace.py`.
 
 ![Quality Assurance Workflow](assets/merge_process.png)
 
