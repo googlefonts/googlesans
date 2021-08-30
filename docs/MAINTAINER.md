@@ -211,17 +211,19 @@ glyphsLib is used to generate Glyphs.app files for those who need it.
 
 ![External Vendor Glyphs Workflow](assets/new_situation_glyphs.png)
 
-First, run the `gs-glyphs2ufo.py` script for the upright and italic source to convert the source files and place them into `source/GoogleSans/staging/`.
+1. Place the vendor's Glyphs.app sources in the `source/GoogleSans/staging/` folder in this repository.
 
+2. Turn the vendor's Glyphs.app sources into UFOs, in the same `source/GoogleSans/staging/` folder:
+
+```bash
+python scripts/gs-glyphs2ufo.py source/GoogleSans/staging/*.glyphs
 ```
-$ python3 scripts/gs-glyphs2ufo.py source/GoogleSans/GoogleSansSomeScript.glyphs --target-dir source/GoogleSans/staging/
 
-$ python3 scripts/gs-glyphs2ufo.py source/GoogleSans/GoogleSansSomeScript-Italic.glyphs --target-dir source/GoogleSans/staging/
-```
+Assuming the vendor delivered 2 Glyphs.app source files, uprights and italics, the `gs-glyphs2ufo.py` script will convert both to Designspace + UFOs and place them into the same `source/GoogleSans/staging/` folder.
 
-Next, import the resulting Designspaces into their intended target Designspaces:
+3. Import the resulting Designspaces into their intended target Designspaces:
 
-```
+```bash
 $ python3 scripts/gs-merge-designspace.py \
     --source source/GoogleSans/staging/GoogleSansSomeScript.designspace \
     --target source/GoogleSans/GoogleSans.designspace \
