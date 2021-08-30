@@ -3,6 +3,7 @@ include(georgian.fea)
 include(devanagari.fea)
 include(gurmukhi.fea)
 include(thai.fea)
+include(tamil.fea)
 
 
 @figures = [zero one two three four five six seven eight nine];
@@ -1948,7 +1949,7 @@ feature ss08 {
     sub acircumflex by acircumflex.alt;
     sub acircumflexacute by acircumflexacute.alt;
     sub acircumflexdotbelow by acircumflexdotbelow.alt;
-    sub acircumflexgrave by acircumflexgrave.alt; 
+    sub acircumflexgrave by acircumflexgrave.alt;
     sub acircumflexhookabove by acircumflexhookabove.alt;
     sub acircumflextilde by acircumflextilde.alt;
     sub adieresis by adieresis.alt;
