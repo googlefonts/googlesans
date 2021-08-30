@@ -1,0 +1,75 @@
+feature ccmp {
+    lookup thai_ccmp_1 {
+        sub saraAm-thai by nikhahit-thai saraAa-thai;
+    } thai_ccmp_1;
+
+    lookup thai_ccmp_2 {
+        sub maiEk-thai nikhahit-thai by nikhahit_maiEk-thai;
+        sub maiTho-thai nikhahit-thai by nikhahit_maiTho-thai;
+        sub maiTri-thai nikhahit-thai by nikhahit_maiTri-thai;
+        sub maiChattawa-thai nikhahit-thai by nikhahit_maiChattawa-thai;
+        sub maiEk-thai.narrow nikhahit-thai.narrow by nikhahit_maiEk-thai.narrow;
+        sub maiTho-thai.narrow nikhahit-thai.narrow by nikhahit_maiTho-thai.narrow;
+        sub maiTri-thai.narrow nikhahit-thai.narrow by nikhahit_maiTri-thai.narrow;
+        sub maiChattawa-thai.narrow nikhahit-thai.narrow by nikhahit_maiChattawa-thai.narrow;
+        sub nikhahit-thai maiEk-thai by nikhahit_maiEk-thai;
+        sub nikhahit-thai maiTho-thai by nikhahit_maiTho-thai;
+        sub nikhahit-thai maiTri-thai by nikhahit_maiTri-thai;
+        sub nikhahit-thai maiChattawa-thai by nikhahit_maiChattawa-thai;
+        sub nikhahit-thai.narrow maiEk-thai.narrow by nikhahit_maiEk-thai.narrow;
+        sub nikhahit-thai.narrow maiTho-thai.narrow by nikhahit_maiTho-thai.narrow;
+        sub nikhahit-thai.narrow maiTri-thai.narrow by nikhahit_maiTri-thai.narrow;
+        sub nikhahit-thai.narrow maiChattawa-thai.narrow by nikhahit_maiChattawa-thai.narrow;
+    } thai_ccmp_2;
+
+    lookup thai_ccmp_3 {
+        sub [yoYing-thai thoThan-thai doChada-thai toPatak-thai]' [saraU-thai saraUu-thai phinthu-thai] by [yoYing-thai.less thoThan-thai.less doChada-thai.short toPatak-thai.short];
+        sub [doChada-thai.short toPatak-thai.short] [phinthu-thai saraU-thai saraUu-thai]' by [phinthu-thai.small saraU-thai.small saraUu-thai.small];
+        sub [nikhahit-thai nikhahit-thai.narrow maiHanaKat-thai maitaikhu-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai yamakkan-thai saraI-thai saraIi-thai saraUe-thai saraUee-thai maiHanaKat-thai.narrow maitaikhu-thai.narrow saraI-thai.narrow saraIi-thai.narrow saraUe-thai.narrow saraUee-thai.narrow saraI-thai.mid saraIi-thai.mid saraUe-thai.mid saraUee-thai.mid] [maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai maitaikhu-thai]' by [maiEk-thai.small maiTho-thai.small maiTri-thai.small maiChattawa-thai.small thanthakhat-thai.small maitaikhu-thai.small];
+        sub loChula-thai' [nikhahit-thai maiHanaKat-thai maitaikhu-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai yamakkan-thai saraI-thai saraIi-thai saraUe-thai saraUee-thai nikhahit_maiEk-thai nikhahit_maiTho-thai nikhahit_maiTri-thai nikhahit_maiChattawa-thai] by loChula-thai.short;
+        sub loChula-thai' [saraU-thai saraUu-thai phinthu-thai] [saraI-thai saraIi-thai saraUe-thai saraUee-thai maiHanaKat-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai maitaikhu-thai yamakkan-thai] by loChula-thai.short;
+        sub [foFan-thai loChula-thai.short] [maiHanaKat-thai thanthakhat-thai nikhahit-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai maitaikhu-thai]' by [maiHanaKat-thai.narrow thanthakhat-thai.narrow nikhahit-thai.narrow maiEk-thai.narrow maiTho-thai.narrow maiTri-thai.narrow maiChattawa-thai.narrow maitaikhu-thai.narrow];
+        sub [poPla-thai foFa-thai] [maiHanaKat-thai thanthakhat-thai nikhahit-thai maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai maitaikhu-thai saraI-thai saraIi-thai saraUe-thai saraUee-thai]' by [maiHanaKat-thai.narrow thanthakhat-thai.narrow nikhahit-thai.narrow maiEk-thai.narrow maiTho-thai.narrow maiTri-thai.narrow maiChattawa-thai.narrow maitaikhu-thai.narrow saraI-thai.narrow saraIi-thai.narrow saraUe-thai.narrow saraUee-thai.narrow];
+        sub [poPla-thai foFa-thai foFan-thai loChula-thai.short] [nikhahit_maiEk-thai nikhahit_maiTho-thai nikhahit_maiTri-thai nikhahit_maiChattawa-thai]' by [nikhahit_maiEk-thai.narrow nikhahit_maiTho-thai.narrow nikhahit_maiTri-thai.narrow nikhahit_maiChattawa-thai.narrow];
+        sub [maiEk-thai.narrow maiTho-thai.narrow maiTri-thai.narrow maiChattawa-thai.narrow thanthakhat-thai.narrow] [maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai]' by [maiEk-thai.small maiTho-thai.small maiTri-thai.small maiChattawa-thai.small thanthakhat-thai.small];
+        sub [poPla-thai foFa-thai foFan-thai] [saraU-thai saraUu-thai phinthu-thai] [maiEk-thai maiTho-thai maiTri-thai maiChattawa-thai thanthakhat-thai]' by [maiEk-thai.narrow maiTho-thai.narrow maiTri-thai.narrow maiChattawa-thai.narrow thanthakhat-thai.narrow];
+        sub [maiHanaKat-thai.narrow maitaikhu-thai.narrow saraI-thai.narrow saraIi-thai.narrow saraUe-thai.narrow saraUee-thai.narrow] [maiHanaKat-thai maitaikhu-thai saraI-thai saraIi-thai saraUe-thai saraUee-thai]' by [maiHanaKat-thai.narrow maitaikhu-thai.narrow saraI-thai.narrow saraIi-thai.narrow saraUe-thai.narrow saraUee-thai.narrow];
+        sub [maiTho-thai maiTri-thai]' [saraAiMaimalai-thai saraAiMaimuan-thai saraO-thai] by [maiTho-thai.narrow maiTri-thai.narrow];
+        sub thanthakhat-thai' saraO-thai by thanthakhat-thai.narrow;
+        sub [roRua-thai woWaen-thai ngoNgu-thai ngoNgu_underscore-thai] [saraI-thai saraIi-thai saraUe-thai saraUee-thai]' by [saraI-thai.mid saraIi-thai.mid saraUe-thai.mid saraUee-thai.mid];
+    } thai_ccmp_3;
+
+    script thai;
+    lookup thai_ccmp_1;
+    lookup thai_ccmp_2;
+    lookup thai_ccmp_3;
+} ccmp;
+
+feature rlig {
+    lookup thai_rlig_1 {
+        lookupflag IgnoreMarks;
+        sub lu-thai lakkhangyao-thai by lu_lakkhangyao-thai;
+        sub ru-thai lakkhangyao-thai by ru_lakkhangyao-thai;
+        sub fongman-thai quotedbl by fongman_fannu-thai;
+    } thai_rlig_1;
+
+    script thai;
+    lookup thai_rlig_1;
+} rlig;
+
+feature locl {
+    script thai;
+    language MFA;
+    lookup thai_locl_underscore {
+        sub yoYing-thai underscore by yoYing_underscore-thai;
+        sub noNu-thai underscore by noNu_underscore-thai;
+        sub moMa-thai underscore by moMa_underscore-thai;
+        sub ngoNgu-thai underscore by ngoNgu_underscore-thai;
+    } thai_locl_underscore;
+    language MLY;
+    lookup thai_locl_underscore;
+    language PAL;
+    sub [yoYing-thai thoThan-thai] by [yoYing-thai.less thoThan-thai.less];
+    language SAN;
+    sub [yoYing-thai thoThan-thai] by [yoYing-thai.less thoThan-thai.less];
+} locl;
