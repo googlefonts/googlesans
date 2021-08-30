@@ -4,6 +4,8 @@
 
 ### New
 
+- add Thai script, looped style (#365)
+- add new midline horizontal ellipsis `U+22EF` (#371)
 - add new stylistic set 08 with single story `a` forms (#360)
 
 ### Changed
