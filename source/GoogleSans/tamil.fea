@@ -6,7 +6,6 @@
 @tml2_localised_figures_tab = [zero.loclTAML.tf one.loclTAML.tf two.loclTAML.tf three.loclTAML.tf four.loclTAML.tf five.loclTAML.tf six.loclTAML.tf seven.loclTAML.tf eight.loclTAML.tf nine.loclTAML.tf];
 
 feature locl {
-    # FIXME: disabled in Glyphs.app?
     script tml2;
     language TAM;
     lookup tml2_TAM_locl_localised_punctuations {
@@ -135,7 +134,6 @@ feature psts {
 } psts;
 
 feature tnum {
-    # FIXME: disabled in Glyphs.app?
     script tml2;
     sub @tml2_localised_figures_dflt by @tml2_localised_figures_tab;
 } tnum;
