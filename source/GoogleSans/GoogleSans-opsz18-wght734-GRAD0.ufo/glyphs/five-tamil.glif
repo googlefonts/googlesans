@@ -32,14 +32,12 @@
       <point x="165" y="577"/>
       <point x="334" y="753"/>
       <point x="632" y="753" type="curve" smooth="yes"/>
-      <point x="778" y="753"/>
-      <point x="897" y="715"/>
-      <point x="985" y="639" type="curve"/>
-      <point x="932" y="635" type="line"/>
-      <point x="1050" y="790" type="line"/>
-      <point x="1050" y="725" type="line"/>
-      <point x="946" y="818"/>
-      <point x="805" y="865"/>
+      <point x="761" y="753"/>
+      <point x="870" y="723"/>
+      <point x="954" y="664" type="curve"/>
+      <point x="1020" y="750" type="line"/>
+      <point x="919" y="826"/>
+      <point x="789" y="865"/>
       <point x="632" y="865" type="curve" smooth="yes"/>
       <point x="274" y="865"/>
       <point x="49" y="633"/>
@@ -47,21 +45,21 @@
       <point x="49" y="-98"/>
       <point x="273" y="-336"/>
     </contour>
-    <component base="aaMatra-tamil" xOffset="273"/>
+    <contour>
+      <point x="358" y="0" type="line"/>
+      <point x="480" y="0" type="line"/>
+      <point x="480" y="492" type="line"/>
+      <point x="657" y="492" type="line"/>
+      <point x="657" y="0" type="line"/>
+      <point x="779" y="0" type="line"/>
+      <point x="779" y="492" type="line"/>
+      <point x="918" y="492" type="line"/>
+      <point x="918" y="597" type="line"/>
+      <point x="358" y="597" type="line"/>
+    </contour>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
-      <array>
-        <dict>
-          <key>alignment</key>
-          <integer>-1</integer>
-          <key>index</key>
-          <integer>0</integer>
-          <key>name</key>
-          <string>aaMatra-tamil</string>
-        </dict>
-      </array>
       <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
       <string>na-tamil</string>
     </dict>
