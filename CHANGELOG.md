@@ -18,6 +18,7 @@
 
 - fix vav/yod `dlig` feature (addressed incorrect glyph order in feature code, #355)
 - fix ligature caret positions in static instances (#367)
+- fix `6` and `9` outline artifacts in Italic opsz 17 GRAD -50 (#377)
 
 ### Dependencies
 
