@@ -5,8 +5,41 @@
   <anchor x="138" y="0" name="bottom"/>
   <anchor x="344" y="526" name="top"/>
   <outline>
-    <component base="n"/>
-    <component base="eng-tail" xOffset="-7"/>
+    <contour>
+      <point x="17" y="0" type="line"/>
+      <point x="131" y="0" type="line"/>
+      <point x="187" y="316" type="line" smooth="yes"/>
+      <point x="200" y="390"/>
+      <point x="255" y="438"/>
+      <point x="323" y="440" type="curve" smooth="yes"/>
+      <point x="382" y="442"/>
+      <point x="418" y="400"/>
+      <point x="407" y="338" type="curve" smooth="yes"/>
+      <point x="333" y="-78" type="line" smooth="yes"/>
+      <point x="327" y="-108"/>
+      <point x="307" y="-131"/>
+      <point x="286" y="-131" type="curve" smooth="yes"/>
+      <point x="273" y="-131"/>
+      <point x="256" y="-126"/>
+      <point x="247" y="-122" type="curve"/>
+      <point x="229" y="-219" type="line"/>
+      <point x="240" y="-223"/>
+      <point x="260" y="-226"/>
+      <point x="279" y="-226" type="curve" smooth="yes"/>
+      <point x="369" y="-226"/>
+      <point x="427" y="-186"/>
+      <point x="446" y="-81" type="curve" smooth="yes"/>
+      <point x="519" y="326" type="line" smooth="yes"/>
+      <point x="542" y="458"/>
+      <point x="477" y="542"/>
+      <point x="354" y="542" type="curve" smooth="yes"/>
+      <point x="278" y="542"/>
+      <point x="234" y="508"/>
+      <point x="213" y="462" type="curve"/>
+      <point x="209" y="462" type="line"/>
+      <point x="220" y="526" type="line"/>
+      <point x="110" y="526" type="line"/>
+    </contour>
   </outline>
   <lib>
     <dict>
