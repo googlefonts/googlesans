@@ -207,19 +207,29 @@ glyphsLib is used to generate Glyphs.app files for those who need it.
 
 ![Script Workflow](assets/scripts.png)
 
-### Importing a Glyphs.app File
+Vendors can either supply Designspace + UFO directly, or Glyphs.app files.
+The merge process is the same, except that Glyphs.app files will first be
+converted to the Designspace + UFO format.
 
 ![External Vendor Glyphs Workflow](assets/new_situation_glyphs.png)
+
+![External Vendor UFO Workflow](assets/new_situation_ufo.png)
+
+
+
+### Steps needed only when importing a Glyphs.app File
 
 1. Place the vendor's Glyphs.app sources in the `source/GoogleSans/staging/` folder in this repository.
 
 2. Turn the vendor's Glyphs.app sources into UFOs, in the same `source/GoogleSans/staging/` folder:
 
 ```bash
-python scripts/gs-glyphs2ufo.py source/GoogleSans/staging/*.glyphs
+$ python scripts/gs-glyphs2ufo.py source/GoogleSans/staging/*.glyphs
 ```
 
 Assuming the vendor delivered 2 Glyphs.app source files, uprights and italics, the `gs-glyphs2ufo.py` script will convert both to Designspace + UFOs and place them into the same `source/GoogleSans/staging/` folder.
+
+### Steps in common for Designspace + UFO or Glyphs.app imports
 
 3. Import the resulting Designspaces into their intended target Designspaces:
 
@@ -244,12 +254,6 @@ $ python3 scripts/gs-merge-designspace.py \
 6. Run `scripts/gs-normalize-designspace.py`.
 
 ![Quality Assurance Workflow](assets/merge_process.png)
-
-### Importing Designspaces with UFOs
-
-The same as the [Glyphs.app workflow](#importing-a-glyphsapp-file), except we don't convert anything beforehand.
-
-![External Vendor UFO Workflow](assets/new_situation_ufo.png)
 
 ## Quality Assurance
 
@@ -295,9 +299,16 @@ The directory `qa/shaping/` contains `.json` files of the following format:
 
 The files currently have to be created by hand. Give them a descriptive name, ideally prefixed by the script they pertain to. To fill them with the shaping results of a list of fonts, essentially setting their output in stone, run:
 
-```
+```bash
 $ python3 qa/update_shaping_test_data.py qa/shaping/my_file.json \
-    build/GoogleSans/variable/expert/*.ttf build/GoogleSans/static/expert/*.ttf
+    build/GoogleSans/variable/*.ttf build/GoogleSans/static/*.ttf
+```
+
+To update all files in one go:
+
+```bash
+$ cd qa/
+$ ./update_all_shaping.sh
 ```
 
 The FontBakery QA tests will pick up the file automatically.
