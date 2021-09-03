@@ -1,0 +1,14 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+locl = true
+
+[input]
+script = "taml"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "க. க, க: க; க… க! க? க* (க க) {க க} [க க] ‘க க’ “க க”", # Localised Tamil Punctuation
+    "க0இ க1இ க2இ க3இ க4இ க5இ க6இ க7இ க8இ க9இ" # Localised Tamil International Numerals
+]
