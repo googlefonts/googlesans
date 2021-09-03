@@ -1,0 +1,16 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+akhn = true
+abvs = true
+
+[input]
+script = "taml"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ஙீ பீ யீ வீ", # Alternate iiMatra
+    "ஜீ மீ றீ லீ ழீ ஷீ ஸீ ஹீ க்ஷீ", # iiMatra Ligatures
+    "ஶ்ரீ" # ShRii Ligature (Sha + Virama/Pulli + Ra + iiMatra)
+]
