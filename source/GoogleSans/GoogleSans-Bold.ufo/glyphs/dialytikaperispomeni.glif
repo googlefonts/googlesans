@@ -4,50 +4,8 @@
   <unicode hex="1FC1"/>
   <anchor x="225" y="526" name="_top"/>
   <outline>
-    <contour>
-      <point x="321" y="602" type="curve" smooth="yes"/>
-      <point x="362" y="602"/>
-      <point x="393" y="634"/>
-      <point x="393" y="674" type="curve" smooth="yes"/>
-      <point x="393" y="714"/>
-      <point x="362" y="745"/>
-      <point x="321" y="745" type="curve" smooth="yes"/>
-      <point x="282" y="745"/>
-      <point x="250" y="714"/>
-      <point x="250" y="674" type="curve" smooth="yes"/>
-      <point x="250" y="634"/>
-      <point x="282" y="602"/>
-    </contour>
-    <contour>
-      <point x="131" y="602" type="curve"/>
-      <point x="171" y="602"/>
-      <point x="202" y="634"/>
-      <point x="202" y="674" type="curve" smooth="yes"/>
-      <point x="202" y="714"/>
-      <point x="171" y="745"/>
-      <point x="131" y="745" type="curve" smooth="yes"/>
-      <point x="91" y="745"/>
-      <point x="59" y="714"/>
-      <point x="59" y="674" type="curve" smooth="yes"/>
-      <point x="59" y="634"/>
-      <point x="91" y="602"/>
-    </contour>
-    <contour>
-      <point x="58" y="771" type="curve"/>
-      <point x="156" y="771" type="line"/>
-      <point x="156" y="803"/>
-      <point x="181" y="831"/>
-      <point x="225" y="831" type="curve" smooth="yes"/>
-      <point x="266" y="831"/>
-      <point x="293" y="803"/>
-      <point x="293" y="771" type="curve"/>
-      <point x="390" y="771" type="line"/>
-      <point x="390" y="854"/>
-      <point x="313" y="907"/>
-      <point x="225" y="907" type="curve" smooth="yes"/>
-      <point x="137" y="907"/>
-      <point x="58" y="854"/>
-    </contour>
+    <component base="dieresiscomb"/>
+    <component base="perispomeni" xOffset="-14" yOffset="192"/>
   </outline>
   <lib>
     <dict>
