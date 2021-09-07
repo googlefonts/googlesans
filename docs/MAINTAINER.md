@@ -68,6 +68,7 @@ The sources are normalized according to [fontTools.ufoLib](https://fonttools.rea
   * `public.glyphOrder` for determining the order of glyphs in the final fonts
   * `public.postscriptNames` for determining the production glyph names in the final fonts
   * `public.skipExportGlyphs` for listing glyph names that should not be exported to the final fonts
+  * `com.github.googlei18n.ufo2ft.featureWriters` for build-relevant options on how to generate OpenType layout data
   * `com.github.googlei18n.ufo2ft.filters` for listing filters and their options for compile-time font processing
     * `propagateAnchors`: inherits anchors of base glyphs to their composites automatically to help with building the `mark` and `mkmk` features.
   * `com.schriftgestaltung.customParameter.GSFont.Enforce Compatibility Check` for telling Glyphs.app to always run compatibility checks, not relevant for the build
@@ -81,7 +82,6 @@ The sources are normalized according to [fontTools.ufoLib](https://fonttools.rea
     * `com.schriftgestaltung.customParameters` for carrying build-relevant metadata like PANOSE values
   * Global:
     * `GSDimensionPlugin.Dimensions` for storing Glyphs.app's metadata for stem thicknesses
-    * `com.github.googlei18n.ufo2ft.featureWriters` for build-relevant options on how to generate OpenType layout data
     * `public.skipExportGlyphs` for listing glyph names that should not be exported to the final fonts
 
 </details>
