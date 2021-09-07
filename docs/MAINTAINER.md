@@ -157,7 +157,7 @@ converted to the Designspace + UFO format.
 
 ### Steps needed only when importing a Glyphs.app File
 
-1. Place the vendor's Glyphs.app sources in the `source/GoogleSans/staging/` folder in this repository.
+1. Place the vendor's Glyphs.app sources in the `source/GoogleSans/staging/` folder in this repository. If the folder does not yet exist, create it.
 
 2. Turn the vendor's Glyphs.app sources into UFOs, in the same `source/GoogleSans/staging/` folder:
 
@@ -185,11 +185,17 @@ $ python3 scripts/gs-merge-designspace.py \
 
 (Note: if you also have a group list, specify it as an additional switch like so: `--import-groups-file import_groups_italic.txt`)
 
-4. Extract the features from the staging UFOs and manually merge them into the existing sources. The font info may also need to be updated, chiefly Unicode and codepage ranges.
+4. Check that glyphs, especially ligatures, have the correct production name set. Something like `k_ssa_uMatra-tamil` should have the production name `uni0B950BCD0BB70BC1`. Using Glyphs.app's naming conventions, you can cross-check names in Glyphs.app's macro panel with the following snippet:
 
-5. Consider which of the imported glyphs need anchor propagation; edit the list kept in `scripts/internal/normalize.py`
+```python
+print(Glyphs.productionGlyphName("k_ssa_uMatra-tamil"))
+```
 
-6. Run `scripts/gs-normalize-designspace.py`.
+5. Extract the features from the staging UFOs and manually merge them into the existing sources. The font info may also need to be updated, chiefly Unicode and codepage ranges.
+
+6. Consider which of the imported glyphs need anchor propagation; edit the list kept in `scripts/internal/normalize.py`
+
+7. Run `scripts/gs-normalize-designspace.py`.
 
 ![Quality Assurance Workflow](assets/merge_process.png)
 
