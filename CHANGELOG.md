@@ -5,8 +5,8 @@
 ### New
 
 - add Thai script, looped style (#365)
-- add new midline horizontal ellipsis `U+22EF` (#371)
-- add new stylistic set 08 with single story `a` forms (#360)
+- add new MIDLINE HORIZONTAL ELLIPSIS (U+22EF) (#371)
+- add new stylistic set 08 with alternate single story Latin letter `a` forms (#360)
 
 ### Changed
 
@@ -16,9 +16,9 @@
 
 ### Fixed
 
-- fix vav/yod `dlig` feature (addressed incorrect glyph order in feature code, #355)
+- fix HEBREW LETTER VAV (U+05D5) and HEBREW LETTER YOD (U+05D9) `dlig` feature (addressed incorrect glyph order in feature code, #355)
 - fix ligature caret positions in static instances (#367)
-- fix `6` and `9` outline artifacts in Italic opsz 17 GRAD -50 (#377)
+- fix DIGIT SIX (U+0036) and DIGIT NINE (U+0039) figure outline artifacts in Italic opsz 17 GRAD -50 (#377)
 
 ### Dependencies
 
@@ -41,18 +41,18 @@
 
 - convert logo forms to components (#306)
 - transition Hebrew rvrn forms to compatible forms + avar (#281)
-- remove unnecessary outline data in U+00AD (soft hyphen)
-- remove unnecessary outline data in U+200C (zero width nonjoiner)
-- remove unnecessary outline data in U+200D (zero width joiner)
+- remove unnecessary outline data in SOFT HYPHEN (U+00AD)
+- remove unnecessary outline data in ZERO WIDTH NON-JOINER (U+200C)
+- remove unnecessary outline data in ZERO WIDTH JOINER (U+200D)
 - update scripts/internal/normalize.py with unused kerning group cleanup source (#317)
 - added new `metadata` Makefile target that generates the release METADATA.pb configuration file
 
 ### Fixed
 
-- added missing ldot (U+0140) small caps feature support (#276)
-- added 1-200 GRAD support for Kai symbol (U+03CF) (#283)
-- elimninate inappropriate tail movement across grade axis in italic kahook-cy (#282)
-- fix Eng tail position (#332)
+- added missing LATIN SMALL LETTER L WITH MIDDLE DOT (U+0140) small caps feature support (#276)
+- added 1-200 GRAD support for GREEK CAPITAL KAI SYMBOL (U+03CF) (#283)
+- elimninate inappropriate tail movement across grade axis in italic CYRILLIC SMALL LETTER KA WITH HOOK (U+04C4) (#282)
+- fix LATIN CAPITAL LETTER ENG (U+014A) tail position (#332)
 - fix grade support numerator figures (#326)
 - fix grade support denominator figures (#326)
 - fix grade support fraction figures (#326)
@@ -68,10 +68,10 @@
 - remove unneeded ustraight-cy glyph (#306)
 - remove unneeded localization ge-cy.loclSRB glyph (#306)
 - remove unneeded G.ss06 glyph (#306)
-- remove unneeded peace glyph (#306)
-- remove unneeded whiteFrowningFace glyph (#306)
-- remove unneeded whiteSmilingFace glyph (#306)
-- remove unneeded apple glyph (#306)
+- remove unneeded PEACE SYMBOL (U+262E) glyph (#306)
+- remove unneeded WHITE FROWNING FACE (U+2639) glyph (#306)
+- remove unneeded WHITE SMILING FACE (U+263A) glyph (#306)
+- remove unneeded APPLE (U+F8FF) glyph (#306)
 - remove proprietary `#exit` anchor in Armenian designs (#306)
 - remove duplicate logo glyph forms (#306)
 
@@ -110,9 +110,11 @@
 - rename `ss04` to "File Size Units"
 - remove `ss08` Bulgarian locale stylistic set
 - transition Latin and punctuation rvrn substitutions to interpolated forms with a sharp avar table
-- improve location and scale of dagesh mark across the weight axis
+- improve location and scale of HEBREW POINT DAGESH (U+05BC) across the weight axis
 - punctuation kerning improvements (includes double and single quote kerning changes)
-- minor dollar, percent, and ampersand symbol design refinements
+- minor DOLLAR (U+0024) design refinements
+- minor PERCENT SIGN (U+0025) design refinements
+- minor AMPERSAND (U+0026) design refinements
 - execute subsetter on variable font format files (file size improvement)
 - update fonttools dependency to v4.19.1
 - update ufo2ft dependency to v2.19.2
