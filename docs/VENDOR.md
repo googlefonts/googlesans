@@ -37,7 +37,7 @@ We ask the following from vendors who contribute to the Google Sans project:
 
 ### Generating Glyphs.app Source Files
 
-If you work in Glyphs.app and want to generate sources for modification, skip using Glyphs.app's built-in im- and exporter functionality. Instead, run:
+If you work in Glyphs.app and want to generate sources for modification, skip using Glyphs.app's built-in importer / exporter functionality. Instead, run:
 
 ```
 $ python3 scripts/gs-ufo2glyphs.py source/GoogleSans/GoogleSans.designspace
