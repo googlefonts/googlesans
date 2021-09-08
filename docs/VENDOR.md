@@ -35,7 +35,7 @@ We ask the following from vendors who contribute to the Google Sans project:
 
 ## Contributing to the Google Sans Project
 
-### Generating Glpyhs.app Source Files
+### Generating Glyphs.app Source Files
 
 If you work in Glyphs.app and want to generate sources for modification, skip using Glyphs.app's built-in im- and exporter functionality. Instead, run:
 
