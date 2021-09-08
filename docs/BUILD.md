@@ -20,6 +20,7 @@ Run the following commands in the root of the repository to install the required
 
 ```
 $ make setup
+# Activate .venv now
 $ make
 ```
 
