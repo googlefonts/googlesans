@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="oMatra-tamil" format="2">
+  <advance width="2184"/>
+  <unicode hex="0BCA"/>
+  <outline>
+    <component base="eMatra-tamil"/>
+    <component base="dottedCircle" xOffset="926"/>
+    <component base="aaMatra-tamil" xOffset="1580"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>2</integer>
+          <key>name</key>
+          <string>aaMatra-tamil</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>eMatra-tamil</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>ra-tamil</string>
+    </dict>
+  </lib>
+</glyph>

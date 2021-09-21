@@ -1,0 +1,135 @@
+@tml2_default_punctuation = [period comma colon semicolon ellipsis exclam question asterisk parenleft parenright braceleft braceright bracketleft bracketright quotedblleft quotedblright quoteleft quoteright];
+@tml2_localised_punctuation = [period.loclTAML comma.loclTAML colon.loclTAML semicolon.loclTAML ellipsis.loclTAML exclam.loclTAML question.loclTAML asterisk.loclTAML parenleft.loclTAML parenright.loclTAML braceleft.loclTAML braceright.loclTAML bracketleft.loclTAML bracketright.loclTAML quotedblleft.loclTAML quotedblright.loclTAML quoteleft.loclTAML quoteright.loclTAML];
+@tml2_default_figures = [zero one two three four five six seven eight nine];
+@tml2_default_figures_tab = [zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf];
+@tml2_localised_figures_dflt = [zero.loclTAML one.loclTAML two.loclTAML three.loclTAML four.loclTAML five.loclTAML six.loclTAML seven.loclTAML eight.loclTAML nine.loclTAML];
+@tml2_localised_figures_tab = [zero.loclTAML.tf one.loclTAML.tf two.loclTAML.tf three.loclTAML.tf four.loclTAML.tf five.loclTAML.tf six.loclTAML.tf seven.loclTAML.tf eight.loclTAML.tf nine.loclTAML.tf];
+
+feature locl {
+    script tml2;
+    lookup tml2_TAM_locl_localised_punctuations {
+        sub @tml2_default_punctuation by @tml2_localised_punctuation;
+    } tml2_TAM_locl_localised_punctuations;
+
+    lookup tml2_TAM_locl_localised_numerals {
+        sub @tml2_default_figures by @tml2_localised_figures_dflt;
+    } tml2_TAM_locl_localised_numerals;
+
+} locl;
+
+feature akhn {
+    script tml2;
+    lookup tml2_dflt_akhn_akhands {
+        sub ka-tamil pulli-tamil ssa-tamil by k_ssa-tamil;
+    } tml2_dflt_akhn_akhands;
+} akhn;
+
+feature abvs {
+    script tml2;
+    lookup tml2_dflt_abvs_iiMatraAlternate {
+        sub [nga-tamil pa-tamil ya-tamil va-tamil] iiMatra-tamil' by iiMatra-tamil.alt;
+    } tml2_dflt_abvs_iiMatraAlternate;
+
+    lookup tml2_dflt_abvs_iimatra_ligatures {
+        sub ja-tamil iiMatra-tamil by ja_iiMatra-tamil;
+        sub ma-tamil iiMatra-tamil by ma_iiMatra-tamil;
+        sub rra-tamil iiMatra-tamil by rra_iiMatra-tamil;
+        sub la-tamil iiMatra-tamil by la_iiMatra-tamil;
+        sub llla-tamil iiMatra-tamil by llla_iiMatra-tamil;
+        sub ssa-tamil iiMatra-tamil by ssa_iiMatra-tamil;
+        sub sa-tamil iiMatra-tamil by sa_iiMatra-tamil;
+        sub ha-tamil iiMatra-tamil by ha_iiMatra-tamil;
+        sub k_ssa-tamil iiMatra-tamil by k_ssa_iiMatra-tamil;
+        sub sha-tamil pulli-tamil ra-tamil iiMatra-tamil by sh_ra_iiMatra-tamil;
+    } tml2_dflt_abvs_iimatra_ligatures;
+} abvs;
+
+feature psts {
+    script tml2;
+    lookup tml2_dflt_psts_iMatraAlternate {
+        sub [nna-tamil nnna-tamil ra-tamil lla-tamil sha-tamil] iMatra-tamil' by iMatra-tamil.alt;
+    } tml2_dflt_psts_iMatraAlternate;
+
+    lookup tml2_dflt_psts_iMatraLigatures {
+        sub ka-tamil iMatra-tamil by ka_iMatra-tamil;
+        sub ca-tamil iMatra-tamil by ca_iMatra-tamil;
+        sub ja-tamil iMatra-tamil by ja_iMatra-tamil;
+        sub tta-tamil iMatra-tamil by tta_iMatra-tamil;
+        sub ta-tamil iMatra-tamil by ta_iMatra-tamil;
+        sub na-tamil iMatra-tamil by na_iMatra-tamil;
+        sub ma-tamil iMatra-tamil by ma_iMatra-tamil;
+        sub rra-tamil iMatra-tamil by rra_iMatra-tamil;
+        sub la-tamil iMatra-tamil by la_iMatra-tamil;
+        sub sa-tamil iMatra-tamil by sa_iMatra-tamil;
+        sub k_ssa-tamil iMatra-tamil by k_ssa_iMatra-tamil;
+        sub nya-tamil iMatra-tamil by nya_iMatra-tamil;
+        sub llla-tamil iMatra-tamil by llla_iMatra-tamil;
+        sub ssa-tamil iMatra-tamil by ssa_iMatra-tamil;
+        sub ha-tamil iMatra-tamil by ha_iMatra-tamil;
+    } tml2_dflt_psts_iMatraLigatures;
+
+    lookup tml2_dflt_psts_uMatraLigatures {
+        sub ka-tamil uMatra-tamil by ka_uMatra-tamil;
+        sub nga-tamil uMatra-tamil by nga_uMatra-tamil;
+        sub ca-tamil uMatra-tamil by ca_uMatra-tamil;
+        sub nya-tamil uMatra-tamil by nya_uMatra-tamil;
+        sub tta-tamil uMatra-tamil by tta_uMatra-tamil;
+        sub nna-tamil uMatra-tamil by nna_uMatra-tamil;
+        sub ta-tamil uMatra-tamil by ta_uMatra-tamil;
+        sub na-tamil uMatra-tamil by na_uMatra-tamil;
+        sub nnna-tamil uMatra-tamil by nnna_uMatra-tamil;
+        sub pa-tamil uMatra-tamil by pa_uMatra-tamil;
+        sub ma-tamil uMatra-tamil by ma_uMatra-tamil;
+        sub ya-tamil uMatra-tamil by ya_uMatra-tamil;
+        sub ra-tamil uMatra-tamil by ra_uMatra-tamil;
+        sub rra-tamil uMatra-tamil by rra_uMatra-tamil;
+        sub la-tamil uMatra-tamil by la_uMatra-tamil;
+        sub lla-tamil uMatra-tamil by lla_uMatra-tamil;
+        sub llla-tamil uMatra-tamil by llla_uMatra-tamil;
+        sub va-tamil uMatra-tamil by va_uMatra-tamil;
+        sub sa-tamil uMatra-tamil by sa_uMatra-tamil;
+        sub k_ssa-tamil uMatra-tamil by k_ssa_uMatra-tamil;
+        sub nga-tamil uMatra-tamil by nga_uMatra-tamil;
+        sub nya-tamil uMatra-tamil by nya_uMatra-tamil;
+        sub nna-tamil uMatra-tamil by nna_uMatra-tamil;
+        sub nnna-tamil uMatra-tamil by nnna_uMatra-tamil;
+        sub llla-tamil uMatra-tamil by llla_uMatra-tamil;
+        sub ssa-tamil uMatra-tamil by ssa_uMatra-tamil;
+        sub ha-tamil uMatra-tamil by ha_uMatra-tamil;
+    } tml2_dflt_psts_uMatraLigatures;
+
+    lookup tml2_dflt_psts_uuMatraLigatures {
+        sub ka-tamil uuMatra-tamil by ka_uuMatra-tamil;
+        sub nga-tamil uuMatra-tamil by nga_uuMatra-tamil;
+        sub ca-tamil uuMatra-tamil by ca_uuMatra-tamil;
+        sub nya-tamil uuMatra-tamil by nya_uuMatra-tamil;
+        sub tta-tamil uuMatra-tamil by tta_uuMatra-tamil;
+        sub nna-tamil uuMatra-tamil by nna_uuMatra-tamil;
+        sub ta-tamil uuMatra-tamil by ta_uuMatra-tamil;
+        sub na-tamil uuMatra-tamil by na_uuMatra-tamil;
+        sub nnna-tamil uuMatra-tamil by nnna_uuMatra-tamil;
+        sub pa-tamil uuMatra-tamil by pa_uuMatra-tamil;
+        sub ma-tamil uuMatra-tamil by ma_uuMatra-tamil;
+        sub ya-tamil uuMatra-tamil by ya_uuMatra-tamil;
+        sub ra-tamil uuMatra-tamil by ra_uuMatra-tamil;
+        sub rra-tamil uuMatra-tamil by rra_uuMatra-tamil;
+        sub la-tamil uuMatra-tamil by la_uuMatra-tamil;
+        sub lla-tamil uuMatra-tamil by lla_uuMatra-tamil;
+        sub llla-tamil uuMatra-tamil by llla_uuMatra-tamil;
+        sub va-tamil uuMatra-tamil by va_uuMatra-tamil;
+        sub sa-tamil uuMatra-tamil by sa_uuMatra-tamil;
+        sub k_ssa-tamil uuMatra-tamil by k_ssa_uuMatra-tamil;
+        sub nga-tamil uuMatra-tamil by nga_uuMatra-tamil;
+        sub nya-tamil uuMatra-tamil by nya_uuMatra-tamil;
+        sub nna-tamil uuMatra-tamil by nna_uuMatra-tamil;
+        sub nnna-tamil uuMatra-tamil by nnna_uuMatra-tamil;
+        sub llla-tamil uuMatra-tamil by llla_uuMatra-tamil;
+        sub ssa-tamil uuMatra-tamil by ssa_uuMatra-tamil;
+        sub ha-tamil uuMatra-tamil by ha_uuMatra-tamil;
+    } tml2_dflt_psts_uuMatraLigatures;
+} psts;
+
+feature tnum {
+    script tml2;
+    sub @tml2_localised_figures_dflt by @tml2_localised_figures_tab;
+} tnum;

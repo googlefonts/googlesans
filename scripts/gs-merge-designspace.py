@@ -140,8 +140,8 @@ def canonical_location(
 # Actually import now.
 for import_source in designspace_import.sources:
     if import_source.layerName is not None:
-        logging.error("Brace layers not supported currently.")
-        sys.exit(1)
+        logging.error("Brace layers not supported currently: %s", import_source.asdict())
+        continue
 
     if "GRAD" not in import_source.location:
         import_is_ungraded = True
