@@ -4,6 +4,7 @@
 
 ### New
 
+- add Tamil script (#374)
 - add Thai script, looped style (#365)
 - add new MIDLINE HORIZONTAL ELLIPSIS (U+22EF) (#371)
 - add new stylistic set 08 with alternate single story Latin letter `a` forms (#360)
