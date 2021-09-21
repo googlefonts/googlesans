@@ -1,0 +1,19 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+akhn = true
+psts = true
+
+[input]
+script = "taml"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ணி னி ரி ளி ஶி", # Alternate iMatra Contexts
+    "கி சி ஜி ஞி டி தி நி மி றி லி ழி ஷி ஸி ஹி க்ஷி", # iMatra Ligatures
+    "கு ஙு சு ஞு டு ணு து நு னு பு மு யு ரு று லு ளு ழு வு ஷு ஸு ஹு க்ஷு", # uMatra Ligatures
+    "கூ ஙூ சூ ஞூ டூ ணூ தூ நூ னூ பூ மூ யூ ரூ றூ லூ ளூ ழூ வூ ஷூ ஸு ஹூ க்ஷூ" # uuMatra Ligatures
+]
+
+
