@@ -11,12 +11,14 @@
 
 ### Changed
 
+- modified Greek polytonic uppercase spacing (#384)
 - refactored Makefile based build workflow to support parallel format x slant builds (#335)
 - use `public.openTypeCategories` to organize GDEF table (#367)
 - store GDEF data in UFO's (#367)
 
 ### Fixed
 
+- fix Greek recursive components, these were flattened (#384)
 - fix HEBREW LETTER VAV (U+05D5) and HEBREW LETTER YOD (U+05D9) `dlig` feature (addressed incorrect glyph order in feature code, #355)
 - fix ligature caret positions in static instances (#367)
 - fix DIGIT SIX (U+0036) and DIGIT NINE (U+0039) figure outline artifacts in Italic opsz 17 GRAD -50 (#377)
