@@ -6,9 +6,14 @@
 
 - add Tamil script (#374)
 - add Thai script, looped style (#365)
-- add new MIDLINE HORIZONTAL ELLIPSIS (U+22EF) (#371)
-- add new HYPHEN (U+2010) (#376)
-- add new NON-BREAKING HYPHEN (U+2011) (#376)
+- add DEVANAGARI SIGN INVERTED CANDRABINDU (U+0900) (#378) - Bureau of Indian Standards compliance
+- add DEVANAGARI STRESS SIGN UDATTA (U+0951) (#378) - Bureau of Indian Standards compliance
+- add DEVANAGARI STRESS SIGN ANUDATTA (U+0952) (#378) - Bureau of Indian Standards compliance
+- add DEVANAGARI GRAVE ACCENT (U+0953) (#378) - Bureau of Indian Standards compliance
+- add DEVANAGARI ACUTE ACCENT (U+0954) (#378) - Bureau of Indian Standards compliance
+- add HYPHEN (U+2010) (#376)
+- add MIDLINE HORIZONTAL ELLIPSIS (U+22EF) (#371)
+- add NON-BREAKING HYPHEN (U+2011) (#376)
 - add new stylistic set 08 with alternate single story Latin letter `a` forms (#360)
 
 ### Changed
