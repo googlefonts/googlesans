@@ -27,6 +27,8 @@
 
 - fix Greek recursive components, these were flattened (#384)
 - fix HEBREW LETTER VAV (U+05D5) and HEBREW LETTER YOD (U+05D9) `dlig` feature (addressed incorrect glyph order in feature code, #355)
+- fix LATIN CAPITAL LETTER ENG (U+0330) incorrect tail alignment (#379)
+- fix LATIN SMALL LETTER ENG (U+0145) incorrect tail alignment (#379)
 - fix ligature caret positions in static instances (#367)
 - fix DIGIT SIX (U+0036) and DIGIT NINE (U+0039) figure outline artifacts in Italic opsz 17 GRAD -50 (#377)
 
