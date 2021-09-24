@@ -34,6 +34,11 @@
 
 ### Dependencies
 
+- update cu2qu from v1.6.7 to v1.6.7.post1 (#394)
+- update fontmake from v2.4.0 to v2.4.2 (#394)
+- update fonttools from v4.25.0 to v4.27.1 (#394)
+- update ufo2ft from v2.21.0 to v2.24.0 (#394)
+- update ufolib2 from v0.11.1 to v0.11.3 (#394)
 - GH Actions: actions/setup-python to "v2" release line for expanded pypy3 interpreter support (#363)
 
 ## Version 5.000
