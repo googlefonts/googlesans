@@ -1,4 +1,17 @@
 # pyright: basic
+# Copyright 2021 Google Sans Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 import collections
 import copy
@@ -250,9 +263,7 @@ def scrub_graded_sources(sources: List[SourceDescriptor]) -> None:
             graded_glyphs = set(graded_source.font.keys())
             graded_default_layer = graded_source.font.layers.defaultLayer
             for glyph_name in all_glyphs - graded_glyphs:
-                graded_default_layer.insertGlyph(
-                    source.font[glyph_name], overwrite=True
-                )
+                graded_default_layer.insertGlyph(source.font[glyph_name], overwrite=True)
 
             graded_source.font.groups = source.font.groups
             graded_source.font.kerning = source.font.kerning
