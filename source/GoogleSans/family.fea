@@ -171,7 +171,6 @@ feature ccmp {
 } ccmp;
 
 feature locl {
-    sub [space hyphen softhyphen endash emdash underscore] etatonos' [space hyphen softhyphen endash emdash underscore comma] by Etatonos;
     script latn;
     language CAT;
     sub L' periodcentered' L by Ldot;
