@@ -49,16 +49,7 @@ feature ccmp {
         @CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb];
         sub [i j]' @CombiningTopAccents by [idotless jdotless];
         sub [i j]' @CombiningNonTopAccents @CombiningTopAccents by [idotless jdotless];
-        @Markscomb = [tonos psili koronis dasia dasiavaria psilioxia dasiaoxia psiliperispomeni dasiaperispomeni dialytikavaria dialytikaperispomeni varia oxia perispomeni psilivaria dialytikaoxia];
-        @MarkscombCase = [tonos.case psili.case koronis.case dasia.case dasiavaria.case psilioxia.case dasiaoxia.case psiliperispomeni.case dasiaperispomeni.case dialytikavaria.case dialytikaperispomeni.case varia.case oxia.case perispomeni.case psilivaria.case dialytikaoxia.case];
-        sub @Markscomb @Markscomb' by @MarkscombCase;
-        sub @Uppercase @Markscomb' by @MarkscombCase;
     } ccmp_Other_1;
-
-    lookup ccmp_Other_2 {
-        sub @Markscomb' @MarkscombCase by @MarkscombCase;
-        sub @MarkscombCase @Markscomb' by @MarkscombCase;
-    } ccmp_Other_2;
 
     lookup ccmp_latn_1 {
         lookupflag 0;
