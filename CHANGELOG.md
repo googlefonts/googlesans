@@ -22,6 +22,7 @@
 - refactored Makefile based build workflow to support parallel format x slant builds (#335)
 - use `public.openTypeCategories` to organize GDEF table (#367)
 - store GDEF data in UFO's (#367)
+- eliminate Greek ccmp feature code (#391)
 
 ### Fixed
 
