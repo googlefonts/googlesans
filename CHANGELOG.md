@@ -15,6 +15,7 @@
 - add MIDLINE HORIZONTAL ELLIPSIS (U+22EF) (#371)
 - add NON-BREAKING HYPHEN (U+2011) (#376)
 - add new stylistic set 08 with alternate single story Latin letter `a` forms (#360)
+- add git commit SHA1 short hash to name table, nameID 5 record (#395)
 
 ### Changed
 
