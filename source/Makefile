@@ -23,8 +23,6 @@ PYTHON3_EXE=python3
 
 # --------------------------------------------------------
 #  fontmake compiler executable
-#    NOTE: this builds from a venv install to support
-#          pinned dependency versions
 # --------------------------------------------------------
 FONTMAKE_EXE=FONTTOOLS_GPOS_COMPACT_MODE=5 fontmake --verbose WARNING
 
@@ -43,9 +41,7 @@ VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
 
 STAGING_DIR=GoogleSans/staging
 
-# Static font expert Text opsz build artifacts
-#  - these paths are necessary for post compile path
-#    edits vs. what comes out of the compiler
+# Static font artifact paths
 STATIC_TEXT_BUILD_PATH_REGULAR=$(STATIC_BUILD_DIR)/GoogleSansText-Regular.ttf
 STATIC_TEXT_BUILD_PATH_ITALIC=$(STATIC_BUILD_DIR)/GoogleSansText-Italic.ttf
 STATIC_TEXT_BUILD_PATH_BOLD=$(STATIC_BUILD_DIR)/GoogleSansText-Bold.ttf
@@ -63,13 +59,13 @@ STATIC_DISPLAY_BUILD_PATH_MEDIUMITALIC=$(STATIC_BUILD_DIR)/GoogleSans-MediumItal
 STATIC_UPRIGHT_BUILD_PATHS = $(STATIC_TEXT_BUILD_PATH_REGULAR) $(STATIC_TEXT_BUILD_PATH_MEDIUM) $(STATIC_TEXT_BUILD_PATH_BOLD) $(STATIC_DISPLAY_BUILD_PATH_REGULAR) $(STATIC_DISPLAY_BUILD_PATH_MEDIUM) $(STATIC_DISPLAY_BUILD_PATH_BOLD)
 STATIC_ITALIC_BUILD_PATHS = $(STATIC_TEXT_BUILD_PATH_ITALIC) $(STATIC_TEXT_BUILD_PATH_MEDIUMITALIC) $(STATIC_TEXT_BUILD_PATH_BOLDITALIC) $(STATIC_DISPLAY_BUILD_PATH_ITALIC) $(STATIC_DISPLAY_BUILD_PATH_MEDIUMITALIC) $(STATIC_DISPLAY_BUILD_PATH_BOLDITALIC)
 
-# Variable font build artifacts
+# Variable font artifact paths
 
-# upright
+# Roman
 VARIABLE_BUILD_PATH_UPRIGHT=$(VARIABLE_BUILD_DIR)/GoogleSans-VF.ttf
 VARIABLE_BUILD_PATH_UPRIGHT_TARGET=$(VARIABLE_BUILD_DIR)/GoogleSans[GRAD,opsz,wght].ttf
 
-# italic
+# Italic
 VARIABLE_BUILD_PATH_ITALIC=$(VARIABLE_BUILD_DIR)/GoogleSans-Italic-VF.ttf
 VARIABLE_BUILD_PATH_ITALIC_TARGET=$(VARIABLE_BUILD_DIR)/GoogleSans-Italic[GRAD,opsz,wght].ttf
 
@@ -110,12 +106,14 @@ gs-static-upright: $(FONT_BUILD_DIR)
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $(STATIC_UPRIGHT_BUILD_PATHS)
 	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $(STATIC_UPRIGHT_BUILD_PATHS)
 	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(STATIC_UPRIGHT_BUILD_PATHS)
+	font-v write --sha1 $(STATIC_UPRIGHT_BUILD_PATHS)
 
 gs-static-italic: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) --interpolate -o ttf --output-dir $(STATIC_BUILD_DIR) --expand-features-to-instances
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $(STATIC_ITALIC_BUILD_PATHS)
 	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $(STATIC_ITALIC_BUILD_PATHS)
 	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(STATIC_ITALIC_BUILD_PATHS)
+	font-v write --sha1 $(STATIC_ITALIC_BUILD_PATHS)
 
 gs-vf: gs-vf-upright gs-vf-italic
 
@@ -126,6 +124,7 @@ VARIABLE_BUILD_PATH_UPRIGHT_TARGET: $(FONT_BUILD_DIR)
 	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py --tables MVAR $(VARIABLE_BUILD_PATH_UPRIGHT)
 	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(VARIABLE_BUILD_PATH_UPRIGHT)
 	$(PYTHON3_EXE) ../scripts/gs-stat.py $(VARIABLE_BUILD_PATH_UPRIGHT)
+	font-v write --sha1 $(VARIABLE_BUILD_PATH_UPRIGHT)
 	mv $(VARIABLE_BUILD_PATH_UPRIGHT) "$(VARIABLE_BUILD_PATH_UPRIGHT_TARGET)"
 
 VARIABLE_BUILD_PATH_ITALIC_TARGET: $(FONT_BUILD_DIR)
@@ -135,6 +134,7 @@ VARIABLE_BUILD_PATH_ITALIC_TARGET: $(FONT_BUILD_DIR)
 	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py --tables MVAR $(VARIABLE_BUILD_PATH_ITALIC)
 	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(VARIABLE_BUILD_PATH_ITALIC)
 	$(PYTHON3_EXE) ../scripts/gs-stat.py $(VARIABLE_BUILD_PATH_ITALIC)
+	font-v write --sha1 $(VARIABLE_BUILD_PATH_ITALIC)
 	mv $(VARIABLE_BUILD_PATH_ITALIC) "$(VARIABLE_BUILD_PATH_ITALIC_TARGET)"
 
 gs-vf-vendor: gs-vf-vendor-glyphs2designspace
