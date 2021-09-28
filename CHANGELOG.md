@@ -33,6 +33,7 @@
 - fix LATIN SMALL LETTER ENG (U+0145) incorrect tail alignment (#379)
 - fix ligature caret positions in static instances (#367)
 - fix DIGIT SIX (U+0036) and DIGIT NINE (U+0039) figure outline artifacts in Italic opsz 17 GRAD -50 (#377)
+- fix colon.ss03 substitution in Roman style (addressed conflict with calt) (#398)
 
 ### Dependencies
 
