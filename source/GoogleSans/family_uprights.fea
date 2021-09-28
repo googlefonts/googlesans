@@ -55,7 +55,7 @@ feature ss03 {
 } ss03;
 
 feature calt {
-    sub [zero.ss03 one.ss03 two.ss03 three.ss03 four.ss03 five.ss03 six.ss03 seven.ss03 eight.ss03 nine.ss03] colon' [zero.ss03 one.ss03 two.ss03 three.ss03 four.ss03 five.ss03 six.ss03 seven.ss03 eight.ss03 nine.ss03] by colon.time;
+    sub [zero.ss03 one.ss03 two.ss03 three.ss03 four.ss03 five.ss03 six.ss03 seven.ss03 eight.ss03 nine.ss03] colon.time' [zero.ss03 one.ss03 two.ss03 three.ss03 four.ss03 five.ss03 six.ss03 seven.ss03 eight.ss03 nine.ss03] by colon.ss03;
 } calt;
 
 feature kern {
