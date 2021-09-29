@@ -1331,6 +1331,7 @@ feature c2sc {
     sub Atilde by atilde.sc;
     sub AE by ae.sc;
     sub AEacute by aeacute.sc;
+    sub AEmacron by aemacron.sc;
     sub B by b.sc;
     sub C by c.sc;
     sub Cacute by cacute.sc;
@@ -1879,6 +1880,7 @@ feature smcp {
     sub [atilde atilde.alt] by atilde.sc;
     sub [ae ae.alt] by ae.sc;
     sub [aeacute aeacute.alt] by aeacute.sc;
+    sub [aemacron aemacron.alt] by aemacron.sc;
     sub b by b.sc;
     sub c by c.sc;
     sub cacute by cacute.sc;
