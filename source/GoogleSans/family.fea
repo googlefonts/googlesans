@@ -171,7 +171,6 @@ feature ccmp {
 } ccmp;
 
 feature locl {
-    sub [space hyphen softhyphen endash emdash underscore] etatonos' [space hyphen softhyphen endash emdash underscore comma] by Etatonos;
     script latn;
     language CAT;
     sub L' periodcentered' L by Ldot;
@@ -340,7 +339,6 @@ feature ordn {
 
 feature case {
     sub @cap_off by @cap_on;
-    sub [space hyphen softhyphen endash emdash underscore] etatonos' [space hyphen softhyphen endash emdash underscore comma] by Etatonos;
     lookup armn_case_substitution;
     lookup armn_case_contextual_substitution;
 } case;
@@ -1559,7 +1557,7 @@ feature calt {
     sub g underscore l o g o by g.logo;
     sub l underscore l o g o by l.logo;
     sub o underscore l o g o by o.logo;
-    sub [space hyphen softhyphen endash emdash underscore] etatonos.sc' [space hyphen softhyphen endash emdash underscore comma] by etatonos.sc.ss06;
+    sub [space hyphen nbspace endash emdash underscore] etatonos.sc' [space hyphen nbspace endash emdash underscore comma] by etatonos.sc.ss06;
     sub [zero one two three four five six seven eight nine] colon' [zero one two three four five six seven eight nine] by colon.time;
     sub [zero.cap one.cap two.cap three.cap four.cap five.cap six.cap seven.cap eight.cap nine.cap] colon' [zero.cap one.cap two.cap three.cap four.cap five.cap six.cap seven.cap eight.cap nine.cap] by colon.time;
     sub [zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf] colon.tf' [zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf] by colon.time;
