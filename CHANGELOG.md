@@ -1,5 +1,50 @@
 # Google Sans Changelog
 
+## Version 6.000
+
+### New
+
+- add Tamil script (#374)
+- add Thai script, looped style (#365)
+- add DEVANAGARI SIGN INVERTED CANDRABINDU (U+0900) (#378) - Bureau of Indian Standards compliance
+- add DEVANAGARI STRESS SIGN UDATTA (U+0951) (#378) - Bureau of Indian Standards compliance
+- add DEVANAGARI STRESS SIGN ANUDATTA (U+0952) (#378) - Bureau of Indian Standards compliance
+- add DEVANAGARI GRAVE ACCENT (U+0953) (#378) - Bureau of Indian Standards compliance
+- add DEVANAGARI ACUTE ACCENT (U+0954) (#378) - Bureau of Indian Standards compliance
+- add HYPHEN (U+2010) (#376)
+- add MIDLINE HORIZONTAL ELLIPSIS (U+22EF) (#371)
+- add NON-BREAKING HYPHEN (U+2011) (#376)
+- add new stylistic set 08 with alternate single story Latin letter `a` forms (#360)
+- add git commit SHA1 short hash to name table, nameID 5 record (#395)
+
+### Changed
+
+- modified Greek polytonic uppercase spacing (#384)
+- refactored Makefile based build workflow to support parallel format x slant builds (#335)
+- use `public.openTypeCategories` to organize GDEF table (#367)
+- store GDEF data in UFO's (#367)
+- eliminate Greek ccmp feature code (#391)
+
+### Fixed
+
+- fix Greek recursive components, these were flattened (#384)
+- fix HEBREW LETTER VAV (U+05D5) and HEBREW LETTER YOD (U+05D9) `dlig` feature (addressed incorrect glyph order in feature code, #355)
+- fix LATIN CAPITAL LETTER ENG (U+0330) incorrect tail alignment (#379)
+- fix LATIN SMALL LETTER ENG (U+0145) incorrect tail alignment (#379)
+- fix ligature caret positions in static instances (#367)
+- fix DIGIT SIX (U+0036) and DIGIT NINE (U+0039) figure outline artifacts in Italic opsz 17 GRAD -50 (#377)
+- fix calt, case, and locl feature code etatonos/Etatonos substitution shaping (#397)
+- fix colon.ss03 substitution in Roman style (addressed conflict with calt) (#398)
+
+### Dependencies
+
+- update cu2qu from v1.6.7 to v1.6.7.post1 (#394)
+- update fontmake from v2.4.0 to v2.4.2 (#394)
+- update fonttools from v4.25.0 to v4.27.1 (#394)
+- update ufo2ft from v2.21.0 to v2.24.0 (#394)
+- update ufolib2 from v0.11.1 to v0.11.3 (#394)
+- GH Actions: actions/setup-python to "v2" release line for expanded pypy3 interpreter support (#363)
+
 ## Version 5.000
 
 ### New
@@ -17,18 +62,18 @@
 
 - convert logo forms to components (#306)
 - transition Hebrew rvrn forms to compatible forms + avar (#281)
-- remove unnecessary outline data in U+00AD (soft hyphen)
-- remove unnecessary outline data in U+200C (zero width nonjoiner)
-- remove unnecessary outline data in U+200D (zero width joiner)
+- remove unnecessary outline data in SOFT HYPHEN (U+00AD)
+- remove unnecessary outline data in ZERO WIDTH NON-JOINER (U+200C)
+- remove unnecessary outline data in ZERO WIDTH JOINER (U+200D)
 - update scripts/internal/normalize.py with unused kerning group cleanup source (#317)
 - added new `metadata` Makefile target that generates the release METADATA.pb configuration file
 
 ### Fixed
 
-- added missing ldot (U+0140) small caps feature support (#276)
-- added 1-200 GRAD support for Kai symbol (U+03CF) (#283)
-- elimninate inappropriate tail movement across grade axis in italic kahook-cy (#282)
-- fix Eng tail position (#332)
+- added missing LATIN SMALL LETTER L WITH MIDDLE DOT (U+0140) small caps feature support (#276)
+- added 1-200 GRAD support for GREEK CAPITAL KAI SYMBOL (U+03CF) (#283)
+- elimninate inappropriate tail movement across grade axis in italic CYRILLIC SMALL LETTER KA WITH HOOK (U+04C4) (#282)
+- fix LATIN CAPITAL LETTER ENG (U+014A) tail position (#332)
 - fix grade support numerator figures (#326)
 - fix grade support denominator figures (#326)
 - fix grade support fraction figures (#326)
@@ -44,10 +89,10 @@
 - remove unneeded ustraight-cy glyph (#306)
 - remove unneeded localization ge-cy.loclSRB glyph (#306)
 - remove unneeded G.ss06 glyph (#306)
-- remove unneeded peace glyph (#306)
-- remove unneeded whiteFrowningFace glyph (#306)
-- remove unneeded whiteSmilingFace glyph (#306)
-- remove unneeded apple glyph (#306)
+- remove unneeded PEACE SYMBOL (U+262E) glyph (#306)
+- remove unneeded WHITE FROWNING FACE (U+2639) glyph (#306)
+- remove unneeded WHITE SMILING FACE (U+263A) glyph (#306)
+- remove unneeded APPLE (U+F8FF) glyph (#306)
 - remove proprietary `#exit` anchor in Armenian designs (#306)
 - remove duplicate logo glyph forms (#306)
 
@@ -86,9 +131,11 @@
 - rename `ss04` to "File Size Units"
 - remove `ss08` Bulgarian locale stylistic set
 - transition Latin and punctuation rvrn substitutions to interpolated forms with a sharp avar table
-- improve location and scale of dagesh mark across the weight axis
+- improve location and scale of HEBREW POINT DAGESH (U+05BC) across the weight axis
 - punctuation kerning improvements (includes double and single quote kerning changes)
-- minor dollar, percent, and ampersand symbol design refinements
+- minor DOLLAR (U+0024) design refinements
+- minor PERCENT SIGN (U+0025) design refinements
+- minor AMPERSAND (U+0026) design refinements
 - execute subsetter on variable font format files (file size improvement)
 - update fonttools dependency to v4.19.1
 - update ufo2ft dependency to v2.19.2
