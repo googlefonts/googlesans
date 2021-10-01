@@ -23,7 +23,7 @@ jobs:
           buildpath: "build/GoogleSans"
           dependpath: "requirements.txt"
           py-version: ${{ matrix.python-version }}
-          buildcommand: "make"
+          buildcommand: "make -j"
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
         uses: actions/checkout@v2
       - name: Set env variables
