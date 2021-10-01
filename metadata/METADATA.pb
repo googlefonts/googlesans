@@ -4,7 +4,7 @@ license: "GOOGLE_RESTRICTED"
 visibility: "INTERNAL"
 category: "SANS_SERIF"
 date_added: 1496646000000  # 2017-06-05
-version: "v31"  # repository commit: 034df16c9bb8ae899e21cf7687342d93a0d42c45
+version: "v32"  # repository commit: 630090ca6dcf77aaec57d3828efd95e870a4f014
 fonts {
   name: "Google Sans"
   style: "normal"
@@ -33,6 +33,8 @@ subsets: "hebrew"
 subsets: "latin"
 subsets: "latin-ext"
 subsets: "menu"
+subsets: "tamil"
+subsets: "thai"
 subsets: "vietnamese"
 experiments: "dont_send_all_subset_through_subsetter"
 experiments: "layout_features=hist,lnum,pnum,ss02,tnum"
@@ -57,5 +59,5 @@ registry_default_overrides {
   key: "opsz"
   value: 18
 }
-[google.fonts.size]: 2004872
+[google.fonts.size]: 2405200
 
