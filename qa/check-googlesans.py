@@ -465,13 +465,16 @@ def com_google_fonts_check_googlesans_variable_fvar_axes(ttFont):
             f"Expected: {ATTRIBUTES['expected_fvar_axes']}",
         )
 
+    has_all_tags = True
     for axis_tag in ATTRIBUTES["expected_fvar_axes"]:
         if axis_tag in observed_axis_list:
             pass
         else:
+            has_all_tags = False
             yield (FAIL, f"{tt.reader.file.name} does not include axis tag {axis_tag}")
 
-    yield (PASS, f"{tt.reader.file.name} includes all expected axis tags")
+    if has_all_tags:
+        yield (PASS, f"{tt.reader.file.name} includes all expected axis tags")
 
 
 @check(
