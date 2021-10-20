@@ -488,49 +488,26 @@ def com_google_fonts_check_googlesans_variable_fvar_axes(ttFont):
 def com_google_fonts_check_googlesans_variable_fvar_default(ttFont):
     """Confirms that the variable font builds include correct fvar default."""
     tt = ttFont
-    EXPECTED_OPSZ = ATTRIBUTES["opsz_axis_default"]
-    EXPECTED_WGHT = ATTRIBUTES["wght_axis_default"]
-    EXPECTED_GRAD = ATTRIBUTES["grad_axis_default"]
+    expectations = {
+        "opsz": ATTRIBUTES["opsz_axis_default"],
+        "wght": ATTRIBUTES["wght_axis_default"],
+        "GRAD": ATTRIBUTES["grad_axis_default"]
+    }
 
     for axis in tt["fvar"].axes:
-        if axis.axisTag == "opsz":
-            if axis.defaultValue != EXPECTED_OPSZ:
+        tag = axis.axisTag
+        if tag in expectations:
+            if axis.defaultValue != expectations[tag]:
                 yield (
                     FAIL,
                     f"{tt.reader.file.name} does not include the correct "
-                    f"fvar opsz axis default.\n"
-                    f"Found: `{axis.defaultValue}` and expected `{EXPECTED_OPSZ}`",
+                    f"fvar {tag} axis default.\n"
+                    f"Found: `{axis.defaultValue}` and expected `{expectations[tag]}`",
                 )
             else:
                 yield (
                     PASS,
-                    f"{tt.reader.file.name} contains the expected fvar " f"opsz default.",
-                )
-        elif axis.axisTag == "wght":
-            if axis.defaultValue != EXPECTED_WGHT:
-                yield (
-                    FAIL,
-                    f"{tt.reader.file.name} does not include the correct "
-                    f"fvar wght axis default.\n"
-                    f"Found: `{axis.defaultValue}` and expected `{EXPECTED_WGHT}`",
-                )
-            else:
-                yield (
-                    PASS,
-                    f"{tt.reader.file.name} contains the expected fvar " f"wght default.",
-                )
-        elif axis.axisTag == "GRAD":
-            if axis.defaultValue != EXPECTED_GRAD:
-                yield (
-                    FAIL,
-                    f"{tt.reader.file.name} does not include the correct "
-                    f"fvar GRAD axis default.\n"
-                    f"Found: `{axis.defaultValue}` and expected `{EXPECTED_GRAD}`",
-                )
-            else:
-                yield (
-                    PASS,
-                    f"{tt.reader.file.name} contains the expected fvar " f"GRAD default.",
+                    f"{tt.reader.file.name} contains the expected fvar {tag} default.",
                 )
 
 
