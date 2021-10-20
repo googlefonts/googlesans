@@ -517,7 +517,7 @@ def com_google_fonts_check_googlesans_variable_fvar_default(ttFont):
             else:
                 yield (
                     PASS,
-                    f"{tt.reader.file.name} contains the expected fvar " f"opsz default.",
+                    f"{tt.reader.file.name} contains the expected fvar " f"wght default.",
                 )
         elif axis.axisTag == "GRAD":
             if axis.defaultValue != EXPECTED_GRAD:
