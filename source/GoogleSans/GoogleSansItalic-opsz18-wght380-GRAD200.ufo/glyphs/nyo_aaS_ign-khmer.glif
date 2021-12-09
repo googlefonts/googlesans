@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nyo_aaSign-khmer" format="2">
+  <advance width="1208"/>
+  <anchor x="522" y="-281" name="bottom"/>
+  <anchor x="714" y="-281" name="bottomright"/>
+  <anchor x="664" y="560" name="top"/>
+  <anchor x="856" y="560" name="topright"/>
+  <outline>
+    <contour>
+      <point x="980" y="0" type="line"/>
+      <point x="1063" y="0" type="line"/>
+      <point x="1129" y="375" type="line" smooth="yes"/>
+      <point x="1150" y="495"/>
+      <point x="1103" y="560"/>
+      <point x="976" y="560" type="curve" smooth="yes"/>
+      <point x="910" y="560" type="line"/>
+      <point x="896" y="483" type="line"/>
+      <point x="962" y="483" type="line" smooth="yes"/>
+      <point x="1045" y="483"/>
+      <point x="1057" y="436"/>
+      <point x="1046" y="375" type="curve" smooth="yes"/>
+    </contour>
+    <component base="nyo-khmer"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>aaSign-khmer</string>
+    </dict>
+  </lib>
+</glyph>

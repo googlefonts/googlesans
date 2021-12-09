@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nyo-khmer" format="2">
+  <advance width="900"/>
+  <unicode hex="1789"/>
+  <anchor x="606" y="-281" name="bottom"/>
+  <anchor x="804" y="-281" name="bottomright"/>
+  <anchor x="606" y="576" name="top"/>
+  <anchor x="804" y="576" name="topright"/>
+  <outline>
+    <contour>
+      <point x="631" y="-291" type="curve" smooth="yes"/>
+      <point x="745" y="-291"/>
+      <point x="814" y="-230"/>
+      <point x="814" y="-140" type="curve" smooth="yes"/>
+      <point x="814" y="-50" type="line"/>
+      <point x="643" y="-50" type="line"/>
+      <point x="643" y="-125" type="line"/>
+      <point x="694" y="-125" type="line"/>
+      <point x="694" y="-133" type="line" smooth="yes"/>
+      <point x="694" y="-166"/>
+      <point x="675" y="-187"/>
+      <point x="633" y="-187" type="curve" smooth="yes"/>
+      <point x="508" y="-187"/>
+      <point x="425" y="-73"/>
+      <point x="128" y="-73" type="curve" smooth="yes"/>
+      <point x="114" y="-73" type="line"/>
+      <point x="114" y="-177" type="line"/>
+      <point x="128" y="-177" type="line" smooth="yes"/>
+      <point x="396" y="-177"/>
+      <point x="456" y="-291"/>
+    </contour>
+    <component base="nyo-khmer.less"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>nyo-khmer.less</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>nyo-khmer.less</string>
+    </dict>
+  </lib>
+</glyph>

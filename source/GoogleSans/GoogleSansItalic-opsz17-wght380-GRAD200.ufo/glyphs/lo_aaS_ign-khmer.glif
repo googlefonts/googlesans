@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lo_aaSign-khmer" format="2">
+  <advance width="1223"/>
+  <anchor x="562" y="0" name="bottom"/>
+  <anchor x="750" y="0" name="bottomright"/>
+  <anchor x="664" y="576" name="top"/>
+  <anchor x="881" y="576" name="topright"/>
+  <outline>
+    <contour>
+      <point x="986" y="0" type="line"/>
+      <point x="1068" y="0" type="line"/>
+      <point x="1137" y="391" type="line" smooth="yes"/>
+      <point x="1158" y="509"/>
+      <point x="1115" y="576"/>
+      <point x="984" y="576" type="curve" smooth="yes"/>
+      <point x="870" y="576" type="line"/>
+      <point x="856" y="499" type="line"/>
+      <point x="970" y="499" type="line" smooth="yes"/>
+      <point x="1053" y="499"/>
+      <point x="1066" y="454"/>
+      <point x="1055" y="390" type="curve" smooth="yes"/>
+    </contour>
+    <component base="lo-khmer"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>aaSign-khmer</string>
+    </dict>
+  </lib>
+</glyph>
