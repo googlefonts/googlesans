@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="vo_aaSign-khmer" format="2">
+  <advance width="685"/>
+  <anchor x="122" y="0" name="bottom"/>
+  <anchor x="224" y="0" name="bottomright"/>
+  <anchor x="234" y="560" name="top"/>
+  <anchor x="376" y="560" name="topright"/>
+  <outline>
+    <contour>
+      <point x="422" y="0" type="line"/>
+      <point x="550" y="0" type="line"/>
+      <point x="611" y="346" type="line" smooth="yes"/>
+      <point x="636" y="489"/>
+      <point x="573" y="560"/>
+      <point x="426" y="560" type="curve" smooth="yes"/>
+      <point x="404" y="560" type="line"/>
+      <point x="384" y="449" type="line"/>
+      <point x="400" y="449" type="line" smooth="yes"/>
+      <point x="466" y="449"/>
+      <point x="496" y="417"/>
+      <point x="484" y="351" type="curve" smooth="yes"/>
+    </contour>
+    <component base="vo-khmer"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>vo-khmer</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>aaSign-khmer</string>
+    </dict>
+  </lib>
+</glyph>
