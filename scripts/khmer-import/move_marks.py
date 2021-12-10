@@ -123,8 +123,11 @@ def move_marks(composite_graph, ufo_path):
         glyph = ufo[name]
         ow = glyph.lib.get("com.schriftgestaltung.Glyphs.originalWidth")
         if ow is None:
-            print("no orig width:", name)
-            continue
+            if glyph.width:
+                ow = glyph.width
+            else:
+                print("no orig width:", name)
+                continue
         glyph.move((-ow, 0))
 
         # If the glyph is used as a component in any other glyph, move that component
