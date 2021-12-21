@@ -60,10 +60,8 @@ excluded_check_ids = (
 
 ATTRIBUTES = {
     "os2_fsselection_bit7": 1,
-    "ymax": 1115,  # defined at max across min + max opsz design space (from min opsz)
-    "ymin": -292,  # defined at min across min + max opsz design space (from min opsz)
-    "os2_win_ascent": 1115,  # must be defined at yMax value
-    "os2_win_descent": 292,  # must be defined at yMin value
+    # "ymax": 1115,  # defined at max across min + max opsz design space (from min opsz)
+    # "ymin": -292,  # defined at min across min + max opsz design space (from min opsz)
     "hhea_ascent": 966,  # set to match typo metrics values
     "hhea_descent": -286,
     "hhea_linegap": 0,
@@ -170,46 +168,50 @@ def com_google_fonts_check_googlesans_opentype_os2_fsselectionbit7(ttFonts):
         yield PASS, "The OS/2.fsSelection bit 7 (USE_TYPO_METRICS) was set in all fonts."
 
 
-# Note: winAscent and winDescent are defined at yMin and yMax values across the
-# entire design space
+# Note: winAscent and winDescent bounds are defined above yMin and below yMax values
 # OS/2.winAscent check
 @check(
     id="com.google.fonts/check/googlesans/opentype/os2/winascent",
     rationale="""
-    Confirms that the OS/2.winAscent value is defined at the yMax
-    value across the entire design space
+    Confirms that the OS/2.winAscent value is defined above the yMax
+    value across the full glyph repertoire.
     """,
 )
 def com_google_fonts_check_googlesans_opentype_os2_winascent(ttFont):
-    """OS/2.winAscent is defined at yMax value across the entire design space"""
-    if ttFont["OS/2"].usWinAscent != ATTRIBUTES["os2_win_ascent"]:
+    """OS/2.winAscent is defined above yMax value across the glyph repertoire"""
+    if ttFont["head"].yMax >= ttFont["OS/2"].usWinAscent:
         yield (
             FAIL,
-            f"The OS/2.winAscent value {ttFont['OS/2'].usWinAscent} does not "
-            f"match the required value {ATTRIBUTES['os2_win_ascent']}",
+            f"The OS/2.usWinAscent value must be larger "
+            f"than the head.yMax value.  Received: OS/2.usWinAscent = "
+            f"{ttFont['OS/2'].usWinAscent} head.yMax = {ttFont['head'].yMax}",
         )
     else:
-        yield PASS, "The OS/2.winAscent value matches the required value."
+        yield PASS, "The OS/2.winAscent definition is appropriate."
 
 
 # OS/2.winDescent check
 @check(
     id="com.google.fonts/check/googlesans/opentype/os2/windescent",
     rationale="""
-    Confirms that the OS/2.winDescent value is defined at the yMin
-    value across the entire design space
+    Confirms that the OS/2.winDescent value is defined below the yMin
+    value across the full glyph repertoire.
     """,
 )
 def com_google_fonts_check_googlesans_opentype_os2_windescent(ttFont):
-    """OS/2.winDescent is defined at yMin value across the entire design space"""
-    if ttFont["OS/2"].usWinDescent != ATTRIBUTES["os2_win_descent"]:
+    """OS/2.winDescent is defined below yMin value across the glyph repertoire"""
+    # note: WinDescent is expressed as a positive value even though the metric
+    # extends below the baseline.  We must use unary neg operation for the
+    # comparison here
+    if ttFont["head"].yMin <= -ttFont["OS/2"].usWinDescent:
         yield (
             FAIL,
-            f"The OS/2.winDescent value {ttFont['OS/2'].usWinDescent} does not "
-            f"match the required value {ATTRIBUTES['os2_win_descent']}",
+            f"The OS/2.usWinDescent value must be less "
+            f"than the head.yMin value.  Received: OS/2.usWinDescent = "
+            f"{ttFont['OS/2'].usWinDescent} head.yMin = {ttFont['head'].yMin}",
         )
     else:
-        yield PASS, "The OS/2.winDescent value matches the required value."
+        yield PASS, "The OS/2.winDescent value is appropriate."
 
 
 # hhea.Ascent check
@@ -491,7 +493,7 @@ def com_google_fonts_check_googlesans_variable_fvar_default(ttFont):
     expectations = {
         "opsz": ATTRIBUTES["opsz_axis_default"],
         "wght": ATTRIBUTES["wght_axis_default"],
-        "GRAD": ATTRIBUTES["grad_axis_default"]
+        "GRAD": ATTRIBUTES["grad_axis_default"],
     }
 
     for axis in tt["fvar"].axes:
