@@ -140,7 +140,9 @@ def canonical_location(
 # Actually import now.
 for import_source in designspace_import.sources:
     if import_source.layerName is not None:
-        logging.error("Brace layers not supported currently: %s", import_source.asdict())
+        logging.error(
+            "Brace layers not supported currently: %s", import_source.asdict()
+        )
         continue
 
     if "GRAD" not in import_source.location:
@@ -148,9 +150,12 @@ for import_source in designspace_import.sources:
 
     # Fill in the defaults if the import DS does not have e.g. a GRAD axis.
     # Match axes by tags because those are more consistent across vendor sources.
-    import_source_location = {
+    import_source_location = canonical_location(
+        import_source.location, designspace_import
+    )
+    full_import_source_location = {
         **canonical_location(designspace_target.default.location, designspace_target),
-        **canonical_location(import_source.location, designspace_import),
+        **import_source_location,
     }
 
     # Match import to target UFO.
@@ -160,7 +165,7 @@ for import_source in designspace_import.sources:
             for s in designspace_target.sources
             if (
                 canonical_location(s.location, designspace_target)
-                == import_source_location
+                == full_import_source_location
             )
         )
     except StopIteration:
@@ -175,7 +180,7 @@ for import_source in designspace_import.sources:
                 "Cannot find target for source %s because there's no target location %s "
                 "and no target with a matching master ID.",
                 import_source.name,
-                import_source_location,
+                full_import_source_location,
             )
             sys.exit(1)
 
