@@ -1,5 +1,30 @@
 # Google Sans Changelog
 
+## Version 7.000
+
+### New
+
+- add Lao script (#416)
+
+### Changed
+
+- increase OS/2.WinAscent value to 1116 (#428)
+- increase OS/2.WinDescent value to 592 (#428)
+- modified fontbakery vertical metrics checks to use global yMin and yMax values for Win metrics testing (#428)
+- parallelized the production release GitHub Action workflow (#405)
+
+### Fixed
+
+- fix graded advance widths and side bearing metrics of Greek polytonic glyphs (#424)
+- fix CYRILLIC SMALL LETTER EL WITH HOOK (U+0513) tail mis-alignment (#407)
+- fix Tamil localized international figure heights and position to improve grid fit in the FreeType rendering environment (#408)
+- fix fontbakery CI: erroneous fall through PASS (#410)
+- fix fontbakery CI: incorrect axis name in error message (#410)
+
+### Dependencies
+
+- updated lxml from v4.6.3 to v4.6.5
+
 ## Version 6.000
 
 ### New
