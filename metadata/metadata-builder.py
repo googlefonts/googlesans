@@ -24,7 +24,7 @@ import subprocess
 from pathlib import Path
 
 # Subset definitions are defined by matching the names in
-# https://github.com/googlefonts/gftools/tree/main/Lib/gftools/encodings
+# https://github.com/googlefonts/glyphsets/tree/main/Lib/glyphsets/encodings
 # with `_unique-glyphs.nam` suffix removed
 SUBSETS = (
     "armenian",
@@ -34,6 +34,7 @@ SUBSETS = (
     "greek",
     "gurmukhi",
     "hebrew",
+    "lao",
     "latin",
     "latin-ext",
     "menu",
