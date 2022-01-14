@@ -4,7 +4,7 @@ license: "GOOGLE_RESTRICTED"
 visibility: "INTERNAL"
 category: "SANS_SERIF"
 date_added: 1496646000000  # 2017-06-05
-version: "v32"  # repository commit: 630090ca6dcf77aaec57d3828efd95e870a4f014
+version: "v33"  # repository commit: ec404726ce0f1aac5d83a2d7ba87ac88cb8d5eab
 fonts {
   name: "Google Sans"
   style: "normal"
@@ -30,6 +30,7 @@ subsets: "georgian"
 subsets: "greek"
 subsets: "gurmukhi"
 subsets: "hebrew"
+subsets: "lao"
 subsets: "latin"
 subsets: "latin-ext"
 subsets: "menu"
@@ -59,5 +60,5 @@ registry_default_overrides {
   key: "opsz"
   value: 18
 }
-[google.fonts.size]: 2405200
+[google.fonts.size]: 2540128
 
