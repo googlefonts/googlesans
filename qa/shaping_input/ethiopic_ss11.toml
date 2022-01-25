@@ -1,0 +1,14 @@
+[meta]
+build_commit = ""
+
+[input.features]
+# Stylistic feature to disconnect the bars over and under strings of Ethiopic numerals.
+ss11 = true
+
+[input]
+text = [
+    # Validate that ss10 reverts positonal forms applied by ccmp for 2 digit numbers. Output should be the same as input 
+    "፶፪",
+    # Validate that ss10 reverts positonal forms applied by ccmp for 3 digit numbers. Output should be the same as input 
+    "፻፶፪",
+]
