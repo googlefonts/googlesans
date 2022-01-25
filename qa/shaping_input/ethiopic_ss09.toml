@@ -1,0 +1,24 @@
+[meta]
+build_commit = ""
+
+[input.features]
+# Redundant feature to ensure ethiopic space sub occurs to deal with script segementation issues in certain apps by providing a user selectable option.
+ss09 = true
+
+[input]
+text = [
+    # Validate that space is replaced by space.ethi between two Ethiopic words
+    "አንስቶም በየዓለመቱ",
+    # Validate that space is replaced by space.ethi when 1st words ends with 1 punctuation marks
+    "ታውጇል። ተግባራዊነቱን",
+    # Validate that space is replaced by space.ethi when 1st word ends with 2 punctuation marks
+    "የምገልጸው።» ባለፉት",
+    # Validate that space is replaced by space.ethi when 2nd word is preceded by punctuation
+    "አሕመድ «ከልማት",
+    # Validate that space is replaced by space.ethi when 1st word ends with punctuation and 2nd word begins with punctuation
+    "ብለውታል። «ምናልባት",
+    # Validate that space is replaced by space.ethi when 1st word ends with 2 punctuation marks and 2nd word begins with punctuation
+    "ብለውታል።» «ምናልባት",
+    # Validate that space is replaced by space.ethi even when mark is present
+    "አንስቶም በየዓለመቱ",
+]
