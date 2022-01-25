@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ddoa-ethiopic" format="2">
+  <advance width="793"/>
+  <unicode hex="2D8D"/>
+  <anchor x="475" y="846" name="top"/>
+  <outline>
+    <contour>
+      <point x="407" y="780" type="line"/>
+      <point x="542" y="780" type="line"/>
+      <point x="542" y="914" type="line"/>
+      <point x="407" y="914" type="line"/>
+    </contour>
+    <component base="do-ethiopic" xOffset="50"/>
+    <component base="geez-part-16" xOffset="-30" yOffset="380"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>do-ethiopic</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>do-ethiopic</string>
+    </dict>
+  </lib>
+</glyph>

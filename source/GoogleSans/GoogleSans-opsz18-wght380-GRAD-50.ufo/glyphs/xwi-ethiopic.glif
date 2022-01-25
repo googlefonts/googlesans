@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="xwi-ethiopic" format="2">
+  <advance width="840"/>
+  <unicode hex="128A"/>
+  <outline>
+    <component base="xa-ethiopic"/>
+    <component base="geez-part-24" xOffset="408" yOffset="132"/>
+    <component base="geez-part-15" xOffset="542" yOffset="86"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>geez-part-24</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>xa-ethiopic</string>
+    </dict>
+  </lib>
+</glyph>

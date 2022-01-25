@@ -1,0 +1,124 @@
+@ethi_chars = [ha-ethiopic hu-ethiopic hi-ethiopic haa-ethiopic hee-ethiopic he-ethiopic ho-ethiopic hoa-ethiopic la-ethiopic lu-ethiopic li-ethiopic laa-ethiopic lee-ethiopic le-ethiopic lo-ethiopic lwa-ethiopic hha-ethiopic hhu-ethiopic hhi-ethiopic hhaa-ethiopic hhee-ethiopic hhe-ethiopic hho-ethiopic hhwa-ethiopic ma-ethiopic mu-ethiopic mi-ethiopic maa-ethiopic mee-ethiopic me-ethiopic mo-ethiopic mwa-ethiopic sza-ethiopic szu-ethiopic szi-ethiopic szaa-ethiopic szee-ethiopic sze-ethiopic szo-ethiopic szwa-ethiopic ra-ethiopic ru-ethiopic ri-ethiopic raa-ethiopic ree-ethiopic re-ethiopic ro-ethiopic rwa-ethiopic sa-ethiopic su-ethiopic si-ethiopic saa-ethiopic see-ethiopic se-ethiopic so-ethiopic swa-ethiopic sha-ethiopic shu-ethiopic shi-ethiopic shaa-ethiopic shee-ethiopic she-ethiopic sho-ethiopic shwa-ethiopic qa-ethiopic qu-ethiopic qi-ethiopic qaa-ethiopic qee-ethiopic qe-ethiopic qo-ethiopic qoa-ethiopic qwa-ethiopic qwi-ethiopic qwaa-ethiopic qwee-ethiopic qwe-ethiopic qha-ethiopic qhu-ethiopic qhi-ethiopic qhaa-ethiopic qhee-ethiopic qhe-ethiopic qho-ethiopic qhwa-ethiopic qhwi-ethiopic qhwaa-ethiopic qhwee-ethiopic qhwe-ethiopic ba-ethiopic bu-ethiopic bi-ethiopic baa-ethiopic bee-ethiopic be-ethiopic bo-ethiopic bwa-ethiopic va-ethiopic vu-ethiopic vi-ethiopic vaa-ethiopic vee-ethiopic ve-ethiopic vo-ethiopic vwa-ethiopic ta-ethiopic tu-ethiopic ti-ethiopic taa-ethiopic tee-ethiopic te-ethiopic to-ethiopic twa-ethiopic ca-ethiopic cu-ethiopic ci-ethiopic caa-ethiopic cee-ethiopic ce-ethiopic co-ethiopic cwa-ethiopic xa-ethiopic xu-ethiopic xi-ethiopic xaa-ethiopic xee-ethiopic xe-ethiopic xo-ethiopic xoa-ethiopic xwa-ethiopic xwi-ethiopic xwaa-ethiopic xwee-ethiopic xwe-ethiopic na-ethiopic nu-ethiopic ni-ethiopic naa-ethiopic nee-ethiopic ne-ethiopic no-ethiopic nwa-ethiopic nya-ethiopic nyu-ethiopic nyi-ethiopic nyaa-ethiopic nyee-ethiopic nye-ethiopic nyo-ethiopic nywa-ethiopic aGlottal-ethiopic uGlottal-ethiopic iGlottal-ethiopic aaGlottal-ethiopic eeGlottal-ethiopic eGlottal-ethiopic oGlottal-ethiopic waGlottal-ethiopic ka-ethiopic ku-ethiopic ki-ethiopic kaa-ethiopic kee-ethiopic ke-ethiopic ko-ethiopic koa-ethiopic kwa-ethiopic kwi-ethiopic kwaa-ethiopic kwee-ethiopic kwe-ethiopic kxa-ethiopic kxu-ethiopic kxi-ethiopic kxaa-ethiopic kxee-ethiopic kxe-ethiopic kxo-ethiopic kxwa-ethiopic kxwi-ethiopic kxwaa-ethiopic kxwee-ethiopic kxwe-ethiopic wa-ethiopic wu-ethiopic wi-ethiopic waa-ethiopic wee-ethiopic we-ethiopic wo-ethiopic woa-ethiopic aPharyngeal-ethiopic uPharyngeal-ethiopic iPharyngeal-ethiopic aaPharyngeal-ethiopic eePharyngeal-ethiopic ePharyngeal-ethiopic oPharyngeal-ethiopic za-ethiopic zu-ethiopic zi-ethiopic zaa-ethiopic zee-ethiopic ze-ethiopic zo-ethiopic zwa-ethiopic zha-ethiopic zhu-ethiopic zhi-ethiopic zhaa-ethiopic zhee-ethiopic zhe-ethiopic zho-ethiopic zhwa-ethiopic ya-ethiopic yu-ethiopic yi-ethiopic yaa-ethiopic yee-ethiopic ye-ethiopic yo-ethiopic yoa-ethiopic da-ethiopic du-ethiopic di-ethiopic daa-ethiopic dee-ethiopic de-ethiopic do-ethiopic dwa-ethiopic dda-ethiopic ddu-ethiopic ddi-ethiopic ddaa-ethiopic ddee-ethiopic dde-ethiopic ddo-ethiopic ddwa-ethiopic ja-ethiopic ju-ethiopic ji-ethiopic jaa-ethiopic jee-ethiopic je-ethiopic jo-ethiopic jwa-ethiopic ga-ethiopic gu-ethiopic gi-ethiopic gaa-ethiopic gee-ethiopic ge-ethiopic go-ethiopic goa-ethiopic gwa-ethiopic gwi-ethiopic gwaa-ethiopic gwee-ethiopic gwe-ethiopic gga-ethiopic ggu-ethiopic ggi-ethiopic ggaa-ethiopic ggee-ethiopic gge-ethiopic ggo-ethiopic ggwaa-ethiopic tha-ethiopic thu-ethiopic thi-ethiopic thaa-ethiopic thee-ethiopic the-ethiopic tho-ethiopic thwa-ethiopic cha-ethiopic chu-ethiopic chi-ethiopic chaa-ethiopic chee-ethiopic che-ethiopic cho-ethiopic chwa-ethiopic pha-ethiopic phu-ethiopic phi-ethiopic phaa-ethiopic phee-ethiopic phe-ethiopic pho-ethiopic phwa-ethiopic tsa-ethiopic tsu-ethiopic tsi-ethiopic tsaa-ethiopic tsee-ethiopic tse-ethiopic tso-ethiopic tswa-ethiopic tza-ethiopic tzu-ethiopic tzi-ethiopic tzaa-ethiopic tzee-ethiopic tze-ethiopic tzo-ethiopic tzoa-ethiopic fa-ethiopic fu-ethiopic fi-ethiopic faa-ethiopic fee-ethiopic fe-ethiopic fo-ethiopic fwa-ethiopic pa-ethiopic pu-ethiopic pi-ethiopic paa-ethiopic pee-ethiopic pe-ethiopic po-ethiopic pwa-ethiopic rya-ethiopic mya-ethiopic fya-ethiopic mwaSebatbeit-ethiopic mwi-ethiopic mwee-ethiopic mwe-ethiopic bwaSebatbeit-ethiopic bwi-ethiopic bwee-ethiopic bwe-ethiopic fwaSebatbeit-ethiopic fwi-ethiopic fwee-ethiopic fwe-ethiopic pwaSebatbeit-ethiopic pwi-ethiopic pwee-ethiopic pwe-ethiopic loa-ethiopic moa-ethiopic roa-ethiopic soa-ethiopic shoa-ethiopic boa-ethiopic toa-ethiopic coa-ethiopic noa-ethiopic nyoa-ethiopic oaGlottal-ethiopic zoa-ethiopic doa-ethiopic ddoa-ethiopic joa-ethiopic thoa-ethiopic choa-ethiopic phoa-ethiopic poa-ethiopic ggwa-ethiopic ggwi-ethiopic ggwee-ethiopic ggwe-ethiopic ssa-ethiopic ssu-ethiopic ssi-ethiopic ssaa-ethiopic ssee-ethiopic sse-ethiopic sso-ethiopic cca-ethiopic ccu-ethiopic cci-ethiopic ccaa-ethiopic ccee-ethiopic cce-ethiopic cco-ethiopic zza-ethiopic zzu-ethiopic zzi-ethiopic zzaa-ethiopic zzee-ethiopic zze-ethiopic zzo-ethiopic ccha-ethiopic cchu-ethiopic cchi-ethiopic cchaa-ethiopic cchee-ethiopic cche-ethiopic ccho-ethiopic qya-ethiopic qyu-ethiopic qyi-ethiopic qyaa-ethiopic qyee-ethiopic qye-ethiopic qyo-ethiopic kya-ethiopic kyu-ethiopic kyi-ethiopic kyaa-ethiopic kyee-ethiopic kye-ethiopic kyo-ethiopic xya-ethiopic xyu-ethiopic xyi-ethiopic xyaa-ethiopic xyee-ethiopic xye-ethiopic xyo-ethiopic gya-ethiopic gyu-ethiopic gyi-ethiopic gyaa-ethiopic gyee-ethiopic gye-ethiopic gyo-ethiopic tthu-ethiopic tthi-ethiopic tthaa-ethiopic tthee-ethiopic tthe-ethiopic ttho-ethiopic ddhu-ethiopic ddhi-ethiopic ddhaa-ethiopic ddhee-ethiopic ddhe-ethiopic ddho-ethiopic dzu-ethiopic dzi-ethiopic dzaa-ethiopic dzee-ethiopic dze-ethiopic dzo-ethiopic cchha-ethiopic cchhu-ethiopic cchhi-ethiopic cchhaa-ethiopic cchhee-ethiopic cchhe-ethiopic cchho-ethiopic bba-ethiopic bbu-ethiopic bbi-ethiopic bbaa-ethiopic bbee-ethiopic bbe-ethiopic bbo-ethiopic];
+
+@ethi_punct = [period comma colon semicolon ellipsis exclam exclamdown question questiondown periodcentered bullet asterisk numbersign slash backslash parenleft parenright braceleft braceright bracketleft bracketright underscore quotesinglbase quotedblbase quotedblleft quotedblright quoteleft quoteright quotedbl quotesingle guillemetleft guillemetright guilsinglleft guillemetleft.cap guillemetright.cap guilsinglleft.cap guilsinglright.cap colon-ethiopic comma-ethiopic paragraphseparator-ethiopic period-ethiopic prefacecolon-ethiopic question-ethiopic sectionmark-ethiopic semicolon-ethiopic wordspace-ethiopic chiret-ethiopic deret-ethiopic deretHidet-ethiopic difat-ethiopic hidet-ethiopic kenat-ethiopic kurt-ethiopic rikrik-ethiopic shortRikrik-ethiopic yizet-ethiopic];
+
+@ethi_num = [one-ethiopic two-ethiopic three-ethiopic four-ethiopic five-ethiopic six-ethiopic seven-ethiopic eight-ethiopic nine-ethiopic ten-ethiopic twenty-ethiopic thirty-ethiopic forty-ethiopic fifty-ethiopic sixty-ethiopic seventy-ethiopic eighty-ethiopic ninety-ethiopic hundred-ethiopic tenthousand-ethiopic];
+
+@ethi_num_init = [one-ethiopic.init two-ethiopic.init three-ethiopic.init four-ethiopic.init five-ethiopic.init six-ethiopic.init seven-ethiopic.init eight-ethiopic.init nine-ethiopic.init ten-ethiopic.init twenty-ethiopic.init thirty-ethiopic.init forty-ethiopic.init fifty-ethiopic.init sixty-ethiopic.init seventy-ethiopic.init eighty-ethiopic.init ninety-ethiopic.init hundred-ethiopic.init tenthousand-ethiopic.init];
+
+@ethi_num_medi = [one-ethiopic.medi two-ethiopic.medi three-ethiopic.medi four-ethiopic.medi five-ethiopic.medi six-ethiopic.medi seven-ethiopic.medi eight-ethiopic.medi nine-ethiopic.medi ten-ethiopic.medi twenty-ethiopic.medi thirty-ethiopic.medi forty-ethiopic.medi fifty-ethiopic.medi sixty-ethiopic.medi seventy-ethiopic.medi eighty-ethiopic.medi ninety-ethiopic.medi hundred-ethiopic.medi tenthousand-ethiopic.medi];
+
+@ethi_num_fina = [one-ethiopic.fina two-ethiopic.fina three-ethiopic.fina four-ethiopic.fina five-ethiopic.fina six-ethiopic.fina seven-ethiopic.fina eight-ethiopic.fina nine-ethiopic.fina ten-ethiopic.fina twenty-ethiopic.fina thirty-ethiopic.fina forty-ethiopic.fina fifty-ethiopic.fina sixty-ethiopic.fina seventy-ethiopic.fina eighty-ethiopic.fina ninety-ethiopic.fina hundred-ethiopic.fina tenthousand-ethiopic.fina];
+
+
+lookup ethi_medi {
+    sub one-ethiopic by one-ethiopic.medi;
+    sub two-ethiopic by two-ethiopic.medi;
+    sub three-ethiopic by three-ethiopic.medi;
+    sub four-ethiopic by four-ethiopic.medi;
+    sub five-ethiopic by five-ethiopic.medi;
+    sub six-ethiopic by six-ethiopic.medi;
+    sub seven-ethiopic by seven-ethiopic.medi;
+    sub eight-ethiopic by eight-ethiopic.medi;
+    sub nine-ethiopic by nine-ethiopic.medi;
+    sub ten-ethiopic by ten-ethiopic.medi;
+    sub twenty-ethiopic by twenty-ethiopic.medi;
+    sub thirty-ethiopic by thirty-ethiopic.medi;
+    sub forty-ethiopic by forty-ethiopic.medi;
+    sub fifty-ethiopic by fifty-ethiopic.medi;
+    sub sixty-ethiopic by sixty-ethiopic.medi;
+    sub seventy-ethiopic by seventy-ethiopic.medi;
+    sub eighty-ethiopic by eighty-ethiopic.medi;
+    sub ninety-ethiopic by ninety-ethiopic.medi;
+    sub hundred-ethiopic by hundred-ethiopic.medi;
+    sub tenthousand-ethiopic by tenthousand-ethiopic.medi;
+} ethi_medi;
+
+lookup ethi_init {
+    sub one-ethiopic by one-ethiopic.init;
+    sub two-ethiopic by two-ethiopic.init;
+    sub three-ethiopic by three-ethiopic.init;
+    sub four-ethiopic by four-ethiopic.init;
+    sub five-ethiopic by five-ethiopic.init;
+    sub six-ethiopic by six-ethiopic.init;
+    sub seven-ethiopic by seven-ethiopic.init;
+    sub eight-ethiopic by eight-ethiopic.init;
+    sub nine-ethiopic by nine-ethiopic.init;
+    sub ten-ethiopic by ten-ethiopic.init;
+    sub twenty-ethiopic by twenty-ethiopic.init;
+    sub thirty-ethiopic by thirty-ethiopic.init;
+    sub forty-ethiopic by forty-ethiopic.init;
+    sub fifty-ethiopic by fifty-ethiopic.init;
+    sub sixty-ethiopic by sixty-ethiopic.init;
+    sub seventy-ethiopic by seventy-ethiopic.init;
+    sub eighty-ethiopic by eighty-ethiopic.init;
+    sub ninety-ethiopic by ninety-ethiopic.init;
+    sub hundred-ethiopic by hundred-ethiopic.init;
+    sub tenthousand-ethiopic by tenthousand-ethiopic.init;
+} ethi_init;
+
+lookup ethi_fina {
+    sub one-ethiopic by one-ethiopic.fina;
+    sub two-ethiopic by two-ethiopic.fina;
+    sub three-ethiopic by three-ethiopic.fina;
+    sub four-ethiopic by four-ethiopic.fina;
+    sub five-ethiopic by five-ethiopic.fina;
+    sub six-ethiopic by six-ethiopic.fina;
+    sub seven-ethiopic by seven-ethiopic.fina;
+    sub eight-ethiopic by eight-ethiopic.fina;
+    sub nine-ethiopic by nine-ethiopic.fina;
+    sub ten-ethiopic by ten-ethiopic.fina;
+    sub twenty-ethiopic by twenty-ethiopic.fina;
+    sub thirty-ethiopic by thirty-ethiopic.fina;
+    sub forty-ethiopic by forty-ethiopic.fina;
+    sub fifty-ethiopic by fifty-ethiopic.fina;
+    sub sixty-ethiopic by sixty-ethiopic.fina;
+    sub seventy-ethiopic by seventy-ethiopic.fina;
+    sub eighty-ethiopic by eighty-ethiopic.fina;
+    sub ninety-ethiopic by ninety-ethiopic.fina;
+    sub tenthousand-ethiopic by tenthousand-ethiopic.fina;
+} ethi_fina;
+
+feature ccmp {
+    # generates ethiopic numbers with connected upper and lower bars
+    script ethi;
+    lookup ethi_ccmp_0 {
+        sub @ethi_num @ethi_num' lookup ethi_medi @ethi_num;
+        sub @ethi_num_medi @ethi_num' lookup ethi_medi @ethi_num;
+    } ethi_ccmp_0;
+
+    lookup ethi_ccmp_1 {
+        sub @ethi_num' lookup ethi_init [@ethi_num @ethi_num_medi];
+    } ethi_ccmp_1;
+
+    lookup ethi_ccmp_2 {
+        sub [@ethi_num_init @ethi_num_medi] @ethi_num' lookup ethi_fina;
+    } ethi_ccmp_2;
+
+} ccmp;
+
+feature locl {
+    # replaces spaces between ethiopic letters with a wider space than the default Latin wordspace
+    script ethi;
+    language dflt;
+    lookup ethi_guillemet {
+        sub [guillemetleft guillemetright guilsinglleft guilsinglright] by [guillemetleft.cap guillemetright.cap guilsinglleft.cap guilsinglright.cap];
+    } ethi_guillemet;
+
+    lookup ethi_space {
+        lookupflag IgnoreMarks;
+        sub @ethi_chars space' @ethi_chars by space.ethi;
+        sub @ethi_chars @ethi_punct space' @ethi_chars by space.ethi;
+        sub @ethi_chars @ethi_punct @ethi_punct space' @ethi_chars by space.ethi;
+        sub @ethi_chars space' @ethi_punct @ethi_chars by space.ethi;
+        sub @ethi_chars @ethi_punct space' @ethi_punct @ethi_chars by space.ethi;
+        sub @ethi_chars @ethi_punct @ethi_punct space' @ethi_punct @ethi_chars by space.ethi;
+    } ethi_space;
+
+} locl;
+
+feature rclt {
+    # replaces spaces between ethiopic letters with a wider space than the default Latin wordspace
+    # this is a redundant feature that allows in the event that an application does not perform proper script itemization
+    lookup ethi_space;
+} rclt;
