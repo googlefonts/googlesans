@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="yi-ethiopic" format="2">
+  <advance width="578"/>
+  <unicode hex="12EA"/>
+  <outline>
+    <contour>
+      <point x="466" y="32" type="curve"/>
+      <point x="548" y="32" type="line"/>
+      <point x="544" y="57"/>
+      <point x="542" y="99"/>
+      <point x="542" y="131" type="curve" smooth="yes"/>
+      <point x="542" y="158"/>
+      <point x="542" y="185"/>
+      <point x="544" y="207" type="curve"/>
+      <point x="441" y="207" type="line"/>
+      <point x="441" y="285" type="line" smooth="yes"/>
+      <point x="441" y="334"/>
+      <point x="436" y="365"/>
+      <point x="402" y="365" type="curve" smooth="yes"/>
+      <point x="325" y="365" type="line"/>
+      <point x="347" y="346"/>
+      <point x="359" y="326"/>
+      <point x="359" y="285" type="curve" smooth="yes"/>
+      <point x="359" y="137" type="line"/>
+      <point x="460" y="137" type="line"/>
+      <point x="460" y="102"/>
+      <point x="462" y="56"/>
+    </contour>
+    <component base="ya-ethiopic"/>
+    <component base="geez-part-24" xOffset="146" yOffset="-2"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>ya-ethiopic</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>ya-ethiopic</string>
+    </dict>
+  </lib>
+</glyph>

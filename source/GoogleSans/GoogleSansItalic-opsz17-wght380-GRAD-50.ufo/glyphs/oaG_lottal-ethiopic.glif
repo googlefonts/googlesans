@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="oaGlottal-ethiopic" format="2">
+  <advance width="729"/>
+  <unicode hex="2D8A"/>
+  <outline>
+    <contour>
+      <point x="320" y="397" type="line"/>
+      <point x="66" y="313" type="line"/>
+      <point x="88" y="249" type="line"/>
+      <point x="343" y="332" type="line"/>
+    </contour>
+    <component base="oGlottal-ethiopic" xOffset="128"/>
+    <component base="geez-part-4" xScale="-1" yScale="-1" xOffset="147" yOffset="451"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>oGlottal-ethiopic</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>oGlottal-ethiopic</string>
+    </dict>
+  </lib>
+</glyph>
