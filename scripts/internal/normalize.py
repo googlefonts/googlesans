@@ -16,7 +16,7 @@
 import collections
 import copy
 from pathlib import Path
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Set, Tuple, Union
 
 import ufo2ft
 import ufoLib2
@@ -26,6 +26,7 @@ from fontTools.designspaceLib import (
     RuleDescriptor,
     SourceDescriptor,
 )
+from fontTools.misc.transform import Transform
 from glyphsLib.builder.builders import _expand_kerning_to_brackets
 
 from . import gdef
@@ -195,9 +196,36 @@ def scrub_ufo(
             or not k.startswith("com.schriftgestaltung.layerOrderInGlyph.")
         }
 
-    # Clean glif libs.
+    # Clean glifs.
     for layer in ufo.layers:
         for glyph in layer:
+            # Turn coordinates like "123.0" into "123".
+            glyph.width = clean_number(glyph.width)
+            for anchor in glyph.anchors:
+                anchor.x = clean_number(anchor.x)
+                anchor.y = clean_number(anchor.y)
+            for guideline in glyph.guidelines:
+                if guideline.x is not None:
+                    guideline.x = clean_number(guideline.x)
+                if guideline.y is not None:
+                    guideline.y = clean_number(guideline.y)
+                if guideline.angle is not None:
+                    guideline.angle = clean_number(guideline.angle)
+            for contour in glyph:
+                for point in contour:
+                    point.x = clean_number(point.x)
+                    point.y = clean_number(point.y)
+            for component in glyph.components:
+                t = component.transformation
+                component.transformation = Transform(
+                    clean_number(t.xx),
+                    clean_number(t.xy),
+                    clean_number(t.yx),
+                    clean_number(t.yy),
+                    clean_number(t.dx),
+                    clean_number(t.dy),
+                )
+
             if not glyph.lib:
                 continue
 
@@ -240,6 +268,14 @@ def scrub_ufo(
     ufo.lib["public.openTypeCategories"] = ot_categories
 
 
+def clean_number(v: Union[int, float]) -> float:
+    if isinstance(v, int):
+        return v
+    if v.is_integer():
+        return int(v)
+    return v
+
+
 def location_to_key(
     location: Dict[str, float], skip_axis: str = "Grade"
 ) -> Tuple[Tuple[str, float], ...]:
@@ -263,7 +299,9 @@ def scrub_graded_sources(sources: List[SourceDescriptor]) -> None:
             graded_glyphs = set(graded_source.font.keys())
             graded_default_layer = graded_source.font.layers.defaultLayer
             for glyph_name in all_glyphs - graded_glyphs:
-                graded_default_layer.insertGlyph(source.font[glyph_name], overwrite=True)
+                graded_default_layer.insertGlyph(
+                    source.font[glyph_name], overwrite=True
+                )
 
             graded_source.font.groups = source.font.groups
             graded_source.font.kerning = source.font.kerning
