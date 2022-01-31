@@ -2,36 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
-    <key>com.github.googlei18n.ufo2ft.featureWriters</key>
-    <array>
-      <dict>
-        <key>class</key>
-        <string>KernFeatureWriter</string>
-        <key>options</key>
-        <dict>
-          <key>mode</key>
-          <string>append</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>class</key>
-        <string>MarkFeatureWriter</string>
-        <key>options</key>
-        <dict>
-          <key>mode</key>
-          <string>skip</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>class</key>
-        <string>GdefFeatureWriter</string>
-        <key>options</key>
-        <dict>
-          <key>mode</key>
-          <string>append</string>
-        </dict>
-      </dict>
-    </array>
     <key>com.github.googlei18n.ufo2ft.filters</key>
     <array>
       <dict>
@@ -9185,7 +9155,7 @@
       <key>Ech-arm</key>
       <string>uni0535</string>
       <key>Ech_Vew-arm.liga</key>
-      <string>Ech_Vewarm.liga</string>
+      <string>uni0535054E.liga</string>
       <key>Ecircumflexacute</key>
       <string>uni1EBE</string>
       <key>Ecircumflexdotbelow</key>
@@ -9364,6 +9334,10 @@
       <string>uni0413</string>
       <key>Gedescender-cy</key>
       <string>uni04F6</string>
+      <key>Germandbls</key>
+      <string>uni1E9E</string>
+      <key>Germandbls.sc</key>
+      <string>uni1E9E.sc</string>
       <key>Gestrokehook-cy</key>
       <string>uni04FA</string>
       <key>Ghad-arm</key>
@@ -9494,6 +9468,8 @@
       <string>uni1C99</string>
       <key>Kastroke-cy</key>
       <string>uni049E</string>
+      <key>Kastroke-cy.case</key>
+      <string>uni049E.case</string>
       <key>Kaverticalstroke-cy</key>
       <string>uni049C</string>
       <key>Kcommaaccent</key>
@@ -9529,13 +9505,13 @@
       <key>Men-arm</key>
       <string>uni0544</string>
       <key>Men_Ech-arm.liga</key>
-      <string>Men_Echarm.liga</string>
+      <string>uni05440535.liga</string>
       <key>Men_Ini-arm.liga</key>
-      <string>Men_Iniarm.liga</string>
+      <string>uni0544053B.liga</string>
       <key>Men_Now-arm.liga</key>
-      <string>Men_Nowarm.liga</string>
+      <string>uni05440546.liga</string>
       <key>Men_Xeh-arm.liga</key>
-      <string>Men_Xeharm.liga</string>
+      <string>uni0544053D.liga</string>
       <key>Nar-georgian</key>
       <string>uni1C9C</string>
       <key>Ncommaaccent</key>
@@ -9823,7 +9799,7 @@
       <key>Vew-arm</key>
       <string>uni054E</string>
       <key>Vew_Now-arm.liga</key>
-      <string>Vew_Nowarm.liga</string>
+      <string>uni054E0546.liga</string>
       <key>Vin-georgian</key>
       <string>uni1C95</string>
       <key>Vo-arm</key>
@@ -10027,13 +10003,13 @@
       <key>aiMatra-tamil</key>
       <string>uni0BC8</string>
       <key>aiMatra_anusvara-deva</key>
-      <string>aiMatra_anusvaradeva</string>
+      <string>uni09480902</string>
       <key>aiMatra_candraBindu-deva</key>
-      <string>aiMatra_candraBindudeva</string>
+      <string>uni09480901</string>
       <key>aiMatra_reph-deva</key>
-      <string>aiMatra_rephdeva</string>
+      <string>uni09480930094D</string>
       <key>aiMatra_reph_anusvara-deva</key>
-      <string>aiMatra_reph_anusvaradeva</string>
+      <string>uni09480930094D0902</string>
       <key>aie-cy</key>
       <string>uni04D5</string>
       <key>aie-cy.sc</key>
@@ -10451,7 +10427,7 @@
       <key>ch-deva</key>
       <string>uni091B094D</string>
       <key>ch_ya-deva</key>
-      <string>ch_yadeva</string>
+      <string>uni091B094D092F</string>
       <key>cha-arm</key>
       <string>uni0579</string>
       <key>cha-arm.nonspacing.long</key>
@@ -10567,27 +10543,27 @@
       <key>d-deva</key>
       <string>uni0926094D</string>
       <key>d_ba-deva</key>
-      <string>uni0064092C</string>
+      <string>uni0926094D092C</string>
       <key>d_bha-deva</key>
-      <string>uni0064092D</string>
+      <string>uni0926094D092D</string>
       <key>d_da-deva</key>
-      <string>uni00640926</string>
+      <string>uni0926094D0926</string>
       <key>d_dh_ya-deva</key>
-      <string>d_dh_yadeva</string>
+      <string>uni0926094D0927094D092F</string>
       <key>d_dha-deva</key>
-      <string>uni00640927</string>
+      <string>uni0926094D0927</string>
       <key>d_ga-deva</key>
-      <string>uni00640917</string>
+      <string>uni0926094D0917</string>
       <key>d_gha-deva</key>
-      <string>uni00640918</string>
+      <string>uni0926094D0918</string>
       <key>d_ma-deva</key>
-      <string>uni0064092E</string>
+      <string>uni0926094D092E</string>
       <key>d_ra-deva</key>
-      <string>uni00640930</string>
+      <string>uni0926094D0930</string>
       <key>d_va-deva</key>
-      <string>uni00640935</string>
+      <string>uni0926094D0935</string>
       <key>d_ya-deva</key>
-      <string>uni0064092F</string>
+      <string>uni0926094D092F</string>
       <key>da-arm</key>
       <string>uni0564</string>
       <key>da-arm.sc</key>
@@ -10597,11 +10573,11 @@
       <key>da-gurmukhi</key>
       <string>uni0A26</string>
       <key>da_rVocalicMatra-deva</key>
-      <string>da_rVocalicMatradeva</string>
+      <string>uni09260943</string>
       <key>da_uMatra-deva</key>
-      <string>da_uMatradeva</string>
+      <string>uni09260941</string>
       <key>da_uuMatra-deva</key>
-      <string>da_uuMatradeva</string>
+      <string>uni09260942</string>
       <key>dagesh-hb</key>
       <string>uni05BC</string>
       <key>dagesh-hb.alt</key>
@@ -10649,11 +10625,11 @@
       <key>dd-deva</key>
       <string>uni0921094D</string>
       <key>dd_dda-deva</key>
-      <string>dd_ddadeva</string>
+      <string>uni0921094D0921</string>
       <key>dd_ddha-deva</key>
-      <string>dd_ddhadeva</string>
+      <string>uni0921094D0922</string>
       <key>dd_ya-deva</key>
-      <string>dd_yadeva</string>
+      <string>uni0921094D092F</string>
       <key>dda-deva</key>
       <string>uni0921</string>
       <key>dda-gurmukhi</key>
@@ -10671,9 +10647,9 @@
       <key>ddh-deva</key>
       <string>uni0922094D</string>
       <key>ddh_ddha-deva</key>
-      <string>ddh_ddhadeva</string>
+      <string>uni0922094D0922</string>
       <key>ddh_ya-deva</key>
-      <string>ddh_yadeva</string>
+      <string>uni0922094D092F</string>
       <key>ddha-deva</key>
       <string>uni0922</string>
       <key>ddha-gurmukhi</key>
@@ -10795,9 +10771,9 @@
       <key>eCandraMatra-deva</key>
       <string>uni0945</string>
       <key>eCandraMatra_anusvara-deva</key>
-      <string>eCandraMatra_anusvaradeva</string>
+      <string>uni09450902</string>
       <key>eCandraMatra_reph-deva</key>
-      <string>eCandraMatra_rephdeva</string>
+      <string>uni09450930094D</string>
       <key>eLongCandra-deva</key>
       <string>uni0955</string>
       <key>eMatra-deva</key>
@@ -10807,25 +10783,25 @@
       <key>eMatra-tamil</key>
       <string>uni0BC6</string>
       <key>eMatra_anusvara-deva</key>
-      <string>eMatra_anusvaradeva</string>
+      <string>uni09470902</string>
       <key>eMatra_candraBindu-deva</key>
-      <string>eMatra_candraBindudeva</string>
+      <string>uni09470901</string>
       <key>eMatra_reph-deva</key>
-      <string>eMatra_rephdeva</string>
+      <string>uni09470930094D</string>
       <key>eMatra_reph_anusvara-deva</key>
-      <string>eMatra_reph_anusvaradeva</string>
+      <string>uni09470930094D0902</string>
       <key>eShort-deva</key>
       <string>uni090E</string>
       <key>eShortMatra-deva</key>
       <string>uni0946</string>
       <key>eShortMatra_anusvara-deva</key>
-      <string>eShortMatra_anusvaradeva</string>
+      <string>uni09460902</string>
       <key>eShortMatra_candraBindu-deva</key>
-      <string>eShortMatra_candraBindudeva</string>
+      <string>uni09460901</string>
       <key>eShortMatra_reph-deva</key>
-      <string>eShortMatra_rephdeva</string>
+      <string>uni09460930094D</string>
       <key>eShortMatra_reph_anusvara-deva</key>
-      <string>eShortMatra_reph_anusvaradeva</string>
+      <string>uni09460930094D0902</string>
       <key>eVowel-lao</key>
       <string>uni0EC0</string>
       <key>ech-arm</key>
@@ -10833,7 +10809,7 @@
       <key>ech-arm.sc</key>
       <string>uni0565.sc</string>
       <key>ech_vew-arm.liga.sc</key>
-      <string>ech_vewarm.liga.sc</string>
+      <string>uni0565057E.liga.sc</string>
       <key>ech_yiwn-arm</key>
       <string>uni0587</string>
       <key>ecircumflexacute</key>
@@ -11341,15 +11317,15 @@
       <key>finalkaf-hb</key>
       <string>uni05DA</string>
       <key>finalkaf_qamats-hb</key>
-      <string>finalkaf_qamatshb</string>
+      <string>uni05DA05B8</string>
       <key>finalkaf_sheva-hb</key>
-      <string>finalkaf_shevahb</string>
+      <string>uni05DA05B0</string>
       <key>finalkafdagesh-hb</key>
       <string>uniFB3A</string>
       <key>finalkafdagesh_qamats-hb</key>
-      <string>finalkafdagesh_qamatshb</string>
+      <string>uniFB3A05B8</string>
       <key>finalkafdagesh_sheva-hb</key>
-      <string>finalkafdagesh_shevahb</string>
+      <string>uniFB3A05B0</string>
       <key>finalmem-hb</key>
       <string>uni05DD</string>
       <key>finalnun-hb</key>
@@ -11543,23 +11519,23 @@
       <key>h-deva</key>
       <string>uni0939094D</string>
       <key>h_la-deva</key>
-      <string>uni00680932</string>
+      <string>uni0939094D0932</string>
       <key>h_ma-deva</key>
-      <string>uni0068092E</string>
+      <string>uni0939094D092E</string>
       <key>h_na-deva</key>
-      <string>uni00680928</string>
+      <string>uni0939094D0928</string>
       <key>h_nna-deva</key>
-      <string>uni00680923</string>
+      <string>uni0939094D0923</string>
       <key>h_ra-deva</key>
-      <string>uni00680930</string>
+      <string>uni0939094D0930</string>
       <key>h_ra_uMatra-deva</key>
-      <string>h_ra_uMatradeva</string>
+      <string>uni0939094D09300941</string>
       <key>h_ra_uuMatra-deva</key>
-      <string>h_ra_uuMatradeva</string>
+      <string>uni0939094D09300942</string>
       <key>h_va-deva</key>
-      <string>uni00680935</string>
+      <string>uni0939094D0935</string>
       <key>h_ya-deva</key>
-      <string>uni0068092F</string>
+      <string>uni0939094D092F</string>
       <key>ha-cy</key>
       <string>uni0445</string>
       <key>ha-cy.sc</key>
@@ -11577,15 +11553,15 @@
       <key>ha_iiMatra-tamil</key>
       <string>uni0BB90BC0</string>
       <key>ha_rVocalicMatra-deva</key>
-      <string>ha_rVocalicMatradeva</string>
+      <string>uni09390943</string>
       <key>ha_rrVocalicMatra-deva</key>
-      <string>ha_rrVocalicMatradeva</string>
+      <string>uni09390944</string>
       <key>ha_uMatra-deva</key>
-      <string>ha_uMatradeva</string>
+      <string>uni09390941</string>
       <key>ha_uMatra-tamil</key>
       <string>uni0BB90BC1</string>
       <key>ha_uuMatra-deva</key>
-      <string>ha_uuMatradeva</string>
+      <string>uni09390942</string>
       <key>ha_uuMatra-tamil</key>
       <string>uni0BB90BC2</string>
       <key>haabkhasian-cy</key>
@@ -11625,15 +11601,15 @@
       <key>hatafpatah-hb</key>
       <string>uni05B2</string>
       <key>hatafpatah_siluqleft-hb</key>
-      <string>hatafpatah_siluqlefthb</string>
+      <string>uni05B205BD</string>
       <key>hatafqamats-hb</key>
       <string>uni05B3</string>
       <key>hatafqamats_siluqleft-hb</key>
-      <string>hatafqamats_siluqlefthb</string>
+      <string>uni05B305BD</string>
       <key>hatafsegol-hb</key>
       <string>uni05B1</string>
       <key>hatafsegol_siluqleft-hb</key>
-      <string>hatafsegol_siluqlefthb</string>
+      <string>uni05B105BD</string>
       <key>he-georgian</key>
       <string>uni10F1</string>
       <key>he-hb</key>
@@ -11706,6 +11682,8 @@
       <string>uni058A</string>
       <key>hyphenbullet</key>
       <string>uni2043</string>
+      <key>hyphentwo</key>
+      <string>uni2010</string>
       <key>i-cy</key>
       <string>uni0456</string>
       <key>i-cy.sc</key>
@@ -11751,7 +11729,7 @@
       <key>idieresis-cy.sc</key>
       <string>uni04E5.sc</string>
       <key>idotaccent.sc</key>
-      <string>i.loclTRK.sc</string>
+      <string>i.sc.loclTRK</string>
       <key>idotbelow</key>
       <string>uni1ECB</string>
       <key>idotbelow.sc</key>
@@ -11797,13 +11775,13 @@
       <key>iiMatra-tamil.alt</key>
       <string>uni0BC0.alt</string>
       <key>iiMatra_reph-deva</key>
-      <string>iiMatra_rephdeva</string>
+      <string>uni09400930094D</string>
       <key>iiMatra_reph-deva.alt2</key>
-      <string>iiMatra_rephdeva.alt2</string>
+      <string>uni09400930094D.alt2</string>
       <key>iiMatra_reph_anusvara-deva</key>
-      <string>iiMatra_reph_anusvaradeva</string>
+      <string>uni09400930094D0902</string>
       <key>iiMatra_reph_anusvara-deva.alt2</key>
-      <string>iiMatra_reph_anusvaradeva.alt2</string>
+      <string>uni09400930094D0902.alt2</string>
       <key>iiVowel-lao</key>
       <string>uni0EB5</string>
       <key>iiVowel-lao.narrow</key>
@@ -11969,23 +11947,23 @@
       <key>j-deva.alt8</key>
       <string>uni091C094D.alt8</string>
       <key>j_ny-deva</key>
-      <string>uni006A091E094D</string>
+      <string>uni091C094D091E094D</string>
       <key>j_ny-deva.alt2</key>
-      <string>uni006A091E094D.alt2</string>
+      <string>uni091C094D091E094D.alt2</string>
       <key>j_ny-deva.alt3</key>
-      <string>uni006A091E094D.alt3</string>
+      <string>uni091C094D091E094D.alt3</string>
       <key>j_ny-deva.alt4</key>
-      <string>uni006A091E094D.alt4</string>
+      <string>uni091C094D091E094D.alt4</string>
       <key>j_ny-deva.alt5</key>
-      <string>uni006A091E094D.alt5</string>
+      <string>uni091C094D091E094D.alt5</string>
       <key>j_ny-deva.alt6</key>
-      <string>uni006A091E094D.alt6</string>
+      <string>uni091C094D091E094D.alt6</string>
       <key>j_ny-deva.alt7</key>
-      <string>uni006A091E094D.alt7</string>
+      <string>uni091C094D091E094D.alt7</string>
       <key>j_ny-deva.alt8</key>
-      <string>uni006A091E094D.alt8</string>
+      <string>uni091C094D091E094D.alt8</string>
       <key>j_nya-deva</key>
-      <string>uni006A091E</string>
+      <string>uni091C094D091E</string>
       <key>ja-arm</key>
       <string>uni0571</string>
       <key>ja-arm.sc</key>
@@ -12065,21 +12043,21 @@
       <key>k-deva.alt8</key>
       <string>uni0915094D.alt8</string>
       <key>k_ss-deva</key>
-      <string>uni006B0937094D</string>
+      <string>uni0915094D0937094D</string>
       <key>k_ss-deva.alt2</key>
-      <string>uni006B0937094D.alt2</string>
+      <string>uni0915094D0937094D.alt2</string>
       <key>k_ss-deva.alt3</key>
-      <string>uni006B0937094D.alt3</string>
+      <string>uni0915094D0937094D.alt3</string>
       <key>k_ss-deva.alt4</key>
-      <string>uni006B0937094D.alt4</string>
+      <string>uni0915094D0937094D.alt4</string>
       <key>k_ss-deva.alt5</key>
-      <string>uni006B0937094D.alt5</string>
+      <string>uni0915094D0937094D.alt5</string>
       <key>k_ss-deva.alt6</key>
-      <string>uni006B0937094D.alt6</string>
+      <string>uni0915094D0937094D.alt6</string>
       <key>k_ss-deva.alt7</key>
-      <string>uni006B0937094D.alt7</string>
+      <string>uni0915094D0937094D.alt7</string>
       <key>k_ssa-deva</key>
-      <string>uni006B0937</string>
+      <string>uni0915094D0937</string>
       <key>k_ssa-tamil</key>
       <string>uni0B950BCD0BB7</string>
       <key>k_ssa_iMatra-tamil</key>
@@ -12273,9 +12251,9 @@
       <key>lamed-hb</key>
       <string>uni05DC</string>
       <key>lamed_dagesh_holam-hb</key>
-      <string>lamed_dagesh_holamhb</string>
+      <string>uni05DC05BC05B9</string>
       <key>lamed_holam-hb</key>
-      <string>lamed_holamhb</string>
+      <string>uni05DC05B9</string>
       <key>lameddagesh-hb</key>
       <string>uniFB3C</string>
       <key>lari</key>
@@ -12543,7 +12521,7 @@
       <key>moMa-thai</key>
       <string>uni0E21</string>
       <key>moMa_underscore-thai</key>
-      <string>uni0E21005F</string>
+      <string>uni0E21_uni005F</string>
       <key>month-tamil</key>
       <string>uni0BF4</string>
       <key>mu</key>
@@ -12589,7 +12567,7 @@
       <key>ng-deva</key>
       <string>uni0919094D</string>
       <key>ng_ya-deva</key>
-      <string>ng_yadeva</string>
+      <string>uni0919094D092F</string>
       <key>nga-deva</key>
       <string>uni0919</string>
       <key>nga-gurmukhi</key>
@@ -12607,7 +12585,7 @@
       <key>ngoNgu-thai</key>
       <string>uni0E07</string>
       <key>ngoNgu_underscore-thai</key>
-      <string>uni0E07005F</string>
+      <string>uni0E07_uni005F</string>
       <key>niggahita-lao</key>
       <string>uni0ECD</string>
       <key>niggahita-lao.narrow</key>
@@ -12711,7 +12689,9 @@
       <key>noNu-thai</key>
       <string>uni0E19</string>
       <key>noNu_underscore-thai</key>
-      <string>uni0E19005F</string>
+      <string>uni0E19_uni005F</string>
+      <key>nonbreakinghyphen</key>
+      <string>uni2011</string>
       <key>northEastArrow</key>
       <string>uni2197</string>
       <key>northEastArrow.ss05</key>
@@ -13157,7 +13137,7 @@
       <key>p-deva.alt3</key>
       <string>uni092A094D.alt3</string>
       <key>p_ta-deva</key>
-      <string>uni00700924</string>
+      <string>uni092A094D0924</string>
       <key>pa-deva</key>
       <string>uni092A</string>
       <key>pa-gurmukhi</key>
@@ -13399,11 +13379,11 @@
       <key>ra-tamil</key>
       <string>uni0BB0</string>
       <key>ra_uMatra-deva</key>
-      <string>ra_uMatradeva</string>
+      <string>uni09300941</string>
       <key>ra_uMatra-tamil</key>
       <string>uni0BB00BC1</string>
       <key>ra_uuMatra-deva</key>
-      <string>ra_uuMatradeva</string>
+      <string>uni09300942</string>
       <key>ra_uuMatra-tamil</key>
       <string>uni0BB00BC2</string>
       <key>rae-georgian</key>
@@ -13435,7 +13415,7 @@
       <key>reph-deva</key>
       <string>uni0930094D</string>
       <key>reph_anusvara-deva</key>
-      <string>reph_anusvaradeva</string>
+      <string>uni0930094D0902</string>
       <key>replacementCharacter</key>
       <string>uniFFFD</string>
       <key>resh-hb</key>
@@ -13661,9 +13641,9 @@
       <key>sh-deva.loclMAR</key>
       <string>uni0936094D.loclMAR</string>
       <key>sh_r-deva</key>
-      <string>sh_rdeva</string>
+      <string>uni0936094D0930094D</string>
       <key>sh_ra-deva</key>
-      <string>sh_radeva</string>
+      <string>uni0936094D0930</string>
       <key>sh_ra_iiMatra-tamil</key>
       <string>uni0BB60BCD0BB00BC0</string>
       <key>sha-arm</key>
@@ -13791,9 +13771,9 @@
       <key>ss-deva</key>
       <string>uni0937094D</string>
       <key>ss_tta-deva</key>
-      <string>ss_ttadeva</string>
+      <string>uni0937094D091F</string>
       <key>ss_ttha-deva</key>
-      <string>ss_tthadeva</string>
+      <string>uni0937094D0920</string>
       <key>ssa-deva</key>
       <string>uni0937</string>
       <key>ssa-lao</key>
@@ -13817,11 +13797,11 @@
       <key>t-deva.alt4</key>
       <string>uni0924094D.alt4</string>
       <key>t_r-deva</key>
-      <string>t_rdeva</string>
+      <string>uni0924094D0930094D</string>
       <key>t_ra-deva</key>
-      <string>uni00740930</string>
+      <string>uni0924094D0930</string>
       <key>t_ta-deva</key>
-      <string>uni00740924</string>
+      <string>uni0924094D0924</string>
       <key>ta-deva</key>
       <string>uni0924</string>
       <key>ta-gurmukhi</key>
@@ -13997,11 +13977,11 @@
       <key>tt-deva</key>
       <string>uni091F094D</string>
       <key>tt_tta-deva</key>
-      <string>tt_ttadeva</string>
+      <string>uni091F094D091F</string>
       <key>tt_ttha-deva</key>
-      <string>tt_tthadeva</string>
+      <string>uni091F094D0920</string>
       <key>tt_ya-deva</key>
-      <string>tt_yadeva</string>
+      <string>uni091F094D092F</string>
       <key>tta-deva</key>
       <string>uni091F</string>
       <key>tta-gurmukhi</key>
@@ -14021,9 +14001,9 @@
       <key>tth-deva</key>
       <string>uni0920094D</string>
       <key>tth_ttha-deva</key>
-      <string>tth_tthadeva</string>
+      <string>uni0920094D0920</string>
       <key>tth_ya-deva</key>
-      <string>tth_yadeva</string>
+      <string>uni0920094D092F</string>
       <key>ttha-deva</key>
       <string>uni0920</string>
       <key>ttha-gurmukhi</key>
@@ -14483,7 +14463,7 @@
       <key>yoYing-thai.less</key>
       <string>uni0E0D.less</string>
       <key>yoYing_underscore-thai</key>
-      <string>uni0E0D005F</string>
+      <string>uni0E0D_uni005F</string>
       <key>yod-hb</key>
       <string>uni05D9</string>
       <key>yoddagesh-hb</key>
