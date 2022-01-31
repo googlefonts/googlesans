@@ -1,5 +1,21 @@
 # Google Sans Changelog
 
+## Version 8.000
+
+### New
+
+- script to normalize all integer float values, defined as floats that have zero values following the decimal point (#441)
+
+### Changed
+
+- remove all `<note>` elements from source files (#441)
+- update all production names to Glyphs.app v2.6.6 specified values (#441)
+- move `com.github.googlei18n.ufo2ft.featureWriters` keys to designspace files from UFO lib.plist files (#441)
+
+### Fixed
+
+- added missing production name definitions based on Glyphs.app v2.6.6 definitions (#441)
+
 ## Version 7.000
 
 ### New
