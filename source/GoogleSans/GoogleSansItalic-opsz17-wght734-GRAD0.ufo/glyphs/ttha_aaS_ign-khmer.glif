@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ttha_aaSign-khmer" format="2">
+  <advance width="964"/>
+  <anchor x="270" y="0" name="bottom"/>
+  <anchor x="484" y="0" name="bottomright"/>
+  <anchor x="369" y="576" name="top"/>
+  <anchor x="627" y="576" name="topright"/>
+  <outline>
+    <contour>
+      <point x="697" y="0" type="line"/>
+      <point x="825" y="0" type="line"/>
+      <point x="889" y="362" type="line" smooth="yes"/>
+      <point x="914" y="505"/>
+      <point x="851" y="576"/>
+      <point x="704" y="576" type="curve" smooth="yes"/>
+      <point x="676" y="576" type="line"/>
+      <point x="656" y="465" type="line"/>
+      <point x="678" y="465" type="line" smooth="yes"/>
+      <point x="745" y="465"/>
+      <point x="774" y="433"/>
+      <point x="762" y="367" type="curve" smooth="yes"/>
+    </contour>
+    <component base="ttha-khmer"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>aaSign-khmer</string>
+    </dict>
+  </lib>
+</glyph>

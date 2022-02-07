@@ -46,6 +46,7 @@ GOOGLESANS_PROFILE_CHECKS = [
 ]
 
 STATIC_UPRIGHT_FEA = [
+    "abvf",
     "abvm",
     "abvs",
     "akhn",
@@ -57,6 +58,7 @@ STATIC_UPRIGHT_FEA = [
     "case",
     "ccmp",
     "cjct",
+    "clig",
     "dist",
     "dlig",
     "dnom",
@@ -74,6 +76,7 @@ STATIC_UPRIGHT_FEA = [
     "numr",
     "ordn",
     "pnum",
+    "pref",
     "pres",
     "pstf",
     "psts",
@@ -97,6 +100,7 @@ STATIC_UPRIGHT_FEA = [
 ]
 
 STATIC_ITALICS_FEA = [
+    "abvf",
     "abvm",
     "abvs",
     "akhn",
@@ -108,6 +112,7 @@ STATIC_ITALICS_FEA = [
     "case",
     "ccmp",
     "cjct",
+    "clig",
     "dist",
     "dlig",
     "dnom",
@@ -125,6 +130,7 @@ STATIC_ITALICS_FEA = [
     "numr",
     "ordn",
     "pnum",
+    "pref",
     "pres",
     "pstf",
     "psts",
@@ -147,6 +153,7 @@ STATIC_ITALICS_FEA = [
 ]
 
 VAR_UPRIGHT_FEA = [
+    "abvf",
     "abvm",
     "abvs",
     "akhn",
@@ -158,6 +165,7 @@ VAR_UPRIGHT_FEA = [
     "case",
     "ccmp",
     "cjct",
+    "clig",
     "dist",
     "dlig",
     "dnom",
@@ -175,6 +183,7 @@ VAR_UPRIGHT_FEA = [
     "numr",
     "ordn",
     "pnum",
+    "pref",
     "pres",
     "pstf",
     "psts",
@@ -198,6 +207,7 @@ VAR_UPRIGHT_FEA = [
 ]
 
 VAR_ITALICS_FEA = [
+    "abvf",
     "abvm",
     "abvs",
     "akhn",
@@ -209,6 +219,7 @@ VAR_ITALICS_FEA = [
     "case",
     "ccmp",
     "cjct",
+    "clig",
     "dist",
     "dlig",
     "dnom",
@@ -226,6 +237,7 @@ VAR_ITALICS_FEA = [
     "numr",
     "ordn",
     "pnum",
+    "pref",
     "pres",
     "pstf",
     "psts",
@@ -479,7 +491,9 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
                         )
                         continue
                     if shaped_text != expected:
-                        shaped_texts_str = textwrap.indent("\n".join(shaped_text), "\t  ")
+                        shaped_texts_str = textwrap.indent(
+                            "\n".join(shaped_text), "\t  "
+                        )
                         shaped_texts_expected_str = textwrap.indent(
                             "\n".join(expected), "\t  "
                         )

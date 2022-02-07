@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="qa-khmer" format="2">
+  <advance width="667"/>
+  <unicode hex="17A2"/>
+  <anchor x="346" y="0" name="bottom"/>
+  <anchor x="582" y="0" name="bottomright"/>
+  <anchor x="357" y="560" name="top"/>
+  <anchor x="597" y="560" name="topright"/>
+  <outline>
+    <contour>
+      <point x="246" y="223" type="line"/>
+      <point x="504" y="223" type="line"/>
+      <point x="504" y="313" type="line"/>
+      <point x="246" y="313" type="line"/>
+    </contour>
+    <component base="ro-khmer"/>
+    <component base="ro-khmer" xOffset="320"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>ro-khmer</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>ba-khmer</string>
+    </dict>
+  </lib>
+</glyph>
