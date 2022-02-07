@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ha_aaSign-khmer" format="2">
+  <advance width="1224"/>
+  <anchor x="621" y="0" name="bottom"/>
+  <anchor x="827" y="0" name="bottomright"/>
+  <anchor x="621" y="560" name="top"/>
+  <anchor x="817" y="560" name="topright"/>
+  <outline>
+    <contour>
+      <point x="1041" y="0" type="line"/>
+      <point x="1124" y="0" type="line"/>
+      <point x="1124" y="375" type="line" smooth="yes"/>
+      <point x="1124" y="495"/>
+      <point x="1066" y="560"/>
+      <point x="938" y="560" type="curve" smooth="yes"/>
+      <point x="872" y="560" type="line"/>
+      <point x="872" y="483" type="line"/>
+      <point x="938" y="483" type="line" smooth="yes"/>
+      <point x="1013" y="483"/>
+      <point x="1041" y="446"/>
+      <point x="1041" y="375" type="curve" smooth="yes"/>
+    </contour>
+    <component base="ha-khmer"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>aaSign-khmer</string>
+    </dict>
+  </lib>
+</glyph>
