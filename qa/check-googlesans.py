@@ -48,6 +48,7 @@ GOOGLESANS_PROFILE_CHECKS = UNIVERSAL_PROFILE_CHECKS + [
 # define check ID's in the upstream `universal` profile
 # that should be excluded here
 excluded_check_ids = (
+    "com.google.fonts/check/dotted_circle",
     "com.google.fonts/check/ftxvalidator_is_available",
     "com.google.fonts/check/dsig",
     "com.google.fonts/check/family/win_ascent_and_descent",  # replaced by custom checks
