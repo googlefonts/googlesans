@@ -4,6 +4,7 @@ build_commit = ""
 [input.features]
 # Redundant feature to ensure ethiopic space sub occurs to deal with script segementation issues in certain apps.
 rclt = true
+locl = false
 
 [input]
 text = [
