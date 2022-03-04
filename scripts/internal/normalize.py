@@ -132,6 +132,7 @@ def scrub_ufo(
 
     # Reset the ufo2ft filters.
     ufo.lib["com.github.googlei18n.ufo2ft.filters"] = [
+        {"name": "decomposeTransformedComponents", "pre": True},
         {
             "name": "propagateAnchors",
             "pre": True,
