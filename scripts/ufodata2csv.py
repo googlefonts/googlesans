@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Export global glpyh data of UFOs to a CSV file."""
+"""Export global glyph data of UFOs to a CSV file."""
 
 from __future__ import annotations
 

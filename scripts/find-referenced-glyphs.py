@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Print glyphs in the glyph improt list plus all glyphs they reference."""
+"""Print glyphs in the glyph import list plus all glyphs they reference."""
 
 import argparse
 from typing import Set
