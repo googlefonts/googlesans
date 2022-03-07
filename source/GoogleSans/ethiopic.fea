@@ -117,9 +117,3 @@ feature locl {
     } ethi_space;
 
 } locl;
-
-feature rclt {
-    # replaces spaces between ethiopic letters with a wider space than the default Latin wordspace
-    # this is a redundant feature that allows in the event that an application does not perform proper script itemization
-    lookup ethi_space;
-} rclt;
