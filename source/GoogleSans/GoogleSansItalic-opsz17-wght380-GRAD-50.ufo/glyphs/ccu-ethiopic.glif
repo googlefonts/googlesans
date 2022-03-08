@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ccu-ethiopic" format="2">
+  <advance width="602"/>
+  <unicode hex="2DA9"/>
+  <outline>
+    <contour>
+      <point x="93" y="49" type="line"/>
+      <point x="104" y="73"/>
+      <point x="115" y="128"/>
+      <point x="119" y="151" type="curve"/>
+      <point x="263" y="151" type="line"/>
+      <point x="276" y="223" type="line"/>
+      <point x="43" y="223" type="line"/>
+      <point x="43" y="185"/>
+      <point x="25" y="92"/>
+      <point x="8" y="49" type="curve"/>
+    </contour>
+    <contour>
+      <point x="434" y="81" type="curve"/>
+      <point x="519" y="89" type="line"/>
+      <point x="518" y="94"/>
+      <point x="516" y="126"/>
+      <point x="516" y="148" type="curve" smooth="yes"/>
+      <point x="516" y="202"/>
+      <point x="526" y="250"/>
+      <point x="535" y="276" type="curve"/>
+      <point x="450" y="282" type="line"/>
+      <point x="445" y="270"/>
+      <point x="439" y="241"/>
+      <point x="437" y="223" type="curve"/>
+      <point x="279" y="223" type="line"/>
+      <point x="267" y="151" type="line"/>
+      <point x="431" y="151" type="line"/>
+      <point x="431" y="131"/>
+      <point x="432" y="96"/>
+    </contour>
+    <component base="ta-ethiopic" xOffset="3"/>
+    <component base="_geez-part-21" xOffset="-90" yOffset="-63"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>ta-ethiopic</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>_geez-part-21</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>cu-ethiopic</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>cu-ethiopic</string>
+    </dict>
+  </lib>
+</glyph>

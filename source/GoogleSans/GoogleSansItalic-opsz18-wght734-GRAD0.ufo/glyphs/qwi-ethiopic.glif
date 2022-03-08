@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="qwi-ethiopic" format="2">
+  <advance width="1048"/>
+  <unicode hex="124A"/>
+  <outline>
+    <contour>
+      <point x="605" y="385" type="line"/>
+      <point x="804" y="385" type="line"/>
+      <point x="804" y="480" type="line"/>
+      <point x="605" y="480" type="line"/>
+    </contour>
+    <component base="qa-ethiopic" xOffset="10"/>
+    <component base="geez-part-15" xOffset="648" yOffset="136"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>qa-ethiopic</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>geez-part-15</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>
