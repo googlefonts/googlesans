@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="mya-ethiopic" format="2">
+  <advance width="853"/>
+  <unicode hex="1359"/>
+  <anchor x="411" y="847" name="top"/>
+  <outline>
+    <contour>
+      <point x="382" y="624" type="line"/>
+      <point x="467" y="624" type="line"/>
+      <point x="467" y="745" type="line"/>
+      <point x="382" y="745" type="line"/>
+    </contour>
+    <component base="geez-part-13" xScale="-1" yScale="-1" xOffset="722" yOffset="885"/>
+    <component base="maa-ethiopic" yOffset="-56"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>maa-ethiopic</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>maa-ethiopic</string>
+    </dict>
+  </lib>
+</glyph>

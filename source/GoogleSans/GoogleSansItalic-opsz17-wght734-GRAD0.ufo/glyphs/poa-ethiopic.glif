@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="poa-ethiopic" format="2">
+  <advance width="910"/>
+  <unicode hex="2D92"/>
+  <outline>
+    <contour>
+      <point x="64" y="312" type="curve"/>
+      <point x="161" y="312" type="line"/>
+      <point x="179" y="322"/>
+      <point x="201" y="359"/>
+      <point x="206" y="379" type="curve"/>
+      <point x="511" y="379" type="line"/>
+      <point x="511" y="451" type="line"/>
+      <point x="205" y="451" type="line"/>
+      <point x="200" y="472"/>
+      <point x="180" y="505"/>
+      <point x="161" y="514" type="curve"/>
+      <point x="64" y="514" type="line"/>
+      <point x="73" y="482"/>
+      <point x="75" y="451"/>
+      <point x="75" y="416" type="curve" smooth="yes"/>
+      <point x="75" y="378"/>
+      <point x="71" y="343"/>
+    </contour>
+    <component base="po-ethiopic" xOffset="64"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>po-ethiopic</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>po-ethiopic</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,24 @@
+[meta]
+build_commit = ""
+
+[input.features]
+
+[input]
+script = "ethi"
+text = [
+    # Validate that space is replaced by space.ethi between two Ethiopic words
+    "አንስቶም በየዓለመቱ",
+    # Validate that space is replaced by space.ethi when 1st words ends with 1 punctuation marks
+    "ታውጇል። ተግባራዊነቱን",
+    # Validate that space is replaced by space.ethi when 1st word ends with 2 punctuation marks
+    "የምገልጸው።» ባለፉት",
+    # Validate that space is replaced by space.ethi when 2nd word is preceded by punctuation
+    "አሕመድ «ከልማት",
+    # Validate that space is replaced by space.ethi when 1st word ends with punctuation and 2nd word begins with punctuation
+    "ብለውታል። «ምናልባት",
+    # 1 Validate that space is replaced by space.ethi when 1st word ends with 2 punctuation marks and 2nd word begins with punctuation
+    # 2 validate that guillemetleft and guillemetright are replaced with guillemetleft.cap and guillemetright.cap, respectively
+    "ብለውታል።» «ምናልባት",
+    # Validate that space is replaced by space.ethi even when mark is present
+    "አንስቶም በየዓለመቱ",
+]

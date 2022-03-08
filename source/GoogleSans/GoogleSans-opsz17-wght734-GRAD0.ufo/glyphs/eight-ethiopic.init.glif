@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="eight-ethiopic.init" format="2">
+  <advance width="710"/>
+  <outline>
+    <contour>
+      <point x="580" y="828" type="line"/>
+      <point x="580" y="746" type="line"/>
+      <point x="750" y="746" type="line"/>
+      <point x="750" y="828" type="line"/>
+    </contour>
+    <contour>
+      <point x="579" y="-59" type="line"/>
+      <point x="579" y="-141" type="line"/>
+      <point x="750" y="-141" type="line"/>
+      <point x="750" y="-59" type="line"/>
+    </contour>
+    <component base="geez-part-44"/>
+    <component base="geez-part-59" xOffset="10"/>
+    <component base="geez-part-60" xOffset="8"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>geez-part-44</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>geez-part-59</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>
