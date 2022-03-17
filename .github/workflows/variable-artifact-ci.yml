@@ -71,3 +71,8 @@ jobs:
         run: |
           pip install --upgrade font-size
           font-size ${{ steps.config.outputs.buildpath }}
+      - name: Push variable font artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: GoogleSans-variable
+          path: ${{ steps.config.outputs.buildpath }}
