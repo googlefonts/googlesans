@@ -5,8 +5,6 @@ on:
     # Sequence of patterns matched against refs/heads
     branches:
       - main # Push events on main branch
-      - "build/**" # Push events to branches matching refs/heads/build/[ANYTHING]
-      - "build-*" # Push events to branches matching refs/heads/build-[ANYTHING]
   # Manual trigger
   workflow_dispatch:
 
