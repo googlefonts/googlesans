@@ -45,14 +45,35 @@
       <point x="-3" y="-355"/>
       <point x="131" y="-419"/>
     </contour>
-    <component base="pa_uMatra-tamil"/>
+    <contour>
+      <point x="600" y="-188" type="line"/>
+      <point x="684" y="-188" type="line"/>
+      <point x="724" y="40" type="line"/>
+      <point x="640" y="40" type="line"/>
+    </contour>
+    <contour>
+      <point x="35" y="0" type="line"/>
+      <point x="717" y="0" type="line"/>
+      <point x="819" y="580" type="line"/>
+      <point x="735" y="580" type="line"/>
+      <point x="640" y="38" type="line"/>
+      <point x="680" y="74" type="line"/>
+      <point x="98" y="74" type="line"/>
+      <point x="126" y="38" type="line"/>
+      <point x="221" y="580" type="line"/>
+      <point x="137" y="580" type="line"/>
+    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>tta-tamil</string>
       <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
       <string>aa-tamil</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
     </dict>
   </lib>
 </glyph>
