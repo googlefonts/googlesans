@@ -46,12 +46,27 @@
       <point x="45" y="-137"/>
       <point x="268" y="-327"/>
     </contour>
-    <component base="aaMatra-tamil" xOffset="293"/>
+    <contour>
+      <point x="328" y="0" type="line"/>
+      <point x="412" y="0" type="line"/>
+      <point x="501" y="506" type="line"/>
+      <point x="715" y="506" type="line"/>
+      <point x="626" y="0" type="line"/>
+      <point x="710" y="0" type="line"/>
+      <point x="799" y="506" type="line"/>
+      <point x="945" y="506" type="line"/>
+      <point x="958" y="580" type="line"/>
+      <point x="430" y="580" type="line"/>
+    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Number</string>
       <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
       <string>na-tamil</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Decimal Digit</string>
     </dict>
   </lib>
 </glyph>

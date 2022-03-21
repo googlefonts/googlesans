@@ -1,5 +1,5 @@
-@tml2_default_punctuation = [period comma colon semicolon ellipsis exclam question asterisk parenleft parenright braceleft braceright bracketleft bracketright quotedblleft quotedblright quoteleft quoteright];
-@tml2_localised_punctuation = [period.loclTAML comma.loclTAML colon.loclTAML semicolon.loclTAML ellipsis.loclTAML exclam.loclTAML question.loclTAML asterisk.loclTAML parenleft.loclTAML parenright.loclTAML braceleft.loclTAML braceright.loclTAML bracketleft.loclTAML bracketright.loclTAML quotedblleft.loclTAML quotedblright.loclTAML quoteleft.loclTAML quoteright.loclTAML];
+@tml2_default_punctuation = [period comma colon semicolon ellipsis exclam question asterisk parenleft parenright braceleft braceright bracketleft bracketright slash quotedblleft quotedblright quoteleft quoteright];
+@tml2_localised_punctuation = [period.loclTAML comma.loclTAML colon.loclTAML semicolon.loclTAML ellipsis.loclTAML exclam.loclTAML question.loclTAML asterisk.loclTAML parenleft.loclTAML parenright.loclTAML braceleft.loclTAML braceright.loclTAML bracketleft.loclTAML bracketright.loclTAML slash.loclTAML quotedblleft.loclTAML quotedblright.loclTAML quoteleft.loclTAML quoteright.loclTAML];
 @tml2_default_figures = [zero one two three four five six seven eight nine];
 @tml2_default_figures_tab = [zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf];
 @tml2_localised_figures_dflt = [zero.loclTAML one.loclTAML two.loclTAML three.loclTAML four.loclTAML five.loclTAML six.loclTAML seven.loclTAML eight.loclTAML nine.loclTAML];
@@ -7,13 +7,13 @@
 
 feature locl {
     script tml2;
-    lookup tml2_TAM_locl_localised_punctuations {
+    lookup tml2_dflt_locl_localised_punctuations {
         sub @tml2_default_punctuation by @tml2_localised_punctuation;
-    } tml2_TAM_locl_localised_punctuations;
+    } tml2_dflt_locl_localised_punctuations;
 
-    lookup tml2_TAM_locl_localised_numerals {
+    lookup tml2_dflt_locl_localised_numerals {
         sub @tml2_default_figures by @tml2_localised_figures_dflt;
-    } tml2_TAM_locl_localised_numerals;
+    } tml2_dflt_locl_localised_numerals;
 
 } locl;
 
@@ -22,6 +22,7 @@ feature akhn {
     lookup tml2_dflt_akhn_akhands {
         sub ka-tamil pulli-tamil ssa-tamil by k_ssa-tamil;
     } tml2_dflt_akhn_akhands;
+
 } akhn;
 
 feature abvs {
@@ -42,6 +43,7 @@ feature abvs {
         sub k_ssa-tamil iiMatra-tamil by k_ssa_iiMatra-tamil;
         sub sha-tamil pulli-tamil ra-tamil iiMatra-tamil by sh_ra_iiMatra-tamil;
     } tml2_dflt_abvs_iimatra_ligatures;
+
 } abvs;
 
 feature psts {
@@ -127,6 +129,7 @@ feature psts {
         sub ssa-tamil uuMatra-tamil by ssa_uuMatra-tamil;
         sub ha-tamil uuMatra-tamil by ha_uuMatra-tamil;
     } tml2_dflt_psts_uuMatraLigatures;
+
 } psts;
 
 feature tnum {

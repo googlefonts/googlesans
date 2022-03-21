@@ -51,14 +51,90 @@
       <point x="-16" y="-296"/>
       <point x="43" y="-348"/>
     </contour>
-    <component base="ma_iiMatra-tamil"/>
+    <contour>
+      <point x="35" y="0" type="line"/>
+      <point x="560" y="0" type="line" smooth="yes"/>
+      <point x="730" y="0"/>
+      <point x="806" y="121"/>
+      <point x="806" y="292" type="curve" smooth="yes"/>
+      <point x="806" y="408"/>
+      <point x="763" y="498"/>
+      <point x="687" y="561" type="curve" smooth="yes"/>
+      <point x="626" y="611"/>
+      <point x="598" y="656"/>
+      <point x="598" y="715" type="curve" smooth="yes"/>
+      <point x="598" y="801"/>
+      <point x="664" y="848"/>
+      <point x="753" y="848" type="curve" smooth="yes"/>
+      <point x="825" y="848"/>
+      <point x="867" y="817"/>
+      <point x="867" y="775" type="curve" smooth="yes"/>
+      <point x="867" y="750"/>
+      <point x="849" y="723"/>
+      <point x="805" y="723" type="curve" smooth="yes"/>
+      <point x="773" y="723"/>
+      <point x="751" y="738"/>
+      <point x="751" y="768" type="curve" smooth="yes"/>
+      <point x="751" y="808"/>
+      <point x="793" y="839"/>
+      <point x="857" y="842" type="curve"/>
+      <point x="857" y="861" type="line"/>
+      <point x="729" y="861" type="line"/>
+      <point x="737" y="840" type="line"/>
+      <point x="703" y="822"/>
+      <point x="679" y="796"/>
+      <point x="679" y="754" type="curve" smooth="yes"/>
+      <point x="679" y="689"/>
+      <point x="735" y="653"/>
+      <point x="805" y="653" type="curve" smooth="yes"/>
+      <point x="888" y="653"/>
+      <point x="947" y="697"/>
+      <point x="947" y="779" type="curve" smooth="yes"/>
+      <point x="947" y="857"/>
+      <point x="877" y="918"/>
+      <point x="753" y="918" type="curve" smooth="yes"/>
+      <point x="624" y="918"/>
+      <point x="520" y="840"/>
+      <point x="520" y="715" type="curve" smooth="yes"/>
+      <point x="520" y="665"/>
+      <point x="541" y="621"/>
+      <point x="573" y="591" type="curve"/>
+      <point x="570" y="575" type="line"/>
+      <point x="641" y="575" type="line"/>
+      <point x="624" y="582"/>
+      <point x="606" y="586"/>
+      <point x="587" y="586" type="curve" smooth="yes"/>
+      <point x="490" y="586"/>
+      <point x="426" y="522"/>
+      <point x="408" y="424" type="curve" smooth="yes"/>
+      <point x="338" y="37" type="line"/>
+      <point x="422" y="37" type="line"/>
+      <point x="491" y="418" type="line" smooth="yes"/>
+      <point x="503" y="485"/>
+      <point x="532" y="520"/>
+      <point x="583" y="520" type="curve" smooth="yes"/>
+      <point x="660" y="520"/>
+      <point x="719" y="413"/>
+      <point x="719" y="294" type="curve" smooth="yes"/>
+      <point x="719" y="172"/>
+      <point x="683" y="74"/>
+      <point x="558" y="74" type="curve" smooth="yes"/>
+      <point x="106" y="74" type="line"/>
+      <point x="128" y="48" type="line"/>
+      <point x="222" y="580" type="line"/>
+      <point x="138" y="580" type="line"/>
+    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>llla-tamil</string>
       <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
       <string>ma_iiMatra-tamil</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
     </dict>
   </lib>
 </glyph>
