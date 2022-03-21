@@ -2,8 +2,11 @@
 <glyph name="nya-gurmukhi" format="2">
   <advance width="677"/>
   <unicode hex="0A1E"/>
+  <note>
+Introduce inktraps in the joins.
+</note>
   <anchor x="593" y="-26" name="bottom"/>
-  <anchor x="522" y="6" name="bottom.right"/>
+  <anchor x="522" y="6" name="bottomright"/>
   <anchor x="531" y="690" name="top"/>
   <outline>
     <contour>
@@ -71,4 +74,12 @@
       <point x="477" y="639" type="line"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

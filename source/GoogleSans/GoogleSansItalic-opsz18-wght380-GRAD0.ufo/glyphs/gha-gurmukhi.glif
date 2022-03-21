@@ -4,7 +4,7 @@
   <unicode hex="0A18"/>
   <guideline x="342" y="474" angle="90"/>
   <anchor x="582" y="0" name="bottom"/>
-  <anchor x="582" y="0" name="bottom.right"/>
+  <anchor x="582" y="0" name="bottomright"/>
   <anchor x="698" y="660" name="top"/>
   <outline>
     <contour>
@@ -84,4 +84,12 @@
       <point x="677" y="660" type="line"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

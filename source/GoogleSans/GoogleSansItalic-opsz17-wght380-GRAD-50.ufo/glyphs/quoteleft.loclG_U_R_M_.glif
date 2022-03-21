@@ -1,12 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="quoteleft.loclGURM" format="2">
-  <advance width="278"/>
+  <advance width="259"/>
   <outline>
-    <contour>
-      <point x="21" y="504" type="line"/>
-      <point x="128" y="504" type="line"/>
-      <point x="251" y="735" type="line"/>
-      <point x="178" y="735" type="line"/>
-    </contour>
+    <component base="comma.loclGURM" xScale="-1" yScale="-1" xOffset="224" yOffset="626"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Punctuation</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Quote</string>
+    </dict>
+  </lib>
 </glyph>
