@@ -5,6 +5,14 @@
   <guideline x="50" y="333" angle="80"/>
   <outline>
     <component base="kha-gurmukhi"/>
-    <component base="nukta-gurmukhi" xOffset="92" yOffset="180"/>
+    <component base="nukta-gurmukhi" xOffset="175" yOffset="180"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

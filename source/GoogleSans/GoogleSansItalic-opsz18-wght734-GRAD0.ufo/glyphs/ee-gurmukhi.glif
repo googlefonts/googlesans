@@ -2,23 +2,17 @@
 <glyph name="ee-gurmukhi" format="2">
   <advance width="639"/>
   <unicode hex="0A0F"/>
+  <anchor x="746" y="671" name="top"/>
   <outline>
     <component base="iri-gurmukhi"/>
-    <component base="eeMatra-gurmukhi" xOffset="239"/>
+    <component base="eeMatra-gurmukhi" xOffset="518"/>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
-      <array>
-        <dict>
-          <key>alignment</key>
-          <integer>-1</integer>
-          <key>index</key>
-          <integer>1</integer>
-          <key>name</key>
-          <string>eeMatra-gurmukhi</string>
-        </dict>
-      </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
     </dict>
   </lib>
 </glyph>

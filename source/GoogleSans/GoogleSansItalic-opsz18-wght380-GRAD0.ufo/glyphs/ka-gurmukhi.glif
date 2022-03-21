@@ -5,7 +5,7 @@
   <guideline x="271" y="500" angle="270"/>
   <guideline x="141" y="293" angle="0"/>
   <anchor x="463" y="0" name="bottom"/>
-  <anchor x="463" y="0" name="bottom.right"/>
+  <anchor x="463" y="0" name="bottomright"/>
   <anchor x="579" y="660" name="top"/>
   <outline>
     <contour>
@@ -67,4 +67,12 @@
       <point x="38" y="660" type="line"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

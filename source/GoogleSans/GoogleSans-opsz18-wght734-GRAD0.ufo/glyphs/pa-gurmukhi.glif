@@ -3,7 +3,7 @@
   <advance width="654"/>
   <unicode hex="0A2A"/>
   <anchor x="533" y="0" name="bottom"/>
-  <anchor x="533" y="0" name="bottom.right"/>
+  <anchor x="533" y="0" name="bottomright"/>
   <anchor x="97" y="52" name="nukta"/>
   <anchor x="534" y="671" name="top"/>
   <outline>
@@ -55,4 +55,12 @@
       <point x="477" y="671" type="line"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

@@ -2,11 +2,14 @@
 <glyph name="quoteleft.loclGURM" format="2">
   <advance width="303"/>
   <outline>
-    <contour>
-      <point x="14" y="501" type="line"/>
-      <point x="146" y="501" type="line"/>
-      <point x="263" y="716" type="line"/>
-      <point x="176" y="716" type="line"/>
-    </contour>
+    <component base="comma.loclGURM" xScale="-1" yScale="-1" xOffset="261" yOffset="617"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Punctuation</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Quote</string>
+    </dict>
+  </lib>
 </glyph>
