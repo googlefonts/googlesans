@@ -2,9 +2,9 @@
 <glyph name="ba_aaSign-khmer" format="2">
   <advance width="947"/>
   <anchor x="313" y="0" name="bottom"/>
-  <anchor x="511" y="0" name="bottomright"/>
+  <anchor x="525" y="0" name="bottomright"/>
   <anchor x="313" y="576" name="top"/>
-  <anchor x="540" y="576" name="topright"/>
+  <anchor x="525" y="576" name="topright"/>
   <outline>
     <contour>
       <point x="279" y="-6" type="curve" smooth="yes"/>
@@ -48,8 +48,12 @@
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
       <string>aaSign-khmer</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Ligature</string>
     </dict>
   </lib>
 </glyph>
