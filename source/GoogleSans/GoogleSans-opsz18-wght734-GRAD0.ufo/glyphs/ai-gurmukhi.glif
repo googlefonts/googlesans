@@ -2,8 +2,17 @@
 <glyph name="ai-gurmukhi" format="2">
   <advance width="850"/>
   <unicode hex="0A10"/>
+  <anchor x="908" y="671" name="top"/>
   <outline>
     <component base="a-gurmukhi"/>
-    <component base="aiMatra-gurmukhi" xOffset="373"/>
+    <component base="aiMatra-gurmukhi" xOffset="729"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

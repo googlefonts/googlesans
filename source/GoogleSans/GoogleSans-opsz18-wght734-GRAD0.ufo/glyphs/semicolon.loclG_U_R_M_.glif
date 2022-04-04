@@ -3,7 +3,7 @@
   <advance width="309"/>
   <outline>
     <component base="comma.loclGURM"/>
-    <component base="period.loclGURM" yOffset="375"/>
+    <component base="period.loclGURM" xOffset="-5" yOffset="375"/>
   </outline>
   <lib>
     <dict>
@@ -18,8 +18,12 @@
           <string>comma.loclGURM</string>
         </dict>
       </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Punctuation</string>
       <key>com.schriftgestaltung.Glyphs.glyph.widthMetricsKey</key>
       <string>comma.loclGURM</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Other</string>
     </dict>
   </lib>
 </glyph>

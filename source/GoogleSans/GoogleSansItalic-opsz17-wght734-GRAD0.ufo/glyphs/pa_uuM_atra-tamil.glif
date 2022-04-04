@@ -44,25 +44,35 @@
       <point x="1" y="-391"/>
       <point x="145" y="-468"/>
     </contour>
-    <component base="pa_uMatra-tamil" xOffset="1"/>
+    <contour>
+      <point x="612" y="-212" type="line"/>
+      <point x="732" y="-212" type="line"/>
+      <point x="774" y="25" type="line"/>
+      <point x="653" y="25" type="line"/>
+    </contour>
+    <contour>
+      <point x="45" y="0" type="line"/>
+      <point x="769" y="0" type="line"/>
+      <point x="878" y="613" type="line"/>
+      <point x="757" y="613" type="line"/>
+      <point x="659" y="56" type="line"/>
+      <point x="711" y="105" type="line"/>
+      <point x="142" y="105" type="line"/>
+      <point x="176" y="56" type="line"/>
+      <point x="275" y="613" type="line"/>
+      <point x="154" y="613" type="line"/>
+    </contour>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
-      <array>
-        <dict>
-          <key>alignment</key>
-          <integer>-1</integer>
-          <key>index</key>
-          <integer>0</integer>
-          <key>name</key>
-          <string>pa_uMatra-tamil</string>
-        </dict>
-      </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>tta-tamil</string>
       <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
       <string>aa-tamil</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
     </dict>
   </lib>
 </glyph>
