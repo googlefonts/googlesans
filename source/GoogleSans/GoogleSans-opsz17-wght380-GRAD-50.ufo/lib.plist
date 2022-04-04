@@ -6302,6 +6302,10 @@
       <string>mark</string>
       <key>auMatra-gurmukhi.short</key>
       <string>mark</string>
+      <key>auMatra-tamil</key>
+      <string>base</string>
+      <key>aulengthmark-tamil</key>
+      <string>base</string>
       <key>aw-deva</key>
       <string>base</string>
       <key>awMatra-deva</key>
@@ -7930,10 +7934,6 @@
       <string>mark</string>
       <key>iMark_toandakhiat-khmer.narrow</key>
       <string>mark</string>
-      <key>iMatra-tamil</key>
-      <string>mark</string>
-      <key>iMatra-tamil.alt</key>
-      <string>mark</string>
       <key>iPharyngeal-ethiopic</key>
       <string>base</string>
       <key>iVowel-lao</key>
@@ -8341,7 +8341,7 @@
       <key>k_ssa-deva</key>
       <string>base</string>
       <key>k_ssa-tamil</key>
-      <string>ligature</string>
+      <string>base</string>
       <key>ka-cy</key>
       <string>base</string>
       <key>ka-cy.sc</key>
@@ -8587,8 +8587,6 @@
       <key>la_aaSign-khmer</key>
       <string>base</string>
       <key>la_auSign-khmer</key>
-      <string>base</string>
-      <key>la_uuMatra-tamil</key>
       <string>base</string>
       <key>laa-ethiopic</key>
       <string>base</string>
@@ -9138,6 +9136,8 @@
       <string>base</string>
       <key>oMatra-deva</key>
       <string>base</string>
+      <key>oMatra-tamil</key>
+      <string>base</string>
       <key>oO-lao</key>
       <string>base</string>
       <key>oPharyngeal-ethiopic</key>
@@ -9516,6 +9516,8 @@
       <string>mark</string>
       <key>ooMatra-gurmukhi.short</key>
       <string>mark</string>
+      <key>ooMatra-tamil</key>
+      <string>base</string>
       <key>ooe-deva</key>
       <string>base</string>
       <key>ooeMatra-deva</key>
@@ -10644,8 +10646,6 @@
       <string>mark</string>
       <key>uMatra-gurmukhi</key>
       <string>mark</string>
-      <key>uMatra-tamil</key>
-      <string>mark</string>
       <key>uPharyngeal-ethiopic</key>
       <string>base</string>
       <key>uVowel-lao</key>
@@ -10900,8 +10900,6 @@
       <string>mark</string>
       <key>uuMatra-gurmukhi</key>
       <string>mark</string>
-      <key>uuMatra-tamil</key>
-      <string>mark</string>
       <key>uuVowel-lao</key>
       <string>mark</string>
       <key>uuVowel-lao.narrow</key>
@@ -10957,8 +10955,6 @@
       <key>virama-lao.small</key>
       <string>mark</string>
       <key>viriam-khmer</key>
-      <string>mark</string>
-      <key>visarga-gurmukhi</key>
       <string>mark</string>
       <key>vo-arm</key>
       <string>base</string>
@@ -12306,7 +12302,7 @@
       <key>abbreviation-deva</key>
       <string>uni0970</string>
       <key>abbreviation-gurmukhi</key>
-      <string>abbreviationgurmukhi</string>
+      <string>uni0A76</string>
       <key>abreve-cy</key>
       <string>uni04D1</string>
       <key>abreve-cy.sc</key>
@@ -12898,7 +12894,7 @@
       <key>ca-gurmukhi</key>
       <string>uni0A1A</string>
       <key>ca-gurmukhi.below</key>
-      <string>uni0A1A.below</string>
+      <string>uni0A4D0A1A</string>
       <key>ca-khmer</key>
       <string>uni1785</string>
       <key>ca-khmer.below</key>
@@ -14634,11 +14630,11 @@
       <key>he-hb</key>
       <string>uni05D4</string>
       <key>headline-gurmukhi</key>
-      <string>headlinegurmukhi</string>
+      <string>headline</string>
       <key>headline-gurmukhi.short</key>
-      <string>headlinegurmukhi.short</string>
+      <string>headline.short</string>
       <key>headline-gurmukhi.shorter</key>
-      <string>headlinegurmukhi.short.001</string>
+      <string>headline.shorter</string>
       <key>heavyDoubleCommaQuotationMarkOrnament</key>
       <string>uni275E</string>
       <key>heavyDoubleTurnedCommaQuotationMarkOrnament</key>
@@ -17702,7 +17698,7 @@
       <key>ta-gurmukhi</key>
       <string>uni0A24</string>
       <key>ta-gurmukhi.below</key>
-      <string>uni0A24.below</string>
+      <string>uni0A4D0A24</string>
       <key>ta-khmer</key>
       <string>uni178F</string>
       <key>ta-khmer.below</key>
@@ -18008,7 +18004,7 @@
       <key>tta-gurmukhi</key>
       <string>uni0A1F</string>
       <key>tta-gurmukhi.below</key>
-      <string>uni0A1F.below</string>
+      <string>uni0A4D0A1F</string>
       <key>tta-lao</key>
       <string>uni0E8F</string>
       <key>tta-tamil</key>
@@ -18602,7 +18598,7 @@
       <key>ya-gurmukhi</key>
       <string>uni0A2F</string>
       <key>ya-gurmukhi.psts</key>
-      <string>uni0A2F.psts</string>
+      <string>uni0A4D0A2F</string>
       <key>ya-tamil</key>
       <string>uni0BAF</string>
       <key>yaSign-khmer</key>

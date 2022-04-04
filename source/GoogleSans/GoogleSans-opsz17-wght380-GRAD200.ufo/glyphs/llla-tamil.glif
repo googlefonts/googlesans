@@ -5,6 +5,7 @@
   <guideline x="100"/>
   <guideline x="478" y="74" angle="90"/>
   <guideline x="161" y="-186" angle="0"/>
+  <anchor x="438" y="596" name="top"/>
   <outline>
     <contour>
       <point x="233" y="-379" type="curve" smooth="yes"/>
@@ -48,12 +49,44 @@
       <point x="76" y="-323"/>
       <point x="135" y="-379"/>
     </contour>
-    <component base="ma-tamil"/>
+    <contour>
+      <point x="100" y="0" type="line"/>
+      <point x="609" y="0" type="line" smooth="yes"/>
+      <point x="749" y="0"/>
+      <point x="822" y="69"/>
+      <point x="822" y="218" type="curve" smooth="yes"/>
+      <point x="822" y="436"/>
+      <point x="709" y="612"/>
+      <point x="556" y="612" type="curve" smooth="yes"/>
+      <point x="455" y="612"/>
+      <point x="396" y="552"/>
+      <point x="396" y="445" type="curve" smooth="yes"/>
+      <point x="396" y="37" type="line"/>
+      <point x="480" y="37" type="line"/>
+      <point x="480" y="439" type="line" smooth="yes"/>
+      <point x="480" y="506"/>
+      <point x="504" y="536"/>
+      <point x="556" y="536" type="curve" smooth="yes"/>
+      <point x="659" y="536"/>
+      <point x="740" y="384"/>
+      <point x="740" y="220" type="curve" smooth="yes"/>
+      <point x="740" y="109"/>
+      <point x="696" y="74"/>
+      <point x="599" y="74" type="curve" smooth="yes"/>
+      <point x="157" y="74" type="line"/>
+      <point x="184" y="47" type="line"/>
+      <point x="184" y="596" type="line"/>
+      <point x="100" y="596" type="line"/>
+    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
       <string>ma-tamil</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
     </dict>
   </lib>
 </glyph>

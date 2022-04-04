@@ -2,9 +2,12 @@
 <glyph name="gha-gurmukhi" format="2">
   <advance width="754"/>
   <unicode hex="0A18"/>
+  <note>
+Introduce inktraps in the joins.
+</note>
   <guideline x="240" y="474" angle="90"/>
   <anchor x="640" y="0" name="bottom"/>
-  <anchor x="640" y="0" name="bottom.right"/>
+  <anchor x="640" y="0" name="bottomright"/>
   <anchor x="640" y="660" name="top"/>
   <outline>
     <contour>
@@ -84,4 +87,12 @@
       <point x="596" y="660" type="line"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

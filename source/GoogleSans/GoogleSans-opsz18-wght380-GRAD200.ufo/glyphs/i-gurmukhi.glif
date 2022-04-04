@@ -3,8 +3,17 @@
   <advance width="856"/>
   <unicode hex="0A07"/>
   <guideline x="333" y="508" angle="90"/>
+  <anchor x="742" y="660" name="top"/>
   <outline>
     <component base="iMatra-gurmukhi"/>
     <component base="iri-gurmukhi" xOffset="248"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>
