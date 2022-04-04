@@ -1,0 +1,17 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+half  = true
+cjct  = true
+pres = true
+
+[input]
+script = "bng2"
+language = "dflt"
+comparison_mode = "full"
+text = [
+	"ঙ্ক্ষ্র গ্দ্র ঙ্ঘ্ব ণ্ট্র দ্ভ্র ন্দ্ব ব্ভ্র ম্প্ল ল্ফ্র ষ্প্র স্ট্র", # On-the-fly Triconsonants
+	"গ্দ ঙ্ঘ ণ্ম ণ্ট দ্গ ন্ম প্ট ব্ঢ ম্স ল্দ শ্ছ ষ্প স্ট হ্ন", # On-the-fly Biconsonants Linear
+	"ক্ন খ্ব গ্ন ঘ্ন ঙ্ব চ্ন জ্ব ঝ্ব ট্ব থ্ব দ্র ঢ্ব ণ্ণ থ্র ধ্ন ন্ন ন্থ ন্ত ন্র প্প ফ্ল ভ্ল হ্ল ম্থ ম্ত ম্ল ল্গ শ্ন স্ন স্থ স্ত স্ল ষ্র ষ্ব হ্ব য্ব", # On-the-fly Biconsonants anchor-positioned
+]
