@@ -1,0 +1,14 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+rphf = true
+
+[input]
+script = "bng2"
+language = "dflt"
+comparison_mode = "full"
+text = [
+	"র্ক", # dflt
+	"ৰ্ক", # ASM
+]
