@@ -1,6 +1,4 @@
 @BNG_allBase = [ka-beng kha-beng ga-beng gha-beng nga-beng ca-beng cha-beng ja-beng jha-beng nya-beng tta-beng ttha-beng dda-beng ddha-beng nna-beng ta-beng tha-beng da-beng dha-beng na-beng pa-beng pha-beng ba-beng bha-beng ma-beng ya-beng ra-beng la-beng sha-beng ssa-beng sa-beng ha-beng taKhanda-beng rra-beng rha-beng yya-beng ramiddlediagonal-beng ralowerdiagonal-beng t-beng.half1 k_ssa-beng t_ra-beng];
-@BNG_allSecondHalf = [gha-beng.half1 cha-beng.half1 tta-beng.half1 ddha-beng.half1 da-beng.half1 pha-beng.half1 ba-beng.half1 ma-beng.half1 da-beng.half2 pha-beng.half2 ma-beng.half2 tta-beng.half3 ddha-beng.half3 ya-beng.pstf.short ra-beng.blwf02 ra-beng.blwf20 ra-beng.blwf27 k_ra-beng.blwf ta_uMatra-beng.blwf t_ra-beng.blwf dh_ba-beng.blwf bh_ra-beng.blwf ra-beng.blwf0 ka-beng.blwf1 ga-beng.blwf1 nna-beng.blwf1 ta-beng.blwf1 tha-beng.blwf1 dha-beng.blwf1 na-beng.blwf1 pa-beng.blwf1 ba-beng.blwf1 bha-beng.blwf1 la-beng.blwf1 ra-beng.blwf15 na-beng.blwf2 ba-beng.blwf2 la-beng.blwf2 ra-beng.blwf23 na-beng.blwf3 ba-beng.blwf3 la-beng.blwf3 ra-beng.blwf38 ba-beng.blwf4 ra-beng.blwf5 ra-beng.blwf05.short ra-beng.blwf0.short ra-beng.blwf23.short];
-
 
 # Prefix: ChainingContextualSubs
 lookup BNG_dflt_pres_contextualSpacingA {
@@ -114,7 +112,6 @@ feature half {
         sub da-beng' halant-beng' bha-beng halant-beng [ra-beng ramiddlediagonal-beng] by d-beng.half1;
         sub na-beng' halant-beng' tta-beng halant-beng [ra-beng ramiddlediagonal-beng] by n-beng.half2;
         sub na-beng' halant-beng' da-beng halant-beng [ba-beng ra-beng ramiddlediagonal-beng] by n-beng.half2;
-        #	sub na-beng' halant-beng' tha-beng halant-beng [ra-beng ramiddlediagonal-beng] by n-beng.half5;
         sub ba-beng' halant-beng' bha-beng halant-beng [ra-beng ramiddlediagonal-beng] by b-beng.half2;
         sub ma-beng' halant-beng' [ba-beng bha-beng] halant-beng [ra-beng ramiddlediagonal-beng] by m-beng.half1;
         sub ma-beng' halant-beng' pa-beng halant-beng [la-beng ra-beng ramiddlediagonal-beng] by m-beng.half3;
@@ -175,7 +172,6 @@ feature half {
         sub na-beng' halant-beng' [na-beng ba-beng] by n-beng.half1;
         sub na-beng' halant-beng' tha-beng by n-beng.half3;
         sub na-beng' halant-beng' ta-beng by n-beng.half4;
-        sub na-beng' halant-beng' [ra-beng ramiddlediagonal-beng] by n-beng.half5;
         sub pa-beng' halant-beng' [pa-beng na-beng la-beng ba-beng] by p-beng.half1;
         sub pa-beng' halant-beng' [ra-beng ramiddlediagonal-beng] by p-beng.half2;
         sub pha-beng' halant-beng' [la-beng ba-beng] by ph-beng.half1;
@@ -191,8 +187,7 @@ feature half {
         sub sa-beng' halant-beng' ta-beng by s-beng.half6;
         sub sa-beng' halant-beng' [la-beng ra-beng ramiddlediagonal-beng] by s-beng.half7;
         sub ssa-beng' halant-beng' [ra-beng ramiddlediagonal-beng] by ss-beng.half3;
-        sub ssa-beng' halant-beng' ba-beng by ss-beng.half4;
-        #headline extension
+        #	sub ssa-beng' halant-beng' ba-beng by ss-beng.half4; #headline extension
         sub ha-beng' halant-beng' ba-beng by h-beng.half1;
         sub ya-beng' halant-beng' ba-beng by y-beng.half1;
         #akhnd half-forms
@@ -324,6 +319,7 @@ feature cjct {
         sub da-beng halant-beng ba-beng by d_ba-beng;
         sub da-beng halant-beng ba-beng by d_ba-beng;
         sub rra-beng halant-beng ba-beng by rr_ba-beng;
+        sub ssa-beng halant-beng ba-beng by ss_ba-beng;
         sub ba-beng halant-beng ba-beng by b_ba-beng;
         #raphala
         sub ba-beng halant-beng [ra-beng ramiddlediagonal-beng] by b_ra-beng;
@@ -337,6 +333,8 @@ feature cjct {
         sub ttha-beng halant-beng [ra-beng ramiddlediagonal-beng] by tth_ra-beng;
         sub ddha-beng halant-beng [ra-beng ramiddlediagonal-beng] by ddh_ra-beng;
         sub da-beng halant-beng [ra-beng ramiddlediagonal-beng] by d_ra-beng;
+        sub na-beng halant-beng [ra-beng ramiddlediagonal-beng] by n_ra-beng;
+        #headline extension
         sub pha-beng halant-beng [ra-beng ramiddlediagonal-beng] by ph_ra-beng;
         sub la-beng halant-beng [ra-beng ramiddlediagonal-beng] by l_ra-beng;
         sub ya-beng halant-beng [ra-beng ramiddlediagonal-beng] by y_ra-beng;
@@ -401,7 +399,7 @@ feature init {
     script beng;
     lookup initial_forms {
         sub eMatra-beng by eMatra-beng.init;
-        #sub aiMatra-beng by aiMatra-beng.init;
+        sub aiMatra-beng by aiMatra-beng.init;
     } initial_forms;
 
     script bng2;
@@ -446,7 +444,6 @@ feature pres {
     } BNG_dflt_pres_modularCjct_triconsonant_2nd;
 
     lookup BNG_dflt_pres_modularCjct_triconsonant_3rd {
-        #	sub n-beng.half5 tha-beng.blwf1 [ra-beng ramiddlediagonal-beng]' by ra-beng.blwf-20; # 3 stacking marks
         sub [m-beng.half3 s-beng.half3 ss-beng.half2] p-beng.half2 [ra-beng ramiddlediagonal-beng]' by ra-beng.blwf38;
         sub s-beng.half4 ka-beng.blwf1 la-beng' by la-beng.blwf1;
     } BNG_dflt_pres_modularCjct_triconsonant_3rd;
@@ -479,12 +476,12 @@ feature pres {
         # baphala biconsonant
         sub [g-beng.half1 j-beng.half1 nn-beng.half1 n-beng.half1 p-beng.half1 sh-beng.half1] ba-beng' by ba-beng.blwf1;
         sub [kh-beng.half1 gh-beng.half1 ng-beng.half2 jh-beng.half1 tth-beng.half1 th-beng.half1 ph-beng.half1 h-beng.half1 y-beng.half1] ba-beng' by ba-beng.blwf2;
-        sub [m-beng.half1 ss-beng.half4 l-beng.half2 s-beng.half4] ba-beng' by ba-beng.blwf3;
+        sub [m-beng.half1 l-beng.half2 s-beng.half4] ba-beng' by ba-beng.blwf3;
         sub [dd-beng.half1 tt-beng.half1 ddh-beng.half1 c-beng.half1] ba-beng' by ba-beng.blwf4;
         # raphala biconsonant
-        sub [p-beng.half2 g-beng.half2 ny-beng.half1] [ra-beng ramiddlediagonal-beng]' by ra-beng.blwf23;
+        sub [p-beng.half2 g-beng.half2] [ra-beng ramiddlediagonal-beng]' by ra-beng.blwf23;
         sub [kh-beng.half1 th-beng.half1 ss-beng.half3] [ra-beng ramiddlediagonal-beng]' by ra-beng.blwf5;
-        sub [nn-beng.half1 m-beng.half5 s-beng.half7 n-beng.half5] [ra-beng ramiddlediagonal-beng]' by ra-beng.blwf0;
+        sub [nn-beng.half1 m-beng.half5 s-beng.half7] [ra-beng ramiddlediagonal-beng]' by ra-beng.blwf0;
         sub bh-beng.half1 [ra-beng ramiddlediagonal-beng]' by ra-beng.blwf0.short;
         sub [ng-beng.half2 dd-beng.half1] [ra-beng ramiddlediagonal-beng]' by ra-beng.blwf02;
         sub [dh-beng.half1 jh-beng.half1] [ra-beng ramiddlediagonal-beng]' by ra-beng.blwf05.short;
@@ -835,7 +832,7 @@ feature pres {
 
     ### --------------------------------------------------------------------------- ###
     ### !!! ----- eMatra clashes ----- !!!
-    @BNG_eMatraClashes_precomposed = [tt_ra-beng ph_ra-beng gh_ra-beng ng_k_ra-beng c_nya-beng c_ra-beng ch_ra-beng j_ra-beng ny_ra-beng tt_tta-beng tt_tt_ra-beng tth_ra-beng ddh_ra-beng nn_tth_ra-beng d_ra-beng b_ra-beng b_la-beng y_ra-beng l_ra-beng sh_ra-beng ss_tta-beng ss_tt_ra-beng h_ra-beng rr_ba-beng ss_k_ra-beng];
+    @BNG_eMatraClashes_precomposed = [tt_ra-beng ph_ra-beng gh_ra-beng ng_k_ra-beng c_nya-beng c_ra-beng ch_ra-beng j_ra-beng ny_ra-beng tt_tta-beng tt_tt_ra-beng tth_ra-beng ddh_ra-beng nn_tth_ra-beng d_ra-beng n_ra-beng b_ra-beng b_la-beng y_ra-beng l_ra-beng sh_ra-beng ss_tta-beng ss_tt_ra-beng h_ra-beng rr_ba-beng ss_k_ra-beng];
     @BNG_eMatraTooWide_precomposed = [k_ma-beng b_da-beng k_ssa-beng h_ma-beng k_ss_nna-beng k_ss_ma-beng ng_kha-beng ng_ma-beng j_ja-beng j_j_ba-beng j_jha-beng j_nya-beng dd_ga-beng dd_dda-beng dd_ma-beng t_ta-beng t_ma-beng b_ja-beng rr_ga-beng d_ma-beng n_ja-beng n_ttha-beng p_sa-beng m_da-beng m_d_ra-beng l_dda-beng l_dd_ra-beng l_ta-beng ss_ttha-beng s_kha-beng l_ka-beng s_ka-beng];
     @BNG_eMatra = [eMatra-beng eMatra-beng.init aiMatra-beng aiMatra-beng.init];
     @BNG_eMatra_short = [eMatra-beng.short eMatra-beng.init.short aiMatra-beng.short aiMatra-beng.init.short];
@@ -848,7 +845,7 @@ feature pres {
         # On-the-fly
         sub @BNG_eMatra' [ng-beng.half2 dd-beng.half1] ra-beng.blwf02 by @BNG_eMatra_short;
         sub @BNG_eMatra' [jh-beng.half1 dh-beng.half1] ra-beng.blwf05.short by @BNG_eMatra_short;
-        sub @BNG_eMatra' [nn-beng.half1 n-beng.half5 s-beng.half7] ra-beng.blwf0 by @BNG_eMatra_short;
+        sub @BNG_eMatra' [nn-beng.half1 s-beng.half7] ra-beng.blwf0 by @BNG_eMatra_short;
         sub @BNG_eMatra' [th-beng.half1 ss-beng.half3] ra-beng.blwf5 by @BNG_eMatra_short;
         sub @BNG_eMatra' j_nya-beng ra-beng.blwf15 by @BNG_eMatra_short;
         sub @BNG_eMatra' [p-beng.half2 g-beng.half2] ra-beng.blwf23 by @BNG_eMatra_short;
@@ -951,14 +948,15 @@ feature blws {
     ### u/uuMatra alternate to attach to round strokes rather than vertical stems
     @BNG_base_uUuMatra_alt = [rra-beng rha-beng];
     @BNG_base_uUuMatra_altRound_precomposed = [tt_tta-beng dd_dda-beng nn_ttha-beng nn_dda-beng t_ta-beng d_bha-beng ny_cha-beng c_ca-beng c_cha-beng k_ta-beng k_tta-beng j_nya-beng m_bha-beng sh_ca-beng n_dda-beng ha-beng nga-beng ca-beng cha-beng tta-beng ttha-beng dda-beng ddha-beng ta-beng bha-beng b_la-beng n_k_ta-beng n_ttha-beng ph_tta-beng b_bha-beng l_dda-beng l_ta-beng l_bha-beng ss_tta-beng ttha-beng ss_ttha-beng b_dda-beng h_nna-beng p_ta-beng sh_ta-beng];
-    @BNG_base_uUuMatra_altRound_blwf = [s_k_la-beng la-beng.blwf3 la-beng.blwf1 ta-beng.blwf1 tha-beng.blwf1 bha-beng.blwf1 ddha-beng.half1 tta-beng.half1 cha-beng.half1];
+    @BNG_base_uUuMatra_altRound_blwf = [s_k_la-beng la-beng.blwf3 la-beng.blwf1 ta-beng.blwf1 tha-beng.blwf1 ddha-beng.half1 tta-beng.half1 cha-beng.half1];
+    #bha-beng.blwf1
     lookup BNG_dflt_blws_alternate {
         sub @BNG_base_uUuMatra_alt [uMatra-beng uuMatra-beng]' by [uMatra-beng.alt uuMatra-beng.alt];
         sub @BNG_base_uUuMatra_altRound_precomposed [uMatra-beng uuMatra-beng]' by [uMatra-beng.alt.round uuMatra-beng.alt.round];
         sub @BNG_base_uUuMatra_altRound_blwf [uMatra-beng uuMatra-beng]' by [uMatra-beng.alt.round uuMatra-beng.alt.round];
     } BNG_dflt_blws_alternate;
 
-    ### uMatra uuMatra ligatures
+    ### uMatra uuMatra rVocalicMatra ligatures
     @BNG_uMatra = [uMatra-beng uMatra-beng.alt uMatra-beng.alt.round];
     @BNG_uuMatra = [uuMatra-beng uuMatra-beng.alt uuMatra-beng.alt.round];
     lookup BNG_dflt_blws_uUuMatraLigatures_precomposed {
@@ -967,11 +965,14 @@ feature blws {
         sub ha-beng @BNG_uMatra by ha_uMatra-beng;
         sub ra-beng @BNG_uMatra by ra_uMatra-beng;
         sub t_ra-beng @BNG_uMatra by t_ra_uMatra-beng;
+        sub p_ta-beng @BNG_uMatra by p_ta_uMatra-beng;
         sub bh-beng.half1 ra-beng.blwf0.short @BNG_uMatra by bh_ra_uMatra-beng;
         sub l-beng.half2 ga-beng.blwf1 @BNG_uMatra by l_ga_uMatra-beng;
         sub j_ra-beng @BNG_uMatra by j_ra_uMatra-beng;
         sub bh-beng.half1 ra-beng.blwf0.short @BNG_uuMatra by bh_ra_uuMatra-beng;
         sub j_ra-beng @BNG_uuMatra by j_ra_uuMatra-beng;
+        sub t_ra-beng @BNG_uuMatra by t_ra_uuMatra-beng;
+        sub ha-beng rVocalicMatra-beng by ha_rVocalicMatra-beng;
     } BNG_dflt_blws_uUuMatraLigatures_precomposed;
 
     lookup BNG_dflt_blws_uUuMatraLigatures_precomposed_decomp {
@@ -996,7 +997,6 @@ feature blws {
         sub ra-beng @BNG_uuMatra' by uuMatra-beng.half1;
         sub p-beng.half2 ra-beng.blwf23 @BNG_uuMatra' by uuMatra-beng.half1;
         sub g-beng.half2 ra-beng.blwf23 @BNG_uuMatra' by uuMatra-beng.half1;
-        sub t_ra-beng @BNG_uuMatra' by uuMatra-beng.half1;
         sub th-beng.half1 ra-beng.blwf5 @BNG_uuMatra' by uuMatra-beng.half1;
         sub dh-beng.half1 ra-beng.blwf05.short @BNG_uuMatra' by uuMatra-beng.half1;
         sub b_ra-beng @BNG_uuMatra' by uuMatra-beng.half1;
@@ -1012,6 +1012,7 @@ feature blws {
         # Sub blwf and bottom mark for blwf
         sub n-beng.half4 ta-beng.blwf1' @BNG_uMatra' by ta_uMatra-beng.blwf;
         sub s-beng.half6 ta-beng.blwf1' @BNG_uMatra' by ta_uMatra-beng.blwf;
+        sub m-beng.half4 ta-beng.blwf1' @BNG_uMatra' by ta_uMatra-beng.blwf;
     } BNG_dflt_blws_uUuMatraLigatures_onTheFlyB;
 
 } blws;
