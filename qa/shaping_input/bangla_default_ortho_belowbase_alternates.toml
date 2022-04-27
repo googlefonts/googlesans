@@ -1,0 +1,15 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+nukt = true
+blws = true
+
+[input]
+script = "bng2"
+language = "dflt"
+comparison_mode = "full"
+text = [
+	"টু ডু ঠু টূ ডূ ঠূ", # Round base glyphs
+	"ড়ু ঢ়ু ড়ূ ঢ়ূ", # Nukta glyphs
+]

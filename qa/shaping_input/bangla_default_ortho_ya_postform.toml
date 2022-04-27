@@ -1,0 +1,14 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+pstf = true
+psts = true
+
+[input]
+script = "bng2"
+language = "dflt"
+comparison_mode = "full"
+text = [
+	"ক্য হ্য", #Ya post-forms
+]
