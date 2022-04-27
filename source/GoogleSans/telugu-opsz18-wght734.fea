@@ -1,0 +1,110 @@
+feature dist {
+# Automatic Code End
+
+# ----
+# Bold
+# ----
+
+lookup TEL2_dflt_dist_vattuPositioningSpacing {
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [kha-telugu.below khai-telugu.below]' <0 0 635 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [ga-telugu.below gai-telugu.below]' <0 0 476 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [gha-telugu.below ghai-telugu.below]' <0 0 871 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [nga-telugu.below ngai-telugu.below]' <0 0 609 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [ja-telugu.below jai-telugu.below]' <0 0 613 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [jha-telugu.below jhai-telugu.below]' <0 0 957 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [nya-telugu.below nyai-telugu.below]' <0 0 748 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [tta-telugu.below ttai-telugu.below]' <0 0 592 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [ttha-telugu.below tthai-telugu.below]' <0 0 456 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [dda-telugu.below ddai-telugu.below ddha-telugu.below ddhai-telugu.below]' <0 0 593 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [nna-telugu.below nnai-telugu.below]' <0 0 580 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [ta-telugu.below tai-telugu.below]' <0 0 774 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [tha-telugu.below thai-telugu.below da-telugu.below dai-telugu.below dha-telugu.below dhai-telugu.below]' <0 0 592 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [rra-telugu.below rrai-telugu.below]' <0 0 647 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [la-telugu.below lai-telugu.below]' <0 0 740 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [llla-telugu.below lllai-telugu.below]' <0 0 658 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [ssa-telugu.below ssai-telugu.below]' <0 0 733 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [ssa-telugu.below.alt ssai-telugu.below.alt]' <0 0 811 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [ha-telugu.below hai-telugu.below]' <0 0 960 0>;
+	pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [t_ra-telugu.below]' <0 0 988 0>;
+} TEL2_dflt_dist_vattuPositioningSpacing;
+} dist;
+
+feature blwm {
+# Automatic Code End
+
+# ----
+# Bold
+# ----
+
+markClass [kha-telugu.below] <anchor -318 0> @mark_vattu;
+markClass [ga-telugu.below] <anchor -238 0> @mark_vattu;
+markClass [gha-telugu.below] <anchor -439 0> @mark_vattu;
+markClass [nga-telugu.below] <anchor -305 0> @mark_vattu;
+markClass [ja-telugu.below] <anchor -307 0> @mark_vattu;
+markClass [jha-telugu.below] <anchor -480 0> @mark_vattu;
+markClass [nya-telugu.below] <anchor -374 0> @mark_vattu;
+markClass [tta-telugu.below] <anchor -296 0> @mark_vattu;
+markClass [ttha-telugu.below] <anchor -228 0> @mark_vattu;
+markClass [dda-telugu.below ddha-telugu.below] <anchor -296 0> @mark_vattu;
+markClass [nna-telugu.below] <anchor -290 0> @mark_vattu;
+markClass [ta-telugu.below] <anchor -387 0> @mark_vattu;
+markClass [tha-telugu.below da-telugu.below dha-telugu.below] <anchor -296 0> @mark_vattu;
+markClass [rra-telugu.below] <anchor -324 0> @mark_vattu;
+markClass [la-telugu.below] <anchor -370 0> @mark_vattu;
+markClass [llla-telugu.below] <anchor -329 0> @mark_vattu;
+markClass [ssa-telugu.below] <anchor -367 0> @mark_vattu;
+markClass [ssa-telugu.below.alt] <anchor -418 0> @mark_vattu;
+markClass [ha-telugu.below] <anchor -480 0> @mark_vattu;
+markClass [t_ra-telugu.below] <anchor 47 0> @mark_vattu;
+
+lookup TEL2_dflt_blwm_vattu_to_vattu {
+	pos mark [kha-telugu.below khai-telugu.below] <anchor 399 0> mark @mark_vattu;
+	pos mark [ga-telugu.below gai-telugu.below] <anchor 320 0> mark @mark_vattu;
+	pos mark [gha-telugu.below ghai-telugu.below] <anchor 514 0> mark @mark_vattu;
+	pos mark [nga-telugu.below ngai-telugu.below] <anchor 386 0> mark @mark_vattu;
+	pos mark [ja-telugu.below jai-telugu.below] <anchor 388 0> mark @mark_vattu;
+	pos mark [jha-telugu.below jhai-telugu.below] <anchor 559 0> mark @mark_vattu;
+	pos mark [nya-telugu.below nyai-telugu.below] <anchor 456 0> mark @mark_vattu;
+	pos mark [tta-telugu.below ttai-telugu.below] <anchor 378 0> mark @mark_vattu;
+	pos mark [ttha-telugu.below tthai-telugu.below] <anchor 310 0> mark @mark_vattu;
+	pos mark [dda-telugu.below ddha-telugu.below ddai-telugu.below ddhai-telugu.below] <anchor 379 0> mark @mark_vattu;
+	pos mark [nna-telugu.below nnai-telugu.below] <anchor 372 0> mark @mark_vattu;
+	pos mark [ta-telugu.below tai-telugu.below] <anchor 469 0> mark @mark_vattu;
+	pos mark [tha-telugu.below da-telugu.below dha-telugu.below thai-telugu.below dai-telugu.below dhai-telugu.below] <anchor 378 0> mark @mark_vattu;
+	pos mark [ra-telugu.below] <anchor 436 0> mark @mark_vattu;
+	pos mark [ra-telugu.below.alt01] <anchor 472 0> mark @mark_vattu;
+	pos mark [ra-telugu.below.alt02] <anchor 557 0> mark @mark_vattu;
+	pos mark [ra-telugu.below.alt03] <anchor 593 0> mark @mark_vattu;
+	pos mark [ra-telugu.below.alt04] <anchor 641 0> mark @mark_vattu;
+	pos mark [ra-telugu.below.alt05] <anchor 738 0> mark @mark_vattu;
+	pos mark [ra-telugu.below.alt06] <anchor 828 0> mark @mark_vattu;
+	pos mark [ra-telugu.below.alt07] <anchor 859 0> mark @mark_vattu;
+	pos mark [ra-telugu.below.alt08] <anchor 967 0> mark @mark_vattu;
+	pos mark [ra-telugu.below.alt09] <anchor 1039 0> mark @mark_vattu;
+	pos mark [rra-telugu.below rrai-telugu.below] <anchor 405 0> mark @mark_vattu;
+	pos mark [la-telugu.below lai-telugu.below] <anchor 452 0> mark @mark_vattu;
+	pos mark [llla-telugu.below lllai-telugu.below] <anchor 411 0> mark @mark_vattu;
+	pos mark [ssa-telugu.below ssai-telugu.below] <anchor 448 0> mark @mark_vattu;
+	pos mark [ssa-telugu.below.alt ssai-telugu.below.alt] <anchor 475 0> mark @mark_vattu;
+	pos mark [ha-telugu.below hai-telugu.below] <anchor 562 0> mark @mark_vattu;
+	pos mark [t_ra-telugu.below] <anchor 1117 0> mark @mark_vattu;
+} TEL2_dflt_blwm_vattu_to_vattu;
+	
+lookup TEL2_dflt_blwm_spacing_vattu_to_vattu {
+	pos base [ka-telugu.below] <anchor 765 0> mark @mark_vattu;
+	pos base [ca-telugu.below cha-telugu.below] <anchor 601 0> mark @mark_vattu;
+	pos base [na-telugu.below] <anchor 783 0> mark @mark_vattu;
+	pos base [pa-telugu.below pha-telugu.below] <anchor 594 0> mark @mark_vattu;
+	pos base [ba-telugu.below bha-telugu.below] <anchor 644 0> mark @mark_vattu;
+	pos base [ma-telugu.below] <anchor 509 0> mark @mark_vattu;
+	pos base [ya-telugu.below] <anchor 667 0> mark @mark_vattu;
+	pos base [lla-telugu.below] <anchor 586 0> mark @mark_vattu;
+	pos base [va-telugu.below] <anchor 632 0> mark @mark_vattu;
+	pos base [sha-telugu.below] <anchor 474 0> mark @mark_vattu;
+	pos base [sa-telugu.below] <anchor 702 0> mark @mark_vattu;
+} TEL2_dflt_blwm_spacing_vattu_to_vattu;
+
+lookup TEL2_dflt_blwm_spacing_akhands_to_vattus {
+	pos base [k_ssa-telugu] <anchor 882 0> mark @mark_vattu;
+} TEL2_dflt_blwm_spacing_akhands_to_vattus;
+} blwm;
