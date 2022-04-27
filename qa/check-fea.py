@@ -65,6 +65,7 @@ STATIC_UPRIGHT_FEA = [
     "frac",
     "half",
     "hist",
+    "init",
     "jalt",
     "kern",
     "liga",
@@ -97,6 +98,7 @@ STATIC_UPRIGHT_FEA = [
     "subs",
     "sups",
     "tnum",
+    "vatu",
 ]
 
 STATIC_ITALICS_FEA = [
@@ -119,6 +121,7 @@ STATIC_ITALICS_FEA = [
     "frac",
     "half",
     "hist",
+    "init",
     "jalt",
     "kern",
     "liga",
@@ -150,6 +153,7 @@ STATIC_ITALICS_FEA = [
     "subs",
     "sups",
     "tnum",
+    "vatu",
 ]
 
 VAR_UPRIGHT_FEA = [
@@ -172,6 +176,7 @@ VAR_UPRIGHT_FEA = [
     "frac",
     "half",
     "hist",
+    "init",
     "jalt",
     "kern",
     "liga",
@@ -204,6 +209,7 @@ VAR_UPRIGHT_FEA = [
     "subs",
     "sups",
     "tnum",
+    "vatu",
 ]
 
 VAR_ITALICS_FEA = [
@@ -226,6 +232,7 @@ VAR_ITALICS_FEA = [
     "frac",
     "half",
     "hist",
+    "init",
     "jalt",
     "kern",
     "liga",
@@ -257,6 +264,7 @@ VAR_ITALICS_FEA = [
     "subs",
     "sups",
     "tnum",
+    "vatu",
 ]
 
 # ================================================

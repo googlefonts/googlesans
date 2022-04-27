@@ -1,0 +1,18 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+half = true
+cjct = true
+pres = true
+
+[input]
+script = "bng2"
+language = "dflt"
+comparison_mode = "full"
+text = [
+	"কি পি ন্ত্বি ত্মি ঙ্মি ড্গি ক্ষ্মি", # iMatra alternate lengths
+	"টি ফ্টি", #iMatra alternates for tta
+	"ঠি ঠ্রি ণ্ঠি ণ্ঠ্রি ন্ঠি ষ্ঠি ঠ্বি", # iMatra ttha ligatures
+
+]
