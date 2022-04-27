@@ -1,0 +1,872 @@
+@TEL_allBaseGlyphs = [ka-telugu kha-telugu kha-telugu.alt ga-telugu gha-telugu gha-telugu.alt nga-telugu ca-telugu cha-telugu ja-telugu jha-telugu jha-telugu.alt nya-telugu tta-telugu ttha-telugu dda-telugu ddha-telugu nna-telugu ta-telugu tha-telugu tha-telugu.alt da-telugu dha-telugu na-telugu pa-telugu pha-telugu pha-telugu.alt ba-telugu bha-telugu ma-telugu ya-telugu ra-telugu rra-telugu la-telugu lla-telugu llla-telugu va-telugu sha-telugu ssa-telugu ssa-telugu.alt sa-telugu ha-telugu tsa-telugu dza-telugu rrra-telugu k_ssa-telugu j_nya-telugu k-telugu kh-telugu kh-telugu.alt g-telugu gh-telugu gh-telugu.alt ng-telugu c-telugu ch-telugu j-telugu jh-telugu jh-telugu.alt ny-telugu tt-telugu tth-telugu dd-telugu ddh-telugu nn-telugu t-telugu th-telugu th-telugu.alt d-telugu dh-telugu n-telugu p-telugu ph-telugu ph-telugu.alt b-telugu bh-telugu m-telugu y-telugu r-telugu rr-telugu l-telugu ll-telugu lll-telugu v-telugu sh-telugu ss-telugu ss-telugu.alt s-telugu h-telugu kaa-telugu khaa-telugu khaa-telugu.alt gaa-telugu ghaa-telugu ghaa-telugu.alt ngaa-telugu caa-telugu chaa-telugu jaa-telugu jhaa-telugu jhaa-telugu.alt nyaa-telugu ttaa-telugu tthaa-telugu ddaa-telugu ddhaa-telugu nnaa-telugu taa-telugu thaa-telugu thaa-telugu.alt daa-telugu dhaa-telugu naa-telugu paa-telugu phaa-telugu phaa-telugu.alt baa-telugu bhaa-telugu maa-telugu yaa-telugu raa-telugu rraa-telugu laa-telugu llaa-telugu lllaa-telugu vaa-telugu shaa-telugu ssaa-telugu ssaa-telugu.alt saa-telugu haa-telugu ki-telugu khi-telugu khi-telugu.alt gi-telugu ghi-telugu ghi-telugu.alt ngi-telugu ci-telugu chi-telugu ji-telugu jhi-telugu jhi-telugu.alt nyi-telugu tti-telugu tthi-telugu ddi-telugu ddhi-telugu nni-telugu ti-telugu thi-telugu thi-telugu.alt di-telugu dhi-telugu ni-telugu pi-telugu phi-telugu phi-telugu.alt bi-telugu bhi-telugu mi-telugu yi-telugu ri-telugu rri-telugu li-telugu lli-telugu llli-telugu vi-telugu shi-telugu ssi-telugu ssi-telugu.alt si-telugu hi-telugu kii-telugu khii-telugu khii-telugu.alt gii-telugu ghii-telugu ghii-telugu.alt ngii-telugu cii-telugu chii-telugu jii-telugu jhii-telugu jhii-telugu.alt nyii-telugu ttii-telugu tthii-telugu ddii-telugu ddhii-telugu nnii-telugu tii-telugu thii-telugu thii-telugu.alt dii-telugu dhii-telugu nii-telugu pii-telugu phii-telugu phii-telugu.alt bii-telugu bhii-telugu mii-telugu yii-telugu rii-telugu rrii-telugu lii-telugu llii-telugu lllii-telugu vii-telugu shii-telugu ssii-telugu ssii-telugu.alt sii-telugu hii-telugu ku-telugu khu-telugu khu-telugu.alt gu-telugu ghu-telugu ghu-telugu.alt ngu-telugu cu-telugu chu-telugu ju-telugu jhu-telugu jhu-telugu.alt nyu-telugu ttu-telugu tthu-telugu ddu-telugu ddhu-telugu nnu-telugu tu-telugu thu-telugu thu-telugu.alt du-telugu dhu-telugu nu-telugu pu-telugu phu-telugu phu-telugu.alt bu-telugu bhu-telugu mu-telugu yu-telugu ru-telugu rru-telugu lu-telugu llu-telugu lllu-telugu vu-telugu shu-telugu ssu-telugu ssu-telugu.alt su-telugu hu-telugu kuu-telugu khuu-telugu khuu-telugu.alt guu-telugu ghuu-telugu ghuu-telugu.alt nguu-telugu cuu-telugu chuu-telugu juu-telugu jhuu-telugu jhuu-telugu.alt nyuu-telugu ttuu-telugu tthuu-telugu dduu-telugu ddhuu-telugu nnuu-telugu tuu-telugu thuu-telugu thuu-telugu.alt duu-telugu dhuu-telugu nuu-telugu puu-telugu phuu-telugu phuu-telugu.alt buu-telugu bhuu-telugu muu-telugu yuu-telugu ruu-telugu rruu-telugu luu-telugu lluu-telugu llluu-telugu vuu-telugu shuu-telugu ssuu-telugu ssuu-telugu.alt suu-telugu huu-telugu ke-telugu khe-telugu khe-telugu.alt ge-telugu ghe-telugu ghe-telugu.alt nge-telugu ce-telugu che-telugu je-telugu jhe-telugu jhe-telugu.alt nye-telugu tte-telugu tthe-telugu dde-telugu ddhe-telugu nne-telugu te-telugu the-telugu the-telugu.alt de-telugu dhe-telugu ne-telugu pe-telugu phe-telugu phe-telugu.alt be-telugu bhe-telugu me-telugu ye-telugu re-telugu rre-telugu le-telugu lle-telugu llle-telugu ve-telugu she-telugu sse-telugu sse-telugu.alt se-telugu he-telugu kee-telugu khee-telugu khee-telugu.alt gee-telugu ghee-telugu ghee-telugu.alt ngee-telugu cee-telugu chee-telugu jee-telugu jhee-telugu jhee-telugu.alt nyee-telugu ttee-telugu tthee-telugu ddee-telugu ddhee-telugu nnee-telugu tee-telugu thee-telugu thee-telugu.alt dee-telugu dhee-telugu nee-telugu pee-telugu phee-telugu phee-telugu.alt bee-telugu bhee-telugu mee-telugu yee-telugu ree-telugu rree-telugu lee-telugu llee-telugu lllee-telugu vee-telugu shee-telugu ssee-telugu ssee-telugu.alt see-telugu hee-telugu ko-telugu kho-telugu kho-telugu.alt go-telugu gho-telugu gho-telugu.alt ngo-telugu co-telugu cho-telugu jo-telugu jho-telugu jho-telugu.alt nyo-telugu tto-telugu ttho-telugu ddo-telugu ddho-telugu nno-telugu to-telugu tho-telugu tho-telugu.alt do-telugu dho-telugu no-telugu po-telugu pho-telugu pho-telugu.alt bo-telugu bho-telugu mo-telugu yo-telugu ro-telugu rro-telugu lo-telugu llo-telugu lllo-telugu vo-telugu sho-telugu sso-telugu sso-telugu.alt so-telugu ho-telugu koo-telugu khoo-telugu khoo-telugu.alt goo-telugu ghoo-telugu ghoo-telugu.alt ngoo-telugu coo-telugu choo-telugu joo-telugu jhoo-telugu jhoo-telugu.alt nyoo-telugu ttoo-telugu tthoo-telugu ddoo-telugu ddhoo-telugu nnoo-telugu too-telugu thoo-telugu thoo-telugu.alt doo-telugu dhoo-telugu noo-telugu poo-telugu phoo-telugu phoo-telugu.alt boo-telugu bhoo-telugu moo-telugu yoo-telugu roo-telugu rroo-telugu loo-telugu lloo-telugu llloo-telugu voo-telugu shoo-telugu ssoo-telugu ssoo-telugu.alt soo-telugu hoo-telugu kau-telugu khau-telugu khau-telugu.alt gau-telugu ghau-telugu ghau-telugu.alt ngau-telugu cau-telugu chau-telugu jau-telugu jhau-telugu jhau-telugu.alt nyau-telugu ttau-telugu tthau-telugu ddau-telugu ddhau-telugu nnau-telugu tau-telugu thau-telugu thau-telugu.alt dau-telugu dhau-telugu nau-telugu pau-telugu phau-telugu phau-telugu.alt bau-telugu bhau-telugu mau-telugu yau-telugu rau-telugu rrau-telugu lau-telugu llau-telugu lllau-telugu vau-telugu shau-telugu ssau-telugu ssau-telugu.alt sau-telugu hau-telugu];
+@TEL_belowAndPostBaseConsonantFormsWithRa = [aiLength-telugu ka-telugu.below kha-telugu.below ga-telugu.below gha-telugu.below nga-telugu.below ca-telugu.below cha-telugu.below ja-telugu.below jha-telugu.below nya-telugu.below tta-telugu.below ttha-telugu.below dda-telugu.below ddha-telugu.below nna-telugu.below ta-telugu.below tha-telugu.below da-telugu.below dha-telugu.below na-telugu.below pa-telugu.below pha-telugu.below ba-telugu.below bha-telugu.below ma-telugu.below ya-telugu.below ra-telugu.below ra-telugu.below.alt01 ra-telugu.below.alt02 ra-telugu.below.alt03 ra-telugu.below.alt04 ra-telugu.below.alt05 ra-telugu.below.alt06 ra-telugu.below.alt07 ra-telugu.below.alt08 ra-telugu.below.alt09 ra-telugu.post rra-telugu.below la-telugu.below lla-telugu.below llla-telugu.below va-telugu.below sha-telugu.below ssa-telugu.below ssa-telugu.below.alt sa-telugu.below ha-telugu.below t_ra-telugu.below khai-telugu.below];
+@TEL_LF_BelowBaseConsonant_Filter = [halant-telugu];
+@TEL_NonSpacingVattus = [kha-telugu.below ga-telugu.below gha-telugu.below nga-telugu.below ja-telugu.below jha-telugu.below nya-telugu.below tta-telugu.below ttha-telugu.below dda-telugu.below ddha-telugu.below nna-telugu.below ta-telugu.below tha-telugu.below da-telugu.below dha-telugu.below ra-telugu.below ra-telugu.below.alt01 ra-telugu.below.alt02 ra-telugu.below.alt03 ra-telugu.below.alt04 ra-telugu.below.alt05 ra-telugu.below.alt06 ra-telugu.below.alt07 ra-telugu.below.alt08 ra-telugu.below.alt09 rra-telugu.below la-telugu.below llla-telugu.below ssa-telugu.below ha-telugu.below];
+@TEL_NonSpacingVattus_Stacking = [khai-telugu.below gai-telugu.below ghai-telugu.below ngai-telugu.below jai-telugu.below jhai-telugu.below nyai-telugu.below ttai-telugu.below tthai-telugu.below ddai-telugu.below ddhai-telugu.below nnai-telugu.below tai-telugu.below thai-telugu.below dai-telugu.below dhai-telugu.below rrai-telugu.below lai-telugu.below lllai-telugu.below ssai-telugu.below ssai-telugu.below.alt hai-telugu.below];
+@TEL_aiLengths = [aiLength-telugu aiLength-telugu.alt];
+@TEL_SpacingVattus = [ka-telugu.below ca-telugu.below cha-telugu.below na-telugu.below pa-telugu.below pha-telugu.below ba-telugu.below bha-telugu.below ma-telugu.below ya-telugu.below ra-telugu.post lla-telugu.below va-telugu.below sha-telugu.below sa-telugu.below];
+@TEL_raVattu_group1 = [ga-telugu g-telugu gaa-telugu gi-telugu gii-telugu ge-telugu gee-telugu go-telugu goo-telugu gau-telugu];
+@TEL_raVattu_group2 = [kha-telugu nga-telugu ca-telugu ta-telugu cha-telugu ja-telugu nya-telugu tta-telugu dda-telugu ddha-telugu nna-telugu na-telugu pa-telugu pha-telugu ba-telugu bha-telugu tha-telugu da-telugu dha-telugu la-telugu va-telugu sa-telugu ha-telugu kh-telugu ng-telugu c-telugu ch-telugu j-telugu ny-telugu tt-telugu dd-telugu ddh-telugu nn-telugu t-telugu th-telugu d-telugu dh-telugu n-telugu p-telugu ph-telugu b-telugu bh-telugu l-telugu v-telugu s-telugu h-telugu khaa-telugu ngaa-telugu caa-telugu chaa-telugu jaa-telugu nyaa-telugu ttaa-telugu ddaa-telugu ddhaa-telugu nnaa-telugu taa-telugu thaa-telugu daa-telugu dhaa-telugu paa-telugu phaa-telugu naa-telugu baa-telugu bhaa-telugu laa-telugu vaa-telugu saa-telugu haa-telugu khi-telugu ngi-telugu ci-telugu chi-telugu ji-telugu nyi-telugu tti-telugu ddi-telugu ddhi-telugu nni-telugu ti-telugu thi-telugu di-telugu dhi-telugu ni-telugu pi-telugu phi-telugu bi-telugu bhi-telugu li-telugu vi-telugu si-telugu hi-telugu khii-telugu ngii-telugu cii-telugu chii-telugu jii-telugu nyii-telugu ttii-telugu ddii-telugu ddhii-telugu nnii-telugu tii-telugu thii-telugu dii-telugu dhii-telugu nii-telugu pii-telugu phii-telugu bii-telugu bhii-telugu lii-telugu vii-telugu sii-telugu hii-telugu khe-telugu nge-telugu ce-telugu che-telugu je-telugu nye-telugu tte-telugu dde-telugu ddhe-telugu nne-telugu te-telugu the-telugu de-telugu dhe-telugu ne-telugu pe-telugu phe-telugu be-telugu bhe-telugu le-telugu ve-telugu se-telugu he-telugu khee-telugu ngee-telugu cee-telugu chee-telugu jee-telugu nyee-telugu ttee-telugu ddee-telugu ddhee-telugu nnee-telugu tee-telugu thee-telugu dee-telugu dhee-telugu nee-telugu pee-telugu phee-telugu bee-telugu bhee-telugu lee-telugu vee-telugu see-telugu hee-telugu kho-telugu ngo-telugu co-telugu cho-telugu jo-telugu nyo-telugu tto-telugu ddo-telugu ddho-telugu nno-telugu to-telugu tho-telugu do-telugu dho-telugu no-telugu po-telugu pho-telugu bo-telugu bho-telugu lo-telugu vo-telugu so-telugu ho-telugu khoo-telugu ngoo-telugu coo-telugu choo-telugu joo-telugu nyoo-telugu ttoo-telugu ddoo-telugu ddhoo-telugu nnoo-telugu too-telugu thoo-telugu doo-telugu dhoo-telugu noo-telugu poo-telugu phoo-telugu boo-telugu bhoo-telugu loo-telugu voo-telugu soo-telugu hoo-telugu khau-telugu ngau-telugu cau-telugu chau-telugu jau-telugu nyau-telugu ttau-telugu ddau-telugu ddhau-telugu nnau-telugu tau-telugu thau-telugu dau-telugu dhau-telugu nau-telugu pau-telugu phau-telugu bau-telugu bhau-telugu lau-telugu vau-telugu sau-telugu hau-telugu ju-telugu juu-telugu];
+@TEL_raVattu_group3 = [rra-telugu llla-telugu ssa-telugu rr-telugu lll-telugu ss-telugu rraa-telugu lllaa-telugu ssaa-telugu rri-telugu llli-telugu ssi-telugu rrii-telugu lllii-telugu ssii-telugu rre-telugu llle-telugu sse-telugu rree-telugu lllee-telugu ssee-telugu rro-telugu lllo-telugu sso-telugu rroo-telugu llloo-telugu ssoo-telugu rrau-telugu lllau-telugu ssau-telugu ku-telugu shu-telugu kuu-telugu shuu-telugu];
+@TEL_raVattu_group4 = [ku-telugu shu-telugu gu-telugu tthu-telugu ru-telugu kuu-telugu shuu-telugu guu-telugu tthuu-telugu ruu-telugu];
+@TEL_raVattu_group5 = [gha-telugu ma-telugu gh-telugu m-telugu ghaa-telugu maa-telugu ghi-telugu mi-telugu ghii-telugu mii-telugu ghe-telugu me-telugu ghee-telugu mee-telugu ghau-telugu mau-telugu moo-telugu khu-telugu ngu-telugu cu-telugu chu-telugu ttu-telugu ddu-telugu ddhu-telugu nnu-telugu tu-telugu thu-telugu du-telugu dhu-telugu nu-telugu pu-telugu pu-telugu phu-telugu bu-telugu bhu-telugu lu-telugu vu-telugu ssu-telugu su-telugu llu-telugu khuu-telugu nguu-telugu cuu-telugu chuu-telugu ttuu-telugu dduu-telugu ddhuu-telugu nnuu-telugu tuu-telugu thuu-telugu duu-telugu dhuu-telugu nuu-telugu puu-telugu phuu-telugu buu-telugu bhuu-telugu luu-telugu vuu-telugu ssuu-telugu suu-telugu lluu-telugu];
+@TEL_raVattu_group6 = [rru-telugu lllu-telugu rruu-telugu llluu-telugu];
+@TEL_raVattu_group7 = [jha-telugu ya-telugu jh-telugu y-telugu jhaa-telugu yaa-telugu jhi-telugu yi-telugu jhii-telugu yii-telugu jhe-telugu ye-telugu jhee-telugu yee-telugu jhau-telugu yau-telugu jhoo-telugu yoo-telugu nyu-telugu nyuu-telugu];
+@TEL_raVattu_group8 = [gho-telugu mo-telugu ghoo-telugu ghu-telugu mu-telugu hu-telugu ghuu-telugu muu-telugu huu-telugu];
+@TEL_raVattu_group9 = [jho-telugu yo-telugu jhu-telugu yu-telugu jhuu-telugu yuu-telugu];
+@TEL_allKaLigatures = [kaa-telugu ki-telugu kii-telugu ku-telugu kuu-telugu ke-telugu kee-telugu ko-telugu koo-telugu kau-telugu];
+
+feature locl {
+    script tel2;
+    lookup TEL2_dflt_locl_teluguPunctuation {
+        sub [period comma colon semicolon ellipsis exclam question asterisk parenleft parenright braceleft braceright bracketleft bracketright quotedblleft quotedblright quoteleft quoteright] by [period.loclTELU comma.loclTELU colon.loclTELU semicolon.loclTELU ellipsis.loclTELU exclam.loclTELU question.loclTELU asterisk.loclTELU parenleft.loclTELU parenright.loclTELU braceleft.loclTELU braceright.loclTELU bracketleft.loclTELU bracketright.loclTELU quotedblleft.loclTELU quotedblright.loclTELU quoteleft.loclTELU quoteright.loclTELU];
+    } TEL2_dflt_locl_teluguPunctuation;
+
+} locl;
+
+feature akhn {
+    script tel2;
+    lookup TEL2_dflt_akhn_akhandForms {
+        sub ka-telugu halant-telugu ssa-telugu by k_ssa-telugu;
+        sub ja-telugu halant-telugu nya-telugu by j_nya-telugu;
+    } TEL2_dflt_akhn_akhandForms;
+
+} akhn;
+
+feature blwf {
+    script tel2;
+    lookup TEL2_dflt_blwf_belowBaseConsonants {
+        # Below-base consonants
+        sub halant-telugu kha-telugu by kha-telugu.below;
+        sub halant-telugu ga-telugu by ga-telugu.below;
+        sub halant-telugu gha-telugu by gha-telugu.below;
+        sub halant-telugu nga-telugu by nga-telugu.below;
+        sub halant-telugu ja-telugu by ja-telugu.below;
+        sub halant-telugu jha-telugu by jha-telugu.below;
+        sub halant-telugu nya-telugu by nya-telugu.below;
+        sub halant-telugu tta-telugu by tta-telugu.below;
+        sub halant-telugu ttha-telugu by ttha-telugu.below;
+        sub halant-telugu dda-telugu by dda-telugu.below;
+        sub halant-telugu ddha-telugu by ddha-telugu.below;
+        sub halant-telugu nna-telugu by nna-telugu.below;
+        sub halant-telugu ta-telugu by ta-telugu.below;
+        sub halant-telugu tha-telugu by tha-telugu.below;
+        sub halant-telugu da-telugu by da-telugu.below;
+        sub halant-telugu dha-telugu by dha-telugu.below;
+        sub halant-telugu ra-telugu by ra-telugu.below;
+        sub halant-telugu rra-telugu by rra-telugu.below;
+        sub halant-telugu la-telugu by la-telugu.below;
+        sub halant-telugu llla-telugu by llla-telugu.below;
+        sub halant-telugu ssa-telugu by ssa-telugu.below;
+        sub halant-telugu ha-telugu by ha-telugu.below;
+        # Post-base consonants
+        sub halant-telugu ka-telugu by ka-telugu.below;
+        sub halant-telugu ca-telugu by ca-telugu.below;
+        sub halant-telugu cha-telugu by cha-telugu.below;
+        sub halant-telugu na-telugu by na-telugu.below;
+        sub halant-telugu pa-telugu by pa-telugu.below;
+        sub halant-telugu pha-telugu by pha-telugu.below;
+        sub halant-telugu ba-telugu by ba-telugu.below;
+        sub halant-telugu bha-telugu by bha-telugu.below;
+        sub halant-telugu ma-telugu by ma-telugu.below;
+        sub halant-telugu ya-telugu by ya-telugu.below;
+        sub halant-telugu lla-telugu by lla-telugu.below;
+        sub halant-telugu va-telugu by va-telugu.below;
+        sub halant-telugu sha-telugu by sha-telugu.below;
+        sub halant-telugu sa-telugu by sa-telugu.below;
+    } TEL2_dflt_blwf_belowBaseConsonants;
+
+} blwf;
+
+feature abvs {
+    script tel2;
+    lookup TEL2_dflt_abvs_iMatraLigatures {
+        sub ka-telugu iMatra-telugu by ki-telugu;
+        sub kha-telugu iMatra-telugu by khi-telugu;
+        sub ga-telugu iMatra-telugu by gi-telugu;
+        sub gha-telugu iMatra-telugu by ghi-telugu;
+        sub nga-telugu iMatra-telugu by ngi-telugu;
+        sub ca-telugu iMatra-telugu by ci-telugu;
+        sub cha-telugu iMatra-telugu by chi-telugu;
+        sub ja-telugu iMatra-telugu by ji-telugu;
+        sub jha-telugu iMatra-telugu by jhi-telugu;
+        sub nya-telugu iMatra-telugu by nyi-telugu;
+        sub tta-telugu iMatra-telugu by tti-telugu;
+        sub ttha-telugu iMatra-telugu by tthi-telugu;
+        sub dda-telugu iMatra-telugu by ddi-telugu;
+        sub ddha-telugu iMatra-telugu by ddhi-telugu;
+        sub nna-telugu iMatra-telugu by nni-telugu;
+        sub ta-telugu iMatra-telugu by ti-telugu;
+        sub tha-telugu iMatra-telugu by thi-telugu;
+        sub da-telugu iMatra-telugu by di-telugu;
+        sub dha-telugu iMatra-telugu by dhi-telugu;
+        sub na-telugu iMatra-telugu by ni-telugu;
+        sub pa-telugu iMatra-telugu by pi-telugu;
+        sub pha-telugu iMatra-telugu by phi-telugu;
+        sub ba-telugu iMatra-telugu by bi-telugu;
+        sub bha-telugu iMatra-telugu by bhi-telugu;
+        sub ma-telugu iMatra-telugu by mi-telugu;
+        sub ya-telugu iMatra-telugu by yi-telugu;
+        sub ra-telugu iMatra-telugu by ri-telugu;
+        sub rra-telugu iMatra-telugu by rri-telugu;
+        sub la-telugu iMatra-telugu by li-telugu;
+        sub lla-telugu iMatra-telugu by lli-telugu;
+        sub llla-telugu iMatra-telugu by llli-telugu;
+        sub va-telugu iMatra-telugu by vi-telugu;
+        sub sha-telugu iMatra-telugu by shi-telugu;
+        sub ssa-telugu iMatra-telugu by ssi-telugu;
+        sub sa-telugu iMatra-telugu by si-telugu;
+        sub ha-telugu iMatra-telugu by hi-telugu;
+    } TEL2_dflt_abvs_iMatraLigatures;
+
+    lookup TEL2_dflt_abvs_iiMatraLigatures {
+        sub ka-telugu iiMatra-telugu by kii-telugu;
+        sub kha-telugu iiMatra-telugu by khii-telugu;
+        sub ga-telugu iiMatra-telugu by gii-telugu;
+        sub gha-telugu iiMatra-telugu by ghii-telugu;
+        sub nga-telugu iiMatra-telugu by ngii-telugu;
+        sub ca-telugu iiMatra-telugu by cii-telugu;
+        sub cha-telugu iiMatra-telugu by chii-telugu;
+        sub ja-telugu iiMatra-telugu by jii-telugu;
+        sub jha-telugu iiMatra-telugu by jhii-telugu;
+        sub nya-telugu iiMatra-telugu by nyii-telugu;
+        sub tta-telugu iiMatra-telugu by ttii-telugu;
+        sub ttha-telugu iiMatra-telugu by tthii-telugu;
+        sub dda-telugu iiMatra-telugu by ddii-telugu;
+        sub ddha-telugu iiMatra-telugu by ddhii-telugu;
+        sub nna-telugu iiMatra-telugu by nnii-telugu;
+        sub ta-telugu iiMatra-telugu by tii-telugu;
+        sub tha-telugu iiMatra-telugu by thii-telugu;
+        sub da-telugu iiMatra-telugu by dii-telugu;
+        sub dha-telugu iiMatra-telugu by dhii-telugu;
+        sub na-telugu iiMatra-telugu by nii-telugu;
+        sub pa-telugu iiMatra-telugu by pii-telugu;
+        sub pha-telugu iiMatra-telugu by phii-telugu;
+        sub ba-telugu iiMatra-telugu by bii-telugu;
+        sub bha-telugu iiMatra-telugu by bhii-telugu;
+        sub ma-telugu iiMatra-telugu by mii-telugu;
+        sub ya-telugu iiMatra-telugu by yii-telugu;
+        sub ra-telugu iiMatra-telugu by rii-telugu;
+        sub rra-telugu iiMatra-telugu by rrii-telugu;
+        sub la-telugu iiMatra-telugu by lii-telugu;
+        sub lla-telugu iiMatra-telugu by llii-telugu;
+        sub llla-telugu iiMatra-telugu by lllii-telugu;
+        sub va-telugu iiMatra-telugu by vii-telugu;
+        sub sha-telugu iiMatra-telugu by shii-telugu;
+        sub ssa-telugu iiMatra-telugu by ssii-telugu;
+        sub sa-telugu iiMatra-telugu by sii-telugu;
+        sub ha-telugu iiMatra-telugu by hii-telugu;
+    } TEL2_dflt_abvs_iiMatraLigatures;
+
+    lookup TEL2_dflt_abvs_eMatraLigatures {
+        sub ka-telugu eMatra-telugu by ke-telugu;
+        sub kha-telugu eMatra-telugu by khe-telugu;
+        sub ga-telugu eMatra-telugu by ge-telugu;
+        sub gha-telugu eMatra-telugu by ghe-telugu;
+        sub nga-telugu eMatra-telugu by nge-telugu;
+        sub ca-telugu eMatra-telugu by ce-telugu;
+        sub cha-telugu eMatra-telugu by che-telugu;
+        sub ja-telugu eMatra-telugu by je-telugu;
+        sub jha-telugu eMatra-telugu by jhe-telugu;
+        sub nya-telugu eMatra-telugu by nye-telugu;
+        sub tta-telugu eMatra-telugu by tte-telugu;
+        sub ttha-telugu eMatra-telugu by tthe-telugu;
+        sub dda-telugu eMatra-telugu by dde-telugu;
+        sub ddha-telugu eMatra-telugu by ddhe-telugu;
+        sub nna-telugu eMatra-telugu by nne-telugu;
+        sub ta-telugu eMatra-telugu by te-telugu;
+        sub tha-telugu eMatra-telugu by the-telugu;
+        sub da-telugu eMatra-telugu by de-telugu;
+        sub dha-telugu eMatra-telugu by dhe-telugu;
+        sub na-telugu eMatra-telugu by ne-telugu;
+        sub pa-telugu eMatra-telugu by pe-telugu;
+        sub pha-telugu eMatra-telugu by phe-telugu;
+        sub ba-telugu eMatra-telugu by be-telugu;
+        sub bha-telugu eMatra-telugu by bhe-telugu;
+        sub ma-telugu eMatra-telugu by me-telugu;
+        sub ya-telugu eMatra-telugu by ye-telugu;
+        sub ra-telugu eMatra-telugu by re-telugu;
+        sub rra-telugu eMatra-telugu by rre-telugu;
+        sub la-telugu eMatra-telugu by le-telugu;
+        sub lla-telugu eMatra-telugu by lle-telugu;
+        sub llla-telugu eMatra-telugu by llle-telugu;
+        sub va-telugu eMatra-telugu by ve-telugu;
+        sub sha-telugu eMatra-telugu by she-telugu;
+        sub ssa-telugu eMatra-telugu by sse-telugu;
+        sub sa-telugu eMatra-telugu by se-telugu;
+        sub ha-telugu eMatra-telugu by he-telugu;
+    } TEL2_dflt_abvs_eMatraLigatures;
+
+    lookup TEL2_dflt_abvs_eeMatraLigatures {
+        sub ka-telugu eeMatra-telugu by kee-telugu;
+        sub kha-telugu eeMatra-telugu by khee-telugu;
+        sub ga-telugu eeMatra-telugu by gee-telugu;
+        sub gha-telugu eeMatra-telugu by ghee-telugu;
+        sub nga-telugu eeMatra-telugu by ngee-telugu;
+        sub ca-telugu eeMatra-telugu by cee-telugu;
+        sub cha-telugu eeMatra-telugu by chee-telugu;
+        sub ja-telugu eeMatra-telugu by jee-telugu;
+        sub jha-telugu eeMatra-telugu by jhee-telugu;
+        sub nya-telugu eeMatra-telugu by nyee-telugu;
+        sub tta-telugu eeMatra-telugu by ttee-telugu;
+        sub ttha-telugu eeMatra-telugu by tthee-telugu;
+        sub dda-telugu eeMatra-telugu by ddee-telugu;
+        sub ddha-telugu eeMatra-telugu by ddhee-telugu;
+        sub nna-telugu eeMatra-telugu by nnee-telugu;
+        sub ta-telugu eeMatra-telugu by tee-telugu;
+        sub tha-telugu eeMatra-telugu by thee-telugu;
+        sub da-telugu eeMatra-telugu by dee-telugu;
+        sub dha-telugu eeMatra-telugu by dhee-telugu;
+        sub na-telugu eeMatra-telugu by nee-telugu;
+        sub pa-telugu eeMatra-telugu by pee-telugu;
+        sub pha-telugu eeMatra-telugu by phee-telugu;
+        sub ba-telugu eeMatra-telugu by bee-telugu;
+        sub bha-telugu eeMatra-telugu by bhee-telugu;
+        sub ma-telugu eeMatra-telugu by mee-telugu;
+        sub ya-telugu eeMatra-telugu by yee-telugu;
+        sub ra-telugu eeMatra-telugu by ree-telugu;
+        sub rra-telugu eeMatra-telugu by rree-telugu;
+        sub la-telugu eeMatra-telugu by lee-telugu;
+        sub lla-telugu eeMatra-telugu by llee-telugu;
+        sub llla-telugu eeMatra-telugu by lllee-telugu;
+        sub va-telugu eeMatra-telugu by vee-telugu;
+        sub sha-telugu eeMatra-telugu by shee-telugu;
+        sub ssa-telugu eeMatra-telugu by ssee-telugu;
+        sub sa-telugu eeMatra-telugu by see-telugu;
+        sub ha-telugu eeMatra-telugu by hee-telugu;
+    } TEL2_dflt_abvs_eeMatraLigatures;
+
+    lookup TEL2_dflt_abvs_oMatraLigatures {
+        sub ka-telugu oMatra-telugu by ko-telugu;
+        sub kha-telugu oMatra-telugu by kho-telugu;
+        sub ga-telugu oMatra-telugu by go-telugu;
+        sub gha-telugu oMatra-telugu by gho-telugu;
+        sub nga-telugu oMatra-telugu by ngo-telugu;
+        sub ca-telugu oMatra-telugu by co-telugu;
+        sub cha-telugu oMatra-telugu by cho-telugu;
+        sub ja-telugu oMatra-telugu by jo-telugu;
+        sub jha-telugu oMatra-telugu by jho-telugu;
+        sub nya-telugu oMatra-telugu by nyo-telugu;
+        sub tta-telugu oMatra-telugu by tto-telugu;
+        sub ttha-telugu oMatra-telugu by ttho-telugu;
+        sub dda-telugu oMatra-telugu by ddo-telugu;
+        sub ddha-telugu oMatra-telugu by ddho-telugu;
+        sub nna-telugu oMatra-telugu by nno-telugu;
+        sub ta-telugu oMatra-telugu by to-telugu;
+        sub tha-telugu oMatra-telugu by tho-telugu;
+        sub da-telugu oMatra-telugu by do-telugu;
+        sub dha-telugu oMatra-telugu by dho-telugu;
+        sub na-telugu oMatra-telugu by no-telugu;
+        sub pa-telugu oMatra-telugu by po-telugu;
+        sub pha-telugu oMatra-telugu by pho-telugu;
+        sub ba-telugu oMatra-telugu by bo-telugu;
+        sub bha-telugu oMatra-telugu by bho-telugu;
+        sub ma-telugu oMatra-telugu by mo-telugu;
+        sub ya-telugu oMatra-telugu by yo-telugu;
+        sub ra-telugu oMatra-telugu by ro-telugu;
+        sub rra-telugu oMatra-telugu by rro-telugu;
+        sub la-telugu oMatra-telugu by lo-telugu;
+        sub lla-telugu oMatra-telugu by llo-telugu;
+        sub llla-telugu oMatra-telugu by lllo-telugu;
+        sub va-telugu oMatra-telugu by vo-telugu;
+        sub sha-telugu oMatra-telugu by sho-telugu;
+        sub ssa-telugu oMatra-telugu by sso-telugu;
+        sub sa-telugu oMatra-telugu by so-telugu;
+        sub ha-telugu oMatra-telugu by ho-telugu;
+    } TEL2_dflt_abvs_oMatraLigatures;
+
+    lookup TEL2_dflt_abvs_ooMatraLigatures {
+        sub ka-telugu ooMatra-telugu by koo-telugu;
+        sub kha-telugu ooMatra-telugu by khoo-telugu;
+        sub ga-telugu ooMatra-telugu by goo-telugu;
+        sub gha-telugu ooMatra-telugu by ghoo-telugu;
+        sub nga-telugu ooMatra-telugu by ngoo-telugu;
+        sub ca-telugu ooMatra-telugu by coo-telugu;
+        sub cha-telugu ooMatra-telugu by choo-telugu;
+        sub ja-telugu ooMatra-telugu by joo-telugu;
+        sub jha-telugu ooMatra-telugu by jhoo-telugu;
+        sub nya-telugu ooMatra-telugu by nyoo-telugu;
+        sub tta-telugu ooMatra-telugu by ttoo-telugu;
+        sub ttha-telugu ooMatra-telugu by tthoo-telugu;
+        sub dda-telugu ooMatra-telugu by ddoo-telugu;
+        sub ddha-telugu ooMatra-telugu by ddhoo-telugu;
+        sub nna-telugu ooMatra-telugu by nnoo-telugu;
+        sub ta-telugu ooMatra-telugu by too-telugu;
+        sub tha-telugu ooMatra-telugu by thoo-telugu;
+        sub da-telugu ooMatra-telugu by doo-telugu;
+        sub dha-telugu ooMatra-telugu by dhoo-telugu;
+        sub na-telugu ooMatra-telugu by noo-telugu;
+        sub pa-telugu ooMatra-telugu by poo-telugu;
+        sub pha-telugu ooMatra-telugu by phoo-telugu;
+        sub ba-telugu ooMatra-telugu by boo-telugu;
+        sub bha-telugu ooMatra-telugu by bhoo-telugu;
+        sub ma-telugu ooMatra-telugu by moo-telugu;
+        sub ya-telugu ooMatra-telugu by yoo-telugu;
+        sub ra-telugu ooMatra-telugu by roo-telugu;
+        sub rra-telugu ooMatra-telugu by rroo-telugu;
+        sub la-telugu ooMatra-telugu by loo-telugu;
+        sub lla-telugu ooMatra-telugu by lloo-telugu;
+        sub llla-telugu ooMatra-telugu by llloo-telugu;
+        sub va-telugu ooMatra-telugu by voo-telugu;
+        sub sha-telugu ooMatra-telugu by shoo-telugu;
+        sub ssa-telugu ooMatra-telugu by ssoo-telugu;
+        sub sa-telugu ooMatra-telugu by soo-telugu;
+        sub ha-telugu ooMatra-telugu by hoo-telugu;
+    } TEL2_dflt_abvs_ooMatraLigatures;
+
+    lookup TEL2_dflt_abvs_auMatraLigatures {
+        sub ka-telugu auMatra-telugu by kau-telugu;
+        sub kha-telugu auMatra-telugu by khau-telugu;
+        sub ga-telugu auMatra-telugu by gau-telugu;
+        sub gha-telugu auMatra-telugu by ghau-telugu;
+        sub nga-telugu auMatra-telugu by ngau-telugu;
+        sub ca-telugu auMatra-telugu by cau-telugu;
+        sub cha-telugu auMatra-telugu by chau-telugu;
+        sub ja-telugu auMatra-telugu by jau-telugu;
+        sub jha-telugu auMatra-telugu by jhau-telugu;
+        sub nya-telugu auMatra-telugu by nyau-telugu;
+        sub tta-telugu auMatra-telugu by ttau-telugu;
+        sub ttha-telugu auMatra-telugu by tthau-telugu;
+        sub dda-telugu auMatra-telugu by ddau-telugu;
+        sub ddha-telugu auMatra-telugu by ddhau-telugu;
+        sub nna-telugu auMatra-telugu by nnau-telugu;
+        sub ta-telugu auMatra-telugu by tau-telugu;
+        sub tha-telugu auMatra-telugu by thau-telugu;
+        sub da-telugu auMatra-telugu by dau-telugu;
+        sub dha-telugu auMatra-telugu by dhau-telugu;
+        sub na-telugu auMatra-telugu by nau-telugu;
+        sub pa-telugu auMatra-telugu by pau-telugu;
+        sub pha-telugu auMatra-telugu by phau-telugu;
+        sub ba-telugu auMatra-telugu by bau-telugu;
+        sub bha-telugu auMatra-telugu by bhau-telugu;
+        sub ma-telugu auMatra-telugu by mau-telugu;
+        sub ya-telugu auMatra-telugu by yau-telugu;
+        sub ra-telugu auMatra-telugu by rau-telugu;
+        sub rra-telugu auMatra-telugu by rrau-telugu;
+        sub la-telugu auMatra-telugu by lau-telugu;
+        sub lla-telugu auMatra-telugu by llau-telugu;
+        sub llla-telugu auMatra-telugu by lllau-telugu;
+        sub va-telugu auMatra-telugu by vau-telugu;
+        sub sha-telugu auMatra-telugu by shau-telugu;
+        sub ssa-telugu auMatra-telugu by ssau-telugu;
+        sub sa-telugu auMatra-telugu by sau-telugu;
+        sub ha-telugu auMatra-telugu by hau-telugu;
+    } TEL2_dflt_abvs_auMatraLigatures;
+
+} abvs;
+
+feature blws {
+    script tel2;
+    lookup TEL2_dflt_blws_belowBaseLigatures {
+        sub ta-telugu.below ra-telugu.below by t_ra-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] kha-telugu.below by khai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] ga-telugu.below by gai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] gha-telugu.below by ghai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] nga-telugu.below by ngai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] ja-telugu.below by jai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] jha-telugu.below by jhai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] nya-telugu.below by nyai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] tta-telugu.below by ttai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] ttha-telugu.below by tthai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] dda-telugu.below by ddai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] ddha-telugu.below by ddhai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] nna-telugu.below by nnai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] ta-telugu.below by tai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] tha-telugu.below by thai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] da-telugu.below by dai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] dha-telugu.below by dhai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] rra-telugu.below by rrai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] la-telugu.below by lai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] llla-telugu.below by lllai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] ssa-telugu.below by ssai-telugu.below;
+        sub [aiLength-telugu aiLength-telugu.alt] ssa-telugu.below.alt by ssai-telugu.below.alt;
+        sub [aiLength-telugu aiLength-telugu.alt] ha-telugu.below by hai-telugu.below;
+    } TEL2_dflt_blws_belowBaseLigatures;
+
+    lookup TEL2_dflt_blws_alternate_aiLength_below {
+        sub [ke-telugu ge-telugu] aiLength-telugu' by aiLength-telugu.alt;
+    } TEL2_dflt_blws_alternate_aiLength_below;
+
+} blws;
+
+feature psts {
+    script tel2;
+    lookup TEL2_dflt_psts_aaMatraLigatures {
+        sub ka-telugu aaMatra-telugu by kaa-telugu;
+        sub kha-telugu aaMatra-telugu by khaa-telugu;
+        sub ga-telugu aaMatra-telugu by gaa-telugu;
+        sub gha-telugu aaMatra-telugu by ghaa-telugu;
+        sub nga-telugu aaMatra-telugu by ngaa-telugu;
+        sub ca-telugu aaMatra-telugu by caa-telugu;
+        sub cha-telugu aaMatra-telugu by chaa-telugu;
+        sub ja-telugu aaMatra-telugu by jaa-telugu;
+        sub jha-telugu aaMatra-telugu by jhaa-telugu;
+        sub nya-telugu aaMatra-telugu by nyaa-telugu;
+        sub tta-telugu aaMatra-telugu by ttaa-telugu;
+        sub ttha-telugu aaMatra-telugu by tthaa-telugu;
+        sub dda-telugu aaMatra-telugu by ddaa-telugu;
+        sub ddha-telugu aaMatra-telugu by ddhaa-telugu;
+        sub nna-telugu aaMatra-telugu by nnaa-telugu;
+        sub ta-telugu aaMatra-telugu by taa-telugu;
+        sub tha-telugu aaMatra-telugu by thaa-telugu;
+        sub da-telugu aaMatra-telugu by daa-telugu;
+        sub dha-telugu aaMatra-telugu by dhaa-telugu;
+        sub na-telugu aaMatra-telugu by naa-telugu;
+        sub pa-telugu aaMatra-telugu by paa-telugu;
+        sub pha-telugu aaMatra-telugu by phaa-telugu;
+        sub ba-telugu aaMatra-telugu by baa-telugu;
+        sub bha-telugu aaMatra-telugu by bhaa-telugu;
+        sub ma-telugu aaMatra-telugu by maa-telugu;
+        sub ya-telugu aaMatra-telugu by yaa-telugu;
+        sub ra-telugu aaMatra-telugu by raa-telugu;
+        sub rra-telugu aaMatra-telugu by rraa-telugu;
+        sub la-telugu aaMatra-telugu by laa-telugu;
+        sub lla-telugu aaMatra-telugu by llaa-telugu;
+        sub llla-telugu aaMatra-telugu by lllaa-telugu;
+        sub va-telugu aaMatra-telugu by vaa-telugu;
+        sub sha-telugu aaMatra-telugu by shaa-telugu;
+        sub ssa-telugu aaMatra-telugu by ssaa-telugu;
+        sub sa-telugu aaMatra-telugu by saa-telugu;
+        sub ha-telugu aaMatra-telugu by haa-telugu;
+    } TEL2_dflt_psts_aaMatraLigatures;
+
+    lookup TEL2_dflt_psts_uMatraLigatures {
+        sub ka-telugu uMatra-telugu by ku-telugu;
+        sub kha-telugu uMatra-telugu by khu-telugu;
+        sub ga-telugu uMatra-telugu by gu-telugu;
+        sub gha-telugu uMatra-telugu by ghu-telugu;
+        sub nga-telugu uMatra-telugu by ngu-telugu;
+        sub ca-telugu uMatra-telugu by cu-telugu;
+        sub cha-telugu uMatra-telugu by chu-telugu;
+        sub ja-telugu uMatra-telugu by ju-telugu;
+        sub jha-telugu uMatra-telugu by jhu-telugu;
+        sub nya-telugu uMatra-telugu by nyu-telugu;
+        sub tta-telugu uMatra-telugu by ttu-telugu;
+        sub ttha-telugu uMatra-telugu by tthu-telugu;
+        sub dda-telugu uMatra-telugu by ddu-telugu;
+        sub ddha-telugu uMatra-telugu by ddhu-telugu;
+        sub nna-telugu uMatra-telugu by nnu-telugu;
+        sub ta-telugu uMatra-telugu by tu-telugu;
+        sub tha-telugu uMatra-telugu by thu-telugu;
+        sub da-telugu uMatra-telugu by du-telugu;
+        sub dha-telugu uMatra-telugu by dhu-telugu;
+        sub na-telugu uMatra-telugu by nu-telugu;
+        sub pa-telugu uMatra-telugu by pu-telugu;
+        sub pha-telugu uMatra-telugu by phu-telugu;
+        sub ba-telugu uMatra-telugu by bu-telugu;
+        sub bha-telugu uMatra-telugu by bhu-telugu;
+        sub ma-telugu uMatra-telugu by mu-telugu;
+        sub ya-telugu uMatra-telugu by yu-telugu;
+        sub ra-telugu uMatra-telugu by ru-telugu;
+        sub rra-telugu uMatra-telugu by rru-telugu;
+        sub la-telugu uMatra-telugu by lu-telugu;
+        sub lla-telugu uMatra-telugu by llu-telugu;
+        sub llla-telugu uMatra-telugu by lllu-telugu;
+        sub va-telugu uMatra-telugu by vu-telugu;
+        sub sha-telugu uMatra-telugu by shu-telugu;
+        sub ssa-telugu uMatra-telugu by ssu-telugu;
+        sub sa-telugu uMatra-telugu by su-telugu;
+        sub ha-telugu uMatra-telugu by hu-telugu;
+    } TEL2_dflt_psts_uMatraLigatures;
+
+    lookup TEL2_dflt_psts_uuMatraLigatures {
+        sub ka-telugu uuMatra-telugu by kuu-telugu;
+        sub kha-telugu uuMatra-telugu by khuu-telugu;
+        sub ga-telugu uuMatra-telugu by guu-telugu;
+        sub gha-telugu uuMatra-telugu by ghuu-telugu;
+        sub nga-telugu uuMatra-telugu by nguu-telugu;
+        sub ca-telugu uuMatra-telugu by cuu-telugu;
+        sub cha-telugu uuMatra-telugu by chuu-telugu;
+        sub ja-telugu uuMatra-telugu by juu-telugu;
+        sub jha-telugu uuMatra-telugu by jhuu-telugu;
+        sub nya-telugu uuMatra-telugu by nyuu-telugu;
+        sub tta-telugu uuMatra-telugu by ttuu-telugu;
+        sub ttha-telugu uuMatra-telugu by tthuu-telugu;
+        sub dda-telugu uuMatra-telugu by dduu-telugu;
+        sub ddha-telugu uuMatra-telugu by ddhuu-telugu;
+        sub nna-telugu uuMatra-telugu by nnuu-telugu;
+        sub ta-telugu uuMatra-telugu by tuu-telugu;
+        sub tha-telugu uuMatra-telugu by thuu-telugu;
+        sub da-telugu uuMatra-telugu by duu-telugu;
+        sub dha-telugu uuMatra-telugu by dhuu-telugu;
+        sub na-telugu uuMatra-telugu by nuu-telugu;
+        sub pa-telugu uuMatra-telugu by puu-telugu;
+        sub pha-telugu uuMatra-telugu by phuu-telugu;
+        sub ba-telugu uuMatra-telugu by buu-telugu;
+        sub bha-telugu uuMatra-telugu by bhuu-telugu;
+        sub ma-telugu uuMatra-telugu by muu-telugu;
+        sub ya-telugu uuMatra-telugu by yuu-telugu;
+        sub ra-telugu uuMatra-telugu by ruu-telugu;
+        sub rra-telugu uuMatra-telugu by rruu-telugu;
+        sub la-telugu uuMatra-telugu by luu-telugu;
+        sub lla-telugu uuMatra-telugu by lluu-telugu;
+        sub llla-telugu uuMatra-telugu by llluu-telugu;
+        sub va-telugu uuMatra-telugu by vuu-telugu;
+        sub sha-telugu uuMatra-telugu by shuu-telugu;
+        sub ssa-telugu uuMatra-telugu by ssuu-telugu;
+        sub sa-telugu uuMatra-telugu by suu-telugu;
+        sub ha-telugu uuMatra-telugu by huu-telugu;
+    } TEL2_dflt_psts_uuMatraLigatures;
+
+    lookup TEL2_dflt_psts_contextualPostBaseRa {
+        sub @TEL_allBaseGlyphs [@TEL_belowAndPostBaseConsonantFormsWithRa @TEL_aiLengths] ra-telugu.below' by ra-telugu.post;
+        sub [k_ssa-telugu] ra-telugu.below' by ra-telugu.post;
+    } TEL2_dflt_psts_contextualPostBaseRa;
+
+    lookup TEL2_dflt_psts_alternateRaVattu {
+        sub @TEL_raVattu_group1 ra-telugu.below' by ra-telugu.below.alt01;
+        sub @TEL_raVattu_group2 ra-telugu.below' by ra-telugu.below.alt02;
+        sub @TEL_raVattu_group3 ra-telugu.below' by ra-telugu.below.alt03;
+        sub @TEL_raVattu_group4 ra-telugu.below' by ra-telugu.below.alt04;
+        sub @TEL_raVattu_group5 ra-telugu.below' by ra-telugu.below.alt05;
+        sub @TEL_raVattu_group6 ra-telugu.below' by ra-telugu.below.alt06;
+        sub @TEL_raVattu_group7 ra-telugu.below' by ra-telugu.below.alt07;
+        sub @TEL_raVattu_group8 ra-telugu.below' by ra-telugu.below.alt08;
+        sub @TEL_raVattu_group9 ra-telugu.below' by ra-telugu.below.alt09;
+    } TEL2_dflt_psts_alternateRaVattu;
+
+    lookup TEL2_dflt_psts_alternateSsa {
+        sub [ssa-telugu ssaa-telugu ssi-telugu ssii-telugu ssu-telugu ssuu-telugu sse-telugu ssee-telugu sso-telugu ssoo-telugu ssau-telugu]' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking] by [ssa-telugu.alt ssaa-telugu.alt ssi-telugu.alt ssii-telugu.alt ssu-telugu.alt ssuu-telugu.alt sse-telugu.alt ssee-telugu.alt sso-telugu.alt ssoo-telugu.alt ssau-telugu.alt];
+    } TEL2_dflt_psts_alternateSsa;
+
+    lookup TEL2_dflt_psts_alternate_teardrop_TEST {
+        sub dha-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by da-telugu teardrop.alt;
+        sub dhaa-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by daa-telugu teardrop.alt;
+        sub dh-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by d-telugu teardrop.alt;
+        sub dhi-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by di-telugu teardrop.alt;
+        sub dhii-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by dii-telugu teardrop.alt;
+        sub dhu-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by du-telugu teardrop.alt;
+        sub dhuu-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by duu-telugu teardrop.alt;
+        sub dhe-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by de-telugu teardrop.alt;
+        sub dhee-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by dee-telugu teardrop.alt;
+        sub dho-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by do-telugu teardrop.alt;
+        sub dhoo-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by doo-telugu teardrop.alt;
+        sub dhau-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by dau-telugu teardrop.alt;
+        sub ddha-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by dda-telugu teardrop.alt;
+        sub ddhaa-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by ddaa-telugu teardrop.alt;
+        sub ddh-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by dd-telugu teardrop.alt;
+        sub ddhi-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by ddi-telugu teardrop.alt;
+        sub ddhii-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by ddii-telugu teardrop.alt;
+        sub ddhu-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by ddu-telugu teardrop.alt;
+        sub ddhuu-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by dduu-telugu teardrop.alt;
+        sub ddhe-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by dde-telugu teardrop.alt;
+        sub ddhee-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by ddee-telugu teardrop.alt;
+        sub ddho-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by ddo-telugu teardrop.alt;
+        sub ddhoo-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by ddoo-telugu teardrop.alt;
+        sub ddhau-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by ddau-telugu teardrop.alt;
+        sub bha-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by ba-telugu teardrop.alt;
+        sub bhaa-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by baa-telugu teardrop.alt;
+        sub bh-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by b-telugu teardrop.alt;
+        sub bhi-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by bi-telugu teardrop.alt;
+        sub bhii-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by bii-telugu teardrop.alt;
+        sub bhu-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by bu-telugu teardrop.alt;
+        sub bhuu-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by buu-telugu teardrop.alt;
+        sub bhe-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by be-telugu teardrop.alt;
+        sub bhee-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by bee-telugu teardrop.alt;
+        sub bho-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by bo-telugu teardrop.alt;
+        sub bhoo-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by boo-telugu teardrop.alt;
+        sub bhau-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by bau-telugu teardrop.alt;
+        sub cha-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by ca-telugu teardrop.alt;
+        sub chaa-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by caa-telugu teardrop.alt;
+        sub ch-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by c-telugu teardrop.alt;
+        sub chi-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by ci-telugu teardrop.alt;
+        sub chii-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by cii-telugu teardrop.alt;
+        sub chu-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by cu-telugu teardrop.alt;
+        sub chuu-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by cuu-telugu teardrop.alt;
+        sub che-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by ce-telugu teardrop.alt;
+        sub chee-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by cee-telugu teardrop.alt;
+        sub cho-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by co-telugu teardrop.alt;
+        sub choo-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by coo-telugu teardrop.alt;
+        sub chau-telugu' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by cau-telugu teardrop.alt;
+        sub [kha-telugu gha-telugu jha-telugu tha-telugu pha-telugu kh-telugu gh-telugu jh-telugu th-telugu ph-telugu khaa-telugu ghaa-telugu jhaa-telugu thaa-telugu phaa-telugu khi-telugu ghi-telugu jhi-telugu thi-telugu phi-telugu khii-telugu ghii-telugu jhii-telugu thii-telugu phii-telugu khu-telugu ghu-telugu jhu-telugu thu-telugu phu-telugu khuu-telugu ghuu-telugu jhuu-telugu thuu-telugu phuu-telugu khe-telugu ghe-telugu jhe-telugu the-telugu phe-telugu khee-telugu ghee-telugu jhee-telugu thee-telugu phee-telugu kho-telugu gho-telugu jho-telugu tho-telugu pho-telugu khoo-telugu ghoo-telugu jhoo-telugu thoo-telugu phoo-telugu khau-telugu ghau-telugu jhau-telugu thau-telugu phau-telugu]' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] by [kha-telugu.alt gha-telugu.alt jha-telugu.alt tha-telugu.alt pha-telugu.alt kh-telugu.alt gh-telugu.alt jh-telugu.alt th-telugu.alt ph-telugu.alt khaa-telugu.alt ghaa-telugu.alt jhaa-telugu.alt thaa-telugu.alt phaa-telugu.alt khi-telugu.alt ghi-telugu.alt jhi-telugu.alt thi-telugu.alt phi-telugu.alt khii-telugu.alt ghii-telugu.alt jhii-telugu.alt thii-telugu.alt phii-telugu.alt khu-telugu.alt ghu-telugu.alt jhu-telugu.alt thu-telugu.alt phu-telugu.alt khuu-telugu.alt ghuu-telugu.alt jhuu-telugu.alt thuu-telugu.alt phuu-telugu.alt khe-telugu.alt ghe-telugu.alt jhe-telugu.alt the-telugu.alt phe-telugu.alt khee-telugu.alt ghee-telugu.alt jhee-telugu.alt thee-telugu.alt phee-telugu.alt kho-telugu.alt gho-telugu.alt jho-telugu.alt tho-telugu.alt pho-telugu.alt khoo-telugu.alt ghoo-telugu.alt jhoo-telugu.alt thoo-telugu.alt phoo-telugu.alt khau-telugu.alt ghau-telugu.alt jhau-telugu.alt thau-telugu.alt phau-telugu.alt];
+    } TEL2_dflt_psts_alternate_teardrop_TEST;
+
+    lookup TEL2_dflt_psts_kssa {
+        sub @TEL_allKaLigatures ssa-telugu.below' by ssa-telugu.below.alt;
+        sub @TEL_allKaLigatures ssai-telugu.below' by ssai-telugu.below.alt;
+    } TEL2_dflt_psts_kssa;
+
+} psts;
+
+feature haln {
+    script tel2;
+    lookup TEL2_dflt_haln_akhandHalantForms_A {
+        sub k_ssa-telugu' halant-telugu by ka-telugu ssa-telugu.below.alt;
+    } TEL2_dflt_haln_akhandHalantForms_A;
+
+    lookup TEL2_dflt_haln_halantForms {
+        lookupflag MarkAttachmentType @TEL_LF_BelowBaseConsonant_Filter;
+        sub ka-telugu halant-telugu by k-telugu;
+        sub kha-telugu halant-telugu by kh-telugu;
+        sub kha-telugu.alt halant-telugu by kh-telugu.alt;
+        sub ga-telugu halant-telugu by g-telugu;
+        sub gha-telugu halant-telugu by gh-telugu;
+        sub gha-telugu.alt halant-telugu by gh-telugu.alt;
+        sub nga-telugu halant-telugu by ng-telugu;
+        sub ca-telugu halant-telugu by c-telugu;
+        sub cha-telugu halant-telugu by ch-telugu;
+        sub ja-telugu halant-telugu by j-telugu;
+        sub jha-telugu halant-telugu by jh-telugu;
+        sub jha-telugu.alt halant-telugu by jh-telugu.alt;
+        sub nya-telugu halant-telugu by ny-telugu;
+        sub tta-telugu halant-telugu by tt-telugu;
+        sub ttha-telugu halant-telugu by tth-telugu;
+        sub dda-telugu halant-telugu by dd-telugu;
+        sub ddha-telugu halant-telugu by ddh-telugu;
+        sub nna-telugu halant-telugu by nn-telugu;
+        sub ta-telugu halant-telugu by t-telugu;
+        sub tha-telugu halant-telugu by th-telugu;
+        sub tha-telugu.alt halant-telugu by th-telugu.alt;
+        sub da-telugu halant-telugu by d-telugu;
+        sub dha-telugu halant-telugu by dh-telugu;
+        sub na-telugu halant-telugu by n-telugu;
+        sub pa-telugu halant-telugu by p-telugu;
+        sub pha-telugu halant-telugu by ph-telugu;
+        sub pha-telugu.alt halant-telugu by ph-telugu.alt;
+        sub ba-telugu halant-telugu by b-telugu;
+        sub bha-telugu halant-telugu by bh-telugu;
+        sub ma-telugu halant-telugu by m-telugu;
+        sub ya-telugu halant-telugu by y-telugu;
+        sub ra-telugu halant-telugu by r-telugu;
+        sub rra-telugu halant-telugu by rr-telugu;
+        sub la-telugu halant-telugu by l-telugu;
+        sub lla-telugu halant-telugu by ll-telugu;
+        sub llla-telugu halant-telugu by lll-telugu;
+        sub va-telugu halant-telugu by v-telugu;
+        sub sha-telugu halant-telugu by sh-telugu;
+        sub ssa-telugu halant-telugu by ss-telugu;
+        sub sa-telugu halant-telugu by s-telugu;
+        sub ha-telugu halant-telugu by h-telugu;
+    } TEL2_dflt_haln_halantForms;
+
+    lookup TEL2_dflt_haln_halantForms_B {
+        sub ka-telugu' @TEL_SpacingVattus halant-telugu by k-telugu;
+        sub kha-telugu' @TEL_SpacingVattus halant-telugu by kh-telugu;
+        sub ga-telugu' @TEL_SpacingVattus halant-telugu by g-telugu;
+        sub gha-telugu' @TEL_SpacingVattus halant-telugu by gh-telugu;
+        sub gha-telugu.alt' @TEL_SpacingVattus halant-telugu by gh-telugu.alt;
+        sub nga-telugu' @TEL_SpacingVattus halant-telugu by ng-telugu;
+        sub ca-telugu' @TEL_SpacingVattus halant-telugu by c-telugu;
+        sub cha-telugu' @TEL_SpacingVattus halant-telugu by ch-telugu;
+        sub ja-telugu' @TEL_SpacingVattus halant-telugu by j-telugu;
+        sub jha-telugu' @TEL_SpacingVattus halant-telugu by jh-telugu;
+        sub nya-telugu' @TEL_SpacingVattus halant-telugu by ny-telugu;
+        sub tta-telugu' @TEL_SpacingVattus halant-telugu by tt-telugu;
+        sub ttha-telugu' @TEL_SpacingVattus halant-telugu by tth-telugu;
+        sub dda-telugu' @TEL_SpacingVattus halant-telugu by dd-telugu;
+        sub ddha-telugu' @TEL_SpacingVattus halant-telugu by ddh-telugu;
+        sub nna-telugu' @TEL_SpacingVattus halant-telugu by nn-telugu;
+        sub ta-telugu' @TEL_SpacingVattus halant-telugu by t-telugu;
+        sub tha-telugu' @TEL_SpacingVattus halant-telugu by th-telugu;
+        sub da-telugu' @TEL_SpacingVattus halant-telugu by d-telugu;
+        sub dha-telugu' @TEL_SpacingVattus halant-telugu by dh-telugu;
+        sub na-telugu' @TEL_SpacingVattus halant-telugu by n-telugu;
+        sub pa-telugu' @TEL_SpacingVattus halant-telugu by p-telugu;
+        sub pha-telugu' @TEL_SpacingVattus halant-telugu by ph-telugu;
+        sub ba-telugu' @TEL_SpacingVattus halant-telugu by b-telugu;
+        sub bha-telugu' @TEL_SpacingVattus halant-telugu by bh-telugu;
+        sub ma-telugu' @TEL_SpacingVattus halant-telugu by m-telugu;
+        sub ya-telugu' @TEL_SpacingVattus halant-telugu by y-telugu;
+        sub ra-telugu' @TEL_SpacingVattus halant-telugu by r-telugu;
+        sub rra-telugu' @TEL_SpacingVattus halant-telugu by rr-telugu;
+        sub la-telugu' @TEL_SpacingVattus halant-telugu by l-telugu;
+        sub lla-telugu' @TEL_SpacingVattus halant-telugu by ll-telugu;
+        sub llla-telugu' @TEL_SpacingVattus halant-telugu by lll-telugu;
+        sub va-telugu' @TEL_SpacingVattus halant-telugu by v-telugu;
+        sub sha-telugu' @TEL_SpacingVattus halant-telugu by sh-telugu;
+        sub ssa-telugu' @TEL_SpacingVattus halant-telugu by ss-telugu;
+        sub sa-telugu' @TEL_SpacingVattus halant-telugu by s-telugu;
+        sub ha-telugu' @TEL_SpacingVattus halant-telugu by h-telugu;
+    } TEL2_dflt_haln_halantForms_B;
+
+    lookup TEL2_dflt_haln_halantForms_C {
+        sub k-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub kh-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub g-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub gh-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub gh-telugu.alt' @TEL_SpacingVattus halant-telugu by zerowidthspace;
+        sub ng-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub c-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub ch-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub j-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub jh-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub ny-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub tt-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub tth-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub dd-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub ddh-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub nn-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub t-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub th-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub d-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub dh-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub n-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub p-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub ph-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub b-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub bh-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub m-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub y-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub r-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub rr-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub l-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub ll-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub lll-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub v-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub sh-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub ss-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub s-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+        sub h-telugu @TEL_SpacingVattus halant-telugu' by zerowidthspace;
+    } TEL2_dflt_haln_halantForms_C;
+
+} haln;
+
+feature dist {
+    # Automatic Code End
+    # -------
+    # Regular
+    # -------
+    lookup TEL2_dflt_dist_vattuPositioningSpacing {
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [kha-telugu.below khai-telugu.below]' <0 0 596 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [ga-telugu.below gai-telugu.below]' <0 0 454 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [gha-telugu.below ghai-telugu.below]' <0 0 831 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [nga-telugu.below ngai-telugu.below]' <0 0 563 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [ja-telugu.below jai-telugu.below]' <0 0 563 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [jha-telugu.below jhai-telugu.below]' <0 0 926 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [nya-telugu.below nyai-telugu.below]' <0 0 718 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [tta-telugu.below ttai-telugu.below]' <0 0 566 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [ttha-telugu.below tthai-telugu.below]' <0 0 416 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [dda-telugu.below ddai-telugu.below ddha-telugu.below ddhai-telugu.below]' <0 0 554 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [nna-telugu.below nnai-telugu.below]' <0 0 548 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [ta-telugu.below tai-telugu.below]' <0 0 748 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [tha-telugu.below thai-telugu.below da-telugu.below dai-telugu.below dha-telugu.below dhai-telugu.below]' <0 0 558 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [rra-telugu.below rrai-telugu.below]' <0 0 610 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [la-telugu.below lai-telugu.below]' <0 0 668 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [llla-telugu.below lllai-telugu.below]' <0 0 621 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [ssa-telugu.below ssai-telugu.below]' <0 0 675 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [ssa-telugu.below.alt ssai-telugu.below.alt]' <0 0 729 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [ha-telugu.below hai-telugu.below]' <0 0 907 0>;
+        pos [k_ssa-telugu @TEL_NonSpacingVattus @TEL_SpacingVattus @TEL_NonSpacingVattus_Stacking] [t_ra-telugu.below]' <0 0 930 0>;
+    } TEL2_dflt_dist_vattuPositioningSpacing;
+
+} dist;
+
+feature blwm {
+    # Automatic Code End
+    # -------
+    # Regular
+    # -------
+    markClass [kha-telugu.below] <anchor -298 0> @mark_vattu;
+    markClass [ga-telugu.below] <anchor -227 0> @mark_vattu;
+    markClass [gha-telugu.below] <anchor -416 0> @mark_vattu;
+    markClass [nga-telugu.below] <anchor -282 0> @mark_vattu;
+    markClass [ja-telugu.below] <anchor -282 0> @mark_vattu;
+    markClass [jha-telugu.below] <anchor -463 0> @mark_vattu;
+    markClass [nya-telugu.below] <anchor -359 0> @mark_vattu;
+    markClass [tta-telugu.below] <anchor -283 0> @mark_vattu;
+    markClass [ttha-telugu.below] <anchor -208 0> @mark_vattu;
+    markClass [dda-telugu.below ddha-telugu.below] <anchor -279 0> @mark_vattu;
+    markClass [nna-telugu.below] <anchor -274 0> @mark_vattu;
+    markClass [ta-telugu.below] <anchor -374 0> @mark_vattu;
+    markClass [tha-telugu.below da-telugu.below dha-telugu.below] <anchor -279 0> @mark_vattu;
+    markClass [rra-telugu.below] <anchor -305 0> @mark_vattu;
+    markClass [la-telugu.below] <anchor -334 0> @mark_vattu;
+    markClass [llla-telugu.below] <anchor -311 0> @mark_vattu;
+    markClass [ssa-telugu.below] <anchor -338 0> @mark_vattu;
+    markClass [ssa-telugu.below.alt] <anchor -380 0> @mark_vattu;
+    markClass [ha-telugu.below] <anchor -454 0> @mark_vattu;
+    markClass [t_ra-telugu.below] <anchor 71 0> @mark_vattu;
+    lookup TEL2_dflt_blwm_vattu_to_vattu {
+        pos mark [kha-telugu.below khai-telugu.below]
+            <anchor 380 0> mark @mark_vattu;
+        pos mark [ga-telugu.below gai-telugu.below]
+            <anchor 309 0> mark @mark_vattu;
+        pos mark [gha-telugu.below ghai-telugu.below]
+            <anchor 497 0> mark @mark_vattu;
+        pos mark [nga-telugu.below ngai-telugu.below]
+            <anchor 363 0> mark @mark_vattu;
+        pos mark [ja-telugu.below jai-telugu.below]
+            <anchor 363 0> mark @mark_vattu;
+        pos mark [jha-telugu.below jhai-telugu.below]
+            <anchor 545 0> mark @mark_vattu;
+        pos mark [nya-telugu.below nyai-telugu.below]
+            <anchor 441 0> mark @mark_vattu;
+        pos mark [tta-telugu.below ttai-telugu.below]
+            <anchor 365 0> mark @mark_vattu;
+        pos mark [ttha-telugu.below tthai-telugu.below]
+            <anchor 290 0> mark @mark_vattu;
+        pos mark [dda-telugu.below ddha-telugu.below ddai-telugu.below ddhai-telugu.below]
+            <anchor 357 0> mark @mark_vattu;
+        pos mark [nna-telugu.below nnai-telugu.below]
+            <anchor 356 0> mark @mark_vattu;
+        pos mark [ta-telugu.below tai-telugu.below]
+            <anchor 456 0> mark @mark_vattu;
+        pos mark [tha-telugu.below da-telugu.below dha-telugu.below thai-telugu.below dai-telugu.below dhai-telugu.below]
+            <anchor 361 0> mark @mark_vattu;
+        pos mark [ra-telugu.below]
+            <anchor 421 0> mark @mark_vattu;
+        pos mark [ra-telugu.below.alt01]
+            <anchor 456 0> mark @mark_vattu;
+        pos mark [ra-telugu.below.alt02]
+            <anchor 539 0> mark @mark_vattu;
+        pos mark [ra-telugu.below.alt03]
+            <anchor 575 0> mark @mark_vattu;
+        pos mark [ra-telugu.below.alt04]
+            <anchor 623 0> mark @mark_vattu;
+        pos mark [ra-telugu.below.alt05]
+            <anchor 717 0> mark @mark_vattu;
+        pos mark [ra-telugu.below.alt06]
+            <anchor 807 0> mark @mark_vattu;
+        pos mark [ra-telugu.below.alt07]
+            <anchor 836 0> mark @mark_vattu;
+        pos mark [ra-telugu.below.alt08]
+            <anchor 943 0> mark @mark_vattu;
+        pos mark [ra-telugu.below.alt09]
+            <anchor 1013 0> mark @mark_vattu;
+        pos mark [rra-telugu.below rrai-telugu.below]
+            <anchor 387 0> mark @mark_vattu;
+        pos mark [la-telugu.below lai-telugu.below]
+            <anchor 416 0> mark @mark_vattu;
+        pos mark [llla-telugu.below lllai-telugu.below]
+            <anchor 392 0> mark @mark_vattu;
+        pos mark [ssa-telugu.below ssai-telugu.below]
+            <anchor 419 0> mark @mark_vattu;
+        pos mark [ssa-telugu.below.alt ssai-telugu.below.alt]
+            <anchor 431 0> mark @mark_vattu;
+        pos mark [ha-telugu.below hai-telugu.below]
+            <anchor 535 0> mark @mark_vattu;
+        pos mark [t_ra-telugu.below]
+            <anchor 1083 0> mark @mark_vattu;
+    } TEL2_dflt_blwm_vattu_to_vattu;
+
+    lookup TEL2_dflt_blwm_spacing_vattu_to_vattu {
+        pos base [ka-telugu.below]
+            <anchor 752 0> mark @mark_vattu;
+        pos base [ca-telugu.below cha-telugu.below]
+            <anchor 595 0> mark @mark_vattu;
+        pos base [na-telugu.below]
+            <anchor 755 0> mark @mark_vattu;
+        pos base [pa-telugu.below pha-telugu.below]
+            <anchor 567 0> mark @mark_vattu;
+        pos base [ba-telugu.below bha-telugu.below]
+            <anchor 614 0> mark @mark_vattu;
+        pos base [ma-telugu.below]
+            <anchor 490 0> mark @mark_vattu;
+        pos base [ya-telugu.below]
+            <anchor 630 0> mark @mark_vattu;
+        pos base [lla-telugu.below]
+            <anchor 568 0> mark @mark_vattu;
+        pos base [va-telugu.below]
+            <anchor 604 0> mark @mark_vattu;
+        pos base [sha-telugu.below]
+            <anchor 452 0> mark @mark_vattu;
+        pos base [sa-telugu.below]
+            <anchor 674 0> mark @mark_vattu;
+    } TEL2_dflt_blwm_spacing_vattu_to_vattu;
+
+    lookup TEL2_dflt_blwm_spacing_akhands_to_vattus {
+        pos base [k_ssa-telugu]
+            <anchor 841 0> mark @mark_vattu;
+    } TEL2_dflt_blwm_spacing_akhands_to_vattus;
+
+} blwm;
