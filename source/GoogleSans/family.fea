@@ -1957,3 +1957,15 @@ feature ss08 {
     sub ae by ae.alt;
     sub aeacute by aeacute.alt;
 } ss08;
+
+feature ss09 {
+    featureNames {
+        name "Alternate Symbols";
+        name 1 "Alternate Symbols";
+    };
+
+    sub copyright by copyright.alt;
+    sub published by published.alt;
+    sub registered by registered.alt;
+
+} ss09;
