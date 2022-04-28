@@ -95,6 +95,7 @@ STATIC_UPRIGHT_FEA = [
     "ss06",
     "ss07",
     "ss08",
+    "ss09",
     "subs",
     "sups",
     "tnum",
@@ -150,6 +151,7 @@ STATIC_ITALICS_FEA = [
     "ss06",
     "ss07",
     "ss08",
+    "ss09",
     "subs",
     "sups",
     "tnum",
@@ -206,6 +208,7 @@ VAR_UPRIGHT_FEA = [
     "ss06",
     "ss07",
     "ss08",
+    "ss09",
     "subs",
     "sups",
     "tnum",
@@ -261,6 +264,7 @@ VAR_ITALICS_FEA = [
     "ss06",
     "ss07",
     "ss08",
+    "ss09",
     "subs",
     "sups",
     "tnum",
@@ -499,9 +503,7 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
                         )
                         continue
                     if shaped_text != expected:
-                        shaped_texts_str = textwrap.indent(
-                            "\n".join(shaped_text), "\t  "
-                        )
+                        shaped_texts_str = textwrap.indent("\n".join(shaped_text), "\t  ")
                         shaped_texts_expected_str = textwrap.indent(
                             "\n".join(expected), "\t  "
                         )
