@@ -4,10 +4,14 @@
 
 ### New
 
+- add Bangla script (#455)
+- add Ethiopic script (#451)
+- add Khmer script (#417)
 - script to normalize all integer float values, defined as floats that have zero values following the decimal point (#441)
 
 ### Changed
 
+- add fontmake transformed components decompose filter to compiler pipeline (#460)
 - remove all `<note>` elements from source files (#441)
 - update all production names to Glyphs.app v2.6.6 specified values (#441)
 - move `com.github.googlei18n.ufo2ft.featureWriters` keys to designspace files from UFO lib.plist files (#441)
@@ -15,6 +19,30 @@
 ### Fixed
 
 - added missing production name definitions based on Glyphs.app v2.6.6 definitions (#441)
+- fix Gurmukhi dotted circle attachments (#458)
+- fix graded width of Greek polytonic glyphs (#425)
+
+### Dependencies
+
+- update GitHub Actions runner environment to use cPython v3.10.x for test and production font compilation
+- update attrs from v21.2.0 to v21.4.0 (#429)
+- update cffsubr from v0.2.8 to v0.2.9.post1
+- update compreffor from v0.5.1 to v0.5.1.post1
+- update font-v from v1.0.5 to v2.1.0
+- update fontmake from v2.4.2 to v3.1.2
+- update fontmath from v0.8.1 to v0.9.1
+- update fonttools from v4.27.1 to v4.28.5
+- update fs from v2.3.13 to v2.4.14
+- update gitdb from v4.0.7 to v4.0.9
+- update gitpython from v3.1.24 to v3.1.26
+- update glyphslib from v5.3.2 to v6.0.3
+- update lxml from v4.6.5 to v6.0.3
+- update pyclipper from v1.3.0 to v1.3.0.post2
+- update pytz from v2021.1 to v2021.3
+- update smmap from v4.0.0 to v5.0.0
+- update ufo2ft from v2.24.0 to v2.25.2
+- update ufolib2 from v0.11.3 to v0.13.0
+- add openstep-plist dependency at v0.3.0
 
 ## Version 7.000
 
