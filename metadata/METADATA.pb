@@ -41,7 +41,7 @@ subsets: "tamil"
 subsets: "thai"
 subsets: "vietnamese"
 experiments: "dont_send_all_subset_through_subsetter"
-experiments: "layout_features=hist,lnum,pnum,ss02,tnum"
+experiments: "layout_features=hist,lnum,pnum,ss02,ss09,tnum"
 foundry: "GOOGLE"
 android_version: "v26"
 axes {
