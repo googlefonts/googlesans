@@ -7,7 +7,11 @@
 - add Bangla script (#455)
 - add Ethiopic script (#451)
 - add Khmer script (#417)
-- script to normalize all integer float values, defined as floats that have zero values following the decimal point (#441)
+- add stylistic set 09 with symbol alternates (#485)
+- add COPYRIGHT SIGN (U+00A9) alternate style in stylistic set 09 (#485)
+- add REGISTERED SIGN (U+00AE) alternate style in stylistic set 09 (#485)
+- add SOUND RECORDING COPYRIGHT (U+2117) alternate style in stylistic set 09 (#485)
+- add script to normalize all integer float values, defined as floats that have zero values following the decimal point (#441)
 
 ### Changed
 
