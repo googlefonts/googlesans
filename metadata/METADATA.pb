@@ -4,7 +4,7 @@ license: "GOOGLE_RESTRICTED"
 visibility: "INTERNAL"
 category: "SANS_SERIF"
 date_added: 1496646000000  # 2017-06-05
-version: "v33"  # repository commit: ec404726ce0f1aac5d83a2d7ba87ac88cb8d5eab
+version: "v34"  # repository commit: 14e8af7aab391a1c6f44823ce420c2ecce8e1983
 fonts {
   name: "Google Sans"
   style: "normal"
@@ -24,12 +24,15 @@ fonts {
   [google.fonts.copyright]: "Copyright 2017 Google, Inc. All Rights Reserved."
 }
 subsets: "armenian"
+subsets: "bengali"
 subsets: "cyrillic"
 subsets: "devanagari"
+subsets: "ethiopic"
 subsets: "georgian"
 subsets: "greek"
 subsets: "gurmukhi"
 subsets: "hebrew"
+subsets: "khmer"
 subsets: "lao"
 subsets: "latin"
 subsets: "latin-ext"
@@ -60,5 +63,5 @@ registry_default_overrides {
   key: "opsz"
   value: 18
 }
-[google.fonts.size]: 2540128
+[google.fonts.size]: 5415768
 
