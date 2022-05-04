@@ -1,3 +1,5 @@
+# flake8: noqa
+
 from pathlib import Path
 
 from ufoLib2 import Font
@@ -675,11 +677,11 @@ MARKS = set(
 for path in Path("source/GoogleSans/").glob("*.ufo"):
     ufo = Font.open(path)
     otc = ufo.lib["public.openTypeCategories"]
-    
+
     for name in ALL_GLYPHS:
         if name in otc:
             del otc[name]
     otc.update({k: "base" for k in BASES})
     otc.update({k: "mark" for k in MARKS})
-    
+
     ufo.save()
