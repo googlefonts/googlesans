@@ -28,12 +28,15 @@ from pathlib import Path
 # with `_unique-glyphs.nam` suffix removed
 SUBSETS = (
     "armenian",
+    "bengali",
     "cyrillic",
     "devanagari",
+    "ethiopic",
     "georgian",
     "greek",
     "gurmukhi",
     "hebrew",
+    "khmer",
     "lao",
     "latin",
     "latin-ext",
