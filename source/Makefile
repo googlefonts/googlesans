@@ -101,18 +101,12 @@ UFO_GS_TEXT_BOLDITALIC=GoogleSans/GoogleSans-TextBoldItalic.ufo
 
 gs-static: gs-static-upright gs-static-italic
 
-gs-static-upright: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) --interpolate -o ttf --output-dir $(STATIC_BUILD_DIR) --expand-features-to-instances
-	$(PYTHON3_EXE) ../scripts/gs-subset.py $(STATIC_UPRIGHT_BUILD_PATHS)
-	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $(STATIC_UPRIGHT_BUILD_PATHS)
-	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(STATIC_UPRIGHT_BUILD_PATHS)
+gs-static-upright: gs-vf-upright
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_BUILD_PATH_UPRIGHT_TARGET) $(UPRIGHT_SOURCE) $(STATIC_BUILD_DIR)
 	font-v write --sha1 $(STATIC_UPRIGHT_BUILD_PATHS)
 
-gs-static-italic: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) --interpolate -o ttf --output-dir $(STATIC_BUILD_DIR) --expand-features-to-instances
-	$(PYTHON3_EXE) ../scripts/gs-subset.py $(STATIC_ITALIC_BUILD_PATHS)
-	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $(STATIC_ITALIC_BUILD_PATHS)
-	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(STATIC_ITALIC_BUILD_PATHS)
+gs-static-italic: gs-vf-italic
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_BUILD_PATH_ITALIC_TARGET) $(ITALIC_SOURCE) $(STATIC_BUILD_DIR)
 	font-v write --sha1 $(STATIC_ITALIC_BUILD_PATHS)
 
 gs-vf: gs-vf-upright gs-vf-italic
