@@ -26,17 +26,13 @@ jobs:
           py-version: ${{ matrix.python-version }}
           buildcommand: "make -j gs-static" # static font make target
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
-        uses: actions/checkout@v2
-      - name: Set up Python v${{ steps.config.outputs.py-version }} environment
-        uses: actions/setup-python@v2
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
         with:
           python-version: ${{ steps.config.outputs.py-version }}
-      - name: Python build dependency cache lookup
-        uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          # Check for requirements file cache hit
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements*.txt') }}
+          cache: "pip"
+          cache-dependency-path: "requirements*.txt"
       - name: Install Python build dependencies
         uses: py-actions/py-dependency-install@v2
         with:
@@ -69,17 +65,13 @@ jobs:
           py-version: ${{ matrix.python-version }}
           buildcommand: "make -j gs-vf" # var font make target
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
-        uses: actions/checkout@v2
-      - name: Set up Python v${{ steps.config.outputs.py-version }} environment
-        uses: actions/setup-python@v1
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
         with:
           python-version: ${{ steps.config.outputs.py-version }}
-      - name: Python build dependency cache lookup
-        uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          # Check for requirements file cache hit
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements*.txt') }}
+          cache: "pip"
+          cache-dependency-path: "requirements*.txt"
       - name: Install Python build dependencies
         uses: py-actions/py-dependency-install@v2
         with:
