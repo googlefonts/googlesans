@@ -1080,6 +1080,8 @@ feature psts {
 } psts;
 
 feature dist {
+    # Automatic Code
+
     @BNG_eMatra_short2 = [eMatra-beng.short2 aiMatra-beng.short2 eMatra-beng.init.short2 aiMatra-beng.init.short2];
     pos @BNG_eMatra_short2' 20 ph-beng.half1 ba-beng.blwf2;
     pos @BNG_eMatra_short2' 20 s-beng.half4 ba-beng.blwf3;
