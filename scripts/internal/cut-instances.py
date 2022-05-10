@@ -36,6 +36,7 @@ def cut_instance(
             "varLib.instancer",
             "--quiet",
             "--remove-overlaps",
+            "--update-name-table",
             "-o",
             str(output_file),
             str(variable_font),
