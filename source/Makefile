@@ -103,10 +103,12 @@ gs-static: gs-static-upright gs-static-italic
 
 gs-static-upright: gs-vf-upright
 	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_BUILD_PATH_UPRIGHT_TARGET) $(UPRIGHT_SOURCE) $(STATIC_BUILD_DIR)
+	$(PYTHON3_EXE) ../scripts/gs-subset.py $(STATIC_UPRIGHT_BUILD_PATHS)
 	font-v write --sha1 $(STATIC_UPRIGHT_BUILD_PATHS)
 
 gs-static-italic: gs-vf-italic
 	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_BUILD_PATH_ITALIC_TARGET) $(ITALIC_SOURCE) $(STATIC_BUILD_DIR)
+	$(PYTHON3_EXE) ../scripts/gs-subset.py $(STATIC_ITALIC_BUILD_PATHS)
 	font-v write --sha1 $(STATIC_ITALIC_BUILD_PATHS)
 
 gs-vf: gs-vf-upright gs-vf-italic
