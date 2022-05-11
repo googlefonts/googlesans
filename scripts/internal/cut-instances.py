@@ -20,14 +20,13 @@ import multiprocessing.pool
 import subprocess
 import sys
 from pathlib import Path
-from types import SimpleNamespace
-from black import Any
+from typing import Any
 
+import ufoLib2
 from fontTools.designspaceLib import DesignSpaceDocument
 from fontTools.ttLib import TTFont
 from fontTools.ttLib.tables.O_S_2f_2 import Panose
 from ufo2ft.fontInfoData import getAttrWithFallback, normalizeStringForPostscript
-import ufoLib2
 
 
 def cut_instance(
@@ -102,13 +101,14 @@ def build_name_entries(info: dict[str, Any], name: Any) -> None:
         16: preferredFamilyName,
         17: preferredSubfamilyName,
     }
-    print(nameVals)
 
     # don't add typographic names if they are the same as the legacy ones
     if nameVals[1] == nameVals[16]:
         del nameVals[16]
+        name.removeNames(nameID=16, platformID=3, platEncID=1, langID=0x409)
     if nameVals[2] == nameVals[17]:
         del nameVals[17]
+        name.removeNames(nameID=17, platformID=3, platEncID=1, langID=0x409)
     # postscript font name
     if nameVals[6]:
         nameVals[6] = normalizeStringForPostscript(nameVals[6])
@@ -120,9 +120,6 @@ def build_name_entries(info: dict[str, Any], name: Any) -> None:
         platformId = 3
         platEncId = 1
         langId = 0x409
-        # Set built name record if not set yet
-        if name.getName(nameId, platformId, platEncId, langId):
-            continue
         name.setName(nameVal, nameId, platformId, platEncId, langId)
 
 
@@ -154,8 +151,8 @@ def main(args: list[str] | None = None) -> int:
         }
         output_file = output_dir / Path(instance.filename).with_suffix(".ttf").name
 
-        family_name = instance.familyName
-        style_name = instance.styleName
+        family_name = custom_parameters.get("preferredFamilyName", instance.familyName)
+        style_name = custom_parameters.get("preferredSubfamilyName", instance.styleName)
         stylemap_family_name = instance.styleMapFamilyName
         stylemap_style_name = instance.styleMapStyleName
 
