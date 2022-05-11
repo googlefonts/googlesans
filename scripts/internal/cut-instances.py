@@ -19,6 +19,7 @@ import multiprocessing
 import multiprocessing.pool
 import subprocess
 import sys
+import signal
 from pathlib import Path
 from typing import Any
 
@@ -26,7 +27,11 @@ import ufoLib2
 from fontTools.designspaceLib import DesignSpaceDocument
 from fontTools.ttLib import TTFont
 from fontTools.ttLib.tables.O_S_2f_2 import Panose
-from ufo2ft.fontInfoData import getAttrWithFallback, normalizeStringForPostscript
+from ufo2ft.fontInfoData import (
+    getAttrWithFallback,
+    normalizeStringForPostscript,
+    intListToNum,
+)
 
 
 def cut_instance(
@@ -78,6 +83,32 @@ def cut_instance(
         "styleMapStyleName": stylemap_style_name,
     }
     build_name_entries(info, font["name"])
+
+    # style mapping
+    styleMapStyleName = font["name"].getName(2, 3, 1, 0x409).toStr().lower()
+    macStyle = []
+    if styleMapStyleName == "bold":
+        macStyle = [0]
+    elif styleMapStyleName == "bold italic":
+        macStyle = [0, 1]
+    elif styleMapStyleName == "italic":
+        macStyle = [1]
+    font["head"].macStyle = intListToNum(macStyle, 0, 16)
+
+    selection = font["OS/2"].fsSelection
+    selection &= ~(1 << 0)
+    selection &= ~(1 << 5)
+    selection &= ~(1 << 6)
+    if styleMapStyleName == "regular":
+        selection |= 1 << 6
+    elif styleMapStyleName == "bold":
+        selection |= 1 << 5
+    elif styleMapStyleName == "italic":
+        selection |= 1 << 0
+    elif styleMapStyleName == "bold italic":
+        selection |= 1 << 0
+        selection |= 1 << 5
+    font["OS/2"].fsSelection = selection
 
     font.save(output_file)
 
