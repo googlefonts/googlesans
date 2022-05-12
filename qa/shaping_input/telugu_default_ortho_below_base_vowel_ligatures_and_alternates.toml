@@ -1,0 +1,18 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+blwf = true
+abvs = true
+blws = true
+blwm = true
+
+[input]
+script = "tel2"
+language = "dflt"
+comparison_mode = "full"
+text = [
+	"క్త్ర", # Ta-Ra below-base ligature
+	"ప్ఖై ల్గై", # vattu-lengthMatra ligatures
+	"కై గై" # short, alternate lengthMark 
+]
