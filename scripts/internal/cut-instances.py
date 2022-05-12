@@ -19,7 +19,6 @@ import multiprocessing
 import multiprocessing.pool
 import subprocess
 import sys
-import signal
 from pathlib import Path
 from typing import Any
 
