@@ -15,6 +15,7 @@
 @TEL_raVattu_group8 = [gho-telugu mo-telugu ghoo-telugu ghu-telugu mu-telugu hu-telugu ghuu-telugu muu-telugu huu-telugu];
 @TEL_raVattu_group9 = [jho-telugu yo-telugu jhu-telugu yu-telugu jhuu-telugu yuu-telugu];
 @TEL_allKaLigatures = [kaa-telugu ki-telugu kii-telugu ku-telugu kuu-telugu ke-telugu kee-telugu ko-telugu koo-telugu kau-telugu];
+@TEL_allJaLigatures = [j-telugu jaa-telugu ji-telugu jii-telugu ju-telugu juu-telugu je-telugu jee-telugu jo-telugu joo-telugu jau-telugu];
 
 feature locl {
     script tel2;
@@ -509,7 +510,8 @@ feature psts {
     } TEL2_dflt_psts_uuMatraLigatures;
 
     lookup TEL2_dflt_psts_contextualPostBaseRa {
-        sub @TEL_allBaseGlyphs [@TEL_belowAndPostBaseConsonantFormsWithRa @TEL_aiLengths] ra-telugu.below' by ra-telugu.post;
+        sub @TEL_allBaseGlyphs [@TEL_aiLengths] [@TEL_belowAndPostBaseConsonantFormsWithRa] ra-telugu.below' by ra-telugu.post;
+        sub @TEL_allBaseGlyphs [@TEL_belowAndPostBaseConsonantFormsWithRa @TEL_NonSpacingVattus_Stacking @TEL_aiLengths] ra-telugu.below' by ra-telugu.post;
         sub [k_ssa-telugu] ra-telugu.below' by ra-telugu.post;
     } TEL2_dflt_psts_contextualPostBaseRa;
 
@@ -592,6 +594,7 @@ feature haln {
     script tel2;
     lookup TEL2_dflt_haln_akhandHalantForms_A {
         sub k_ssa-telugu' halant-telugu by ka-telugu ssa-telugu.below.alt;
+        sub j_nya-telugu' halant-telugu by ja-telugu nya-telugu.below;
     } TEL2_dflt_haln_akhandHalantForms_A;
 
     lookup TEL2_dflt_haln_halantForms {
