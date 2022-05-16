@@ -20,7 +20,7 @@ cu2qu==1.6.7.post1
     # via ufo2ft
 font-v==2.1.0
     # via -r requirements.in
-fontmake==3.3.0
+fontmake[pathops]==3.3.0
     # via -r requirements.in
 fontmath==0.9.1
     # via fontmake
@@ -54,6 +54,8 @@ pytz==2022.1
     # via fs
 six==1.16.0
     # via fs
+skia-pathops==0.7.2
+    # via fontmake
 smmap==5.0.0
     # via gitdb
 ufo2ft[compreffor]==2.27.0
