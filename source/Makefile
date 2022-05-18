@@ -141,10 +141,10 @@ VARIABLE_BUILD_PATH_ITALIC_TARGET: $(FONT_BUILD_DIR)
 gs-compatible-masters: gs-compatible-masters-upright gs-compatible-masters-italic
 
 gs-compatible-masters-upright: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR) --expand-features-to-instances
+	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
 
 gs-compatible-masters-italic: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR) --expand-features-to-instances
+	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
 
 gs-vf-vendor: gs-vf-vendor-glyphs2designspace
 	$(foreach \
