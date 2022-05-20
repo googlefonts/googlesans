@@ -1,0 +1,98 @@
+
+# Copyright 2020 Google Sans Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# fontmake compiler executable
+FONTMAKE=fontmake --verbose WARNING
+
+# Source file path definitions
+UPRIGHT_SOURCE = GoogleSans/GoogleSans.designspace
+UPRIGHT_ALL_SOURCES = $(wildcard GoogleSans/GoogleSans-*.ufo/**/*) $(wildcard GoogleSans/*.fea)
+
+ITALIC_SOURCE = GoogleSans/GoogleSans-Italic.designspace
+ITALIC_ALL_SOURCES = $(wildcard GoogleSans/GoogleSansItalic-*.ufo/**/*) $(wildcard GoogleSans/*.fea)
+
+# Build directory and file path definitions
+FONT_BUILD_DIR=../build/GoogleSans
+STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
+VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
+INTERPOLATABLE_BUILD_DIR=$(FONT_BUILD_DIR)/interpolatable
+
+# Artifact paths
+STATIC_UPRIGHTS = $(addprefix $(STATIC_BUILD_DIR)/,GoogleSansText-Regular.ttf GoogleSansText-Bold.ttf GoogleSansText-Medium.ttf GoogleSans-Regular.ttf GoogleSans-Bold.ttf GoogleSans-Medium.ttf)
+STATIC_ITALICS = $(addprefix $(STATIC_BUILD_DIR)/,GoogleSans-BoldItalic.ttf GoogleSans-Italic.ttf GoogleSansText-MediumItalic.ttf GoogleSansText-BoldItalic.ttf GoogleSansText-Italic.ttf GoogleSans-MediumItalic.ttf)
+
+INTERPOLATABLE_UPRIGHTS = $(INTERPOLATABLE_BUILD_DIR)/GoogleSans.designspace
+INTERPOLATABLE_ITALICS = $(INTERPOLATABLE_BUILD_DIR)/GoogleSans-Italic.designspace
+
+VARIABLE_UPRIGHT = $(VARIABLE_BUILD_DIR)/GoogleSans[GRAD,opsz,wght].ttf
+VARIABLE_ITALIC = $(VARIABLE_BUILD_DIR)/GoogleSans-Italic[GRAD,opsz,wght].ttf
+
+
+gs-vf: gs-vf-upright gs-vf-italic
+gs-vf-upright: $(VARIABLE_UPRIGHT)
+gs-vf-italic: $(VARIABLE_ITALIC)
+
+$(INTERPOLATABLE_UPRIGHTS): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
+	$(FONTMAKE) -m $(UPRIGHT_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
+
+$(VARIABLE_UPRIGHT): $(INTERPOLATABLE_UPRIGHTS)
+	python3 -m fontTools.varLib $< -q -o $@
+	python3 ../scripts/gs-subset.py $@
+	python3 ../scripts/set-unicoderange.py $@
+	python3 ../scripts/gftools-fix-unwanted-tables.py --tables MVAR $@
+	python3 ../scripts/gftools-fix-nonhinting.py $@
+	python3 ../scripts/gs-stat.py $@
+	font-v write --sha1 $@
+
+
+$(INTERPOLATABLE_ITALICS): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
+	$(FONTMAKE) -m $(ITALIC_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
+
+$(VARIABLE_ITALIC): $(INTERPOLATABLE_ITALICS)
+	python3 -m fontTools.varLib $< -q -o $@
+	python3 ../scripts/gs-subset.py $@
+	python3 ../scripts/set-unicoderange.py $@
+	python3 ../scripts/gftools-fix-unwanted-tables.py --tables MVAR $@
+	python3 ../scripts/gftools-fix-nonhinting.py $@
+	python3 ../scripts/gs-stat.py $@
+	font-v write --sha1 $@
+
+
+gs-static: gs-static-upright gs-static-italic
+gs-static-upright: $(STATIC_UPRIGHTS)
+gs-static-italic: $(STATIC_ITALICS)
+
+$(STATIC_UPRIGHTS): $(VARIABLE_UPRIGHT)
+	python3 ../scripts/internal/cut-instances.py $< $(UPRIGHT_SOURCE) $@
+	python3 ../scripts/gs-subset.py $@
+	font-v write --sha1 $@
+
+$(STATIC_ITALICS): $(VARIABLE_ITALIC)
+	python3 ../scripts/internal/cut-instances.py $< $(ITALIC_SOURCE) $@
+	python3 ../scripts/gs-subset.py $@
+	font-v write --sha1 $@
+
+
+$(FONT_BUILD_DIR):
+	mkdir -p $(FONT_BUILD_DIR)
+	mkdir -p $(STATIC_BUILD_DIR)
+	mkdir -p $(VARIABLE_BUILD_DIR)
+	mkdir -p $(INTERPOLATABLE_BUILD_DIR)
+
+.PHONY: gs-vf gs-vf-upright gs-vf-italic gs-static gs-static-upright gs-static-italic
+
+# Disable built-in rules to speed up source globbing.
+MAKEFLAGS += --no-builtin-rules
+.SUFFIXES:
