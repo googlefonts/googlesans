@@ -19,7 +19,7 @@ MASTER_UFO_DIR=$(FONT_BUILD_DIR)/master_ufo
 INSTANCE_UFO_DIR=$(FONT_BUILD_DIR)/instance_ufo
 VENV_DIR=.venv
 
-all: gs-static gs-vf
+all: gs-static gs-vf gs-compatible-masters
 
 # ------------------------------
 # Clean
@@ -44,7 +44,7 @@ clean-ufo:
 # Compile
 # ------------------------------
 
-gs-static gs-vf gs-vf-vendor:
+gs-static gs-vf gs-vf-vendor gs-compatible-masters gs-compatible-masters-upright gs-compatible-masters-italic:
 	cd source && $(MAKE) $@
 
 gs-regular gs-medium gs-bold gs-italic gs-medium-italic gs-bold-italic:

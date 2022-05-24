@@ -38,6 +38,7 @@ ITALIC_SOURCE=GoogleSans/GoogleSans-Italic.designspace
 FONT_BUILD_DIR=../build/GoogleSans
 STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
 VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
+INTERPOLATABLE_BUILD_DIR=$(FONT_BUILD_DIR)/interpolatable
 
 STAGING_DIR=GoogleSans/staging
 
@@ -139,6 +140,14 @@ VARIABLE_BUILD_PATH_ITALIC_TARGET: $(FONT_BUILD_DIR)
 	font-v write --sha1 $(VARIABLE_BUILD_PATH_ITALIC)
 	mv $(VARIABLE_BUILD_PATH_ITALIC) "$(VARIABLE_BUILD_PATH_ITALIC_TARGET)"
 
+gs-compatible-masters: gs-compatible-masters-upright gs-compatible-masters-italic
+
+gs-compatible-masters-upright: $(FONT_BUILD_DIR)
+	$(FONTMAKE_EXE) --no-production-names -m $(UPRIGHT_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
+
+gs-compatible-masters-italic: $(FONT_BUILD_DIR)
+	$(FONTMAKE_EXE) --no-production-names -m $(ITALIC_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
+
 gs-vf-vendor: gs-vf-vendor-glyphs2designspace
 	$(foreach \
 		file, \
@@ -217,6 +226,7 @@ $(FONT_BUILD_DIR):
 	mkdir -p $(FONT_BUILD_DIR)
 	mkdir -p $(STATIC_BUILD_DIR)
 	mkdir -p $(VARIABLE_BUILD_DIR)
+	mkdir -p $(INTERPOLATABLE_BUILD_DIR)
 
 $(STAGING_DIR):
 	mkdir -p $(STAGING_DIR)
@@ -224,7 +234,8 @@ $(STAGING_DIR):
 .PHONY: gs-static gs-vf \
 gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
-gs-vf-upright gs-vf-italic gs-ufo2glyphs
+gs-vf-upright gs-vf-italic gs-ufo2glyphs gs-compatible-masters \
+gs-compatible-masters-upright gs-compatible-masters-italic
 
 # Disable built-in rules to speed up source globbing.
 MAKEFLAGS += --no-builtin-rules
