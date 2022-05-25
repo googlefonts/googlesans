@@ -144,9 +144,11 @@ gs-compatible-masters: gs-compatible-masters-upright gs-compatible-masters-itali
 
 gs-compatible-masters-upright: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) --no-production-names -m $(UPRIGHT_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
+	rm $(INTERPOLATABLE_BUILD_DIR)/GoogleSans.designspace
 
 gs-compatible-masters-italic: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) --no-production-names -m $(ITALIC_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
+	rm $(INTERPOLATABLE_BUILD_DIR)/GoogleSans-Italic.designspace
 
 gs-vf-vendor: gs-vf-vendor-glyphs2designspace
 	$(foreach \
