@@ -13,7 +13,6 @@
 # limitations under the License.
 
 import collections
-from typing import Optional
 
 from fontTools.designspaceLib import DesignSpaceDocument
 from ufoLib2.objects import Font, Glyph
@@ -75,9 +74,7 @@ def tighten(font: Font, units: float) -> None:
                     c.transformation = c.transformation.translate(left_diff, 0)
 
 
-def set_left_margin_rounded(
-    glyph: Glyph, value: float, layer = None
-) -> None:
+def set_left_margin_rounded(glyph: Glyph, value: float, layer=None) -> None:
     """Sets the the rounded space in font units from the point of origin to the
     left side of the glyph.
     Args:
@@ -94,9 +91,7 @@ def set_left_margin_rounded(
         glyph.move((diff, 0))
 
 
-def set_right_margin_rounded(
-    glyph: Glyph, value: float, layer = None
-) -> None:
+def set_right_margin_rounded(glyph: Glyph, value: float, layer=None) -> None:
     """Sets the the rounded space in font units from the glyph's advance width to
     the right side of the glyph.
     Args:
@@ -464,18 +459,18 @@ brevecomb_acutecomb
 brevecomb_gravecomb
 brevecomb_hookabovecomb
 brevecomb_tildecomb
-circumflexcomb_acutecomb        
-circumflexcomb_gravecomb        
-circumflexcomb_hookabovecomb    
-circumflexcomb_tildecomb        
+circumflexcomb_acutecomb
+circumflexcomb_gravecomb
+circumflexcomb_hookabovecomb
+circumflexcomb_tildecomb
 brevecomb_acutecomb.cap
 brevecomb_gravecomb.cap
-brevecomb_hookabovecomb.cap     
+brevecomb_hookabovecomb.cap
 brevecomb_tildecomb.cap
-circumflexcomb_acutecomb.cap    
-circumflexcomb_gravecomb.cap    
+circumflexcomb_acutecomb.cap
+circumflexcomb_gravecomb.cap
 circumflexcomb_hookabovecomb.cap
-circumflexcomb_tildecomb.cap    
+circumflexcomb_tildecomb.cap
 brevecombcy.sc
 brevecombcy.cap
 brevecombcy

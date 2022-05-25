@@ -704,7 +704,9 @@ def get_sentences_and_words():
     for s in aosp:
         # Upstream string sources may contain questionable data. Filter those to
         # avoid unrenderable sentences and words with zero length -> division by zero.
-        s_filtered = "".join(c for c in s if not unicodedata.category(c).startswith("C"))
+        s_filtered = "".join(
+            c for c in s if not unicodedata.category(c).startswith("C")
+        )
         if len(s_filtered) > 20:
             sentences.add(s_filtered)
         for w in s_filtered.split():

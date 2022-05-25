@@ -50,7 +50,10 @@ def main() -> None:
             f.write("\n".join(s.strip() for s in sentences))
 
     hyperfine_cmd = "hyperfine --warmup 1 --min-runs 2 {cmds}"
-    cmd_line = 'hb-shape --text-file sentences.txt -n 100 -O "" -o /dev/null --variations {variations} "{font}"'
+    cmd_line = (
+        'hb-shape --text-file sentences.txt -n 100 -O "" '
+        '-o /dev/null --variations {variations} "{font}"'
+    )
     for location in TEST_LOCATIONS:
         variations = ",".join(f"{k}={v}" for k, v in location.location)
         cmd_lines = [
