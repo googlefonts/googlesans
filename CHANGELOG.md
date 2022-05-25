@@ -1,5 +1,25 @@
 # Google Sans Changelog
 
+## Version 8.001
+
+### New
+
+- add new ttf-interpolatable build targets in releases (`build/GoogleSans/interpolatable`) (#496)
+- add new `build/GoogleSans/interpolatable/GoogleSans.designspace` designspace file artifact in releases (#496)
+- add new `build/GoogleSans/interpolatable/GoogleSans-Italic.designspace` designspace file artifact in releases (#496)
+
+### Changed
+
+- Pin uharfbuzz dependency version during the build process as it is now a required dependency for compilation of our release build artifacts
+
+### Fixed
+
+- Selectively set OVERLAP_SIMPLE and OVERLAP_COMPOUND bit flags in glyf table on glyphs that have overlaps (#494)
+
+### Dependencies
+
+- add pathops (required for #494)
+
 ## Version 8.000
 
 ### New
