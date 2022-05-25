@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="uuMatra-telugu" format="2">
-  <advance width="838"/>
+  <advance width="837"/>
   <unicode hex="0C42"/>
   <outline>
     <contour>
-      <point x="119" y="-16" type="curve" smooth="yes"/>
-      <point x="265" y="-16"/>
+      <point x="122" y="-16" type="curve" smooth="yes"/>
+      <point x="266" y="-16"/>
       <point x="354" y="90"/>
       <point x="354" y="258" type="curve" smooth="yes"/>
       <point x="354" y="349"/>
@@ -15,34 +15,6 @@
       <point x="276" y="500"/>
       <point x="302" y="499"/>
       <point x="321" y="499" type="curve" smooth="yes"/>
-      <point x="374" y="499" type="line"/>
-      <point x="374" y="604" type="line"/>
-      <point x="15" y="604" type="line"/>
-      <point x="15" y="499" type="line"/>
-      <point x="39" y="499" type="line" smooth="yes"/>
-      <point x="161" y="499"/>
-      <point x="245" y="404"/>
-      <point x="245" y="262" type="curve" smooth="yes"/>
-      <point x="245" y="159"/>
-      <point x="200" y="94"/>
-      <point x="111" y="94" type="curve" smooth="yes"/>
-      <point x="33" y="94"/>
-      <point x="-27" y="138"/>
-      <point x="-58" y="222" type="curve"/>
-      <point x="-138" y="174" type="line"/>
-      <point x="-82" y="63"/>
-      <point x="-2" y="-16"/>
-    </contour>
-    <contour>
-      <point x="635" y="252" type="curve" smooth="yes"/>
-      <point x="742" y="252"/>
-      <point x="816" y="321"/>
-      <point x="816" y="421" type="curve" smooth="yes"/>
-      <point x="816" y="525"/>
-      <point x="737" y="604"/>
-      <point x="602" y="604" type="curve" smooth="yes"/>
-      <point x="360" y="604" type="line"/>
-      <point x="360" y="499" type="line"/>
       <point x="402" y="499" type="line" smooth="yes"/>
       <point x="470" y="499"/>
       <point x="555" y="502"/>
@@ -66,6 +38,29 @@
       <point x="462" y="406" type="curve" smooth="yes"/>
       <point x="462" y="320"/>
       <point x="535" y="252"/>
+      <point x="635" y="252" type="curve" smooth="yes"/>
+      <point x="742" y="252"/>
+      <point x="816" y="321"/>
+      <point x="816" y="421" type="curve" smooth="yes"/>
+      <point x="816" y="525"/>
+      <point x="737" y="604"/>
+      <point x="602" y="604" type="curve" smooth="yes"/>
+      <point x="15" y="604" type="line"/>
+      <point x="15" y="499" type="line"/>
+      <point x="39" y="499" type="line" smooth="yes"/>
+      <point x="161" y="499"/>
+      <point x="245" y="404"/>
+      <point x="245" y="262" type="curve" smooth="yes"/>
+      <point x="245" y="159"/>
+      <point x="199" y="94"/>
+      <point x="109" y="94" type="curve" smooth="yes"/>
+      <point x="39" y="94"/>
+      <point x="-21" y="141"/>
+      <point x="-52" y="207" type="curve"/>
+      <point x="-68" y="207" type="line"/>
+      <point x="-104" y="127" type="line"/>
+      <point x="-62" y="42"/>
+      <point x="17" y="-16"/>
     </contour>
   </outline>
   <lib>
@@ -73,7 +68,9 @@
       <key>com.schriftgestaltung.Glyphs.category</key>
       <string>Mark</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
-      <string>=uMatra-telugu</string>
+      <string>uMatra-telugu</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>ha-telugu</string>
       <key>com.schriftgestaltung.Glyphs.subCategory</key>
       <string>Spacing Combining</string>
     </dict>
