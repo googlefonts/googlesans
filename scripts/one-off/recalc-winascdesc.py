@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+"""Recalculcate OS/2 winAscent and winDescent metrics for UFOs."""
+
 from __future__ import annotations
 
 import argparse
@@ -21,7 +23,9 @@ from ufoLib2 import Font
 
 def main(args: list[str] | None = None):
     parser = argparse.ArgumentParser()
-    parser.add_argument("fonts", nargs="+", type=Font.open, help="Fonts to recalc in-place.")
+    parser.add_argument(
+        "fonts", nargs="+", type=Font.open, help="Fonts to recalc in-place."
+    )
     parsed_args = parser.parse_args(args)
 
     ascent = 0
