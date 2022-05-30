@@ -25,6 +25,7 @@ PYTHON3_EXE=python3
 #  fontmake compiler executable
 # --------------------------------------------------------
 FONTMAKE_EXE=FONTTOOLS_GPOS_COMPACT_MODE=5 fontmake --verbose WARNING
+FONTMAKE_EXE_NO_COMPACTION=fontmake --verbose WARNING
 
 # --------------------------------------------------------
 #  Source file path definitions
@@ -143,10 +144,10 @@ VARIABLE_BUILD_PATH_ITALIC_TARGET: $(FONT_BUILD_DIR)
 gs-compatible-masters: gs-compatible-masters-upright gs-compatible-masters-italic
 
 gs-compatible-masters-upright: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) --no-production-names -m $(UPRIGHT_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
+	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(UPRIGHT_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
 
 gs-compatible-masters-italic: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) --no-production-names -m $(ITALIC_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
+	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(ITALIC_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
 
 gs-vf-vendor: gs-vf-vendor-glyphs2designspace
 	$(foreach \
