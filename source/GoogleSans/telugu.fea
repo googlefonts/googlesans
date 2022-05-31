@@ -16,6 +16,7 @@
 @TEL_raVattu_group9 = [jho-telugu yo-telugu jhu-telugu yu-telugu jhuu-telugu yuu-telugu];
 @TEL_allKaLigatures = [kaa-telugu ki-telugu kii-telugu ku-telugu kuu-telugu ke-telugu kee-telugu ko-telugu koo-telugu kau-telugu];
 @TEL_Lvocalic_matras = [lVocalicMatra-telugu llVocalicMatra-telugu];
+@TEL_rVocalicMatras = [rVocalicMatra-telugu rrVocalicMatra-telugu];
 
 feature locl {
     script tel2;
@@ -528,7 +529,7 @@ feature psts {
     } TEL2_dflt_psts_alternateRaVattu;
 
     lookup TEL2_dflt_psts_alternateSsa {
-        sub [ssa-telugu ssaa-telugu ssi-telugu ssii-telugu ssu-telugu ssuu-telugu sse-telugu ssee-telugu sso-telugu ssoo-telugu ssau-telugu]' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking llVocalicMatra-telugu] by [ssa-telugu.alt ssaa-telugu.alt ssi-telugu.alt ssii-telugu.alt ssu-telugu.alt ssuu-telugu.alt sse-telugu.alt ssee-telugu.alt sso-telugu.alt ssoo-telugu.alt ssau-telugu.alt];
+        sub [ssa-telugu ssaa-telugu ssi-telugu ssii-telugu ssu-telugu ssuu-telugu sse-telugu ssee-telugu sso-telugu ssoo-telugu ssau-telugu]' [@TEL_NonSpacingVattus @TEL_NonSpacingVattus_Stacking llVocalicMatra-telugu @TEL_rVocalicMatras @TEL_SpacingVattus] by [ssa-telugu.alt ssaa-telugu.alt ssi-telugu.alt ssii-telugu.alt ssu-telugu.alt ssuu-telugu.alt sse-telugu.alt ssee-telugu.alt sso-telugu.alt ssoo-telugu.alt ssau-telugu.alt];
     } TEL2_dflt_psts_alternateSsa;
 
     lookup TEL2_dflt_psts_alternate_teardrop_TEST {
