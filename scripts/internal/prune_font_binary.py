@@ -46,6 +46,7 @@ def main(args: Optional[List[str]] = None):
             "--name-languages=*",
             "--glyph-names",
             "--no-prune-unicode-ranges",
+            "--recalc-bounds",
             f"--output-file={local_filepath_subset}",
         ]
 

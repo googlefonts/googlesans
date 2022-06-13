@@ -1,11 +1,11 @@
 # Copyright 2020 Google Sans Authors
-
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-
+#
 #     http://www.apache.org/licenses/LICENSE-2.0
-
+#
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -43,33 +43,15 @@ INTERPOLATABLE_BUILD_DIR=$(FONT_BUILD_DIR)/interpolatable
 
 STAGING_DIR=GoogleSans/staging
 
-# Static font artifact paths
-STATIC_TEXT_BUILD_PATH_REGULAR=$(STATIC_BUILD_DIR)/GoogleSansText-Regular.ttf
-STATIC_TEXT_BUILD_PATH_ITALIC=$(STATIC_BUILD_DIR)/GoogleSansText-Italic.ttf
-STATIC_TEXT_BUILD_PATH_BOLD=$(STATIC_BUILD_DIR)/GoogleSansText-Bold.ttf
-STATIC_TEXT_BUILD_PATH_BOLDITALIC=$(STATIC_BUILD_DIR)/GoogleSansText-BoldItalic.ttf
-STATIC_TEXT_BUILD_PATH_MEDIUM=$(STATIC_BUILD_DIR)/GoogleSansText-Medium.ttf
-STATIC_TEXT_BUILD_PATH_MEDIUMITALIC=$(STATIC_BUILD_DIR)/GoogleSansText-MediumItalic.ttf
+# Artifact paths
+STATIC_UPRIGHTS_TARGETS = $(addprefix $(STATIC_BUILD_DIR)/,GoogleSansText-Regular.ttf GoogleSansText-Bold.ttf GoogleSansText-Medium.ttf GoogleSans-Regular.ttf GoogleSans-Bold.ttf GoogleSans-Medium.ttf)
+STATIC_ITALICS_TARGETS = $(addprefix $(STATIC_BUILD_DIR)/,GoogleSans-BoldItalic.ttf GoogleSans-Italic.ttf GoogleSansText-MediumItalic.ttf GoogleSansText-BoldItalic.ttf GoogleSansText-Italic.ttf GoogleSans-MediumItalic.ttf)
 
-STATIC_DISPLAY_BUILD_PATH_REGULAR=$(STATIC_BUILD_DIR)/GoogleSans-Regular.ttf
-STATIC_DISPLAY_BUILD_PATH_ITALIC=$(STATIC_BUILD_DIR)/GoogleSans-Italic.ttf
-STATIC_DISPLAY_BUILD_PATH_BOLD=$(STATIC_BUILD_DIR)/GoogleSans-Bold.ttf
-STATIC_DISPLAY_BUILD_PATH_BOLDITALIC=$(STATIC_BUILD_DIR)/GoogleSans-BoldItalic.ttf
-STATIC_DISPLAY_BUILD_PATH_MEDIUM=$(STATIC_BUILD_DIR)/GoogleSans-Medium.ttf
-STATIC_DISPLAY_BUILD_PATH_MEDIUMITALIC=$(STATIC_BUILD_DIR)/GoogleSans-MediumItalic.ttf
+INTERPOLATABLE_UPRIGHTS_TARGET = $(INTERPOLATABLE_BUILD_DIR)/GoogleSans.designspace
+INTERPOLATABLE_ITALICS_TARGET = $(INTERPOLATABLE_BUILD_DIR)/GoogleSans-Italic.designspace
 
-STATIC_UPRIGHT_BUILD_PATHS = $(STATIC_TEXT_BUILD_PATH_REGULAR) $(STATIC_TEXT_BUILD_PATH_MEDIUM) $(STATIC_TEXT_BUILD_PATH_BOLD) $(STATIC_DISPLAY_BUILD_PATH_REGULAR) $(STATIC_DISPLAY_BUILD_PATH_MEDIUM) $(STATIC_DISPLAY_BUILD_PATH_BOLD)
-STATIC_ITALIC_BUILD_PATHS = $(STATIC_TEXT_BUILD_PATH_ITALIC) $(STATIC_TEXT_BUILD_PATH_MEDIUMITALIC) $(STATIC_TEXT_BUILD_PATH_BOLDITALIC) $(STATIC_DISPLAY_BUILD_PATH_ITALIC) $(STATIC_DISPLAY_BUILD_PATH_MEDIUMITALIC) $(STATIC_DISPLAY_BUILD_PATH_BOLDITALIC)
-
-# Variable font artifact paths
-
-# Roman
-VARIABLE_BUILD_PATH_UPRIGHT=$(VARIABLE_BUILD_DIR)/GoogleSans-VF.ttf
-VARIABLE_BUILD_PATH_UPRIGHT_TARGET=$(VARIABLE_BUILD_DIR)/GoogleSans[GRAD,opsz,wght].ttf
-
-# Italic
-VARIABLE_BUILD_PATH_ITALIC=$(VARIABLE_BUILD_DIR)/GoogleSans-Italic-VF.ttf
-VARIABLE_BUILD_PATH_ITALIC_TARGET=$(VARIABLE_BUILD_DIR)/GoogleSans-Italic[GRAD,opsz,wght].ttf
+VARIABLE_UPRIGHT_TARGET = $(VARIABLE_BUILD_DIR)/GoogleSans[GRAD,opsz,wght].ttf
+VARIABLE_ITALIC_TARGET = $(VARIABLE_BUILD_DIR)/GoogleSans-Italic[GRAD,opsz,wght].ttf
 
 # --------------------------------------------------------
 #  UFO intermediates and designspace paths
@@ -101,53 +83,56 @@ UFO_GS_TEXT_BOLDITALIC=GoogleSans/GoogleSans-TextBoldItalic.ufo
 # Full font family build targets
 #
 
-gs-static: gs-static-upright gs-static-italic
-
-gs-static-upright: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) --interpolate -o ttf --output-dir $(STATIC_BUILD_DIR) --expand-features-to-instances
-	$(PYTHON3_EXE) ../scripts/gs-subset.py $(STATIC_UPRIGHT_BUILD_PATHS)
-	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $(STATIC_UPRIGHT_BUILD_PATHS)
-	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(STATIC_UPRIGHT_BUILD_PATHS)
-	font-v write --sha1 $(STATIC_UPRIGHT_BUILD_PATHS)
-
-gs-static-italic: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) --interpolate -o ttf --output-dir $(STATIC_BUILD_DIR) --expand-features-to-instances
-	$(PYTHON3_EXE) ../scripts/gs-subset.py $(STATIC_ITALIC_BUILD_PATHS)
-	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $(STATIC_ITALIC_BUILD_PATHS)
-	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(STATIC_ITALIC_BUILD_PATHS)
-	font-v write --sha1 $(STATIC_ITALIC_BUILD_PATHS)
-
 gs-vf: gs-vf-upright gs-vf-italic
+gs-vf-upright: $(VARIABLE_UPRIGHT_TARGET)
+gs-vf-italic: $(VARIABLE_ITALIC_TARGET)
 
-VARIABLE_BUILD_PATH_UPRIGHT_TARGET: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -o variable --output-dir $(VARIABLE_BUILD_DIR)
-	$(PYTHON3_EXE) ../scripts/gs-subset.py $(VARIABLE_BUILD_PATH_UPRIGHT)
-	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $(VARIABLE_BUILD_PATH_UPRIGHT)
-	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $(VARIABLE_BUILD_PATH_UPRIGHT)
-	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py --tables MVAR $(VARIABLE_BUILD_PATH_UPRIGHT)
-	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(VARIABLE_BUILD_PATH_UPRIGHT)
-	$(PYTHON3_EXE) ../scripts/gs-stat.py $(VARIABLE_BUILD_PATH_UPRIGHT)
-	font-v write --sha1 $(VARIABLE_BUILD_PATH_UPRIGHT)
-	mv $(VARIABLE_BUILD_PATH_UPRIGHT) "$(VARIABLE_BUILD_PATH_UPRIGHT_TARGET)"
+$(VARIABLE_UPRIGHT_TARGET): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
+	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -o variable --output-path $@
+	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
+	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $@
+	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $@
+	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py $@
+	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $@
+	$(PYTHON3_EXE) ../scripts/gs-stat.py $@
+	font-v write --sha1 $@
 
-VARIABLE_BUILD_PATH_ITALIC_TARGET: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -o variable --output-dir $(VARIABLE_BUILD_DIR)
-	$(PYTHON3_EXE) ../scripts/gs-subset.py $(VARIABLE_BUILD_PATH_ITALIC)
-	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $(VARIABLE_BUILD_PATH_ITALIC)
-	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $(VARIABLE_BUILD_PATH_ITALIC)
-	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py --tables MVAR $(VARIABLE_BUILD_PATH_ITALIC)
-	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(VARIABLE_BUILD_PATH_ITALIC)
-	$(PYTHON3_EXE) ../scripts/gs-stat.py $(VARIABLE_BUILD_PATH_ITALIC)
-	font-v write --sha1 $(VARIABLE_BUILD_PATH_ITALIC)
-	mv $(VARIABLE_BUILD_PATH_ITALIC) "$(VARIABLE_BUILD_PATH_ITALIC_TARGET)"
+$(VARIABLE_ITALIC_TARGET): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
+	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -o variable --output-path $@
+	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
+	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $@
+	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $@
+	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py $@
+	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $@
+	$(PYTHON3_EXE) ../scripts/gs-stat.py $@
+	font-v write --sha1 $@
+
+
+gs-static: gs-static-upright gs-static-italic
+gs-static-upright: $(STATIC_UPRIGHTS_TARGETS)
+gs-static-italic: $(STATIC_ITALICS_TARGETS)
+
+$(STATIC_UPRIGHTS_TARGETS): $(VARIABLE_UPRIGHT_TARGET)
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $< $(UPRIGHT_SOURCE) $@
+	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
+	font-v write --sha1 $@
+
+$(STATIC_ITALICS_TARGETS): $(VARIABLE_ITALIC_TARGET)
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $< $(ITALIC_SOURCE) $@
+	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
+	font-v write --sha1 $@
+
 
 gs-compatible-masters: gs-compatible-masters-upright gs-compatible-masters-italic
+gs-compatible-masters-upright: $(INTERPOLATABLE_UPRIGHTS_TARGET)
+gs-compatible-masters-italic: $(INTERPOLATABLE_ITALICS_TARGET)
 
-gs-compatible-masters-upright: $(FONT_BUILD_DIR)
+$(INTERPOLATABLE_UPRIGHTS_TARGET): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
 	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(UPRIGHT_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
 
-gs-compatible-masters-italic: $(FONT_BUILD_DIR)
+$(INTERPOLATABLE_ITALICS_TARGET): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
 	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(ITALIC_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
+
 
 gs-vf-vendor: gs-vf-vendor-glyphs2designspace
 	$(foreach \
@@ -212,13 +197,6 @@ gst-bold: $(FONT_BUILD_DIR)
 gst-bold-italic: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -u $(UFO_GS_TEXT_BOLDITALIC) -o ttf --output-dir $(STATIC_BUILD_DIR)
 
-#
-# Individual variable font build targets
-#
-
-gs-vf-upright: VARIABLE_BUILD_PATH_UPRIGHT_TARGET
-
-gs-vf-italic: VARIABLE_BUILD_PATH_ITALIC_TARGET
 
 #
 # Utilities
