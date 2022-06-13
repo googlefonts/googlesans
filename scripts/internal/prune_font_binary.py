@@ -42,7 +42,6 @@ def main(args: Optional[List[str]] = None):
             "--no-ignore-missing-glyphs",
             "--notdef-outline",
             "--layout-features=*",
-            "--drop-tables=MVAR",
             "--name-IDs=*",
             "--name-languages=*",
             "--glyph-names",
