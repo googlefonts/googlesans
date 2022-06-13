@@ -115,11 +115,13 @@ gs-static-italic: $(STATIC_ITALICS_TARGETS)
 $(STATIC_UPRIGHTS_TARGETS): $(VARIABLE_UPRIGHT_TARGET)
 	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $< $(UPRIGHT_SOURCE) $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
+	$(PYTHON3_EXE) -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 	font-v write --sha1 $@
 
 $(STATIC_ITALICS_TARGETS): $(VARIABLE_ITALIC_TARGET)
 	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $< $(ITALIC_SOURCE) $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
+	$(PYTHON3_EXE) -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 	font-v write --sha1 $@
 
 
