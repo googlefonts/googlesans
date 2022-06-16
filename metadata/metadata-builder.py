@@ -54,6 +54,7 @@ KEEP_FEATURES = (
     "lnum",
     "pnum",
     "ss02",
+    "ss09",
     "tnum",
 )
 
