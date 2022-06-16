@@ -4,7 +4,7 @@ license: "GOOGLE_RESTRICTED"
 visibility: "INTERNAL"
 category: "SANS_SERIF"
 date_added: 1496646000000  # 2017-06-05
-version: "v34"  # repository commit: 14e8af7aab391a1c6f44823ce420c2ecce8e1983
+version: "v35"  # repository commit: 6c559b530d371b91646df00f21a1070333d44739
 fonts {
   name: "Google Sans"
   style: "normal"
@@ -63,5 +63,5 @@ registry_default_overrides {
   key: "opsz"
   value: 18
 }
-[google.fonts.size]: 5415768
+[google.fonts.size]: 5412936
 
