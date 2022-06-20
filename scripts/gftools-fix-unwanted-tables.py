@@ -33,7 +33,6 @@ UNWANTED_TABLES = [
     "TSI3",
     "TSI5",
     "prop",
-    "MVAR",
 ]
 
 
