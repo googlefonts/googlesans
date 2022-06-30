@@ -57,6 +57,9 @@ excluded_check_ids = (
     "com.google.fonts/check/outline_jaggy_segments",  # too many unactionable warnings
     "com.google.fonts/check/outline_semi_vertical",  # design rather than QA problem
     "com.google.fonts/check/contour_count",  # design rather than QA problem
+    "com.adobe.fonts/check/varfont/valid_default_instance_nameids",  # Bogus
+    "com.google.fonts/check/varfont/regular_wght_coord",  # Buggy in 0.8.9
+    "com.google.fonts/check/varfont/bold_wght_coord",  # Buggy in 0.8.9
 )
 
 ATTRIBUTES = {
