@@ -1,0 +1,262 @@
+name: 'CI/CD'
+
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:
+      - main # Push events on main branch
+      - "build/**" # Push events to branches matching refs/heads/build/[ANYTHING]
+      - "build-*" # Push events to branches matching refs/heads/build-[ANYTHING]
+  # Manual trigger
+  workflow_dispatch:
+
+jobs:
+  lint-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python v3.x environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - name: Lint UFO sources
+        run: |
+          pip install ufolint
+          ufolint source/GoogleSans/*.ufo
+      - name: Ensure graded sources have the same kerning as non-grades sources
+        run: |
+          python qa/check-kerning.py
+
+  lint-scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python v3.x environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - name: Lint scripts
+        run: |
+          pip install flake8
+          flake8
+
+  build-variable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python v3.x environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - name: Build variable fonts
+        run: |
+          make setup
+          . .venv/bin/activate && make -j gs-vf
+      - uses: actions/upload-artifact@v3
+        with:
+          name: variable-fonts
+          path: 'build/GoogleSans/variable'
+
+  check-variable:
+    needs:
+      - build-variable
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python v3.x environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - uses: actions/download-artifact@v3
+        with:
+          name: variable-fonts
+          path: 'build/GoogleSans/variable'
+      - name: Font Bakery GS profile tests
+        uses: f-actions/font-bakery@v1
+        with:
+          version: 'latest'
+          subcmd: 'check-profile'
+          args: '--auto-jobs -C --loglevel WARN qa/check-googlesans.py'
+          path: 'build/GoogleSans/variable/*.ttf'
+      - name: Font Bakery character set profile tests
+        uses: f-actions/font-bakery@v1
+        with:
+          version: 'latest'
+          subcmd: 'check-profile'
+          args: '--auto-jobs -C --loglevel WARN qa/check-charset.py'
+          path: 'build/GoogleSans/variable/*.ttf'
+      - name: Font Bakery feature tag and shaping tests
+        uses: f-actions/font-bakery@v1
+        with:
+          version: 'latest'
+          subcmd: 'check-profile'
+          args: '--auto-jobs -C --loglevel WARN qa/check-fea.py'
+          path: 'build/GoogleSans/variable/*.ttf'
+      - name: OpenType Sanitizer checks
+        uses: f-actions/opentype-sanitizer@v1
+        with:
+          path: 'build/GoogleSans/variable/*.ttf'
+      - name: File size analysis
+        run: |
+          pip install --upgrade font-size
+          font-size build/GoogleSans/variable/*.ttf
+
+  build-statics:
+    if: startsWith(github.ref_name, 'build-') || startsWith(github.ref, 'refs/tags/v')
+    needs:
+      - build-variable
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python v3.x environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - uses: actions/download-artifact@v3
+        with:
+          name: variable-fonts
+          path: 'build/GoogleSans/variable'
+      - name: Build static fonts
+        run: |
+          make setup
+          . .venv/bin/activate && make -j gs-static
+      - uses: actions/upload-artifact@v3
+        with:
+          name: static-fonts
+          path: 'build/GoogleSans/static'
+
+  check-statics:
+    needs:
+      - build-statics
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python v3.x environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - uses: actions/download-artifact@v3
+        with:
+          name: static-fonts
+          path: 'build/GoogleSans/static'
+      - name: Font Bakery GS profile tests
+        uses: f-actions/font-bakery@v1
+        with:
+          version: 'latest'
+          subcmd: 'check-profile'
+          args: '--auto-jobs -C --loglevel WARN qa/check-googlesans.py'
+          path: 'build/GoogleSans/static/*.ttf'
+      - name: Font Bakery character set profile tests
+        uses: f-actions/font-bakery@v1
+        with:
+          version: 'latest'
+          subcmd: 'check-profile'
+          args: '--auto-jobs -C --loglevel WARN qa/check-charset.py'
+          path: 'build/GoogleSans/static/*.ttf'
+      - name: Font Bakery feature tag and shaping tests
+        uses: f-actions/font-bakery@v1
+        with:
+          version: 'latest'
+          subcmd: 'check-profile'
+          args: '--auto-jobs -C --loglevel WARN qa/check-fea.py'
+          path: 'build/GoogleSans/static/*.ttf'
+      - name: OpenType Sanitizer checks
+        uses: f-actions/opentype-sanitizer@v1
+        with:
+          path: 'build/GoogleSans/static/*.ttf'
+      - name: File size analysis
+        run: |
+          pip install --upgrade font-size
+          font-size build/GoogleSans/static/*.ttf
+
+  build-interpolatables:
+    if: startsWith(github.ref_name, 'build-') || startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python v3.x environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - name: Build interpolatable fonts
+        run: |
+          make setup
+          . .venv/bin/activate && make -j gs-compatible-masters
+      - uses: actions/upload-artifact@v3
+        with:
+          name: interpolatable-fonts
+          path: 'build/GoogleSans/interpolatable'
+
+  release:
+    # only run if the commit is tagged...
+    if: startsWith(github.ref, 'refs/tags/v')
+    # ... and both the lint and test jobs completed successfully
+    needs:
+      - build-variable
+      - check-variable
+      - build-statics
+      - check-statics
+      - build-interpolatables
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python v3.x environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - name: Set env variables
+        id: vars
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+      # TODO: no `name` means download all artifacts, but put them into own dir?
+      - uses: actions/download-artifact@v3
+        with:
+          name: variable-fonts
+          path: 'build/GoogleSans/variable'
+      - uses: actions/download-artifact@v3
+        with:
+          name: static-fonts
+          path: 'build/GoogleSans/static'
+      - uses: actions/download-artifact@v3
+        with:
+          name: interpolatable-fonts
+          path: 'build/GoogleSans/interpolatable'
+      - name: Create build artifact zip archive
+        run: zip GoogleSans-${{ steps.vars.outputs.tag }}.zip -r build/GoogleSans
+      - name: Create Google Sans release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Google Sans ${{ github.ref }}
+          body: |
+            Please see the root of the repository for the CHANGELOG.md
+          draft: false
+          prerelease: false
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./GoogleSans-${{ steps.vars.outputs.tag }}.zip
+          asset_name: GoogleSans-${{ steps.vars.outputs.tag }}.zip
+          asset_content_type: application/zip
