@@ -223,6 +223,25 @@ for import_source in designspace_import.sources:
     # Use global groups list or, if non passed in, font specific one for checks below.
     import_groups_to_check = import_groups or import_font_groups
 
+    # Clean glyphs to be imported from the target UFO kerning groups, so
+    # importing the source kerning then does not lead to duplicate group
+    # membership if their memebership changed.
+    kerning_groups_to_be_cleaned = []
+    for group_name in list(target_font.groups.keys()):
+        members = target_font.groups[group_name]
+        new_members = [member for member in members if member not in import_glyphs]
+        if new_members:
+            target_font.groups[group_name] = new_members
+        else:
+            del target_font.groups[group_name]
+            kerning_groups_to_be_cleaned.append(group_name)
+    target_font.kerning = {
+        (f, s): v
+        for (f, s), v in target_font.kerning.items()
+        if f not in kerning_groups_to_be_cleaned
+        and s not in kerning_groups_to_be_cleaned
+    }
+
     # Importing a group that already exists should extend the existing group with
     # imported glyphs instead of overwriting the group.
     target_groups_extended = set()
