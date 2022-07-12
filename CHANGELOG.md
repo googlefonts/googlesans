@@ -1,5 +1,38 @@
 # Google Sans Changelog
 
+## Version 9.000
+
+### New
+
+- add Telugu script (#481)
+- add recalc-winascdesc.py script (#481)
+- add reset-gdef.py script (#481)
+
+### Changed
+
+- static instance format builds are now sliced from variable font binaries, this is a change from the previous approach where we compiled instances directly from source files. The change was required to support feature variation across the design space as of the Telugu script import.  This did not involve a change in the production static instance style targets, or total static instance number. (#493)
+- change OS/2 WinAscent value to 1323 from 1320
+- change OS/2 WinDescent value to 1079 from 592
+- changed gs-merge-designspace.py to clean glyphs to be imported from target UFO kerning groups so importing source kerning does not lead to duplicate group membership (#481)
+
+### Fixed
+
+- removed GPOS7 lookups (#487)
+
+### Dependencies
+
+- fontmake upgraded from v3.1.2 to v3.3.0
+- fonttools upgraded from v4.28.5 to v4.33.3
+- fs upgraded from v2.4.14 to v2.4.15
+- gitpython upgraded from v3.1.26 to v3.1.27
+- glyphslib upgraded from v6.0.3 to v6.0.4
+- lxml upgraded from v4.7.1 to v4.8.0
+- pytz upgraded from v2021.3 to v2022.1
+- ufo2ft upgraded from v2.25.2 to v2.27.0
+- ufolib2 upgraded from v0.13.0 to v0.31.1
+- GHA actions/checkout upgraded to v3
+- GHA actions/setup-python upgraded to v3
+
 ## Version 8.001
 
 ### New
