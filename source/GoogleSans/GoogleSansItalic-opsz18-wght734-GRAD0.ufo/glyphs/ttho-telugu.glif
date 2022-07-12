@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ttho-telugu" format="2">
+  <advance width="1174"/>
+  <anchor x="393" y="-16" name="bottom"/>
+  <anchor x="393" y="-16" name="bottomright"/>
+  <outline>
+    <contour>
+      <point x="398" y="227" type="curve" smooth="yes"/>
+      <point x="444" y="227"/>
+      <point x="482" y="265"/>
+      <point x="482" y="309" type="curve" smooth="yes"/>
+      <point x="482" y="354"/>
+      <point x="444" y="391"/>
+      <point x="398" y="391" type="curve" smooth="yes"/>
+      <point x="351" y="391"/>
+      <point x="313" y="354"/>
+      <point x="313" y="309" type="curve" smooth="yes"/>
+      <point x="313" y="265"/>
+      <point x="351" y="227"/>
+    </contour>
+    <component base="ro-telugu"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>ro-telugu</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>jha-telugu</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>oMatra-telugu</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
+</glyph>
