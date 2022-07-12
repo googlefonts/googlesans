@@ -43,6 +43,7 @@ SUBSETS = (
     "menu",
     "thai",
     "tamil",
+    "telugu",
     "vietnamese",
 )
 
