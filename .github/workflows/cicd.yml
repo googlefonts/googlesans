@@ -1,19 +1,22 @@
 name: 'CI/CD'
 
 on:
-  push:
-    # Sequence of patterns matched against refs/heads
+  # Run on pushes to the repository's own branches only when one of the
+  # conditions below matches. Typically, new things should be added via PRs.
+  push:  
+    # Sequence of patterns matched against refs/heads:
     branches:
-      - main # Push events on main branch
+      - main # Push events directly to the main branch
+      # The following two directives are for making "build" branches where all
+      # jobs should be run. Note: it's best not to open PRs for these branches
+      # to avoid jobs running twice (one for the push event, the other for the
+      # pull_request).
       - "build/**" # Push events to branches matching refs/heads/build/[ANYTHING]
       - "build-*" # Push events to branches matching refs/heads/build-[ANYTHING]
     tags:
-      - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
+      - "v*" # Push events to matching v*, i.e. v9.000 and v10.001rc1
+  # Run on all PRs. Runs a limited set of jobs by default to save time.
   pull_request:
-    branches:
-      - main
-  # Manual trigger
-  workflow_dispatch:
 
 jobs:
   lint-sources:
@@ -115,7 +118,9 @@ jobs:
           font-size build/GoogleSans/variable/*.ttf
 
   build-statics:
-    if: startsWith(github.ref_name, 'build-') || startsWith(github.ref, 'refs/tags/v')
+    # Skip running in PRs to save time and resources. Create a "build-*" branch
+    # to build all outside a release.
+    if: github.event_name != 'pull_request'
     needs:
       - build-variable
     runs-on: ubuntu-latest
@@ -187,7 +192,9 @@ jobs:
           font-size build/GoogleSans/static/*.ttf
 
   build-interpolatables:
-    if: startsWith(github.ref_name, 'build-') || startsWith(github.ref, 'refs/tags/v')
+    # Skip running in PRs to save time and resources. Create a "build-*" branch
+    # to build all outside a release.
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Check out source repository
