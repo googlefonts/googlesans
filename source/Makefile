@@ -17,8 +17,6 @@
 #    NOTE: This must match the path defined in the root
 #          level Makefile
 # --------------------------------------------------------
-VENV_DIR=.venv
-
 PYTHON3_EXE=python3
 
 # --------------------------------------------------------

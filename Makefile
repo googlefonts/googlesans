@@ -12,12 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+PYTHON3 ?= python3
+PYTHON3_BUILD ?= pypy3
+
 FONT_BUILD_DIR=build/GoogleSans
 STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
 VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
 MASTER_UFO_DIR=$(FONT_BUILD_DIR)/master_ufo
 INSTANCE_UFO_DIR=$(FONT_BUILD_DIR)/instance_ufo
 VENV_DIR=.venv
+VENV_BUILD_DIR=.venv-build
 
 all: gs-static gs-compatible-masters  # gs-vf is built by gs-static
 
@@ -45,19 +49,19 @@ clean-ufo:
 # ------------------------------
 
 gs-static gs-vf gs-vf-vendor gs-compatible-masters gs-compatible-masters-upright gs-compatible-masters-italic:
-	cd source && $(MAKE) $@
+	. .venv-build/bin/activate && cd source && $(MAKE) $@
 
 gs-regular gs-medium gs-bold gs-italic gs-medium-italic gs-bold-italic:
-	cd source && $(MAKE) $@
+	. .venv-build/bin/activate && cd source && $(MAKE) $@
 
 gst-regular gst-medium gst-bold gst-italic gst-medium-italic gst-bold-italic:
-	cd source && $(MAKE) $@
+	. .venv-build/bin/activate && cd source && $(MAKE) $@
 
 gs-vf-upright gs-vf-italic:
-	cd source && $(MAKE) $@
+	. .venv-build/bin/activate && cd source && $(MAKE) $@
 
 gs-ufo2glyphs:
-	cd source && $(MAKE) $@
+	. .venv-build/bin/activate && cd source && $(MAKE) $@
 
 # ------------------------------
 # Build dependency management
@@ -65,28 +69,46 @@ gs-ufo2glyphs:
 # setup creates a Python 3 virtual environment directory
 setup:
 	mkdir -p "$(VENV_DIR)"
-	python3 -m venv "$(VENV_DIR)"
-	"$(VENV_DIR)/bin/pip" install --upgrade pip wheel setuptools
-	"$(VENV_DIR)/bin/pip" install -r requirements-dev.txt
-	@echo "\n\nDependency versions installed in your venv are:\n"
+	$(PYTHON3) -m venv "$(VENV_DIR)"
+	@$(MAKE) sync-deps
 	@$(MAKE) list-deps
+
+	mkdir -p "$(VENV_BUILD_DIR)"
+	$(PYTHON3_BUILD) -m venv "$(VENV_BUILD_DIR)"
+	@$(MAKE) sync-deps-build
+	@$(MAKE) list-deps-build
+
 	@echo "\n\nBuild fonts with 'make' or make targets for select font builds (see BUILD.md docs)."
 	@echo "Remove the virtual environment directory with 'make clean'."
 
 # sync-deps syncs updated build dependencies in an existing virtual environment
 # installing and uninstalling packages as (re)defined in the requirements.txt file
 sync-deps:
-	"$(VENV_DIR)/bin/pip" install -r requirements.txt
+	"$(VENV_DIR)/bin/pip" install --quiet --upgrade pip wheel setuptools
+	"$(VENV_DIR)/bin/pip" install --quiet -r requirements-dev.txt
+
+sync-deps-build:
+	"$(VENV_BUILD_DIR)/bin/pip" install --quiet --upgrade pip wheel setuptools
+	"$(VENV_BUILD_DIR)/bin/pip" install --quiet --no-binary cu2qu -r requirements-build.txt
 
 # list-deps displays venv installed dependencies
 list-deps:
+	@echo "\n\nDependency versions installed in your general purpose venv are:\n"
 	@"$(VENV_DIR)/bin/pip" list
+
+list-deps-build:
+	@echo "\n\nDependency versions installed in your build venv are:\n"
+	@"$(VENV_BUILD_DIR)/bin/pip" list
 
 # [MAINTAINER ONLY TARGET]
 # update-deps updates the requirements.txt file with new releases of Python build dependencies
 # Note: the `pip-compile` tool is from the https://github.com/jazzband/pip-tools package
 update-deps:
-	pip-compile -U
+	@"$(VENV_BUILD_DIR)/bin/pip" install --upgrade pip-tools
+	@"$(VENV_BUILD_DIR)/bin/pip-compile" -U requirements.in -o requirements-build.txt
+	
+	@"$(VENV_DIR)/bin/pip" install --upgrade pip-tools
+	@"$(VENV_DIR)/bin/pip-compile" -U requirements-dev.txt -o requirements.txt
 
 # ------------------------------
 # Testing
@@ -96,34 +118,34 @@ test-fb: test-fb-static test-fb-vf
 
 test-fb-static:
 	@echo "========================================================="
-	@echo " fontbakery v`fontbakery --version` static font checks"
+	@echo " fontbakery v`"$(VENV_DIR)/bin/fontbakery" --version` static font checks"
 	@echo "========================================================="
-	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-googlesans.py $(STATIC_BUILD_DIR)/*.ttf
-	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-fea.py $(STATIC_BUILD_DIR)/*.ttf
-	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-charset.py $(STATIC_BUILD_DIR)/*.ttf
+	"$(VENV_DIR)/bin/fontbakery" check-profile --auto-jobs --order "*check" -C --loglevel WARN qa/check-googlesans.py $(STATIC_BUILD_DIR)/*.ttf
+	"$(VENV_DIR)/bin/fontbakery" check-profile --auto-jobs --order "*check" -C --loglevel WARN qa/check-fea.py $(STATIC_BUILD_DIR)/*.ttf
+	"$(VENV_DIR)/bin/fontbakery" check-profile --auto-jobs --order "*check" -C --loglevel WARN qa/check-charset.py $(STATIC_BUILD_DIR)/*.ttf
 
 test-fb-vf:
 	@echo "========================================================="
-	@echo " fontbakery v`fontbakery --version` variable font checks"
+	@echo " fontbakery v`"$(VENV_DIR)/bin/fontbakery" --version` variable font checks"
 	@echo "========================================================="
-	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-googlesans.py $(VARIABLE_BUILD_DIR)/*.ttf
-	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-fea.py $(VARIABLE_BUILD_DIR)/*.ttf
-	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-charset.py $(VARIABLE_BUILD_DIR)/*.ttf
+	"$(VENV_DIR)/bin/fontbakery" check-profile --auto-jobs --order "*check" -C --loglevel WARN qa/check-googlesans.py $(VARIABLE_BUILD_DIR)/*.ttf
+	"$(VENV_DIR)/bin/fontbakery" check-profile --auto-jobs --order "*check" -C --loglevel WARN qa/check-fea.py $(VARIABLE_BUILD_DIR)/*.ttf
+	"$(VENV_DIR)/bin/fontbakery" check-profile --auto-jobs --order "*check" -C --loglevel WARN qa/check-charset.py $(VARIABLE_BUILD_DIR)/*.ttf
 
 update-glyphset-defs:
-	python3 scripts/gs-update-glyphset-qa-files.py
+	"$(VENV_DIR)/bin/python" scripts/gs-update-glyphset-qa-files.py
 
 # ------------------------------
 # Python source formatting
 # ------------------------------
 black:
-	black --line-length 90 scripts/*.py qa/*.py
+	"$(VENV_DIR)/bin/black" --line-length 90 scripts/*.py qa/*.py
 
 # --------------------------------------
 # Glyphs source formatting/normalization
 # --------------------------------------
 glyphs-norm:
-	python3 scripts/gs-glyphs-norm.py source/GoogleSans/*.glyphs
+	"$(VENV_DIR)/bin/python" scripts/gs-glyphs-norm.py source/GoogleSans/*.glyphs
 
 
 # -------------------------------------
@@ -132,7 +154,7 @@ glyphs-norm:
 
 # METADATA.pb file gen for Fonts API configuration
 metadata:
-	cd metadata && python metadata-builder.py
+	cd metadata && "$(VENV_DIR)/bin/python" metadata-builder.py
 
 .PHONY: all \
 black \

@@ -21,7 +21,7 @@ jobs:
           projectname: "Google Sans"
           dependpath: "requirements.txt"
           py-version: ${{ matrix.python-version }}
-          buildcommand: "make gs-vf"
+          buildcommand: "make setup PYTHON3_BUILD=/opt/hostedtoolcache/PyPy/3.9.12/x64/bin/pypy3.9 && make gs-vf"
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
         uses: actions/checkout@v3
       - name: Set up Python
@@ -30,11 +30,6 @@ jobs:
           python-version: ${{ steps.config.outputs.py-version }}
           cache: "pip"
           cache-dependency-path: "requirements*.txt"
-      - name: Install Python build dependencies
-        uses: py-actions/py-dependency-install@v2
-        with:
-          update-wheel: "true"
-          update-setuptools: "true"
       - name: Build fonts
         run: ${{ steps.config.outputs.buildcommand }}
       - name: CLDR script/language coverage

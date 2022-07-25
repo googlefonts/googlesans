@@ -57,15 +57,15 @@ jobs:
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.x environment
+      - name: Set up CPython 3.10 environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.10'
           cache: 'pip'
       - name: Build variable fonts
-        run: |
-          make setup
-          . .venv/bin/activate && make -j gs-vf
+        run: make setup && make -j gs-vf
+        env:
+          PYTHON3_BUILD: /opt/hostedtoolcache/PyPy/3.9.12/x64/bin/pypy3.9
       - uses: actions/upload-artifact@v3
         with:
           name: variable-fonts
@@ -127,19 +127,19 @@ jobs:
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.x environment
+      - name: Set up CPython 3.10 environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.10'
           cache: 'pip'
       - uses: actions/download-artifact@v3
         with:
           name: variable-fonts
           path: 'build/GoogleSans/variable'
       - name: Build static fonts
-        run: |
-          make setup
-          . .venv/bin/activate && make -j gs-static
+        run: make setup && make -j gs-static
+        env:
+          PYTHON3_BUILD: /opt/hostedtoolcache/PyPy/3.9.12/x64/bin/pypy3.9
       - uses: actions/upload-artifact@v3
         with:
           name: static-fonts
@@ -199,15 +199,15 @@ jobs:
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.x environment
+      - name: Set up CPython 3.10 environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.10'
           cache: 'pip'
       - name: Build interpolatable fonts
-        run: |
-          make setup
-          . .venv/bin/activate && make -j gs-compatible-masters
+        run: make setup && make -j gs-compatible-masters
+        env:
+          PYTHON3_BUILD: /opt/hostedtoolcache/PyPy/3.9.12/x64/bin/pypy3.9
       - uses: actions/upload-artifact@v3
         with:
           name: interpolatable-fonts
