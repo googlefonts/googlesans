@@ -7,6 +7,11 @@ on:
       - main # Push events on main branch
       - "build/**" # Push events to branches matching refs/heads/build/[ANYTHING]
       - "build-*" # Push events to branches matching refs/heads/build-[ANYTHING]
+    tags:
+      - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
+  pull_request:
+    branches:
+      - main
   # Manual trigger
   workflow_dispatch:
 
