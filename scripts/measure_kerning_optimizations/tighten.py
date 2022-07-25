@@ -13,12 +13,12 @@
 # limitations under the License.
 
 import collections
+from graphlib import TopologicalSorter
 
 from fontTools.designspaceLib import DesignSpaceDocument
 from ufoLib2.objects import Font, Glyph
 
 from . import drop_kerning
-from .graphlib import TopologicalSorter
 
 
 def drop_and_tighten(designspace: DesignSpaceDocument) -> DesignSpaceDocument:
