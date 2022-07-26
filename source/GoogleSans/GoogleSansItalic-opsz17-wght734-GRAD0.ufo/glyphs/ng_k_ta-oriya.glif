@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ng_k_ta-oriya" format="2">
+  <advance width="1107"/>
+  <anchor x="843" y="-282" name="bottom"/>
+  <anchor x="884" y="-282" name="bottomright"/>
+  <anchor x="906" y="714" name="candra"/>
+  <anchor x="915" y="732" name="top"/>
+  <anchor x="470" y="714" name="topcenter"/>
+  <outline>
+    <component base="ng_ka-oriya"/>
+    <component base="ta-oriya.blwf" xOffset="405" yOffset="61"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>ta-oriya.blwf</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
+</glyph>

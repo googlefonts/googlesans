@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="rha-oriya" format="2">
+  <advance width="732"/>
+  <unicode hex="0B5D"/>
+  <anchor x="527" y="-180" name="bottom"/>
+  <anchor x="609" y="-137" name="bottomright"/>
+  <anchor x="584" y="680" name="candra"/>
+  <outline>
+    <component base="ddha-oriya"/>
+    <component base="nukta-oriya" xOffset="380"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
+</glyph>
