@@ -18,9 +18,9 @@ feature locl {
         sub [period comma colon semicolon ellipsis exclam question asterisk parenleft parenright braceleft braceright bracketleft bracketright quotedblleft quotedblright quoteleft quoteright] by [period.loclODIA comma.loclODIA colon.loclODIA semicolon.loclODIA ellipsis.loclODIA exclam.loclODIA question.loclODIA asterisk.loclODIA parenleft.loclODIA parenright.loclODIA braceleft.loclODIA braceright.loclODIA bracketleft.loclODIA bracketright.loclODIA quotedblleft.loclODIA quotedblright.loclODIA quoteleft.loclODIA quoteright.loclODIA];
     } ODI_dflt_locl_odiaPunctuation;
 
-    #lookup ODI_dflt_locl_odiaDanda {
-        #sub [danda-deva dbldanda-deva] by [danda-deva.loclODI dbldanda-deva.loclODI];
-    #} ODI_dflt_locl_odiaDanda;
+    lookup ODI_dflt_locl_odiaDanda {
+        sub [danda-deva dbldanda-deva] by [danda-deva.loclODI dbldanda-deva.loclODI];
+    } ODI_dflt_locl_odiaDanda;
 
 } locl;
 
@@ -305,8 +305,7 @@ feature psts {
         sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ma-oriya.blwf' by halant-oriya ma-oriya;
         sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ma-oriya.blwf.alt' by halant-oriya ma-oriya;
         sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ya-oriya.blwf' by halant-oriya ya-oriya;
-        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ra-oriya.blwf' by halant-oriya ra-oriya;
-        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ra-oriya.blwf.alt01' by halant-oriya ra-oriya;
+        sub [@ODI_all_vattus] ra-oriya.blwf' by halant-oriya ra-oriya;
         sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] la-oriya.blwf' by halant-oriya la-oriya;
         sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] lla-oriya.blwf' by halant-oriya lla-oriya;
         sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] va-oriya.blwf' by halant-oriya va-oriya;
