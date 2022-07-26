@@ -1,0 +1,16 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+abvs = true
+abvm = true
+
+[input]
+script = "ory2"
+language = "dflt"
+comparison_mode = "full"
+text = [
+	"ର୍ଖି", # iMatra-reph ligature
+	"କି ର୍କି", # iMatra & iMatra-reph length alternates
+	"କୈ ଖୈ" # aiLength mark alternates
+]

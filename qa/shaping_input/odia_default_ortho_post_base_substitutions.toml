@@ -1,0 +1,17 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+blwf = true
+psts = true
+abvm = true
+
+[input]
+script = "ory2"
+language = "dflt"
+comparison_mode = "full"
+text = [
+	"କ୍ଯ କ୍କ୍ଯ", # Post-base ya consonant
+	"କ୍କୃ କ୍ବୃ", # Alternate rVocalic Vowel Matra
+	"କ୍କ୍ଲ ଗ୍ଲ୍ମ କ୍ଲ୍କ", # Recompose below-base consonant to halant+fullconsonants
+]

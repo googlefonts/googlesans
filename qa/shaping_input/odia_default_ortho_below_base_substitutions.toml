@@ -1,0 +1,18 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+blws = true
+blwm = true
+
+[input]
+script = "ory2"
+language = "dflt"
+comparison_mode = "full"
+text = [
+	"ଗୁ ଗୂ", # Default u & uuMatra
+	"ଲୁ ଲୂ", # u & uuMatra alternate 1
+	"କୁ କୂ", # u & uuMatra alternate 2
+	"ଦୁ ଦୂ", # u & uuMatra alternate 3
+	"ଡ଼ୁ ଡ଼ୂ" # u & uuMatra alternate 4
+]
