@@ -255,3 +255,15 @@ $ ./update_all_shaping.sh
 ```
 
 The FontBakery QA tests will pick up the file automatically.
+
+## Using Continuous Integration/Continuous Deployment (CI/CD) for Ongoing Development and Deployment
+
+### Continuous Integration
+
+The project uses GitHub Actions to automatically run build and checking jobs for Pull Requests.
+
+When adding a new script or doing any font-related work, do so in a branch and open a Pull Request. By default, only the variable fonts are built and checked to save computing resources. If you want to trigger a build of the static and interpolated fonts, make a new branch with the same name, prefixed by "build-". So, your branch named "import-some-script" would become "build-import-some-script". Continuous Integration is set up to automatically build everything for branches with such a prefix. Avoid opening a Pull Request for these branches, as Continuous Integration will run twice.
+
+### Continuous Deployment
+
+When making a release, you can tag any commit (on the main branch or any other). It will compile everything for you and create a draft release for you to finalise, along with a Zip file with the release artifacts.
