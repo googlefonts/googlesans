@@ -260,7 +260,7 @@ jobs:
           release_name: Google Sans ${{ github.ref }}
           body: |
             Please see the root of the repository for the CHANGELOG.md
-          draft: false
+          draft: true  # Create a draft release for final review.
           prerelease: false
       - name: Upload Release Asset
         id: upload-release-asset
