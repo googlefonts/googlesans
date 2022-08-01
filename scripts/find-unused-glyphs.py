@@ -15,23 +15,15 @@
 """Print glyphs without Unicode value and which are unreachable via feature
 substitutions and are not used as components."""
 
+from __future__ import annotations
+
 import argparse
-from typing import Set
+from typing import Sequence, Set
 
 import ufo2ft.featureCompiler
 import ufo2ft.util
 import ufoLib2
 import ufoLib2.objects
-
-parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument("ufo", type=ufoLib2.Font.open, help="Path to UFO.")
-parser.add_argument(
-    "--ignore-skipped",
-    action="store_true",
-    help="Skip printing glyphs skipped on export.",
-)
-parsed_args = parser.parse_args()
-ufo: ufoLib2.Font = parsed_args.ufo
 
 
 def reachable_glyphs(ufo: ufoLib2.Font) -> Set[str]:
@@ -65,12 +57,27 @@ def referenced_as_components(ufo: ufoLib2.Font, reachable_glyphs: Set[str]) -> S
     return referenced_components
 
 
-reachable_glyph_names = reachable_glyphs(ufo)
-reachable_glyph_names.update(referenced_as_components(ufo, reachable_glyph_names))
-skip_export_glyphs: Set[str] = set(ufo.lib.get("public.skipExportGlyphs", []))
+def main(args: Sequence[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("ufo", type=ufoLib2.Font.open, help="Path to UFO.")
+    parser.add_argument(
+        "--ignore-skipped",
+        action="store_true",
+        help="Skip printing glyphs skipped on export.",
+    )
+    parsed_args = parser.parse_args(args)
+    ufo: ufoLib2.Font = parsed_args.ufo
 
-for glyph_name in ufo.keys():
-    if parsed_args.ignore_skipped and glyph_name in skip_export_glyphs:
-        continue
-    if glyph_name not in reachable_glyph_names:
-        print(glyph_name)
+    reachable_glyph_names = reachable_glyphs(ufo)
+    reachable_glyph_names.update(referenced_as_components(ufo, reachable_glyph_names))
+    skip_export_glyphs: Set[str] = set(ufo.lib.get("public.skipExportGlyphs", []))
+
+    for glyph_name in ufo.keys():
+        if parsed_args.ignore_skipped and glyph_name in skip_export_glyphs:
+            continue
+        if glyph_name not in reachable_glyph_names:
+            print(glyph_name)
+
+
+if __name__ == "__main__":
+    main()
