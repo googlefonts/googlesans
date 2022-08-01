@@ -20,41 +20,9 @@ from __future__ import annotations
 import argparse
 from typing import Sequence, Set
 
-import ufo2ft.featureCompiler
-import ufo2ft.util
 import ufoLib2
-import ufoLib2.objects
 
-
-def reachable_glyphs(ufo: ufoLib2.Font) -> Set[str]:
-    """Return set of glyph names of glyphs reachable via Unicode value and
-    feature substitutions."""
-
-    features = ufo2ft.featureCompiler.parseLayoutFeatures(ufo)
-    glyph_order = list(ufo.keys())
-    gsub = ufo2ft.util.compileGSUB(features, glyph_order)
-    reachable_glyphs = {g.name for g in ufo if g.unicode is not None}
-    reachable_glyphs.add(".notdef")
-    ufo2ft.util.closeGlyphsOverGSUB(gsub, reachable_glyphs)
-
-    return reachable_glyphs
-
-
-def referenced_as_components(ufo: ufoLib2.Font, reachable_glyphs: Set[str]) -> Set[str]:
-    """Return set of glyph names of glyphs used as components by glyphs in
-    reachable_glyphs."""
-
-    def _recurse(glyph: ufoLib2.objects.Glyph, seen: Set[str]) -> None:
-        for component in glyph.components:
-            seen.add(component.baseGlyph)
-            _recurse(ufo[component.baseGlyph], seen)
-
-    referenced_components = set()
-    for name in reachable_glyphs:
-        glyph = ufo[name]
-        _recurse(glyph, referenced_components)
-
-    return referenced_components
+from .internal.reachable_glyphs import reachable_glyphs, referenced_as_components
 
 
 def main(args: Sequence[str] | None = None) -> None:
