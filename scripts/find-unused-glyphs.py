@@ -15,62 +15,37 @@
 """Print glyphs without Unicode value and which are unreachable via feature
 substitutions and are not used as components."""
 
+from __future__ import annotations
+
 import argparse
-from typing import Set
+from typing import Sequence, Set
 
-import ufo2ft.featureCompiler
-import ufo2ft.util
 import ufoLib2
-import ufoLib2.objects
 
-parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument("ufo", type=ufoLib2.Font.open, help="Path to UFO.")
-parser.add_argument(
-    "--ignore-skipped",
-    action="store_true",
-    help="Skip printing glyphs skipped on export.",
-)
-parsed_args = parser.parse_args()
-ufo: ufoLib2.Font = parsed_args.ufo
+from .internal.reachable_glyphs import reachable_glyphs, referenced_as_components
 
 
-def reachable_glyphs(ufo: ufoLib2.Font) -> Set[str]:
-    """Return set of glyph names of glyphs reachable via Unicode value and
-    feature substitutions."""
+def main(args: Sequence[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("ufo", type=ufoLib2.Font.open, help="Path to UFO.")
+    parser.add_argument(
+        "--ignore-skipped",
+        action="store_true",
+        help="Skip printing glyphs skipped on export.",
+    )
+    parsed_args = parser.parse_args(args)
+    ufo: ufoLib2.Font = parsed_args.ufo
 
-    features = ufo2ft.featureCompiler.parseLayoutFeatures(ufo)
-    glyph_order = list(ufo.keys())
-    gsub = ufo2ft.util.compileGSUB(features, glyph_order)
-    reachable_glyphs = {g.name for g in ufo if g.unicode is not None}
-    reachable_glyphs.add(".notdef")
-    ufo2ft.util.closeGlyphsOverGSUB(gsub, reachable_glyphs)
+    reachable_glyph_names = reachable_glyphs(ufo)
+    reachable_glyph_names.update(referenced_as_components(ufo, reachable_glyph_names))
+    skip_export_glyphs: Set[str] = set(ufo.lib.get("public.skipExportGlyphs", []))
 
-    return reachable_glyphs
-
-
-def referenced_as_components(ufo: ufoLib2.Font, reachable_glyphs: Set[str]) -> Set[str]:
-    """Return set of glyph names of glyphs used as components by glyphs in
-    reachable_glyphs."""
-
-    def _recurse(glyph: ufoLib2.objects.Glyph, seen: Set[str]) -> None:
-        for component in glyph.components:
-            seen.add(component.baseGlyph)
-            _recurse(ufo[component.baseGlyph], seen)
-
-    referenced_components = set()
-    for name in reachable_glyphs:
-        glyph = ufo[name]
-        _recurse(glyph, referenced_components)
-
-    return referenced_components
+    for glyph_name in ufo.keys():
+        if parsed_args.ignore_skipped and glyph_name in skip_export_glyphs:
+            continue
+        if glyph_name not in reachable_glyph_names:
+            print(glyph_name)
 
 
-reachable_glyph_names = reachable_glyphs(ufo)
-reachable_glyph_names.update(referenced_as_components(ufo, reachable_glyph_names))
-skip_export_glyphs: Set[str] = set(ufo.lib.get("public.skipExportGlyphs", []))
-
-for glyph_name in ufo.keys():
-    if parsed_args.ignore_skipped and glyph_name in skip_export_glyphs:
-        continue
-    if glyph_name not in reachable_glyph_names:
-        print(glyph_name)
+if __name__ == "__main__":
+    main()
