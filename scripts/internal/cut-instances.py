@@ -43,6 +43,10 @@ def cut_instance(
 ) -> None:
     user_location_args = [f"{k}={v}" for k, v in user_location.items()]
 
+    # Create output directory in case it doesn't exist yet on CI, when passing
+    # artifacts around.
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+
     print(f"Cutting {user_location_args} from {variable_font}")
     subprocess.check_call(
         [
