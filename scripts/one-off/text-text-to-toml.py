@@ -41,14 +41,16 @@ TEMPLATE: dict[str, Any] = {
 
 
 def load_inputs_from_text(text: str) -> defaultdict[str, list[str]]:
-    """Parse a test file with non-Latin test strings listed under Latin category names."""
+    """Parse a test file with non-Latin test strings listed under Latin category
+    names."""
     test_sections: defaultdict[str, list[str]] = defaultdict(list)
     last_heading = None
     for line in text.splitlines():
         line = line.strip()
         if not line:
             continue
-        # Crude check; for our test files, the header can be identified by its Latin script
+        # Crude check; for our test files, the header can be identified by its
+        # Latin script.
         if line[0] in string.ascii_letters:
             last_heading = line
         else:
@@ -64,7 +66,7 @@ def make_shaping_input(test_strings: list[str], script: str):
     if script == "odia":
         new_dict["input"]["script"] = "ory2"
     else:
-        raise NotImplemented("Only the script tag of the 'odia' language is known")
+        raise NotImplementedError("Only the script tag of the 'odia' language is known")
     return new_dict
 
 
@@ -74,7 +76,8 @@ def get_file_name(
     language: str = "default",
     prefix: str | None = None,
 ) -> str:
-    """Get the file name of a shaping input TOML based on its script, language, and scope."""
+    """Get the file name of a shaping input TOML based on its script, language,
+    and scope."""
     lower_name = category_name.lower()
     swapped_and = lower_name.replace("&", "and")
     name_parts = re.split("[ -]", swapped_and)
