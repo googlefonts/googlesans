@@ -8,7 +8,7 @@ on:
 
 jobs:
   cldr-coverage-support:
-    runs-on: ubuntu-latest
+    runs-on: [linux, googlefonts-64cores-256GB]
     strategy:
       matrix:
         python-version: ["3.10"]
