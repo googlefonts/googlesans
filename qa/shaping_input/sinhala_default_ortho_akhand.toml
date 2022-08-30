@@ -1,0 +1,16 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+akhn  = true
+abvs = true
+blws = true
+psts = true
+
+[input]
+script = "sinh"
+language = "dflt"
+comparison_mode = "full"
+text = [
+	"ක්‍ ක්‍ ක්‍ ක්‍ෂු" # K_Ssa conjuncts and vowel ligs
+]
