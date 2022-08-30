@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="threelith-sinhala" format="2">
+  <advance width="1755"/>
+  <unicode hex="0DE9"/>
+  <outline>
+    <component base="twolith-sinhala"/>
+    <component base="aaMatra-sinhala" xOffset="1290"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>twolith-sinhala</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>onelith-sinhala</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>aaMatra-sinhala</string>
+    </dict>
+  </lib>
+</glyph>
