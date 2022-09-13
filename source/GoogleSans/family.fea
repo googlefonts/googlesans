@@ -399,7 +399,6 @@ feature liga {
     sub f f k by f_f_k;
     sub f f l by f_f_l;
     sub f f t by f_f_t;
-    sub r f f by r_f_f;
     sub f b by f_b;
     sub f f by f_f;
     sub f h by f_h;
@@ -408,8 +407,6 @@ feature liga {
     sub f k by f_k;
     sub f l by f_l;
     sub f t by f_t;
-    sub r f by r_f;
-    sub r t by r_t;
     sub t f by t_f;
     sub t t by t_t;
     sub [G g] o o g l e underscore l o g o by Google.logo;
@@ -1552,7 +1549,6 @@ feature dlig {
     sub f f j by f_f_j;
     sub f f k by f_f_k;
     sub f f t by f_f_t;
-    sub r f f by r_f_f;
     sub f b by f_b;
     sub f h by f_h;
     sub f i by f_i;
@@ -1560,8 +1556,6 @@ feature dlig {
     sub f k by f_k;
     sub f l by f_l;
     sub f t by f_t;
-    sub r f by r_f;
-    sub r t by r_t;
     sub t f by t_f;
     sub t t by t_t;
     ignore sub @grk_UPPERCASE kappa' alpha' iota', kappa' alpha' iota' @grk_UPPERCASE;
