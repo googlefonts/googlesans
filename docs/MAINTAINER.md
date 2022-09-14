@@ -194,7 +194,7 @@ print(Glyphs.productionGlyphName("k_ssa_uMatra-tamil"))
 
 6. Consider which of the imported glyphs need anchor propagation; edit the list kept in `scripts/internal/normalize.py`
 
-7. Run `scripts/gs-normalize-designspace.py`.
+7. Run `python3 scripts/gs-normalize-designspace.py`.
 
 ![Quality Assurance Workflow](assets/merge_process.png)
 
@@ -264,7 +264,7 @@ These lists are stored in `qa/definitions`.
 
 After a merge, the lists must be updated to reflect the new definitions expected of the font. This can be performed as follows:
 
-1. Rebuild the font, if this has not already been done after the merge.  
+1. Rebuild the font, if this has not already been done after the merge.
 
 2. Produce new lists based on the newly built fonts' glyph definitions.
 
