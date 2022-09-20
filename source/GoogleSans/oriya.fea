@@ -1,0 +1,320 @@
+@ODI_MAT_all_marks_except_reph = [ka-oriya.blwf kha-oriya.blwf ga-oriya.blwf gha-oriya.blwf nga-oriya.blwf ca-oriya.blwf cha-oriya.blwf ja-oriya.blwf jha-oriya.blwf tta-oriya.blwf ttha-oriya.blwf dda-oriya.blwf ddha-oriya.blwf nna-oriya.blwf ta-oriya.blwf tha-oriya.blwf da-oriya.blwf dha-oriya.blwf na-oriya.blwf pa-oriya.blwf pha-oriya.blwf ba-oriya.blwf bha-oriya.blwf ma-oriya.blwf ma-oriya.blwf.alt ya-oriya.blwf ra-oriya.blwf ra-oriya.blwf.alt01 la-oriya.blwf lla-oriya.blwf va-oriya.blwf sha-oriya.blwf ssa-oriya.blwf sa-oriya.blwf ha-oriya.blwf wa-oriya.blwf ka_ssa-oriya.blwf];
+@ODI_MAT_halant = [halant-oriya];
+@ODI_wideBases = [ka-oriya ja-oriya bha-oriya la-oriya lla-oriya k_ka-oriya k_tta-oriya k_ttha-oriya k_ta-oriya k_sa-oriya k_ba-oriya k_lla-oriya k_sha-oriya ng_ka-oriya ng_kha-oriya j_nya-oriya ny_ca-oriya ny_cha-oriya ny_ja-oriya ny_jha-oriya ng_ga-oriya ng_k_ta-oriya ng_k_t_ra-oriya c_ca-oriya c_cha-oriya j_ja-oriya j_jha-oriya j_j_ba-oriya tt_tta-oriya t_ka-oriya t_ta-oriya t_t_ba-oriya d_da-oriya d_dha-oriya d_bha-oriya b_da-oriya m_ma-oriya l_ka-oriya l_ga-oriya l_dda-oriya l_pa-oriya l_ma-oriya l_la-oriya ll_ka-oriya ll_pa-oriya ll_pha-oriya ll_bha-oriya m_pa-oriya m_pha-oriya];
+@ODI_uMatra_group_1 = [nna-oriya la-oriya lla-oriya sha-oriya j_ja-oriya];
+@ODI_uMatra_group_2 = [ka-oriya ba-oriya va-oriya gha-oriya ng_ka-oriya ng_gha-oriya ny_ja-oriya j_nya-oriya t_tha-oriya ny_ca-oriya ny_jha-oriya d_da-oriya d_dha-oriya];
+@ODI_uMatra_group_3 = [da-oriya wa-oriya k_ka-oriya l_ka-oriya ss_ka-oriya s_ka-oriya t_ka-oriya s_kha-oriya d_ga-oriya dd_ga-oriya l_ga-oriya c_ca-oriya sh_ca-oriya c_cha-oriya sh_cha-oriya b_ja-oriya j_jha-oriya k_tta-oriya tt_tta-oriya nn_tta-oriya p_tta-oriya ph_tta-oriya ss_tta-oriya s_tta-oriya k_ttha-oriya nn_ttha-oriya ss_ttha-oriya dd_dda-oriya nn_dda-oriya l_dda-oriya nn_ddha-oriya nn_nna-oriya ss_nna-oriya h_nna-oriya k_ta-oriya ng_k_ta-oriya t_ta-oriya n_ta-oriya n_ta_ra-oriya p_ta-oriya s_ta-oriya n_tha-oriya s_tha-oriya ny_cha-oriya g_da-oriya na_da-oriya b_da-oriya g_dha-oriya n_dha-oriya b_dha-oriya k_ss_na-oriya g_na-oriya gh_na-oriya t_na-oriya t_s_na-oriya n_na-oriya p_na-oriya m_na-oriya sh_na-oriya s_na-oriya h_na-oriya t_pa-oriya p_pa-oriya ll_pa-oriya ss_pa-oriya s_pa-oriya ll_pha-oriya ss_pha-oriya s_pha-oriya k_ba-oriya j_j_ba-oriya nn_ba-oriya t_t_ba-oriya t_ba-oriya d_ba-oriya dh_ba-oriya n_t_ba-oriya n_d_ba-oriya n_ba-oriya m_ba-oriya s_ba-oriya h_ba-oriya d_bha-oriya n_dh_bha-oriya m_bha-oriya ll_bha-oriya k_ss_ma-oriya t_ma-oriya d_ma-oriya n_ma-oriya m_ma-oriya l_ma-oriya ss_ma-oriya s_ma-oriya dh_ya-oriya ng_k_t_ra-oriya g_la-oriya l_la-oriya s_t_ra-oriya h_la-oriya g_lla-oriya p_lla-oriya sh_lla-oriya k_sha-oriya ng_k_ssa-oriya k_sa-oriya t_sa-oriya n_sa-oriya p_sa-oriya s_sa-oriya sh_wa-oriya d_gha-oriya d_gha-oriya b_gha-oriya ka-oriya.blwf kha-oriya.blwf ga-oriya.blwf gha-oriya.blwf nga-oriya.blwf ca-oriya.blwf cha-oriya.blwf ja-oriya.blwf jha-oriya.blwf tta-oriya.blwf ttha-oriya.blwf dda-oriya.blwf ddha-oriya.blwf nna-oriya.blwf ta-oriya.blwf tha-oriya.blwf da-oriya.blwf dha-oriya.blwf na-oriya.blwf pa-oriya.blwf pha-oriya.blwf ba-oriya.blwf bha-oriya.blwf ma-oriya.blwf ma-oriya.blwf.alt ya-oriya.blwf ra-oriya.blwf ra-oriya.blwf.alt01 la-oriya.blwf lla-oriya.blwf va-oriya.blwf sha-oriya.blwf ssa-oriya.blwf sa-oriya.blwf ha-oriya.blwf wa-oriya.blwf ka_ssa-oriya.blwf];
+@ODI_uMatra_group_4 = [rra-oriya rha-oriya];
+@ODI_ra_blwf_alternate = [k_ka-oriya t_ka-oriya l_ka-oriya ll_ka-oriya ss_ka-oriya s_ka-oriya s_kha-oriya dd_ga-oriya d_ga-oriya l_ga-oriya d_gha-oriya b_gha-oriya sh_ca-oriya c_cha-oriya c_cha-oriya ny_cha-oriya sh_cha-oriya j_ja-oriya b_ja-oriya j_jha-oriya k_tta-oriya nn_tta-oriya p_tta-oriya ph_tta-oriya ss_tta-oriya s_tta-oriya k_ttha-oriya nn_ttha-oriya ss_ttha-oriya dd_dda-oriya nn_dda-oriya l_dda-oriya nn_ddha-oriya nn_nna-oriya ss_nna-oriya h_nna-oriya k_ta-oriya ng_k_ta-oriya n_ta-oriya n_ta_ra-oriya p_ta-oriya s_ta-oriya t_tha-oriya n_tha-oriya s_tha-oriya g_da-oriya g_dha-oriya b_dha-oriya k_ss_na-oriya g_na-oriya gh_na-oriya t_na-oriya t_s_na-oriya n_na-oriya p_na-oriya m_na-oriya sh_na-oriya s_na-oriya h_na-oriya t_pa-oriya p_pa-oriya l_pa-oriya ll_pa-oriya ss_pa-oriya s_pa-oriya ll_pha-oriya ss_pha-oriya s_pha-oriya k_ba-oriya j_j_ba-oriya nn_ba-oriya t_t_ba-oriya t_ba-oriya d_ba-oriya dh_ba-oriya n_t_ba-oriya n_d_ba-oriya n_ba-oriya m_ba-oriya s_ba-oriya h_ba-oriya n_dh_bha-oriya ll_bha-oriya k_ss_ma-oriya t_ma-oriya d_ma-oriya n_ma-oriya m_ma-oriya l_ma-oriya ss_ma-oriya s_ma-oriya dh_ya-oriya ng_k_t_ra-oriya s_t_ra-oriya g_la-oriya l_la-oriya h_la-oriya k_lla-oriya g_lla-oriya p_lla-oriya sh_lla-oriya k_sha-oriya ng_k_ssa-oriya k_sa-oriya t_sa-oriya n_sa-oriya p_sa-oriya s_sa-oriya sh_wa-oriya];
+@ODI_aiLength_alternate = [kha-oriya ga-oriya gha-oriya jha-oriya tta-oriya nna-oriya tha-oriya dha-oriya pa-oriya pha-oriya ma-oriya ya-oriya sha-oriya ssa-oriya sa-oriya yya-oriya k_ss_na-oriya k_ss_ma-oriya k_ssa-oriya g_da-oriya g_dha-oriya g_na-oriya g_la-oriya g_lla-oriya gh_na-oriya ng_kha-oriya ng_ga-oriya ng_gha-oriya tt_tta-oriya nn_tta-oriya nn_ttha-oriya nn_dda-oriya nn_ddha-oriya nn_nna-oriya nn_ba-oriya t_s_na-oriya t_pa-oriya t_ma-oriya t_sa-oriya dh_ba-oriya dh_ya-oriya dh_yya-oriya p_tta-oriya p_ta-oriya p_na-oriya p_pa-oriya p_lla-oriya p_sa-oriya ph_tta-oriya m_na-oriya m_pa-oriya m_pha-oriya m_ba-oriya m_bha-oriya m_ma-oriya sh_ca-oriya sh_cha-oriya sh_na-oriya sh_lla-oriya sh_wa-oriya ss_ka-oriya ss_tta-oriya ss_ttha-oriya ss_nna-oriya ss_pa-oriya ss_pha-oriya ss_ma-oriya s_ka-oriya s_kha-oriya s_tta-oriya s_ta-oriya s_tha-oriya s_na-oriya s_pa-oriya s_pha-oriya s_ba-oriya s_ma-oriya s_t_ra-oriya s_sa-oriya];
+@ODI_rVocalic_alternate = [k_ka-oriya k_ss_na-oriya k_ba-oriya k_ss_ma-oriya k_lla-oriya k_sha-oriya k_ssa-oriya g_dha-oriya g_na-oriya g_la-oriya g_lla-oriya gh_na-oriya ng_k_t_ra-oriya ng_k_ssa-oriya j_ja-oriya j_nya-oriya j_j_ba-oriya ny_ca-oriya ny_ja-oriya ny_jha-oriya dd_ga-oriya nn_ba-oriya t_tha-oriya t_s_na-oriya t_t_ba-oriya t_ba-oriya d_ga-oriya d_gha-oriya d_ba-oriya d_ma-oriya dh_ba-oriya dh_ya-oriya dh_yya-oriya n_ta_ra-oriya n_na-oriya n_t_ba-oriya n_d_ba-oriya n_ba-oriya n_dh_bha-oriya n_ma-oriya p_na-oriya p_pa-oriya p_lla-oriya p_sa-oriya b_ja-oriya b_dha-oriya m_na-oriya m_ba-oriya m_ma-oriya l_ka-oriya l_ga-oriya l_pa-oriya l_ma-oriya l_la-oriya ll_ka-oriya ll_pa-oriya ll_pha-oriya sh_na-oriya sh_lla-oriya sh_wa-oriya ss_ka-oriya ss_pa-oriya ss_pha-oriya ss_ma-oriya s_ka-oriya s_kha-oriya s_na-oriya s_pa-oriya s_pha-oriya s_ba-oriya s_ma-oriya s_t_ra-oriya h_nna-oriya h_na-oriya h_ba-oriya h_la-oriya];
+@ODI_all_vattus = [ka-oriya.blwf kha-oriya.blwf ga-oriya.blwf gha-oriya.blwf nga-oriya.blwf ca-oriya.blwf cha-oriya.blwf ja-oriya.blwf jha-oriya.blwf tta-oriya.blwf ttha-oriya.blwf dda-oriya.blwf ddha-oriya.blwf nna-oriya.blwf ta-oriya.blwf tha-oriya.blwf da-oriya.blwf dha-oriya.blwf na-oriya.blwf pa-oriya.blwf pha-oriya.blwf ba-oriya.blwf bha-oriya.blwf ma-oriya.blwf ma-oriya.blwf.alt ya-oriya.blwf ra-oriya.blwf ra-oriya.blwf.alt01 la-oriya.blwf lla-oriya.blwf va-oriya.blwf sha-oriya.blwf ssa-oriya.blwf sa-oriya.blwf ha-oriya.blwf wa-oriya.blwf ka_ssa-oriya.blwf];
+@ODI_all_precomposed_conjuncts = [k_ka-oriya k_tta-oriya k_ttha-oriya k_ta-oriya k_ss_na-oriya k_ba-oriya k_ss_ma-oriya k_lla-oriya k_sha-oriya k_ssa-oriya k_sa-oriya g_da-oriya g_dha-oriya g_na-oriya g_la-oriya g_lla-oriya gh_na-oriya ng_ka-oriya ng_kha-oriya ng_ga-oriya ng_gha-oriya ng_k_ta-oriya ng_k_t_ra-oriya ng_k_ssa-oriya c_ca-oriya c_cha-oriya j_ja-oriya j_jha-oriya j_nya-oriya j_j_ba-oriya ny_ca-oriya ny_cha-oriya ny_ja-oriya ny_jha-oriya tt_tta-oriya dd_ga-oriya dd_dda-oriya nn_tta-oriya nn_ttha-oriya nn_dda-oriya nn_ddha-oriya nn_nna-oriya nn_ba-oriya t_ka-oriya t_ta-oriya t_tha-oriya t_na-oriya t_s_na-oriya t_pa-oriya t_t_ba-oriya t_ba-oriya t_ma-oriya t_sa-oriya d_ga-oriya d_gha-oriya d_da-oriya d_dha-oriya d_ba-oriya d_bha-oriya d_ma-oriya dh_ba-oriya dh_ya-oriya dh_yya-oriya n_ta-oriya n_ta_ra-oriya n_tha-oriya na_da-oriya n_dha-oriya n_na-oriya n_t_ba-oriya n_d_ba-oriya n_ba-oriya n_dh_bha-oriya n_ma-oriya n_sa-oriya p_tta-oriya p_ta-oriya p_na-oriya p_pa-oriya p_lla-oriya p_sa-oriya ph_tta-oriya b_gha-oriya b_ja-oriya b_da-oriya b_dha-oriya m_na-oriya m_pa-oriya m_pha-oriya m_ba-oriya m_bha-oriya m_ma-oriya l_ka-oriya l_ga-oriya l_dda-oriya l_pa-oriya l_ma-oriya l_la-oriya ll_ka-oriya ll_pa-oriya ll_pha-oriya ll_bha-oriya sh_ca-oriya sh_cha-oriya sh_na-oriya sh_lla-oriya sh_wa-oriya ss_ka-oriya ss_tta-oriya ss_ttha-oriya ss_nna-oriya ss_pa-oriya ss_pha-oriya ss_ma-oriya s_ka-oriya s_kha-oriya s_tta-oriya s_ta-oriya s_tha-oriya s_na-oriya s_pa-oriya s_pha-oriya s_ba-oriya s_ma-oriya s_t_ra-oriya s_sa-oriya h_nna-oriya h_na-oriya h_ba-oriya h_la-oriya];
+
+
+feature locl {
+    script ory2;
+    lookup ODI_dflt_locl_odiaPunctuation {
+        sub [period comma colon semicolon ellipsis exclam question asterisk parenleft parenright braceleft braceright bracketleft bracketright quotedblleft quotedblright quoteleft quoteright] by [period.loclODIA comma.loclODIA colon.loclODIA semicolon.loclODIA ellipsis.loclODIA exclam.loclODIA question.loclODIA asterisk.loclODIA parenleft.loclODIA parenright.loclODIA braceleft.loclODIA braceright.loclODIA bracketleft.loclODIA bracketright.loclODIA quotedblleft.loclODIA quotedblright.loclODIA quoteleft.loclODIA quoteright.loclODIA];
+    } ODI_dflt_locl_odiaPunctuation;
+
+    lookup ODI_dflt_locl_odiaDanda {
+        sub [danda-deva dbldanda-deva] by [danda-deva.loclODI dbldanda-deva.loclODI];
+    } ODI_dflt_locl_odiaDanda;
+
+} locl;
+
+feature akhn {
+    script ory2;
+    lookup ODI_dflt_akhn_akhand_conjuncts {
+        lookupflag MarkAttachmentType @ODI_MAT_halant;
+        sub ka-oriya halant-oriya ssa-oriya by k_ssa-oriya;
+        sub ja-oriya halant-oriya nya-oriya by j_nya-oriya;
+    } ODI_dflt_akhn_akhand_conjuncts;
+
+} akhn;
+
+feature rphf {
+    script ory2;
+    lookup ODI_dflt_rphf_reph_form {
+        sub ra-oriya halant-oriya by reph-oriya;
+    } ODI_dflt_rphf_reph_form;
+
+} rphf;
+
+feature blwf {
+    script ory2;
+    lookup ODI_dflt_blwf_below_base_forms {
+        sub halant-oriya ka-oriya by ka-oriya.blwf;
+        sub halant-oriya kha-oriya by kha-oriya.blwf;
+        sub halant-oriya ga-oriya by ga-oriya.blwf;
+        sub halant-oriya gha-oriya by gha-oriya.blwf;
+        sub halant-oriya nga-oriya by nga-oriya.blwf;
+        sub halant-oriya ca-oriya by ca-oriya.blwf;
+        sub halant-oriya cha-oriya by cha-oriya.blwf;
+        sub halant-oriya ja-oriya by ja-oriya.blwf;
+        sub halant-oriya jha-oriya by jha-oriya.blwf;
+        sub halant-oriya tta-oriya by tta-oriya.blwf;
+        sub halant-oriya ttha-oriya by ttha-oriya.blwf;
+        sub halant-oriya dda-oriya by dda-oriya.blwf;
+        sub halant-oriya ddha-oriya by ddha-oriya.blwf;
+        sub halant-oriya nna-oriya by nna-oriya.blwf;
+        sub halant-oriya ta-oriya by ta-oriya.blwf;
+        sub halant-oriya tha-oriya by tha-oriya.blwf;
+        sub halant-oriya da-oriya by da-oriya.blwf;
+        sub halant-oriya dha-oriya by dha-oriya.blwf;
+        sub halant-oriya na-oriya by na-oriya.blwf;
+        sub halant-oriya pa-oriya by pa-oriya.blwf;
+        sub halant-oriya pha-oriya by pha-oriya.blwf;
+        sub halant-oriya ba-oriya by ba-oriya.blwf;
+        sub halant-oriya bha-oriya by bha-oriya.blwf;
+        sub halant-oriya ma-oriya by ma-oriya.blwf;
+        sub halant-oriya ya-oriya by ya-oriya.blwf;
+        sub halant-oriya yya-oriya by yya-oriya.blwf;
+        sub halant-oriya ra-oriya by ra-oriya.blwf;
+        sub halant-oriya la-oriya by la-oriya.blwf;
+        sub halant-oriya lla-oriya by lla-oriya.blwf;
+        sub halant-oriya va-oriya by va-oriya.blwf;
+        sub halant-oriya sha-oriya by sha-oriya.blwf;
+        sub halant-oriya ssa-oriya by ssa-oriya.blwf;
+        sub halant-oriya sa-oriya by sa-oriya.blwf;
+        sub halant-oriya ha-oriya by ha-oriya.blwf;
+        sub halant-oriya wa-oriya by ba-oriya.blwf;
+        sub halant-oriya k_ssa-oriya by ka_ssa-oriya.blwf;
+    } ODI_dflt_blwf_below_base_forms;
+
+} blwf;
+
+feature cjct {
+    script ory2;
+    lookup ODI_dflt_cjct_conjunctsWithYa {
+        sub dha-oriya halant-oriya yya-oriya by dh_yya-oriya;
+    } ODI_dflt_cjct_conjunctsWithYa;
+
+    lookup ODI_dflt_blws_biconsonant_conjuncts {
+        lookupflag MarkAttachmentType @ODI_MAT_all_marks_except_reph;
+        sub ka-oriya ka-oriya.blwf by k_ka-oriya;
+        sub ka-oriya tta-oriya.blwf by k_tta-oriya;
+        sub ka-oriya ttha-oriya.blwf by k_ttha-oriya;
+        sub ka-oriya ta-oriya.blwf by k_ta-oriya;
+        sub ka-oriya ba-oriya.blwf by k_ba-oriya;
+        sub ka-oriya lla-oriya.blwf by k_lla-oriya;
+        sub ka-oriya sha-oriya.blwf by k_sha-oriya;
+        sub ka-oriya sa-oriya.blwf by k_sa-oriya;
+        sub ga-oriya da-oriya.blwf by g_da-oriya;
+        sub ga-oriya dha-oriya.blwf by g_dha-oriya;
+        sub ga-oriya na-oriya.blwf by g_na-oriya;
+        sub ga-oriya la-oriya.blwf by g_la-oriya;
+        sub ga-oriya lla-oriya.blwf by g_lla-oriya;
+        sub gha-oriya na-oriya.blwf by gh_na-oriya;
+        sub nga-oriya ka-oriya.blwf by ng_ka-oriya;
+        sub nga-oriya kha-oriya.blwf by ng_kha-oriya;
+        sub nga-oriya ga-oriya.blwf by ng_ga-oriya;
+        sub nga-oriya gha-oriya.blwf by ng_gha-oriya;
+        sub nga-oriya ka_ssa-oriya.blwf by ng_k_ssa-oriya;
+        sub ca-oriya ca-oriya.blwf by c_ca-oriya;
+        sub ca-oriya cha-oriya.blwf by c_cha-oriya;
+        sub ja-oriya ja-oriya.blwf by j_ja-oriya;
+        sub ja-oriya jha-oriya.blwf by j_jha-oriya;
+        sub nya-oriya ca-oriya.blwf by ny_ca-oriya;
+        sub nya-oriya cha-oriya.blwf by ny_cha-oriya;
+        sub nya-oriya ja-oriya.blwf by ny_ja-oriya;
+        sub nya-oriya jha-oriya.blwf by ny_jha-oriya;
+        sub tta-oriya tta-oriya.blwf by tt_tta-oriya;
+        sub dda-oriya ga-oriya.blwf by dd_ga-oriya;
+        sub dda-oriya dda-oriya.blwf by dd_dda-oriya;
+        sub nna-oriya tta-oriya.blwf by nn_tta-oriya;
+        sub nna-oriya ttha-oriya.blwf by nn_ttha-oriya;
+        sub nna-oriya dda-oriya.blwf by nn_dda-oriya;
+        sub nna-oriya ddha-oriya.blwf by nn_ddha-oriya;
+        sub nna-oriya nna-oriya.blwf by nn_nna-oriya;
+        sub nna-oriya ba-oriya.blwf by nn_ba-oriya;
+        sub ta-oriya ka-oriya.blwf by t_ka-oriya;
+        sub ta-oriya ta-oriya.blwf by t_ta-oriya;
+        sub ta-oriya tha-oriya.blwf by t_tha-oriya;
+        sub ta-oriya na-oriya.blwf by t_na-oriya;
+        sub ta-oriya pa-oriya.blwf by t_pa-oriya;
+        sub ta-oriya ba-oriya.blwf by t_ba-oriya;
+        sub ta-oriya ma-oriya.blwf by t_ma-oriya;
+        sub ta-oriya sa-oriya.blwf by t_sa-oriya;
+        sub da-oriya ga-oriya.blwf by d_ga-oriya;
+        sub da-oriya gha-oriya.blwf by d_gha-oriya;
+        sub da-oriya da-oriya.blwf by d_da-oriya;
+        sub da-oriya dha-oriya.blwf by d_dha-oriya;
+        sub da-oriya ba-oriya.blwf by d_ba-oriya;
+        sub da-oriya bha-oriya.blwf by d_bha-oriya;
+        sub da-oriya ma-oriya.blwf by d_ma-oriya;
+        sub dha-oriya ba-oriya.blwf by dh_ba-oriya;
+        sub dha-oriya ya-oriya.blwf by dh_ya-oriya;
+        sub dha-oriya yya-oriya.blwf by dh_yya-oriya;
+        sub na-oriya ta-oriya.blwf by n_ta-oriya;
+        sub na-oriya tha-oriya.blwf by n_tha-oriya;
+        sub na-oriya da-oriya.blwf by na_da-oriya;
+        sub na-oriya dha-oriya.blwf by n_dha-oriya;
+        sub na-oriya na-oriya.blwf by n_na-oriya;
+        sub na-oriya ba-oriya.blwf by n_ba-oriya;
+        sub na-oriya ma-oriya.blwf by n_ma-oriya;
+        sub na-oriya sa-oriya.blwf by n_sa-oriya;
+        sub pa-oriya tta-oriya.blwf by p_tta-oriya;
+        sub pa-oriya ta-oriya.blwf by p_ta-oriya;
+        sub pa-oriya na-oriya.blwf by p_na-oriya;
+        sub pa-oriya pa-oriya.blwf by p_pa-oriya;
+        sub pa-oriya lla-oriya.blwf by p_lla-oriya;
+        sub pa-oriya sa-oriya.blwf by p_sa-oriya;
+        sub pha-oriya tta-oriya.blwf by ph_tta-oriya;
+        sub ba-oriya gha-oriya.blwf by b_gha-oriya;
+        sub ba-oriya ja-oriya.blwf by b_ja-oriya;
+        sub ba-oriya da-oriya.blwf by b_da-oriya;
+        sub ba-oriya dha-oriya.blwf by b_dha-oriya;
+        sub ma-oriya na-oriya.blwf by m_na-oriya;
+        sub ma-oriya pa-oriya.blwf by m_pa-oriya;
+        sub ma-oriya pha-oriya.blwf by m_pha-oriya;
+        sub ma-oriya ba-oriya.blwf by m_ba-oriya;
+        sub ma-oriya bha-oriya.blwf by m_bha-oriya;
+        sub ma-oriya ma-oriya.blwf by m_ma-oriya;
+        sub la-oriya ka-oriya.blwf by l_ka-oriya;
+        sub la-oriya ga-oriya.blwf by l_ga-oriya;
+        sub la-oriya dda-oriya.blwf by l_dda-oriya;
+        sub la-oriya pa-oriya.blwf by l_pa-oriya;
+        sub la-oriya ma-oriya.blwf by l_ma-oriya;
+        sub la-oriya la-oriya.blwf by l_la-oriya;
+        sub lla-oriya ka-oriya.blwf by ll_ka-oriya;
+        sub lla-oriya pa-oriya.blwf by ll_pa-oriya;
+        sub lla-oriya pha-oriya.blwf by ll_pha-oriya;
+        sub lla-oriya bha-oriya.blwf by ll_bha-oriya;
+        sub sha-oriya ca-oriya.blwf by sh_ca-oriya;
+        sub sha-oriya cha-oriya.blwf by sh_cha-oriya;
+        sub sha-oriya na-oriya.blwf by sh_na-oriya;
+        sub sha-oriya lla-oriya.blwf by sh_lla-oriya;
+        sub sha-oriya ba-oriya.blwf by sh_wa-oriya;
+        sub ssa-oriya ka-oriya.blwf by ss_ka-oriya;
+        sub ssa-oriya tta-oriya.blwf by ss_tta-oriya;
+        sub ssa-oriya ttha-oriya.blwf by ss_ttha-oriya;
+        sub ssa-oriya nna-oriya.blwf by ss_nna-oriya;
+        sub ssa-oriya pa-oriya.blwf by ss_pa-oriya;
+        sub ssa-oriya pha-oriya.blwf by ss_pha-oriya;
+        sub ssa-oriya ma-oriya.blwf by ss_ma-oriya;
+        sub sa-oriya ka-oriya.blwf by s_ka-oriya;
+        sub sa-oriya kha-oriya.blwf by s_kha-oriya;
+        sub sa-oriya tta-oriya.blwf by s_tta-oriya;
+        sub sa-oriya ta-oriya.blwf by s_ta-oriya;
+        sub sa-oriya tha-oriya.blwf by s_tha-oriya;
+        sub sa-oriya na-oriya.blwf by s_na-oriya;
+        sub sa-oriya pa-oriya.blwf by s_pa-oriya;
+        sub sa-oriya pha-oriya.blwf by s_pha-oriya;
+        sub sa-oriya ba-oriya.blwf by s_ba-oriya;
+        sub sa-oriya ma-oriya.blwf by s_ma-oriya;
+        sub sa-oriya sa-oriya.blwf by s_sa-oriya;
+        sub ha-oriya nna-oriya.blwf by h_nna-oriya;
+        sub ha-oriya na-oriya.blwf by h_na-oriya;
+        sub ha-oriya ba-oriya.blwf by h_ba-oriya;
+        sub ha-oriya la-oriya.blwf by h_la-oriya;
+    } ODI_dflt_blws_biconsonant_conjuncts;
+
+    lookup ODI_dflt_blws_triconsonant_conjuncts {
+        lookupflag MarkAttachmentType @ODI_MAT_all_marks_except_reph;
+        sub k_ssa-oriya na-oriya.blwf by k_ss_na-oriya;
+        sub k_ssa-oriya ma-oriya.blwf by k_ss_ma-oriya;
+        sub ng_ka-oriya ta-oriya.blwf by ng_k_ta-oriya;
+        sub j_ja-oriya ba-oriya.blwf by j_j_ba-oriya;
+        sub t_sa-oriya na-oriya.blwf by t_s_na-oriya;
+        sub t_ta-oriya ba-oriya.blwf by t_t_ba-oriya;
+        sub n_ta-oriya ra-oriya.blwf by n_ta_ra-oriya;
+        sub n_ta-oriya ba-oriya.blwf by n_t_ba-oriya;
+        sub na_da-oriya ba-oriya.blwf by n_d_ba-oriya;
+        sub n_dha-oriya bha-oriya.blwf by n_dh_bha-oriya;
+        sub s_ta-oriya ra-oriya.blwf by s_t_ra-oriya;
+    } ODI_dflt_blws_triconsonant_conjuncts;
+
+    lookup ODI_dflt_blws_quadconsonant_conjuncts {
+        lookupflag MarkAttachmentType @ODI_MAT_all_marks_except_reph;
+        sub ng_k_ta-oriya ra-oriya.blwf by ng_k_t_ra-oriya;
+    } ODI_dflt_blws_quadconsonant_conjuncts;
+
+} cjct;
+
+feature abvs {
+    script ory2;
+    lookup ODI_dflt_abvs_above_base_matra_ligatures {
+        sub iMatra-oriya reph-oriya by iMatra_reph-oriya;
+    } ODI_dflt_abvs_above_base_matra_ligatures;
+
+    lookup ODI_dflt_abvs_iMatraLength {
+        sub @ODI_wideBases iMatra-oriya' by iMatra-oriya.alt1;
+        sub @ODI_wideBases iMatra_reph-oriya' by iMatra_reph-oriya.alt1;
+    } ODI_dflt_abvs_iMatraLength;
+
+    lookup ODI_dflt_abvs_aiLength_alternate {
+        sub @ODI_aiLength_alternate aiLength-oriya' by aiLength-oriya.alt;
+    } ODI_dflt_abvs_aiLength_alternate;
+
+} abvs;
+
+feature blws {
+    script ory2;
+    lookup ODI_dflt_blws_alternateUMatras {
+        sub @ODI_uMatra_group_1 uMatra-oriya' by uMatra-oriya.alt1;
+        sub @ODI_uMatra_group_2 uMatra-oriya' by uMatra-oriya.alt2;
+        sub @ODI_uMatra_group_3 uMatra-oriya' by uMatra-oriya.alt3;
+        sub @ODI_uMatra_group_4 uMatra-oriya' by uMatra-oriya.alt4;
+    } ODI_dflt_blws_alternateUMatras;
+
+    lookup ODI_dflt_blws_alternateUuMatras {
+        sub @ODI_uMatra_group_1 uuMatra-oriya' by uuMatra-oriya.alt1;
+        sub @ODI_uMatra_group_2 uuMatra-oriya' by uuMatra-oriya.alt2;
+        sub @ODI_uMatra_group_3 uuMatra-oriya' by uuMatra-oriya.alt3;
+        sub @ODI_uMatra_group_4 uuMatra-oriya' by uuMatra-oriya.alt4;
+    } ODI_dflt_blws_alternateUuMatras;
+
+} blws;
+
+feature psts {
+    script ory2;
+    lookup ODI_dflt_psts_postBaseYa_A {
+        sub ya-oriya.blwf by yya-oriya.blwf;
+    } ODI_dflt_psts_postBaseYa_A;
+
+    lookup ODI_dflt_psts_conjunct_vowels {
+        sub @ODI_rVocalic_alternate rVocalicMatra-oriya' by rVocalicMatra-oriya.low;
+    } ODI_dflt_psts_conjunct_vowels;
+
+    lookup ODI_dflt_psts_third_tier_vattu {
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ka-oriya.blwf' by halant-oriya ka-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] kha-oriya.blwf' by halant-oriya kha-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ga-oriya.blwf' by halant-oriya ga-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] gha-oriya.blwf' by halant-oriya gha-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] nga-oriya.blwf' by halant-oriya nga-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ca-oriya.blwf' by halant-oriya ca-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] cha-oriya.blwf' by halant-oriya cha-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ja-oriya.blwf' by halant-oriya ja-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] jha-oriya.blwf' by halant-oriya jha-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] tta-oriya.blwf' by halant-oriya tta-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ttha-oriya.blwf' by halant-oriya ttha-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] dda-oriya.blwf' by halant-oriya dda-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ddha-oriya.blwf' by halant-oriya ddha-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] nna-oriya.blwf' by halant-oriya nna-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ta-oriya.blwf' by halant-oriya ta-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] tha-oriya.blwf' by halant-oriya tha-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] da-oriya.blwf' by halant-oriya da-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] dha-oriya.blwf' by halant-oriya dha-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] na-oriya.blwf' by halant-oriya na-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] pa-oriya.blwf' by halant-oriya pa-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] pha-oriya.blwf' by halant-oriya pha-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ba-oriya.blwf' by halant-oriya ba-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] bha-oriya.blwf' by halant-oriya bha-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ma-oriya.blwf' by halant-oriya ma-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ma-oriya.blwf.alt' by halant-oriya ma-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ya-oriya.blwf' by halant-oriya ya-oriya;
+        sub [@ODI_all_vattus] ra-oriya.blwf' by halant-oriya ra-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] la-oriya.blwf' by halant-oriya la-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] lla-oriya.blwf' by halant-oriya lla-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] va-oriya.blwf' by halant-oriya va-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] sha-oriya.blwf' by halant-oriya sha-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ssa-oriya.blwf' by halant-oriya ssa-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] sa-oriya.blwf' by halant-oriya sa-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ha-oriya.blwf' by halant-oriya ha-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] wa-oriya.blwf' by halant-oriya wa-oriya;
+        sub [@ODI_all_precomposed_conjuncts @ODI_all_vattus] ka_ssa-oriya.blwf' by halant-oriya k_ssa-oriya;
+    } ODI_dflt_psts_third_tier_vattu;
+
+} psts;
