@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="au-oriya" format="2">
+  <advance width="849"/>
+  <unicode hex="0B14"/>
+  <outline>
+    <contour>
+      <point x="507" y="275" type="line"/>
+      <point x="708" y="275" type="line"/>
+      <point x="708" y="349" type="line"/>
+      <point x="477" y="349" type="line"/>
+    </contour>
+    <component base="o-oriya"/>
+    <component base="auLength-oriya" xOffset="623"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>o-oriya</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>o-oriya</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>auLength-oriya</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
+</glyph>

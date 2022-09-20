@@ -256,6 +256,24 @@ $ ./update_all_shaping.sh
 
 The FontBakery QA tests will pick up the file automatically.
 
+### Updating glyphset definitions
+
+To ensure the built fonts contain all glyph definitions necessary, and no glyph definitions erroneously, lists of the glyph definitions expected of each font are maintained independently. In addition, the order of the definitions is recorded.
+
+These lists are stored in `qa/definitions`.
+
+After a merge, the lists must be updated to reflect the new definitions expected of the font. This can be performed as follows:
+
+1. Rebuild the font, if this has not already been done after the merge.  
+
+2. Produce new lists based on the newly built fonts' glyph definitions.
+
+```bash
+$ python3 scripts/gs-update-glyphset-qa-files.py
+```
+
+3. Manually review the changes, to ensure that only the appropriate definitions have changed.
+
 ## Using Continuous Integration/Continuous Deployment (CI/CD) for Ongoing Development and Deployment
 
 ### Continuous Integration

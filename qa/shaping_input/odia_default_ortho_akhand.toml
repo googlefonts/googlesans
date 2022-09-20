@@ -1,0 +1,20 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+akhn  = true
+blwf = true
+abvs = true
+blws = true
+psts = true
+abvm = true
+blwm = true
+
+[input]
+script = "ory2"
+language = "dflt"
+comparison_mode = "full"
+text = [
+	"କ୍ଷ କ୍ଷି କ୍ଷୁ କ୍ଷୂ କ୍ଷୌ କ୍ଷ୍ର", # K_Ssa conjuncts
+	"ଜ୍ଞ ଜ୍ଞି ଜ୍ଞୁ ଜ୍ଞୂ ଜ୍ଞୌ ଜ୍ଞ୍ର" # J_Nya conjuncts
+]
