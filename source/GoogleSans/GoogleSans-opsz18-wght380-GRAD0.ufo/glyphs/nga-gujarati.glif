@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nga-gujarati" format="2">
+  <advance width="550"/>
+  <unicode hex="0A99"/>
+  <anchor x="301" y="0" name="bottom"/>
+  <anchor x="271" y="610" name="candra"/>
+  <anchor x="279" y="0" name="rakaar"/>
+  <anchor x="271" y="610" name="top"/>
+  <anchor x="415" y="610" name="topright"/>
+  <outline>
+    <component base="dda-gujarati"/>
+    <component base="nukta-gujarati" xOffset="394" yOffset="507"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>nukta-gujarati</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>dda-gujarati</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
+</glyph>
