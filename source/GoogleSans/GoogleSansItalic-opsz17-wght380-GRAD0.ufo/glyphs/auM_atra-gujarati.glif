@@ -4,8 +4,8 @@
   <unicode hex="0ACC"/>
   <anchor x="281" y="628" name="top"/>
   <outline>
-    <component base="aiMatra-gujarati" xOffset="-198"/>
     <component base="aaMatra-gujarati"/>
+    <component base="aiMatra-gujarati" xOffset="-198"/>
   </outline>
   <lib>
     <dict>
@@ -15,15 +15,23 @@
           <key>alignment</key>
           <integer>1</integer>
           <key>index</key>
-          <integer>1</integer>
+          <integer>0</integer>
           <key>name</key>
           <string>aaMatra-gujarati</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>aiMatra-gujarati</string>
         </dict>
       </array>
       <key>com.schriftgestaltung.Glyphs.category</key>
       <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.subCategory</key>
-      <string>Matra</string>
+      <string>Spacing</string>
     </dict>
   </lib>
 </glyph>

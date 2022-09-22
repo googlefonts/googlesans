@@ -1,31 +1,105 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="k_va-gujarati" format="2">
   <advance width="1195"/>
+  <anchor x="992" y="172" name="bottomright"/>
+  <anchor x="992" y="638" name="candra"/>
+  <anchor x="992" y="638" name="top"/>
   <outline>
-    <component base="k-gujarati"/>
-    <component base="va-gujarati" xOffset="507"/>
+    <contour>
+      <point x="303" y="-16" type="curve" smooth="yes"/>
+      <point x="433" y="-16"/>
+      <point x="510" y="48"/>
+      <point x="510" y="151" type="curve" smooth="yes"/>
+      <point x="510" y="209"/>
+      <point x="489" y="257"/>
+      <point x="433" y="287" type="curve"/>
+      <point x="433" y="297" type="line"/>
+      <point x="663" y="295" type="line"/>
+      <point x="663" y="400" type="line"/>
+      <point x="447" y="400" type="line" smooth="yes"/>
+      <point x="408" y="400"/>
+      <point x="373" y="397"/>
+      <point x="340" y="397" type="curve" smooth="yes"/>
+      <point x="273" y="397"/>
+      <point x="235" y="421"/>
+      <point x="235" y="475" type="curve" smooth="yes"/>
+      <point x="235" y="525"/>
+      <point x="268" y="549"/>
+      <point x="327" y="549" type="curve" smooth="yes"/>
+      <point x="364" y="549"/>
+      <point x="395" y="535"/>
+      <point x="422" y="510" type="curve"/>
+      <point x="492" y="589" type="line"/>
+      <point x="448" y="631"/>
+      <point x="391" y="654"/>
+      <point x="319" y="654" type="curve" smooth="yes"/>
+      <point x="196" y="654"/>
+      <point x="120" y="597"/>
+      <point x="120" y="496" type="curve" smooth="yes"/>
+      <point x="120" y="436"/>
+      <point x="148" y="391"/>
+      <point x="199" y="368" type="curve"/>
+      <point x="199" y="358" type="line"/>
+      <point x="32" y="328" type="line"/>
+      <point x="58" y="222" type="line"/>
+      <point x="211" y="254" type="line" smooth="yes"/>
+      <point x="245" y="261"/>
+      <point x="272" y="266"/>
+      <point x="298" y="266" type="curve" smooth="yes"/>
+      <point x="363" y="266"/>
+      <point x="395" y="233"/>
+      <point x="395" y="174" type="curve" smooth="yes"/>
+      <point x="395" y="117"/>
+      <point x="362" y="89"/>
+      <point x="299" y="89" type="curve" smooth="yes"/>
+      <point x="237" y="89"/>
+      <point x="190" y="117"/>
+      <point x="160" y="167" type="curve"/>
+      <point x="67" y="107" type="line"/>
+      <point x="113" y="29"/>
+      <point x="199" y="-16"/>
+    </contour>
+    <contour>
+      <point x="808" y="150" type="curve" smooth="yes"/>
+      <point x="890" y="150"/>
+      <point x="945" y="174"/>
+      <point x="975" y="221" type="curve"/>
+      <point x="875" y="176" type="line"/>
+      <point x="996" y="171" type="line"/>
+      <point x="996" y="438" type="line"/>
+      <point x="935" y="438" type="line"/>
+      <point x="935" y="396" type="line" smooth="yes"/>
+      <point x="935" y="303"/>
+      <point x="893" y="259"/>
+      <point x="807" y="259" type="curve" smooth="yes"/>
+      <point x="717" y="259"/>
+      <point x="674" y="298"/>
+      <point x="674" y="389" type="curve" smooth="yes"/>
+      <point x="674" y="483"/>
+      <point x="720" y="529"/>
+      <point x="806" y="529" type="curve" smooth="yes"/>
+      <point x="826" y="529"/>
+      <point x="840" y="528"/>
+      <point x="855" y="525" type="curve"/>
+      <point x="865" y="634" type="line"/>
+      <point x="847" y="637"/>
+      <point x="830" y="638"/>
+      <point x="802" y="638" type="curve" smooth="yes"/>
+      <point x="653" y="638"/>
+      <point x="557" y="543"/>
+      <point x="557" y="389" type="curve" smooth="yes"/>
+      <point x="557" y="243"/>
+      <point x="658" y="150"/>
+    </contour>
+    <contour>
+      <point x="935" y="162" type="line"/>
+      <point x="1048" y="162" type="line"/>
+      <point x="1048" y="638" type="line"/>
+      <point x="935" y="638" type="line"/>
+    </contour>
   </outline>
   <lib>
     <dict>
-      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
-      <array>
-        <dict>
-          <key>alignment</key>
-          <integer>-1</integer>
-          <key>index</key>
-          <integer>0</integer>
-          <key>name</key>
-          <string>k-gujarati</string>
-        </dict>
-        <dict>
-          <key>alignment</key>
-          <integer>-1</integer>
-          <key>index</key>
-          <integer>1</integer>
-          <key>name</key>
-          <string>va-gujarati</string>
-        </dict>
-      </array>
       <key>com.schriftgestaltung.Glyphs.category</key>
       <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
