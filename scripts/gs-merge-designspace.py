@@ -145,7 +145,7 @@ for import_source in designspace_import.sources:
         )
         continue
 
-    if "GRAD" not in import_source.location:
+    if "Grade" not in import_source.location:
         import_is_ungraded = True
 
     # Fill in the defaults if the import DS does not have e.g. a GRAD axis.
