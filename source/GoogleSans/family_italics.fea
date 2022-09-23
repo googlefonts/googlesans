@@ -22,6 +22,7 @@ languagesystem sinh dflt;
 languagesystem latn ROM;
 languagesystem latn MOL;
 languagesystem latn CAT;
+languagesystem latn NLD;
 languagesystem cyrl BGR;
 languagesystem cyrl BSH;
 languagesystem cyrl CHU;
@@ -63,16 +64,6 @@ feature locl {
 } locl;
 
 feature smcp {
-	sub Bhook by bhook.sc;
-	sub Dhook by dhook.sc;
-	sub Khook by khook.sc;
-	sub Yhook by yhook.sc;
-	sub Schwa by schwa.sc;
-	sub IJ by ij.sc;
-	sub IJacute by ijacute.sc;
-	sub Eopen by eopen.sc;
-	sub Oopen by oopen.sc;
-	sub Sdotbelow by sdotbelow.sc;
     sub ge-cy.loclMKD by ge-cy.sc;
     sub gje-cy.loclMKD by gje-cy.sc;
     sub de-cy.loclSRB by de-cy.sc;

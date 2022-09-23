@@ -43,52 +43,6 @@ languagesystem thai SAN;
 
 include(family.fea);
 
-# TODO: Move back into family.fea when italics are provided for these glyphs.
-feature locl {
-	script latn;
-    language NLD;
-    sub iacute j acutecomb by ijacute;
-    sub Iacute J acutecomb by IJacute;
-    sub iacute.sc j acutecomb by ijacute.sc;
-    sub i j by ij;
-    sub I J by IJ;
-    sub i.sc j.sc by ij.sc;
-    sub iacute j by ijacute;
-    sub Iacute J by IJacute;
-    sub iacute.sc j.sc by ijacute.sc;
-    sub ij acutecomb by ijacute;
-    sub IJ acutecomb by IJacute;
-    sub ij.sc acutecomb by ijacute.sc;
-} locl;
-
-# TODO: Move back into family.fea when italics are provided for these glyphs.
-feature c2sc {
-	sub Bhook by bhook.sc;
-    sub Dhook by dhook.sc;
-    sub Oopen by oopen.sc;
-    sub IJ by ij.sc;
-    sub IJacute by ijacute.sc;
-    sub Khook by khook.sc;
-    sub Eopen by eopen.sc;
-    sub Schwa by schwa.sc;
-    sub Sdotbelow by sdotbelow.sc;
-    sub Yhook by yhook.sc;
-} c2sc;
-
-# TODO: Move back into family.fea when italics are provided for these glyphs.
-feature smcp {
-	sub bhook by bhook.sc;
-    sub dhook by dhook.sc;
-    sub oopen by oopen.sc;
-    sub ij by ij.sc;
-    sub ijacute by ijacute.sc;
-    sub khook by khook.sc;
-    sub eopen by eopen.sc;
-    sub schwa by schwa.sc;
-    sub sdotbelow by sdotbelow.sc;
-    sub yhook by yhook.sc;
-} smcp;
-
 feature ss03 {
     featureNames {
         name "Thin Numbers";
