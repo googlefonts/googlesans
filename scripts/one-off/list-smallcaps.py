@@ -1,18 +1,19 @@
 from ufoLib2 import Font
-from fontTools.unicodedata import script
-from ufo2ft.featureCompiler import parseLayoutFeatures
-from ufo2ft.util import (
-    classifyGlyphs,
-    makeOfficialGlyphOrder,
-    compileGSUB,
-    makeUnicodeToGlyphNameMapping,
-)
+
+# from fontTools.unicodedata import script
+# from ufo2ft.featureCompiler import parseLayoutFeatures
+# from ufo2ft.util import (
+#     classifyGlyphs,
+#     makeOfficialGlyphOrder,
+#     compileGSUB,
+#     makeUnicodeToGlyphNameMapping,
+# )
 
 font = Font.open("source/GoogleSans/GoogleSans-opsz18-wght380-GRAD0.ufo")
 
-smallcaps = set(g.name for g in font if ".sc" in g.name)
+smallcaps = set(g.name for g in font if g.name is not None and ".sc" in g.name)
 
-combining = set(g.name for g in font if "comb" in g.name)
+combining = set(g.name for g in font if g.name is not None and "comb" in g.name)
 print("Combining small caps:")
 print("\n".join(sorted(smallcaps & combining)))
 print()
