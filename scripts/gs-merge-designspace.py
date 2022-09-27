@@ -36,6 +36,7 @@ from typing import Dict, List
 
 import ufoLib2
 from fontTools.designspaceLib import DesignSpaceDocument
+from ufo2ft.util import makeOfficialGlyphOrder
 
 from internal.normalize import location_to_key
 
@@ -293,7 +294,7 @@ for import_source in designspace_import.sources:
     # Import public.glyphOrder while keeping order:
     target_glyph_order: List[str] = target_font.lib["public.glyphOrder"]
     target_glyph_order_set = set(target_glyph_order)
-    for name in import_font.lib["public.glyphOrder"]:
+    for name in makeOfficialGlyphOrder(import_font):
         if name not in target_glyph_order_set and name in import_glyphs:
             target_glyph_order.append(name)
 
