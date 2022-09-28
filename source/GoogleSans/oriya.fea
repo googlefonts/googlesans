@@ -24,6 +24,15 @@ feature locl {
 
 } locl;
 
+feature nukt {
+    script ory2;
+    lookup ODI_dflt_nukt_nukta_forms {
+        sub dda-oriya nukta-oriya by rra-oriya;
+        sub ddha-oriya nukta-oriya by rha-oriya;
+    } ODI_dflt_nukt_nukta_forms;
+
+} nukt;
+
 feature akhn {
     script ory2;
     lookup ODI_dflt_akhn_akhand_conjuncts {
