@@ -1,0 +1,37 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+akhn = true
+rkrf = true
+half = true
+pres = true
+psts = true
+blwm = true
+
+[input]
+script = "gjr2"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ક્ક ક્ત ક્ન ક્મ ક્ય ક્લ ક્વ ક્સ ક્ષ્મ ક્ષ્ય", # Ka Half-form conjuncts
+    "ગ્ન", # Ga Half-form conjuncts
+    "ઘ્ન", # Gha Half-form conjuncts
+    "ચ્છ", # Ca Half-form conjuncts
+    "જ્જ જ્ય", # Ja Half-form conjuncts
+    "ઞ્ચ ઞ્જ", # Nya Half-form conjuncts
+    "ત્ક ત્ક્ર ત્ત ત્ય ત્ત્ય ત્ત્ર ત્ન ત્મ", # Ta Half-form conjuncts
+    "થ્ન", # Tha Half-form conjuncts
+    "ધ્ન", # Dha Half-form conjuncts
+    "ન્થ ન્ન ન્સ", # Na Half-form conjuncts
+    "પ્ક પ્ટ પ્ઠ પ્ત પ્ન પ્ફ", # Pa Half-form conjuncts
+    "ફ્ન ફ્ફ", # Pha Half-form conjuncts
+    "બ્ન", # Ba Half-form conjuncts
+    "મ્ન", # Ma Half-form conjuncts
+    "લ્ટ લ્ડ લ્ય", # La Half-form conjuncts
+    "ળ્ય", # Lla Half-form conjuncts
+    "શ્ચ શ્ન શ્ર્ય શ્વ", # Sha Half-form conjuncts
+    "ષ્ક ષ્ડ ષ્ન ષ્ટ ષ્ઠ", # Ssa Half-form conjuncts
+    "ખ્ય ભ્ય", # Ya post-base form
+    "ત્પ ત્વ" # Alternate Ta Half-form
+]
