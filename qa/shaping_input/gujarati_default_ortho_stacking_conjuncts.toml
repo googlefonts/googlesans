@@ -1,0 +1,25 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+akhn = true
+rkrf = true
+half = true
+cjct = true
+psts = true
+blwm = true
+
+[input]
+script = "gjr2"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ઙ્ક ઙ્ક્ષ ઙ્ગ ઙ્ઘ ઙ્મ ઙ્ય", # Nga conjuncts
+    "છ્વ છ્ય", # Cha conjuncts
+    "ટ્ટ ટ્ઠ ટ્ય ટ્વ", # Tta conjuncts
+    "ઠ્ઠ", # Ttha conjuncts
+    "ડ્ડ ડ્ન ડ્ય ડ્વ", # Dda conjuncts
+    "ઢ્ઢ ઢ્ન ઢ્ય", # Ddha conjuncts
+    "દ્ગ દ્ઘ દ્દ દ્ધ દ્ન દ્બ દ્ભ દ્મ દ્ય દ્વ દ્ર્ય", # Da conjuncts
+    "હ્ણ હ્ન હ્મ હ્ય હ્લ હ્વ" # Ha Half-form conjuncts
+]

@@ -1,0 +1,20 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+rkrf = true
+half = true
+cjct = true
+psts = true
+blwm = true
+
+[input]
+script = "gjr2"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ખુ ઘુ ગ્રુ તુ ખ્રુ દ્ગુ", # dynamic uMatra
+    "ખૂ ઘૂ ગ્રૂ તૂ ખ્રૂ", # dynamic uuMatra
+    "ખૃ ઘૃ ગ્રૃ તૃ ખ્રૃ", # dynamic rVocalicMatra
+    "ખૄ ઘૄ ગ્રૄ તૄ ખ્રૄ" # dynamic rrVocalicMatra
+]
