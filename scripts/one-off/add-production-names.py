@@ -46,9 +46,6 @@ PRODUCTION_NAMES = {
     "schwa.sc": "uni0259.sc",
     "sdotbelow.sc": "uni1E63.sc",
     "yhook.sc": "uni01B4.sc",
-    "IJacute": None,
-    "ijacute": None,
-    "ijacute.sc": None,
     "dotlessij": None,
 }
 
