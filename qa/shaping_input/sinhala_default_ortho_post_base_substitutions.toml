@@ -1,0 +1,16 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+abvs = true
+blws = true
+psts = true
+
+[input]
+script = "sinh"
+language = "dflt"
+comparison_mode = "full"
+text = [
+	"ක්‍ය ක්‍ය් ක්‍යි ක්‍යී ක්‍යු ක්‍යූ", # Post-base forms of Ya
+	"රැ රෑ" # Post-base ligatures of Ae and Aae with Ra
+]
