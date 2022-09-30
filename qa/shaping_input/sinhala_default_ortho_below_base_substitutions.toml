@@ -1,0 +1,14 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+blws = true
+
+[input]
+script = "sinh"
+language = "dflt"
+comparison_mode = "full"
+text = [
+	"කු ඛු ගු ඝු ඞු ඟු චු ඡු ජු ඣු ඤු ඥු ඦු ටු ඨු ඩු ඪු ණු ඬු තු ථු දු ධු නු ඳු පු ඵු බු භු මු ඹු යු රු ලු වු ශු ෂු සු හු ළු ෆු ක්‍ෂු", # uMatra ligature
+	"කූ ඛූ ගූ ඝූ ඞූ ඟූ චූ ඡූ ජූ ඣූ ඤූ ඥූ ඦූ ටූ ඨූ ඩූ ඪූ ණූ ඬූ තූ ථූ දූ ධූ නූ ඳූ පූ ඵූ බූ භූ මූ ඹූ යූ රූ ලූ වූ ශූ ෂූ සූ හූ ළූ ෆූ ක්‍" # uuMatra ligature
+]
