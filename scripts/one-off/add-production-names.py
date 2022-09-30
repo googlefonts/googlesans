@@ -46,7 +46,6 @@ PRODUCTION_NAMES = {
     "schwa.sc": "uni0259.sc",
     "sdotbelow.sc": "uni1E63.sc",
     "yhook.sc": "uni01B4.sc",
-    "dotlessij": None,
 }
 
 for ufo_path in Path("source/GoogleSans").glob("*.ufo"):
