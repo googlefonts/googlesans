@@ -54,6 +54,11 @@ include(gujarati.fea)
 @latn_CombiningTopAccents_sc = [acutecomb.sc brevecomb.sc caroncomb.sc circumflexcomb.sc dieresiscomb.sc dotaccentcomb.sc gravecomb.sc hookabovecomb.sc hungarumlautcomb.sc macroncomb.sc ringcomb.sc tildecomb.sc brevecomb_acutecomb.sc brevecomb_gravecomb.sc brevecomb_hookabovecomb.sc brevecomb_tildecomb.sc circumflexcomb_acutecomb.sc circumflexcomb_gravecomb.sc circumflexcomb_hookabovecomb.sc circumflexcomb_tildecomb.sc brevecombcy.sc];
 @latn_CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb];
 
+# Utility lookups for the /ij/acutecomb decomposition
+lookup ij_to_iacute { sub ij by iacute; sub IJ by Iacute; } ij_to_iacute;
+lookup acutecomb_to_j_acutecomb { sub acutecomb' by j acutecomb; } acutecomb_to_j_acutecomb;
+lookup acutecomb_to_J_acutecomb { sub acutecomb' by J acutecomb; } acutecomb_to_J_acutecomb;
+
 feature ccmp {
     # ===============
     # BEGIN LATIN
@@ -62,8 +67,8 @@ feature ccmp {
         # Decompose the legacy Unicode-encoded ij/IJ ligature
         # Also apply the acutecomb on /ij/IJ in all languages
         # See https://github.com/googlefonts/googlesans/pull/517#issuecomment-1262476039
-        sub ij' acutecomb by iacute jdotless;
-        sub IJ' acutecomb by Iacute J;
+        sub ij' lookup ij_to_iacute acutecomb' lookup acutecomb_to_j_acutecomb;
+        sub IJ' lookup ij_to_iacute acutecomb' lookup acutecomb_to_J_acutecomb;
         sub ij' by i j;
         sub IJ' by I J;
     } ccmp_decompose_legacy_ij_ligature;
