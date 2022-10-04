@@ -41,10 +41,6 @@ feature rkrf {
         sub ja-gujarati halant-gujarati ra-gujarati by j_ra-gujarati;
         sub jha-gujarati halant-gujarati ra-gujarati by jh_ra-gujarati;
         sub nya-gujarati halant-gujarati ra-gujarati by ny_ra-gujarati;
-        sub tta-gujarati halant-gujarati ra-gujarati by tt_ra-gujarati;
-        sub ttha-gujarati halant-gujarati ra-gujarati by tth_ra-gujarati;
-        sub dda-gujarati halant-gujarati ra-gujarati by dd_ra-gujarati;
-        sub ddha-gujarati halant-gujarati ra-gujarati by ddh_ra-gujarati;
         sub nna-gujarati halant-gujarati ra-gujarati by nn_ra-gujarati;
         sub ta-gujarati halant-gujarati ra-gujarati by t_ra-gujarati;
         sub tha-gujarati halant-gujarati ra-gujarati by th_ra-gujarati;
@@ -66,6 +62,14 @@ feature rkrf {
         sub ha-gujarati halant-gujarati ra-gujarati by h_ra-gujarati;
         sub k_ssa-gujarati halant-gujarati ra-gujarati by k_ss_ra-gujarati;
     } GUJ_dflt_half_rakaarForms;
+
+    lookup GUJ_dflt_half_rakaarFormsRoundConsonants {
+        ignore sub [tta-gujarati ttha-gujarati dda-gujarati ddha-gujarati] halant-gujarati [tta-gujarati ttha-gujarati dda-gujarati ddha-gujarati]' halant-gujarati' ra-gujarati';
+        sub tta-gujarati' halant-gujarati' ra-gujarati' by tt_ra-gujarati;
+        sub ttha-gujarati' halant-gujarati' ra-gujarati' by tth_ra-gujarati;
+        sub dda-gujarati' halant-gujarati' ra-gujarati' by dd_ra-gujarati;
+        sub ddha-gujarati' halant-gujarati' ra-gujarati' by ddh_ra-gujarati;
+    } GUJ_dflt_half_rakaarFormsRoundConsonants;
 
 } rkrf;
 
@@ -114,6 +118,7 @@ feature half {
         sub sa-gujarati halant-gujarati by s-gujarati;
         sub ha-gujarati halant-gujarati by h-gujarati;
         sub k_ssa-gujarati halant-gujarati by k_ss-gujarati;
+        sub t_ra-gujarati halant-gujarati by t_r-gujarati;
         sub sh_ra-gujarati halant-gujarati by sh_r-gujarati;
     } GUJ_dflt_half_defaultHalfForms;
 
@@ -151,8 +156,6 @@ feature cjct {
         sub d-gujarati ma-gujarati by d_ma-gujarati;
         sub d-gujarati ya-gujarati by d_ya-gujarati;
         sub d-gujarati va-gujarati by d_va-gujarati;
-        sub l-gujarati tta-gujarati by l_tta-gujarati;
-        sub l-gujarati dda-gujarati by l_dda-gujarati;
         sub h-gujarati nna-gujarati by h_nna-gujarati;
         sub h-gujarati na-gujarati by h_na-gujarati;
         sub h-gujarati ma-gujarati by h_ma-gujarati;
@@ -204,6 +207,8 @@ feature pres {
         sub ph-gujarati pha-gujarati by ph_pha-gujarati;
         sub b-gujarati na-gujarati by b_na-gujarati;
         sub m-gujarati na-gujarati by m_na-gujarati;
+        sub l-gujarati tta-gujarati by l_tta-gujarati;
+        sub l-gujarati dda-gujarati by l_dda-gujarati;
         sub l-gujarati ya-gujarati by l_ya-gujarati;
         sub ll-gujarati ya-gujarati by ll_ya-gujarati;
         sub sh-gujarati ca-gujarati by sh_ca-gujarati;
@@ -257,7 +262,7 @@ feature pres {
     } GUJ_dflt_pres_iMatraVariants_context_dynamic;
 
     lookup GUJ_dflt_pres_halfFormAlternates {
-        sub t-gujarati' [pa-gujarati p-gujarati va-gujarati v-gujarati] by t-gujarati.alt01;
+        sub t-gujarati' [pa-gujarati p-gujarati va-gujarati v-gujarati p_ka-gujarati p_tta-gujarati p_ttha-gujarati p_ta-gujarati p_na-gujarati p_pha-gujarati] by t-gujarati.alt01;
     } GUJ_dflt_pres_halfFormAlternates;
 
 } pres;
