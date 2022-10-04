@@ -1,0 +1,15 @@
+[meta]
+build_commit  = ""
+
+[input]
+script = "orya"
+language = "dflt"
+comparison_mode = "full"
+text = [
+	# Regression checks for googlefonts/googlesans#530
+	"ନ୍ଧ୍ଭ",
+	"ଡ଼ୂ",
+	"ଡ଼ୁ",
+	"ଢ଼ୂ",
+	"ଢ଼ୁ"
+]
