@@ -17692,11 +17692,6 @@
       <key>public.kern2.GRK_zeta</key>
       <integer>20</integer>
     </dict>
-    <key>j-gujarati</key>
-    <dict>
-      <key>public.kern2.GUJ_ja-gujarati_L</key>
-      <integer>-80</integer>
-    </dict>
     <key>ja-ethiopic</key>
     <dict>
       <key>ce-ethiopic</key>
@@ -35006,6 +35001,8 @@
     </dict>
     <key>public.kern1.GUJ_j-gujarati_R</key>
     <dict>
+      <key>public.kern2.GUJ_ja-gujarati_L</key>
+      <integer>-80</integer>
       <key>public.kern2.GUJ_ja_iiMatra-gujarati_L</key>
       <integer>-74</integer>
     </dict>
@@ -35044,6 +35041,12 @@
     </dict>
     <key>public.kern1.GUJ_t-gujarati.alt01_R</key>
     <dict>
+      <key>public.kern2.GUJ_p_ta-gujarati_L</key>
+      <integer>-30</integer>
+      <key>public.kern2.GUJ_p_tta-gujarati_L</key>
+      <integer>-30</integer>
+      <key>public.kern2.GUJ_p_ttha-gujarati_L</key>
+      <integer>-20</integer>
       <key>public.kern2.GUJ_pa-gujarati_L</key>
       <integer>-10</integer>
     </dict>
