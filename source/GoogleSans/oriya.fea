@@ -19,7 +19,7 @@ feature locl {
     } ODI_dflt_locl_odiaPunctuation;
 
     lookup ODI_dflt_locl_odiaDanda {
-        sub [danda-deva dbldanda-deva] by [danda-deva.loclODI dbldanda-deva.loclODI];
+        sub [danda-deva dbldanda-deva] by [danda-deva.loclODIA dbldanda-deva.loclODIA];
     } ODI_dflt_locl_odiaDanda;
 
 } locl;
