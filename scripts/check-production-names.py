@@ -17,7 +17,8 @@
 """Lint production names, checking for mistakes including overloaded names and
 inconsistency within the same designspace.
 
-TODO: If possible, check that naming convention is followed too (e.g. uni* where appropriate).
+TODO: If possible, check that naming convention is followed too (e.g. uni* where
+      appropriate).
 TODO: Check if production name locale matches glyph name locale.
 TODO: Run this automatically on builds.
 """
