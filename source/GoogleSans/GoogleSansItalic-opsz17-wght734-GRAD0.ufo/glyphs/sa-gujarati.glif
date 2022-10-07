@@ -2,24 +2,12 @@
 <glyph name="sa-gujarati" format="2">
   <advance width="840"/>
   <unicode hex="0AB8"/>
-  <anchor x="287" y="0" name="bottom"/>
-  <anchor x="623" y="176" name="bottomright"/>
+  <anchor x="287" y="171" name="bottom"/>
+  <anchor x="622" y="171" name="bottomright"/>
   <anchor x="638" y="638" name="candra"/>
   <anchor x="638" y="638" name="top"/>
   <anchor x="457" y="638" name="topright"/>
   <outline>
-    <contour>
-      <point x="387" y="293" type="line"/>
-      <point x="635" y="293" type="line"/>
-      <point x="653" y="399" type="line"/>
-      <point x="405" y="399" type="line"/>
-    </contour>
-    <contour>
-      <point x="565" y="165" type="line"/>
-      <point x="678" y="165" type="line"/>
-      <point x="762" y="638" type="line"/>
-      <point x="649" y="638" type="line"/>
-    </contour>
     <contour>
       <point x="260" y="214" type="curve" smooth="yes"/>
       <point x="417" y="214"/>
@@ -78,6 +66,18 @@
       <point x="103" y="171" type="curve" smooth="yes"/>
       <point x="103" y="46"/>
       <point x="189" y="-16"/>
+    </contour>
+    <contour>
+      <point x="387" y="293" type="line"/>
+      <point x="635" y="293" type="line"/>
+      <point x="653" y="399" type="line"/>
+      <point x="405" y="399" type="line"/>
+    </contour>
+    <contour>
+      <point x="565" y="165" type="line"/>
+      <point x="678" y="165" type="line"/>
+      <point x="762" y="638" type="line"/>
+      <point x="649" y="638" type="line"/>
     </contour>
   </outline>
   <lib>

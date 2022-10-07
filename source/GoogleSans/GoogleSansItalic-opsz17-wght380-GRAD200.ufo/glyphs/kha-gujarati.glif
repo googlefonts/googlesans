@@ -2,16 +2,10 @@
 <glyph name="kha-gujarati" format="2">
   <advance width="810"/>
   <unicode hex="0A96"/>
-  <anchor x="605" y="163" name="bottomright"/>
+  <anchor x="602" y="145" name="bottomright"/>
   <anchor x="687" y="628" name="candra"/>
   <anchor x="687" y="628" name="top"/>
   <outline>
-    <contour>
-      <point x="416" y="307" type="line"/>
-      <point x="619" y="307" type="line"/>
-      <point x="633" y="389" type="line"/>
-      <point x="430" y="389" type="line"/>
-    </contour>
     <contour>
       <point x="263" y="122" type="curve" smooth="yes"/>
       <point x="368" y="122"/>
@@ -53,10 +47,16 @@
       <point x="160" y="122"/>
     </contour>
     <contour>
+      <point x="416" y="307" type="line"/>
+      <point x="619" y="307" type="line"/>
+      <point x="633" y="389" type="line"/>
+      <point x="430" y="389" type="line"/>
+    </contour>
+    <contour>
+      <point x="557" y="135" type="line"/>
       <point x="643" y="135" type="line"/>
       <point x="731" y="628" type="line"/>
       <point x="645" y="628" type="line"/>
-      <point x="557" y="135" type="line"/>
     </contour>
   </outline>
   <lib>

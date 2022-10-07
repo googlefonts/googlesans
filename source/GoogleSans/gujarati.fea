@@ -1,4 +1,4 @@
-@GUJ_shortTopMatras = [ka-gujarati nga-gujarati cha-gujarati ja-gujarati tta-gujarati ttha-gujarati dda-gujarati ddha-gujarati da-gujarati pha-gujarati ra-gujarati ha-gujarati zha-gujarati k_ra-gujarati j_ra-gujarati tt_ra-gujarati tth_ra-gujarati dd_ra-gujarati ddh_ra-gujarati ph_ra-gujarati d_ra-gujarati h_ra-gujarati k_ka-gujarati ng_ka-gujarati ng_k_ssa-gujarati ng_ga-gujarati ng_gha-gujarati ng_ma-gujarati c_cha-gujarati ch_va-gujarati j_ja-gujarati tt_tta-gujarati tt_ttha-gujarati tt_va-gujarati tth_ttha-gujarati dd_dda-gujarati dd_na-gujarati dd_va-gujarati ddh_ddha-gujarati ddh_na-gujarati t_ka-gujarati t_k_ra-gujarati d_ga-gujarati d_gha-gujarati d_da-gujarati d_dha-gujarati d_na-gujarati d_ba-gujarati d_bha-gujarati d_va-gujarati p_ka-gujarati p_pha-gujarati ph_pha-gujarati ss_ka-gujarati ss_dda-gujarati s_ka-gujarati s_k_ra-gujarati s_pha-gujarati h_nna-gujarati h_na-gujarati h_la-gujarati h_va-gujarati];
+@GUJ_shortTopMatras = [ka-gujarati nga-gujarati cha-gujarati ja-gujarati tta-gujarati ttha-gujarati dda-gujarati ddha-gujarati da-gujarati pha-gujarati ra-gujarati ha-gujarati zha-gujarati k_ra-gujarati j_ra-gujarati tt_ra-gujarati tth_ra-gujarati dd_ra-gujarati ddh_ra-gujarati ph_ra-gujarati d_ra-gujarati h_ra-gujarati k_ka-gujarati ng_ka-gujarati ng_k_ssa-gujarati ng_ga-gujarati ng_gha-gujarati ng_ma-gujarati c_cha-gujarati ch_va-gujarati j_ja-gujarati tt_tta-gujarati tt_ttha-gujarati tt_va-gujarati tth_ttha-gujarati dd_dda-gujarati dd_na-gujarati dd_va-gujarati ddh_ddha-gujarati ddh_na-gujarati t_ka-gujarati t_k_ra-gujarati d_ga-gujarati d_gha-gujarati d_da-gujarati d_dha-gujarati d_na-gujarati d_ba-gujarati d_bha-gujarati d_va-gujarati p_ka-gujarati p_pha-gujarati ph_pha-gujarati ss_ka-gujarati ss_dda-gujarati s_ka-gujarati s_k_ra-gujarati s_pha-gujarati h_nna-gujarati h_na-gujarati h_la-gujarati h_va-gujarati l_ka-gujarati];
 @GUJ_straightConnection_short = [kha-gujarati ga-gujarati nya-gujarati dha-gujarati na-gujarati pa-gujarati ba-gujarati ma-gujarati lla-gujarati va-gujarati ssa-gujarati ya-gujarati.post t_ra-gujarati k_na-gujarati k_ma-gujarati k_ya-gujarati k_la-gujarati k_va-gujarati k_ss_ma-gujarati k_ss_ya-gujarati ng_ya-gujarati ch_va-gujarati ch_ya-gujarati j_ya-gujarati ng_ga-gujarati ng_ma-gujarati ng_gha-gujarati t_ra-gujarati tt_ya-gujarati tt_va-gujarati dd_na-gujarati dd_ya-gujarati dd_va-gujarati ddh_na-gujarati t_ya-gujarati t_t_ya-gujarati t_ma-gujarati ph_na-gujarati l_ya-gujarati ll_ya-gujarati s_tha-gujarati s_ma-gujarati];
 @GUJ_straightConnection_medium = [gha-gujarati ca-gujarati tha-gujarati bha-gujarati ya-gujarati c_ra-gujarati nn_ra-gujarati th_ra-gujarati dh_ra-gujarati p_ra-gujarati y_ra-gujarati v_ra-gujarati sh_ra-gujarati ss_ra-gujarati s_ra-gujarati ddh_ya-gujarati d_ma-gujarati d_ya-gujarati n_na-gujarati d_r_ya-gujarati n_tha-gujarati sh_r_ya-gujarati s_t_ra-gujarati s_ya-gujarati];
 @GUJ_straightConnection_medium_altuMatra = [g_ra-gujarati gh_ra-gujarati ny_ra-gujarati n_ra-gujarati ll_ra-gujarati h_ma-gujarati h_ya-gujarati];
@@ -8,7 +8,7 @@
 @GUJ_all_vanaanks = [aaMatra-gujarati.vanaank aaMatra-gujarati.vanaank.alt01 aaMatra-gujarati.vanaank.alt02];
 @GUJ_iMatra_L1 = [ka-gujarati nga-gujarati tta-gujarati ttha-gujarati dda-gujarati ddha-gujarati da-gujarati pha-gujarati ra-gujarati ha-gujarati k_ra-gujarati tt_ra-gujarati tth_ra-gujarati dd_ra-gujarati ddh_ra-gujarati t_ra-gujarati ph_ra-gujarati d_ra-gujarati h_ra-gujarati ng_ka-gujarati ng_k_ssa-gujarati ng_ga-gujarati ng_gha-gujarati ng_ma-gujarati tt_tta-gujarati tt_ttha-gujarati tt_va-gujarati tth_ttha-gujarati dd_dda-gujarati dd_na-gujarati dd_va-gujarati ddh_ddha-gujarati ddh_na-gujarati d_ga-gujarati d_da-gujarati d_na-gujarati d_ba-gujarati d_va-gujarati h_nna-gujarati h_na-gujarati h_la-gujarati h_va-gujarati];
 @GUJ_iMatra_L2 = [ga-gujarati gha-gujarati ca-gujarati cha-gujarati jha-gujarati nya-gujarati ta-gujarati tha-gujarati dha-gujarati na-gujarati pa-gujarati ma-gujarati ya-gujarati la-gujarati va-gujarati ssa-gujarati g_ra-gujarati gh_ra-gujarati c_ra-gujarati jh_ra-gujarati ny_ra-gujarati th_ra-gujarati dh_ra-gujarati n_ra-gujarati p_ra-gujarati m_ra-gujarati y_ra-gujarati ll_ra-gujarati l_ra-gujarati v_ra-gujarati ss_ra-gujarati j_nya-gujarati g_na-gujarati gh_na-gujarati ch_va-gujarati t_ta-gujarati t_t_ra-gujarati t_na-gujarati th_na-gujarati d_gha-gujarati d_dha-gujarati d_bha-gujarati d_ma-gujarati d_ya-gujarati dh_na-gujarati n_na-gujarati p_ka-gujarati p_tta-gujarati p_ttha-gujarati p_ta-gujarati p_na-gujarati p_pha-gujarati m_na-gujarati ss_ka-gujarati ss_dda-gujarati ss_na-gujarati ss_tta-gujarati ss_ttha-gujarati];
-@GUJ_iMatra_L3 = [kha-gujarati ba-gujarati bha-gujarati lla-gujarati sha-gujarati sa-gujarati kh_ra-gujarati b_ra-gujarati bh_ra-gujarati sh_ra-gujarati s_ra-gujarati k_ss_ra-gujarati k_ssa-gujarati k_ka-gujarati ny_ca-gujarati ny_ja-gujarati t_ka-gujarati t_k_ra-gujarati t_ya-gujarati t_t_ya-gujarati t_ma-gujarati n_tha-gujarati b_na-gujarati sh_ca-gujarati sh_na-gujarati sh_va-gujarati s_na-gujarati h_ma-gujarati h_ya-gujarati];
+@GUJ_iMatra_L3 = [kha-gujarati ba-gujarati bha-gujarati lla-gujarati sha-gujarati sa-gujarati kh_ra-gujarati b_ra-gujarati bh_ra-gujarati sh_ra-gujarati s_ra-gujarati k_ss_ra-gujarati k_ssa-gujarati k_ka-gujarati ny_ca-gujarati ny_ja-gujarati t_ka-gujarati t_k_ra-gujarati t_ya-gujarati t_t_ya-gujarati t_ma-gujarati n_tha-gujarati b_na-gujarati sh_ca-gujarati sh_na-gujarati sh_va-gujarati s_na-gujarati h_ma-gujarati h_ya-gujarati l_ka-gujarati];
 @GUJ_iMatra_L4 = [ja-gujarati nna-gujarati zha-gujarati j_ra-gujarati nn_ra-gujarati k_ta-gujarati k_na-gujarati k_ma-gujarati k_ya-gujarati k_la-gujarati k_va-gujarati k_sa-gujarati k_ss_ma-gujarati k_ss_ya-gujarati ng_ya-gujarati c_cha-gujarati ch_ya-gujarati j_ya-gujarati tt_ya-gujarati dd_ya-gujarati ddh_ya-gujarati d_r_ya-gujarati n_sa-gujarati ph_na-gujarati ph_pha-gujarati l_tta-gujarati l_dda-gujarati l_ya-gujarati ll_ya-gujarati sh_r_ya-gujarati s_ka-gujarati s_k_ra-gujarati s_t_ra-gujarati s_tha-gujarati s_pha-gujarati s_ma-gujarati s_ya-gujarati];
 @GUJ_iMatra_L5 = [j_ja-gujarati];
 
@@ -207,6 +207,7 @@ feature pres {
         sub ph-gujarati pha-gujarati by ph_pha-gujarati;
         sub b-gujarati na-gujarati by b_na-gujarati;
         sub m-gujarati na-gujarati by m_na-gujarati;
+        sub l-gujarati ka-gujarati by l_ka-gujarati;
         sub l-gujarati tta-gujarati by l_tta-gujarati;
         sub l-gujarati dda-gujarati by l_dda-gujarati;
         sub l-gujarati ya-gujarati by l_ya-gujarati;
@@ -244,6 +245,17 @@ feature pres {
         sub sh_r-gujarati ya-gujarati by sh_r_ya-gujarati;
     } GUJ_dflt_pres_triConsonantConjuncts;
 
+    lookup GUJ_dflt_pres_halfFormAlternates {
+        sub t-gujarati' [pa-gujarati p-gujarati va-gujarati v-gujarati p_ka-gujarati p_tta-gujarati p_ttha-gujarati p_ta-gujarati p_na-gujarati p_pha-gujarati] by t-gujarati.alt01;
+        sub t-gujarati' [sa-gujarati s-gujarati s_ra-gujarati s_ka-gujarati s_k_ra-gujarati s_t_ra-gujarati s_tha-gujarati s_na-gujarati s_pha-gujarati s_ma-gujarati s_ya-gujarati] by t-gujarati.alt02;
+        sub n-gujarati' [nga-gujarati tta-gujarati ttha-gujarati dda-gujarati ddha-gujarati ng-gujarati tt-gujarati tth-gujarati dd-gujarati ddh-gujarati tt_ra-gujarati tth_ra-gujarati dd_ra-gujarati ddh_ra-gujarati tt_ya-gujarati dd_ya-gujarati ddh_ya-gujarati] by n-gujarati.alt01;
+    } GUJ_dflt_pres_halfFormAlternates;
+
+    lookup GUJ_dflt_pres_conjunctHalfForms {
+        sub t_ta-gujarati halant-gujarati by t_t-gujarati;
+        sub t-gujarati [t-gujarati t-gujarati.alt01 t-gujarati.alt02] by t_t-gujarati;
+    } GUJ_dflt_pres_conjunctHalfForms;
+
     lookup GUJ_dflt_pres_topMatraLigatures {
         sub reph-gujarati anusvara-gujarati by reph_anusvara-gujarati;
     } GUJ_dflt_pres_topMatraLigatures;
@@ -258,12 +270,9 @@ feature pres {
     lookup GUJ_dflt_pres_iMatraVariants_context_dynamic {
         sub iMatra-gujarati' kh-gujarati ya-gujarati.post by iMatra-gujarati.alt05;
         sub iMatra-gujarati' bh-gujarati ya-gujarati.post by iMatra-gujarati.alt05;
-        sub iMatra-gujarati' k-gujarati s-gujarati [pa-gujarati p-gujarati p_ra-gujarati] by iMatra-gujarati.alt05;
+        sub iMatra-gujarati' k-gujarati s-gujarati [pa-gujarati p-gujarati p_ra-gujarati p_ka-gujarati p_tta-gujarati p_ttha-gujarati p_ta-gujarati p_na-gujarati p_pha-gujarati] by iMatra-gujarati.alt05;
+        sub iMatra-gujarati' t-gujarati.alt02 [sa-gujarati s-gujarati s_ra-gujarati s_ka-gujarati s_k_ra-gujarati s_t_ra-gujarati s_tha-gujarati s_na-gujarati s_pha-gujarati s_ma-gujarati s_ya-gujarati] by iMatra-gujarati.alt04;
     } GUJ_dflt_pres_iMatraVariants_context_dynamic;
-
-    lookup GUJ_dflt_pres_halfFormAlternates {
-        sub t-gujarati' [pa-gujarati p-gujarati va-gujarati v-gujarati p_ka-gujarati p_tta-gujarati p_ttha-gujarati p_ta-gujarati p_na-gujarati p_pha-gujarati] by t-gujarati.alt01;
-    } GUJ_dflt_pres_halfFormAlternates;
 
 } pres;
 
@@ -565,5 +574,12 @@ feature psts {
     lookup GUJ_dflt_psts_dyn_rVocalicMatra_LD_C {
         sub [@GUJ_straightConnection_long @GUJ_straightConnection_long_altuMatra] aaMatra-gujarati.segment.alt02 rrVocalicMatra-gujarati' by rrVocalicMatra-gujarati.alt01;
     } GUJ_dflt_psts_dyn_rVocalicMatra_LD_C;
+
+    # -------------------------------------------
+    # Long Kana connection with below-base Rakaar
+    # -------------------------------------------
+    lookup GUJ_dflt_psts_dyn_JNYa_rakaar_A {
+        sub [j_nya-gujarati] [@GUJ_all_vanaanks]' [rakar-gujarati] by aaMatra-gujarati.segment.alt02;
+    } GUJ_dflt_psts_dyn_JNYa_rakaar_A;
 
 } psts;
