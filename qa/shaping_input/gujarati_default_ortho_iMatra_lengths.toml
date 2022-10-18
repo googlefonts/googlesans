@@ -1,0 +1,16 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+half = true
+pres = true
+psts = true
+blwm = true
+
+[input]
+script = "gujr"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "કિ ગિ ખિ જિ જ્જિ" # iMatra lengths
+]

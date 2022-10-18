@@ -1,0 +1,14 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+blws = true
+psts = true
+
+[input]
+script = "gujr"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "રુ રૂ દૃ હૃ જા જી ૹા ૹી" # Consonant-vowel ligatures
+]
