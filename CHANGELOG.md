@@ -1,5 +1,33 @@
 # Google Sans Changelog
 
+
+## Version 10.000
+
+### New
+
+- add Gujarati script (#525)
+- add Sinhala script (#469)
+- add Odia script (#515)
+- add scripts/remove-skipped-glyphs.py
+- add scripts/one-off/check-script-tags.py 
+
+### Changed
+
+- removed r-ligatures (#528)
+
+### Fixed
+
+- Removed stale glyphs (#513)
+- Updated tags to match ISO-15924 Harfbuzz shaping tags (#303)
+
+### Dependencies
+
+- 
+
+### Technical
+
+- Upgraded GitHub actions production compile runner environment to improve overall compile time (#464)
+
 ## Version 9.000
 
 ### New
