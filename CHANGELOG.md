@@ -7,6 +7,8 @@
 - add Telugu script (#481)
 - add recalc-winascdesc.py script (#481)
 - add reset-gdef.py script (#481)
+- add scripts/remove-skipped-glyphs.py
+- add scripts/one-off/check-script-tags.py 
 
 ### Changed
 
