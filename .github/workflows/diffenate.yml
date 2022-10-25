@@ -1,0 +1,88 @@
+name: Compare VFs against previous release
+
+on:
+  push:
+    branches:
+      - main # remove this since one workflow is working well. We only want to run this on diff-* branches.
+      - "diff-*"
+  # rm as well once this is working correctly
+  pull_request:
+
+jobs:
+  build-variable:
+    runs-on: [googlefonts-64cores-256GB]
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python v3.x environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - name: Build variable fonts
+        run: |
+          make setup
+          . .venv/bin/activate && make -j gs-vf
+      - uses: actions/upload-artifact@v3
+        with:
+          name: variable-fonts
+          path: 'build/GoogleSans/variable'
+
+  screenshot:
+    needs:
+      - build-variable
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python v3.x environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - uses: actions/download-artifact@v3
+        with:
+          name: variable-fonts
+          path: 'build/GoogleSans/variable'
+      - name: Browser Screenshots
+        uses: f-actions/diffenator2@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: build/GoogleSans/variable/*.ttf
+          fetch-before: 'github-release'
+          repo: 'googlefonts/googlesans'
+          path-before: build/GoogleSans/variable/*.ttf
+          run-diffenator: false
+          run-diffbrowsers: true
+          filter-styles: "Regular|Italic|Bold|Bold Italic"
+
+  diffenator:
+    needs:
+      - build-variable
+    runs-on: [googlefonts-64cores-256GB]
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python v3.x environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - uses: actions/download-artifact@v3
+        with:
+          name: variable-fonts
+          path: 'build/GoogleSans/variable'
+      - name: Diffenator
+        uses: f-actions/diffenator2@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: build/GoogleSans/variable/*.ttf
+          fetch-before: 'github-release'
+          repo: 'googlefonts/googlesans'
+          path-before: build/GoogleSans/variable/*.ttf
+          run-diffenator: true
+          run-diffbrowsers: false
+          filter-styles: "Regular|Italic|Bold|Bold Italic"
