@@ -3,10 +3,7 @@ name: Compare VFs against previous release
 on:
   push:
     branches:
-      - main # remove this since one workflow is working well. We only want to run this on diff-* branches.
       - "diff-*"
-  # rm as well once this is working correctly
-  pull_request:
 
 jobs:
   build-variable:
