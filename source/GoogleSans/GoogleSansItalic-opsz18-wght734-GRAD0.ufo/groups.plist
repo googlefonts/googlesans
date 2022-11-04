@@ -38,6 +38,7 @@
     <array>
       <string>B</string>
       <string>Ve-cy</string>
+      <string>Bhook</string>
     </array>
     <key>public.kern1.BNG_d-beng.half2_L</key>
     <array>
@@ -84,6 +85,7 @@
       <string>Reversedze-cy</string>
       <string>Esdescender-cy.loclBSH</string>
       <string>Esdescender-cy.loclCHU</string>
+      <string>Eopen</string>
     </array>
     <key>public.kern1.D</key>
     <array>
@@ -91,6 +93,7 @@
       <string>Eth</string>
       <string>Dcaron</string>
       <string>Dcroat</string>
+      <string>Dhook</string>
     </array>
     <key>public.kern1.DEV_b-deva.alt3_L</key>
     <array>
@@ -1322,12 +1325,17 @@
       <string>J</string>
       <string>Jcircumflex</string>
       <string>Je-cy</string>
+      <string>IJ</string>
     </array>
     <key>public.kern1.K</key>
     <array>
       <string>K</string>
       <string>Kcommaaccent</string>
       <string>K.alt</string>
+    </array>
+    <key>public.kern1.Khook</key>
+    <array>
+      <string>Khook</string>
     </array>
     <key>public.kern1.L</key>
     <array>
@@ -1383,6 +1391,8 @@
       <string>Edieresis-cy</string>
       <string>Qa-cy</string>
       <string>Ef-cy.loclBGR</string>
+      <string>Oopen</string>
+      <string>Schwa</string>
     </array>
     <key>public.kern1.ODI_a-oriya-L</key>
     <array>
@@ -1736,6 +1746,7 @@
       <string>Scircumflex</string>
       <string>Scommaaccent</string>
       <string>Dze-cy</string>
+      <string>Sdotbelow</string>
     </array>
     <key>public.kern1.SNH_a-sinhala_R</key>
     <array>
@@ -3284,6 +3295,10 @@
       <string>Ustraightstroke-cy</string>
       <string>ustraight-cy.sc</string>
     </array>
+    <key>public.kern1.Yhook</key>
+    <array>
+      <string>Yhook</string>
+    </array>
     <key>public.kern1.Z</key>
     <array>
       <string>Z</string>
@@ -3769,6 +3784,7 @@
       <string>thorn</string>
       <string>f_b</string>
       <string>f_f_b</string>
+      <string>bhook</string>
     </array>
     <key>public.kern1.b.sc</key>
     <array>
@@ -3836,6 +3852,7 @@
       <string>reversedze-cy</string>
       <string>esdescender-cy.loclBSH</string>
       <string>esdescender-cy.loclCHU</string>
+      <string>eopen</string>
     </array>
     <key>public.kern1.c.sc</key>
     <array>
@@ -3853,6 +3870,7 @@
       <string>reversedze-cy.sc</string>
       <string>esdescender-cy.loclBSH.sc</string>
       <string>esdescender-cy.loclCHU.sc</string>
+      <string>eopen.sc</string>
     </array>
     <key>public.kern1.circle</key>
     <array>
@@ -3879,6 +3897,7 @@
       <string>copyright.alt</string>
       <string>registered.alt</string>
       <string>published.alt</string>
+      <string>G.circ</string>
     </array>
     <key>public.kern1.colon</key>
     <array>
@@ -4194,6 +4213,10 @@
       <string>hyphen.cap</string>
       <string>endash.cap</string>
       <string>emdash.cap</string>
+    </array>
+    <key>public.kern1.dhook</key>
+    <array>
+      <string>dhook</string>
     </array>
     <key>public.kern1.e</key>
     <array>
@@ -4814,12 +4837,14 @@
       <string>f_f_j</string>
       <string>f_j</string>
       <string>je-cy</string>
+      <string>ij</string>
     </array>
     <key>public.kern1.j.sc</key>
     <array>
       <string>j.sc</string>
       <string>jcircumflex.sc</string>
       <string>je-cy.sc</string>
+      <string>ij.sc</string>
     </array>
     <key>public.kern1.k</key>
     <array>
@@ -4828,6 +4853,7 @@
       <string>k.alt</string>
       <string>f_f_k</string>
       <string>f_k</string>
+      <string>khook</string>
     </array>
     <key>public.kern1.k.sc</key>
     <array>
@@ -4935,7 +4961,6 @@
     </array>
     <key>public.kern1.o</key>
     <array>
-      <string>schwa</string>
       <string>o</string>
       <string>oacute</string>
       <string>obreve</string>
@@ -4969,6 +4994,8 @@
       <string>ef-cy.loclBGR</string>
       <string>iu-cy.loclBGR</string>
       <string>be-cy.loclSRB</string>
+      <string>oopen</string>
+      <string>schwa</string>
     </array>
     <key>public.kern1.o.sc</key>
     <array>
@@ -5009,6 +5036,10 @@
       <string>edieresis-cy.sc</string>
       <string>qa-cy.sc</string>
       <string>ef-cy.loclBGR.sc</string>
+      <string>bhook.sc</string>
+      <string>dhook.sc</string>
+      <string>oopen.sc</string>
+      <string>schwa.sc</string>
     </array>
     <key>public.kern1.ohorn.sc</key>
     <array>
@@ -5114,6 +5145,7 @@
       <string>scircumflex</string>
       <string>scommaaccent</string>
       <string>dze-cy</string>
+      <string>sdotbelow</string>
     </array>
     <key>public.kern1.s.sc</key>
     <array>
@@ -5124,6 +5156,7 @@
       <string>scircumflex.sc</string>
       <string>scommaaccent.sc</string>
       <string>dze-cy.sc</string>
+      <string>sdotbelow.sc</string>
     </array>
     <key>public.kern1.seven</key>
     <array>
@@ -5304,6 +5337,14 @@
       <string>ytilde.sc</string>
       <string>ustraightstroke-cy.sc</string>
     </array>
+    <key>public.kern1.yhook</key>
+    <array>
+      <string>yhook</string>
+    </array>
+    <key>public.kern1.yhook.sc</key>
+    <array>
+      <string>yhook.sc</string>
+    </array>
     <key>public.kern1.yod-hb</key>
     <array>
       <string>yodyod-hb</string>
@@ -5407,6 +5448,11 @@
     <key>public.kern2.Ban-georgian</key>
     <array>
       <string>Ban-georgian</string>
+    </array>
+    <key>public.kern2.Bhook</key>
+    <array>
+      <string>Bhook</string>
+      <string>Dhook</string>
     </array>
     <key>public.kern2.Can-georgian</key>
     <array>
@@ -6996,6 +7042,10 @@
     <array>
       <string>Ohm</string>
     </array>
+    <key>public.kern2.Oopen</key>
+    <array>
+      <string>Oopen</string>
+    </array>
     <key>public.kern2.S</key>
     <array>
       <string>S</string>
@@ -7005,6 +7055,7 @@
       <string>Scircumflex</string>
       <string>Scommaaccent</string>
       <string>Dze-cy</string>
+      <string>Sdotbelow</string>
     </array>
     <key>public.kern2.SNH_a-sinhala_L</key>
     <array>
@@ -8323,6 +8374,7 @@
       <string>Ustraight-cy</string>
       <string>Ustraightstroke-cy</string>
       <string>ustraight-cy.sc</string>
+      <string>Yhook</string>
     </array>
     <key>public.kern2.Z</key>
     <array>
@@ -8778,6 +8830,11 @@
       <string>betdagesh-hb</string>
       <string>betrafe-hb</string>
     </array>
+    <key>public.kern2.bhook.sc</key>
+    <array>
+      <string>bhook.sc</string>
+      <string>dhook.sc</string>
+    </array>
     <key>public.kern2.boBae-lao</key>
     <array>
       <string>thoThong-lao</string>
@@ -8831,6 +8888,7 @@
       <string>copyright.alt</string>
       <string>registered.alt</string>
       <string>published.alt</string>
+      <string>G.circ</string>
     </array>
     <key>public.kern2.colon</key>
     <array>
@@ -8879,6 +8937,7 @@
     <array>
       <string>Ereversed-cy</string>
       <string>Schwa-cy</string>
+      <string>Schwa</string>
     </array>
     <key>public.kern2.cyr_F</key>
     <array>
@@ -9873,6 +9932,8 @@
       <string>gestrokehook-cy.sc</string>
       <string>ertick-cy.sc</string>
       <string>ghestroke-cy.loclBSH.sc</string>
+      <string>ij.sc</string>
+      <string>khook.sc</string>
     </array>
     <key>public.kern2.het-hb</key>
     <array>
@@ -9900,6 +9961,7 @@
       <string>ihookabove</string>
       <string>iogonek</string>
       <string>i-cy</string>
+      <string>ij</string>
     </array>
     <key>public.kern2.i_left</key>
     <array>
@@ -10000,6 +10062,8 @@
       <string>ve-cy.loclBGR</string>
       <string>ka-cy.loclBGR</string>
       <string>iu-cy.loclBGR</string>
+      <string>bhook</string>
+      <string>khook</string>
     </array>
     <key>public.kern2.lamed-hb</key>
     <array>
@@ -10136,7 +10200,6 @@
       <string>emacron</string>
       <string>eogonek</string>
       <string>etilde</string>
-      <string>schwa</string>
       <string>o</string>
       <string>oacute</string>
       <string>obreve</string>
@@ -10200,6 +10263,9 @@
       <string>ef-cy.loclBGR</string>
       <string>esdescender-cy.loclBSH</string>
       <string>esdescender-cy.loclCHU</string>
+      <string>dhook</string>
+      <string>eopen</string>
+      <string>schwa</string>
     </array>
     <key>public.kern2.o.sc</key>
     <array>
@@ -10260,6 +10326,8 @@
       <string>ef-cy.loclBGR.sc</string>
       <string>esdescender-cy.loclBSH.sc</string>
       <string>esdescender-cy.loclCHU.sc</string>
+      <string>eopen.sc</string>
+      <string>schwa.sc</string>
     </array>
     <key>public.kern2.o.sc.ss04</key>
     <array>
@@ -10269,6 +10337,10 @@
     <array>
       <string>one.numerator</string>
       <string>onesuperior</string>
+    </array>
+    <key>public.kern2.oopen</key>
+    <array>
+      <string>oopen</string>
     </array>
     <key>public.kern2.ords</key>
     <array>
@@ -10368,6 +10440,7 @@
       <string>scircumflex</string>
       <string>scommaaccent</string>
       <string>dze-cy</string>
+      <string>sdotbelow</string>
     </array>
     <key>public.kern2.s.sc</key>
     <array>
@@ -10378,6 +10451,7 @@
       <string>scircumflex.sc</string>
       <string>scommaaccent.sc</string>
       <string>dze-cy.sc</string>
+      <string>sdotbelow.sc</string>
     </array>
     <key>public.kern2.seven</key>
     <array>
@@ -10577,6 +10651,7 @@
       <string>umacron-cy</string>
       <string>udieresis-cy</string>
       <string>uhungarumlaut-cy</string>
+      <string>yhook</string>
     </array>
     <key>public.kern2.y.sc</key>
     <array>
@@ -10589,6 +10664,7 @@
       <string>yhookabove.sc</string>
       <string>ytilde.sc</string>
       <string>ustraightstroke-cy.sc</string>
+      <string>yhook.sc</string>
     </array>
     <key>public.kern2.yod-hb</key>
     <array>

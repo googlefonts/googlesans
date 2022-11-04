@@ -171,15 +171,9 @@ Assuming the vendor delivered 2 Glyphs.app source files, uprights and italics, t
 3. Import the resulting Designspaces into their intended target Designspaces:
 
 ```bash
-$ python3 scripts/gs-merge-designspace.py \
-    --source source/GoogleSans/staging/GoogleSansSomeScript.designspace \
-    --target source/GoogleSans/GoogleSans.designspace \
-    --import-glyphs-file import_glyphs.txt
+$ python3 scripts/gs-merge-designspace.py --source source/GoogleSans/staging/GoogleSansSomeScript.designspace --target source/GoogleSans/GoogleSans.designspace --import-glyphs-file source/GoogleSans/staging/import_glyphs.txt
 
-$ python3 scripts/gs-merge-designspace.py \
-    --source source/GoogleSans/staging/GoogleSansSomeScript-Italic.designspace \
-    --target source/GoogleSans/GoogleSans-Italic.designspace \
-    --import-glyphs-file import_glyphs_italic.txt
+$ python3 scripts/gs-merge-designspace.py --source source/GoogleSans/staging/GoogleSansSomeScript-Italic.designspace --target source/GoogleSans/GoogleSans-Italic.designspace --import-glyphs-file source/GoogleSans/staging/import_glyphs_italic.txt
 ```
 
 (Note: if you also have a group list, specify it as an additional switch like so: `--import-groups-file import_groups_italic.txt`)
