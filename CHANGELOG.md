@@ -1,5 +1,50 @@
 # Google Sans Changelog
 
+## v10.001
+
+### New
+
+- add Azerbaijani language support (#517)
+- add Dutch language support (#517)
+- add Hausa language support (#517)
+- add Yoruba language support (#517)
+- add LATIN CAPITAL LETTER SCHWA (U+018F, required for Azerbaijani)
+- add LATIN CAPITAL LIGATURE IJ (U+0132, required for Dutch)
+- add LATIN SMALL LIGATURE IJ (U+0133, required for Dutch)
+- add LATIN CAPITAL LETTER K WITH HOOK (U+0198, required for Hausa)
+- add LATIN CAPITAL LETTER Y WITH HOOK (U+01B3, required for Hausa)
+- add LATIN CAPITAL LETTER B WITH HOOK (U+0181, required for Hausa)
+- add LATIN CAPITAL LETTER D WITH HOOK (U+018A, required for Hausa)
+- add LATIN SMALL LETTER K WITH HOOK (U+0199, required for Hausa)
+- add LATIN SMALL LETTER Y WITH HOOK (U+01B4, required for Hausa)
+- add LATIN SMALL LETTER B WITH HOOK (U+0253, required for Hausa)
+- add LATIN SMALL LETTER D WITH HOOK (U+0257, required for Hausa)
+- add LATIN CAPITAL LETTER S WITH DOT BELOW (U+1E62, required for Yoruba)
+- add LATIN SMALL LETTER S WITH DOT BELOW (U+1E63, required for Yoruba)
+- add LATIN CAPITAL LETTER OPEN O (U+0186, required for Yoruba)
+- add LATIN CAPITAL LETTER OPEN E (U+0190, required for Yoruba)
+- add LATIN SMALL LETTER OPEN O (U+0254, required for Yoruba)
+- add LATIN SMALL LETTER OPEN E (U+025B, required for Yoruba)
+- add CIRCLED LATIN CAPITAL LETTER G (U+24BC, Material UX request)
+
+### Changed
+
+- update ccmp combining cap shaping to improve the position of marks over upper case letter forms (#517)
+
+### Fixed
+
+None
+
+### Technical
+
+- add scripts/one-off/add-production-names.py script (#517)
+- add scripts/one-off/list-smallcaps.py scripts (#517)
+- improve qa/check-charset.py fail report output (#517)
+- refactor scripts/gs-merge-designspace.py (#517)
+
+### Dependencies
+
+No dependency updates
 
 ## Version 10.000
 
