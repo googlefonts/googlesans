@@ -45,4 +45,7 @@ for ufo_path, comparison_ufo_path in DEFAULT.items():
     ]
     if mismatches:
         print(f"UFO {ufo_path} width mismatches compared to {comparison_ufo_path}:")
-        print("\n".join(f"  {x}" for x in mismatches))
+        for glyph_name in mismatches:
+            print(
+                f"  {glyph_name}: width is {ufo[glyph_name].width}, but should be {comparison_ufo[glyph_name].width}"
+            )

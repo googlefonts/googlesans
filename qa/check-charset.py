@@ -14,6 +14,7 @@
 
 import os
 import sys
+from difflib import unified_diff
 
 from fontbakery.checkrunner import Section, PASS, FAIL
 from fontbakery.callable import check
@@ -79,8 +80,19 @@ def com_google_fonts_check_googlesans_glyphs_glyphset_contents(ttFonts):
             # (2) glyph set order as defined in def file
             if not (tt.getGlyphOrder() == glyph_list):
                 tests_passed = False
-                yield FAIL, "{} failed expected glyph set check".format(
-                    tt.reader.file.name
+                yield FAIL, (
+                    "{} failed expected glyph set check. Diffs:\n\n```diff\n{}\n```"
+                ).format(
+                    tt.reader.file.name,
+                    "\n".join(
+                        unified_diff(
+                            list(tt.getGlyphOrder()),
+                            list(glyph_list),
+                            fromfile="ttFont.getGlyphOrder()",
+                            tofile="glyphsetdef",
+                            lineterm="",
+                        )
+                    ),
                 )
         if tests_passed:
             yield PASS, "All fonts passed the expected glyph set checks"
