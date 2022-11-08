@@ -180,11 +180,17 @@ def main(args: list[str] | None = None) -> int:
     if instance is None:
         parser.error(f"Cannot find instance with stem '{output_path.stem}'.")
 
+    font = TTFont(variable_font)
+    fvar = font["fvar"]
+    available_axes = {axis.axisTag for axis in fvar.axes}
+
     name2tag = {axis.name: axis.tag for axis in designspace.axes}
     name2axis = {axis.name: axis for axis in designspace.axes}
     custom_parameters = dict(instance.lib["com.schriftgestaltung.customParameters"])
     user_location = {
-        name2tag[k]: name2axis[k].map_backward(v) for k, v in instance.location.items()
+        name2tag[k]: name2axis[k].map_backward(v)
+        for k, v in instance.location.items()
+        if name2tag[k] in available_axes
     }
 
     family_name = custom_parameters.get("preferredFamilyName", instance.familyName)
