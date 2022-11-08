@@ -1,17 +1,39 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<designspace format="4.1">
+<designspace format="5.0">
   <axes>
     <axis tag="opsz" name="Size" minimum="17" maximum="18" default="18">
       <map input="17" output="17"/>
       <map input="17.99" output="17.1"/>
       <map input="18" output="18"/>
+      <labels>
+        <!-- Max opsz, use elided name of "Google Sans" without opsz identifier -->
+        <label uservalue="18" userminimum="18" name="Max" elidable="true"/>
+        <label uservalue="17" userminimum="6" usermaximum="17" name="Text"/>
+      </labels>
     </axis>
     <axis tag="wght" name="Weight" minimum="400" maximum="700" default="400">
       <map input="400" output="380"/>
       <map input="500" output="555"/>
       <map input="700" output="734"/>
+      <labels>
+        <label uservalue="400" name="Regular" elidable="true"/>
+        <label uservalue="500" name="Medium"/>
+        <label uservalue="700" name="Bold"/>
+      </labels>
     </axis>
-    <axis tag="GRAD" name="Grade" minimum="-50" maximum="200" default="0"/>
+    <axis tag="GRAD" name="Grade" minimum="-50" maximum="200" default="0">
+      <labels>
+        <label uservalue="-50" name="Grade-50"/>
+        <label uservalue="0" name="0" elidable="true"/>
+        <label uservalue="200" name="Grade200"/>
+      </labels>
+    </axis>
+    <axis tag="ital" name="Italic" values="0 1" default="0">
+      <labels>
+        <label uservalue="0" name="Regular" elidable="true" linkeduservalue="1"/>
+        <label uservalue="1" name="Italic"/>
+      </labels>
+    </axis>
   </axes>
   <sources>
     <source filename="GoogleSans-opsz18-wght734-GRAD0.ufo" familyname="Google Sans" stylename="Bold">
@@ -19,6 +41,7 @@
         <dimension name="Size" xvalue="18"/>
         <dimension name="Weight" xvalue="734"/>
         <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="0"/>
       </location>
     </source>
     <source filename="GoogleSans-opsz18-wght380-GRAD200.ufo" familyname="Google Sans" stylename="opsz18-wgth400-GRAD200">
@@ -26,17 +49,15 @@
         <dimension name="Size" xvalue="18"/>
         <dimension name="Weight" xvalue="380"/>
         <dimension name="Grade" xvalue="200"/>
+        <dimension name="Italic" xvalue="0"/>
       </location>
     </source>
     <source filename="GoogleSans-opsz18-wght380-GRAD0.ufo" familyname="Google Sans" stylename="Regular">
-      <lib copy="1"/>
-      <groups copy="1"/>
-      <features copy="1"/>
-      <info copy="1"/>
       <location>
         <dimension name="Size" xvalue="18"/>
         <dimension name="Weight" xvalue="380"/>
         <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="0"/>
       </location>
     </source>
     <source filename="GoogleSans-opsz18-wght380-GRAD-50.ufo" familyname="Google Sans" stylename="opsz18-wgth400-GRAD-50">
@@ -44,6 +65,7 @@
         <dimension name="Size" xvalue="18"/>
         <dimension name="Weight" xvalue="380"/>
         <dimension name="Grade" xvalue="-50"/>
+        <dimension name="Italic" xvalue="0"/>
       </location>
     </source>
     <source filename="GoogleSans-opsz17-wght734-GRAD0.ufo" familyname="Google Sans" stylename="Text Bold">
@@ -51,6 +73,7 @@
         <dimension name="Size" xvalue="17"/>
         <dimension name="Weight" xvalue="734"/>
         <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="0"/>
       </location>
     </source>
     <source filename="GoogleSans-opsz17-wght380-GRAD0.ufo" familyname="Google Sans" stylename="Text Regular">
@@ -58,6 +81,7 @@
         <dimension name="Size" xvalue="17"/>
         <dimension name="Weight" xvalue="380"/>
         <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="0"/>
       </location>
     </source>
     <source filename="GoogleSans-opsz17-wght380-GRAD-50.ufo" familyname="Google Sans" stylename="opsz17-wght380-GRAD-50">
@@ -65,6 +89,7 @@
         <dimension name="Size" xvalue="17"/>
         <dimension name="Weight" xvalue="380"/>
         <dimension name="Grade" xvalue="-50"/>
+        <dimension name="Italic" xvalue="0"/>
       </location>
     </source>
     <source filename="GoogleSans-opsz17-wght380-GRAD200.ufo" familyname="Google Sans" stylename="opsz17-wght380-GRAD200">
@@ -72,18 +97,100 @@
         <dimension name="Size" xvalue="17"/>
         <dimension name="Weight" xvalue="380"/>
         <dimension name="Grade" xvalue="200"/>
+        <dimension name="Italic" xvalue="0"/>
+      </location>
+    </source>
+    <source filename="GoogleSansItalic-opsz18-wght734-GRAD0.ufo" familyname="Google Sans" stylename="Bold Italic">
+      <location>
+        <dimension name="Size" xvalue="18"/>
+        <dimension name="Weight" xvalue="734"/>
+        <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </source>
+    <source filename="GoogleSansItalic-opsz18-wght380-GRAD200.ufo" familyname="Google Sans" stylename="opsz18-wght380-GRAD200">
+      <location>
+        <dimension name="Size" xvalue="18"/>
+        <dimension name="Weight" xvalue="380"/>
+        <dimension name="Grade" xvalue="200"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </source>
+    <source filename="GoogleSansItalic-opsz18-wght380-GRAD0.ufo" familyname="Google Sans" stylename="Italic">
+      <location>
+        <dimension name="Size" xvalue="18"/>
+        <dimension name="Weight" xvalue="380"/>
+        <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </source>
+    <source filename="GoogleSansItalic-opsz18-wght380-GRAD-50.ufo" familyname="Google Sans" stylename="opsz18-wght380-GRAD-50">
+      <location>
+        <dimension name="Size" xvalue="18"/>
+        <dimension name="Weight" xvalue="380"/>
+        <dimension name="Grade" xvalue="-50"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </source>
+    <source filename="GoogleSansItalic-opsz17-wght734-GRAD0.ufo" familyname="Google Sans" stylename="Text Bold Italic">
+      <location>
+        <dimension name="Size" xvalue="17"/>
+        <dimension name="Weight" xvalue="734"/>
+        <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </source>
+    <source filename="GoogleSansItalic-opsz17-wght380-GRAD0.ufo" familyname="Google Sans" stylename="Text Italic">
+      <location>
+        <dimension name="Size" xvalue="17"/>
+        <dimension name="Weight" xvalue="380"/>
+        <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </source>
+    <source filename="GoogleSansItalic-opsz17-wght380-GRAD200.ufo" familyname="Google Sans" stylename="opsz17-wght380-GRAD200">
+      <location>
+        <dimension name="Size" xvalue="17"/>
+        <dimension name="Weight" xvalue="380"/>
+        <dimension name="Grade" xvalue="200"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </source>
+    <source filename="GoogleSansItalic-opsz17-wght380-GRAD-50.ufo" familyname="Google Sans" stylename="opsz17-wght380-GRAD-50">
+      <location>
+        <dimension name="Size" xvalue="17"/>
+        <dimension name="Weight" xvalue="380"/>
+        <dimension name="Grade" xvalue="-50"/>
+        <dimension name="Italic" xvalue="1"/>
       </location>
     </source>
   </sources>
+  <variable-fonts>
+    <variable-font name="GoogleSans-VF">
+      <axis-subsets>
+        <axis-subset name="Size"/>
+        <axis-subset name="Weight"/>
+        <axis-subset name="Grade"/>
+        <axis-subset name="Italic" uservalue="0"/>
+      </axis-subsets>
+    </variable-font>
+    <variable-font name="GoogleSans-Italic-VF">
+      <axis-subsets>
+        <axis-subset name="Size"/>
+        <axis-subset name="Weight"/>
+        <axis-subset name="Grade"/>
+        <axis-subset name="Italic" uservalue="1"/>
+      </axis-subsets>
+    </variable-font>
+  </variable-fonts>
   <instances>
     <instance name="Google Sans Regular" familyname="Google Sans" stylename="Regular" filename="../../build/GoogleSans/instance_ufo/GoogleSans-Regular.ufo">
       <location>
         <dimension name="Size" xvalue="18"/>
         <dimension name="Weight" xvalue="380"/>
         <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="0"/>
       </location>
-      <kerning/>
-      <info/>
       <lib>
         <dict>
           <key>com.schriftgestaltung.customParameters</key>
@@ -124,9 +231,8 @@
         <dimension name="Size" xvalue="18"/>
         <dimension name="Weight" xvalue="555"/>
         <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="0"/>
       </location>
-      <kerning/>
-      <info/>
       <lib>
         <dict>
           <key>com.schriftgestaltung.customParameters</key>
@@ -167,9 +273,8 @@
         <dimension name="Size" xvalue="18"/>
         <dimension name="Weight" xvalue="734"/>
         <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="0"/>
       </location>
-      <kerning/>
-      <info/>
       <lib>
         <dict>
           <key>com.schriftgestaltung.customParameters</key>
@@ -210,9 +315,8 @@
         <dimension name="Size" xvalue="17"/>
         <dimension name="Weight" xvalue="380"/>
         <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="0"/>
       </location>
-      <kerning/>
-      <info/>
       <lib>
         <dict>
           <key>com.schriftgestaltung.customParameters</key>
@@ -265,9 +369,8 @@
         <dimension name="Size" xvalue="17"/>
         <dimension name="Weight" xvalue="555"/>
         <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="0"/>
       </location>
-      <kerning/>
-      <info/>
       <lib>
         <dict>
           <key>com.schriftgestaltung.customParameters</key>
@@ -320,9 +423,8 @@
         <dimension name="Size" xvalue="17"/>
         <dimension name="Weight" xvalue="734"/>
         <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="0"/>
       </location>
-      <kerning/>
-      <info/>
       <lib>
         <dict>
           <key>com.schriftgestaltung.customParameters</key>
@@ -365,6 +467,294 @@
             <array>
               <string>preferredSubfamilyName</string>
               <string>Bold</string>
+            </array>
+          </array>
+        </dict>
+      </lib>
+    </instance>
+    <instance name="Google Sans Italic" familyname="Google Sans" stylename="Italic" filename="../../build/GoogleSans/instance_ufo/GoogleSans-Italic.ufo" stylemapfamilyname="Google Sans" stylemapstylename="italic">
+      <location>
+        <dimension name="Size" xvalue="18"/>
+        <dimension name="Weight" xvalue="380"/>
+        <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+      <lib>
+        <dict>
+          <key>com.schriftgestaltung.customParameters</key>
+          <array>
+            <array>
+              <string>panose</string>
+              <array>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>5</integer>
+                <integer>3</integer>
+                <integer>3</integer>
+                <integer>5</integer>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+              </array>
+            </array>
+            <array>
+              <string>Autohint</string>
+              <integer>0</integer>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 1 0 0; Google;GoogleSans-Italic</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 3 1 1033; Google;GoogleSans-Italic</string>
+            </array>
+          </array>
+        </dict>
+      </lib>
+    </instance>
+    <instance name="Google Sans Medium Italic" familyname="Google Sans" stylename="Medium Italic" filename="../../build/GoogleSans/instance_ufo/GoogleSans-MediumItalic.ufo" stylemapfamilyname="Google Sans Medium" stylemapstylename="italic">
+      <location>
+        <dimension name="Size" xvalue="18"/>
+        <dimension name="Weight" xvalue="555"/>
+        <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+      <lib>
+        <dict>
+          <key>com.schriftgestaltung.customParameters</key>
+          <array>
+            <array>
+              <string>panose</string>
+              <array>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>6</integer>
+                <integer>3</integer>
+                <integer>3</integer>
+                <integer>5</integer>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+              </array>
+            </array>
+            <array>
+              <string>Autohint</string>
+              <integer>0</integer>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 1 0 0; Google;GoogleSans-MediumItalic</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 3 1 1033; Google;GoogleSans-MediumItalic</string>
+            </array>
+          </array>
+        </dict>
+      </lib>
+    </instance>
+    <instance name="Google Sans Bold Italic" familyname="Google Sans" stylename="Bold Italic" filename="../../build/GoogleSans/instance_ufo/GoogleSans-BoldItalic.ufo" stylemapfamilyname="Google Sans" stylemapstylename="bold italic">
+      <location>
+        <dimension name="Size" xvalue="18"/>
+        <dimension name="Weight" xvalue="734"/>
+        <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+      <lib>
+        <dict>
+          <key>com.schriftgestaltung.customParameters</key>
+          <array>
+            <array>
+              <string>panose</string>
+              <array>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>8</integer>
+                <integer>3</integer>
+                <integer>3</integer>
+                <integer>5</integer>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+              </array>
+            </array>
+            <array>
+              <string>Autohint</string>
+              <integer>0</integer>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 1 0 0; Google;GoogleSans-BoldItalic</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 3 1 1033; Google;GoogleSans-BoldItalic</string>
+            </array>
+          </array>
+        </dict>
+      </lib>
+    </instance>
+    <instance name="Google Sans Text Italic" familyname="Google Sans" stylename="Text Italic" filename="../../build/GoogleSans/instance_ufo/GoogleSansText-Italic.ufo" stylemapfamilyname="Google Sans Text" stylemapstylename="italic">
+      <location>
+        <dimension name="Size" xvalue="17"/>
+        <dimension name="Weight" xvalue="380"/>
+        <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+      <lib>
+        <dict>
+          <key>com.schriftgestaltung.customParameters</key>
+          <array>
+            <array>
+              <string>panose</string>
+              <array>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>5</integer>
+                <integer>3</integer>
+                <integer>3</integer>
+                <integer>5</integer>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+              </array>
+            </array>
+            <array>
+              <string>Autohint</string>
+              <integer>0</integer>
+            </array>
+            <array>
+              <string>styleMapFamilyName</string>
+              <string>Google Sans Text</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 1 0 0; Google;GoogleSansText-Italic</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 3 1 1033; Google;GoogleSansText-Italic</string>
+            </array>
+            <array>
+              <string>preferredFamilyName</string>
+              <string>Google Sans Text</string>
+            </array>
+            <array>
+              <string>preferredSubfamilyName</string>
+              <string>Italic</string>
+            </array>
+          </array>
+        </dict>
+      </lib>
+    </instance>
+    <instance name="Google Sans Text Medium Italic" familyname="Google Sans" stylename="Text Medium Italic" filename="../../build/GoogleSans/instance_ufo/GoogleSansText-MediumItalic.ufo" stylemapfamilyname="Google Sans Text Medium" stylemapstylename="italic">
+      <location>
+        <dimension name="Size" xvalue="17"/>
+        <dimension name="Weight" xvalue="555"/>
+        <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+      <lib>
+        <dict>
+          <key>com.schriftgestaltung.customParameters</key>
+          <array>
+            <array>
+              <string>panose</string>
+              <array>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>6</integer>
+                <integer>3</integer>
+                <integer>3</integer>
+                <integer>5</integer>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+              </array>
+            </array>
+            <array>
+              <string>Autohint</string>
+              <integer>0</integer>
+            </array>
+            <array>
+              <string>styleMapFamilyName</string>
+              <string>Google Sans Text Medium</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 1 0 0; Google;GoogleSansText-MediumItalic</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 3 1 1033; Google;GoogleSansText-MediumItalic</string>
+            </array>
+            <array>
+              <string>preferredFamilyName</string>
+              <string>Google Sans Text</string>
+            </array>
+            <array>
+              <string>preferredSubfamilyName</string>
+              <string>Medium Italic</string>
+            </array>
+          </array>
+        </dict>
+      </lib>
+    </instance>
+    <instance name="Google Sans Text Bold Italic" familyname="Google Sans" stylename="Text Bold Italic" filename="../../build/GoogleSans/instance_ufo/GoogleSansText-BoldItalic.ufo" stylemapfamilyname="Google Sans Text" stylemapstylename="bold italic">
+      <location>
+        <dimension name="Size" xvalue="17"/>
+        <dimension name="Weight" xvalue="734"/>
+        <dimension name="Grade" xvalue="0"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+      <lib>
+        <dict>
+          <key>com.schriftgestaltung.customParameters</key>
+          <array>
+            <array>
+              <string>panose</string>
+              <array>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>8</integer>
+                <integer>3</integer>
+                <integer>3</integer>
+                <integer>5</integer>
+                <integer>2</integer>
+                <integer>11</integer>
+                <integer>2</integer>
+                <integer>4</integer>
+              </array>
+            </array>
+            <array>
+              <string>Autohint</string>
+              <integer>0</integer>
+            </array>
+            <array>
+              <string>styleMapFamilyName</string>
+              <string>Google Sans Text</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 1 0 0; Google;GoogleSansText-BoldItalic</string>
+            </array>
+            <array>
+              <string>Name Table Entry</string>
+              <string>3 3 1 1033; Google;GoogleSansText-BoldItalic</string>
+            </array>
+            <array>
+              <string>preferredFamilyName</string>
+              <string>Google Sans Text</string>
+            </array>
+            <array>
+              <string>preferredSubfamilyName</string>
+              <string>Bold Italic</string>
             </array>
           </array>
         </dict>

@@ -30,8 +30,7 @@ FONTMAKE_EXE_NO_COMPACTION=fontmake --verbose WARNING
 # --------------------------------------------------------
 #  Source file path definitions
 # --------------------------------------------------------
-UPRIGHT_SOURCE=GoogleSans/GoogleSans.designspace
-ITALIC_SOURCE=GoogleSans/GoogleSans-Italic.designspace
+SOURCE=GoogleSans/GoogleSans.designspace
 
 # --------------------------------------------------------
 #  Build directory and file path definitions
@@ -91,26 +90,24 @@ gs-vf-upright: $(VARIABLE_UPRIGHT_TARGET)
 gs-vf-italic: $(VARIABLE_ITALIC_TARGET)
 
 $(VARIABLE_UPRIGHT_INTERMEDIATE): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
-	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -o variable --output-path $@
+	$(FONTMAKE_EXE) -m $(SOURCE) --variable-fonts "GoogleSans-VF" -o variable --output-path $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
 	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $@
 	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $@
 	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py $@
 	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $@
-	$(PYTHON3_EXE) ../scripts/gs-stat.py $@
 	font-v write --sha1 $@
 
 $(VARIABLE_UPRIGHT_TARGET): $(VARIABLE_UPRIGHT_INTERMEDIATE)
 	$(PYTHON3_EXE) ../scripts/patch-figma-fvar.py $(VARIABLE_UPRIGHT_INTERMEDIATE) --output $@
 
 $(VARIABLE_ITALIC_INTERMEDIATE): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
-	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -o variable --output-path $@
+	$(FONTMAKE_EXE) -m $(SOURCE) --variable-fonts "GoogleSans-Italic-VF" -o variable --output-path $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
 	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $@
 	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $@
 	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py $@
 	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $@
-	$(PYTHON3_EXE) ../scripts/gs-stat.py $@
 	font-v write --sha1 $@
 
 $(VARIABLE_ITALIC_TARGET): $(VARIABLE_ITALIC_INTERMEDIATE)
@@ -122,13 +119,13 @@ gs-static-upright: $(STATIC_UPRIGHTS_TARGETS)
 gs-static-italic: $(STATIC_ITALICS_TARGETS)
 
 $(STATIC_UPRIGHTS_TARGETS): $(VARIABLE_UPRIGHT_INTERMEDIATE)
-	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $< $(UPRIGHT_SOURCE) $@
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $< $(SOURCE) $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
 	$(PYTHON3_EXE) -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 	font-v write --sha1 $@
 
 $(STATIC_ITALICS_TARGETS): $(VARIABLE_ITALIC_INTERMEDIATE)
-	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $< $(ITALIC_SOURCE) $@
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $< $(SOURCE) $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
 	$(PYTHON3_EXE) -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 	font-v write --sha1 $@
@@ -139,10 +136,10 @@ gs-compatible-masters-upright: $(INTERPOLATABLE_UPRIGHTS_TARGET)
 gs-compatible-masters-italic: $(INTERPOLATABLE_ITALICS_TARGET)
 
 $(INTERPOLATABLE_UPRIGHTS_TARGET): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
-	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(UPRIGHT_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
+	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(SOURCE) --variable-fonts "GoogleSans-VF" -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
 
 $(INTERPOLATABLE_ITALICS_TARGET): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
-	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(ITALIC_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
+	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(SOURCE) --variable-fonts "GoogleSans-Italic-VF" -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
 
 
 gs-vf-vendor: gs-vf-vendor-glyphs2designspace
@@ -174,11 +171,11 @@ gs-italic: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -u $(UFO_GS_ITALIC) -o ttf --output-dir $(STATIC_BUILD_DIR)
 
 gs-medium: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -i "Google Sans Medium" -o ufo
+	$(FONTMAKE_EXE) -m $(SOURCE) -i "Google Sans Medium" -o ufo
 	$(FONTMAKE_EXE) -u $(UFO_GS_MEDIUM) -o ttf --output-dir $(STATIC_BUILD_DIR)
 
 gs-medium-italic: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -i "Google Sans Medium Italic" -o ufo
+	$(FONTMAKE_EXE) -m $(SOURCE) -i "Google Sans Medium Italic" -o ufo
 	$(FONTMAKE_EXE) -u $(UFO_GS_MEDIUMITALIC) -o ttf --output-dir $(STATIC_BUILD_DIR)
 
 gs-bold: $(FONT_BUILD_DIR)
@@ -195,11 +192,11 @@ gst-italic: $(FONT_BUILD_DIR)
 	$(FONTMAKE_EXE) -u $(UFO_GS_TEXT_ITALIC) -o ttf --output-dir $(STATIC_BUILD_DIR)
 
 gst-medium: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -i "Google Sans Text Medium" -o ufo
+	$(FONTMAKE_EXE) -m $(SOURCE) -i "Google Sans Text Medium" -o ufo
 	$(FONTMAKE_EXE) -u $(UFO_GS_TEXT_MEDIUM) -o ttf --output-dir $(STATIC_BUILD_DIR)
 
 gst-medium-italic: $(FONT_BUILD_DIR)
-	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -i "Google Sans Text Medium Italic" -o ufo
+	$(FONTMAKE_EXE) -m $(SOURCE) -i "Google Sans Text Medium Italic" -o ufo
 	$(FONTMAKE_EXE) -u $(UFO_GS_TEXT_MEDIUMITALIC) -o ttf --output-dir $(STATIC_BUILD_DIR)
 
 gst-bold: $(FONT_BUILD_DIR)
