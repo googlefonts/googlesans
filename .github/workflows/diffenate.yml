@@ -54,7 +54,7 @@ jobs:
           path-before: build/GoogleSans/variable/*.ttf
           run-diffenator: false
           run-diffbrowsers: true
-          filter-styles: "Regular|Italic|Bold|Bold Italic"
+          filter-styles: "Regular|Italic|Bold|Bold Italic|Text Regular|Text Italic|Text Bold|Text Bold Italic"
 
   diffenator:
     needs:
@@ -82,4 +82,4 @@ jobs:
           path-before: build/GoogleSans/variable/*.ttf
           run-diffenator: true
           run-diffbrowsers: false
-          filter-styles: "Regular|Italic|Bold|Bold Italic"
+          filter-styles: "Regular|Italic|Bold|Bold Italic|Text Regular|Text Italic|Text Bold|Text Bold Italic"
