@@ -43,6 +43,7 @@ def main(args: Optional[List[str]] = None):
             "--notdef-outline",
             "--layout-features=*",
             "--name-IDs=*",
+            "--name-legacy",
             "--name-languages=*",
             "--glyph-names",
             "--no-prune-unicode-ranges",
