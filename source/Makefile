@@ -89,7 +89,7 @@ gs-vf: gs-vf-upright gs-vf-italic
 gs-vf-upright: $(VARIABLE_UPRIGHT_TARGET)
 gs-vf-italic: $(VARIABLE_ITALIC_TARGET)
 
-$(VARIABLE_UPRIGHT_INTERMEDIATE): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
+$(VARIABLE_UPRIGHT_INTERMEDIATE): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES) $(SOURCE)
 	$(FONTMAKE_EXE) -m $(SOURCE) --variable-fonts "GoogleSans-VF" -o variable --output-path $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
 	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $@
@@ -101,7 +101,7 @@ $(VARIABLE_UPRIGHT_INTERMEDIATE): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
 $(VARIABLE_UPRIGHT_TARGET): $(VARIABLE_UPRIGHT_INTERMEDIATE)
 	$(PYTHON3_EXE) ../scripts/patch-figma-fvar.py $(VARIABLE_UPRIGHT_INTERMEDIATE) --output $@
 
-$(VARIABLE_ITALIC_INTERMEDIATE): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
+$(VARIABLE_ITALIC_INTERMEDIATE): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES) $(SOURCE)
 	$(FONTMAKE_EXE) -m $(SOURCE) --variable-fonts "GoogleSans-Italic-VF" -o variable --output-path $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
 	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $@
