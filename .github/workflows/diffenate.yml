@@ -14,12 +14,10 @@ jobs:
       - name: Set up Python v3.x environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: '3.11'
           cache: 'pip'
       - name: Build variable fonts
         run: make setup && make -j gs-vf
-        env:
-          PYTHON3_BUILD: /opt/hostedtoolcache/PyPy/3.9.12/x64/bin/pypy3.9
       - uses: actions/upload-artifact@v3
         with:
           name: variable-fonts

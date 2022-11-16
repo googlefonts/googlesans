@@ -13,7 +13,6 @@
 # limitations under the License.
 
 PYTHON3 ?= python3
-PYTHON3_BUILD ?= pypy3
 
 FONT_BUILD_DIR=build/GoogleSans
 STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
@@ -21,7 +20,6 @@ VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
 MASTER_UFO_DIR=$(FONT_BUILD_DIR)/master_ufo
 INSTANCE_UFO_DIR=$(FONT_BUILD_DIR)/instance_ufo
 VENV_DIR=.venv
-VENV_BUILD_DIR=.venv-build
 
 all: gs-static gs-compatible-masters  # gs-vf is built by gs-static
 
@@ -49,19 +47,19 @@ clean-ufo:
 # ------------------------------
 
 gs-static gs-vf gs-vf-vendor gs-compatible-masters gs-compatible-masters-upright gs-compatible-masters-italic:
-	. .venv-build/bin/activate && cd source && $(MAKE) $@
+	. "$(VENV_DIR)/bin/activate" && cd source && $(MAKE) $@
 
 gs-regular gs-medium gs-bold gs-italic gs-medium-italic gs-bold-italic:
-	. .venv-build/bin/activate && cd source && $(MAKE) $@
+	. "$(VENV_DIR)/bin/activate" && cd source && $(MAKE) $@
 
 gst-regular gst-medium gst-bold gst-italic gst-medium-italic gst-bold-italic:
-	. .venv-build/bin/activate && cd source && $(MAKE) $@
+	. "$(VENV_DIR)/bin/activate" && cd source && $(MAKE) $@
 
 gs-vf-upright gs-vf-italic:
-	. .venv-build/bin/activate && cd source && $(MAKE) $@
+	. "$(VENV_DIR)/bin/activate" && cd source && $(MAKE) $@
 
 gs-ufo2glyphs:
-	. .venv-build/bin/activate && cd source && $(MAKE) $@
+	. "$(VENV_DIR)/bin/activate" && cd source && $(MAKE) $@
 
 # ------------------------------
 # Build dependency management
@@ -73,11 +71,6 @@ setup:
 	@$(MAKE) sync-deps
 	@$(MAKE) list-deps
 
-	mkdir -p "$(VENV_BUILD_DIR)"
-	$(PYTHON3_BUILD) -m venv "$(VENV_BUILD_DIR)"
-	@$(MAKE) sync-deps-build
-	@$(MAKE) list-deps-build
-
 	@echo "\n\nBuild fonts with 'make' or make targets for select font builds (see BUILD.md docs)."
 	@echo "Remove the virtual environment directory with 'make clean'."
 
@@ -87,26 +80,16 @@ sync-deps:
 	"$(VENV_DIR)/bin/pip" install --quiet --upgrade pip wheel setuptools
 	"$(VENV_DIR)/bin/pip" install --quiet -r requirements-dev.txt
 
-sync-deps-build:
-	"$(VENV_BUILD_DIR)/bin/pip" install --quiet --upgrade pip wheel setuptools
-	"$(VENV_BUILD_DIR)/bin/pip" install --quiet --no-binary cu2qu -r requirements-build.txt
-
 # list-deps displays venv installed dependencies
 list-deps:
 	@echo "\n\nDependency versions installed in your general purpose venv are:\n"
 	@"$(VENV_DIR)/bin/pip" list
 
-list-deps-build:
-	@echo "\n\nDependency versions installed in your build venv are:\n"
-	@"$(VENV_BUILD_DIR)/bin/pip" list
 
 # [MAINTAINER ONLY TARGET]
 # update-deps updates the requirements.txt file with new releases of Python build dependencies
 # Note: the `pip-compile` tool is from the https://github.com/jazzband/pip-tools package
 update-deps:
-	@"$(VENV_BUILD_DIR)/bin/pip" install --upgrade pip-tools
-	@"$(VENV_BUILD_DIR)/bin/pip-compile" -U requirements.in -o requirements-build.txt
-	
 	@"$(VENV_DIR)/bin/pip" install --upgrade pip-tools
 	@"$(VENV_DIR)/bin/pip-compile" -U requirements-dev.txt -o requirements.txt
 
