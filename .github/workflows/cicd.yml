@@ -88,28 +88,28 @@ jobs:
           name: variable-fonts
           path: 'build/GoogleSans/variable'
       - name: Font Bakery GS profile tests
-        uses: f-actions/font-bakery@v1
+        uses: f-actions/font-bakery@v2
         with:
           version: 'latest'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-googlesans.py'
           path: 'build/GoogleSans/variable/*.ttf'
       - name: Font Bakery character set profile tests
-        uses: f-actions/font-bakery@v1
+        uses: f-actions/font-bakery@v2
         with:
           version: 'latest'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-charset.py'
           path: 'build/GoogleSans/variable/*.ttf'
       - name: Font Bakery feature tag and shaping tests
-        uses: f-actions/font-bakery@v1
+        uses: f-actions/font-bakery@v2
         with:
           version: 'latest'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-fea.py'
           path: 'build/GoogleSans/variable/*.ttf'
       - name: OpenType Sanitizer checks
-        uses: f-actions/opentype-sanitizer@v1
+        uses: f-actions/opentype-sanitizer@v2
         with:
           path: 'build/GoogleSans/variable/*.ttf'
       - name: File size analysis
@@ -162,28 +162,28 @@ jobs:
           name: static-fonts
           path: 'build/GoogleSans/static'
       - name: Font Bakery GS profile tests
-        uses: f-actions/font-bakery@v1
+        uses: f-actions/font-bakery@v2
         with:
           version: 'latest'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-googlesans.py'
           path: 'build/GoogleSans/static/*.ttf'
       - name: Font Bakery character set profile tests
-        uses: f-actions/font-bakery@v1
+        uses: f-actions/font-bakery@v2
         with:
           version: 'latest'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-charset.py'
           path: 'build/GoogleSans/static/*.ttf'
       - name: Font Bakery feature tag and shaping tests
-        uses: f-actions/font-bakery@v1
+        uses: f-actions/font-bakery@v2
         with:
           version: 'latest'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-fea.py'
           path: 'build/GoogleSans/static/*.ttf'
       - name: OpenType Sanitizer checks
-        uses: f-actions/opentype-sanitizer@v1
+        uses: f-actions/opentype-sanitizer@v2
         with:
           path: 'build/GoogleSans/static/*.ttf'
       - name: File size analysis
