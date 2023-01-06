@@ -1,3 +1,4 @@
+# flake8: noqa
 # Copyright 2023 Google Sans Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
