@@ -128,8 +128,8 @@ def run():
         head = tt["head"]
         os2 = tt["OS/2"]
 
-        os2.usWinAscent = head.yMax
-        os2.usWinDescent = abs(head.yMin)
+        os2.usWinAscent = head.yMax + 1
+        os2.usWinDescent = abs(head.yMin) + 1
 
         head.yMin = v4_y_min
         head.yMax = v4_y_max
