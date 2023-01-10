@@ -85,6 +85,7 @@ def run():
         "--name-legacy",
         "--glyph-names",
         "--recalc-bounds",
+        "--recalc-average-width",
         f"--output-file={roman_output_filepath}",
     ]
 
@@ -101,6 +102,7 @@ def run():
         "--name-legacy",
         "--glyph-names",
         "--recalc-bounds",
+        "--recalc-average-width",
         f"--output-file={italic_output_filepath}",
     ]
 
