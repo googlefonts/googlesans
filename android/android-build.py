@@ -34,8 +34,8 @@ def run():
 
     # Android subset output file path definitions
     # these are the target production files
-    roman_output_filepath = "GoogleSans-Android.ttf"
-    italic_output_filepath = "GoogleSans-Android-Italic.ttf"
+    roman_output_filepath = "GoogleSans-Regular.ttf"
+    italic_output_filepath = "GoogleSans-Italic.ttf"
 
     # ==================================================
     # v4.000 definitions
