@@ -75,6 +75,7 @@ build-android:
 	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans-Italic[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans-Italic.designspace v10/GoogleSansText-Italic.ttf
 	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans-Italic[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans-Italic.designspace v10/GoogleSansText-MediumItalic.ttf
 	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans-Italic[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans-Italic.designspace v10/GoogleSansText-BoldItalic.ttf
+	cd android && . .venv/bin/activate && python ../scripts/internal/prune_font_binary.py v10/*.ttf
 
 # ------------------------------
 # Build dependency management
