@@ -61,21 +61,21 @@ gs-ufo2glyphs:
 
 build-android:
 	python3 -m venv android/.venv
-	android/.venv/bin/pip install -r android/requirements.txt
+	android/.venv/bin/pip install --quiet -r android/requirements.txt
 	cd android && .venv/bin/python android-build.py
-	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans.designspace v10/GoogleSans-Regular.ttf
-	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans.designspace v10/GoogleSans-Medium.ttf
-	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans.designspace v10/GoogleSans-Bold.ttf
-	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans.designspace v10/GoogleSansText-Regular.ttf
-	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans.designspace v10/GoogleSansText-Medium.ttf
-	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans.designspace v10/GoogleSansText-Bold.ttf
-	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans-Italic[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans-Italic.designspace v10/GoogleSans-Italic.ttf
-	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans-Italic[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans-Italic.designspace v10/GoogleSans-MediumItalic.ttf
-	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans-Italic[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans-Italic.designspace v10/GoogleSans-BoldItalic.ttf
-	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans-Italic[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans-Italic.designspace v10/GoogleSansText-Italic.ttf
-	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans-Italic[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans-Italic.designspace v10/GoogleSansText-MediumItalic.ttf
-	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py v10/GoogleSans-Italic[GRAD,opsz,wght].ttf ../source/GoogleSans/GoogleSans-Italic.designspace v10/GoogleSansText-BoldItalic.ttf
-	cd android && . .venv/bin/activate && python ../scripts/internal/prune_font_binary.py v10/*.ttf
+	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py GoogleSans-Regular.ttf ../source/GoogleSans/GoogleSans.designspace static/GoogleSans-Regular.ttf
+	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py GoogleSans-Regular.ttf ../source/GoogleSans/GoogleSans.designspace static/GoogleSans-Medium.ttf
+	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py GoogleSans-Regular.ttf ../source/GoogleSans/GoogleSans.designspace static/GoogleSans-Bold.ttf
+	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py GoogleSans-Regular.ttf ../source/GoogleSans/GoogleSans.designspace static/GoogleSansText-Regular.ttf
+	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py GoogleSans-Regular.ttf ../source/GoogleSans/GoogleSans.designspace static/GoogleSansText-Medium.ttf
+	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py GoogleSans-Regular.ttf ../source/GoogleSans/GoogleSans.designspace static/GoogleSansText-Bold.ttf
+	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py GoogleSans-Italic.ttf ../source/GoogleSans/GoogleSans-Italic.designspace static/GoogleSans-Italic.ttf
+	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py GoogleSans-Italic.ttf ../source/GoogleSans/GoogleSans-Italic.designspace static/GoogleSans-MediumItalic.ttf
+	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py GoogleSans-Italic.ttf ../source/GoogleSans/GoogleSans-Italic.designspace static/GoogleSans-BoldItalic.ttf
+	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py GoogleSans-Italic.ttf ../source/GoogleSans/GoogleSans-Italic.designspace static/GoogleSansText-Italic.ttf
+	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py GoogleSans-Italic.ttf ../source/GoogleSans/GoogleSans-Italic.designspace static/GoogleSansText-MediumItalic.ttf
+	cd android && . .venv/bin/activate && python ../scripts/internal/cut-instances.py GoogleSans-Italic.ttf ../source/GoogleSans/GoogleSans-Italic.designspace static/GoogleSansText-BoldItalic.ttf
+	cd android && . .venv/bin/activate && python ../scripts/internal/prune_font_binary.py static/*.ttf
 
 # ------------------------------
 # Build dependency management
