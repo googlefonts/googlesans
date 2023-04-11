@@ -1,0 +1,15 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+locl = true
+blwf = true
+
+[input]
+script = "knda"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ಕ. ಕ, ಕ: ಕ; ಕ… ಕ! ಕ? ಕ* (ಕ ಕ) {ಕ ಕ} [ಕ ಕ] ‘ಕ ಕ’ “ಕ ಕ”", # Localised Malayalam Punctuation
+    "ಕ್ಯ. ಕ್ಯ, ಕ್ಯ: ಕ್ಯ; ಕ್ಯ… ಕ್ಯ! ಕ್ಯ? ಕ್ಯ* (ಕ್ಯ ಕ್ಯ) {ಕ್ಯ ಕ್ಯ} [ಕ್ಯ ಕ್ಯ] ‘ಕ್ಯ ಕ್ಯ’ “ಕ್ಯ ಕ್ಯ”" # Localised Malayalam Punctuation with Below Forms
+]

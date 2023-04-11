@@ -1,0 +1,503 @@
+@KND_allVattus = [ ka-kannada.below kha-kannada.below ga-kannada.below gha-kannada.below nga-kannada.below ca-kannada.below cha-kannada.below ja-kannada.below jha-kannada.below nya-kannada.below tta-kannada.below ttha-kannada.below dda-kannada.below ddha-kannada.below nna-kannada.below ta-kannada.below tha-kannada.below da-kannada.below dha-kannada.below na-kannada.below pa-kannada.below pha-kannada.below ba-kannada.below bha-kannada.below ma-kannada.below ya-kannada.below ra-kannada.below rra-kannada.below la-kannada.below lla-kannada.below va-kannada.below sha-kannada.below ssa-kannada.below sa-kannada.below ha-kannada.below fa-kannada.below 
+
+];
+
+@KND_UMFS_abvs_psts_marks = [ aaMatra-kannada iMatra-kannada uMatra-kannada uuMatra-kannada eMatra-kannada auMatra-kannada
+];
+
+@KND_UMFS_haln_marks = [ halant-kannada
+];
+
+@KND_UMFS_blws_ra = [ ra-kannada.below.alt
+];
+
+@KND_k_ssa_ligatures = [ k_ssa-kannada k_ssaa-kannada k_ssi-kannada k_ssu-kannada k_ssuu-kannada k_sse-kannada k_sso-kannada k_ssau-kannada k_ss-kannada
+];
+
+@KND_pha_nukta = [ pha-kannada phaa-kannada phi-kannada phe-kannada phau-kannada ph-kannada 
+];
+
+@KND_all_consonants = [ ka-kannada kha-kannada ga-kannada gha-kannada nga-kannada ca-kannada cha-kannada ja-kannada jha-kannada nya-kannada tta-kannada ttha-kannada dda-kannada ddha-kannada nna-kannada ta-kannada tha-kannada da-kannada dha-kannada na-kannada pa-kannada pha-kannada ba-kannada bha-kannada ma-kannada ya-kannada ra-kannada rra-kannada la-kannada lla-kannada llla-kannada va-kannada sha-kannada ssa-kannada ssa-kannada.short sa-kannada ha-kannada
+];
+
+@KND_all_consonants_except_ra = [ ka-kannada kha-kannada ga-kannada gha-kannada nga-kannada ca-kannada cha-kannada ja-kannada jha-kannada nya-kannada tta-kannada ttha-kannada dda-kannada ddha-kannada nna-kannada ta-kannada tha-kannada da-kannada dha-kannada na-kannada pa-kannada pha-kannada ba-kannada bha-kannada ma-kannada ya-kannada rra-kannada la-kannada lla-kannada llla-kannada va-kannada sha-kannada ssa-kannada ssa-kannada.short sa-kannada ha-kannada k_ssa-kannada
+];
+
+@KND_all_half_forms = [ k-kannada kh-kannada g-kannada gh-kannada ng-kannada c-kannada ch-kannada j-kannada jh-kannada ny-kannada tt-kannada tth-kannada dd-kannada ddh-kannada nn-kannada t-kannada th-kannada d-kannada dh-kannada n-kannada p-kannada ph-kannada b-kannada bh-kannada m-kannada y-kannada r-kannada rr-kannada l-kannada ll-kannada lll-kannada v-kannada sh-kannada ss-kannada ss-kannada.short s-kannada h-kannada
+];
+
+@KND_ja_glyphs = [ ja-kannada jaa-kannada ji-kannada ju-kannada juu-kannada je-kannada jo-kannada jau-kannada j-kannada 
+];
+
+@KND_UMFS_nya_below_nonspacing = [ nya-kannada.below.nonspacing
+];
+
+@KND_ssa = [ ssa-kannada ssi-kannada sse-kannada ss-kannada
+];
+
+@KND_short_ssa = [ ssa-kannada.short ssi-kannada.short sse-kannada.short ss-kannada.short
+];
+
+@KND_rVocalics_and_AiLength = [ rVocalicMatra-kannada rrVocalicMatra-kannada ailength-kannada 
+];
+
+
+
+# Prefix: IndependentLookups
+lookup KND_dflt_none_halant_forms {
+	sub [@KND_all_consonants k_ssa-kannada] by [@KND_all_half_forms k_ss-kannada];
+} KND_dflt_none_halant_forms;
+
+lookup KND_dflt_none_halant_null {
+	sub halant-kannada by zerowidthspace;
+} KND_dflt_none_halant_null;
+
+lookup KND_dflt_none_ssa_short {
+	sub @KND_ssa by @KND_short_ssa;
+} KND_dflt_none_ssa_short;
+
+
+feature locl {
+# disabled
+#script knd2;
+#
+#lookup KND_dflt_locl_localised_punctuation {
+#	sub period by period.loclKNDA;
+#	sub comma by comma.loclKNDA;
+#	sub colon by colon.loclKNDA;
+#	sub semicolon by semicolon.loclKNDA;
+#	sub ellipsis by ellipsis.loclKNDA;
+#	sub exclam by exclam.loclKNDA;
+#	sub question by question.loclKNDA;
+#	sub asterisk by asterisk.loclKNDA;
+#	sub parenleft by parenleft.loclKNDA;
+#	sub parenright by parenright.loclKNDA;
+#	sub braceleft by braceleft.loclKNDA;
+#	sub braceright by braceright.loclKNDA;
+#	sub bracketleft by bracketleft.loclKNDA;
+#	sub bracketright by bracketright.loclKNDA;
+#	sub quotedblleft by quotedblleft.loclKNDA;
+#	sub quotedblright by quotedblright.loclKNDA;
+#	sub quoteleft by quoteleft.loclKNDA;
+#	sub quoteright by quoteright.loclKNDA;
+#} KND_dflt_locl_localised_punctuation;
+} locl;
+
+feature akhn {
+script knd2;
+
+lookup KND_dflt_akhn_akhands {
+lookupflag UseMarkFilteringSet @KND_UMFS_haln_marks;
+	ignore sub @KND_all_consonants_except_ra halant-kannada ka-kannada' halant-kannada' ssa-kannada';
+	sub ka-kannada' halant-kannada' ssa-kannada' by k_ssa-kannada;
+} KND_dflt_akhn_akhands;
+
+} akhn;
+
+feature rphf {
+script knd2;
+lookup rephKannada {
+	sub ra-kannada halant-kannada by reph-kannada;
+} rephKannada ;
+
+} rphf;
+
+feature blwf {
+script knd2;
+lookup blwf_knd2 {
+	sub halant-kannada ka-kannada by ka-kannada.below;
+	sub halant-kannada kha-kannada by kha-kannada.below;
+	sub halant-kannada ga-kannada by ga-kannada.below;
+	sub halant-kannada gha-kannada by gha-kannada.below;
+	sub halant-kannada nga-kannada by nga-kannada.below;
+	sub halant-kannada ca-kannada by ca-kannada.below;
+	sub halant-kannada cha-kannada by cha-kannada.below;
+	sub halant-kannada ja-kannada by ja-kannada.below;
+	sub halant-kannada jha-kannada by jha-kannada.below;
+	sub halant-kannada nya-kannada by nya-kannada.below;
+	sub halant-kannada tta-kannada by tta-kannada.below;
+	sub halant-kannada ttha-kannada by ttha-kannada.below;
+	sub halant-kannada dda-kannada by dda-kannada.below;
+	sub halant-kannada ddha-kannada by ddha-kannada.below;
+	sub halant-kannada nna-kannada by nna-kannada.below;
+	sub halant-kannada ta-kannada by ta-kannada.below;
+	sub halant-kannada tha-kannada by tha-kannada.below;
+	sub halant-kannada da-kannada by da-kannada.below;
+	sub halant-kannada dha-kannada by dha-kannada.below;
+	sub halant-kannada na-kannada by na-kannada.below;
+	sub halant-kannada pa-kannada by pa-kannada.below;
+	sub halant-kannada pha-kannada by pha-kannada.below;
+	sub halant-kannada ba-kannada by ba-kannada.below;
+	sub halant-kannada bha-kannada by bha-kannada.below;
+	sub halant-kannada ma-kannada by ma-kannada.below;
+	sub halant-kannada ya-kannada by ya-kannada.below;
+	sub halant-kannada ra-kannada by ra-kannada.below;
+	sub halant-kannada rra-kannada by rra-kannada.below;
+	sub halant-kannada la-kannada by la-kannada.below;
+	sub halant-kannada lla-kannada by lla-kannada.below;
+	sub halant-kannada va-kannada by va-kannada.below;
+	sub halant-kannada sha-kannada by sha-kannada.below;
+	sub halant-kannada ssa-kannada by ssa-kannada.below;
+	sub halant-kannada sa-kannada by sa-kannada.below;
+	sub halant-kannada ha-kannada by ha-kannada.below;
+	sub halant-kannada llla-kannada by fa-kannada.below;
+} blwf_knd2;
+} blwf;
+
+feature abvs {
+script knd2;
+
+lookup KND_dflt_akhn_jnya_processing {
+lookupflag UseMarkFilteringSet @KND_UMFS_nya_below_nonspacing;
+	sub ja-kannada nya-kannada.below' by nya-kannada.below.nonspacing;
+} KND_dflt_akhn_jnya_processing;
+
+lookup KND_dflt_abvs_stacking_ra_vattu_under_akhands {
+lookupflag UseMarkFilteringSet @KND_UMFS_blws_ra;
+	sub k_ssa-kannada ra-kannada.below' by ra-kannada.below.alt;
+} KND_dflt_abvs_stacking_ra_vattu_under_akhands;
+
+lookup KND_dflt_psts_iMatra_ligatures {
+lookupflag UseMarkFilteringSet @KND_UMFS_abvs_psts_marks;
+	sub ka-kannada iMatra-kannada by ki-kannada;
+	sub kha-kannada iMatra-kannada by khi-kannada;
+	sub ga-kannada iMatra-kannada by gi-kannada;
+	sub gha-kannada iMatra-kannada by ghi-kannada;
+	sub nga-kannada iMatra-kannada by ngi-kannada;
+	sub ca-kannada iMatra-kannada by ci-kannada;
+	sub cha-kannada iMatra-kannada by chi-kannada;
+	sub ja-kannada iMatra-kannada by ji-kannada;
+	sub jha-kannada iMatra-kannada by jhi-kannada;
+	sub nya-kannada iMatra-kannada by nyi-kannada;
+	sub tta-kannada iMatra-kannada by tti-kannada;
+	sub ttha-kannada iMatra-kannada by tthi-kannada;
+	sub dda-kannada iMatra-kannada by ddi-kannada;
+	sub ddha-kannada iMatra-kannada by ddhi-kannada;
+	sub nna-kannada iMatra-kannada by nni-kannada;
+	sub ta-kannada iMatra-kannada by ti-kannada;
+	sub tha-kannada iMatra-kannada by thi-kannada;
+	sub da-kannada iMatra-kannada by di-kannada;
+	sub dha-kannada iMatra-kannada by dhi-kannada;
+	sub na-kannada iMatra-kannada by ni-kannada;
+	sub pa-kannada iMatra-kannada by pi-kannada;
+	sub pha-kannada iMatra-kannada by phi-kannada;
+	sub ba-kannada iMatra-kannada by bi-kannada;
+	sub bha-kannada iMatra-kannada by bhi-kannada;
+	sub ma-kannada iMatra-kannada by mi-kannada;
+	sub ya-kannada iMatra-kannada by yi-kannada;
+	sub ra-kannada iMatra-kannada by ri-kannada;
+	sub rra-kannada iMatra-kannada by rri-kannada;
+	sub la-kannada iMatra-kannada by li-kannada;
+	sub lla-kannada iMatra-kannada by lli-kannada;
+	sub llla-kannada iMatra-kannada by llli-kannada;
+	sub va-kannada iMatra-kannada by vi-kannada;
+	sub sha-kannada iMatra-kannada by shi-kannada;
+	sub ssa-kannada iMatra-kannada by ssi-kannada;
+	sub ssa-kannada.short iMatra-kannada by ssi-kannada.short;
+	sub sa-kannada iMatra-kannada by si-kannada;
+	sub ha-kannada iMatra-kannada by hi-kannada;
+	sub k_ssa-kannada iMatra-kannada by k_ssi-kannada;
+} KND_dflt_psts_iMatra_ligatures;
+
+lookup KND_dflt_psts_eMatra_ligatures {
+	sub ka-kannada eMatra-kannada by ke-kannada;
+	sub kha-kannada eMatra-kannada by khe-kannada;
+	sub ga-kannada eMatra-kannada by ge-kannada;
+	sub gha-kannada eMatra-kannada by ghe-kannada;
+	sub nga-kannada eMatra-kannada by nge-kannada;
+	sub ca-kannada eMatra-kannada by ce-kannada;
+	sub cha-kannada eMatra-kannada by che-kannada;
+	sub ja-kannada eMatra-kannada by je-kannada;
+	sub jha-kannada eMatra-kannada by jhe-kannada;
+	sub nya-kannada eMatra-kannada by nye-kannada;
+	sub tta-kannada eMatra-kannada by tte-kannada;
+	sub ttha-kannada eMatra-kannada by tthe-kannada;
+	sub dda-kannada eMatra-kannada by dde-kannada;
+	sub ddha-kannada eMatra-kannada by ddhe-kannada;
+	sub nna-kannada eMatra-kannada by nne-kannada;
+	sub ta-kannada eMatra-kannada by te-kannada;
+	sub tha-kannada eMatra-kannada by the-kannada;
+	sub da-kannada eMatra-kannada by de-kannada;
+	sub dha-kannada eMatra-kannada by dhe-kannada;
+	sub na-kannada eMatra-kannada by ne-kannada;
+	sub pa-kannada eMatra-kannada by pe-kannada;
+	sub pha-kannada eMatra-kannada by phe-kannada;
+	sub ba-kannada eMatra-kannada by be-kannada;
+	sub bha-kannada eMatra-kannada by bhe-kannada;
+	sub ma-kannada eMatra-kannada by me-kannada;
+	sub ya-kannada eMatra-kannada by ye-kannada;
+	sub ra-kannada eMatra-kannada by re-kannada;
+	sub rra-kannada eMatra-kannada by rre-kannada;
+	sub la-kannada eMatra-kannada by le-kannada;
+	sub lla-kannada eMatra-kannada by lle-kannada;
+	sub llla-kannada eMatra-kannada by llle-kannada;
+	sub va-kannada eMatra-kannada by ve-kannada;
+	sub sha-kannada eMatra-kannada by she-kannada;
+	sub ssa-kannada eMatra-kannada by sse-kannada;
+	sub ssa-kannada.short eMatra-kannada by sse-kannada.short;
+	sub sa-kannada eMatra-kannada by se-kannada;
+	sub ha-kannada eMatra-kannada by he-kannada;
+	sub k_ssa-kannada eMatra-kannada by k_sse-kannada;
+} KND_dflt_psts_eMatra_ligatures;
+
+lookup KND_dflt_psts_oMatra_ligatures {
+	sub ke-kannada uuMatra-kannada by ko-kannada;
+	sub khe-kannada uuMatra-kannada by kho-kannada;
+	sub ge-kannada uuMatra-kannada by go-kannada;
+	sub ghe-kannada uuMatra-kannada by gho-kannada;
+	sub nge-kannada uuMatra-kannada by ngo-kannada;
+	sub ce-kannada uuMatra-kannada by co-kannada;
+	sub che-kannada uuMatra-kannada by cho-kannada;
+	sub je-kannada uuMatra-kannada by jo-kannada;
+	sub jhe-kannada uuMatra-kannada by jho-kannada;
+	sub nye-kannada uuMatra-kannada by nyo-kannada;
+	sub tte-kannada uuMatra-kannada by tto-kannada;
+	sub tthe-kannada uuMatra-kannada by ttho-kannada;
+	sub dde-kannada uuMatra-kannada by ddo-kannada;
+	sub ddhe-kannada uuMatra-kannada by ddho-kannada;
+	sub nne-kannada uuMatra-kannada by nno-kannada;
+	sub te-kannada uuMatra-kannada by to-kannada;
+	sub the-kannada uuMatra-kannada by tho-kannada;
+	sub de-kannada uuMatra-kannada by do-kannada;
+	sub dhe-kannada uuMatra-kannada by dho-kannada;
+	sub ne-kannada uuMatra-kannada by no-kannada;
+	sub pe-kannada uuMatra-kannada by po-kannada;
+	sub phe-kannada uuMatra-kannada by pho-kannada;
+	sub be-kannada uuMatra-kannada by bo-kannada;
+	sub bhe-kannada uuMatra-kannada by bho-kannada;
+	sub me-kannada uuMatra-kannada by mo-kannada;
+	sub ye-kannada uuMatra-kannada by yo-kannada;
+	sub re-kannada uuMatra-kannada by ro-kannada;
+	sub rre-kannada uuMatra-kannada by rro-kannada;
+	sub le-kannada uuMatra-kannada by lo-kannada;
+	sub lle-kannada uuMatra-kannada by llo-kannada;
+	sub llle-kannada uuMatra-kannada by lllo-kannada;
+	sub ve-kannada uuMatra-kannada by vo-kannada;
+	sub she-kannada uuMatra-kannada by sho-kannada;
+	sub sse-kannada uuMatra-kannada by sso-kannada;
+	sub se-kannada uuMatra-kannada by so-kannada;
+	sub he-kannada uuMatra-kannada by ho-kannada;
+	sub k_sse-kannada uuMatra-kannada by k_sso-kannada;
+} KND_dflt_psts_oMatra_ligatures;
+
+} abvs;
+
+feature blws {
+script knd2;
+
+lookup KND_dflt_blws_stacking_ra_vattu {
+	sub [@KND_allVattus nya-kannada.below.nonspacing] ra-kannada.below' by ra-kannada.below.alt;
+} KND_dflt_blws_stacking_ra_vattu;
+} blws;
+
+feature psts {
+script knd2;
+
+lookup KND_dflt_psts_aaMatra_ligatures {
+	sub ka-kannada aaMatra-kannada by kaa-kannada;
+	sub kha-kannada aaMatra-kannada by khaa-kannada;
+	sub ga-kannada aaMatra-kannada by gaa-kannada;
+	sub gha-kannada aaMatra-kannada by ghaa-kannada;
+	sub nga-kannada aaMatra-kannada by ngaa-kannada;
+	sub ca-kannada aaMatra-kannada by caa-kannada;
+	sub cha-kannada aaMatra-kannada by chaa-kannada;
+	sub jha-kannada aaMatra-kannada by jhaa-kannada;
+	sub nya-kannada aaMatra-kannada by nyaa-kannada;
+	sub tta-kannada aaMatra-kannada by ttaa-kannada;
+	sub ttha-kannada aaMatra-kannada by tthaa-kannada;
+	sub dda-kannada aaMatra-kannada by ddaa-kannada;
+	sub ddha-kannada aaMatra-kannada by ddhaa-kannada;
+	sub nna-kannada aaMatra-kannada by nnaa-kannada;
+	sub ta-kannada aaMatra-kannada by taa-kannada;
+	sub tha-kannada aaMatra-kannada by thaa-kannada;
+	sub da-kannada aaMatra-kannada by daa-kannada;
+	sub dha-kannada aaMatra-kannada by dhaa-kannada;
+	sub na-kannada aaMatra-kannada by naa-kannada;
+	sub pa-kannada aaMatra-kannada by paa-kannada;
+	sub ba-kannada aaMatra-kannada by baa-kannada;
+	sub bha-kannada aaMatra-kannada by bhaa-kannada;
+	sub ma-kannada aaMatra-kannada by maa-kannada;
+	sub ya-kannada aaMatra-kannada by yaa-kannada;
+	sub ra-kannada aaMatra-kannada by raa-kannada;
+	sub rra-kannada aaMatra-kannada by rraa-kannada;
+	sub la-kannada aaMatra-kannada by laa-kannada;
+	sub lla-kannada aaMatra-kannada by llaa-kannada;
+	sub llla-kannada aaMatra-kannada by lllaa-kannada;
+	sub va-kannada aaMatra-kannada by vaa-kannada;
+	sub sha-kannada aaMatra-kannada by shaa-kannada;
+	sub ssa-kannada aaMatra-kannada by ssaa-kannada;
+	sub sa-kannada aaMatra-kannada by saa-kannada;
+	sub ha-kannada aaMatra-kannada by haa-kannada;
+	sub k_ssa-kannada aaMatra-kannada by k_ssaa-kannada;
+} KND_dflt_psts_aaMatra_ligatures;
+
+lookup KND_dflt_psts_uMatra_ligatures {
+	sub ka-kannada uMatra-kannada by ku-kannada;
+	sub kha-kannada uMatra-kannada by khu-kannada;
+	sub ga-kannada uMatra-kannada by gu-kannada;
+	sub gha-kannada uMatra-kannada by ghu-kannada;
+	sub nga-kannada uMatra-kannada by ngu-kannada;
+	sub ca-kannada uMatra-kannada by cu-kannada;
+	sub cha-kannada uMatra-kannada by chu-kannada;
+	sub jha-kannada uMatra-kannada by jhu-kannada;
+	sub nya-kannada uMatra-kannada by nyu-kannada;
+	sub tta-kannada uMatra-kannada by ttu-kannada;
+	sub ttha-kannada uMatra-kannada by tthu-kannada;
+	sub dda-kannada uMatra-kannada by ddu-kannada;
+	sub ddha-kannada uMatra-kannada by ddhu-kannada;
+	sub nna-kannada uMatra-kannada by nnu-kannada;
+	sub ta-kannada uMatra-kannada by tu-kannada;
+	sub tha-kannada uMatra-kannada by thu-kannada;
+	sub da-kannada uMatra-kannada by du-kannada;
+	sub dha-kannada uMatra-kannada by dhu-kannada;
+	sub na-kannada uMatra-kannada by nu-kannada;
+	sub pa-kannada uMatra-kannada by pu-kannada;
+	sub ba-kannada uMatra-kannada by bu-kannada;
+	sub bha-kannada uMatra-kannada by bhu-kannada;
+	sub ma-kannada uMatra-kannada by mu-kannada;
+	sub ya-kannada uMatra-kannada by yu-kannada;
+	sub ra-kannada uMatra-kannada by ru-kannada;
+	sub rra-kannada uMatra-kannada by rru-kannada;
+	sub la-kannada uMatra-kannada by lu-kannada;
+	sub lla-kannada uMatra-kannada by llu-kannada;
+	sub llla-kannada uMatra-kannada by lllu-kannada;
+	sub va-kannada uMatra-kannada by vu-kannada;
+	sub sha-kannada uMatra-kannada by shu-kannada;
+	sub ssa-kannada uMatra-kannada by ssu-kannada;
+	sub sa-kannada uMatra-kannada by su-kannada;
+	sub ha-kannada uMatra-kannada by hu-kannada;
+	sub k_ssa-kannada uMatra-kannada by k_ssu-kannada;
+} KND_dflt_psts_uMatra_ligatures;
+
+lookup KND_dflt_psts_uuMatra_ligatures {
+	sub ka-kannada uuMatra-kannada by kuu-kannada;
+	sub kha-kannada uuMatra-kannada by khuu-kannada;
+	sub ga-kannada uuMatra-kannada by guu-kannada;
+	sub gha-kannada uuMatra-kannada by ghuu-kannada;
+	sub nga-kannada uuMatra-kannada by nguu-kannada;
+	sub ca-kannada uuMatra-kannada by cuu-kannada;
+	sub cha-kannada uuMatra-kannada by chuu-kannada;
+	sub jha-kannada uuMatra-kannada by jhuu-kannada;
+	sub nya-kannada uuMatra-kannada by nyuu-kannada;
+	sub tta-kannada uuMatra-kannada by ttuu-kannada;
+	sub ttha-kannada uuMatra-kannada by tthuu-kannada;
+	sub dda-kannada uuMatra-kannada by dduu-kannada;
+	sub ddha-kannada uuMatra-kannada by ddhuu-kannada;
+	sub nna-kannada uuMatra-kannada by nnuu-kannada;
+	sub ta-kannada uuMatra-kannada by tuu-kannada;
+	sub tha-kannada uuMatra-kannada by thuu-kannada;
+	sub da-kannada uuMatra-kannada by duu-kannada;
+	sub dha-kannada uuMatra-kannada by dhuu-kannada;
+	sub na-kannada uuMatra-kannada by nuu-kannada;
+	sub pa-kannada uuMatra-kannada by puu-kannada;
+	sub ba-kannada uuMatra-kannada by buu-kannada;
+	sub bha-kannada uuMatra-kannada by bhuu-kannada;
+	sub ma-kannada uuMatra-kannada by muu-kannada;
+	sub ya-kannada uuMatra-kannada by yuu-kannada;
+	sub ra-kannada uuMatra-kannada by ruu-kannada;
+	sub rra-kannada uuMatra-kannada by rruu-kannada;
+	sub la-kannada uuMatra-kannada by luu-kannada;
+	sub lla-kannada uuMatra-kannada by lluu-kannada;
+	sub llla-kannada uuMatra-kannada by llluu-kannada;
+	sub va-kannada uuMatra-kannada by vuu-kannada;
+	sub sha-kannada uuMatra-kannada by shuu-kannada;
+	sub ssa-kannada uuMatra-kannada by ssuu-kannada;
+	sub sa-kannada uuMatra-kannada by suu-kannada;
+	sub ha-kannada uuMatra-kannada by huu-kannada;
+	sub k_ssa-kannada uuMatra-kannada by k_ssuu-kannada;
+} KND_dflt_psts_uuMatra_ligatures;
+
+lookup KND_dflt_psts_auMatra_ligatures {
+	sub ka-kannada auMatra-kannada by kau-kannada;
+	sub kha-kannada auMatra-kannada by khau-kannada;
+	sub ga-kannada auMatra-kannada by gau-kannada;
+	sub gha-kannada auMatra-kannada by ghau-kannada;
+	sub nga-kannada auMatra-kannada by ngau-kannada;
+	sub ca-kannada auMatra-kannada by cau-kannada;
+	sub cha-kannada auMatra-kannada by chau-kannada;
+	sub jha-kannada auMatra-kannada by jhau-kannada;
+	sub nya-kannada auMatra-kannada by nyau-kannada;
+	sub tta-kannada auMatra-kannada by ttau-kannada;
+	sub ttha-kannada auMatra-kannada by tthau-kannada;
+	sub dda-kannada auMatra-kannada by ddau-kannada;
+	sub ddha-kannada auMatra-kannada by ddhau-kannada;
+	sub nna-kannada auMatra-kannada by nnau-kannada;
+	sub ta-kannada auMatra-kannada by tau-kannada;
+	sub tha-kannada auMatra-kannada by thau-kannada;
+	sub da-kannada auMatra-kannada by dau-kannada;
+	sub dha-kannada auMatra-kannada by dhau-kannada;
+	sub na-kannada auMatra-kannada by nau-kannada;
+	sub pa-kannada auMatra-kannada by pau-kannada;
+	sub ba-kannada auMatra-kannada by bau-kannada;
+	sub bha-kannada auMatra-kannada by bhau-kannada;
+	sub ma-kannada auMatra-kannada by mau-kannada;
+	sub ya-kannada auMatra-kannada by yau-kannada;
+	sub ra-kannada auMatra-kannada by rau-kannada;
+	sub rra-kannada auMatra-kannada by rrau-kannada;
+	sub la-kannada auMatra-kannada by lau-kannada;
+	sub lla-kannada auMatra-kannada by llau-kannada;
+	sub llla-kannada auMatra-kannada by lllau-kannada;
+	sub va-kannada auMatra-kannada by vau-kannada;
+	sub sha-kannada auMatra-kannada by shau-kannada;
+	sub ssa-kannada auMatra-kannada by ssau-kannada;
+	sub sa-kannada auMatra-kannada by sau-kannada;
+	sub ha-kannada auMatra-kannada by hau-kannada;
+	sub k_ssa-kannada auMatra-kannada by k_ssau-kannada;
+} KND_dflt_psts_auMatra_ligatures;
+
+lookup KND_dflt_psts_all_nukta_ligatures {
+lookupflag UseMarkFilteringSet @KND_UMFS_abvs_psts_marks;
+	sub ja-kannada aaMatra-kannada by jaa-kannada;
+	sub pha-kannada aaMatra-kannada by phaa-kannada;
+	sub ja-kannada uMatra-kannada by ju-kannada;
+	sub pha-kannada uMatra-kannada by phu-kannada;
+	sub ja-kannada uuMatra-kannada by juu-kannada;
+	sub pha-kannada uuMatra-kannada by phuu-kannada;
+	sub ja-kannada auMatra-kannada by jau-kannada;
+	sub pha-kannada auMatra-kannada by phau-kannada;
+} KND_dflt_psts_all_nukta_ligatures;
+
+lookup KND_dflt_psts_short_ssa {
+	sub @KND_ssa' lookup KND_dflt_none_ssa_short [@KND_allVattus @KND_rVocalics_and_AiLength];
+} KND_dflt_psts_short_ssa;
+
+lookup KND_dflt_psts_vattu_vertical_shift {
+	pos @KND_short_ssa @KND_allVattus' <0 -40 0 0>;
+} KND_dflt_psts_vattu_vertical_shift;
+
+} psts;
+
+feature haln {
+script knd2;
+
+lookup KND_dflt_psts_halant_ligatures {
+lookupflag UseMarkFilteringSet @KND_UMFS_haln_marks;
+	sub [@KND_all_consonants k_ssa-kannada]' lookup KND_dflt_none_halant_forms @KND_allVattus' @KND_allVattus' @KND_allVattus' halant-kannada' lookup KND_dflt_none_halant_null;
+	sub [@KND_all_consonants k_ssa-kannada]' lookup KND_dflt_none_halant_forms @KND_allVattus' @KND_allVattus' halant-kannada' lookup KND_dflt_none_halant_null;
+	sub [@KND_all_consonants k_ssa-kannada]' lookup KND_dflt_none_halant_forms @KND_allVattus' halant-kannada' lookup KND_dflt_none_halant_null;
+	sub [@KND_all_consonants k_ssa-kannada]' lookup KND_dflt_none_halant_forms halant-kannada' lookup KND_dflt_none_halant_null;
+} KND_dflt_psts_halant_ligatures;
+
+} haln;
+
+feature rclt {
+script knd2;
+
+lookup KND_dflt_rclt_stacking_ra_vattu_under_akhands_single_adjustment {
+	pos [k_ssa-kannada k_ssi-kannada k_sse-kannada]' ra-kannada.below.alt [@KND_k_ssa_ligatures space nbspace] <0 0 180 0>;
+	pos [ja-kannada ji-kannada je-kannada]' nya-kannada.below.nonspacing ra-kannada.below.alt [space nbspace] <0 0 50 0>;
+} KND_dflt_rclt_stacking_ra_vattu_under_akhands_single_adjustment;
+
+lookup KND_dflt_haln_contextual_nuktas {
+	sub @KND_pha_nukta nukta-kannada' by nukta-kannada.wide;
+	sub ja-kannada.below nukta-kannada' by nukta-kannada.below;
+	sub pha-kannada.below nukta-kannada' by nukta-kannada.below.wide;
+} KND_dflt_haln_contextual_nuktas;
+
+lookup KND_dflt_rclt_below_base_single_adjustments {
+	pos k_sse-kannada' ra-kannada.below.alt ailength-kannada <0 0 500 0>;
+	pos je-kannada' nya-kannada.below.nonspacing ra-kannada.below.alt ailength-kannada <0 0 390 0>;
+	pos @KND_ja_glyphs' nukta-kannada [ja-kannada.below] <0 0 160 0>;
+	pos @KND_pha_nukta' nukta-kannada.wide [pha-kannada.below] <0 0 160 0>;
+} KND_dflt_rclt_below_base_single_adjustments;
+} rclt;

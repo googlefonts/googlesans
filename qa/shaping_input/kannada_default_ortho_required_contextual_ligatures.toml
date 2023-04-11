@@ -1,0 +1,24 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+akhn = true
+blwf = true
+abvs = true
+blws = true
+psts = true
+haln = true
+rclt = true
+blwm = true
+mkmk = true
+
+[input]
+script = "knda"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ಕ್ಷ್ರಕ್ಷ ಕ್ಷ್ರ ಕ್ಷ್ರ ಕ್ಷ್ರಿಕ್ಷ ಕ್ಷ್ರಿ ಕ್ಷ್ರ ಕ್ಷ್ರೆಕ್ಷ ಕ್ಷ್ರೆ ಕ್ಷ್ರ ", # Add single adjustment to KSsa Akhand in context
+    "ಜ್ಞ್ರ ಜ್ಞ್ರ ಜ್ಞ್ರಿ ಜ್ಞ್ರಿ ಜ್ಞ್ರೆ ಜ್ಞ್ರೆ ", # Add single adjustment to Ja in context
+    "ಫ಼ ಫ಼ಾ ಫ಼ಿ ಫ಼ೆ ಫ಼ೌ ಫ಼್", # Alternate Nukta forms for Pha and some of its ligatures
+    "ಜ಼್ಜ಼ ಫ಼್ಫ಼" # Nukta alternates for Ja and Pha vattus
+]
