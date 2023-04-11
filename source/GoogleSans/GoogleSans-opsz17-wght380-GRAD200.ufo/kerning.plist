@@ -304,6 +304,8 @@
       <integer>30</integer>
       <key>he-ethiopic</key>
       <integer>10</integer>
+      <key>jo-ethiopic</key>
+      <integer>-40</integer>
       <key>ne-ethiopic</key>
       <integer>-30</integer>
       <key>public.kern2.ethi_ca</key>
@@ -584,6 +586,8 @@
       <integer>20</integer>
       <key>gyaa-ethiopic</key>
       <integer>-60</integer>
+      <key>jo-ethiopic</key>
+      <integer>-80</integer>
       <key>nye-ethiopic</key>
       <integer>-20</integer>
       <key>nyee-ethiopic</key>
@@ -990,6 +994,8 @@
       <integer>-60</integer>
       <key>hoa-ethiopic</key>
       <integer>-50</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-80</integer>
       <key>koa-ethiopic</key>
@@ -1978,6 +1984,8 @@
       <integer>-40</integer>
       <key>he-ethiopic</key>
       <integer>-10</integer>
+      <key>jo-ethiopic</key>
+      <integer>-90</integer>
       <key>paa-ethiopic</key>
       <integer>-60</integer>
       <key>po-ethiopic</key>
@@ -2009,6 +2017,8 @@
       <integer>-40</integer>
       <key>he-ethiopic</key>
       <integer>-10</integer>
+      <key>jo-ethiopic</key>
+      <integer>-90</integer>
       <key>paa-ethiopic</key>
       <integer>-60</integer>
       <key>po-ethiopic</key>
@@ -2383,6 +2393,8 @@
       <integer>-50</integer>
       <key>hoa-ethiopic</key>
       <integer>-80</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-70</integer>
       <key>koa-ethiopic</key>
@@ -3076,6 +3088,8 @@
       <integer>20</integer>
       <key>hhwa-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>10</integer>
       <key>kaa-ethiopic</key>
       <integer>-30</integer>
       <key>kyaa-ethiopic</key>
@@ -3878,6 +3892,8 @@
       <integer>-70</integer>
       <key>hoa-ethiopic</key>
       <integer>-90</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>joa-ethiopic</key>
       <integer>-10</integer>
       <key>kaa-ethiopic</key>
@@ -4185,6 +4201,8 @@
       <integer>30</integer>
       <key>he-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-80</integer>
       <key>naa-ethiopic</key>
       <integer>10</integer>
       <key>nye-ethiopic</key>
@@ -4471,6 +4489,8 @@
       <integer>30</integer>
       <key>the-ethiopic</key>
       <integer>-40</integer>
+      <key>to-ethiopic</key>
+      <integer>-40</integer>
       <key>twa-ethiopic</key>
       <integer>20</integer>
       <key>xwaa-ethiopic</key>
@@ -4536,6 +4556,8 @@
       <integer>20</integer>
       <key>he-ethiopic</key>
       <integer>-20</integer>
+      <key>public.kern2.ethi_aPharyngeal</key>
+      <integer>10</integer>
       <key>public.kern2.ethi_ca</key>
       <integer>20</integer>
       <key>public.kern2.ethi_qa</key>
@@ -4562,6 +4584,8 @@
       <integer>40</integer>
       <key>qwee-ethiopic</key>
       <integer>-30</integer>
+      <key>to-ethiopic</key>
+      <integer>-30</integer>
       <key>twa-ethiopic</key>
       <integer>20</integer>
       <key>wo-ethiopic</key>
@@ -4579,10 +4603,14 @@
       <integer>-140</integer>
       <key>bwa-ethiopic</key>
       <integer>-90</integer>
+      <key>bwee-ethiopic</key>
+      <integer>-160</integer>
       <key>ca-ethiopic</key>
       <integer>-150</integer>
       <key>caa-ethiopic</key>
       <integer>50</integer>
+      <key>ccaa-ethiopic</key>
+      <integer>40</integer>
       <key>cchaa-ethiopic</key>
       <integer>-200</integer>
       <key>cche-ethiopic</key>
@@ -4597,14 +4625,22 @@
       <integer>-180</integer>
       <key>cwa-ethiopic</key>
       <integer>50</integer>
+      <key>ddwa-ethiopic</key>
+      <integer>20</integer>
+      <key>dee-ethiopic</key>
+      <integer>20</integer>
+      <key>dwa-ethiopic</key>
+      <integer>20</integer>
       <key>dzaa-ethiopic</key>
       <integer>-140</integer>
       <key>fe-ethiopic</key>
       <integer>-180</integer>
+      <key>fo-ethiopic</key>
+      <integer>-10</integer>
       <key>fwe-ethiopic</key>
       <integer>-140</integer>
       <key>gaa-ethiopic</key>
-      <integer>20</integer>
+      <integer>40</integer>
       <key>ge-ethiopic</key>
       <integer>-180</integer>
       <key>gee-ethiopic</key>
@@ -4625,12 +4661,18 @@
       <integer>-110</integer>
       <key>goa-ethiopic</key>
       <integer>20</integer>
+      <key>gwaa-ethiopic</key>
+      <integer>-120</integer>
+      <key>gwee-ethiopic</key>
+      <integer>20</integer>
       <key>gyaa-ethiopic</key>
       <integer>20</integer>
       <key>gye-ethiopic</key>
       <integer>-210</integer>
       <key>gyo-ethiopic</key>
       <integer>-110</integer>
+      <key>haa-ethiopic</key>
+      <integer>-90</integer>
       <key>he-ethiopic</key>
       <integer>-100</integer>
       <key>hhaa-ethiopic</key>
@@ -4639,40 +4681,64 @@
       <integer>-120</integer>
       <key>hoa-ethiopic</key>
       <integer>-150</integer>
+      <key>ja-ethiopic</key>
+      <integer>30</integer>
+      <key>jo-ethiopic</key>
+      <integer>40</integer>
+      <key>jwa-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-160</integer>
       <key>koa-ethiopic</key>
       <integer>-120</integer>
       <key>kyaa-ethiopic</key>
       <integer>-160</integer>
+      <key>le-ethiopic</key>
+      <integer>-30</integer>
       <key>loa-ethiopic</key>
       <integer>-140</integer>
+      <key>lwa-ethiopic</key>
+      <integer>-150</integer>
       <key>mo-ethiopic</key>
       <integer>-130</integer>
+      <key>mwaSebatbeit-ethiopic</key>
+      <integer>-120</integer>
       <key>mya-ethiopic</key>
       <integer>-200</integer>
       <key>naa-ethiopic</key>
-      <integer>-140</integer>
+      <integer>-150</integer>
       <key>ne-ethiopic</key>
       <integer>-180</integer>
       <key>nee-ethiopic</key>
       <integer>-40</integer>
+      <key>ni-ethiopic</key>
+      <integer>-120</integer>
       <key>no-ethiopic</key>
       <integer>-150</integer>
+      <key>nwa-ethiopic</key>
+      <integer>20</integer>
       <key>nye-ethiopic</key>
       <integer>-180</integer>
       <key>nyee-ethiopic</key>
       <integer>-180</integer>
+      <key>nywa-ethiopic</key>
+      <integer>10</integer>
       <key>oaGlottal-ethiopic</key>
-      <integer>-70</integer>
+      <integer>-100</integer>
+      <key>paa-ethiopic</key>
+      <integer>40</integer>
       <key>phaa-ethiopic</key>
       <integer>-110</integer>
       <key>phoa-ethiopic</key>
       <integer>-50</integer>
+      <key>phwa-ethiopic</key>
+      <integer>-40</integer>
       <key>poa-ethiopic</key>
       <integer>10</integer>
+      <key>public.kern2.ethi_aGlottal</key>
+      <integer>20</integer>
       <key>public.kern2.ethi_aPharyngeal</key>
-      <integer>-70</integer>
+      <integer>-60</integer>
       <key>public.kern2.ethi_ba</key>
       <integer>-50</integer>
       <key>public.kern2.ethi_baa</key>
@@ -4689,6 +4755,14 @@
       <integer>-170</integer>
       <key>public.kern2.ethi_che</key>
       <integer>-190</integer>
+      <key>public.kern2.ethi_cho</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_da</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ddee</key>
+      <integer>20</integer>
       <key>public.kern2.ethi_ddo</key>
       <integer>20</integer>
       <key>public.kern2.ethi_ddu</key>
@@ -4697,6 +4771,10 @@
       <integer>-20</integer>
       <key>public.kern2.ethi_du</key>
       <integer>-160</integer>
+      <key>public.kern2.ethi_dzu</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ePharyngeal</key>
+      <integer>-20</integer>
       <key>public.kern2.ethi_fu</key>
       <integer>-170</integer>
       <key>public.kern2.ethi_ga</key>
@@ -4713,6 +4791,8 @@
       <integer>-130</integer>
       <key>public.kern2.ethi_iPharyngeal</key>
       <integer>-170</integer>
+      <key>public.kern2.ethi_jee</key>
+      <integer>20</integer>
       <key>public.kern2.ethi_ju</key>
       <integer>-130</integer>
       <key>public.kern2.ethi_ka</key>
@@ -4723,6 +4803,10 @@
       <integer>-60</integer>
       <key>public.kern2.ethi_kxwaa</key>
       <integer>-130</integer>
+      <key>public.kern2.ethi_kya</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_laa</key>
+      <integer>-180</integer>
       <key>public.kern2.ethi_ma</key>
       <integer>-80</integer>
       <key>public.kern2.ethi_mi</key>
@@ -4737,12 +4821,14 @@
       <integer>-150</integer>
       <key>public.kern2.ethi_pe</key>
       <integer>-160</integer>
+      <key>public.kern2.ethi_pha</key>
+      <integer>10</integer>
       <key>public.kern2.ethi_qa</key>
       <integer>-180</integer>
       <key>public.kern2.ethi_qha</key>
       <integer>-180</integer>
       <key>public.kern2.ethi_qya</key>
-      <integer>-180</integer>
+      <integer>-210</integer>
       <key>public.kern2.ethi_re</key>
       <integer>-40</integer>
       <key>public.kern2.ethi_sa</key>
@@ -4764,7 +4850,7 @@
       <key>public.kern2.ethi_toa</key>
       <integer>10</integer>
       <key>public.kern2.ethi_tzi</key>
-      <integer>-120</integer>
+      <integer>-150</integer>
       <key>public.kern2.ethi_va</key>
       <integer>-50</integer>
       <key>public.kern2.ethi_vaa</key>
@@ -4783,6 +4869,8 @@
       <integer>-170</integer>
       <key>public.kern2.ethi_zza</key>
       <integer>-110</integer>
+      <key>pwa-ethiopic</key>
+      <integer>30</integer>
       <key>qaa-ethiopic</key>
       <integer>50</integer>
       <key>qhaa-ethiopic</key>
@@ -4805,10 +4893,12 @@
       <integer>-30</integer>
       <key>qye-ethiopic</key>
       <integer>-170</integer>
+      <key>qyo-ethiopic</key>
+      <integer>-150</integer>
       <key>roa-ethiopic</key>
       <integer>-190</integer>
       <key>ru-ethiopic</key>
-      <integer>-160</integer>
+      <integer>-180</integer>
       <key>shoa-ethiopic</key>
       <integer>-140</integer>
       <key>shwa-ethiopic</key>
@@ -4819,30 +4909,50 @@
       <integer>-180</integer>
       <key>swa-ethiopic</key>
       <integer>-130</integer>
+      <key>sze-ethiopic</key>
+      <integer>20</integer>
       <key>taa-ethiopic</key>
       <integer>30</integer>
+      <key>tha-ethiopic</key>
+      <integer>-40</integer>
       <key>thaa-ethiopic</key>
       <integer>-161</integer>
       <key>the-ethiopic</key>
       <integer>-190</integer>
+      <key>thee-ethiopic</key>
+      <integer>-30</integer>
+      <key>thi-ethiopic</key>
+      <integer>-20</integer>
+      <key>tho-ethiopic</key>
+      <integer>-30</integer>
       <key>thoa-ethiopic</key>
       <integer>-140</integer>
+      <key>thu-ethiopic</key>
+      <integer>-30</integer>
       <key>thwa-ethiopic</key>
       <integer>-100</integer>
       <key>to-ethiopic</key>
       <integer>-180</integer>
       <key>tsaa-ethiopic</key>
       <integer>-110</integer>
+      <key>tswa-ethiopic</key>
+      <integer>-30</integer>
       <key>twa-ethiopic</key>
       <integer>40</integer>
       <key>ve-ethiopic</key>
       <integer>-120</integer>
       <key>vwa-ethiopic</key>
       <integer>-120</integer>
+      <key>wa-ethiopic</key>
+      <integer>-120</integer>
       <key>waGlottal-ethiopic</key>
       <integer>-60</integer>
+      <key>we-ethiopic</key>
+      <integer>-110</integer>
       <key>woa-ethiopic</key>
       <integer>-140</integer>
+      <key>wu-ethiopic</key>
+      <integer>-120</integer>
       <key>xaa-ethiopic</key>
       <integer>30</integer>
       <key>xe-ethiopic</key>
@@ -4863,8 +4973,12 @@
       <integer>-170</integer>
       <key>zoa-ethiopic</key>
       <integer>-120</integer>
-      <key>zze-ethiopic</key>
+      <key>zwa-ethiopic</key>
       <integer>-130</integer>
+      <key>zzaa-ethiopic</key>
+      <integer>-150</integer>
+      <key>zze-ethiopic</key>
+      <integer>-160</integer>
     </dict>
     <key>de-ethiopic</key>
     <dict>
@@ -4916,6 +5030,8 @@
       <integer>20</integer>
       <key>he-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-30</integer>
       <key>mya-ethiopic</key>
       <integer>30</integer>
       <key>naa-ethiopic</key>
@@ -5091,6 +5207,8 @@
       <integer>20</integer>
       <key>hoa-ethiopic</key>
       <integer>-10</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>kaa-ethiopic</key>
       <integer>-40</integer>
       <key>kyaa-ethiopic</key>
@@ -5789,9 +5907,13 @@
       <integer>-140</integer>
       <key>bwa-ethiopic</key>
       <integer>-100</integer>
+      <key>bwee-ethiopic</key>
+      <integer>-180</integer>
       <key>ca-ethiopic</key>
-      <integer>-160</integer>
+      <integer>-170</integer>
       <key>caa-ethiopic</key>
+      <integer>50</integer>
+      <key>ccaa-ethiopic</key>
       <integer>50</integer>
       <key>cchaa-ethiopic</key>
       <integer>-200</integer>
@@ -5807,12 +5929,20 @@
       <integer>-150</integer>
       <key>cwa-ethiopic</key>
       <integer>50</integer>
+      <key>ddwa-ethiopic</key>
+      <integer>30</integer>
+      <key>dee-ethiopic</key>
+      <integer>20</integer>
+      <key>dwa-ethiopic</key>
+      <integer>20</integer>
       <key>dzaa-ethiopic</key>
       <integer>-140</integer>
       <key>fe-ethiopic</key>
       <integer>-180</integer>
+      <key>fo-ethiopic</key>
+      <integer>-10</integer>
       <key>fwe-ethiopic</key>
-      <integer>-140</integer>
+      <integer>-150</integer>
       <key>gaa-ethiopic</key>
       <integer>30</integer>
       <key>ge-ethiopic</key>
@@ -5820,7 +5950,7 @@
       <key>gee-ethiopic</key>
       <integer>-90</integer>
       <key>ggaa-ethiopic</key>
-      <integer>20</integer>
+      <integer>40</integer>
       <key>gge-ethiopic</key>
       <integer>-180</integer>
       <key>ggee-ethiopic</key>
@@ -5835,6 +5965,8 @@
       <integer>-110</integer>
       <key>goa-ethiopic</key>
       <integer>30</integer>
+      <key>gwee-ethiopic</key>
+      <integer>20</integer>
       <key>gyaa-ethiopic</key>
       <integer>30</integer>
       <key>gye-ethiopic</key>
@@ -5849,6 +5981,14 @@
       <integer>-110</integer>
       <key>hoa-ethiopic</key>
       <integer>-140</integer>
+      <key>ja-ethiopic</key>
+      <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>40</integer>
+      <key>joa-ethiopic</key>
+      <integer>10</integer>
+      <key>jwa-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-150</integer>
       <key>koa-ethiopic</key>
@@ -5859,26 +5999,40 @@
       <integer>-140</integer>
       <key>mo-ethiopic</key>
       <integer>-140</integer>
+      <key>mwaSebatbeit-ethiopic</key>
+      <integer>-140</integer>
       <key>mya-ethiopic</key>
-      <integer>-190</integer>
+      <integer>-200</integer>
       <key>naa-ethiopic</key>
       <integer>-150</integer>
       <key>ne-ethiopic</key>
       <integer>-170</integer>
       <key>nee-ethiopic</key>
       <integer>-50</integer>
+      <key>ni-ethiopic</key>
+      <integer>-120</integer>
       <key>no-ethiopic</key>
       <integer>-150</integer>
+      <key>noa-ethiopic</key>
+      <integer>20</integer>
+      <key>nwa-ethiopic</key>
+      <integer>10</integer>
       <key>nye-ethiopic</key>
       <integer>-190</integer>
       <key>nyee-ethiopic</key>
       <integer>-170</integer>
+      <key>nyoa-ethiopic</key>
+      <integer>10</integer>
       <key>oaGlottal-ethiopic</key>
       <integer>-80</integer>
+      <key>paa-ethiopic</key>
+      <integer>50</integer>
       <key>phaa-ethiopic</key>
       <integer>-110</integer>
       <key>phoa-ethiopic</key>
       <integer>-70</integer>
+      <key>phwa-ethiopic</key>
+      <integer>-50</integer>
       <key>poa-ethiopic</key>
       <integer>10</integer>
       <key>public.kern2.ethi_aPharyngeal</key>
@@ -5887,6 +6041,8 @@
       <integer>-50</integer>
       <key>public.kern2.ethi_baa</key>
       <integer>-180</integer>
+      <key>public.kern2.ethi_bba</key>
+      <integer>20</integer>
       <key>public.kern2.ethi_be</key>
       <integer>-140</integer>
       <key>public.kern2.ethi_ca</key>
@@ -5896,9 +6052,15 @@
       <key>public.kern2.ethi_cha</key>
       <integer>-60</integer>
       <key>public.kern2.ethi_chaa</key>
-      <integer>-180</integer>
+      <integer>-200</integer>
       <key>public.kern2.ethi_che</key>
       <integer>-200</integer>
+      <key>public.kern2.ethi_cho</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ddee</key>
+      <integer>20</integer>
       <key>public.kern2.ethi_ddo</key>
       <integer>20</integer>
       <key>public.kern2.ethi_ddu</key>
@@ -5907,10 +6069,14 @@
       <integer>-20</integer>
       <key>public.kern2.ethi_du</key>
       <integer>-160</integer>
+      <key>public.kern2.ethi_dzu</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ePharyngeal</key>
+      <integer>-20</integer>
       <key>public.kern2.ethi_fu</key>
       <integer>-150</integer>
       <key>public.kern2.ethi_ga</key>
-      <integer>-100</integer>
+      <integer>-120</integer>
       <key>public.kern2.ethi_gga</key>
       <integer>-120</integer>
       <key>public.kern2.ethi_ggwa</key>
@@ -5923,6 +6089,8 @@
       <integer>-120</integer>
       <key>public.kern2.ethi_iPharyngeal</key>
       <integer>-170</integer>
+      <key>public.kern2.ethi_jee</key>
+      <integer>20</integer>
       <key>public.kern2.ethi_ju</key>
       <integer>-120</integer>
       <key>public.kern2.ethi_ka</key>
@@ -5933,6 +6101,8 @@
       <integer>-60</integer>
       <key>public.kern2.ethi_kxwaa</key>
       <integer>-120</integer>
+      <key>public.kern2.ethi_laa</key>
+      <integer>-170</integer>
       <key>public.kern2.ethi_ma</key>
       <integer>-120</integer>
       <key>public.kern2.ethi_mi</key>
@@ -5947,6 +6117,8 @@
       <integer>-130</integer>
       <key>public.kern2.ethi_pe</key>
       <integer>-160</integer>
+      <key>public.kern2.ethi_pha</key>
+      <integer>20</integer>
       <key>public.kern2.ethi_qa</key>
       <integer>-190</integer>
       <key>public.kern2.ethi_qha</key>
@@ -5970,8 +6142,10 @@
       <key>public.kern2.ethi_szi</key>
       <integer>-200</integer>
       <key>public.kern2.ethi_ta</key>
-      <integer>-150</integer>
+      <integer>-170</integer>
       <key>public.kern2.ethi_toa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_tsa</key>
       <integer>10</integer>
       <key>public.kern2.ethi_tzi</key>
       <integer>-120</integer>
@@ -5993,6 +6167,8 @@
       <integer>-170</integer>
       <key>public.kern2.ethi_zza</key>
       <integer>-120</integer>
+      <key>pwa-ethiopic</key>
+      <integer>30</integer>
       <key>qaa-ethiopic</key>
       <integer>50</integer>
       <key>qhaa-ethiopic</key>
@@ -6010,11 +6186,15 @@
       <key>qoa-ethiopic</key>
       <integer>30</integer>
       <key>qwaa-ethiopic</key>
-      <integer>-30</integer>
+      <integer>-20</integer>
       <key>qwee-ethiopic</key>
       <integer>-20</integer>
+      <key>qyaa-ethiopic</key>
+      <integer>40</integer>
       <key>qye-ethiopic</key>
       <integer>-170</integer>
+      <key>qyo-ethiopic</key>
+      <integer>-160</integer>
       <key>roa-ethiopic</key>
       <integer>-180</integer>
       <key>ru-ethiopic</key>
@@ -6029,32 +6209,54 @@
       <integer>-180</integer>
       <key>swa-ethiopic</key>
       <integer>-120</integer>
+      <key>sze-ethiopic</key>
+      <integer>20</integer>
       <key>taa-ethiopic</key>
       <integer>30</integer>
+      <key>tee-ethiopic</key>
+      <integer>-200</integer>
+      <key>tha-ethiopic</key>
+      <integer>-30</integer>
       <key>thaa-ethiopic</key>
       <integer>-170</integer>
       <key>the-ethiopic</key>
       <integer>-200</integer>
+      <key>thee-ethiopic</key>
+      <integer>-30</integer>
+      <key>thi-ethiopic</key>
+      <integer>-20</integer>
+      <key>tho-ethiopic</key>
+      <integer>-30</integer>
       <key>thoa-ethiopic</key>
       <integer>-140</integer>
+      <key>thu-ethiopic</key>
+      <integer>-20</integer>
       <key>thwa-ethiopic</key>
       <integer>-110</integer>
       <key>to-ethiopic</key>
       <integer>-150</integer>
       <key>tsaa-ethiopic</key>
       <integer>-110</integer>
+      <key>tswa-ethiopic</key>
+      <integer>-30</integer>
       <key>twa-ethiopic</key>
       <integer>40</integer>
       <key>ve-ethiopic</key>
       <integer>-130</integer>
       <key>vwa-ethiopic</key>
       <integer>-120</integer>
+      <key>wa-ethiopic</key>
+      <integer>-120</integer>
       <key>waGlottal-ethiopic</key>
       <integer>-40</integer>
+      <key>we-ethiopic</key>
+      <integer>-100</integer>
       <key>woa-ethiopic</key>
       <integer>-140</integer>
+      <key>wu-ethiopic</key>
+      <integer>-120</integer>
       <key>xaa-ethiopic</key>
-      <integer>20</integer>
+      <integer>40</integer>
       <key>xe-ethiopic</key>
       <integer>-180</integer>
       <key>xo-ethiopic</key>
@@ -6073,8 +6275,12 @@
       <integer>-170</integer>
       <key>zoa-ethiopic</key>
       <integer>-120</integer>
+      <key>zwa-ethiopic</key>
+      <integer>-120</integer>
+      <key>zzaa-ethiopic</key>
+      <integer>-160</integer>
       <key>zze-ethiopic</key>
-      <integer>-150</integer>
+      <integer>-170</integer>
     </dict>
     <key>dzaa-ethiopic</key>
     <dict>
@@ -6421,6 +6627,8 @@
       <integer>-80</integer>
       <key>hoa-ethiopic</key>
       <integer>-60</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-60</integer>
       <key>koa-ethiopic</key>
@@ -6789,6 +6997,8 @@
       <integer>30</integer>
       <key>thoa-ethiopic</key>
       <integer>10</integer>
+      <key>to-ethiopic</key>
+      <integer>20</integer>
       <key>twa-ethiopic</key>
       <integer>30</integer>
       <key>ve-ethiopic</key>
@@ -8584,6 +8794,8 @@
       <integer>20</integer>
       <key>fo-ethiopic</key>
       <integer>30</integer>
+      <key>jo-ethiopic</key>
+      <integer>10</integer>
       <key>ne-ethiopic</key>
       <integer>20</integer>
       <key>nee-ethiopic</key>
@@ -8838,6 +9050,8 @@
       <integer>30</integer>
       <key>thoa-ethiopic</key>
       <integer>20</integer>
+      <key>to-ethiopic</key>
+      <integer>10</integer>
       <key>twa-ethiopic</key>
       <integer>20</integer>
       <key>ve-ethiopic</key>
@@ -9429,6 +9643,8 @@
       <integer>40</integer>
       <key>tho-ethiopic</key>
       <integer>-30</integer>
+      <key>to-ethiopic</key>
+      <integer>20</integer>
       <key>twa-ethiopic</key>
       <integer>30</integer>
       <key>wo-ethiopic</key>
@@ -9660,6 +9876,55 @@
       <integer>10</integer>
       <key>zze-ethiopic</key>
       <integer>-20</integer>
+    </dict>
+    <key>fweeGurage-ethiopic</key>
+    <dict>
+      <key>loa-ethiopic</key>
+      <integer>30</integer>
+      <key>ne-ethiopic</key>
+      <integer>-50</integer>
+      <key>nwa-ethiopic</key>
+      <integer>10</integer>
+      <key>nye-ethiopic</key>
+      <integer>-30</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-140</integer>
+      <key>public.kern2.ethi_cca</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_cha</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_gga</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_kxa</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-160</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_saa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_wi</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_zza</key>
+      <integer>10</integer>
+      <key>twa-ethiopic</key>
+      <integer>10</integer>
+      <key>waGlottal-ethiopic</key>
+      <integer>-30</integer>
+      <key>woa-ethiopic</key>
+      <integer>10</integer>
+      <key>xe-ethiopic</key>
+      <integer>10</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-50</integer>
+      <key>zoa-ethiopic</key>
+      <integer>10</integer>
+      <key>zwa-ethiopic</key>
+      <integer>-10</integer>
     </dict>
     <key>fwi-ethiopic</key>
     <dict>
@@ -9982,6 +10247,183 @@
       <key>zzaa-ethiopic</key>
       <integer>40</integer>
     </dict>
+    <key>fwiGurage-ethiopic</key>
+    <dict>
+      <key>ccaa-ethiopic</key>
+      <integer>-60</integer>
+      <key>co-ethiopic</key>
+      <integer>20</integer>
+      <key>dee-ethiopic</key>
+      <integer>-50</integer>
+      <key>fwa-ethiopic</key>
+      <integer>10</integer>
+      <key>fwe-ethiopic</key>
+      <integer>20</integer>
+      <key>gaa-ethiopic</key>
+      <integer>-110</integer>
+      <key>ggaa-ethiopic</key>
+      <integer>-90</integer>
+      <key>ggwaa-ethiopic</key>
+      <integer>-10</integer>
+      <key>ggwee-ethiopic</key>
+      <integer>-10</integer>
+      <key>go-ethiopic</key>
+      <integer>30</integer>
+      <key>goa-ethiopic</key>
+      <integer>-30</integer>
+      <key>gwaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>gyaa-ethiopic</key>
+      <integer>-100</integer>
+      <key>gye-ethiopic</key>
+      <integer>10</integer>
+      <key>hhaa-ethiopic</key>
+      <integer>-40</integer>
+      <key>ja-ethiopic</key>
+      <integer>-50</integer>
+      <key>jo-ethiopic</key>
+      <integer>-110</integer>
+      <key>joa-ethiopic</key>
+      <integer>10</integer>
+      <key>loa-ethiopic</key>
+      <integer>40</integer>
+      <key>ne-ethiopic</key>
+      <integer>-30</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-110</integer>
+      <key>nyoa-ethiopic</key>
+      <integer>-20</integer>
+      <key>paa-ethiopic</key>
+      <integer>-80</integer>
+      <key>po-ethiopic</key>
+      <integer>-80</integer>
+      <key>poa-ethiopic</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ca</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_cca</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_cha</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_da</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_ddee</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_ddo</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_doa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_dzu</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ePharyngeal</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_fu</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_gga</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ha</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_hha</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ju</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_kxa</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_la</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_laa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-140</integer>
+      <key>public.kern2.ethi_oPharyngeal</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_qa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_qha</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_qya</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_sa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_saa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_sha</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_szi</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_toa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_tzi</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_wi</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_xa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ya</key>
+      <integer>10</integer>
+      <key>qaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>qhaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>qhe-ethiopic</key>
+      <integer>20</integer>
+      <key>qho-ethiopic</key>
+      <integer>-20</integer>
+      <key>qhwaa-ethiopic</key>
+      <integer>20</integer>
+      <key>qo-ethiopic</key>
+      <integer>-10</integer>
+      <key>qoa-ethiopic</key>
+      <integer>-10</integer>
+      <key>qwaa-ethiopic</key>
+      <integer>20</integer>
+      <key>qwee-ethiopic</key>
+      <integer>20</integer>
+      <key>qyaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>roa-ethiopic</key>
+      <integer>20</integer>
+      <key>rwa-ethiopic</key>
+      <integer>-20</integer>
+      <key>rya-ethiopic</key>
+      <integer>-40</integer>
+      <key>soa-ethiopic</key>
+      <integer>20</integer>
+      <key>sze-ethiopic</key>
+      <integer>-60</integer>
+      <key>taa-ethiopic</key>
+      <integer>-60</integer>
+      <key>tha-ethiopic</key>
+      <integer>-40</integer>
+      <key>thaa-ethiopic</key>
+      <integer>20</integer>
+      <key>to-ethiopic</key>
+      <integer>20</integer>
+      <key>twa-ethiopic</key>
+      <integer>30</integer>
+      <key>waGlottal-ethiopic</key>
+      <integer>-70</integer>
+      <key>woa-ethiopic</key>
+      <integer>20</integer>
+      <key>xe-ethiopic</key>
+      <integer>20</integer>
+      <key>xo-ethiopic</key>
+      <integer>20</integer>
+      <key>xoa-ethiopic</key>
+      <integer>10</integer>
+      <key>yaa-ethiopic</key>
+      <integer>-70</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-40</integer>
+    </dict>
     <key>fya-ethiopic</key>
     <dict>
       <key>aaGlottal-ethiopic</key>
@@ -10241,7 +10683,7 @@
       <key>he-ethiopic</key>
       <integer>20</integer>
       <key>jo-ethiopic</key>
-      <integer>-50</integer>
+      <integer>-60</integer>
       <key>loa-ethiopic</key>
       <integer>20</integer>
       <key>naa-ethiopic</key>
@@ -11608,6 +12050,8 @@
       <integer>20</integer>
       <key>hhwa-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>joa-ethiopic</key>
       <integer>10</integer>
       <key>loa-ethiopic</key>
@@ -12358,6 +12802,8 @@
       <integer>-40</integer>
       <key>the-ethiopic</key>
       <integer>-20</integer>
+      <key>to-ethiopic</key>
+      <integer>-50</integer>
       <key>twa-ethiopic</key>
       <integer>20</integer>
       <key>waGlottal-ethiopic</key>
@@ -12612,6 +13058,8 @@
       <integer>-30</integer>
       <key>rya-ethiopic</key>
       <integer>50</integer>
+      <key>to-ethiopic</key>
+      <integer>-60</integer>
       <key>we-ethiopic</key>
       <integer>20</integer>
       <key>wo-ethiopic</key>
@@ -12848,6 +13296,8 @@
       <integer>20</integer>
       <key>hoa-ethiopic</key>
       <integer>-10</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>joa-ethiopic</key>
       <integer>10</integer>
       <key>kaa-ethiopic</key>
@@ -13085,6 +13535,8 @@
       <integer>20</integer>
       <key>he-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-60</integer>
       <key>loa-ethiopic</key>
       <integer>50</integer>
       <key>naa-ethiopic</key>
@@ -13264,6 +13716,8 @@
       <integer>20</integer>
       <key>he-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-90</integer>
       <key>naa-ethiopic</key>
       <integer>20</integer>
       <key>nee-ethiopic</key>
@@ -14078,6 +14532,77 @@
       <key>zzaa-ethiopic</key>
       <integer>20</integer>
     </dict>
+    <key>gweGurage-ethiopic</key>
+    <dict>
+      <key>hhaa-ethiopic</key>
+      <integer>0</integer>
+      <key>ne-ethiopic</key>
+      <integer>-160</integer>
+      <key>nye-ethiopic</key>
+      <integer>-80</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-200</integer>
+      <key>paa-ethiopic</key>
+      <integer>-100</integer>
+      <key>phoa-ethiopic</key>
+      <integer>20</integer>
+      <key>po-ethiopic</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_aGlottal</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_ddo</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_doa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ga</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_hha</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_laa</key>
+      <integer>0</integer>
+      <key>public.kern2.ethi_ma</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_na</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-190</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-100</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>0</integer>
+      <key>public.kern2.ethi_szi</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_wi</key>
+      <integer>0</integer>
+      <key>public.kern2.ethi_xa</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>-80</integer>
+      <key>qho-ethiopic</key>
+      <integer>20</integer>
+      <key>rwa-ethiopic</key>
+      <integer>0</integer>
+      <key>rya-ethiopic</key>
+      <integer>0</integer>
+      <key>sze-ethiopic</key>
+      <integer>-30</integer>
+      <key>tha-ethiopic</key>
+      <integer>-30</integer>
+      <key>xaa-ethiopic</key>
+      <integer>-70</integer>
+      <key>xe-ethiopic</key>
+      <integer>-20</integer>
+      <key>xwaa-ethiopic</key>
+      <integer>-60</integer>
+      <key>xwee-ethiopic</key>
+      <integer>-90</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-90</integer>
+    </dict>
     <key>gwee-ethiopic</key>
     <dict>
       <key>aaGlottal-ethiopic</key>
@@ -14659,6 +15184,8 @@
       <integer>-70</integer>
       <key>he-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-80</integer>
       <key>loa-ethiopic</key>
       <integer>40</integer>
       <key>mo-ethiopic</key>
@@ -14816,6 +15343,8 @@
       <integer>40</integer>
       <key>he-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-50</integer>
       <key>loa-ethiopic</key>
       <integer>30</integer>
       <key>naa-ethiopic</key>
@@ -15064,6 +15593,8 @@
       <integer>20</integer>
       <key>hoa-ethiopic</key>
       <integer>-20</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-30</integer>
       <key>kyaa-ethiopic</key>
@@ -15295,6 +15826,8 @@
       <integer>20</integer>
       <key>he-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-50</integer>
       <key>loa-ethiopic</key>
       <integer>50</integer>
       <key>naa-ethiopic</key>
@@ -15639,6 +16172,8 @@
       <integer>-120</integer>
       <key>tho-ethiopic</key>
       <integer>-90</integer>
+      <key>to-ethiopic</key>
+      <integer>-40</integer>
       <key>wa-ethiopic</key>
       <integer>-40</integer>
       <key>xaa-ethiopic</key>
@@ -16152,6 +16687,8 @@
       <integer>-50</integer>
       <key>hoa-ethiopic</key>
       <integer>-40</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>joa-ethiopic</key>
       <integer>10</integer>
       <key>kaa-ethiopic</key>
@@ -16723,6 +17260,8 @@
       <integer>-80</integer>
       <key>hoa-ethiopic</key>
       <integer>-140</integer>
+      <key>jo-ethiopic</key>
+      <integer>40</integer>
       <key>joa-ethiopic</key>
       <integer>-10</integer>
       <key>kaa-ethiopic</key>
@@ -16961,6 +17500,100 @@
       <integer>-130</integer>
       <key>zze-ethiopic</key>
       <integer>-140</integer>
+    </dict>
+    <key>hhwee-ethiopic</key>
+    <dict>
+      <key>ne-ethiopic</key>
+      <integer>-40</integer>
+      <key>nye-ethiopic</key>
+      <integer>-20</integer>
+      <key>oaGlottal-ethiopic</key>
+      <integer>10</integer>
+      <key>phoa-ethiopic</key>
+      <integer>0</integer>
+      <key>public.kern2.ethi_na</key>
+      <integer>0</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-140</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_ssa</key>
+      <integer>0</integer>
+      <key>public.kern2.ethi_xa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>0</integer>
+      <key>xaa-ethiopic</key>
+      <integer>0</integer>
+      <key>xe-ethiopic</key>
+      <integer>20</integer>
+      <key>xo-ethiopic</key>
+      <integer>20</integer>
+      <key>xoa-ethiopic</key>
+      <integer>10</integer>
+      <key>xwaa-ethiopic</key>
+      <integer>0</integer>
+      <key>xwee-ethiopic</key>
+      <integer>0</integer>
+      <key>yoa-ethiopic</key>
+      <integer>0</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-40</integer>
+    </dict>
+    <key>hhya-ethiopic</key>
+    <dict>
+      <key>ne-ethiopic</key>
+      <integer>-90</integer>
+      <key>nye-ethiopic</key>
+      <integer>-110</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>-70</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-100</integer>
+    </dict>
+    <key>hhyaa-ethiopic</key>
+    <dict>
+      <key>ne-ethiopic</key>
+      <integer>-110</integer>
+      <key>nye-ethiopic</key>
+      <integer>-120</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_gga</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-80</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-100</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>-80</integer>
+      <key>xo-ethiopic</key>
+      <integer>-110</integer>
+      <key>xoa-ethiopic</key>
+      <integer>-80</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-100</integer>
+    </dict>
+    <key>hhye-ethiopic</key>
+    <dict>
+      <key>nye-ethiopic</key>
+      <integer>-140</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-120</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-130</integer>
     </dict>
     <key>hi-ethiopic</key>
     <dict>
@@ -17235,6 +17868,8 @@
       <integer>-10</integer>
       <key>hoa-ethiopic</key>
       <integer>-30</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-70</integer>
       <key>koa-ethiopic</key>
@@ -17500,6 +18135,8 @@
       <integer>0</integer>
       <key>hoa-ethiopic</key>
       <integer>-20</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>joa-ethiopic</key>
       <integer>10</integer>
       <key>kaa-ethiopic</key>
@@ -17809,6 +18446,8 @@
       <integer>40</integer>
       <key>nyee-ethiopic</key>
       <integer>30</integer>
+      <key>public.kern2.ethi_aPharyngeal</key>
+      <integer>-10</integer>
       <key>public.kern2.ethi_ca</key>
       <integer>20</integer>
       <key>public.kern2.ethi_ggwa</key>
@@ -18085,6 +18724,8 @@
       <integer>-30</integer>
       <key>hoa-ethiopic</key>
       <integer>-60</integer>
+      <key>jo-ethiopic</key>
+      <integer>10</integer>
       <key>kaa-ethiopic</key>
       <integer>-60</integer>
       <key>koa-ethiopic</key>
@@ -18362,6 +19003,8 @@
       <integer>-50</integer>
       <key>hoa-ethiopic</key>
       <integer>-60</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>kaa-ethiopic</key>
       <integer>-40</integer>
       <key>koa-ethiopic</key>
@@ -18396,6 +19039,8 @@
       <integer>20</integer>
       <key>public.kern2.ethi_aGlottal</key>
       <integer>20</integer>
+      <key>public.kern2.ethi_aPharyngeal</key>
+      <integer>-40</integer>
       <key>public.kern2.ethi_baa</key>
       <integer>-60</integer>
       <key>public.kern2.ethi_be</key>
@@ -19183,10 +19828,14 @@
       <integer>-140</integer>
       <key>bwa-ethiopic</key>
       <integer>-90</integer>
+      <key>bwee-ethiopic</key>
+      <integer>-180</integer>
       <key>ca-ethiopic</key>
       <integer>-90</integer>
       <key>caa-ethiopic</key>
       <integer>40</integer>
+      <key>ccaa-ethiopic</key>
+      <integer>30</integer>
       <key>cchaa-ethiopic</key>
       <integer>-180</integer>
       <key>cche-ethiopic</key>
@@ -19201,10 +19850,18 @@
       <integer>-130</integer>
       <key>cwa-ethiopic</key>
       <integer>40</integer>
+      <key>ddwa-ethiopic</key>
+      <integer>20</integer>
+      <key>dee-ethiopic</key>
+      <integer>10</integer>
       <key>dzaa-ethiopic</key>
       <integer>-100</integer>
       <key>fe-ethiopic</key>
       <integer>-130</integer>
+      <key>fo-ethiopic</key>
+      <integer>-10</integer>
+      <key>fwa-ethiopic</key>
+      <integer>10</integer>
       <key>fwe-ethiopic</key>
       <integer>-130</integer>
       <key>gaa-ethiopic</key>
@@ -19226,9 +19883,13 @@
       <key>ggwaa-ethiopic</key>
       <integer>40</integer>
       <key>go-ethiopic</key>
-      <integer>-80</integer>
+      <integer>-120</integer>
       <key>goa-ethiopic</key>
       <integer>40</integer>
+      <key>gwaa-ethiopic</key>
+      <integer>-120</integer>
+      <key>gwee-ethiopic</key>
+      <integer>20</integer>
       <key>gyaa-ethiopic</key>
       <integer>30</integer>
       <key>gye-ethiopic</key>
@@ -19243,8 +19904,14 @@
       <integer>-120</integer>
       <key>hoa-ethiopic</key>
       <integer>-140</integer>
+      <key>ja-ethiopic</key>
+      <integer>30</integer>
+      <key>jo-ethiopic</key>
+      <integer>40</integer>
       <key>joa-ethiopic</key>
       <integer>10</integer>
+      <key>jwa-ethiopic</key>
+      <integer>20</integer>
       <key>kaa-ethiopic</key>
       <integer>-110</integer>
       <key>koa-ethiopic</key>
@@ -19255,6 +19922,8 @@
       <integer>-120</integer>
       <key>mo-ethiopic</key>
       <integer>-100</integer>
+      <key>mwaSebatbeit-ethiopic</key>
+      <integer>-140</integer>
       <key>mya-ethiopic</key>
       <integer>-150</integer>
       <key>naa-ethiopic</key>
@@ -19265,22 +19934,36 @@
       <integer>-60</integer>
       <key>no-ethiopic</key>
       <integer>-130</integer>
+      <key>noa-ethiopic</key>
+      <integer>10</integer>
+      <key>nwa-ethiopic</key>
+      <integer>20</integer>
       <key>nye-ethiopic</key>
       <integer>-90</integer>
       <key>nyee-ethiopic</key>
       <integer>-90</integer>
+      <key>nyoa-ethiopic</key>
+      <integer>10</integer>
+      <key>nywa-ethiopic</key>
+      <integer>20</integer>
       <key>oaGlottal-ethiopic</key>
       <integer>-80</integer>
+      <key>paa-ethiopic</key>
+      <integer>40</integer>
       <key>phaa-ethiopic</key>
       <integer>-80</integer>
       <key>phoa-ethiopic</key>
       <integer>-60</integer>
+      <key>phwa-ethiopic</key>
+      <integer>-40</integer>
       <key>public.kern2.ethi_aPharyngeal</key>
       <integer>-70</integer>
       <key>public.kern2.ethi_ba</key>
       <integer>-50</integer>
       <key>public.kern2.ethi_baa</key>
       <integer>-150</integer>
+      <key>public.kern2.ethi_bba</key>
+      <integer>10</integer>
       <key>public.kern2.ethi_be</key>
       <integer>-140</integer>
       <key>public.kern2.ethi_ca</key>
@@ -19293,10 +19976,22 @@
       <integer>-120</integer>
       <key>public.kern2.ethi_che</key>
       <integer>-120</integer>
+      <key>public.kern2.ethi_cho</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_da</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ddee</key>
+      <integer>20</integer>
       <key>public.kern2.ethi_ddu</key>
       <integer>-140</integer>
       <key>public.kern2.ethi_du</key>
       <integer>-140</integer>
+      <key>public.kern2.ethi_dzu</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ePharyngeal</key>
+      <integer>-30</integer>
       <key>public.kern2.ethi_fu</key>
       <integer>-110</integer>
       <key>public.kern2.ethi_ga</key>
@@ -19313,16 +20008,20 @@
       <integer>-100</integer>
       <key>public.kern2.ethi_iPharyngeal</key>
       <integer>-120</integer>
+      <key>public.kern2.ethi_jee</key>
+      <integer>20</integer>
       <key>public.kern2.ethi_ju</key>
       <integer>-110</integer>
       <key>public.kern2.ethi_ka</key>
       <integer>-50</integer>
       <key>public.kern2.ethi_kwaa</key>
       <integer>-100</integer>
+      <key>public.kern2.ethi_laa</key>
+      <integer>-160</integer>
       <key>public.kern2.ethi_ma</key>
       <integer>-120</integer>
       <key>public.kern2.ethi_mi</key>
-      <integer>-150</integer>
+      <integer>-160</integer>
       <key>public.kern2.ethi_na</key>
       <integer>-90</integer>
       <key>public.kern2.ethi_nya</key>
@@ -19356,7 +20055,9 @@
       <key>public.kern2.ethi_szi</key>
       <integer>-140</integer>
       <key>public.kern2.ethi_ta</key>
-      <integer>-140</integer>
+      <integer>-160</integer>
+      <key>public.kern2.ethi_tsa</key>
+      <integer>10</integer>
       <key>public.kern2.ethi_tzi</key>
       <integer>-90</integer>
       <key>public.kern2.ethi_va</key>
@@ -19376,7 +20077,9 @@
       <key>public.kern2.ethi_zhaa</key>
       <integer>-120</integer>
       <key>public.kern2.ethi_zza</key>
-      <integer>-80</integer>
+      <integer>-100</integer>
+      <key>pwa-ethiopic</key>
+      <integer>30</integer>
       <key>qaa-ethiopic</key>
       <integer>50</integer>
       <key>qhaa-ethiopic</key>
@@ -19399,6 +20102,8 @@
       <integer>-40</integer>
       <key>qye-ethiopic</key>
       <integer>-110</integer>
+      <key>qyo-ethiopic</key>
+      <integer>-180</integer>
       <key>roa-ethiopic</key>
       <integer>-160</integer>
       <key>ru-ethiopic</key>
@@ -19411,32 +20116,52 @@
       <integer>-160</integer>
       <key>swa-ethiopic</key>
       <integer>-120</integer>
+      <key>sze-ethiopic</key>
+      <integer>20</integer>
       <key>taa-ethiopic</key>
       <integer>50</integer>
       <key>te-ethiopic</key>
       <integer>-110</integer>
+      <key>tha-ethiopic</key>
+      <integer>-30</integer>
       <key>thaa-ethiopic</key>
-      <integer>-130</integer>
+      <integer>-190</integer>
       <key>the-ethiopic</key>
       <integer>-160</integer>
+      <key>thee-ethiopic</key>
+      <integer>-30</integer>
+      <key>thi-ethiopic</key>
+      <integer>-30</integer>
+      <key>tho-ethiopic</key>
+      <integer>-30</integer>
       <key>thoa-ethiopic</key>
       <integer>-140</integer>
+      <key>thu-ethiopic</key>
+      <integer>-30</integer>
       <key>thwa-ethiopic</key>
       <integer>-80</integer>
       <key>to-ethiopic</key>
       <integer>-130</integer>
       <key>tsaa-ethiopic</key>
       <integer>-80</integer>
+      <key>tswa-ethiopic</key>
+      <integer>-30</integer>
       <key>twa-ethiopic</key>
       <integer>40</integer>
       <key>ve-ethiopic</key>
       <integer>-140</integer>
       <key>vwa-ethiopic</key>
       <integer>-110</integer>
+      <key>wa-ethiopic</key>
+      <integer>-120</integer>
       <key>waGlottal-ethiopic</key>
       <integer>-50</integer>
+      <key>we-ethiopic</key>
+      <integer>-110</integer>
       <key>woa-ethiopic</key>
       <integer>-140</integer>
+      <key>wu-ethiopic</key>
+      <integer>-100</integer>
       <key>xaa-ethiopic</key>
       <integer>30</integer>
       <key>xe-ethiopic</key>
@@ -19457,6 +20182,10 @@
       <integer>-50</integer>
       <key>zoa-ethiopic</key>
       <integer>-120</integer>
+      <key>zwa-ethiopic</key>
+      <integer>-130</integer>
+      <key>zzaa-ethiopic</key>
+      <integer>-150</integer>
       <key>zze-ethiopic</key>
       <integer>-80</integer>
     </dict>
@@ -19574,6 +20303,8 @@
       <key>hhwa-ethiopic</key>
       <integer>20</integer>
       <key>hoa-ethiopic</key>
+      <integer>10</integer>
+      <key>jo-ethiopic</key>
       <integer>10</integer>
       <key>joa-ethiopic</key>
       <integer>-30</integer>
@@ -19833,6 +20564,8 @@
       <integer>-40</integer>
       <key>hoa-ethiopic</key>
       <integer>-30</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-50</integer>
       <key>koa-ethiopic</key>
@@ -20771,6 +21504,8 @@
       <integer>-50</integer>
       <key>hoa-ethiopic</key>
       <integer>-30</integer>
+      <key>jo-ethiopic</key>
+      <integer>-120</integer>
       <key>joa-ethiopic</key>
       <integer>20</integer>
       <key>koa-ethiopic</key>
@@ -20937,6 +21672,205 @@
       <integer>-20</integer>
       <key>zoa-ethiopic</key>
       <integer>10</integer>
+    </dict>
+    <key>kweGurage-ethiopic</key>
+    <dict>
+      <key>ccaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>dee-ethiopic</key>
+      <integer>-30</integer>
+      <key>fwa-ethiopic</key>
+      <integer>10</integer>
+      <key>gaa-ethiopic</key>
+      <integer>-120</integer>
+      <key>ggaa-ethiopic</key>
+      <integer>-90</integer>
+      <key>ggwaa-ethiopic</key>
+      <integer>-40</integer>
+      <key>ggwee-ethiopic</key>
+      <integer>-30</integer>
+      <key>goa-ethiopic</key>
+      <integer>-40</integer>
+      <key>gyaa-ethiopic</key>
+      <integer>-110</integer>
+      <key>ja-ethiopic</key>
+      <integer>-30</integer>
+      <key>jo-ethiopic</key>
+      <integer>-90</integer>
+      <key>kaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>koa-ethiopic</key>
+      <integer>30</integer>
+      <key>loa-ethiopic</key>
+      <integer>40</integer>
+      <key>mya-ethiopic</key>
+      <integer>10</integer>
+      <key>ne-ethiopic</key>
+      <integer>-180</integer>
+      <key>noa-ethiopic</key>
+      <integer>-30</integer>
+      <key>nye-ethiopic</key>
+      <integer>-60</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-180</integer>
+      <key>nyoa-ethiopic</key>
+      <integer>-20</integer>
+      <key>nywa-ethiopic</key>
+      <integer>10</integer>
+      <key>oaGlottal-ethiopic</key>
+      <integer>30</integer>
+      <key>paa-ethiopic</key>
+      <integer>-130</integer>
+      <key>phoa-ethiopic</key>
+      <integer>20</integer>
+      <key>po-ethiopic</key>
+      <integer>-60</integer>
+      <key>poa-ethiopic</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_aGlottal</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_bba</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ccha</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_cha</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_da</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_ddee</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_ddo</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_ddu</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_doa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_du</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_dzu</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ePharyngeal</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_ga</key>
+      <integer>-80</integer>
+      <key>public.kern2.ethi_gga</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_hha</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ka</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_kxa</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_laa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_na</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-210</integer>
+      <key>public.kern2.ethi_oPharyngeal</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-80</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_qa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_qya</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_sa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_saa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_sha</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_shaa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ssa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_szi</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_toa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_tsa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_tzi</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_xa</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_zza</key>
+      <integer>10</integer>
+      <key>qaa-ethiopic</key>
+      <integer>-60</integer>
+      <key>qhaa-ethiopic</key>
+      <integer>-60</integer>
+      <key>qhe-ethiopic</key>
+      <integer>30</integer>
+      <key>qho-ethiopic</key>
+      <integer>10</integer>
+      <key>qhwaa-ethiopic</key>
+      <integer>10</integer>
+      <key>qo-ethiopic</key>
+      <integer>10</integer>
+      <key>qwaa-ethiopic</key>
+      <integer>10</integer>
+      <key>qwee-ethiopic</key>
+      <integer>10</integer>
+      <key>qyaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>roa-ethiopic</key>
+      <integer>10</integer>
+      <key>ru-ethiopic</key>
+      <integer>20</integer>
+      <key>rwa-ethiopic</key>
+      <integer>-20</integer>
+      <key>rya-ethiopic</key>
+      <integer>-20</integer>
+      <key>soa-ethiopic</key>
+      <integer>20</integer>
+      <key>sze-ethiopic</key>
+      <integer>-40</integer>
+      <key>taa-ethiopic</key>
+      <integer>-80</integer>
+      <key>tha-ethiopic</key>
+      <integer>-30</integer>
+      <key>thaa-ethiopic</key>
+      <integer>20</integer>
+      <key>to-ethiopic</key>
+      <integer>20</integer>
+      <key>tsaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>tzoa-ethiopic</key>
+      <integer>-30</integer>
+      <key>wa-ethiopic</key>
+      <integer>20</integer>
+      <key>waGlottal-ethiopic</key>
+      <integer>-70</integer>
+      <key>xaa-ethiopic</key>
+      <integer>-70</integer>
+      <key>xe-ethiopic</key>
+      <integer>-10</integer>
+      <key>xwaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>xwee-ethiopic</key>
+      <integer>-70</integer>
+      <key>yaa-ethiopic</key>
+      <integer>-70</integer>
+      <key>yoa-ethiopic</key>
+      <integer>30</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-80</integer>
+      <key>zoa-ethiopic</key>
+      <integer>20</integer>
     </dict>
     <key>kwee-ethiopic</key>
     <dict>
@@ -21371,6 +22305,17 @@
       <integer>20</integer>
       <key>zze-ethiopic</key>
       <integer>-30</integer>
+    </dict>
+    <key>kwiGurage-ethiopic</key>
+    <dict>
+      <key>oaGlottal-ethiopic</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-30</integer>
+      <key>thaa-ethiopic</key>
+      <integer>10</integer>
     </dict>
     <key>kxwa-ethiopic</key>
     <dict>
@@ -21926,6 +22871,8 @@
       <integer>-60</integer>
       <key>hoa-ethiopic</key>
       <integer>-20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-120</integer>
       <key>joa-ethiopic</key>
       <integer>20</integer>
       <key>koa-ethiopic</key>
@@ -23005,6 +23952,8 @@
       <integer>20</integer>
       <key>hoa-ethiopic</key>
       <integer>-50</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-40</integer>
       <key>koa-ethiopic</key>
@@ -23786,6 +24735,8 @@
       <integer>-10</integer>
       <key>hoa-ethiopic</key>
       <integer>-50</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>joa-ethiopic</key>
       <integer>10</integer>
       <key>kaa-ethiopic</key>
@@ -24341,6 +25292,8 @@
       <integer>10</integer>
       <key>thu-ethiopic</key>
       <integer>-60</integer>
+      <key>to-ethiopic</key>
+      <integer>20</integer>
       <key>twa-ethiopic</key>
       <integer>20</integer>
       <key>tzoa-ethiopic</key>
@@ -24650,6 +25603,8 @@
       <integer>-40</integer>
       <key>hoa-ethiopic</key>
       <integer>-110</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-110</integer>
       <key>koa-ethiopic</key>
@@ -24885,6 +25840,8 @@
       <integer>-30</integer>
       <key>he-ethiopic</key>
       <integer>10</integer>
+      <key>jo-ethiopic</key>
+      <integer>-80</integer>
       <key>naa-ethiopic</key>
       <integer>20</integer>
       <key>nee-ethiopic</key>
@@ -24953,6 +25910,8 @@
       <integer>-40</integer>
       <key>the-ethiopic</key>
       <integer>30</integer>
+      <key>to-ethiopic</key>
+      <integer>20</integer>
       <key>twa-ethiopic</key>
       <integer>30</integer>
       <key>wa-ethiopic</key>
@@ -24978,6 +25937,8 @@
       <integer>20</integer>
       <key>fwe-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-70</integer>
       <key>nee-ethiopic</key>
       <integer>20</integer>
       <key>public.kern2.ethi_ca</key>
@@ -25302,6 +26263,8 @@
       <integer>-20</integer>
       <key>hoa-ethiopic</key>
       <integer>-30</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-20</integer>
       <key>koa-ethiopic</key>
@@ -25868,6 +26831,8 @@
       <integer>-30</integer>
       <key>hoa-ethiopic</key>
       <integer>-50</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-50</integer>
       <key>koa-ethiopic</key>
@@ -26660,6 +27625,11 @@
       <key>zze-ethiopic</key>
       <integer>-20</integer>
     </dict>
+    <key>mweeGurage-ethiopic</key>
+    <dict>
+      <key>public.kern2.ethi_cca</key>
+      <integer>0</integer>
+    </dict>
     <key>mwi-ethiopic</key>
     <dict>
       <key>ca-ethiopic</key>
@@ -26873,6 +27843,8 @@
       <integer>10</integer>
       <key>gyaa-ethiopic</key>
       <integer>-60</integer>
+      <key>jo-ethiopic</key>
+      <integer>-50</integer>
       <key>mya-ethiopic</key>
       <integer>10</integer>
       <key>naa-ethiopic</key>
@@ -27116,7 +28088,7 @@
       <key>hhwa-ethiopic</key>
       <integer>-40</integer>
       <key>jo-ethiopic</key>
-      <integer>-70</integer>
+      <integer>-80</integer>
       <key>joa-ethiopic</key>
       <integer>20</integer>
       <key>koa-ethiopic</key>
@@ -27675,6 +28647,8 @@
       <integer>-10</integer>
       <key>hoa-ethiopic</key>
       <integer>-20</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-30</integer>
       <key>koa-ethiopic</key>
@@ -28513,6 +29487,8 @@
       <integer>-30</integer>
       <key>hoa-ethiopic</key>
       <integer>-80</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-20</integer>
       <key>koa-ethiopic</key>
@@ -29380,6 +30356,8 @@
       <integer>10</integer>
       <key>hhwa-ethiopic</key>
       <integer>10</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>joa-ethiopic</key>
       <integer>10</integer>
       <key>kaa-ethiopic</key>
@@ -30584,6 +31562,8 @@
       <integer>-10</integer>
       <key>thu-ethiopic</key>
       <integer>-20</integer>
+      <key>to-ethiopic</key>
+      <integer>-20</integer>
       <key>xe-ethiopic</key>
       <integer>-60</integer>
       <key>xwee-ethiopic</key>
@@ -31021,6 +32001,8 @@
       <integer>20</integer>
       <key>fya-ethiopic</key>
       <integer>-30</integer>
+      <key>jo-ethiopic</key>
+      <integer>-70</integer>
       <key>ne-ethiopic</key>
       <integer>30</integer>
       <key>nee-ethiopic</key>
@@ -31700,6 +32682,8 @@
       <integer>-10</integer>
       <key>hoa-ethiopic</key>
       <integer>-50</integer>
+      <key>jo-ethiopic</key>
+      <integer>10</integer>
       <key>kaa-ethiopic</key>
       <integer>-60</integer>
       <key>koa-ethiopic</key>
@@ -31907,6 +32891,8 @@
     <dict>
       <key>fo-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-10</integer>
       <key>ne-ethiopic</key>
       <integer>-20</integer>
       <key>public.kern2.ethi_re</key>
@@ -32278,6 +33264,8 @@
       <integer>-100</integer>
       <key>hoa-ethiopic</key>
       <integer>-120</integer>
+      <key>jo-ethiopic</key>
+      <integer>10</integer>
       <key>kaa-ethiopic</key>
       <integer>-110</integer>
       <key>koa-ethiopic</key>
@@ -32309,7 +33297,7 @@
       <key>phoa-ethiopic</key>
       <integer>-70</integer>
       <key>public.kern2.ethi_aPharyngeal</key>
-      <integer>-80</integer>
+      <integer>-70</integer>
       <key>public.kern2.ethi_ba</key>
       <integer>-70</integer>
       <key>public.kern2.ethi_baa</key>
@@ -32616,6 +33604,8 @@
       <integer>10</integer>
       <key>gyo-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-50</integer>
       <key>naa-ethiopic</key>
       <integer>20</integer>
       <key>ne-ethiopic</key>
@@ -52694,6 +53684,8 @@
       <integer>20</integer>
       <key>ggwaa-ethiopic</key>
       <integer>-10</integer>
+      <key>jo-ethiopic</key>
+      <integer>-30</integer>
       <key>public.kern2.ethi_gga</key>
       <integer>-10</integer>
       <key>public.kern2.ethi_qha</key>
@@ -52718,6 +53710,8 @@
     <key>public.kern1.ethi_ba</key>
     <dict>
       <key>he-ethiopic</key>
+      <integer>-20</integer>
+      <key>jo-ethiopic</key>
       <integer>-20</integer>
       <key>loa-ethiopic</key>
       <integer>-10</integer>
@@ -52806,6 +53800,193 @@
       <integer>-30</integer>
       <key>waGlottal-ethiopic</key>
       <integer>-10</integer>
+    </dict>
+    <key>public.kern1.ethi_bwiGurage</key>
+    <dict>
+      <key>ccaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>cchaa-ethiopic</key>
+      <integer>10</integer>
+      <key>ce-ethiopic</key>
+      <integer>10</integer>
+      <key>co-ethiopic</key>
+      <integer>10</integer>
+      <key>dee-ethiopic</key>
+      <integer>-40</integer>
+      <key>fwa-ethiopic</key>
+      <integer>20</integer>
+      <key>fwe-ethiopic</key>
+      <integer>10</integer>
+      <key>gaa-ethiopic</key>
+      <integer>-110</integer>
+      <key>ggaa-ethiopic</key>
+      <integer>-80</integer>
+      <key>ggwee-ethiopic</key>
+      <integer>-10</integer>
+      <key>go-ethiopic</key>
+      <integer>20</integer>
+      <key>goa-ethiopic</key>
+      <integer>-20</integer>
+      <key>gwaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>gyaa-ethiopic</key>
+      <integer>-90</integer>
+      <key>gye-ethiopic</key>
+      <integer>10</integer>
+      <key>hhaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>ja-ethiopic</key>
+      <integer>-20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-80</integer>
+      <key>joa-ethiopic</key>
+      <integer>20</integer>
+      <key>kaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>loa-ethiopic</key>
+      <integer>30</integer>
+      <key>mya-ethiopic</key>
+      <integer>20</integer>
+      <key>naa-ethiopic</key>
+      <integer>10</integer>
+      <key>ne-ethiopic</key>
+      <integer>-50</integer>
+      <key>nwa-ethiopic</key>
+      <integer>20</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-130</integer>
+      <key>nywa-ethiopic</key>
+      <integer>10</integer>
+      <key>paa-ethiopic</key>
+      <integer>-90</integer>
+      <key>po-ethiopic</key>
+      <integer>-70</integer>
+      <key>poa-ethiopic</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_aGlottal</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ca</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_cca</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_ccha</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_cha</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_da</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_ddee</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_ddo</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_doa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_fu</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_gga</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_ha</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_hha</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ju</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ka</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_kxa</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-140</integer>
+      <key>public.kern2.ethi_nyaa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_oPharyngeal</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_qa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_qha</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_qya</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_sa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_saa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_sha</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_shaa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_szi</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_toa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_tsa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_tzi</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_wi</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ya</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_zza</key>
+      <integer>10</integer>
+      <key>qaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>qhaa-ethiopic</key>
+      <integer>-40</integer>
+      <key>qhe-ethiopic</key>
+      <integer>30</integer>
+      <key>qho-ethiopic</key>
+      <integer>-20</integer>
+      <key>qhwaa-ethiopic</key>
+      <integer>20</integer>
+      <key>qwaa-ethiopic</key>
+      <integer>20</integer>
+      <key>qwee-ethiopic</key>
+      <integer>20</integer>
+      <key>qyaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>roa-ethiopic</key>
+      <integer>20</integer>
+      <key>ru-ethiopic</key>
+      <integer>10</integer>
+      <key>rwa-ethiopic</key>
+      <integer>-30</integer>
+      <key>rya-ethiopic</key>
+      <integer>-30</integer>
+      <key>soa-ethiopic</key>
+      <integer>10</integer>
+      <key>sze-ethiopic</key>
+      <integer>-40</integer>
+      <key>taa-ethiopic</key>
+      <integer>-60</integer>
+      <key>tha-ethiopic</key>
+      <integer>-50</integer>
+      <key>to-ethiopic</key>
+      <integer>20</integer>
+      <key>twa-ethiopic</key>
+      <integer>20</integer>
+      <key>waGlottal-ethiopic</key>
+      <integer>-70</integer>
+      <key>woa-ethiopic</key>
+      <integer>20</integer>
+      <key>xe-ethiopic</key>
+      <integer>20</integer>
+      <key>xo-ethiopic</key>
+      <integer>10</integer>
+      <key>yaa-ethiopic</key>
+      <integer>-70</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-30</integer>
+      <key>zoa-ethiopic</key>
+      <integer>20</integer>
     </dict>
     <key>public.kern1.ethi_cca</key>
     <dict>
@@ -54967,6 +56148,8 @@
       <integer>10</integer>
       <key>hhwa-ethiopic</key>
       <integer>10</integer>
+      <key>jo-ethiopic</key>
+      <integer>10</integer>
       <key>jwa-ethiopic</key>
       <integer>40</integer>
       <key>kaa-ethiopic</key>
@@ -55150,7 +56333,7 @@
       <key>thwa-ethiopic</key>
       <integer>20</integer>
       <key>to-ethiopic</key>
-      <integer>-50</integer>
+      <integer>-80</integer>
       <key>tzoa-ethiopic</key>
       <integer>20</integer>
       <key>waGlottal-ethiopic</key>
@@ -55851,6 +57034,8 @@
       <integer>-30</integer>
       <key>hoa-ethiopic</key>
       <integer>-70</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>joa-ethiopic</key>
       <integer>20</integer>
       <key>kaa-ethiopic</key>
@@ -56123,7 +57308,7 @@
       <key>ja-ethiopic</key>
       <integer>-10</integer>
       <key>jo-ethiopic</key>
-      <integer>-90</integer>
+      <integer>-100</integer>
       <key>jwa-ethiopic</key>
       <integer>-30</integer>
       <key>loa-ethiopic</key>
@@ -56388,6 +57573,8 @@
       <integer>50</integer>
       <key>he-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-80</integer>
       <key>naa-ethiopic</key>
       <integer>20</integer>
       <key>ne-ethiopic</key>
@@ -56869,6 +58056,8 @@
       <integer>10</integer>
       <key>hoa-ethiopic</key>
       <integer>-20</integer>
+      <key>jo-ethiopic</key>
+      <integer>10</integer>
       <key>joa-ethiopic</key>
       <integer>-10</integer>
       <key>kaa-ethiopic</key>
@@ -57124,6 +58313,8 @@
       <integer>-40</integer>
       <key>hoa-ethiopic</key>
       <integer>-20</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>joa-ethiopic</key>
       <integer>10</integer>
       <key>kaa-ethiopic</key>
@@ -57791,6 +58982,8 @@
       <integer>30</integer>
       <key>fwe-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-30</integer>
       <key>ne-ethiopic</key>
       <integer>-20</integer>
       <key>public.kern2.ethi_ca</key>
@@ -57820,14 +59013,231 @@
       <key>the-ethiopic</key>
       <integer>20</integer>
     </dict>
+    <key>public.kern1.ethi_gwiGurage</key>
+    <dict>
+      <key>ccaa-ethiopic</key>
+      <integer>-40</integer>
+      <key>cchaa-ethiopic</key>
+      <integer>20</integer>
+      <key>co-ethiopic</key>
+      <integer>10</integer>
+      <key>dee-ethiopic</key>
+      <integer>-20</integer>
+      <key>fwa-ethiopic</key>
+      <integer>10</integer>
+      <key>gaa-ethiopic</key>
+      <integer>-110</integer>
+      <key>ggaa-ethiopic</key>
+      <integer>-80</integer>
+      <key>ggwaa-ethiopic</key>
+      <integer>-40</integer>
+      <key>ggwee-ethiopic</key>
+      <integer>-40</integer>
+      <key>goa-ethiopic</key>
+      <integer>-30</integer>
+      <key>gyaa-ethiopic</key>
+      <integer>-100</integer>
+      <key>hhaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>ja-ethiopic</key>
+      <integer>-20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-80</integer>
+      <key>kaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>koa-ethiopic</key>
+      <integer>20</integer>
+      <key>loa-ethiopic</key>
+      <integer>40</integer>
+      <key>mya-ethiopic</key>
+      <integer>10</integer>
+      <key>ne-ethiopic</key>
+      <integer>-140</integer>
+      <key>nwa-ethiopic</key>
+      <integer>10</integer>
+      <key>nye-ethiopic</key>
+      <integer>-40</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-190</integer>
+      <key>oaGlottal-ethiopic</key>
+      <integer>30</integer>
+      <key>paa-ethiopic</key>
+      <integer>-120</integer>
+      <key>phoa-ethiopic</key>
+      <integer>0</integer>
+      <key>po-ethiopic</key>
+      <integer>-90</integer>
+      <key>poa-ethiopic</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_aGlottal</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_bba</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ca</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_cca</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ccha</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_cha</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_da</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_ddee</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_ddo</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_ddu</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_doa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_du</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_dzu</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ePharyngeal</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_fu</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ga</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_gga</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_ha</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_hha</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ka</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_kxa</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_ma</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_na</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-170</integer>
+      <key>public.kern2.ethi_oPharyngeal</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_qa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_qha</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_qya</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_saa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ssa</key>
+      <integer>40</integer>
+      <key>public.kern2.ethi_szi</key>
+      <integer>0</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_toa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_tsa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_wi</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_xa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_zza</key>
+      <integer>20</integer>
+      <key>qaa-ethiopic</key>
+      <integer>-40</integer>
+      <key>qhaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>qhe-ethiopic</key>
+      <integer>40</integer>
+      <key>qho-ethiopic</key>
+      <integer>-10</integer>
+      <key>qhwaa-ethiopic</key>
+      <integer>10</integer>
+      <key>qo-ethiopic</key>
+      <integer>10</integer>
+      <key>qoa-ethiopic</key>
+      <integer>10</integer>
+      <key>qwaa-ethiopic</key>
+      <integer>10</integer>
+      <key>qwee-ethiopic</key>
+      <integer>10</integer>
+      <key>qyaa-ethiopic</key>
+      <integer>-60</integer>
+      <key>roa-ethiopic</key>
+      <integer>20</integer>
+      <key>ru-ethiopic</key>
+      <integer>10</integer>
+      <key>rwa-ethiopic</key>
+      <integer>-30</integer>
+      <key>rya-ethiopic</key>
+      <integer>-20</integer>
+      <key>soa-ethiopic</key>
+      <integer>30</integer>
+      <key>sze-ethiopic</key>
+      <integer>-50</integer>
+      <key>taa-ethiopic</key>
+      <integer>-70</integer>
+      <key>tha-ethiopic</key>
+      <integer>-50</integer>
+      <key>thaa-ethiopic</key>
+      <integer>30</integer>
+      <key>to-ethiopic</key>
+      <integer>20</integer>
+      <key>tsaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>tzoa-ethiopic</key>
+      <integer>-20</integer>
+      <key>wa-ethiopic</key>
+      <integer>20</integer>
+      <key>waGlottal-ethiopic</key>
+      <integer>-60</integer>
+      <key>xaa-ethiopic</key>
+      <integer>-30</integer>
+      <key>xe-ethiopic</key>
+      <integer>0</integer>
+      <key>xo-ethiopic</key>
+      <integer>-30</integer>
+      <key>xoa-ethiopic</key>
+      <integer>-30</integer>
+      <key>xwaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>xwee-ethiopic</key>
+      <integer>-50</integer>
+      <key>yaa-ethiopic</key>
+      <integer>-60</integer>
+      <key>yoa-ethiopic</key>
+      <integer>20</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-60</integer>
+      <key>zoa-ethiopic</key>
+      <integer>30</integer>
+    </dict>
     <key>public.kern1.ethi_ha</key>
     <dict>
       <key>caa-ethiopic</key>
       <integer>-40</integer>
       <key>cwa-ethiopic</key>
       <integer>10</integer>
+      <key>ddwa-ethiopic</key>
+      <integer>-30</integer>
       <key>fwe-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-100</integer>
+      <key>jwa-ethiopic</key>
+      <integer>-50</integer>
       <key>public.kern2.ethi_ca</key>
       <integer>20</integer>
       <key>public.kern2.ethi_ha</key>
@@ -57842,6 +59252,8 @@
       <integer>-30</integer>
       <key>qhe-ethiopic</key>
       <integer>40</integer>
+      <key>tha-ethiopic</key>
+      <integer>-30</integer>
       <key>twa-ethiopic</key>
       <integer>20</integer>
       <key>yaa-ethiopic</key>
@@ -57903,6 +59315,8 @@
       <integer>-10</integer>
       <key>hoa-ethiopic</key>
       <integer>-40</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>kaa-ethiopic</key>
       <integer>-45</integer>
       <key>koa-ethiopic</key>
@@ -57916,7 +59330,7 @@
       <key>moa-ethiopic</key>
       <integer>20</integer>
       <key>mya-ethiopic</key>
-      <integer>-40</integer>
+      <integer>-60</integer>
       <key>naa-ethiopic</key>
       <integer>-70</integer>
       <key>ne-ethiopic</key>
@@ -58098,17 +59512,1029 @@
       <key>zze-ethiopic</key>
       <integer>-80</integer>
     </dict>
+    <key>public.kern1.ethi_hhee</key>
+    <dict>
+      <key>cchaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>ce-ethiopic</key>
+      <integer>-50</integer>
+      <key>co-ethiopic</key>
+      <integer>-50</integer>
+      <key>dee-ethiopic</key>
+      <integer>30</integer>
+      <key>fwe-ethiopic</key>
+      <integer>-30</integer>
+      <key>gaa-ethiopic</key>
+      <integer>30</integer>
+      <key>ggaa-ethiopic</key>
+      <integer>30</integer>
+      <key>go-ethiopic</key>
+      <integer>-70</integer>
+      <key>goa-ethiopic</key>
+      <integer>30</integer>
+      <key>gwaa-ethiopic</key>
+      <integer>10</integer>
+      <key>gyaa-ethiopic</key>
+      <integer>30</integer>
+      <key>gye-ethiopic</key>
+      <integer>-120</integer>
+      <key>he-ethiopic</key>
+      <integer>-30</integer>
+      <key>hhaa-ethiopic</key>
+      <integer>10</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
+      <key>kaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>mo-ethiopic</key>
+      <integer>-80</integer>
+      <key>moa-ethiopic</key>
+      <integer>30</integer>
+      <key>mya-ethiopic</key>
+      <integer>-50</integer>
+      <key>naa-ethiopic</key>
+      <integer>-80</integer>
+      <key>ne-ethiopic</key>
+      <integer>-240</integer>
+      <key>nwa-ethiopic</key>
+      <integer>10</integer>
+      <key>nye-ethiopic</key>
+      <integer>-220</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-190</integer>
+      <key>oaGlottal-ethiopic</key>
+      <integer>10</integer>
+      <key>paa-ethiopic</key>
+      <integer>10</integer>
+      <key>po-ethiopic</key>
+      <integer>30</integer>
+      <key>poa-ethiopic</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_aGlottal</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_baa</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_bba</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ca</key>
+      <integer>-100</integer>
+      <key>public.kern2.ethi_cca</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ccha</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_da</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_ddee</key>
+      <integer>40</integer>
+      <key>public.kern2.ethi_ddo</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_fu</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_ga</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_gga</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_ha</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_hha</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_hi</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>-160</integer>
+      <key>public.kern2.ethi_ju</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_kxa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_la</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_me</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_na</key>
+      <integer>-80</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-220</integer>
+      <key>public.kern2.ethi_nyaa</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_oPharyngeal</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-150</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-180</integer>
+      <key>public.kern2.ethi_qa</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_qha</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_qya</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_saa</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_shaa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_szi</key>
+      <integer>-160</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_tsa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_tzi</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_wi</key>
+      <integer>-130</integer>
+      <key>public.kern2.ethi_xa</key>
+      <integer>-190</integer>
+      <key>public.kern2.ethi_ya</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>-140</integer>
+      <key>public.kern2.ethi_zza</key>
+      <integer>-10</integer>
+      <key>qwee-ethiopic</key>
+      <integer>-50</integer>
+      <key>qyaa-ethiopic</key>
+      <integer>10</integer>
+      <key>roa-ethiopic</key>
+      <integer>-80</integer>
+      <key>ru-ethiopic</key>
+      <integer>-50</integer>
+      <key>rwa-ethiopic</key>
+      <integer>40</integer>
+      <key>rya-ethiopic</key>
+      <integer>40</integer>
+      <key>sze-ethiopic</key>
+      <integer>20</integer>
+      <key>taa-ethiopic</key>
+      <integer>20</integer>
+      <key>to-ethiopic</key>
+      <integer>-60</integer>
+      <key>woa-ethiopic</key>
+      <integer>-100</integer>
+      <key>xaa-ethiopic</key>
+      <integer>20</integer>
+      <key>xe-ethiopic</key>
+      <integer>-200</integer>
+      <key>xo-ethiopic</key>
+      <integer>-190</integer>
+      <key>xoa-ethiopic</key>
+      <integer>-120</integer>
+      <key>xwaa-ethiopic</key>
+      <integer>-80</integer>
+      <key>xwee-ethiopic</key>
+      <integer>-160</integer>
+      <key>yaa-ethiopic</key>
+      <integer>20</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-180</integer>
+      <key>zoa-ethiopic</key>
+      <integer>-40</integer>
+      <key>zwa-ethiopic</key>
+      <integer>-30</integer>
+      <key>zze-ethiopic</key>
+      <integer>-20</integer>
+    </dict>
+    <key>public.kern1.ethi_hhi</key>
+    <dict>
+      <key>ccaa-ethiopic</key>
+      <integer>20</integer>
+      <key>cchaa-ethiopic</key>
+      <integer>-120</integer>
+      <key>ce-ethiopic</key>
+      <integer>-90</integer>
+      <key>co-ethiopic</key>
+      <integer>-140</integer>
+      <key>dee-ethiopic</key>
+      <integer>40</integer>
+      <key>fwe-ethiopic</key>
+      <integer>-20</integer>
+      <key>gaa-ethiopic</key>
+      <integer>30</integer>
+      <key>ggaa-ethiopic</key>
+      <integer>30</integer>
+      <key>ggwaa-ethiopic</key>
+      <integer>20</integer>
+      <key>go-ethiopic</key>
+      <integer>-100</integer>
+      <key>goa-ethiopic</key>
+      <integer>20</integer>
+      <key>gyaa-ethiopic</key>
+      <integer>30</integer>
+      <key>gye-ethiopic</key>
+      <integer>-180</integer>
+      <key>he-ethiopic</key>
+      <integer>-40</integer>
+      <key>ja-ethiopic</key>
+      <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
+      <key>kaa-ethiopic</key>
+      <integer>-90</integer>
+      <key>loa-ethiopic</key>
+      <integer>-50</integer>
+      <key>mo-ethiopic</key>
+      <integer>-70</integer>
+      <key>moa-ethiopic</key>
+      <integer>20</integer>
+      <key>mya-ethiopic</key>
+      <integer>-150</integer>
+      <key>naa-ethiopic</key>
+      <integer>-90</integer>
+      <key>ne-ethiopic</key>
+      <integer>-230</integer>
+      <key>nye-ethiopic</key>
+      <integer>-200</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-190</integer>
+      <key>paa-ethiopic</key>
+      <integer>20</integer>
+      <key>po-ethiopic</key>
+      <integer>40</integer>
+      <key>poa-ethiopic</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_aGlottal</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_baa</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_ca</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_ccha</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_da</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>40</integer>
+      <key>public.kern2.ethi_ddee</key>
+      <integer>50</integer>
+      <key>public.kern2.ethi_ddo</key>
+      <integer>40</integer>
+      <key>public.kern2.ethi_du</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_fu</key>
+      <integer>-110</integer>
+      <key>public.kern2.ethi_ga</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_gga</key>
+      <integer>-120</integer>
+      <key>public.kern2.ethi_hha</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_hi</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>-200</integer>
+      <key>public.kern2.ethi_kxa</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_laa</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_na</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-210</integer>
+      <key>public.kern2.ethi_nyaa</key>
+      <integer>-130</integer>
+      <key>public.kern2.ethi_oPharyngeal</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-120</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-180</integer>
+      <key>public.kern2.ethi_qa</key>
+      <integer>-140</integer>
+      <key>public.kern2.ethi_qha</key>
+      <integer>-110</integer>
+      <key>public.kern2.ethi_qya</key>
+      <integer>-120</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>40</integer>
+      <key>public.kern2.ethi_saa</key>
+      <integer>-110</integer>
+      <key>public.kern2.ethi_shaa</key>
+      <integer>-100</integer>
+      <key>public.kern2.ethi_ssa</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_szi</key>
+      <integer>-200</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>-120</integer>
+      <key>public.kern2.ethi_tsa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_tzi</key>
+      <integer>-80</integer>
+      <key>public.kern2.ethi_wi</key>
+      <integer>-150</integer>
+      <key>public.kern2.ethi_xa</key>
+      <integer>-190</integer>
+      <key>public.kern2.ethi_ya</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>-130</integer>
+      <key>qaa-ethiopic</key>
+      <integer>20</integer>
+      <key>qhaa-ethiopic</key>
+      <integer>20</integer>
+      <key>qhe-ethiopic</key>
+      <integer>-80</integer>
+      <key>qo-ethiopic</key>
+      <integer>-30</integer>
+      <key>qwee-ethiopic</key>
+      <integer>-40</integer>
+      <key>qyaa-ethiopic</key>
+      <integer>20</integer>
+      <key>roa-ethiopic</key>
+      <integer>-140</integer>
+      <key>ru-ethiopic</key>
+      <integer>-90</integer>
+      <key>rwa-ethiopic</key>
+      <integer>50</integer>
+      <key>rya-ethiopic</key>
+      <integer>30</integer>
+      <key>soa-ethiopic</key>
+      <integer>-70</integer>
+      <key>sze-ethiopic</key>
+      <integer>40</integer>
+      <key>taa-ethiopic</key>
+      <integer>30</integer>
+      <key>thaa-ethiopic</key>
+      <integer>-70</integer>
+      <key>to-ethiopic</key>
+      <integer>-120</integer>
+      <key>twa-ethiopic</key>
+      <integer>20</integer>
+      <key>woa-ethiopic</key>
+      <integer>-100</integer>
+      <key>xaa-ethiopic</key>
+      <integer>30</integer>
+      <key>xe-ethiopic</key>
+      <integer>-170</integer>
+      <key>xo-ethiopic</key>
+      <integer>-180</integer>
+      <key>xoa-ethiopic</key>
+      <integer>-150</integer>
+      <key>xwaa-ethiopic</key>
+      <integer>-80</integer>
+      <key>xwee-ethiopic</key>
+      <integer>-140</integer>
+      <key>yoa-ethiopic</key>
+      <integer>-40</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-150</integer>
+      <key>zoa-ethiopic</key>
+      <integer>-80</integer>
+      <key>zwa-ethiopic</key>
+      <integer>-40</integer>
+      <key>zze-ethiopic</key>
+      <integer>-50</integer>
+    </dict>
+    <key>public.kern1.ethi_hho</key>
+    <dict>
+      <key>dee-ethiopic</key>
+      <integer>10</integer>
+      <key>ggwaa-ethiopic</key>
+      <integer>-40</integer>
+      <key>ggwee-ethiopic</key>
+      <integer>-30</integer>
+      <key>go-ethiopic</key>
+      <integer>-50</integer>
+      <key>gye-ethiopic</key>
+      <integer>-50</integer>
+      <key>he-ethiopic</key>
+      <integer>-20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-10</integer>
+      <key>joa-ethiopic</key>
+      <integer>-20</integer>
+      <key>kaa-ethiopic</key>
+      <integer>-30</integer>
+      <key>mo-ethiopic</key>
+      <integer>-50</integer>
+      <key>moa-ethiopic</key>
+      <integer>20</integer>
+      <key>mya-ethiopic</key>
+      <integer>-30</integer>
+      <key>naa-ethiopic</key>
+      <integer>-40</integer>
+      <key>ne-ethiopic</key>
+      <integer>-60</integer>
+      <key>noa-ethiopic</key>
+      <integer>-20</integer>
+      <key>nye-ethiopic</key>
+      <integer>-80</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-50</integer>
+      <key>nyoa-ethiopic</key>
+      <integer>-40</integer>
+      <key>paa-ethiopic</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_baa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_cha</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ga</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_gga</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_ha</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_hi</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_na</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_qa</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_qha</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_qya</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_saa</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_shaa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_szi</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_wi</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_xa</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>-50</integer>
+      <key>qaa-ethiopic</key>
+      <integer>-30</integer>
+      <key>qhaa-ethiopic</key>
+      <integer>-30</integer>
+      <key>qhwaa-ethiopic</key>
+      <integer>-30</integer>
+      <key>qwee-ethiopic</key>
+      <integer>-40</integer>
+      <key>qyaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>roa-ethiopic</key>
+      <integer>-50</integer>
+      <key>ru-ethiopic</key>
+      <integer>-30</integer>
+      <key>rwa-ethiopic</key>
+      <integer>10</integer>
+      <key>taa-ethiopic</key>
+      <integer>-30</integer>
+      <key>tha-ethiopic</key>
+      <integer>-20</integer>
+      <key>waGlottal-ethiopic</key>
+      <integer>-20</integer>
+      <key>woa-ethiopic</key>
+      <integer>-40</integer>
+      <key>xe-ethiopic</key>
+      <integer>-60</integer>
+      <key>xo-ethiopic</key>
+      <integer>-50</integer>
+      <key>xoa-ethiopic</key>
+      <integer>-40</integer>
+      <key>xwaa-ethiopic</key>
+      <integer>-60</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-70</integer>
+      <key>zoa-ethiopic</key>
+      <integer>-30</integer>
+    </dict>
+    <key>public.kern1.ethi_hhu</key>
+    <dict>
+      <key>ccaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>gaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>ggaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>ggwaa-ethiopic</key>
+      <integer>-60</integer>
+      <key>ggwee-ethiopic</key>
+      <integer>-80</integer>
+      <key>go-ethiopic</key>
+      <integer>-70</integer>
+      <key>gye-ethiopic</key>
+      <integer>-30</integer>
+      <key>he-ethiopic</key>
+      <integer>-30</integer>
+      <key>jo-ethiopic</key>
+      <integer>-30</integer>
+      <key>joa-ethiopic</key>
+      <integer>-10</integer>
+      <key>kaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>mo-ethiopic</key>
+      <integer>-40</integer>
+      <key>moa-ethiopic</key>
+      <integer>10</integer>
+      <key>naa-ethiopic</key>
+      <integer>-20</integer>
+      <key>ne-ethiopic</key>
+      <integer>-210</integer>
+      <key>noa-ethiopic</key>
+      <integer>-40</integer>
+      <key>nye-ethiopic</key>
+      <integer>-170</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-180</integer>
+      <key>nyoa-ethiopic</key>
+      <integer>-30</integer>
+      <key>oaGlottal-ethiopic</key>
+      <integer>20</integer>
+      <key>paa-ethiopic</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_baa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ga</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_gga</key>
+      <integer>-100</integer>
+      <key>public.kern2.ethi_ha</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_hi</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>-150</integer>
+      <key>public.kern2.ethi_ju</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_kxa</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_me</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_na</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-200</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-120</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-170</integer>
+      <key>public.kern2.ethi_qa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_sa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_saa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_shaa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_szi</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_tzi</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_wi</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_xa</key>
+      <integer>-190</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>-120</integer>
+      <key>qaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>qhaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>qhe-ethiopic</key>
+      <integer>20</integer>
+      <key>qwee-ethiopic</key>
+      <integer>-30</integer>
+      <key>roa-ethiopic</key>
+      <integer>-20</integer>
+      <key>rya-ethiopic</key>
+      <integer>10</integer>
+      <key>taa-ethiopic</key>
+      <integer>-40</integer>
+      <key>tha-ethiopic</key>
+      <integer>-20</integer>
+      <key>wa-ethiopic</key>
+      <integer>10</integer>
+      <key>woa-ethiopic</key>
+      <integer>-50</integer>
+      <key>xaa-ethiopic</key>
+      <integer>-30</integer>
+      <key>xe-ethiopic</key>
+      <integer>-190</integer>
+      <key>xo-ethiopic</key>
+      <integer>-140</integer>
+      <key>xoa-ethiopic</key>
+      <integer>-110</integer>
+      <key>xwaa-ethiopic</key>
+      <integer>-100</integer>
+      <key>xwee-ethiopic</key>
+      <integer>-160</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-150</integer>
+    </dict>
+    <key>public.kern1.ethi_hhwaGurage</key>
+    <dict>
+      <key>ccaa-ethiopic</key>
+      <integer>-30</integer>
+      <key>cchaa-ethiopic</key>
+      <integer>20</integer>
+      <key>gaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>ggaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>ggwaa-ethiopic</key>
+      <integer>-80</integer>
+      <key>ggwee-ethiopic</key>
+      <integer>-100</integer>
+      <key>go-ethiopic</key>
+      <integer>-40</integer>
+      <key>goa-ethiopic</key>
+      <integer>-20</integer>
+      <key>gyaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>gye-ethiopic</key>
+      <integer>-30</integer>
+      <key>he-ethiopic</key>
+      <integer>-20</integer>
+      <key>hhaa-ethiopic</key>
+      <integer>10</integer>
+      <key>ja-ethiopic</key>
+      <integer>-10</integer>
+      <key>jo-ethiopic</key>
+      <integer>-20</integer>
+      <key>joa-ethiopic</key>
+      <integer>-40</integer>
+      <key>kaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>koa-ethiopic</key>
+      <integer>20</integer>
+      <key>loa-ethiopic</key>
+      <integer>40</integer>
+      <key>mo-ethiopic</key>
+      <integer>-40</integer>
+      <key>moa-ethiopic</key>
+      <integer>20</integer>
+      <key>mya-ethiopic</key>
+      <integer>-10</integer>
+      <key>naa-ethiopic</key>
+      <integer>-20</integer>
+      <key>ne-ethiopic</key>
+      <integer>-250</integer>
+      <key>noa-ethiopic</key>
+      <integer>-40</integer>
+      <key>nwa-ethiopic</key>
+      <integer>-20</integer>
+      <key>nye-ethiopic</key>
+      <integer>-190</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-210</integer>
+      <key>nyoa-ethiopic</key>
+      <integer>-20</integer>
+      <key>nywa-ethiopic</key>
+      <integer>10</integer>
+      <key>oaGlottal-ethiopic</key>
+      <integer>30</integer>
+      <key>paa-ethiopic</key>
+      <integer>-30</integer>
+      <key>phoa-ethiopic</key>
+      <integer>20</integer>
+      <key>po-ethiopic</key>
+      <integer>-10</integer>
+      <key>poa-ethiopic</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ca</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ccha</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_cha</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ddu</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_doa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_du</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ga</key>
+      <integer>-110</integer>
+      <key>public.kern2.ethi_gga</key>
+      <integer>-130</integer>
+      <key>public.kern2.ethi_hi</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>-110</integer>
+      <key>public.kern2.ethi_ju</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_kxa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ma</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_me</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_na</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-210</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-130</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-180</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_shaa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ssa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_szi</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_tzi</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_wi</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_xa</key>
+      <integer>-180</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>-150</integer>
+      <key>public.kern2.ethi_zza</key>
+      <integer>10</integer>
+      <key>qaa-ethiopic</key>
+      <integer>-70</integer>
+      <key>qhaa-ethiopic</key>
+      <integer>-40</integer>
+      <key>qhe-ethiopic</key>
+      <integer>20</integer>
+      <key>qho-ethiopic</key>
+      <integer>30</integer>
+      <key>qo-ethiopic</key>
+      <integer>20</integer>
+      <key>qoa-ethiopic</key>
+      <integer>30</integer>
+      <key>qwee-ethiopic</key>
+      <integer>-10</integer>
+      <key>qyaa-ethiopic</key>
+      <integer>-40</integer>
+      <key>rwa-ethiopic</key>
+      <integer>10</integer>
+      <key>rya-ethiopic</key>
+      <integer>10</integer>
+      <key>soa-ethiopic</key>
+      <integer>10</integer>
+      <key>sze-ethiopic</key>
+      <integer>-10</integer>
+      <key>taa-ethiopic</key>
+      <integer>-40</integer>
+      <key>tha-ethiopic</key>
+      <integer>-20</integer>
+      <key>thaa-ethiopic</key>
+      <integer>20</integer>
+      <key>tzoa-ethiopic</key>
+      <integer>-10</integer>
+      <key>wa-ethiopic</key>
+      <integer>20</integer>
+      <key>waGlottal-ethiopic</key>
+      <integer>-50</integer>
+      <key>woa-ethiopic</key>
+      <integer>-40</integer>
+      <key>xaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>xe-ethiopic</key>
+      <integer>-90</integer>
+      <key>xo-ethiopic</key>
+      <integer>-90</integer>
+      <key>xoa-ethiopic</key>
+      <integer>-90</integer>
+      <key>xwaa-ethiopic</key>
+      <integer>-90</integer>
+      <key>xwee-ethiopic</key>
+      <integer>-170</integer>
+      <key>yoa-ethiopic</key>
+      <integer>20</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-170</integer>
+    </dict>
+    <key>public.kern1.ethi_hhwi</key>
+    <dict>
+      <key>ccaa-ethiopic</key>
+      <integer>-40</integer>
+      <key>cchaa-ethiopic</key>
+      <integer>20</integer>
+      <key>co-ethiopic</key>
+      <integer>10</integer>
+      <key>dee-ethiopic</key>
+      <integer>-30</integer>
+      <key>dze-ethiopic</key>
+      <integer>-60</integer>
+      <key>fwa-ethiopic</key>
+      <integer>20</integer>
+      <key>gaa-ethiopic</key>
+      <integer>-60</integer>
+      <key>ggaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>gyaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>hhaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>ja-ethiopic</key>
+      <integer>-40</integer>
+      <key>jo-ethiopic</key>
+      <integer>-70</integer>
+      <key>kaa-ethiopic</key>
+      <integer>-30</integer>
+      <key>loa-ethiopic</key>
+      <integer>30</integer>
+      <key>mya-ethiopic</key>
+      <integer>10</integer>
+      <key>naa-ethiopic</key>
+      <integer>10</integer>
+      <key>ne-ethiopic</key>
+      <integer>-170</integer>
+      <key>noa-ethiopic</key>
+      <integer>-20</integer>
+      <key>nwa-ethiopic</key>
+      <integer>10</integer>
+      <key>nye-ethiopic</key>
+      <integer>-60</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-160</integer>
+      <key>nyoa-ethiopic</key>
+      <integer>-20</integer>
+      <key>oaGlottal-ethiopic</key>
+      <integer>30</integer>
+      <key>paa-ethiopic</key>
+      <integer>-80</integer>
+      <key>phoa-ethiopic</key>
+      <integer>20</integer>
+      <key>po-ethiopic</key>
+      <integer>-50</integer>
+      <key>poa-ethiopic</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_aGlottal</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ca</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_cca</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ccha</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_cha</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_da</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_ddee</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ddo</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_doa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_du</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_fu</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_hha</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ka</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_kxa</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_laa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_na</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-190</integer>
+      <key>public.kern2.ethi_nyaa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_oPharyngeal</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_qa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_qha</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_qya</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_sa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_saa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_sha</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ssa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_szi</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_toa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_tsa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_tzi</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_wi</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_xa</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_ya</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>-60</integer>
+      <key>qaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>qhaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>qhe-ethiopic</key>
+      <integer>30</integer>
+      <key>qhwaa-ethiopic</key>
+      <integer>20</integer>
+      <key>qwaa-ethiopic</key>
+      <integer>20</integer>
+      <key>qwee-ethiopic</key>
+      <integer>20</integer>
+      <key>qyaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>roa-ethiopic</key>
+      <integer>30</integer>
+      <key>rwa-ethiopic</key>
+      <integer>-40</integer>
+      <key>rya-ethiopic</key>
+      <integer>-20</integer>
+      <key>soa-ethiopic</key>
+      <integer>20</integer>
+      <key>sze-ethiopic</key>
+      <integer>-30</integer>
+      <key>taa-ethiopic</key>
+      <integer>-50</integer>
+      <key>tha-ethiopic</key>
+      <integer>-20</integer>
+      <key>thaa-ethiopic</key>
+      <integer>20</integer>
+      <key>to-ethiopic</key>
+      <integer>30</integer>
+      <key>tsaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>twa-ethiopic</key>
+      <integer>20</integer>
+      <key>waGlottal-ethiopic</key>
+      <integer>-60</integer>
+      <key>woa-ethiopic</key>
+      <integer>30</integer>
+      <key>xaa-ethiopic</key>
+      <integer>-40</integer>
+      <key>xe-ethiopic</key>
+      <integer>-10</integer>
+      <key>xo-ethiopic</key>
+      <integer>-20</integer>
+      <key>xoa-ethiopic</key>
+      <integer>-20</integer>
+      <key>xwaa-ethiopic</key>
+      <integer>-40</integer>
+      <key>xwee-ethiopic</key>
+      <integer>-80</integer>
+      <key>yaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>yoa-ethiopic</key>
+      <integer>20</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-100</integer>
+      <key>zoa-ethiopic</key>
+      <integer>20</integer>
+      <key>zze-ethiopic</key>
+      <integer>-20</integer>
+    </dict>
     <key>public.kern1.ethi_ho</key>
     <dict>
+      <key>aaGlottal-ethiopic</key>
+      <integer>-20</integer>
+      <key>boa-ethiopic</key>
+      <integer>10</integer>
       <key>ca-ethiopic</key>
       <integer>20</integer>
       <key>caa-ethiopic</key>
       <integer>-50</integer>
+      <key>cche-ethiopic</key>
+      <integer>10</integer>
       <key>ce-ethiopic</key>
       <integer>20</integer>
       <key>cwa-ethiopic</key>
       <integer>30</integer>
+      <key>ddwa-ethiopic</key>
+      <integer>-40</integer>
       <key>dee-ethiopic</key>
+      <integer>-40</integer>
+      <key>dwa-ethiopic</key>
       <integer>-40</integer>
       <key>fe-ethiopic</key>
       <integer>20</integer>
@@ -58158,6 +60584,10 @@
       <integer>-80</integer>
       <key>jo-ethiopic</key>
       <integer>-120</integer>
+      <key>jwa-ethiopic</key>
+      <integer>-90</integer>
+      <key>le-ethiopic</key>
+      <integer>-60</integer>
       <key>naa-ethiopic</key>
       <integer>20</integer>
       <key>ne-ethiopic</key>
@@ -58166,12 +60596,18 @@
       <integer>20</integer>
       <key>no-ethiopic</key>
       <integer>20</integer>
+      <key>nwa-ethiopic</key>
+      <integer>20</integer>
       <key>nye-ethiopic</key>
       <integer>10</integer>
       <key>nyee-ethiopic</key>
       <integer>20</integer>
+      <key>oaGlottal-ethiopic</key>
+      <integer>-60</integer>
       <key>paa-ethiopic</key>
       <integer>-60</integer>
+      <key>phoa-ethiopic</key>
+      <integer>-90</integer>
       <key>po-ethiopic</key>
       <integer>-150</integer>
       <key>public.kern2.ethi_aGlottal</key>
@@ -58184,12 +60620,22 @@
       <integer>10</integer>
       <key>public.kern2.ethi_che</key>
       <integer>40</integer>
+      <key>public.kern2.ethi_cho</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>-40</integer>
       <key>public.kern2.ethi_ddee</key>
       <integer>-40</integer>
       <key>public.kern2.ethi_ddo</key>
       <integer>-100</integer>
+      <key>public.kern2.ethi_ddu</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_doa</key>
+      <integer>40</integer>
+      <key>public.kern2.ethi_ePharyngeal</key>
+      <integer>-60</integer>
       <key>public.kern2.ethi_fa</key>
-      <integer>-110</integer>
+      <integer>-140</integer>
       <key>public.kern2.ethi_ga</key>
       <integer>30</integer>
       <key>public.kern2.ethi_gga</key>
@@ -58204,6 +60650,8 @@
       <integer>-110</integer>
       <key>public.kern2.ethi_iPharyngeal</key>
       <integer>30</integer>
+      <key>public.kern2.ethi_ju</key>
+      <integer>-100</integer>
       <key>public.kern2.ethi_kxa</key>
       <integer>70</integer>
       <key>public.kern2.ethi_kxwaa</key>
@@ -58218,6 +60666,8 @@
       <integer>20</integer>
       <key>public.kern2.ethi_nya</key>
       <integer>40</integer>
+      <key>public.kern2.ethi_nyaa</key>
+      <integer>10</integer>
       <key>public.kern2.ethi_oPharyngeal</key>
       <integer>-100</integer>
       <key>public.kern2.ethi_pa</key>
@@ -58240,12 +60690,16 @@
       <integer>-50</integer>
       <key>public.kern2.ethi_saa</key>
       <integer>-40</integer>
+      <key>public.kern2.ethi_sha</key>
+      <integer>-60</integer>
       <key>public.kern2.ethi_szi</key>
       <integer>30</integer>
       <key>public.kern2.ethi_ta</key>
       <integer>20</integer>
       <key>public.kern2.ethi_tzi</key>
       <integer>30</integer>
+      <key>public.kern2.ethi_va</key>
+      <integer>-60</integer>
       <key>public.kern2.ethi_wi</key>
       <integer>20</integer>
       <key>public.kern2.ethi_xa</key>
@@ -58254,6 +60708,12 @@
       <integer>30</integer>
       <key>public.kern2.ethi_zhaa</key>
       <integer>30</integer>
+      <key>public.kern2.ethi_zza</key>
+      <integer>30</integer>
+      <key>pwa-ethiopic</key>
+      <integer>30</integer>
+      <key>pwee-ethiopic</key>
+      <integer>30</integer>
       <key>qaa-ethiopic</key>
       <integer>-60</integer>
       <key>qhaa-ethiopic</key>
@@ -58261,7 +60721,7 @@
       <key>qhe-ethiopic</key>
       <integer>70</integer>
       <key>qho-ethiopic</key>
-      <integer>-40</integer>
+      <integer>-90</integer>
       <key>qhwaa-ethiopic</key>
       <integer>20</integer>
       <key>qhwee-ethiopic</key>
@@ -58274,6 +60734,8 @@
       <integer>20</integer>
       <key>qwee-ethiopic</key>
       <integer>20</integer>
+      <key>roa-ethiopic</key>
+      <integer>10</integer>
       <key>rwa-ethiopic</key>
       <integer>-60</integer>
       <key>rya-ethiopic</key>
@@ -58288,18 +60750,34 @@
       <integer>-10</integer>
       <key>the-ethiopic</key>
       <integer>20</integer>
+      <key>thee-ethiopic</key>
+      <integer>-110</integer>
+      <key>thi-ethiopic</key>
+      <integer>-100</integer>
       <key>tho-ethiopic</key>
       <integer>-80</integer>
+      <key>thu-ethiopic</key>
+      <integer>-110</integer>
       <key>thwa-ethiopic</key>
       <integer>-50</integer>
       <key>twa-ethiopic</key>
-      <integer>30</integer>
+      <integer>20</integer>
+      <key>tzoa-ethiopic</key>
+      <integer>20</integer>
       <key>wa-ethiopic</key>
       <integer>-40</integer>
       <key>waGlottal-ethiopic</key>
       <integer>20</integer>
+      <key>wo-ethiopic</key>
+      <integer>10</integer>
       <key>xaa-ethiopic</key>
       <integer>20</integer>
+      <key>xe-ethiopic</key>
+      <integer>20</integer>
+      <key>xo-ethiopic</key>
+      <integer>30</integer>
+      <key>xoa-ethiopic</key>
+      <integer>40</integer>
       <key>xwaa-ethiopic</key>
       <integer>30</integer>
       <key>xwee-ethiopic</key>
@@ -58308,6 +60786,8 @@
       <integer>-60</integer>
       <key>zhe-ethiopic</key>
       <integer>10</integer>
+      <key>zzaa-ethiopic</key>
+      <integer>40</integer>
       <key>zze-ethiopic</key>
       <integer>10</integer>
     </dict>
@@ -58540,6 +61020,8 @@
       <integer>-10</integer>
       <key>hhwa-ethiopic</key>
       <integer>-10</integer>
+      <key>jo-ethiopic</key>
+      <integer>-90</integer>
       <key>joa-ethiopic</key>
       <integer>-10</integer>
       <key>loa-ethiopic</key>
@@ -58682,6 +61164,8 @@
       <key>hhwa-ethiopic</key>
       <integer>-10</integer>
       <key>hoa-ethiopic</key>
+      <integer>-30</integer>
+      <key>jo-ethiopic</key>
       <integer>-30</integer>
       <key>kaa-ethiopic</key>
       <integer>-10</integer>
@@ -59131,6 +61615,8 @@
       <integer>-50</integer>
       <key>hoa-ethiopic</key>
       <integer>-40</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>joa-ethiopic</key>
       <integer>20</integer>
       <key>kaa-ethiopic</key>
@@ -59354,6 +61840,8 @@
       <integer>-10</integer>
       <key>gyaa-ethiopic</key>
       <integer>-40</integer>
+      <key>jo-ethiopic</key>
+      <integer>-100</integer>
       <key>paa-ethiopic</key>
       <integer>-60</integer>
       <key>po-ethiopic</key>
@@ -59663,6 +62151,8 @@
       <key>hoa-ethiopic</key>
       <integer>-20</integer>
       <key>ja-ethiopic</key>
+      <integer>20</integer>
+      <key>jo-ethiopic</key>
       <integer>20</integer>
       <key>kaa-ethiopic</key>
       <integer>-20</integer>
@@ -60064,6 +62554,207 @@
       <key>zze-ethiopic</key>
       <integer>10</integer>
     </dict>
+    <key>public.kern1.ethi_mwiGurage</key>
+    <dict>
+      <key>ccaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>cchaa-ethiopic</key>
+      <integer>10</integer>
+      <key>co-ethiopic</key>
+      <integer>10</integer>
+      <key>dee-ethiopic</key>
+      <integer>-40</integer>
+      <key>fwa-ethiopic</key>
+      <integer>10</integer>
+      <key>gaa-ethiopic</key>
+      <integer>-120</integer>
+      <key>ggaa-ethiopic</key>
+      <integer>-90</integer>
+      <key>ggwaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>ggwee-ethiopic</key>
+      <integer>-20</integer>
+      <key>go-ethiopic</key>
+      <integer>20</integer>
+      <key>goa-ethiopic</key>
+      <integer>-20</integer>
+      <key>gwaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>gyaa-ethiopic</key>
+      <integer>-100</integer>
+      <key>hhaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>ja-ethiopic</key>
+      <integer>-20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-60</integer>
+      <key>joa-ethiopic</key>
+      <integer>20</integer>
+      <key>kaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>loa-ethiopic</key>
+      <integer>40</integer>
+      <key>mya-ethiopic</key>
+      <integer>10</integer>
+      <key>ne-ethiopic</key>
+      <integer>-80</integer>
+      <key>noa-ethiopic</key>
+      <integer>-20</integer>
+      <key>nye-ethiopic</key>
+      <integer>-40</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-160</integer>
+      <key>nyoa-ethiopic</key>
+      <integer>-10</integer>
+      <key>nywa-ethiopic</key>
+      <integer>20</integer>
+      <key>oaGlottal-ethiopic</key>
+      <integer>20</integer>
+      <key>paa-ethiopic</key>
+      <integer>-120</integer>
+      <key>po-ethiopic</key>
+      <integer>-60</integer>
+      <key>poa-ethiopic</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_aGlottal</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_bba</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_ca</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_cca</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ccha</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_cha</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_da</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_ddee</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_ddo</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_du</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_fu</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ga</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_gga</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ha</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_hha</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_ka</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_kxa</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_me</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_na</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-180</integer>
+      <key>public.kern2.ethi_oPharyngeal</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_qa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_qha</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_qya</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_sa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_saa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_sha</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_shaa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ssa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_toa</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_tsa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_wi</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_xa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_zza</key>
+      <integer>10</integer>
+      <key>qaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>qhaa-ethiopic</key>
+      <integer>-40</integer>
+      <key>qhe-ethiopic</key>
+      <integer>40</integer>
+      <key>qho-ethiopic</key>
+      <integer>-10</integer>
+      <key>qhwaa-ethiopic</key>
+      <integer>20</integer>
+      <key>qwaa-ethiopic</key>
+      <integer>20</integer>
+      <key>qwee-ethiopic</key>
+      <integer>10</integer>
+      <key>qyaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>roa-ethiopic</key>
+      <integer>20</integer>
+      <key>ru-ethiopic</key>
+      <integer>10</integer>
+      <key>rwa-ethiopic</key>
+      <integer>-20</integer>
+      <key>rya-ethiopic</key>
+      <integer>-30</integer>
+      <key>soa-ethiopic</key>
+      <integer>20</integer>
+      <key>sze-ethiopic</key>
+      <integer>-50</integer>
+      <key>taa-ethiopic</key>
+      <integer>-70</integer>
+      <key>tha-ethiopic</key>
+      <integer>-30</integer>
+      <key>thaa-ethiopic</key>
+      <integer>20</integer>
+      <key>to-ethiopic</key>
+      <integer>30</integer>
+      <key>tsaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>twa-ethiopic</key>
+      <integer>20</integer>
+      <key>tzoa-ethiopic</key>
+      <integer>-10</integer>
+      <key>waGlottal-ethiopic</key>
+      <integer>-60</integer>
+      <key>woa-ethiopic</key>
+      <integer>10</integer>
+      <key>xaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>xwee-ethiopic</key>
+      <integer>-30</integer>
+      <key>yaa-ethiopic</key>
+      <integer>-90</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-40</integer>
+      <key>zoa-ethiopic</key>
+      <integer>20</integer>
+    </dict>
     <key>public.kern1.ethi_oPharyngeal</key>
     <dict>
       <key>caa-ethiopic</key>
@@ -60364,7 +63055,7 @@
       <key>hhwa-ethiopic</key>
       <integer>-120</integer>
       <key>jo-ethiopic</key>
-      <integer>-110</integer>
+      <integer>-120</integer>
       <key>loa-ethiopic</key>
       <integer>-30</integer>
       <key>mo-ethiopic</key>
@@ -60551,6 +63242,209 @@
       <integer>30</integer>
       <key>zze-ethiopic</key>
       <integer>10</integer>
+    </dict>
+    <key>public.kern1.ethi_pwiGurage</key>
+    <dict>
+      <key>ccaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>cchaa-ethiopic</key>
+      <integer>20</integer>
+      <key>ce-ethiopic</key>
+      <integer>10</integer>
+      <key>co-ethiopic</key>
+      <integer>10</integer>
+      <key>dee-ethiopic</key>
+      <integer>-30</integer>
+      <key>fwa-ethiopic</key>
+      <integer>20</integer>
+      <key>fwe-ethiopic</key>
+      <integer>10</integer>
+      <key>gaa-ethiopic</key>
+      <integer>-100</integer>
+      <key>ggaa-ethiopic</key>
+      <integer>-90</integer>
+      <key>ggwaa-ethiopic</key>
+      <integer>-30</integer>
+      <key>ggwee-ethiopic</key>
+      <integer>-30</integer>
+      <key>go-ethiopic</key>
+      <integer>10</integer>
+      <key>goa-ethiopic</key>
+      <integer>-30</integer>
+      <key>gyaa-ethiopic</key>
+      <integer>-100</integer>
+      <key>ja-ethiopic</key>
+      <integer>-20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-90</integer>
+      <key>joa-ethiopic</key>
+      <integer>20</integer>
+      <key>koa-ethiopic</key>
+      <integer>20</integer>
+      <key>loa-ethiopic</key>
+      <integer>40</integer>
+      <key>mya-ethiopic</key>
+      <integer>20</integer>
+      <key>ne-ethiopic</key>
+      <integer>-100</integer>
+      <key>noa-ethiopic</key>
+      <integer>-20</integer>
+      <key>nye-ethiopic</key>
+      <integer>-50</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-140</integer>
+      <key>nyoa-ethiopic</key>
+      <integer>-10</integer>
+      <key>nywa-ethiopic</key>
+      <integer>20</integer>
+      <key>oaGlottal-ethiopic</key>
+      <integer>30</integer>
+      <key>paa-ethiopic</key>
+      <integer>-120</integer>
+      <key>phoa-ethiopic</key>
+      <integer>10</integer>
+      <key>po-ethiopic</key>
+      <integer>-80</integer>
+      <key>poa-ethiopic</key>
+      <integer>40</integer>
+      <key>public.kern2.ethi_aGlottal</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ca</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_cca</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ccha</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_cha</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_da</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_ddee</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ddo</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_ddu</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_du</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_fu</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ga</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_gga</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ha</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_hha</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ka</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_kxa</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_laa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_na</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-130</integer>
+      <key>public.kern2.ethi_oPharyngeal</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-60</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_qa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_qha</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_sa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_saa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_sha</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_shaa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_ssa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_toa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_tsa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_xa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_zza</key>
+      <integer>10</integer>
+      <key>qaa-ethiopic</key>
+      <integer>-60</integer>
+      <key>qhaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>qhe-ethiopic</key>
+      <integer>30</integer>
+      <key>qhwaa-ethiopic</key>
+      <integer>20</integer>
+      <key>qo-ethiopic</key>
+      <integer>10</integer>
+      <key>qoa-ethiopic</key>
+      <integer>10</integer>
+      <key>qwaa-ethiopic</key>
+      <integer>10</integer>
+      <key>qwee-ethiopic</key>
+      <integer>10</integer>
+      <key>qyaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>roa-ethiopic</key>
+      <integer>10</integer>
+      <key>rwa-ethiopic</key>
+      <integer>-20</integer>
+      <key>rya-ethiopic</key>
+      <integer>-20</integer>
+      <key>soa-ethiopic</key>
+      <integer>30</integer>
+      <key>sze-ethiopic</key>
+      <integer>-20</integer>
+      <key>taa-ethiopic</key>
+      <integer>-80</integer>
+      <key>tha-ethiopic</key>
+      <integer>-40</integer>
+      <key>thaa-ethiopic</key>
+      <integer>20</integer>
+      <key>to-ethiopic</key>
+      <integer>20</integer>
+      <key>twa-ethiopic</key>
+      <integer>20</integer>
+      <key>tzoa-ethiopic</key>
+      <integer>-20</integer>
+      <key>wa-ethiopic</key>
+      <integer>10</integer>
+      <key>waGlottal-ethiopic</key>
+      <integer>-40</integer>
+      <key>xaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>xoa-ethiopic</key>
+      <integer>-10</integer>
+      <key>xwaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>xwee-ethiopic</key>
+      <integer>-50</integer>
+      <key>yaa-ethiopic</key>
+      <integer>-70</integer>
+      <key>yoa-ethiopic</key>
+      <integer>20</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-70</integer>
+      <key>zoa-ethiopic</key>
+      <integer>20</integer>
     </dict>
     <key>public.kern1.ethi_qa</key>
     <dict>
@@ -61624,7 +64518,7 @@
       <key>hoa-ethiopic</key>
       <integer>40</integer>
       <key>jo-ethiopic</key>
-      <integer>-60</integer>
+      <integer>-70</integer>
       <key>joa-ethiopic</key>
       <integer>30</integer>
       <key>koa-ethiopic</key>
@@ -62402,6 +65296,231 @@
       <key>zzaa-ethiopic</key>
       <integer>20</integer>
     </dict>
+    <key>public.kern1.ethi_qwiGurage</key>
+    <dict>
+      <key>ccaa-ethiopic</key>
+      <integer>-70</integer>
+      <key>co-ethiopic</key>
+      <integer>20</integer>
+      <key>dee-ethiopic</key>
+      <integer>-60</integer>
+      <key>fwa-ethiopic</key>
+      <integer>10</integer>
+      <key>fwe-ethiopic</key>
+      <integer>10</integer>
+      <key>gaa-ethiopic</key>
+      <integer>-130</integer>
+      <key>ggaa-ethiopic</key>
+      <integer>-100</integer>
+      <key>ggwaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>ggwee-ethiopic</key>
+      <integer>-20</integer>
+      <key>go-ethiopic</key>
+      <integer>10</integer>
+      <key>goa-ethiopic</key>
+      <integer>-30</integer>
+      <key>gwaa-ethiopic</key>
+      <integer>-40</integer>
+      <key>gyaa-ethiopic</key>
+      <integer>-110</integer>
+      <key>gye-ethiopic</key>
+      <integer>10</integer>
+      <key>hhaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>ja-ethiopic</key>
+      <integer>-50</integer>
+      <key>jo-ethiopic</key>
+      <integer>-90</integer>
+      <key>joa-ethiopic</key>
+      <integer>10</integer>
+      <key>kaa-ethiopic</key>
+      <integer>-30</integer>
+      <key>loa-ethiopic</key>
+      <integer>40</integer>
+      <key>mya-ethiopic</key>
+      <integer>10</integer>
+      <key>naa-ethiopic</key>
+      <integer>10</integer>
+      <key>ne-ethiopic</key>
+      <integer>-40</integer>
+      <key>noa-ethiopic</key>
+      <integer>-20</integer>
+      <key>nwa-ethiopic</key>
+      <integer>10</integer>
+      <key>nye-ethiopic</key>
+      <integer>-20</integer>
+      <key>nyee-ethiopic</key>
+      <integer>-150</integer>
+      <key>nyoa-ethiopic</key>
+      <integer>-10</integer>
+      <key>nywa-ethiopic</key>
+      <integer>10</integer>
+      <key>paa-ethiopic</key>
+      <integer>-100</integer>
+      <key>phoa-ethiopic</key>
+      <integer>-10</integer>
+      <key>po-ethiopic</key>
+      <integer>-140</integer>
+      <key>poa-ethiopic</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_aGlottal</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_ba</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_baa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_bba</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ca</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_cca</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_cha</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_da</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_ddee</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_ddo</key>
+      <integer>-100</integer>
+      <key>public.kern2.ethi_doa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_dzu</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ePharyngeal</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_fu</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ga</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_gga</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ha</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_hha</key>
+      <integer>-80</integer>
+      <key>public.kern2.ethi_ju</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ka</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_kxa</key>
+      <integer>-50</integer>
+      <key>public.kern2.ethi_la</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_ma</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_na</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_nya</key>
+      <integer>-140</integer>
+      <key>public.kern2.ethi_oPharyngeal</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_pa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_qa</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_qha</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_qya</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>-70</integer>
+      <key>public.kern2.ethi_sa</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_saa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_sha</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_shaa</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ssa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_szi</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>30</integer>
+      <key>public.kern2.ethi_toa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_tsa</key>
+      <integer>-40</integer>
+      <key>public.kern2.ethi_tzi</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_wi</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_ya</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_za</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_zza</key>
+      <integer>20</integer>
+      <key>qaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>qhaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>qhe-ethiopic</key>
+      <integer>30</integer>
+      <key>qho-ethiopic</key>
+      <integer>-20</integer>
+      <key>qhwaa-ethiopic</key>
+      <integer>30</integer>
+      <key>qo-ethiopic</key>
+      <integer>-10</integer>
+      <key>qoa-ethiopic</key>
+      <integer>-10</integer>
+      <key>qwaa-ethiopic</key>
+      <integer>20</integer>
+      <key>qwee-ethiopic</key>
+      <integer>20</integer>
+      <key>qyaa-ethiopic</key>
+      <integer>-50</integer>
+      <key>roa-ethiopic</key>
+      <integer>30</integer>
+      <key>rwa-ethiopic</key>
+      <integer>-50</integer>
+      <key>rya-ethiopic</key>
+      <integer>-50</integer>
+      <key>soa-ethiopic</key>
+      <integer>20</integer>
+      <key>sze-ethiopic</key>
+      <integer>-100</integer>
+      <key>taa-ethiopic</key>
+      <integer>-60</integer>
+      <key>tha-ethiopic</key>
+      <integer>-60</integer>
+      <key>thaa-ethiopic</key>
+      <integer>20</integer>
+      <key>to-ethiopic</key>
+      <integer>20</integer>
+      <key>tsaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>twa-ethiopic</key>
+      <integer>20</integer>
+      <key>waGlottal-ethiopic</key>
+      <integer>-80</integer>
+      <key>woa-ethiopic</key>
+      <integer>20</integer>
+      <key>xe-ethiopic</key>
+      <integer>20</integer>
+      <key>xo-ethiopic</key>
+      <integer>10</integer>
+      <key>xoa-ethiopic</key>
+      <integer>10</integer>
+      <key>yaa-ethiopic</key>
+      <integer>-90</integer>
+      <key>zhe-ethiopic</key>
+      <integer>-30</integer>
+      <key>zoa-ethiopic</key>
+      <integer>20</integer>
+      <key>zwa-ethiopic</key>
+      <integer>-20</integer>
+    </dict>
     <key>public.kern1.ethi_sa</key>
     <dict>
       <key>boa-ethiopic</key>
@@ -62438,6 +65557,8 @@
       <integer>-10</integer>
       <key>hoa-ethiopic</key>
       <integer>-30</integer>
+      <key>jo-ethiopic</key>
+      <integer>-20</integer>
       <key>koa-ethiopic</key>
       <integer>-20</integer>
       <key>loa-ethiopic</key>
@@ -62530,6 +65651,8 @@
       <integer>-20</integer>
       <key>thoa-ethiopic</key>
       <integer>-20</integer>
+      <key>to-ethiopic</key>
+      <integer>-10</integer>
       <key>ve-ethiopic</key>
       <integer>-20</integer>
       <key>waGlottal-ethiopic</key>
@@ -63194,6 +66317,8 @@
       <integer>-50</integer>
       <key>hoa-ethiopic</key>
       <integer>-30</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>joa-ethiopic</key>
       <integer>10</integer>
       <key>kaa-ethiopic</key>
@@ -63733,6 +66858,8 @@
       <integer>-40</integer>
       <key>hoa-ethiopic</key>
       <integer>-20</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>kaa-ethiopic</key>
       <integer>-50</integer>
       <key>koa-ethiopic</key>
@@ -63978,6 +67105,8 @@
       <integer>-10</integer>
       <key>hoa-ethiopic</key>
       <integer>-20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-90</integer>
       <key>kaa-ethiopic</key>
       <integer>-20</integer>
       <key>koa-ethiopic</key>
@@ -64417,7 +67546,7 @@
       <key>ja-ethiopic</key>
       <integer>-20</integer>
       <key>jo-ethiopic</key>
-      <integer>-80</integer>
+      <integer>-100</integer>
       <key>joa-ethiopic</key>
       <integer>30</integer>
       <key>jwa-ethiopic</key>
@@ -64783,7 +67912,7 @@
       <key>ja-ethiopic</key>
       <integer>-20</integer>
       <key>jo-ethiopic</key>
-      <integer>-90</integer>
+      <integer>-110</integer>
       <key>joa-ethiopic</key>
       <integer>20</integer>
       <key>jwa-ethiopic</key>
@@ -65092,7 +68221,7 @@
       <key>hoa-ethiopic</key>
       <integer>-10</integer>
       <key>jo-ethiopic</key>
-      <integer>-20</integer>
+      <integer>-50</integer>
       <key>joa-ethiopic</key>
       <integer>10</integer>
       <key>koa-ethiopic</key>
@@ -65331,7 +68460,7 @@
       <key>ja-ethiopic</key>
       <integer>-20</integer>
       <key>jo-ethiopic</key>
-      <integer>-90</integer>
+      <integer>-100</integer>
       <key>jwa-ethiopic</key>
       <integer>-60</integer>
       <key>koa-ethiopic</key>
@@ -66282,6 +69411,8 @@
       <integer>40</integer>
       <key>he-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-70</integer>
       <key>ne-ethiopic</key>
       <integer>30</integer>
       <key>nee-ethiopic</key>
@@ -68694,6 +71825,8 @@
       <integer>21</integer>
       <key>fwe-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>ne-ethiopic</key>
       <integer>30</integer>
       <key>nee-ethiopic</key>
@@ -71083,7 +74216,7 @@
       <key>thwa-ethiopic</key>
       <integer>20</integer>
       <key>to-ethiopic</key>
-      <integer>30</integer>
+      <integer>0</integer>
       <key>tswa-ethiopic</key>
       <integer>20</integer>
       <key>twa-ethiopic</key>
@@ -73204,6 +76337,39 @@
       <integer>-20</integer>
       <key>xwee-ethiopic</key>
       <integer>20</integer>
+    </dict>
+    <key>qweeGurage-ethiopic</key>
+    <dict>
+      <key>gaa-ethiopic</key>
+      <integer>-110</integer>
+      <key>gwaa-ethiopic</key>
+      <integer>-10</integer>
+      <key>gyaa-ethiopic</key>
+      <integer>-100</integer>
+      <key>ne-ethiopic</key>
+      <integer>-20</integer>
+      <key>nye-ethiopic</key>
+      <integer>-10</integer>
+      <key>paa-ethiopic</key>
+      <integer>-90</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_na</key>
+      <integer>0</integer>
+      <key>public.kern2.ethi_pe</key>
+      <integer>0</integer>
+      <key>public.kern2.ethi_xa</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ze</key>
+      <integer>10</integer>
+      <key>xaa-ethiopic</key>
+      <integer>10</integer>
+      <key>xoa-ethiopic</key>
+      <integer>20</integer>
+      <key>xwaa-ethiopic</key>
+      <integer>10</integer>
+      <key>xwee-ethiopic</key>
+      <integer>10</integer>
     </dict>
     <key>qya-ethiopic</key>
     <dict>
@@ -75366,14 +78532,30 @@
       <integer>30</integer>
       <key>cwa-ethiopic</key>
       <integer>40</integer>
+      <key>ddwa-ethiopic</key>
+      <integer>10</integer>
+      <key>dee-ethiopic</key>
+      <integer>20</integer>
+      <key>dwa-ethiopic</key>
+      <integer>20</integer>
       <key>fo-ethiopic</key>
       <integer>40</integer>
+      <key>fya-ethiopic</key>
+      <integer>30</integer>
       <key>gaa-ethiopic</key>
       <integer>10</integer>
       <key>ggaa-ethiopic</key>
       <integer>10</integer>
       <key>ggo-ethiopic</key>
       <integer>30</integer>
+      <key>goa-ethiopic</key>
+      <integer>20</integer>
+      <key>ja-ethiopic</key>
+      <integer>10</integer>
+      <key>jo-ethiopic</key>
+      <integer>10</integer>
+      <key>jwa-ethiopic</key>
+      <integer>10</integer>
       <key>moa-ethiopic</key>
       <integer>30</integer>
       <key>mya-ethiopic</key>
@@ -75396,8 +78578,16 @@
       <integer>20</integer>
       <key>public.kern2.ethi_baa</key>
       <integer>-10</integer>
+      <key>public.kern2.ethi_bba</key>
+      <integer>20</integer>
       <key>public.kern2.ethi_ca</key>
       <integer>40</integer>
+      <key>public.kern2.ethi_dda</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ddee</key>
+      <integer>10</integer>
+      <key>public.kern2.ethi_ddo</key>
+      <integer>20</integer>
       <key>public.kern2.ethi_doa</key>
       <integer>30</integer>
       <key>public.kern2.ethi_fa</key>
@@ -75416,8 +78606,12 @@
       <integer>20</integer>
       <key>public.kern2.ethi_oPharyngeal</key>
       <integer>20</integer>
+      <key>public.kern2.ethi_pha</key>
+      <integer>20</integer>
       <key>public.kern2.ethi_qa</key>
       <integer>-20</integer>
+      <key>public.kern2.ethi_ra</key>
+      <integer>30</integer>
       <key>public.kern2.ethi_saa</key>
       <integer>-20</integer>
       <key>public.kern2.ethi_shaa</key>
@@ -75428,10 +78622,14 @@
       <integer>20</integer>
       <key>public.kern2.ethi_ta</key>
       <integer>10</integer>
+      <key>public.kern2.ethi_tsa</key>
+      <integer>20</integer>
       <key>public.kern2.ethi_vaa</key>
       <integer>-10</integer>
       <key>public.kern2.ethi_zza</key>
       <integer>30</integer>
+      <key>pwa-ethiopic</key>
+      <integer>10</integer>
       <key>qaa-ethiopic</key>
       <integer>10</integer>
       <key>qhaa-ethiopic</key>
@@ -75444,10 +78642,16 @@
       <integer>20</integer>
       <key>ru-ethiopic</key>
       <integer>-30</integer>
+      <key>rwa-ethiopic</key>
+      <integer>20</integer>
+      <key>rya-ethiopic</key>
+      <integer>30</integer>
       <key>sze-ethiopic</key>
       <integer>20</integer>
       <key>te-ethiopic</key>
       <integer>40</integer>
+      <key>to-ethiopic</key>
+      <integer>-20</integer>
       <key>tsaa-ethiopic</key>
       <integer>20</integer>
       <key>twa-ethiopic</key>
@@ -75722,12 +78926,18 @@
       <integer>20</integer>
       <key>fo-ethiopic</key>
       <integer>30</integer>
+      <key>jo-ethiopic</key>
+      <integer>10</integer>
       <key>ne-ethiopic</key>
       <integer>20</integer>
       <key>nee-ethiopic</key>
       <integer>20</integer>
       <key>public.kern2.ethi_ca</key>
       <integer>20</integer>
+      <key>public.kern2.ethi_hha</key>
+      <integer>20</integer>
+      <key>public.kern2.ethi_hhe</key>
+      <integer>10</integer>
       <key>public.kern2.ethi_na</key>
       <integer>30</integer>
       <key>public.kern2.ethi_qha</key>
@@ -76072,6 +79282,8 @@
       <integer>20</integer>
       <key>hhwa-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-10</integer>
       <key>kaa-ethiopic</key>
       <integer>20</integer>
       <key>kyaa-ethiopic</key>
@@ -76213,6 +79425,8 @@
       <integer>-30</integer>
       <key>gyo-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-90</integer>
       <key>ne-ethiopic</key>
       <integer>30</integer>
       <key>nee-ethiopic</key>
@@ -76391,6 +79605,8 @@
       <integer>10</integer>
       <key>gyo-ethiopic</key>
       <integer>10</integer>
+      <key>jo-ethiopic</key>
+      <integer>-90</integer>
       <key>naa-ethiopic</key>
       <integer>10</integer>
       <key>ne-ethiopic</key>
@@ -76903,6 +80119,8 @@
       <integer>-130</integer>
       <key>poa-ethiopic</key>
       <integer>-90</integer>
+      <key>public.kern2.ethi_aPharyngeal</key>
+      <integer>-80</integer>
       <key>public.kern2.ethi_ba</key>
       <integer>-50</integer>
       <key>public.kern2.ethi_be</key>
@@ -77189,6 +80407,8 @@
       <integer>-20</integer>
       <key>hoa-ethiopic</key>
       <integer>-90</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-70</integer>
       <key>koa-ethiopic</key>
@@ -77504,6 +80724,8 @@
       <integer>-10</integer>
       <key>hoa-ethiopic</key>
       <integer>-10</integer>
+      <key>jo-ethiopic</key>
+      <integer>-100</integer>
       <key>kaa-ethiopic</key>
       <integer>-10</integer>
       <key>koa-ethiopic</key>
@@ -77737,6 +80959,8 @@
       <integer>-20</integer>
       <key>hoa-ethiopic</key>
       <integer>-100</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>joa-ethiopic</key>
       <integer>10</integer>
       <key>kaa-ethiopic</key>
@@ -77996,6 +81220,8 @@
       <integer>40</integer>
       <key>he-ethiopic</key>
       <integer>10</integer>
+      <key>jo-ethiopic</key>
+      <integer>-90</integer>
       <key>moa-ethiopic</key>
       <integer>20</integer>
       <key>naa-ethiopic</key>
@@ -78136,7 +81362,7 @@
       <key>ja-ethiopic</key>
       <integer>-10</integer>
       <key>jo-ethiopic</key>
-      <integer>-50</integer>
+      <integer>-90</integer>
       <key>jwa-ethiopic</key>
       <integer>-30</integer>
       <key>ne-ethiopic</key>
@@ -78241,7 +81467,7 @@
       <key>hhwa-ethiopic</key>
       <integer>-100</integer>
       <key>jo-ethiopic</key>
-      <integer>-100</integer>
+      <integer>-130</integer>
       <key>ne-ethiopic</key>
       <integer>40</integer>
       <key>nee-ethiopic</key>
@@ -78427,6 +81653,8 @@
       <integer>20</integer>
       <key>hoa-ethiopic</key>
       <integer>0</integer>
+      <key>jo-ethiopic</key>
+      <integer>10</integer>
       <key>joa-ethiopic</key>
       <integer>20</integer>
       <key>koa-ethiopic</key>
@@ -78654,6 +81882,8 @@
       <integer>10</integer>
       <key>hoa-ethiopic</key>
       <integer>-20</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>joa-ethiopic</key>
       <integer>10</integer>
       <key>koa-ethiopic</key>
@@ -78896,7 +82126,7 @@
       <key>hhwa-ethiopic</key>
       <integer>-90</integer>
       <key>jo-ethiopic</key>
-      <integer>-100</integer>
+      <integer>-120</integer>
       <key>ne-ethiopic</key>
       <integer>30</integer>
       <key>nee-ethiopic</key>
@@ -79329,6 +82559,8 @@
       <integer>-20</integer>
       <key>hoa-ethiopic</key>
       <integer>-60</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-20</integer>
       <key>koa-ethiopic</key>
@@ -80162,6 +83394,12 @@
     </dict>
     <key>tha-ethiopic</key>
     <dict>
+      <key>bbaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>cce-ethiopic</key>
+      <integer>10</integer>
+      <key>ce-ethiopic</key>
+      <integer>-10</integer>
       <key>cwa-ethiopic</key>
       <integer>20</integer>
       <key>dee-ethiopic</key>
@@ -80180,6 +83418,10 @@
       <integer>-50</integer>
       <key>ggo-ethiopic</key>
       <integer>-20</integer>
+      <key>ggwaa-ethiopic</key>
+      <integer>-20</integer>
+      <key>kaa-ethiopic</key>
+      <integer>-20</integer>
       <key>moa-ethiopic</key>
       <integer>40</integer>
       <key>naa-ethiopic</key>
@@ -80196,6 +83438,10 @@
       <integer>-130</integer>
       <key>po-ethiopic</key>
       <integer>10</integer>
+      <key>public.kern2.ethi_baa</key>
+      <integer>-10</integer>
+      <key>public.kern2.ethi_ca</key>
+      <integer>-10</integer>
       <key>public.kern2.ethi_cca</key>
       <integer>20</integer>
       <key>public.kern2.ethi_da</key>
@@ -80212,6 +83458,10 @@
       <integer>-50</integer>
       <key>public.kern2.ethi_ggwa</key>
       <integer>-30</integer>
+      <key>public.kern2.ethi_iPharyngeal</key>
+      <integer>-30</integer>
+      <key>public.kern2.ethi_kwaa</key>
+      <integer>-20</integer>
       <key>public.kern2.ethi_kxa</key>
       <integer>-20</integer>
       <key>public.kern2.ethi_kxwaa</key>
@@ -80230,8 +83480,14 @@
       <integer>20</integer>
       <key>public.kern2.ethi_qa</key>
       <integer>-20</integer>
+      <key>public.kern2.ethi_shaa</key>
+      <integer>-20</integer>
       <key>public.kern2.ethi_sza</key>
       <integer>20</integer>
+      <key>public.kern2.ethi_szi</key>
+      <integer>-20</integer>
+      <key>public.kern2.ethi_ta</key>
+      <integer>-10</integer>
       <key>public.kern2.ethi_tzi</key>
       <integer>-20</integer>
       <key>public.kern2.ethi_wi</key>
@@ -80241,11 +83497,13 @@
       <key>public.kern2.ethi_ya</key>
       <integer>20</integer>
       <key>public.kern2.ethi_ze</key>
-      <integer>-30</integer>
+      <integer>-40</integer>
       <key>public.kern2.ethi_zhaa</key>
       <integer>-30</integer>
       <key>public.kern2.ethi_zza</key>
       <integer>10</integer>
+      <key>pwee-ethiopic</key>
+      <integer>-20</integer>
       <key>qhe-ethiopic</key>
       <integer>20</integer>
       <key>qoa-ethiopic</key>
@@ -80256,12 +83514,16 @@
       <integer>20</integer>
       <key>waGlottal-ethiopic</key>
       <integer>-20</integer>
+      <key>xe-ethiopic</key>
+      <integer>-10</integer>
       <key>xo-ethiopic</key>
       <integer>-30</integer>
       <key>xoa-ethiopic</key>
       <integer>-30</integer>
+      <key>xwaa-ethiopic</key>
+      <integer>-10</integer>
       <key>xwee-ethiopic</key>
-      <integer>-20</integer>
+      <integer>-40</integer>
       <key>ye-ethiopic</key>
       <integer>20</integer>
       <key>zhe-ethiopic</key>
@@ -80651,6 +83913,8 @@
       <integer>10</integer>
       <key>hhwa-ethiopic</key>
       <integer>10</integer>
+      <key>jo-ethiopic</key>
+      <integer>10</integer>
       <key>joa-ethiopic</key>
       <integer>-20</integer>
       <key>kaa-ethiopic</key>
@@ -80900,6 +84164,8 @@
       <integer>-10</integer>
       <key>hoa-ethiopic</key>
       <integer>-50</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>kaa-ethiopic</key>
       <integer>-50</integer>
       <key>koa-ethiopic</key>
@@ -81121,6 +84387,8 @@
       <integer>20</integer>
       <key>gaa-ethiopic</key>
       <integer>-10</integer>
+      <key>jo-ethiopic</key>
+      <integer>-80</integer>
       <key>moa-ethiopic</key>
       <integer>50</integer>
       <key>ne-ethiopic</key>
@@ -81210,6 +84478,8 @@
       <integer>20</integer>
       <key>fwe-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-60</integer>
       <key>loa-ethiopic</key>
       <integer>30</integer>
       <key>public.kern2.ethi_ca</key>
@@ -81577,6 +84847,8 @@
       <integer>-20</integer>
       <key>hoa-ethiopic</key>
       <integer>-100</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>kaa-ethiopic</key>
       <integer>-80</integer>
       <key>koa-ethiopic</key>
@@ -82398,6 +85670,8 @@
       <integer>20</integer>
       <key>he-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-70</integer>
       <key>naa-ethiopic</key>
       <integer>10</integer>
       <key>ne-ethiopic</key>
@@ -82565,6 +85839,8 @@
       <integer>-40</integer>
       <key>the-ethiopic</key>
       <integer>-30</integer>
+      <key>to-ethiopic</key>
+      <integer>-30</integer>
     </dict>
     <key>tsaa-ethiopic</key>
     <dict>
@@ -82616,6 +85892,8 @@
       <integer>-40</integer>
       <key>the-ethiopic</key>
       <integer>-20</integer>
+      <key>to-ethiopic</key>
+      <integer>-50</integer>
     </dict>
     <key>tse-ethiopic</key>
     <dict>
@@ -82655,6 +85933,8 @@
       <integer>10</integer>
       <key>gyo-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-70</integer>
       <key>nye-ethiopic</key>
       <integer>-10</integer>
       <key>nyee-ethiopic</key>
@@ -83065,6 +86345,8 @@
       <integer>-60</integer>
       <key>hoa-ethiopic</key>
       <integer>-80</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>kaa-ethiopic</key>
       <integer>-60</integer>
       <key>koa-ethiopic</key>
@@ -83278,6 +86560,8 @@
       <integer>20</integer>
       <key>fwe-ethiopic</key>
       <integer>10</integer>
+      <key>jo-ethiopic</key>
+      <integer>-10</integer>
       <key>ne-ethiopic</key>
       <integer>-20</integer>
       <key>nee-ethiopic</key>
@@ -83606,6 +86890,8 @@
       <integer>-70</integer>
       <key>hoa-ethiopic</key>
       <integer>-110</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>kaa-ethiopic</key>
       <integer>-100</integer>
       <key>koa-ethiopic</key>
@@ -83947,6 +87233,8 @@
       <integer>30</integer>
       <key>public.kern2.ethi_aGlottal</key>
       <integer>20</integer>
+      <key>public.kern2.ethi_aPharyngeal</key>
+      <integer>10</integer>
       <key>public.kern2.ethi_bba</key>
       <integer>20</integer>
       <key>public.kern2.ethi_be</key>
@@ -84517,7 +87805,7 @@
       <key>fya-ethiopic</key>
       <integer>-10</integer>
       <key>jo-ethiopic</key>
-      <integer>-50</integer>
+      <integer>-60</integer>
       <key>ne-ethiopic</key>
       <integer>20</integer>
       <key>nee-ethiopic</key>
@@ -84896,6 +88184,8 @@
       <integer>-20</integer>
       <key>hoa-ethiopic</key>
       <integer>-30</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>kaa-ethiopic</key>
       <integer>-20</integer>
       <key>koa-ethiopic</key>
@@ -86008,6 +89298,8 @@
       <integer>0</integer>
       <key>hoa-ethiopic</key>
       <integer>-70</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-40</integer>
       <key>koa-ethiopic</key>
@@ -86567,6 +89859,8 @@
       <integer>-50</integer>
       <key>hoa-ethiopic</key>
       <integer>-100</integer>
+      <key>jo-ethiopic</key>
+      <integer>40</integer>
       <key>kaa-ethiopic</key>
       <integer>-80</integer>
       <key>koa-ethiopic</key>
@@ -88075,6 +91369,8 @@
       <integer>20</integer>
       <key>he-ethiopic</key>
       <integer>30</integer>
+      <key>jo-ethiopic</key>
+      <integer>-90</integer>
       <key>loa-ethiopic</key>
       <integer>40</integer>
       <key>moa-ethiopic</key>
@@ -88493,6 +91789,8 @@
       <integer>-20</integer>
       <key>hoa-ethiopic</key>
       <integer>-30</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-50</integer>
       <key>kyaa-ethiopic</key>
@@ -88745,7 +92043,7 @@
       <key>hhwa-ethiopic</key>
       <integer>-110</integer>
       <key>jo-ethiopic</key>
-      <integer>-100</integer>
+      <integer>-120</integer>
       <key>koa-ethiopic</key>
       <integer>-80</integer>
       <key>loa-ethiopic</key>
@@ -92349,6 +95647,8 @@
       <integer>30</integer>
       <key>he-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>10</integer>
       <key>ne-ethiopic</key>
       <integer>20</integer>
       <key>nee-ethiopic</key>
@@ -92452,6 +95752,8 @@
       <integer>-70</integer>
       <key>hoa-ethiopic</key>
       <integer>-40</integer>
+      <key>jo-ethiopic</key>
+      <integer>30</integer>
       <key>kaa-ethiopic</key>
       <integer>-40</integer>
       <key>koa-ethiopic</key>
@@ -92657,6 +95959,8 @@
     <dict>
       <key>fo-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-60</integer>
       <key>public.kern2.ethi_ca</key>
       <integer>-30</integer>
       <key>qaa-ethiopic</key>
@@ -92676,6 +95980,8 @@
     <dict>
       <key>fo-ethiopic</key>
       <integer>20</integer>
+      <key>jo-ethiopic</key>
+      <integer>-60</integer>
       <key>public.kern2.ethi_ca</key>
       <integer>-40</integer>
       <key>qaa-ethiopic</key>
@@ -92962,6 +96268,8 @@
       <integer>-70</integer>
       <key>hoa-ethiopic</key>
       <integer>-130</integer>
+      <key>jo-ethiopic</key>
+      <integer>20</integer>
       <key>kaa-ethiopic</key>
       <integer>-100</integer>
       <key>koa-ethiopic</key>
