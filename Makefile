@@ -67,7 +67,7 @@ setup:
 	mkdir -p "$(VENV_DIR)"
 	python3 -m venv "$(VENV_DIR)"
 	"$(VENV_DIR)/bin/pip" install --upgrade pip wheel setuptools
-	"$(VENV_DIR)/bin/pip" install -r requirements-dev.txt
+	"$(VENV_DIR)/bin/pip" install --no-deps -r requirements-dev.txt
 	@echo "\n\nDependency versions installed in your venv are:\n"
 	@$(MAKE) list-deps
 	@echo "\n\nBuild fonts with 'make' or make targets for select font builds (see BUILD.md docs)."
