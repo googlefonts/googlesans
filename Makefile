@@ -86,7 +86,7 @@ list-deps:
 # update-deps updates the requirements.txt file with new releases of Python build dependencies
 # Note: the `pip-compile` tool is from the https://github.com/jazzband/pip-tools package
 update-deps:
-	pip-compile -U
+	pip-compile --upgrade --resolver=backtracking requirements.in
 
 # ------------------------------
 # Testing
