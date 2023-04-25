@@ -1,0 +1,14 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+blws = true
+
+[input]
+script = "mlym"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ടൢ ഠൢ ദൢ ഭൢ മൢ രൢ റൢ ഴൢ", # Ligatures with L Vocalic Matra
+    "ടൣ ഠൣ ദൣ ഭൣ മൣ രൣ റൣ ഴൣ" # Ligatures with LL Vocalic Matra
+]
