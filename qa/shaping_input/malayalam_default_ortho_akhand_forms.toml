@@ -1,0 +1,15 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+akhn = true
+
+[input]
+script = "mlym"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ങ്ക്ല മ്പ്ല സ്റ്റ", # Malayalam tri-consonant
+    "ക്ക ക്ത ക്ട ക്ല ക്ഷ ഗ്ഗ ഗ്ദ ഗ്മ ഗ്ന ഗ്ല ങ്ക ങ്ങ ച്ച ച്ഛ ജ്ജ ജ്ഞ ഞ്ച ഞ്ഛ ഞ്ജ ഞ്ഞ ട്ട ഡ്ഡ ഡ്ഢ ണ്ഡ ണ്ഢ ണ്മ ണ്ണ ണ്ട ത്ന ത്ഭ ത്മ ത്സ ത്ത ത്ഥ ത്ല ദ്ദ ദ്ധ ന്ദ ന്ധ ന്ന ന്മ ന്റ ന്ത ന്ഥ പ്ത പ്പ പ്ല ഫ്ല ബ്ബ ബ്ദ ബ്ധ ബ്ല മ്മ മ്പ മ്ല റ്റ ല്പ ല്ല ള്ള വ്ല ശ്ച ശ്ഛ ശ്ശ ശ്ല ഷ്ട സ്സ സ്ഥ സ്ല ഹ്മ ഹ്ന ഹ്ല", # Malayalam bi-consonant
+    "മ്‍ യ്‍ ഴ്‍ ണ്‍ ന്‍ റ്‍ ല്‍ ള്‍ ക്‍" # Malayalam Chillu forms
+]
