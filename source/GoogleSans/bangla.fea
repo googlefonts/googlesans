@@ -104,7 +104,7 @@ feature half {
     ### !!! --- On-The-Fly Conjuncts --- !!! ###
     ### !!!------------------------------!!! ###
     lookup BNG_dflt_half_modularCjct_1stConsonant_triconsonant {
-        ignore sub @BNG_allBase halant-beng @BNG_allBase halant-beng @BNG_allBase halant-beng;
+        ignore sub @BNG_allBase' halant-beng' @BNG_allBase' halant-beng' @BNG_allBase' halant-beng';
         sub ga-beng' halant-beng' da-beng halant-beng [ra-beng ramiddlediagonal-beng] by g-beng.half2;
         sub nga-beng' halant-beng' gha-beng halant-beng [ba-beng ra-beng ramiddlediagonal-beng] by ng-beng.half1;
         sub nga-beng' halant-beng' k_ssa-beng halant-beng [ra-beng ramiddlediagonal-beng] by ng-beng.half1;
@@ -128,7 +128,7 @@ feature half {
     } BNG_dflt_half_modularCjct_1stConsonant_triconsonant;
 
     lookup BNG_dflt_half_modularCjct_1stConsonant_biconsonant {
-        ignore sub @BNG_allBase halant-beng @BNG_allBase halant-beng;
+        ignore sub @BNG_allBase' halant-beng' @BNG_allBase' halant-beng';
         # linear
         sub ga-beng' halant-beng' [da-beng ma-beng] by g-beng.half2;
         sub nga-beng' halant-beng' [gha-beng k_ssa-beng] by ng-beng.half1;
