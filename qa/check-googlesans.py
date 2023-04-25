@@ -60,6 +60,8 @@ excluded_check_ids = (
     "com.adobe.fonts/check/varfont/valid_default_instance_nameids",  # Bogus
     "com.google.fonts/check/varfont/regular_wght_coord",  # Buggy in 0.8.9
     "com.google.fonts/check/varfont/bold_wght_coord",  # Buggy in 0.8.9
+    # https://github.com/googlefonts/googlesans/issues/576:
+    "com.google.fonts/check/soft_dotted",
 )
 
 ATTRIBUTES = {
@@ -138,6 +140,7 @@ ATTRIBUTES = {
 # ::::::::::::::::::::::::::::::::::::::::::::::::
 # Vertical metrics
 # ::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 # OS/2.fsSelection bit 7 (USE_TYPO_METRICS) is set in all fonts
 @check(
@@ -336,6 +339,7 @@ def com_google_fonts_check_googlesans_opentype_os2_typolinegap(ttFont):
 # Other metrics
 # ::::::::::::::::::::::::::::::::::::::::::::::::
 
+
 # post underline checks
 @check(
     id="com.google.fonts/check/googlesans/opentype/post/underline",
@@ -522,6 +526,7 @@ def com_google_fonts_check_googlesans_variable_fvar_default(ttFont):
 # End check definitions
 #
 # ================================================
+
 
 # skip filter function to exclude checks defined in the
 # fontbakery universal profile
