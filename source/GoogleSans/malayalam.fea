@@ -1,33 +1,31 @@
 feature locl {
     script mlm2;
-    
     lookup MALM_dflt_locl_punctuation {
-    	sub period by period.loclMALM;
-    	sub comma by comma.loclMALM;
-    	sub colon by colon.loclMALM;
-    	sub semicolon by semicolon.loclMALM;
-    	sub ellipsis by ellipsis.loclMALM;
-    	sub exclam by exclam.loclMALM;
-    	sub question by question.loclMALM;
-    	sub asterisk by asterisk.loclMALM;
-    	sub parenleft by parenleft.loclMALM;
-    	sub parenright by parenright.loclMALM;
-    	sub braceleft by braceleft.loclMALM;
-    	sub braceright by braceright.loclMALM;
-    	sub bracketleft by bracketleft.loclMALM;
-    	sub bracketright by bracketright.loclMALM;
-    	sub quotedblleft by quotedblleft.loclMALM;
-    	sub quotedblright by quotedblright.loclMALM;
-    	sub quoteleft by quoteleft.loclMALM;
-    	sub quoteright by quoteright.loclMALM;
+        sub period by period.loclMALM;
+        sub comma by comma.loclMALM;
+        sub colon by colon.loclMALM;
+        sub semicolon by semicolon.loclMALM;
+        sub ellipsis by ellipsis.loclMALM;
+        sub exclam by exclam.loclMALM;
+        sub question by question.loclMALM;
+        sub asterisk by asterisk.loclMALM;
+        sub parenleft by parenleft.loclMALM;
+        sub parenright by parenright.loclMALM;
+        sub braceleft by braceleft.loclMALM;
+        sub braceright by braceright.loclMALM;
+        sub bracketleft by bracketleft.loclMALM;
+        sub bracketright by bracketright.loclMALM;
+        sub quotedblleft by quotedblleft.loclMALM;
+        sub quotedblright by quotedblright.loclMALM;
+        sub quoteleft by quoteleft.loclMALM;
+        sub quoteright by quoteright.loclMALM;
     } MALM_dflt_locl_punctuation;
-    
+
     lookup MALM_dflt_locl_malayalam_danda {
-    	sub danda-deva by danda-deva.loclMALM;
-    	sub dbldanda-deva by dbldanda-deva.loclMALM;
+        sub danda-deva by danda-deva.loclMALM;
+        sub dbldanda-deva by dbldanda-deva.loclMALM;
     } MALM_dflt_locl_malayalam_danda;
-    
-    lookup tml2_dflt_locl_localised_punctuations;
+
     lookup tml2_dflt_locl_localised_numerals;
 } locl;
 
