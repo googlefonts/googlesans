@@ -876,14 +876,20 @@ feature pres {
         sub @BNG_eMatra' s-beng.half3 pha-beng.half1 ra-beng.blwf23.short by @BNG_eMatra_short2;
     } BNG_dflt_pres_eMatra;
 
+} pres;
+
+# This has been moved from the bottom of the above `pres` feature into a
+# standalone `dist` feature to work around a regression in HarfBuzz from v4.2.0
+# that was fixed in v7.2.0.
+feature dist {
+    script bng2;
     ## TESTING CONTEXTUAL SPACING ##
     lookup BNG_dflt_pres_contextualSpacingB {
         pos [g-beng.half2 p-beng.half2]' lookup BNG_dflt_pres_contextualSpacingA ra-beng.blwf23;
         pos nn-beng.half1' lookup BNG_dflt_pres_contextualSpacingA ra-beng.blwf0;
     } BNG_dflt_pres_contextualSpacingB;
-
     ## END TESTING CONTEXTUAL SPACING ##
-} pres;
+} dist;
 
 feature abvs {
     script bng2;
