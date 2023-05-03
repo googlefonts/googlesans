@@ -1,0 +1,13 @@
+[meta]
+build_commit = "63559902ed6174bf979b08fde7b6ddcec9bd9eac"
+
+# guillemets shift down when the language is set to Armenian. See
+# https://github.com/gorjious/google-sans-armenian/issues/9. We can't
+# meaningfully test mixed script runs though, because we don't do the
+# segmentation into per-script text runs that applications do.
+[input]
+text = [
+    "«‹ո›»", 
+]
+script = "latn"
+language = "hy"
