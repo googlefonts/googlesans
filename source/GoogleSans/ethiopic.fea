@@ -104,7 +104,12 @@ feature locl {
     script ethi;
     language dflt;
     lookup ethi_guillemet {
-        sub [guillemetleft guillemetright guilsinglleft guilsinglright] by [guillemetleft.cap guillemetright.cap guilsinglleft.cap guilsinglright.cap];
+        sub [guillemetleft guillemetright guilsinglleft guilsinglright]' @ethi_punct @ethi_punct @ethi_chars by [guillemetleft.cap guillemetright.cap guilsinglleft.cap guilsinglright.cap];
+        sub [guillemetleft guillemetright guilsinglleft guilsinglright]' @ethi_punct @ethi_chars by [guillemetleft.cap guillemetright.cap guilsinglleft.cap guilsinglright.cap];
+        sub [guillemetleft guillemetright guilsinglleft guilsinglright]' @ethi_chars by [guillemetleft.cap guillemetright.cap guilsinglleft.cap guilsinglright.cap];
+        sub @ethi_chars @ethi_punct @ethi_punct [guillemetleft guillemetright guilsinglleft guilsinglright]' by [guillemetleft.cap guillemetright.cap guilsinglleft.cap guilsinglright.cap];
+        sub @ethi_chars @ethi_punct [guillemetleft guillemetright guilsinglleft guilsinglright]' by [guillemetleft.cap guillemetright.cap guilsinglleft.cap guilsinglright.cap];
+        sub @ethi_chars [guillemetleft guillemetright guilsinglleft guilsinglright]' by [guillemetleft.cap guillemetright.cap guilsinglleft.cap guilsinglright.cap];
     } ethi_guillemet;
 
     lookup ethi_space {
