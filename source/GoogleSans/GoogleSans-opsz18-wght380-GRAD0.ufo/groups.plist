@@ -2002,16 +2002,16 @@
       <string>a-malayalam</string>
       <string>lVocalic-malayalam</string>
     </array>
-    <key>public.kern1.MAL_aa-malayalam_R</key>
+    <key>public.kern1.MAL_aa-malayalam_L</key>
     <array>
       <string>aa-malayalam</string>
       <string>llVocalic-malayalam</string>
     </array>
-    <key>public.kern1.MAL_asterisk.loclMALM_R</key>
+    <key>public.kern1.MAL_asterisk.loclMALM_L</key>
     <array>
       <string>asterisk.loclMALM</string>
     </array>
-    <key>public.kern1.MAL_aulengthmark-malayalam_R</key>
+    <key>public.kern1.MAL_aulengthmark-malayalam-R</key>
     <array>
       <string>ii-malayalam</string>
       <string>aulengthmark-malayalam</string>
@@ -2038,11 +2038,11 @@
     <array>
       <string>bha_llVocalicMatra-malayalam</string>
     </array>
-    <key>public.kern1.MAL_braceleft.loclMALM_R</key>
+    <key>public.kern1.MAL_braceleft.loclMALM_L</key>
     <array>
       <string>braceleft.loclMALM</string>
     </array>
-    <key>public.kern1.MAL_bracketleft.loclMALM_R</key>
+    <key>public.kern1.MAL_bracketleft.loclMALM_L</key>
     <array>
       <string>bracketleft.loclMALM</string>
     </array>
@@ -2158,7 +2158,7 @@
       <string>i-malayalam</string>
       <string>u-malayalam</string>
     </array>
-    <key>public.kern1.MAL_ii-malayalam_R</key>
+    <key>public.kern1.MAL_ii-malayalam-R</key>
     <array>
       <string>uu-malayalam</string>
       <string>au-malayalam</string>
@@ -2290,10 +2290,6 @@
     <array>
       <string>m_la-malayalam</string>
     </array>
-    <key>public.kern1.MAL_ma-malayalam_L</key>
-    <array>
-      <string>nn_ma-malayalam</string>
-    </array>
     <key>public.kern1.MAL_ma_lVocalicMatra-malayalam_R</key>
     <array>
       <string>ma_lVocalicMatra-malayalam</string>
@@ -2410,7 +2406,7 @@
     <array>
       <string>para-malayalam</string>
     </array>
-    <key>public.kern1.MAL_parenleft.loclMALM_R</key>
+    <key>public.kern1.MAL_parenleft.loclMALM_L</key>
     <array>
       <string>parenleft.loclMALM</string>
     </array>
@@ -2418,12 +2414,12 @@
     <array>
       <string>ph_la-malayalam</string>
     </array>
-    <key>public.kern1.MAL_quoteleft.loclMALM_R</key>
+    <key>public.kern1.MAL_quoteleft.loclMALM_L</key>
     <array>
       <string>quotedblleft.loclMALM</string>
       <string>quoteleft.loclMALM</string>
     </array>
-    <key>public.kern1.MAL_quoteright.loclMALM_R</key>
+    <key>public.kern1.MAL_quoteright.loclMALM_L</key>
     <array>
       <string>quoteright.loclMALM</string>
     </array>
@@ -2577,10 +2573,6 @@
     <array>
       <string>uMatra-malayalam</string>
       <string>uuMatra-malayalam</string>
-    </array>
-    <key>public.kern1.MAL_v_la-malayalam_R</key>
-    <array>
-      <string>v_la-malayalam</string>
     </array>
     <key>public.kern1.MAL_va-malayalam.post_R</key>
     <array>
@@ -5102,7 +5094,7 @@
       <string>tavdagesh-hb</string>
       <string>nunhafukha-hb</string>
     </array>
-    <key>public.kern1.bha-malayalam.half_R</key>
+    <key>public.kern1.bha-malayalam.half</key>
     <array>
       <string>bha-malayalam.half</string>
     </array>
@@ -8610,7 +8602,7 @@
       <string>v_la-malayalam</string>
       <string>v_va-malayalam</string>
     </array>
-    <key>public.kern2.MAL_asterisk.loclMALM_L</key>
+    <key>public.kern2.MAL_asterisk.loclMALM_R</key>
     <array>
       <string>asterisk.loclMALM</string>
     </array>
@@ -8623,11 +8615,11 @@
       <string>bha_lVocalicMatra-malayalam</string>
       <string>bha_llVocalicMatra-malayalam</string>
     </array>
-    <key>public.kern2.MAL_braceright.loclMALM_L</key>
+    <key>public.kern2.MAL_braceright.loclMALM_R</key>
     <array>
       <string>braceright.loclMALM</string>
     </array>
-    <key>public.kern2.MAL_bracketright.loclMALM_L</key>
+    <key>public.kern2.MAL_bracketright.loclMALM_R</key>
     <array>
       <string>bracketright.loclMALM</string>
     </array>
@@ -8643,7 +8635,7 @@
       <string>cha-malayalam.half</string>
       <string>c_ca-malayalam</string>
     </array>
-    <key>public.kern2.MAL_comma.loclMALM_L</key>
+    <key>public.kern2.MAL_comma.loclMALM_R</key>
     <array>
       <string>comma.loclMALM</string>
     </array>
@@ -8698,11 +8690,6 @@
     </array>
     <key>public.kern2.MAL_e-malayalam-L</key>
     <array>
-      <string>pa-malayalam.half</string>
-      <string>pha-malayalam.half</string>
-    </array>
-    <key>public.kern2.MAL_e-malayalam_L</key>
-    <array>
       <string>e-malayalam</string>
       <string>ee-malayalam</string>
       <string>pa-malayalam</string>
@@ -8711,6 +8698,8 @@
       <string>ha-malayalam</string>
       <string>onesixteenth-malayalam</string>
       <string>oneeighth-malayalam</string>
+      <string>pa-malayalam.half</string>
+      <string>pha-malayalam.half</string>
       <string>ssa-malayalam.half</string>
       <string>ha-malayalam.half</string>
       <string>p_ta-malayalam</string>
@@ -8810,6 +8799,10 @@
     <array>
       <string>l_la-malayalam</string>
     </array>
+    <key>public.kern2.MAL_l_pa-malayalam</key>
+    <array>
+      <string>l_pa-malayalam</string>
+    </array>
     <key>public.kern2.MAL_lla-malayalam_L</key>
     <array>
       <string>lla-malayalam</string>
@@ -8887,20 +8880,20 @@
     <array>
       <string>para-malayalam</string>
     </array>
-    <key>public.kern2.MAL_parenright.loclMALM_L</key>
+    <key>public.kern2.MAL_parenright.loclMALM_R</key>
     <array>
       <string>parenright.loclMALM</string>
     </array>
-    <key>public.kern2.MAL_period.loclMALM_L</key>
+    <key>public.kern2.MAL_period.loclMALM_R</key>
     <array>
       <string>period.loclMALM</string>
       <string>ellipsis.loclMALM</string>
     </array>
-    <key>public.kern2.MAL_question.loclMALM_L</key>
+    <key>public.kern2.MAL_question.loclMALM_R</key>
     <array>
       <string>question.loclMALM</string>
     </array>
-    <key>public.kern2.MAL_quoteright.loclMALM_L</key>
+    <key>public.kern2.MAL_quoteright.loclMALM_R</key>
     <array>
       <string>quotedblright.loclMALM</string>
       <string>quoteright.loclMALM</string>
@@ -8929,7 +8922,7 @@
     <array>
       <string>rr_rra-malayalam</string>
     </array>
-    <key>public.kern2.MAL_semicolon.loclMALM_L</key>
+    <key>public.kern2.MAL_semicolon.loclMALM_R</key>
     <array>
       <string>semicolon.loclMALM</string>
     </array>
@@ -8950,11 +8943,6 @@
     <key>public.kern2.MAL_tt_tta-malayalam_L</key>
     <array>
       <string>tt_tta-malayalam</string>
-    </array>
-    <key>public.kern2.MAL_tta-malayalam_L</key>
-    <array>
-      <string>tta-malayalam</string>
-      <string>tta-malayalam.half</string>
     </array>
     <key>public.kern2.MAL_tta_lVocalicMatra-malayalam_L</key>
     <array>

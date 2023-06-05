@@ -1,13 +1,32 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="au-malayalam" format="2">
-  <advance width="1726"/>
+  <advance width="1730"/>
   <unicode hex="0D14"/>
   <outline>
     <component base="o-malayalam"/>
-    <component base="aulengthmark-malayalam" xOffset="839"/>
+    <component base="aulengthmark-malayalam" xOffset="833"/>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>o-malayalam</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>aulengthmark-malayalam</string>
+        </dict>
+      </array>
       <key>com.schriftgestaltung.Glyphs.category</key>
       <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
