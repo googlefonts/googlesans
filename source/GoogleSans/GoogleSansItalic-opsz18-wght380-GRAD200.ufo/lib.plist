@@ -7839,6 +7839,11 @@
       <string>quotedblright.loclMALM</string>
       <string>quoteleft.loclMALM</string>
       <string>quoteright.loclMALM</string>
+      <string>archaicii-malayalam.part</string>
+      <string>pa-malayalam.below</string>
+      <string>sa-malayalam.below</string>
+      <string>ta-malayalam.below</string>
+      <string>rra-malayalam.below</string>
     </array>
     <key>public.openTypeCategories</key>
     <dict>
@@ -9205,6 +9210,8 @@
       <key>aogonek.alt</key>
       <string>base</string>
       <key>aogonek.sc</key>
+      <string>base</string>
+      <key>archaicii-malayalam</key>
       <string>base</string>
       <key>aring</key>
       <string>base</string>
@@ -14864,6 +14871,8 @@
       <string>base</string>
       <key>pa-malayalam</key>
       <string>base</string>
+      <key>pa-malayalam.below</key>
+      <string>mark</string>
       <key>pa-malayalam.half</key>
       <string>base</string>
       <key>pa-oriya</key>
@@ -15606,6 +15615,8 @@
       <string>base</string>
       <key>rra-malayalam</key>
       <string>base</string>
+      <key>rra-malayalam.below</key>
+      <string>mark</string>
       <key>rra-malayalam.half</key>
       <string>base</string>
       <key>rra-oriya</key>
@@ -15790,6 +15801,8 @@
       <string>base</string>
       <key>sa-malayalam</key>
       <string>base</string>
+      <key>sa-malayalam.below</key>
+      <string>mark</string>
       <key>sa-malayalam.half</key>
       <string>base</string>
       <key>sa-oriya</key>
@@ -16448,6 +16461,8 @@
       <string>mark</string>
       <key>ta-malayalam</key>
       <string>base</string>
+      <key>ta-malayalam.below</key>
+      <string>mark</string>
       <key>ta-malayalam.half</key>
       <string>base</string>
       <key>ta-oriya</key>
@@ -19437,6 +19452,8 @@
       <string>uni02BC</string>
       <key>archaicii-malayalam</key>
       <string>uni0D5F</string>
+      <key>archaicii-malayalam.part</key>
+      <string>uni0D5F.part</string>
       <key>asabove-tamil</key>
       <string>uni0BF8</string>
       <key>asterisk.loclKNDA</key>
@@ -27041,6 +27058,8 @@
       <string>uni0CCD0CAA</string>
       <key>pa-malayalam</key>
       <string>uni0D2A</string>
+      <key>pa-malayalam.below</key>
+      <string>uni0D2A.below</string>
       <key>pa-malayalam.half</key>
       <string>uni0D2A0D4D</string>
       <key>pa-oriya</key>
@@ -28103,6 +28122,8 @@
       <string>uni0CCD0CB1</string>
       <key>rra-malayalam</key>
       <string>uni0D31</string>
+      <key>rra-malayalam.below</key>
+      <string>uni0D31.below</string>
       <key>rra-malayalam.half</key>
       <string>uni0D310D4D</string>
       <key>rra-oriya</key>
@@ -28329,6 +28350,8 @@
       <string>uni17D2179F.post2</string>
       <key>sa-malayalam</key>
       <string>uni0D38</string>
+      <key>sa-malayalam.below</key>
+      <string>uni0D38.below</string>
       <key>sa-malayalam.half</key>
       <string>uni0D380D4D</string>
       <key>sa-oriya</key>
@@ -29289,6 +29312,8 @@
       <string>uni17D2178F.below2</string>
       <key>ta-malayalam</key>
       <string>uni0D24</string>
+      <key>ta-malayalam.below</key>
+      <string>uni0D24.below</string>
       <key>ta-malayalam.half</key>
       <string>uni0D240D4D</string>
       <key>ta-oriya</key>
@@ -31299,12 +31324,17 @@
     <key>public.skipExportGlyphs</key>
     <array>
       <string>K.alt</string>
+      <string>archaicii-malayalam.part</string>
       <string>caroncomb.alt</string>
       <string>caroncomb.alt.cap</string>
       <string>comma.alt</string>
       <string>k.alt</string>
+      <string>pa-malayalam.below</string>
       <string>quoteright.alt</string>
       <string>r.alt</string>
+      <string>rra-malayalam.below</string>
+      <string>sa-malayalam.below</string>
+      <string>ta-malayalam.below</string>
     </array>
   </dict>
 </plist>

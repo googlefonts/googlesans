@@ -1,83 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="p_pa-malayalam" format="2">
   <advance width="969"/>
-  <anchor x="433" y="-460" name="bottom"/>
-  <anchor x="529" y="613" name="top"/>
-  <anchor x="882" y="613" name="topright"/>
   <outline>
-    <contour>
-      <point x="141" y="-376" type="curve"/>
-      <point x="209" y="-307" type="line"/>
-      <point x="186" y="-285"/>
-      <point x="170" y="-259"/>
-      <point x="170" y="-222" type="curve" smooth="yes"/>
-      <point x="170" y="-169"/>
-      <point x="205" y="-128"/>
-      <point x="271" y="-128" type="curve" smooth="yes"/>
-      <point x="335" y="-128"/>
-      <point x="358" y="-163"/>
-      <point x="358" y="-204" type="curve" smooth="yes"/>
-      <point x="358" y="-252"/>
-      <point x="333" y="-280"/>
-      <point x="296" y="-302" type="curve"/>
-      <point x="320" y="-371" type="line"/>
-      <point x="770" y="-371" type="line"/>
-      <point x="944" y="613" type="line"/>
-      <point x="822" y="613" type="line"/>
-      <point x="722" y="42" type="line"/>
-      <point x="806" y="109" type="line"/>
-      <point x="450" y="109" type="line"/>
-      <point x="447" y="118" type="line"/>
-      <point x="474" y="150"/>
-      <point x="490" y="191"/>
-      <point x="490" y="237" type="curve" smooth="yes"/>
-      <point x="490" y="345"/>
-      <point x="411" y="417"/>
-      <point x="278" y="417" type="curve" smooth="yes"/>
-      <point x="124" y="417"/>
-      <point x="34" y="318"/>
-      <point x="34" y="181" type="curve" smooth="yes"/>
-      <point x="34" y="106"/>
-      <point x="61" y="38"/>
-      <point x="117" y="-16" type="curve"/>
-      <point x="207" y="63" type="line"/>
-      <point x="174" y="97"/>
-      <point x="156" y="131"/>
-      <point x="156" y="186" type="curve" smooth="yes"/>
-      <point x="156" y="254"/>
-      <point x="194" y="306"/>
-      <point x="269" y="306" type="curve" smooth="yes"/>
-      <point x="335" y="306"/>
-      <point x="365" y="269"/>
-      <point x="365" y="213" type="curve" smooth="yes"/>
-      <point x="365" y="148"/>
-      <point x="336" y="112"/>
-      <point x="289" y="76" type="curve"/>
-      <point x="305" y="0" type="line"/>
-      <point x="756" y="0" type="line"/>
-      <point x="721" y="16" type="line"/>
-      <point x="663" y="-312" type="line"/>
-      <point x="733" y="-281" type="line"/>
-      <point x="380" y="-281" type="line"/>
-      <point x="372" y="-334" type="line"/>
-      <point x="428" y="-304"/>
-      <point x="457" y="-251"/>
-      <point x="457" y="-193" type="curve" smooth="yes"/>
-      <point x="457" y="-90"/>
-      <point x="382" y="-39"/>
-      <point x="275" y="-39" type="curve" smooth="yes"/>
-      <point x="147" y="-39"/>
-      <point x="71" y="-117"/>
-      <point x="71" y="-224" type="curve" smooth="yes"/>
-      <point x="71" y="-287"/>
-      <point x="97" y="-339"/>
-    </contour>
+    <component base="pa-malayalam"/>
+    <component base="pa-malayalam.below" xOffset="129"/>
   </outline>
   <lib>
     <dict>
       <key>com.schriftgestaltung.Glyphs.category</key>
       <string>Letter</string>
-      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
       <string>pa-malayalam</string>
       <key>com.schriftgestaltung.Glyphs.script</key>
       <string>malayalam</string>
