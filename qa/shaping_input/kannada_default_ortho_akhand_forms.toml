@@ -1,0 +1,15 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+akhn = true
+blwf = true
+dist = true
+
+[input]
+script = "knda"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ಕ್ಷ ಕ್ಕ್ಷ" # Kannada akhands
+]

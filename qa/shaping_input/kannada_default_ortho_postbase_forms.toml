@@ -1,0 +1,24 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+abvs = true
+blwf = true
+psts = true
+rclt = true
+blwm = true
+haln = true
+
+[input]
+script = "knda"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ಕಾ ಖಾ ಗಾ ಘಾ ಙಾ ಚಾ ಛಾ ಜಾ ಝಾ ಞಾ ಟಾ ಠಾ ಡಾ ಢಾ ಣಾ ತಾ ಥಾ ದಾ ಧಾ ನಾ ಪಾ ಫಾ ಬಾ ಭಾ ಮಾ ಯಾ ರಾ ಱಾ ಲಾ ಳಾ ೞಾ ವಾ ಶಾ ಷಾ ಸಾ ಹಾ", # aaMatra Ligatures
+    "ಕು ಖು ಗು ಘು ಙು ಚು ಛು ಜು ಝು ಞು ಟು ಠು ಡು ಢು ಣು ತು ಥು ದು ಧು ನು ಪು ಫು ಬು ಭು ಮು ಯು ರು ಱು ಲು ಳು ೞು ವು ಶು ಷು ಸು ಹು", # uMatra Ligatures
+    "ಕೂ ಖೂ ಗೂ ಘೂ ಙೂ ಚೂ ಛೂ ಜೂ ಝೂ ಞೂ ಟೂ ಠೂ ಡೂ ಢೂ ಣೂ ತೂ ಥೂ ದೂ ಧೂ ನೂ ಪೂ ಫೂ ಬೂ ಭೂ ಮೂ ಯೂ ರೂ ಱೂ ಲೂ ಳೂ ೞೂ ವೂ ಶೂ ಷೂ ಸೂ ಹೂ", # uuMatra Ligatures
+    "ಕೌ ಖೌ ಗೌ ಘೌ ಙೌ ಚೌ ಛೌ ಜೌ ಝೌ ಞೌ ಟೌ ಠೌ ಡೌ ಢೌ ಣೌ ತೌ ಥೌ ದೌ ಧೌ ನೌ ಪೌ ಫೌ ಬೌ ಭೌ ಮೌ ಯೌ ರೌ ಱೌ ಲೌ ಳೌ ೞೌ ವೌ ಶೌ ಷೌ ಸೌ ಹೌ", # auMatra Ligatures
+    "ಜ಼ಾ ಜ಼ು ಜ಼ೂ ಜ಼ೌ ಫ಼ಾ ಫ಼ು ಫ಼ೂ ಫ಼ೌ", # Vowel ligatures with Ja and Pha + Nukta
+    "ಷ್ಕ ಷ್ಖ ಷ್ಗ ಷ್ಘ ಷ್ಙ ಷ್ಚ ಷ್ಛ ಷ್ಜ ಷ್ಝ ಷ್ಞ ಷ್ಟ ಷ್ಠ ಷ್ಡ ಷ್ಢ ಷ್ಣ ಷ್ತ ಷ್ಥ ಷ್ದ ಷ್ಧ ಷ್ನ ಷ್ಪ ಷ್ಫ ಷ್ಬ ಷ್ಭ ಷ್ಮ ಷ್ಯ ಷ್ರ ಷ್ಱ ಷ್ಲ ಷ್ಳ ಷ್ವ ಷ್ಶ ಷ್ಷ ಷ್ಸ ಷ್ಹ ಷ್ೞ", # Alternate form of Ssa with short diagonal stroke - Test 1
+    "ಷ್ಕಿ ಷ್ಟಿ ಷ್ಕೆ ಷ್ಟೆ ಷ್ಕ್ ಷ್ಟ್" # Alternate form of Ssa with vattus and dependent vowels - Test 2
+]

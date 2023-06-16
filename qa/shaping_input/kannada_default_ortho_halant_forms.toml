@@ -1,0 +1,18 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+akhn = true
+blwf = true
+haln = true
+dist = true
+
+[input]
+script = "knda"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ಕ್ ಖ್ ಗ್ ಘ್ ಙ್ ಚ್ ಛ್ ಜ್ ಝ್ ಞ್ ಟ್ ಠ್ ಡ್ ಢ್ ಣ್ ತ್ ಥ್ ದ್ ಧ್ ನ್ ಪ್ ಫ್ ಬ್ ಭ್ ಮ್ ಯ್ ರ್ ಱ್ ಲ್ ಳ್ ೞ್ ವ್ ಶ್ ಷ್ ಸ್ ಹ್", # Halant forms of all consonants
+    "ಕ್ಷ್", # Halant forms of Akhand KSsa
+    "ಕ್ ಕ್ಕ್ ಕ್ಕ್ಕ್ ಕ್ಕ್ಕ್ಕ್", # Halant forms range test
+]
