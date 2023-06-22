@@ -26,7 +26,6 @@ feature locl {
         sub dbldanda-deva by dbldanda-deva.loclMALM;
     } MALM_dflt_locl_malayalam_danda;
 
-    lookup tml2_dflt_locl_localised_numerals;
 } locl;
 
 feature akhn {
@@ -108,6 +107,8 @@ feature akhn {
         sub ha-malayalam halant-malayalam ma-malayalam by h_ma-malayalam;
         sub ha-malayalam halant-malayalam na-malayalam by h_na-malayalam;
         sub ha-malayalam halant-malayalam la-malayalam by h_la-malayalam;
+        sub ya-malayalam halant-malayalam ya-malayalam by y_ya-malayalam;
+        sub va-malayalam halant-malayalam va-malayalam by v_va-malayalam;
     } MALM_dflt_akhn_conjuncts;
 
     lookup MALM_dflt_akhn_chilluForms {
