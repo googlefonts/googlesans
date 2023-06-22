@@ -18,673 +18,287 @@ from pathlib import Path
 from ufoLib2 import Font
 
 
-ALL_GLYPHS = {
-    "a-telugu",
-    "aa-telugu",
-    "aaMatra-telugu",
-    "ai-telugu",
-    "aiLength-telugu.alt",
-    "aiLength-telugu",
-    "aiMatra-telugu",
-    "anusvara-telugu",
-    "anusvaraAbove-telugu",
-    "asterisk.loclTELU",
-    "au-telugu",
-    "auMatra-telugu",
-    "avagraha-telugu",
-    "b-telugu",
-    "ba-telugu.below",
-    "ba-telugu",
-    "baa-telugu",
-    "bau-telugu",
-    "be-telugu",
-    "bee-telugu",
-    "bh-telugu",
-    "bha-telugu.below",
-    "bha-telugu",
-    "bhaa-telugu",
-    "bhau-telugu",
-    "bhe-telugu",
-    "bhee-telugu",
-    "bhi-telugu",
-    "bhii-telugu",
-    "bho-telugu",
-    "bhoo-telugu",
-    "bhu-telugu",
-    "bhuu-telugu",
-    "bi-telugu",
-    "bii-telugu",
-    "bo-telugu",
-    "boo-telugu",
-    "braceleft.loclTELU",
-    "braceright.loclTELU",
-    "bracketleft.loclTELU",
-    "bracketright.loclTELU",
-    "bu-telugu",
-    "buu-telugu",
-    "c-telugu",
-    "ca-telugu.below",
-    "ca-telugu",
-    "caa-telugu",
-    "candraBindu-telugu",
-    "candraBinduAbove-telugu",
-    "cau-telugu",
-    "ce-telugu",
-    "cee-telugu",
-    "ch-telugu",
-    "cha-telugu.below",
-    "cha-telugu",
-    "chaa-telugu",
-    "chau-telugu",
-    "che-telugu",
-    "chee-telugu",
-    "chi-telugu",
-    "chii-telugu",
-    "cho-telugu",
-    "choo-telugu",
-    "chu-telugu",
-    "chuu-telugu",
-    "ci-telugu",
-    "cii-telugu",
-    "co-telugu",
-    "colon.loclTELU",
-    "comma.loclTELU",
-    "coo-telugu",
-    "cu-telugu",
-    "cuu-telugu",
-    "d-telugu",
-    "da-telugu.below",
-    "da-telugu",
-    "daa-telugu",
-    "dai-telugu.below",
-    "dau-telugu",
-    "dd-telugu",
-    "dda-telugu.below",
-    "dda-telugu",
-    "ddaa-telugu",
-    "ddai-telugu.below",
-    "ddau-telugu",
-    "dde-telugu",
-    "ddee-telugu",
-    "ddh-telugu",
-    "ddha-telugu.below",
-    "ddha-telugu",
-    "ddhaa-telugu",
-    "ddhai-telugu.below",
-    "ddhau-telugu",
-    "ddhe-telugu",
-    "ddhee-telugu",
-    "ddhi-telugu",
-    "ddhii-telugu",
-    "ddho-telugu",
-    "ddhoo-telugu",
-    "ddhu-telugu",
-    "ddhuu-telugu",
-    "ddi-telugu",
-    "ddii-telugu",
-    "ddo-telugu",
-    "ddoo-telugu",
-    "ddu-telugu",
-    "dduu-telugu",
-    "de-telugu",
-    "dee-telugu",
-    "dh-telugu",
-    "dha-telugu.below",
-    "dha-telugu",
-    "dhaa-telugu",
-    "dhai-telugu.below",
-    "dhau-telugu",
-    "dhe-telugu",
-    "dhee-telugu",
-    "dhi-telugu",
-    "dhii-telugu",
-    "dho-telugu",
-    "dhoo-telugu",
-    "dhu-telugu",
-    "dhuu-telugu",
-    "di-telugu",
-    "dii-telugu",
-    "do-telugu",
-    "doo-telugu",
-    "du-telugu",
-    "duu-telugu",
-    "dza-telugu",
-    "e-telugu",
-    "ee-telugu",
-    "eeMatra-telugu",
-    "eight-telugu",
-    "ellipsis.loclTELU",
-    "eMatra-telugu",
-    "exclam.loclTELU",
-    "five-telugu",
-    "four-telugu",
-    "fractiononeforevenpowersoffour-telugu",
-    "fractiononeforoddpowersoffour-telugu",
-    "fractionthreeforevenpowersoffour-telugu",
-    "fractionthreeforoddpowersoffour-telugu",
-    "fractiontwoforevenpowersoffour-telugu",
-    "fractiontwoforoddpowersoffour-telugu",
-    "fractionzeroforoddpowersoffour-telugu",
-    "g-telugu",
-    "ga-telugu.below",
-    "ga-telugu",
-    "gaa-telugu",
-    "gai-telugu.below",
-    "gau-telugu",
-    "ge-telugu",
-    "gee-telugu",
-    "gh-telugu.alt",
-    "gh-telugu",
-    "gha-telugu.alt",
-    "gha-telugu.below",
-    "gha-telugu",
-    "ghaa-telugu.alt",
-    "ghaa-telugu",
-    "ghai-telugu.below",
-    "ghau-telugu.alt",
-    "ghau-telugu",
-    "ghe-telugu.alt",
-    "ghe-telugu",
-    "ghee-telugu.alt",
-    "ghee-telugu",
-    "ghi-telugu.alt",
-    "ghi-telugu",
-    "ghii-telugu.alt",
-    "ghii-telugu",
-    "gho-telugu.alt",
-    "gho-telugu",
-    "ghoo-telugu.alt",
-    "ghoo-telugu",
-    "ghu-telugu.alt",
-    "ghu-telugu",
-    "ghuu-telugu.alt",
-    "ghuu-telugu",
-    "gi-telugu",
-    "gii-telugu",
-    "go-telugu",
-    "goo-telugu",
-    "gu-telugu",
-    "guu-telugu",
-    "h-telugu",
-    "ha-telugu.below",
-    "ha-telugu",
-    "haa-telugu",
-    "hai-telugu.below",
-    "halant-telugu",
-    "hau-telugu",
-    "he-telugu",
-    "hee-telugu",
-    "hi-telugu",
-    "hii-telugu",
-    "ho-telugu",
-    "hoo-telugu",
-    "hu-telugu",
-    "huu-telugu",
-    "i-telugu",
-    "ii-telugu",
-    "iiMatra-telugu",
-    "iMatra-telugu",
-    "j_nya-telugu",
-    "j-telugu",
-    "ja-telugu.below",
-    "ja-telugu",
-    "jaa-telugu",
-    "jai-telugu.below",
-    "jau-telugu",
-    "je-telugu",
-    "jee-telugu",
-    "jh-telugu.alt",
-    "jh-telugu",
-    "jha-telugu.alt",
-    "jha-telugu.below",
-    "jha-telugu",
-    "jhaa-telugu.alt",
-    "jhaa-telugu",
-    "jhai-telugu.below",
-    "jhau-telugu.alt",
-    "jhau-telugu",
-    "jhe-telugu.alt",
-    "jhe-telugu",
-    "jhee-telugu.alt",
-    "jhee-telugu",
-    "jhi-telugu.alt",
-    "jhi-telugu",
-    "jhii-telugu.alt",
-    "jhii-telugu",
-    "jho-telugu.alt",
-    "jho-telugu",
-    "jhoo-telugu.alt",
-    "jhoo-telugu",
-    "jhu-telugu.alt",
-    "jhu-telugu",
-    "jhuu-telugu.alt",
-    "jhuu-telugu",
-    "ji-telugu",
-    "jii-telugu",
-    "jo-telugu",
-    "joo-telugu",
-    "ju-telugu",
-    "juu-telugu",
-    "k_ssa-telugu",
-    "k-telugu",
-    "ka-telugu.below",
-    "ka-telugu",
-    "kaa-telugu",
-    "kau-telugu",
-    "ke-telugu",
-    "kee-telugu",
-    "kh-telugu.alt",
-    "kh-telugu",
-    "kha-telugu.alt",
-    "kha-telugu.below",
-    "kha-telugu",
-    "khaa-telugu.alt",
-    "khaa-telugu",
-    "khai-telugu.below",
-    "khau-telugu.alt",
-    "khau-telugu",
-    "khe-telugu.alt",
-    "khe-telugu",
-    "khee-telugu.alt",
-    "khee-telugu",
-    "khi-telugu.alt",
-    "khi-telugu",
-    "khii-telugu.alt",
-    "khii-telugu",
-    "kho-telugu.alt",
-    "kho-telugu",
-    "khoo-telugu.alt",
-    "khoo-telugu",
-    "khu-telugu.alt",
-    "khu-telugu",
-    "khuu-telugu.alt",
-    "khuu-telugu",
-    "ki-telugu",
-    "kii-telugu",
-    "ko-telugu",
-    "koo-telugu",
-    "ku-telugu",
-    "kuu-telugu",
-    "l-telugu",
-    "la-telugu.below",
-    "la-telugu",
-    "laa-telugu",
-    "lai-telugu.below",
-    "lau-telugu",
-    "le-telugu",
-    "lee-telugu",
-    "length-telugu",
-    "li-telugu",
-    "lii-telugu",
-    "ll-telugu",
-    "lla-telugu.below",
-    "lla-telugu",
-    "llaa-telugu",
-    "llau-telugu",
-    "lle-telugu",
-    "llee-telugu",
-    "lli-telugu",
-    "llii-telugu",
-    "lll-telugu",
-    "llla-telugu.below",
-    "llla-telugu",
-    "lllaa-telugu",
-    "lllai-telugu.below",
-    "lllau-telugu",
-    "llle-telugu",
-    "lllee-telugu",
-    "llli-telugu",
-    "lllii-telugu",
-    "lllo-telugu",
-    "llloo-telugu",
-    "lllu-telugu",
-    "llluu-telugu",
-    "llo-telugu",
-    "lloo-telugu",
-    "llu-telugu",
-    "lluu-telugu",
-    "llVocalic-telugu",
-    "llVocalicMatra-telugu",
-    "lo-telugu",
-    "loo-telugu",
-    "lu-telugu",
-    "luu-telugu",
-    "lVocalic-telugu",
-    "lVocalicMatra-telugu",
-    "m-telugu",
-    "ma-telugu.below",
-    "ma-telugu",
-    "maa-telugu",
-    "mau-telugu",
-    "me-telugu",
-    "mee-telugu",
-    "mi-telugu",
-    "mii-telugu",
-    "mo-telugu",
-    "moo-telugu",
-    "mu-telugu",
-    "muu-telugu",
-    "n-telugu",
-    "na-telugu.below",
-    "na-telugu",
-    "naa-telugu",
-    "nau-telugu",
-    "ne-telugu",
-    "nee-telugu",
-    "ng-telugu",
-    "nga-telugu.below",
-    "nga-telugu",
-    "ngaa-telugu",
-    "ngai-telugu.below",
-    "ngau-telugu",
-    "nge-telugu",
-    "ngee-telugu",
-    "ngi-telugu",
-    "ngii-telugu",
-    "ngo-telugu",
-    "ngoo-telugu",
-    "ngu-telugu",
-    "nguu-telugu",
-    "ni-telugu",
-    "nii-telugu",
-    "nine-telugu",
-    "nn-telugu",
-    "nna-telugu.below",
-    "nna-telugu",
-    "nnaa-telugu",
-    "nnai-telugu.below",
-    "nnau-telugu",
-    "nne-telugu",
-    "nnee-telugu",
-    "nni-telugu",
-    "nnii-telugu",
-    "nno-telugu",
-    "nnoo-telugu",
-    "nnu-telugu",
-    "nnuu-telugu",
-    "no-telugu",
-    "noo-telugu",
-    "nu-telugu",
-    "nuu-telugu",
-    "ny-telugu",
-    "nya-telugu.below",
-    "nya-telugu",
-    "nyaa-telugu",
-    "nyai-telugu.below",
-    "nyau-telugu",
-    "nye-telugu",
-    "nyee-telugu",
-    "nyi-telugu",
-    "nyii-telugu",
-    "nyo-telugu",
-    "nyoo-telugu",
-    "nyu-telugu",
-    "nyuu-telugu",
-    "o-telugu",
-    "oMatra-telugu",
-    "one-telugu",
-    "oo-telugu",
-    "ooMatra-telugu",
-    "p-telugu",
-    "pa-telugu.below",
-    "pa-telugu",
-    "paa-telugu",
-    "parenleft.loclTELU",
-    "parenright.loclTELU",
-    "pau-telugu",
-    "pe-telugu",
-    "pee-telugu",
-    "period.loclTELU",
-    "ph-telugu.alt",
-    "ph-telugu",
-    "pha-telugu.alt",
-    "pha-telugu.below",
-    "pha-telugu",
-    "phaa-telugu.alt",
-    "phaa-telugu",
-    "phau-telugu.alt",
-    "phau-telugu",
-    "phe-telugu.alt",
-    "phe-telugu",
-    "phee-telugu.alt",
-    "phee-telugu",
-    "phi-telugu.alt",
-    "phi-telugu",
-    "phii-telugu.alt",
-    "phii-telugu",
-    "pho-telugu.alt",
-    "pho-telugu",
-    "phoo-telugu.alt",
-    "phoo-telugu",
-    "phu-telugu.alt",
-    "phu-telugu",
-    "phuu-telugu.alt",
-    "phuu-telugu",
-    "pi-telugu",
-    "pii-telugu",
-    "po-telugu",
-    "poo-telugu",
-    "pu-telugu",
-    "puu-telugu",
-    "question.loclTELU",
-    "quotedblleft.loclTELU",
-    "quotedblright.loclTELU",
-    "quoteleft.loclTELU",
-    "quoteright.loclTELU",
-    "r-telugu",
-    "ra-telugu.below.alt01",
-    "ra-telugu.below.alt02",
-    "ra-telugu.below.alt03",
-    "ra-telugu.below.alt04",
-    "ra-telugu.below.alt05",
-    "ra-telugu.below.alt06",
-    "ra-telugu.below.alt07",
-    "ra-telugu.below.alt08",
-    "ra-telugu.below.alt09",
-    "ra-telugu.below",
-    "ra-telugu.post",
-    "ra-telugu",
-    "raa-telugu",
-    "rau-telugu",
-    "re-telugu",
-    "ree-telugu",
-    "ri-telugu",
-    "rii-telugu",
-    "ro-telugu",
-    "roo-telugu",
-    "rr-telugu",
-    "rra-telugu.below",
-    "rra-telugu",
-    "rraa-telugu",
-    "rrai-telugu.below",
-    "rrau-telugu",
-    "rre-telugu",
-    "rree-telugu",
-    "rri-telugu",
-    "rrii-telugu",
-    "rro-telugu",
-    "rroo-telugu",
-    "rrra-telugu",
-    "rru-telugu",
-    "rruu-telugu",
-    "rrVocalic-telugu",
-    "rrVocalicMatra-telugu",
-    "ru-telugu",
-    "ruu-telugu",
-    "rVocalic-telugu",
-    "rVocalicMatra-telugu",
-    "s-telugu",
-    "sa-telugu.below",
-    "sa-telugu",
-    "saa-telugu",
-    "sau-telugu",
-    "se-telugu",
-    "see-telugu",
-    "semicolon.loclTELU",
-    "seven-telugu",
-    "sh-telugu",
-    "sha-telugu.below",
-    "sha-telugu",
-    "shaa-telugu",
-    "shau-telugu",
-    "she-telugu",
-    "shee-telugu",
-    "shi-telugu",
-    "shii-telugu",
-    "sho-telugu",
-    "shoo-telugu",
-    "shu-telugu",
-    "shuu-telugu",
-    "si-telugu",
-    "siddham-telugu",
-    "sii-telugu",
-    "six-telugu",
-    "so-telugu",
-    "soo-telugu",
-    "ss-telugu.alt",
-    "ss-telugu",
-    "ssa-telugu.alt",
-    "ssa-telugu.below.alt",
-    "ssa-telugu.below",
-    "ssa-telugu",
-    "ssaa-telugu.alt",
-    "ssaa-telugu",
-    "ssai-telugu.below.alt",
-    "ssai-telugu.below",
-    "ssau-telugu.alt",
-    "ssau-telugu",
-    "sse-telugu.alt",
-    "sse-telugu",
-    "ssee-telugu.alt",
-    "ssee-telugu",
-    "ssi-telugu.alt",
-    "ssi-telugu",
-    "ssii-telugu.alt",
-    "ssii-telugu",
-    "sso-telugu.alt",
-    "sso-telugu",
-    "ssoo-telugu.alt",
-    "ssoo-telugu",
-    "ssu-telugu.alt",
-    "ssu-telugu",
-    "ssuu-telugu.alt",
-    "ssuu-telugu",
-    "su-telugu",
-    "suu-telugu",
-    "t_ra-telugu.below",
-    "t-telugu",
-    "ta-telugu.below",
-    "ta-telugu",
-    "taa-telugu",
-    "tai-telugu.below",
-    "tau-telugu",
-    "te-telugu",
-    "teardrop.alt",
-    "tee-telugu",
-    "th-telugu.alt",
-    "th-telugu",
-    "tha-telugu.alt",
-    "tha-telugu.below",
-    "tha-telugu",
-    "thaa-telugu.alt",
-    "thaa-telugu",
-    "thai-telugu.below",
-    "thau-telugu.alt",
-    "thau-telugu",
-    "the-telugu.alt",
-    "the-telugu",
-    "thee-telugu.alt",
-    "thee-telugu",
-    "thi-telugu.alt",
-    "thi-telugu",
-    "thii-telugu.alt",
-    "thii-telugu",
-    "tho-telugu.alt",
-    "tho-telugu",
-    "thoo-telugu.alt",
-    "thoo-telugu",
-    "three-telugu",
-    "thu-telugu.alt",
-    "thu-telugu",
-    "thuu-telugu.alt",
-    "thuu-telugu",
-    "ti-telugu",
-    "tii-telugu",
-    "to-telugu",
-    "too-telugu",
-    "tsa-telugu",
-    "tt-telugu",
-    "tta-telugu.below",
-    "tta-telugu",
-    "ttaa-telugu",
-    "ttai-telugu.below",
-    "ttau-telugu",
-    "tte-telugu",
-    "ttee-telugu",
-    "tth-telugu",
-    "ttha-telugu.below",
-    "ttha-telugu",
-    "tthaa-telugu",
-    "tthai-telugu.below",
-    "tthau-telugu",
-    "tthe-telugu",
-    "tthee-telugu",
-    "tthi-telugu",
-    "tthii-telugu",
-    "ttho-telugu",
-    "tthoo-telugu",
-    "tthu-telugu",
-    "tthuu-telugu",
-    "tti-telugu",
-    "ttii-telugu",
-    "tto-telugu",
-    "ttoo-telugu",
-    "ttu-telugu",
-    "ttuu-telugu",
-    "tu-telugu",
-    "tuu-telugu",
-    "tuumu-telugu",
-    "two-telugu",
-    "u-telugu",
-    "uMatra-telugu",
-    "uu-telugu",
-    "uuMatra-telugu",
-    "v-telugu",
-    "va-telugu.below",
-    "va-telugu",
-    "vaa-telugu",
-    "vau-telugu",
-    "ve-telugu",
-    "vee-telugu",
-    "vi-telugu",
-    "vii-telugu",
-    "visarga-telugu",
-    "vo-telugu",
-    "voo-telugu",
-    "vu-telugu",
-    "vuu-telugu",
-    "y-telugu",
-    "ya-telugu.below",
-    "ya-telugu",
-    "yaa-telugu",
-    "yau-telugu",
-    "ye-telugu",
-    "yee-telugu",
-    "yi-telugu",
-    "yii-telugu",
-    "yo-telugu",
-    "yoo-telugu",
-    "yu-telugu",
-    "yuu-telugu",
-    "zero-telugu",
-}
+ALL_GLYPHS = set(
+    """combiningAnusvara-malayalam
+candrabindu-malayalam
+anusvara-malayalam
+visarga-malayalam
+vedicanusvara-malayalam
+a-malayalam
+aa-malayalam
+i-malayalam
+ii-malayalam
+u-malayalam
+uu-malayalam
+rVocalic-malayalam
+lVocalic-malayalam
+e-malayalam
+ee-malayalam
+ai-malayalam
+o-malayalam
+oo-malayalam
+au-malayalam
+ka-malayalam
+kha-malayalam
+ga-malayalam
+gha-malayalam
+nga-malayalam
+ca-malayalam
+cha-malayalam
+ja-malayalam
+jha-malayalam
+nya-malayalam
+tta-malayalam
+ttha-malayalam
+dda-malayalam
+ddha-malayalam
+nna-malayalam
+ta-malayalam
+tha-malayalam
+da-malayalam
+dha-malayalam
+na-malayalam
+nnna-malayalam
+pa-malayalam
+pha-malayalam
+ba-malayalam
+bha-malayalam
+ma-malayalam
+ya-malayalam
+ra-malayalam
+rra-malayalam
+la-malayalam
+lla-malayalam
+llla-malayalam
+va-malayalam
+sha-malayalam
+ssa-malayalam
+sa-malayalam
+ha-malayalam
+ttta-malayalam
+verticalBarVirama-malayalam
+circularVirama-malayalam
+avagraha-malayalam
+aaMatra-malayalam
+iMatra-malayalam
+iiMatra-malayalam
+uMatra-malayalam
+uuMatra-malayalam
+rVocalicMatra-malayalam
+rrVocalicMatra-malayalam
+eMatra-malayalam
+eeMatra-malayalam
+aiMatra-malayalam
+oMatra-malayalam
+ooMatra-malayalam
+auMatra-malayalam
+halant-malayalam
+dotreph-malayalam
+para-malayalam
+mChillu-malayalam
+yChillu-malayalam
+lllChillu-malayalam
+aulengthmark-malayalam
+onehundredsixtieth-malayalam
+onefortieth-malayalam
+threeeights-malayalam
+onetwentieth-malayalam
+onetenth-malayalam
+onetwentieths-malayalam
+onefifth-malayalam
+archaicii-malayalam
+rrVocalic-malayalam
+llVocalic-malayalam
+lVocalicMatra-malayalam
+llVocalicMatra-malayalam
+zero-malayalam
+one-malayalam
+two-malayalam
+three-malayalam
+four-malayalam
+five-malayalam
+six-malayalam
+seven-malayalam
+eight-malayalam
+nine-malayalam
+ten-malayalam
+onehundred-malayalam
+onethousand-malayalam
+onequarter-malayalam
+onehalf-malayalam
+threequarters-malayalam
+onesixteenth-malayalam
+oneeighth-malayalam
+threesixteenths-malayalam
+datemark-malayalam
+nnChillu-malayalam
+nChillu-malayalam
+rrChillu-malayalam
+lChillu-malayalam
+llChillu-malayalam
+kChillu-malayalam
+ya-malayalam.post
+va-malayalam.post
+ra-malayalam.pres
+ka-malayalam.half
+kha-malayalam.half
+ga-malayalam.half
+gha-malayalam.half
+nga-malayalam.half
+ca-malayalam.half
+cha-malayalam.half
+ja-malayalam.half
+jha-malayalam.half
+nya-malayalam.half
+tta-malayalam.half
+ttha-malayalam.half
+dda-malayalam.half
+ddha-malayalam.half
+nna-malayalam.half
+ta-malayalam.half
+tha-malayalam.half
+da-malayalam.half
+dha-malayalam.half
+na-malayalam.half
+pa-malayalam.half
+pha-malayalam.half
+ba-malayalam.half
+bha-malayalam.half
+ma-malayalam.half
+ya-malayalam.half
+ra-malayalam.half
+rra-malayalam.half
+la-malayalam.half
+lla-malayalam.half
+llla-malayalam.half
+va-malayalam.half
+sha-malayalam.half
+ssa-malayalam.half
+sa-malayalam.half
+ha-malayalam.half
+k_ssa-malayalam.half
+k_ka-malayalam
+k_ta-malayalam
+k_tta-malayalam
+k_la-malayalam
+k_ssa-malayalam
+g_ga-malayalam
+g_da-malayalam
+g_ma-malayalam
+g_na-malayalam
+g_la-malayalam
+ng_ka-malayalam
+ng_k_la-malayalam
+ng_nga-malayalam
+c_ca-malayalam
+c_cha-malayalam
+j_ja-malayalam
+j_nya-malayalam
+ny_ca-malayalam
+ny_cha-malayalam
+ny_ja-malayalam
+ny_nya-malayalam
+tt_tta-malayalam
+dd_dda-malayalam
+dd_ddha-malayalam
+nn_dda-malayalam
+nn_ddha-malayalam
+nn_ma-malayalam
+nn_nna-malayalam
+nn_tta-malayalam
+t_na-malayalam
+t_bha-malayalam
+t_ma-malayalam
+t_sa-malayalam
+t_ta-malayalam
+t_tha-malayalam
+t_la-malayalam
+d_da-malayalam
+d_dha-malayalam
+n_da-malayalam
+n_dha-malayalam
+n_na-malayalam
+n_ma-malayalam
+n_rra-malayalam
+n_ta-malayalam
+n_tha-malayalam
+p_ta-malayalam
+p_pa-malayalam
+p_la-malayalam
+ph_la-malayalam
+b_ba-malayalam
+b_da-malayalam
+b_dha-malayalam
+b_la-malayalam
+m_ma-malayalam
+m_pa-malayalam
+m_p_la-malayalam
+m_la-malayalam
+y_ya-malayalam
+rr_rra-malayalam
+l_pa-malayalam
+l_la-malayalam
+ll_lla-malayalam
+v_la-malayalam
+v_va-malayalam
+sh_ca-malayalam
+sh_cha-malayalam
+sh_sha-malayalam
+sh_la-malayalam
+ss_tta-malayalam
+s_sa-malayalam
+s_tha-malayalam
+s_rr_rra-malayalam
+s_la-malayalam
+h_ma-malayalam
+h_na-malayalam
+h_la-malayalam
+ja_lVocalicMatra-malayalam
+tta_lVocalicMatra-malayalam
+ttha_lVocalicMatra-malayalam
+da_lVocalicMatra-malayalam
+bha_lVocalicMatra-malayalam
+ma_lVocalicMatra-malayalam
+ra_lVocalicMatra-malayalam
+rra_lVocalicMatra-malayalam
+llla_lVocalicMatra-malayalam
+ja_llVocalicMatra-malayalam
+tta_llVocalicMatra-malayalam
+ttha_llVocalicMatra-malayalam
+da_llVocalicMatra-malayalam
+bha_llVocalicMatra-malayalam
+ma_llVocalicMatra-malayalam
+ra_llVocalicMatra-malayalam
+rra_llVocalicMatra-malayalam
+llla_llVocalicMatra-malayalam
+danda-deva.loclMALM
+dbldanda-deva.loclMALM
+period.loclMALM
+comma.loclMALM
+colon.loclMALM
+semicolon.loclMALM
+ellipsis.loclMALM
+exclam.loclMALM
+question.loclMALM
+asterisk.loclMALM
+parenleft.loclMALM
+parenright.loclMALM
+braceleft.loclMALM
+braceright.loclMALM
+bracketleft.loclMALM
+bracketright.loclMALM
+quotedblleft.loclMALM
+quotedblright.loclMALM
+quoteleft.loclMALM
+quoteright.loclMALM""".split()
+)
 
 BASES = set(
-    "dottedCircle ka-telugu kha-telugu.alt ga-telugu gha-telugu.alt nga-telugu ca-telugu ja-telugu jha-telugu.alt nya-telugu tta-telugu ttha-telugu dda-telugu nna-telugu ta-telugu tha-telugu.alt da-telugu na-telugu pa-telugu pha-telugu.alt ba-telugu ma-telugu ya-telugu ra-telugu rra-telugu la-telugu lla-telugu llla-telugu va-telugu sha-telugu ssa-telugu ssa-telugu.alt sa-telugu ha-telugu tsa-telugu dza-telugu rrra-telugu k_ssa-telugu j_nya-telugu ba-telugu.below k-telugu kh-telugu.alt g-telugu gh-telugu.alt ng-telugu c-telugu j-telugu jh-telugu.alt ny-telugu tt-telugu tth-telugu dd-telugu nn-telugu t-telugu th-telugu.alt d-telugu n-telugu p-telugu ph-telugu.alt b-telugu m-telugu y-telugu r-telugu rr-telugu l-telugu ll-telugu lll-telugu v-telugu sh-telugu ss-telugu ss-telugu.alt s-telugu h-telugu kaa-telugu khaa-telugu.alt gaa-telugu ghaa-telugu.alt ngaa-telugu caa-telugu jaa-telugu jhaa-telugu.alt nyaa-telugu ttaa-telugu tthaa-telugu ddaa-telugu nnaa-telugu taa-telugu thaa-telugu.alt daa-telugu naa-telugu paa-telugu phaa-telugu.alt baa-telugu maa-telugu yaa-telugu raa-telugu rraa-telugu laa-telugu llaa-telugu lllaa-telugu vaa-telugu shaa-telugu ssaa-telugu ssaa-telugu.alt saa-telugu haa-telugu ki-telugu khi-telugu.alt gi-telugu ghi-telugu.alt ngi-telugu ci-telugu ji-telugu jhi-telugu.alt nyi-telugu tti-telugu tthi-telugu ddi-telugu nni-telugu ti-telugu thi-telugu.alt di-telugu ni-telugu pi-telugu phi-telugu.alt bi-telugu mi-telugu yi-telugu ri-telugu rri-telugu li-telugu lli-telugu llli-telugu vi-telugu shi-telugu ssi-telugu ssi-telugu.alt si-telugu hi-telugu kii-telugu khii-telugu.alt gii-telugu ghii-telugu.alt ngii-telugu cii-telugu jii-telugu jhii-telugu.alt nyii-telugu ttii-telugu tthii-telugu ddii-telugu nnii-telugu tii-telugu thii-telugu.alt dii-telugu nii-telugu pii-telugu phii-telugu.alt bii-telugu mii-telugu yii-telugu rii-telugu rrii-telugu lii-telugu llii-telugu lllii-telugu vii-telugu shii-telugu ssii-telugu ssii-telugu.alt sii-telugu hii-telugu ku-telugu khu-telugu.alt gu-telugu ghu-telugu.alt ngu-telugu cu-telugu ju-telugu jhu-telugu.alt nyu-telugu ttu-telugu tthu-telugu ddu-telugu nnu-telugu tu-telugu thu-telugu.alt du-telugu nu-telugu pu-telugu phu-telugu.alt bu-telugu mu-telugu yu-telugu ru-telugu rru-telugu lu-telugu llu-telugu lllu-telugu vu-telugu shu-telugu ssu-telugu ssu-telugu.alt su-telugu hu-telugu kuu-telugu khuu-telugu.alt guu-telugu ghuu-telugu.alt nguu-telugu cuu-telugu juu-telugu jhuu-telugu.alt nyuu-telugu ttuu-telugu tthuu-telugu dduu-telugu nnuu-telugu tuu-telugu thuu-telugu.alt duu-telugu nuu-telugu puu-telugu phuu-telugu.alt buu-telugu muu-telugu yuu-telugu ruu-telugu rruu-telugu luu-telugu lluu-telugu llluu-telugu vuu-telugu shuu-telugu ssuu-telugu ssuu-telugu.alt suu-telugu huu-telugu ke-telugu khe-telugu.alt ge-telugu ghe-telugu.alt nge-telugu ce-telugu je-telugu jhe-telugu.alt nye-telugu tte-telugu tthe-telugu dde-telugu nne-telugu te-telugu the-telugu.alt de-telugu ne-telugu pe-telugu phe-telugu.alt be-telugu me-telugu ye-telugu re-telugu rre-telugu le-telugu lle-telugu llle-telugu ve-telugu she-telugu sse-telugu sse-telugu.alt se-telugu he-telugu kee-telugu khee-telugu.alt gee-telugu ghee-telugu.alt ngee-telugu cee-telugu jee-telugu jhee-telugu.alt nyee-telugu ttee-telugu tthee-telugu ddee-telugu nnee-telugu tee-telugu thee-telugu.alt dee-telugu nee-telugu pee-telugu phee-telugu.alt bee-telugu mee-telugu yee-telugu ree-telugu rree-telugu lee-telugu llee-telugu lllee-telugu vee-telugu shee-telugu ssee-telugu ssee-telugu.alt see-telugu hee-telugu ko-telugu kho-telugu.alt go-telugu gho-telugu.alt ngo-telugu co-telugu jo-telugu jho-telugu.alt nyo-telugu tto-telugu ttho-telugu ddo-telugu nno-telugu to-telugu tho-telugu.alt do-telugu no-telugu po-telugu pho-telugu.alt bo-telugu mo-telugu yo-telugu ro-telugu rro-telugu lo-telugu llo-telugu lllo-telugu vo-telugu sho-telugu sso-telugu sso-telugu.alt so-telugu ho-telugu koo-telugu khoo-telugu.alt goo-telugu ghoo-telugu.alt ngoo-telugu coo-telugu joo-telugu jhoo-telugu.alt nyoo-telugu ttoo-telugu tthoo-telugu ddoo-telugu nnoo-telugu too-telugu thoo-telugu.alt doo-telugu noo-telugu poo-telugu phoo-telugu.alt boo-telugu moo-telugu yoo-telugu roo-telugu rroo-telugu loo-telugu lloo-telugu llloo-telugu voo-telugu shoo-telugu ssoo-telugu ssoo-telugu.alt soo-telugu hoo-telugu kau-telugu khau-telugu.alt gau-telugu ghau-telugu.alt ngau-telugu cau-telugu jau-telugu jhau-telugu.alt nyau-telugu ttau-telugu tthau-telugu ddau-telugu nnau-telugu tau-telugu thau-telugu.alt dau-telugu nau-telugu pau-telugu phau-telugu.alt bau-telugu mau-telugu yau-telugu rau-telugu rrau-telugu lau-telugu llau-telugu lllau-telugu vau-telugu shau-telugu ssau-telugu ssau-telugu.alt sau-telugu hau-telugu".split()
+    "dottedCircle a-malayalam aa-malayalam i-malayalam u-malayalam rVocalic-malayalam lVocalic-malayalam e-malayalam ee-malayalam o-malayalam ka-malayalam kha-malayalam ga-malayalam gha-malayalam nga-malayalam ca-malayalam cha-malayalam ja-malayalam jha-malayalam nya-malayalam tta-malayalam ttha-malayalam dda-malayalam ddha-malayalam nna-malayalam ta-malayalam tha-malayalam da-malayalam dha-malayalam na-malayalam nnna-malayalam pa-malayalam pha-malayalam ba-malayalam bha-malayalam ma-malayalam ya-malayalam ra-malayalam rra-malayalam la-malayalam lla-malayalam llla-malayalam va-malayalam sha-malayalam ssa-malayalam sa-malayalam ha-malayalam ttta-malayalam mChillu-malayalam yChillu-malayalam lllChillu-malayalam rrVocalic-malayalam llVocalic-malayalam nnChillu-malayalam nChillu-malayalam rrChillu-malayalam lChillu-malayalam llChillu-malayalam kChillu-malayalam k_ka-malayalam k_ta-malayalam k_tta-malayalam k_la-malayalam k_ssa-malayalam g_ga-malayalam g_da-malayalam g_ma-malayalam g_na-malayalam g_la-malayalam ng_ka-malayalam ng_k_la-malayalam ng_nga-malayalam c_ca-malayalam c_cha-malayalam j_ja-malayalam j_nya-malayalam ny_ca-malayalam ny_cha-malayalam ny_ja-malayalam ny_nya-malayalam tt_tta-malayalam dd_dda-malayalam dd_ddha-malayalam nn_dda-malayalam nn_ddha-malayalam nn_ma-malayalam nn_nna-malayalam nn_tta-malayalam t_na-malayalam t_bha-malayalam t_ma-malayalam t_sa-malayalam t_ta-malayalam t_tha-malayalam t_la-malayalam d_da-malayalam d_dha-malayalam n_da-malayalam n_dha-malayalam n_na-malayalam n_ma-malayalam n_rra-malayalam n_ta-malayalam n_tha-malayalam p_la-malayalam ph_la-malayalam b_ba-malayalam b_da-malayalam b_dha-malayalam b_la-malayalam m_ma-malayalam m_pa-malayalam m_p_la-malayalam m_la-malayalam y_ya-malayalam l_la-malayalam ll_lla-malayalam v_la-malayalam v_va-malayalam sh_ca-malayalam sh_cha-malayalam sh_sha-malayalam sh_la-malayalam ss_tta-malayalam s_tha-malayalam s_rr_rra-malayalam s_la-malayalam h_ma-malayalam h_na-malayalam h_la-malayalam tta_lVocalicMatra-malayalam da_lVocalicMatra-malayalam bha_lVocalicMatra-malayalam ra_lVocalicMatra-malayalam rra_lVocalicMatra-malayalam llla_lVocalicMatra-malayalam da_llVocalicMatra-malayalam ra_llVocalicMatra-malayalam rra_llVocalicMatra-malayalam".split()
 )
 
 MARKS = set(
-    "candraBinduAbove-telugu anusvaraAbove-telugu aaMatra-telugu iMatra-telugu iiMatra-telugu uMatra-telugu uuMatra-telugu rVocalicMatra-telugu rrVocalicMatra-telugu lVocalicMatra-telugu llVocalicMatra-telugu eMatra-telugu eeMatra-telugu aiMatra-telugu oMatra-telugu ooMatra-telugu auMatra-telugu halant-telugu length-telugu aiLength-telugu aiLength-telugu.alt kha-telugu.below ga-telugu.below gha-telugu.below nga-telugu.below ja-telugu.below jha-telugu.below nya-telugu.below tta-telugu.below ttha-telugu.below dda-telugu.below ddha-telugu.below nna-telugu.below ta-telugu.below tha-telugu.below da-telugu.below dha-telugu.below ra-telugu.below ra-telugu.below.alt01 ra-telugu.below.alt02 ra-telugu.below.alt03 ra-telugu.below.alt04 ra-telugu.below.alt05 ra-telugu.below.alt06 ra-telugu.below.alt07 ra-telugu.below.alt08 ra-telugu.below.alt09 rra-telugu.below la-telugu.below llla-telugu.below ssa-telugu.below ssa-telugu.below.alt ha-telugu.below t_ra-telugu.below khai-telugu.below gai-telugu.below ghai-telugu.below ngai-telugu.below jai-telugu.below jhai-telugu.below nyai-telugu.below ttai-telugu.below tthai-telugu.below ddai-telugu.below ddhai-telugu.below nnai-telugu.below tai-telugu.below thai-telugu.below dai-telugu.below dhai-telugu.below rrai-telugu.below lai-telugu.below lllai-telugu.below ssai-telugu.below ssai-telugu.below.alt hai-telugu.below teardrop.alt".split()
+    "combiningAnusvara-malayalam candrabindu-malayalam verticalBarVirama-malayalam circularVirama-malayalam halant-malayalam lVocalicMatra-malayalam llVocalicMatra-malayalam".split()
 )
 
 for path in Path("source/GoogleSans/").glob("*.ufo"):
