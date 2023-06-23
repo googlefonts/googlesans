@@ -74,20 +74,16 @@ feature ccmp {
         sub IJ' by I J;
     } ccmp_decompose_legacy_ij_ligature;
 
-    lookup ccmp_decompose_i_combining_non_top_accents {
-        sub idotbelow by i dotbelowcomb;
-    } ccmp_decompose_i_combining_non_top_accents;
-
     lookup ccmp_Other_1 {
-        sub [i j]' @latn_CombiningTopAccents by [idotless jdotless];
-        sub [i j]' @latn_CombiningNonTopAccents @latn_CombiningTopAccents by [idotless jdotless];
+        lookupflag UseMarkFilteringSet @latn_CombiningTopAccents; 
+        sub [i j i-cy je-cy]' @latn_CombiningTopAccents by [idotless jdotless idotless jdotless];
+        sub idotbelow' @latn_CombiningTopAccents by idotless dotbelowcomb;
+        sub iogonek' @latn_CombiningTopAccents by idotless ogonekcomb;
     } ccmp_Other_1;
 
     lookup ccmp_combining_cap {
+        lookupflag UseMarkFilteringSet @latn_CombiningTopAccents; 
         sub @Uppercase @latn_CombiningTopAccents' by @latn_CombiningTopAccents_cap;
-        sub @Uppercase @latn_CombiningTopAccents_cap @latn_CombiningTopAccents' by @latn_CombiningTopAccents_cap;
-        sub @Uppercase @latn_CombiningNonTopAccents @latn_CombiningTopAccents' by @latn_CombiningTopAccents_cap;
-        sub @Uppercase @latn_CombiningNonTopAccents @latn_CombiningTopAccents_cap @latn_CombiningTopAccents' by @latn_CombiningTopAccents_cap;
     } ccmp_combining_cap;
 
     lookup ccmp_latn_1 {
