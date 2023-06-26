@@ -62,6 +62,8 @@ excluded_check_ids = (
     "com.google.fonts/check/varfont/bold_wght_coord",  # Buggy in 0.8.9
     # https://github.com/googlefonts/googlesans/issues/576:
     "com.google.fonts/check/soft_dotted",
+    # We intentionally set the family names as they are
+    "com.adobe.fonts/check/family/consistent_family_name",
 )
 
 ATTRIBUTES = {
