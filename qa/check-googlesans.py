@@ -533,7 +533,7 @@ def com_google_fonts_check_googlesans_variable_fvar_default(ttFont):
 # skip filter function to exclude checks defined in the
 # fontbakery universal profile
 def check_skip_filter(checkid, font=None, **iterargs):
-    if font and checkid in excluded_check_ids:
+    if checkid in excluded_check_ids:
         return False, ("Check skipped in Google Sans profile")
     return True, None
 
