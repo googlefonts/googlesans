@@ -1,0 +1,15 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+locl = true
+
+[input]
+script = "mlym"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ക. ക, ക: ക; ക… ക! ക? ക* (ക ക) {ക ക} [ക ക] ‘ക ക’ “ക ക”", # Localised Malayalam Punctuation
+    "ക। ക॥", # Localised Dandas
+    "ക0ഊ ക1ഊ ക2ഊ ക3ഊ ക4ഊ ക5ഊ ക6ഊ ക7ഊ ക8ഊ ക9ഊ" # Localised Tamil International Numerals used for Malayalam
+]
