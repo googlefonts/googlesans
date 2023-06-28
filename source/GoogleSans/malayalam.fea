@@ -1,0 +1,226 @@
+feature locl {
+    script mlm2;
+    lookup MALM_dflt_locl_punctuation {
+        sub period by period.loclMALM;
+        sub comma by comma.loclMALM;
+        sub colon by colon.loclMALM;
+        sub semicolon by semicolon.loclMALM;
+        sub ellipsis by ellipsis.loclMALM;
+        sub exclam by exclam.loclMALM;
+        sub question by question.loclMALM;
+        sub asterisk by asterisk.loclMALM;
+        sub parenleft by parenleft.loclMALM;
+        sub parenright by parenright.loclMALM;
+        sub braceleft by braceleft.loclMALM;
+        sub braceright by braceright.loclMALM;
+        sub bracketleft by bracketleft.loclMALM;
+        sub bracketright by bracketright.loclMALM;
+        sub quotedblleft by quotedblleft.loclMALM;
+        sub quotedblright by quotedblright.loclMALM;
+        sub quoteleft by quoteleft.loclMALM;
+        sub quoteright by quoteright.loclMALM;
+    } MALM_dflt_locl_punctuation;
+
+    lookup MALM_dflt_locl_malayalam_danda {
+        sub danda-deva by danda-deva.loclMALM;
+        sub dbldanda-deva by dbldanda-deva.loclMALM;
+    } MALM_dflt_locl_malayalam_danda;
+
+    lookup tml2_dflt_locl_localised_numerals;
+} locl;
+
+feature akhn {
+    script mlm2;
+    lookup MALM_dflt_akhn_conjuncts {
+        #triconsonant
+        sub nga-malayalam halant-malayalam ka-malayalam halant-malayalam la-malayalam by ng_k_la-malayalam;
+        sub ma-malayalam halant-malayalam pa-malayalam halant-malayalam la-malayalam by m_p_la-malayalam;
+        sub sa-malayalam halant-malayalam rra-malayalam halant-malayalam rra-malayalam by s_rr_rra-malayalam;
+        #biconsonant
+        sub ka-malayalam halant-malayalam ka-malayalam by k_ka-malayalam;
+        sub ka-malayalam halant-malayalam ta-malayalam by k_ta-malayalam;
+        sub ka-malayalam halant-malayalam tta-malayalam by k_tta-malayalam;
+        sub ka-malayalam halant-malayalam la-malayalam by k_la-malayalam;
+        sub ka-malayalam halant-malayalam ssa-malayalam by k_ssa-malayalam;
+        sub ga-malayalam halant-malayalam ga-malayalam by g_ga-malayalam;
+        sub ga-malayalam halant-malayalam da-malayalam by g_da-malayalam;
+        sub ga-malayalam halant-malayalam ma-malayalam by g_ma-malayalam;
+        sub ga-malayalam halant-malayalam na-malayalam by g_na-malayalam;
+        sub ga-malayalam halant-malayalam la-malayalam by g_la-malayalam;
+        sub nga-malayalam halant-malayalam ka-malayalam by ng_ka-malayalam;
+        sub nga-malayalam halant-malayalam nga-malayalam by ng_nga-malayalam;
+        sub ca-malayalam halant-malayalam ca-malayalam by c_ca-malayalam;
+        sub ca-malayalam halant-malayalam cha-malayalam by c_cha-malayalam;
+        sub ja-malayalam halant-malayalam ja-malayalam by j_ja-malayalam;
+        sub ja-malayalam halant-malayalam nya-malayalam by j_nya-malayalam;
+        sub nya-malayalam halant-malayalam ca-malayalam by ny_ca-malayalam;
+        sub nya-malayalam halant-malayalam cha-malayalam by ny_cha-malayalam;
+        sub nya-malayalam halant-malayalam ja-malayalam by ny_ja-malayalam;
+        sub nya-malayalam halant-malayalam nya-malayalam by ny_nya-malayalam;
+        sub tta-malayalam halant-malayalam tta-malayalam by tt_tta-malayalam;
+        sub dda-malayalam halant-malayalam dda-malayalam by dd_dda-malayalam;
+        sub dda-malayalam halant-malayalam ddha-malayalam by dd_ddha-malayalam;
+        sub nna-malayalam halant-malayalam dda-malayalam by nn_dda-malayalam;
+        sub nna-malayalam halant-malayalam ddha-malayalam by nn_ddha-malayalam;
+        sub nna-malayalam halant-malayalam ma-malayalam by nn_ma-malayalam;
+        sub nna-malayalam halant-malayalam nna-malayalam by nn_nna-malayalam;
+        sub nna-malayalam halant-malayalam tta-malayalam by nn_tta-malayalam;
+        sub ta-malayalam halant-malayalam na-malayalam by t_na-malayalam;
+        sub ta-malayalam halant-malayalam bha-malayalam by t_bha-malayalam;
+        sub ta-malayalam halant-malayalam ma-malayalam by t_ma-malayalam;
+        sub ta-malayalam halant-malayalam sa-malayalam by t_sa-malayalam;
+        sub ta-malayalam halant-malayalam ta-malayalam by t_ta-malayalam;
+        sub ta-malayalam halant-malayalam tha-malayalam by t_tha-malayalam;
+        sub ta-malayalam halant-malayalam la-malayalam by t_la-malayalam;
+        sub da-malayalam halant-malayalam da-malayalam by d_da-malayalam;
+        sub da-malayalam halant-malayalam dha-malayalam by d_dha-malayalam;
+        sub na-malayalam halant-malayalam da-malayalam by n_da-malayalam;
+        sub na-malayalam halant-malayalam dha-malayalam by n_dha-malayalam;
+        sub na-malayalam halant-malayalam na-malayalam by n_na-malayalam;
+        sub na-malayalam halant-malayalam ma-malayalam by n_ma-malayalam;
+        sub na-malayalam halant-malayalam rra-malayalam by n_rra-malayalam;
+        sub na-malayalam halant-malayalam ta-malayalam by n_ta-malayalam;
+        sub na-malayalam halant-malayalam tha-malayalam by n_tha-malayalam;
+        sub pa-malayalam halant-malayalam ta-malayalam by p_ta-malayalam;
+        sub pa-malayalam halant-malayalam pa-malayalam by p_pa-malayalam;
+        sub pa-malayalam halant-malayalam la-malayalam by p_la-malayalam;
+        sub pha-malayalam halant-malayalam la-malayalam by ph_la-malayalam;
+        sub ba-malayalam halant-malayalam ba-malayalam by b_ba-malayalam;
+        sub ba-malayalam halant-malayalam da-malayalam by b_da-malayalam;
+        sub ba-malayalam halant-malayalam dha-malayalam by b_dha-malayalam;
+        sub ba-malayalam halant-malayalam la-malayalam by b_la-malayalam;
+        sub ma-malayalam halant-malayalam ma-malayalam by m_ma-malayalam;
+        sub ma-malayalam halant-malayalam pa-malayalam by m_pa-malayalam;
+        sub ma-malayalam halant-malayalam la-malayalam by m_la-malayalam;
+        sub rra-malayalam halant-malayalam rra-malayalam by rr_rra-malayalam;
+        sub la-malayalam halant-malayalam pa-malayalam by l_pa-malayalam;
+        sub la-malayalam halant-malayalam la-malayalam by l_la-malayalam;
+        sub lla-malayalam halant-malayalam lla-malayalam by ll_lla-malayalam;
+        sub va-malayalam halant-malayalam la-malayalam by v_la-malayalam;
+        sub sha-malayalam halant-malayalam ca-malayalam by sh_ca-malayalam;
+        sub sha-malayalam halant-malayalam cha-malayalam by sh_cha-malayalam;
+        sub sha-malayalam halant-malayalam sha-malayalam by sh_sha-malayalam;
+        sub sha-malayalam halant-malayalam la-malayalam by sh_la-malayalam;
+        sub ssa-malayalam halant-malayalam tta-malayalam by ss_tta-malayalam;
+        sub sa-malayalam halant-malayalam sa-malayalam by s_sa-malayalam;
+        sub sa-malayalam halant-malayalam tha-malayalam by s_tha-malayalam;
+        sub sa-malayalam halant-malayalam la-malayalam by s_la-malayalam;
+        sub ha-malayalam halant-malayalam ma-malayalam by h_ma-malayalam;
+        sub ha-malayalam halant-malayalam na-malayalam by h_na-malayalam;
+        sub ha-malayalam halant-malayalam la-malayalam by h_la-malayalam;
+        sub ya-malayalam halant-malayalam ya-malayalam by y_ya-malayalam;
+        sub va-malayalam halant-malayalam va-malayalam by v_va-malayalam;
+    } MALM_dflt_akhn_conjuncts;
+
+    lookup MALM_dflt_akhn_chilluForms {
+        sub ma-malayalam halant-malayalam zerowidthjoiner by mChillu-malayalam;
+        sub ya-malayalam halant-malayalam zerowidthjoiner by yChillu-malayalam;
+        sub llla-malayalam halant-malayalam zerowidthjoiner by lllChillu-malayalam;
+        sub nna-malayalam halant-malayalam zerowidthjoiner by nnChillu-malayalam;
+        sub na-malayalam halant-malayalam zerowidthjoiner by nChillu-malayalam;
+        sub rra-malayalam halant-malayalam zerowidthjoiner by rrChillu-malayalam;
+        sub la-malayalam halant-malayalam zerowidthjoiner by lChillu-malayalam;
+        sub lla-malayalam halant-malayalam zerowidthjoiner by llChillu-malayalam;
+        sub ka-malayalam halant-malayalam zerowidthjoiner by kChillu-malayalam;
+    } MALM_dflt_akhn_chilluForms;
+
+    lookup MALM_dflt_akhn_chilluConjuncts {
+        sub nChillu-malayalam rra-malayalam by n_rra-malayalam;
+    } MALM_dflt_akhn_chilluConjuncts;
+
+} akhn;
+
+feature pref {
+    script mlm2;
+    lookup MALM_dflt_pref_ra {
+        sub halant-malayalam ra-malayalam by ra-malayalam.pres;
+    } MALM_dflt_pref_ra;
+
+} pref;
+
+feature pstf {
+    script mlm2;
+    lookup MALM_dflt_pstf_ra {
+        sub halant-malayalam ya-malayalam by ya-malayalam.post;
+        sub halant-malayalam va-malayalam by va-malayalam.post;
+    } MALM_dflt_pstf_ra;
+
+} pstf;
+
+feature blws {
+    script mlm2;
+    lookup MALM_dflt_blws_lVocalicMatraLigatures {
+        #lVocalicMatra
+        sub tta-malayalam lVocalicMatra-malayalam by tta_lVocalicMatra-malayalam;
+        sub ttha-malayalam lVocalicMatra-malayalam by ttha_lVocalicMatra-malayalam;
+        sub da-malayalam lVocalicMatra-malayalam by da_lVocalicMatra-malayalam;
+        sub bha-malayalam lVocalicMatra-malayalam by bha_lVocalicMatra-malayalam;
+        sub ma-malayalam lVocalicMatra-malayalam by ma_lVocalicMatra-malayalam;
+        sub ra-malayalam lVocalicMatra-malayalam by ra_lVocalicMatra-malayalam;
+        sub rra-malayalam lVocalicMatra-malayalam by rra_lVocalicMatra-malayalam;
+        sub llla-malayalam lVocalicMatra-malayalam by llla_lVocalicMatra-malayalam;
+        #llVocalicMatra
+        sub tta-malayalam llVocalicMatra-malayalam by tta_llVocalicMatra-malayalam;
+        sub ttha-malayalam llVocalicMatra-malayalam by ttha_llVocalicMatra-malayalam;
+        sub da-malayalam llVocalicMatra-malayalam by da_llVocalicMatra-malayalam;
+        sub bha-malayalam llVocalicMatra-malayalam by bha_llVocalicMatra-malayalam;
+        sub ma-malayalam llVocalicMatra-malayalam by ma_llVocalicMatra-malayalam;
+        sub ra-malayalam llVocalicMatra-malayalam by ra_llVocalicMatra-malayalam;
+        sub rra-malayalam llVocalicMatra-malayalam by rra_llVocalicMatra-malayalam;
+        sub llla-malayalam llVocalicMatra-malayalam by llla_llVocalicMatra-malayalam;
+    } MALM_dflt_blws_lVocalicMatraLigatures;
+
+} blws;
+
+feature psts {
+    script mlm2;
+    lookup MALM_dflt_psts_consonant_postBaseForm_ligatures {
+        sub ya-malayalam ya-malayalam.post by y_ya-malayalam;
+        sub va-malayalam va-malayalam.post by v_va-malayalam;
+    } MALM_dflt_psts_consonant_postBaseForm_ligatures;
+
+} psts;
+
+feature haln {
+    script mlm2;
+    lookup MALM_dflt_haln_halantForms {
+        sub ka-malayalam halant-malayalam by ka-malayalam.half;
+        sub kha-malayalam halant-malayalam by kha-malayalam.half;
+        sub ga-malayalam halant-malayalam by ga-malayalam.half;
+        sub gha-malayalam halant-malayalam by gha-malayalam.half;
+        sub nga-malayalam halant-malayalam by nga-malayalam.half;
+        sub ca-malayalam halant-malayalam by ca-malayalam.half;
+        sub cha-malayalam halant-malayalam by cha-malayalam.half;
+        sub ja-malayalam halant-malayalam by ja-malayalam.half;
+        sub jha-malayalam halant-malayalam by jha-malayalam.half;
+        sub nya-malayalam halant-malayalam by nya-malayalam.half;
+        sub tta-malayalam halant-malayalam by tta-malayalam.half;
+        sub ttha-malayalam halant-malayalam by ttha-malayalam.half;
+        sub dda-malayalam halant-malayalam by dda-malayalam.half;
+        sub ddha-malayalam halant-malayalam by ddha-malayalam.half;
+        sub nna-malayalam halant-malayalam by nna-malayalam.half;
+        sub ta-malayalam halant-malayalam by ta-malayalam.half;
+        sub tha-malayalam halant-malayalam by tha-malayalam.half;
+        sub da-malayalam halant-malayalam by da-malayalam.half;
+        sub dha-malayalam halant-malayalam by dha-malayalam.half;
+        sub na-malayalam halant-malayalam by na-malayalam.half;
+        sub pa-malayalam halant-malayalam by pa-malayalam.half;
+        sub pha-malayalam halant-malayalam by pha-malayalam.half;
+        sub ba-malayalam halant-malayalam by ba-malayalam.half;
+        sub bha-malayalam halant-malayalam by bha-malayalam.half;
+        sub ma-malayalam halant-malayalam by ma-malayalam.half;
+        sub ya-malayalam halant-malayalam by ya-malayalam.half;
+        sub ra-malayalam halant-malayalam by ra-malayalam.half;
+        sub rra-malayalam halant-malayalam by rra-malayalam.half;
+        sub la-malayalam halant-malayalam by la-malayalam.half;
+        sub lla-malayalam halant-malayalam by lla-malayalam.half;
+        sub llla-malayalam halant-malayalam by llla-malayalam.half;
+        sub va-malayalam halant-malayalam by va-malayalam.half;
+        sub sha-malayalam halant-malayalam by sha-malayalam.half;
+        sub ssa-malayalam halant-malayalam by ssa-malayalam.half;
+        sub sa-malayalam halant-malayalam by sa-malayalam.half;
+        sub ha-malayalam halant-malayalam by ha-malayalam.half;
+        sub k_ssa-malayalam halant-malayalam by k_ssa-malayalam.half;
+    } MALM_dflt_haln_halantForms;
+
+} haln;

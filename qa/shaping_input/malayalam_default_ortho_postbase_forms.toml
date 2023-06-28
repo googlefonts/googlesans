@@ -1,0 +1,18 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+akhn = true
+pstf = true
+psts = true
+
+[input]
+script = "mlym"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "ക്യ ഫ്യ ക്ക്യ ബ്ബ്യ ഹ്ല്യ", # Post-base form of Ya
+    "ക്വ ഫ്വ ക്ക്വ ബ്ബ്വ ഹ്ല്വ" # Post-base form of Va
+]
+
+
