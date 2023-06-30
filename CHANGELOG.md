@@ -1,5 +1,34 @@
 # Google Sans Changelog
 
+## v11.000
+
+### New
+
+- add Malayalam language support (#555)
+- add Kannada language support (#562)
+- add Direct Current Symbol Form Two (U+2393) (#535)
+
+### Changed
+None
+
+### Fixed
+
+- fix the soft dotted characters (make the dot dissapear) (#576)
+- bad ignore sub in Bengali feature file bug (#569) 
+
+
+### Technical
+- allow inconsistent family names (#579)
+- remove strait glyph names (#538) - source cleanup
+- add entry point for font pruner (#570)
+- fix check filter (#585) 
+- diffenate: add android testing strings (#571)
+- allow inconsistent family names (#579) 
+
+### Dependencies
+
+No dependency updates
+
 ## v10.001
 
 ### New
