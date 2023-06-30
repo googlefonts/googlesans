@@ -5,8 +5,8 @@
 ### New
 
 - add Add Malayalam language support (#555)
-- add Kannada script S-KannadaKannada script (#562)
-- add Direct Current Symbol Form Two (U+2393) S-Latin (#535)
+- add Kannada script (#562)
+- add Direct Current Symbol Form Two (U+2393, #535)
 
 ### Changed
 None
@@ -14,7 +14,7 @@ None
 ### Fixed
 
 - fix the soft dotted characters (make the dot dissapear) #576
-- bad ignore sub in Bengali feature file bug Something isn't workingS-Bangla #569 
+- bad ignore sub in Bengali feature file bug Something isn't working #569 
 
 
 ### Technical
