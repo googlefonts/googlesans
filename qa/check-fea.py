@@ -19,8 +19,9 @@ from pathlib import Path
 
 import uharfbuzz
 from fontbakery.callable import check, condition
-from fontbakery.checkrunner import FAIL, PASS, SKIP, Section
 from fontbakery.fonts_profile import profile_factory
+from fontbakery.section import Section
+from fontbakery.status import FAIL, PASS, SKIP
 
 # Make FontBakery able to find the update_shaping_test_data package.
 sys.path.append(str(Path(__file__).parent.parent))
@@ -30,7 +31,6 @@ from qa.update_shaping_test_data import (  # noqa: E402
     Direction,
     shape_texts,
 )
-
 
 profile_imports = ()
 profile = profile_factory(

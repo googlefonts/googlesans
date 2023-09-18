@@ -14,7 +14,6 @@
 
 import hashlib
 import sys
-
 from pathlib import Path
 
 SOURCES = {
