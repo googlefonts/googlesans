@@ -13,17 +13,18 @@
 # limitations under the License.
 
 
-from fontbakery.checkrunner import Section, PASS, FAIL, WARN
 from fontbakery.callable import check
-from fontbakery.fonts_profile import profile_factory
-from fontbakery.profiles.universal import UNIVERSAL_PROFILE_CHECKS
 from fontbakery.constants import UNICODERANGE_DATA
+from fontbakery.fonts_profile import profile_factory
+from fontbakery.message import Message
+from fontbakery.profiles.universal import UNIVERSAL_PROFILE_CHECKS
+from fontbakery.section import Section
+from fontbakery.status import FAIL, PASS, WARN
 from fontbakery.utils import (
+    chars_in_range,
     compute_unicoderange_bits,
     unicoderange_bit_name,
-    chars_in_range,
 )
-from fontbakery.message import Message
 
 profile_imports = ("fontbakery.profiles.universal",)
 profile = profile_factory(default_section=Section("Google Sans Custom Checks"))

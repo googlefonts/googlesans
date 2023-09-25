@@ -13,8 +13,8 @@
 # limitations under the License.
 
 
-from fontbakery.checkrunner import Section
 from fontbakery.fonts_profile import profile_factory
+from fontbakery.section import Section
 
 profile_imports = ("fontbakery.profiles.universal",)
 profile = profile_factory(default_section=Section("Google Sans Outline Checks"))
