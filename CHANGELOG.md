@@ -1,5 +1,16 @@
 # Google Sans Changelog
 
+## v11.001
+
+### New
+
+- added acaron u+01CE
+- added locl feature for Eng.alt and eng.slt forms for 'NSM ',	'ISM ',	'SKS ', and	'LSM '	Sami languages
+
+### Changed
+
+- updated the Eng eng designs #588
+
 ## v11.000
 
 ### New
