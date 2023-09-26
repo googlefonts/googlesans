@@ -4,7 +4,7 @@
 
 ### New
 
-- added acaron u+01CE
+- added acaron u+01CE #505
 - added locl feature for Eng.alt and eng.slt forms for 'NSM ',	'ISM ',	'SKS ', and	'LSM '	Sami languages
 
 ### Changed
