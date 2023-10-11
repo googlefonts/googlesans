@@ -11,7 +11,7 @@ jobs:
     runs-on: [linux, googlefonts-64cores-256GB]
     strategy:
       matrix:
-        python-version: ["3.11"]
+        python-version: ["3.12"]
     name: PyICU Script and Writing System Coverage
     steps:
       - name: Configuration
