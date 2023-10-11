@@ -27,7 +27,7 @@ jobs:
       - name: Set up Python v3.11 environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.12'
           cache: 'pip'
       - name: Lint UFO sources
         run: |
@@ -45,7 +45,7 @@ jobs:
       - name: Set up Python v3.11 environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.12'
           cache: 'pip'
       - name: Lint scripts
         run: |
@@ -60,7 +60,7 @@ jobs:
       - name: Set up Python v3.11 environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.12'
           cache: 'pip'
       - name: Build variable fonts
         run: |
@@ -81,7 +81,7 @@ jobs:
       - name: Set up Python v3.11 environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.12'
           cache: 'pip'
       - uses: actions/download-artifact@v3
         with:
@@ -130,7 +130,7 @@ jobs:
       - name: Set up Python v3.11 environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.12'
           cache: 'pip'
       - uses: actions/download-artifact@v3
         with:
@@ -155,7 +155,7 @@ jobs:
       - name: Set up Python v3.11 environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.12'
           cache: 'pip'
       - uses: actions/download-artifact@v3
         with:
@@ -202,7 +202,7 @@ jobs:
       - name: Set up Python v3.11 environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.12'
           cache: 'pip'
       - name: Build interpolatable fonts
         run: |
@@ -230,7 +230,7 @@ jobs:
       - name: Set up Python v3.11 environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.12'
           cache: 'pip'
       - name: Set env variables
         id: vars
