@@ -109,6 +109,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("font", type=Path)
     parser.add_argument("--verbose", action="store_true")
+    parser.add_argument("--no-italic", action="store_true")
     parsed_args = parser.parse_args()
     font_path = parsed_args.font
     font: TTFont = TTFont(font_path)
@@ -119,11 +120,24 @@ def main():
         LOGGER.setLevel(logging.INFO)
 
     if font["name"].getDebugName(nameID=2) == "Italic":
-        buildStatTable(font, ITALIC_AXES)
+        stat = ITALIC_AXES
         LOGGER.info("[STAT TABLE] Added italic STAT table to %s", font_path)
     else:
-        buildStatTable(font, UPRIGHT_AXES)
+        stat = UPRIGHT_AXES
         LOGGER.info("[STAT TABLE] Added upright STAT table to %s", font_path)
+
+    drop_axes = []
+    if parsed_args.no_italic:
+        drop_axes.append("ital")
+
+    font_tags = [a.axisTag for a in font["fvar"].axes]
+    for axis in ["GRAD", "opsz"]:
+        if axis not in font_tags:
+            drop_axes.append(axis)
+
+    stat = [axis for axis in stat if axis["tag"] not in drop_axes]
+
+    buildStatTable(font, stat)
 
     font.save(font_path)
 
