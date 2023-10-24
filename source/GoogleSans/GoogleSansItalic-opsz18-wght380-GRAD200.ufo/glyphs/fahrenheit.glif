@@ -1,9 +1,49 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="fahrenheit" format="2">
-  <advance width="811"/>
-  <unicode hex="2109"/>
-  <outline>
-    <component base="degree" xOffset="-28"/>
-    <component base="F" xOffset="245"/>
-  </outline>
+	<unicode hex="2109"/>
+	<advance width="811"/>
+	<outline>
+		<contour>
+			<point x="202" y="469" type="curve" smooth="yes"/>
+			<point x="291" y="469"/>
+			<point x="355" y="531"/>
+			<point x="355" y="619" type="curve" smooth="yes"/>
+			<point x="355" y="688"/>
+			<point x="298" y="737"/>
+			<point x="232" y="737" type="curve" smooth="yes"/>
+			<point x="143" y="737"/>
+			<point x="79" y="675"/>
+			<point x="79" y="587" type="curve" smooth="yes"/>
+			<point x="79" y="518"/>
+			<point x="135" y="469"/>
+		</contour>
+		<contour>
+			<point x="210" y="538" type="curve" smooth="yes"/>
+			<point x="178" y="538"/>
+			<point x="155" y="562"/>
+			<point x="155" y="596" type="curve" smooth="yes"/>
+			<point x="155" y="636"/>
+			<point x="187" y="668"/>
+			<point x="224" y="668" type="curve" smooth="yes"/>
+			<point x="256" y="668"/>
+			<point x="279" y="644"/>
+			<point x="279" y="610" type="curve" smooth="yes"/>
+			<point x="279" y="570"/>
+			<point x="246" y="538"/>
+		</contour>
+		<contour>
+			<point x="324" y="0" type="line"/>
+			<point x="438" y="0" type="line"/>
+			<point x="545" y="599" type="line"/>
+			<point x="841" y="599" type="line"/>
+			<point x="861" y="716" type="line"/>
+			<point x="451" y="716" type="line"/>
+		</contour>
+		<contour>
+			<point x="431" y="290" type="line"/>
+			<point x="757" y="290" type="line"/>
+			<point x="776" y="406" type="line"/>
+			<point x="450" y="406" type="line"/>
+		</contour>
+	</outline>
 </glyph>
