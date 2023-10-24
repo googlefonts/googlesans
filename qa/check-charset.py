@@ -17,11 +17,11 @@ import sys
 from difflib import unified_diff
 
 from fontbakery.callable import check
+from fontbakery.checkrunner import PASS, FAIL
 from fontbakery.fonts_profile import profile_factory
 from fontbakery.section import Section
-from fontbakery.status import FAIL, PASS
 
-profile_imports = ()
+profile_imports = [("fontbakery.profiles.shared_conditions", ("ttFont",))]
 profile = profile_factory(
     default_section=Section("Google Sans Custom Character Set Checks")
 )
@@ -107,6 +107,7 @@ def com_google_fonts_check_googlesans_glyphs_glyphset_contents(ttFonts):
 # End check definitions
 #
 # ================================================
+
 
 # skip filter function to exclude checks defined in the
 # fontbakery universal profile
