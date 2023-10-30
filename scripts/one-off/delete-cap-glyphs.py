@@ -60,6 +60,9 @@ sheqel.cap
 dram-arm.cap
 """.strip().split()
 
+FEA_CAP_ON = """franc.cap ringcomb.cap gravecomb.cap acutecomb.cap dieresiscomb.cap caroncomb.cap brevecomb.cap macroncomb.cap circumflexcomb.cap at.cap tildecomb.cap hungarumlautcomb.cap dotaccentcomb.cap bracketleft.cap bracketright.cap parenleft.cap parenright.cap braceleft.cap braceright.cap questiondown.cap exclamdown.cap hyphen.cap endash.cap emdash.cap guilsinglleft.cap guilsinglright.cap guillemetleft.cap guillemetright.cap zero.cap one.cap two.cap three.cap four.cap five.cap six.cap seven.cap eight.cap nine.cap currency.cap dollar.cap euro.cap sterling.cap yen.cap lira.cap won.cap tugrik.cap peso.cap tenge.cap rupeeIndian.cap liraTurkish.cap ruble.cap dong.cap numbersign.cap percent.cap perthousand.cap pertenthousand.cap cent.cap baht.cap bullet.cap hryvnia.cap anoteleia.case brevecombcy.cap sheqel.cap"""
+FEA_CAP_OFF = """franc ring grave acute dieresis caron breve macron circumflex at tilde hungarumlaut dotaccent bracketleft bracketright parenleft parenright braceleft braceright questiondown exclamdown hyphen endash emdash guilsinglleft guilsinglright guillemetleft guillemetright zero one two three four five six seven eight nine currency dollar euro sterling yen lira won tugrik peso tenge rupeeIndian liraTurkish ruble dong numbersign percent perthousand pertenthousand cent baht bullet hryvnia anoteleia brevecombcy sheqel"""
+
 UFOS = [
     "GoogleSans-opsz17-wght380-GRAD-50.ufo",
     "GoogleSans-opsz17-wght380-GRAD0.ufo",
@@ -83,6 +86,16 @@ SOURCE_DIR = ROOT_DIR / "source" / "GoogleSans"
 
 
 def main():
+    print("Feature code:")
+    cap_on = []
+    cap_off = []
+    for on, off in zip(FEA_CAP_ON.split(), FEA_CAP_OFF.split()):
+        if on not in GLYPHS_TO_DELETE:
+            cap_on.append(on)
+            cap_off.append(off)
+    print(f"@cap_on = [{' '.join(cap_on)}];")
+    print(f"@cap_off = [{' '.join(cap_off)}];")
+
     for glyphsetdef in (ROOT_DIR / "qa" / "definitions").glob("*.glyphsetdef"):
         glyphs = glyphsetdef.read_text().splitlines()
         glyphs = [g for g in glyphs if g not in GLYPHS_TO_DELETE]
