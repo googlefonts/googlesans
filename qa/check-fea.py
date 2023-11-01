@@ -19,9 +19,9 @@ from pathlib import Path
 
 import uharfbuzz
 from fontbakery.callable import check, condition
+from fontbakery.checkrunner import PASS, SKIP, FAIL
 from fontbakery.fonts_profile import profile_factory
 from fontbakery.section import Section
-from fontbakery.status import FAIL, PASS, SKIP
 
 # Make FontBakery able to find the update_shaping_test_data package.
 sys.path.append(str(Path(__file__).parent.parent))
@@ -32,7 +32,7 @@ from qa.update_shaping_test_data import (  # noqa: E402
     shape_texts,
 )
 
-profile_imports = ()
+profile_imports = [("fontbakery.profiles.shared_conditions", ("ttFont",))]
 profile = profile_factory(
     default_section=Section("Google Sans Custom Feature Support Checks")
 )
@@ -313,6 +313,7 @@ def hb_font(font):
 # Feature support
 # ================================================
 
+
 # statics
 @check(
     id="com.google.fonts/check/googlesans/features/staticuprights",
@@ -507,7 +508,9 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
                         )
                         continue
                     if shaped_text != expected:
-                        shaped_texts_str = textwrap.indent("\n".join(shaped_text), "\t  ")
+                        shaped_texts_str = textwrap.indent(
+                            "\n".join(shaped_text), "\t  "
+                        )
                         shaped_texts_expected_str = textwrap.indent(
                             "\n".join(expected), "\t  "
                         )
