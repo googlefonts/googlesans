@@ -1,7 +1,6 @@
 # Google Sans
 
-[![Static CI](https://github.com/googlefonts/googlesans/workflows/Static%20CI/badge.svg)](https://github.com/googlefonts/googlesans/actions?query=workflow%3A%22Static+CI%22)
-[![Variable CI](https://github.com/googlefonts/googlesans/workflows/Variable%20CI/badge.svg)](https://github.com/googlefonts/googlesans/actions?query=workflow%3A%22Variable+CI%22)
+[![CI/CD](https://github.com/googlefonts/googlesans/actions/workflows/cicd.yml/badge.svg)](https://github.com/googlefonts/googlesans/actions/workflows/cicd.yml)
 
 Google Sans is a geometric sans-serif typeface for use as the corporate branding typeface. Originally based off of Product Sans, the Google Sans design has been modified for more general purpose use across systems, product areas, advertising, and marketing.
 
