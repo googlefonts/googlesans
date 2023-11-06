@@ -19,6 +19,7 @@ from pathlib import Path
 from typing import Dict, List, Set, Tuple, Union
 
 import ufo2ft
+from ufo2ft.util import makeOfficialGlyphOrder
 import ufoLib2
 from fontTools.designspaceLib import (
     DesignSpaceDocument,
@@ -129,6 +130,8 @@ def scrub_ufo(
     ufo.lib["public.postscriptNames"] = {
         k: v for k, v in ufo.lib["public.postscriptNames"].items() if k in ufo
     }
+    # Expand public.glyphOrder to include any missing glyphs and remove missing ones
+    ufo.lib["public.glyphOrder"] = makeOfficialGlyphOrder(ufo)
 
     # Reset the ufo2ft filters.
     ufo.lib["com.github.googlei18n.ufo2ft.filters"] = [
