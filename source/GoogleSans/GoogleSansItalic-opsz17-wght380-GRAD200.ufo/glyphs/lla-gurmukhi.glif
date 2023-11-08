@@ -4,18 +4,20 @@
   <unicode hex="0A33"/>
   <outline>
     <contour>
-      <point x="814" y="607" type="line"/>
-      <point x="863" y="607" type="line"/>
-      <point x="875" y="679" type="line"/>
-      <point x="826" y="679" type="line"/>
+      <point x="829" y="607" type="line"/>
+      <point x="878" y="607" type="line"/>
+      <point x="890" y="679" type="line"/>
+      <point x="841" y="679" type="line"/>
     </contour>
-    <component base="la-gurmukhi"/>
-    <component base="nukta-gurmukhi" xOffset="789" yOffset="118"/>
+    <component base="la-gurmukhi" xOffset="-2"/>
+    <component base="nukta-gurmukhi" xOffset="787" yOffset="118"/>
   </outline>
   <lib>
     <dict>
       <key>com.schriftgestaltung.Glyphs.category</key>
       <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>CCP</string>
       <key>com.schriftgestaltung.Glyphs.subCategory</key>
       <string>Spacing</string>
     </dict>
