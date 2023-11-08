@@ -13,9 +13,7 @@
 @gur2_dflt_rclt_MFS_top_tippis = [tippi-gurmukhi tippi-gurmukhi.short eeMatra-gurmukhi aiMatra-gurmukhi ooMatra-gurmukhi auMatra-gurmukhi];
 @gur2_dflt_tnum_standard_figures = [zero-gurmukhi one-gurmukhi two-gurmukhi three-gurmukhi four-gurmukhi five-gurmukhi six-gurmukhi seven-gurmukhi eight-gurmukhi nine-gurmukhi];
 @gur2_dflt_tnum_tabular_figures = [zero-gurmukhi.tf one-gurmukhi.tf two-gurmukhi.tf three-gurmukhi.tf four-gurmukhi.tf five-gurmukhi.tf six-gurmukhi.tf seven-gurmukhi.tf eight-gurmukhi.tf nine-gurmukhi.tf];
-# Prefix: LanguageSystems
-languagesystem DFLT dflt;
-languagesystem gur2 dflt;
+
 # Prefix: IndependentLookups
 lookup gur2_dflt_blwf_below_base_consonant_forms {
     sub halant-gurmukhi ra-gurmukhi by rakar-gurmukhi;
