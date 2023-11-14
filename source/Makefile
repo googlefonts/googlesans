@@ -90,26 +90,30 @@ gs-vf: gs-vf-upright gs-vf-italic
 gs-vf-upright: $(VARIABLE_UPRIGHT_TARGET)
 gs-vf-italic: $(VARIABLE_ITALIC_TARGET)
 
-$(VARIABLE_UPRIGHT_TARGET): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
-	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -o variable --output-path $(VARIABLE_UPRIGHT_INTERMEDIATE)
-	$(PYTHON3_EXE) ../scripts/gs-subset.py $(VARIABLE_UPRIGHT_INTERMEDIATE)
-	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $(VARIABLE_UPRIGHT_INTERMEDIATE)
-	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $(VARIABLE_UPRIGHT_INTERMEDIATE)
-	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py $(VARIABLE_UPRIGHT_INTERMEDIATE)
-	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(VARIABLE_UPRIGHT_INTERMEDIATE)
-	$(PYTHON3_EXE) ../scripts/gs-stat.py $(VARIABLE_UPRIGHT_INTERMEDIATE)
-	font-v write --sha1 $(VARIABLE_UPRIGHT_INTERMEDIATE)
+$(VARIABLE_UPRIGHT_INTERMEDIATE): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
+	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -o variable --output-path $@
+	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
+	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $@
+	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $@
+	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py $@
+	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $@
+	$(PYTHON3_EXE) ../scripts/gs-stat.py $@
+	font-v write --sha1 $@
+
+$(VARIABLE_UPRIGHT_TARGET): $(VARIABLE_UPRIGHT_INTERMEDIATE)
 	$(PYTHON3_EXE) ../scripts/patch-figma-fvar.py $(VARIABLE_UPRIGHT_INTERMEDIATE) --output $@
 
-$(VARIABLE_ITALIC_TARGET): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
-	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -o variable --output-path $(VARIABLE_ITALIC_INTERMEDIATE)
-	$(PYTHON3_EXE) ../scripts/gs-subset.py $(VARIABLE_ITALIC_INTERMEDIATE)
-	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $(VARIABLE_ITALIC_INTERMEDIATE)
-	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $(VARIABLE_ITALIC_INTERMEDIATE)
-	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py $(VARIABLE_ITALIC_INTERMEDIATE)
-	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $(VARIABLE_ITALIC_INTERMEDIATE)
-	$(PYTHON3_EXE) ../scripts/gs-stat.py $(VARIABLE_ITALIC_INTERMEDIATE)
-	font-v write --sha1 $(VARIABLE_ITALIC_INTERMEDIATE)
+$(VARIABLE_ITALIC_INTERMEDIATE): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
+	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -o variable --output-path $@
+	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
+	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $@
+	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $@
+	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py $@
+	$(PYTHON3_EXE) ../scripts/gftools-fix-nonhinting.py $@
+	$(PYTHON3_EXE) ../scripts/gs-stat.py $@
+	font-v write --sha1 $@
+
+$(VARIABLE_ITALIC_TARGET): $(VARIABLE_ITALIC_INTERMEDIATE)
 	$(PYTHON3_EXE) ../scripts/patch-figma-fvar.py $(VARIABLE_ITALIC_INTERMEDIATE) --output $@
 
 
@@ -117,13 +121,13 @@ gs-static: gs-static-upright gs-static-italic
 gs-static-upright: $(STATIC_UPRIGHTS_TARGETS)
 gs-static-italic: $(STATIC_ITALICS_TARGETS)
 
-$(STATIC_UPRIGHTS_TARGETS): $(VARIABLE_UPRIGHT_TARGET)
+$(STATIC_UPRIGHTS_TARGETS): $(VARIABLE_UPRIGHT_INTERMEDIATE)
 	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $< $(UPRIGHT_SOURCE) $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
 	$(PYTHON3_EXE) -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 	font-v write --sha1 $@
 
-$(STATIC_ITALICS_TARGETS): $(VARIABLE_ITALIC_TARGET)
+$(STATIC_ITALICS_TARGETS): $(VARIABLE_ITALIC_INTERMEDIATE)
 	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $< $(ITALIC_SOURCE) $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
 	$(PYTHON3_EXE) -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
