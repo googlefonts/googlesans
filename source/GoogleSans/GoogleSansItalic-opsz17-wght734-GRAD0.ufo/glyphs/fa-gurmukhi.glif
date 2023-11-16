@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="fa-gurmukhi" format="2">
-  <advance width="684"/>
+  <advance width="682"/>
   <unicode hex="0A5E"/>
   <outline>
     <contour>
-      <point x="26" y="595" type="line"/>
-      <point x="87" y="595" type="line"/>
-      <point x="104" y="690" type="line"/>
-      <point x="43" y="690" type="line"/>
+      <point x="42" y="595" type="line"/>
+      <point x="103" y="595" type="line"/>
+      <point x="120" y="690" type="line"/>
+      <point x="59" y="690" type="line"/>
     </contour>
-    <component base="pha-gurmukhi" xOffset="42"/>
-    <component base="nukta-gurmukhi" xOffset="118" yOffset="123"/>
+    <component base="pha-gurmukhi" xOffset="40"/>
+    <component base="nukta-gurmukhi" xOffset="116" yOffset="123"/>
   </outline>
   <lib>
     <dict>
@@ -37,6 +37,8 @@
       <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
       <string>pha-gurmukhi</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>CCP</string>
       <key>com.schriftgestaltung.Glyphs.subCategory</key>
       <string>Spacing</string>
     </dict>
