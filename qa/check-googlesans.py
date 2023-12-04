@@ -26,7 +26,13 @@ from fontbakery.utils import (
     unicoderange_bit_name,
 )
 
-profile_imports = ("fontbakery.profiles.universal",)
+profile_imports = (
+    "fontbakery.profiles.universal",
+    (
+        "fontbakery.profiles.googlefonts",
+        ("com_google_fonts_check_varfont_grade_reflow",),
+    ),
+)
 profile = profile_factory(default_section=Section("Google Sans Custom Checks"))
 
 GOOGLESANS_PROFILE_CHECKS = UNIVERSAL_PROFILE_CHECKS + [
@@ -44,6 +50,7 @@ GOOGLESANS_PROFILE_CHECKS = UNIVERSAL_PROFILE_CHECKS + [
     "com.google.fonts/check/googlesans/opentype/post/underline",
     "com.google.fonts/check/googlesans/vf/fvaraxes",
     "com.google.fonts/check/googlesans/vf/fvardefault",
+    "com.google.fonts/check/varfont/grade_reflow",
 ]
 
 # define check ID's in the upstream `universal` profile
