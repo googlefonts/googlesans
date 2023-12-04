@@ -38,6 +38,7 @@ ITALIC_SOURCE=GoogleSans/GoogleSans-Italic.designspace
 # --------------------------------------------------------
 FONT_BUILD_DIR=../build/GoogleSans
 STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
+INTERMEDIATE_VARIABLE_DIR=$(FONT_BUILD_DIR)/.intermediate
 VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
 INTERPOLATABLE_BUILD_DIR=$(FONT_BUILD_DIR)/interpolatable
 
@@ -50,6 +51,8 @@ STATIC_ITALICS_TARGETS = $(addprefix $(STATIC_BUILD_DIR)/,GoogleSans-BoldItalic.
 INTERPOLATABLE_UPRIGHTS_TARGET = $(INTERPOLATABLE_BUILD_DIR)/GoogleSans.designspace
 INTERPOLATABLE_ITALICS_TARGET = $(INTERPOLATABLE_BUILD_DIR)/GoogleSans-Italic.designspace
 
+VARIABLE_UPRIGHT_INTERMEDIATE = $(INTERMEDIATE_VARIABLE_DIR)/GoogleSans[GRAD,opsz,wght].ttf
+VARIABLE_ITALIC_INTERMEDIATE = $(INTERMEDIATE_VARIABLE_DIR)/GoogleSans-Italic[GRAD,opsz,wght].ttf
 VARIABLE_UPRIGHT_TARGET = $(VARIABLE_BUILD_DIR)/GoogleSans[GRAD,opsz,wght].ttf
 VARIABLE_ITALIC_TARGET = $(VARIABLE_BUILD_DIR)/GoogleSans-Italic[GRAD,opsz,wght].ttf
 
@@ -87,7 +90,7 @@ gs-vf: gs-vf-upright gs-vf-italic
 gs-vf-upright: $(VARIABLE_UPRIGHT_TARGET)
 gs-vf-italic: $(VARIABLE_ITALIC_TARGET)
 
-$(VARIABLE_UPRIGHT_TARGET): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
+$(VARIABLE_UPRIGHT_INTERMEDIATE): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
 	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -o variable --output-path $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
 	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $@
@@ -97,7 +100,10 @@ $(VARIABLE_UPRIGHT_TARGET): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
 	$(PYTHON3_EXE) ../scripts/gs-stat.py $@
 	font-v write --sha1 $@
 
-$(VARIABLE_ITALIC_TARGET): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
+$(VARIABLE_UPRIGHT_TARGET): $(VARIABLE_UPRIGHT_INTERMEDIATE)
+	$(PYTHON3_EXE) ../scripts/patch-figma-fvar.py $(VARIABLE_UPRIGHT_INTERMEDIATE) --output $@
+
+$(VARIABLE_ITALIC_INTERMEDIATE): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
 	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -o variable --output-path $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
 	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $@
@@ -107,18 +113,21 @@ $(VARIABLE_ITALIC_TARGET): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
 	$(PYTHON3_EXE) ../scripts/gs-stat.py $@
 	font-v write --sha1 $@
 
+$(VARIABLE_ITALIC_TARGET): $(VARIABLE_ITALIC_INTERMEDIATE)
+	$(PYTHON3_EXE) ../scripts/patch-figma-fvar.py $(VARIABLE_ITALIC_INTERMEDIATE) --output $@
+
 
 gs-static: gs-static-upright gs-static-italic
 gs-static-upright: $(STATIC_UPRIGHTS_TARGETS)
 gs-static-italic: $(STATIC_ITALICS_TARGETS)
 
-$(STATIC_UPRIGHTS_TARGETS): $(VARIABLE_UPRIGHT_TARGET)
+$(STATIC_UPRIGHTS_TARGETS): $(VARIABLE_UPRIGHT_INTERMEDIATE)
 	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $< $(UPRIGHT_SOURCE) $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
 	$(PYTHON3_EXE) -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 	font-v write --sha1 $@
 
-$(STATIC_ITALICS_TARGETS): $(VARIABLE_ITALIC_TARGET)
+$(STATIC_ITALICS_TARGETS): $(VARIABLE_ITALIC_INTERMEDIATE)
 	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $< $(ITALIC_SOURCE) $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
 	$(PYTHON3_EXE) -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
@@ -204,10 +213,7 @@ gst-bold-italic: $(FONT_BUILD_DIR)
 # Utilities
 #
 $(FONT_BUILD_DIR):
-	mkdir -p $(FONT_BUILD_DIR)
-	mkdir -p $(STATIC_BUILD_DIR)
-	mkdir -p $(VARIABLE_BUILD_DIR)
-	mkdir -p $(INTERPOLATABLE_BUILD_DIR)
+	mkdir -p $(STATIC_BUILD_DIR) $(INTERMEDIATE_VARIABLE_DIR) $(VARIABLE_BUILD_DIR) $(INTERPOLATABLE_BUILD_DIR)
 
 $(STAGING_DIR):
 	mkdir -p $(STAGING_DIR)

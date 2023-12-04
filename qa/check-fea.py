@@ -539,6 +539,7 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
 
     if not shaping_file_found:
         yield SKIP, "No test files found."
+    yield PASS, "No regressions detected."
 
 
 profile.auto_register(globals())
