@@ -1,12 +1,33 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="gheupturn-cy.sc" format="2">
-  <advance width="453"/>
+  <advance height="1252" width="452"/>
+  <anchor x="145" y="255" name="center"/>
+  <anchor x="306" y="580" name="top"/>
   <outline>
     <component base="ge-cy.sc"/>
     <component base="upturnsc-cy"/>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>ge-cy.sc</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>upturnsc-cy</string>
+        </dict>
+      </array>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>en-cy.sc</string>
       <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
