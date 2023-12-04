@@ -69,7 +69,9 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: variable-fonts
-          path: 'build/GoogleSans/variable'
+          path: |
+            build/GoogleSans/variable
+            build/GoogleSans/.intermediate
 
   check-variable:
     needs:
@@ -86,7 +88,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: variable-fonts
-          path: 'build/GoogleSans/variable'
+          path: 'build/GoogleSans'
       - name: Font Bakery GS profile tests
         uses: f-actions/font-bakery@v3
         with:
@@ -135,7 +137,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: variable-fonts
-          path: 'build/GoogleSans/variable'
+          path: 'build/GoogleSans'
       - name: Build static fonts
         run: |
           make setup
@@ -239,7 +241,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: variable-fonts
-          path: 'build/GoogleSans/variable'
+          path: 'build/GoogleSans'
       - uses: actions/download-artifact@v3
         with:
           name: static-fonts
@@ -248,6 +250,8 @@ jobs:
         with:
           name: interpolatable-fonts
           path: 'build/GoogleSans/interpolatable'
+      - name: Delete intermediate VFs
+        run: rm -r build/GoogleSans/.intermediate
       - name: Create build artifact zip archive
         run: zip GoogleSans-${{ steps.vars.outputs.tag }}.zip -r build/GoogleSans
       - name: Create Google Sans release
