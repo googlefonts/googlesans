@@ -40,11 +40,11 @@ DEFAULT_GRADE_UFO_MAP = {
 TARGET_DIR = Path("source/GoogleSans/")
 
 for src, grad_master_list in DEFAULT_GRADE_UFO_MAP.items():
-    default_master = Font(TARGET_DIR / src)
+    default_master = Font.open(TARGET_DIR / src)
     min_master_path = grad_master_list[0]
     max_master_path = grad_master_list[1]
-    min_master = Font(TARGET_DIR / min_master_path)
-    max_master = Font(TARGET_DIR / max_master_path)
+    min_master = Font.open(TARGET_DIR / min_master_path)
+    max_master = Font.open(TARGET_DIR / max_master_path)
 
     for glyph in default_master:
         min_target_glyph = min_master[glyph.name]
