@@ -5,12 +5,14 @@
 From the top-level:
 1. make sure you have a venv with `requirements-dev.txt`, e.g. by running `make setup`
 2. activate the venv
-3. run the python module `scripts.measure_kerning_optimizations`
+3. install extra requirements
+4. run the python module `scripts.measure_kerning_optimizations`
 
 ```bash
 make setup
 source .venv/bin/activate
-python3 -m scripts.measure_kerning_optimizations
+pip install -r scripts/measure_kerning_optimizations/requirements.txt
+python -m scripts.measure_kerning_optimizations
 ```
 
 ## Extract AOSP app strings
