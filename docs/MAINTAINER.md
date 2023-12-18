@@ -190,6 +190,12 @@ print(Glyphs.productionGlyphName("k_ssa_uMatra-tamil"))
 
 7. Run `python3 scripts/gs-normalize-designspace.py`.
 
+8. Run the production name checks, to look for edge cases that may have slipped through (e.g. multiple glyphs being assigned the same production name):
+
+```bash
+python3 scripts/check-production-names.py source/GoogleSans/*.designspace
+```
+
 ![Quality Assurance Workflow](assets/merge_process.png)
 
 ## Quality Assurance
