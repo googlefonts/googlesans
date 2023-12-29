@@ -72,10 +72,12 @@ profile.configuration_defaults = {
         "os2_fsselection_bit7": 1
     },
     # "com.google.fonts/check/googlesans/opentype/os2/winascent": {
-    #     "os2_win_ascent": 1115  # defined at max across min + max opsz design space (from min opsz)
+    #     # defined at max across min + max opsz design space (from min opsz)
+    #     "os2_win_ascent": 1115
     # },
     # "com.google.fonts/check/googlesans/opentype/os2/windescent": {
-    #     "os2_win_descent": 292  # defined at min across min + max opsz design space (from min opsz)
+    #     # defined at min across min + max opsz design space (from min opsz)
+    #     "os2_win_descent": 292
     # },
     "com.google.fonts/check/googlesans/opentype/hhea/ascent": {
         "hhea_ascent": 966  # set to match typo metrics values
@@ -101,7 +103,7 @@ profile.configuration_defaults = {
         "expected_fvar_axes": ["opsz", "wght", "GRAD"]
     },
     "com.google.fonts/check/googlesans/vf/fvardefault": {
-        "axis_defaults": {"opsz": 18.0, "wght": 400.0, "grad": 0.0,}
+        "axis_defaults": {"opsz": 18.0, "wght": 400.0, "grad": 0.0}
     },
     "com.google.fonts/check/googlesans/opentype/post/underline": {
         "post_underline_position": -160,
