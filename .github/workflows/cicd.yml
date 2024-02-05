@@ -89,21 +89,21 @@ jobs:
       - name: Font Bakery GS profile tests
         uses: f-actions/font-bakery@v3
         with:
-          version: 'latest'
+          version: '0.10.9'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-googlesans.py'
           path: 'build/GoogleSans/variable/*.ttf'
       - name: Font Bakery character set profile tests
         uses: f-actions/font-bakery@v3
         with:
-          version: 'latest'
+          version: '0.10.9'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-charset.py'
           path: 'build/GoogleSans/variable/*.ttf'
       - name: Font Bakery feature tag and shaping tests
         uses: f-actions/font-bakery@v3
         with:
-          version: 'latest'
+          version: '0.10.9'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-fea.py'
           path: 'build/GoogleSans/variable/*.ttf'
@@ -163,21 +163,21 @@ jobs:
       - name: Font Bakery GS profile tests
         uses: f-actions/font-bakery@v3
         with:
-          version: 'latest'
+          version: '0.10.9'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-googlesans.py'
           path: 'build/GoogleSans/static/*.ttf'
       - name: Font Bakery character set profile tests
         uses: f-actions/font-bakery@v3
         with:
-          version: 'latest'
+          version: '0.10.9'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-charset.py'
           path: 'build/GoogleSans/static/*.ttf'
       - name: Font Bakery feature tag and shaping tests
         uses: f-actions/font-bakery@v3
         with:
-          version: 'latest'
+          version: '0.10.9'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-fea.py'
           path: 'build/GoogleSans/static/*.ttf'
