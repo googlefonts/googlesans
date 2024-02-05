@@ -72,6 +72,8 @@ excluded_check_ids = (
     "com.google.fonts/check/soft_dotted",
     # We intentionally set the family names as they are
     "com.adobe.fonts/check/family/consistent_family_name",
+    # While we have Fontbakery pinned
+    "com.google.fonts/check/fontbakery_version",
 )
 
 profile.configuration_defaults = {
