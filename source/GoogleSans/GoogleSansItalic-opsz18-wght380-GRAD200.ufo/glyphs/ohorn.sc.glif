@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ohorn.sc" format="2">
-  <advance width="673"/>
-  <anchor x="309" y="0" name="bottom"/>
-  <anchor x="342" y="290" name="center"/>
-  <anchor x="373" y="0" name="ogonek"/>
-  <anchor x="377" y="580" name="top"/>
-  <anchor x="79" y="580" name="topleft"/>
-  <anchor x="491" y="688" name="topright"/>
+  <advance width="679"/>
+  <anchor x="312" y="0" name="bottom"/>
+  <anchor x="345" y="290" name="center"/>
+  <anchor x="376" y="0" name="ogonek"/>
+  <anchor x="380" y="580" name="top"/>
+  <anchor x="82" y="580" name="topleft"/>
+  <anchor x="494" y="688" name="topright"/>
   <outline>
     <component base="o.sc"/>
-    <component base="o-horn.sc"/>
+    <component base="o-horn.sc" xOffset="3"/>
   </outline>
 </glyph>
