@@ -2,10 +2,18 @@
 <glyph name="ij" format="2">
   <advance width="422"/>
   <unicode hex="0133"/>
-  <anchor x="241" y="-216" name="bottom"/>
-  <anchor x="407" y="726" name="top"/>
+  <anchor x="233" y="-216" name="bottom"/>
+  <anchor x="399" y="726" name="top"/>
   <outline>
     <component base="i"/>
     <component base="j" xOffset="211"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>=i</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>=j</string>
+    </dict>
+  </lib>
 </glyph>

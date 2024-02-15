@@ -2,9 +2,17 @@
 <glyph name="idieresis" format="2">
   <advance width="259"/>
   <unicode hex="00EF"/>
-  <anchor x="208" y="748" name="top"/>
+  <anchor x="217" y="748" name="top"/>
   <outline>
     <component base="idotless"/>
     <component base="dieresislc-Ukraine"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>=idotless@300</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>=idotless@300</string>
+    </dict>
+  </lib>
 </glyph>
