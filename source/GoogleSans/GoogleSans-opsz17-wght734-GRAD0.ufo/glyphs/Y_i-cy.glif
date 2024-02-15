@@ -4,8 +4,17 @@
   <unicode hex="0407"/>
   <guideline x="149" y="847" angle="90"/>
   <guideline x="155" y="889" angle="180"/>
+  <anchor x="155" y="960" name="top"/>
   <outline>
     <component base="I"/>
     <component base="dieresisYi-cy"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>=I@400</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>=I@400</string>
+    </dict>
+  </lib>
 </glyph>

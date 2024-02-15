@@ -2,10 +2,18 @@
 <glyph name="iogonek" format="2">
   <advance width="228"/>
   <unicode hex="012F"/>
-  <anchor x="26" y="-234" name="bottom"/>
-  <anchor x="205" y="776" name="top"/>
+  <anchor x="25" y="-234" name="bottom"/>
+  <anchor x="204" y="776" name="top"/>
   <outline>
-    <component base="i" xOffset="1"/>
-    <component base="ogonekcomb" xOffset="-111"/>
+    <component base="i"/>
+    <component base="ogonekcomb" xOffset="-112"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
+      <string>=idotless@300</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>=idotless@300</string>
+    </dict>
+  </lib>
 </glyph>
