@@ -35,7 +35,7 @@ from fontTools.pens.recordingPen import DecomposingRecordingPen, RecordingPen
 from fontTools.pens.roundingPen import RoundingPen
 
 ROOT_DIR = Path(__file__).parent.parent.parent
-RESPACED_DIR = ROOT_DIR / "../googlesans-eduardo/source/GoogleSans"
+RESPACED_DIR = ROOT_DIR / "source/GoogleSans"
 TARGET_DIR = ROOT_DIR / "../googlesans-mark-weights/source/GoogleSans"
 
 MAIN_UFOS = [
