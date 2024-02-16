@@ -260,7 +260,9 @@ for glyph in """\
         /gje-cy
         /gje-cy.sc
         """.strip().split():
-    EXPECTED_DIFFS[glyph.lstrip("/")] = "Rounding errors, Eduardo double-checked them and there's no visual diff"
+    EXPECTED_DIFFS[glyph.lstrip("/")] = (
+        "Rounding errors, Eduardo double-checked them and there's no visual diff"
+    )
 
 
 def normalise(before: Glyph, layer: GlyphSet, *, decompose: bool) -> Glyph:
