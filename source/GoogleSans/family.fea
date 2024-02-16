@@ -483,6 +483,7 @@ feature pnum {
     sub comma.tf by comma;
     sub colon.tf by colon;
     sub semicolon.tf by semicolon;
+    sub colon.time.tf by colon.time;    
     sub numbersign.tf by numbersign;
     sub space.tf by space;
     sub cent.tf by cent;
@@ -1616,7 +1617,7 @@ feature calt {
     sub o underscore l o g o by o.logo;
     sub [space hyphen nbspace endash emdash underscore] etatonos.sc' [space hyphen nbspace endash emdash underscore comma] by etatonos.sc.ss06;
     sub [zero one two three four five six seven eight nine] colon' [zero one two three four five six seven eight nine] by colon.time;
-    sub [zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf] colon.tf' [zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf] by colon.time;
+    sub [zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf] colon.tf' [zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf] by colon.time.tf;
     lookup armn_calt_ligatures;
     lookup armn_calt_contextual_substitution;
     lookup armn_calt_now_with_uppercase;
@@ -1659,6 +1660,7 @@ feature ss02 {
     };
 
     sub colon by colon.time;
+    sub colon.tf by colon.time.tf;    
 } ss02;
 
 # Note: ss03 defined in family_uprights.fea feature file
