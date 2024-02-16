@@ -58,94 +58,124 @@ MAIN_UFOS = [
 ]
 
 EXPECTED_DIFFS = {
-    "dje-cy": "The bar moved by one unit to match the GRAD",
-    "tshe-cy.sc": "The bar moved by one unit to match the GRAD",
-    "elhook-cy": "Moved one leg to make it work in GRAD 200",
     "Elhook-cy": "Moved one leg to make it work in GRAD 200",
-    "elhook-cy.sc": "Moved one leg to make it work in GRAD 200",
     "Enghe-cy": "Moved the terminal to make it fit in the GRAD",
+    "Gamma": "Moved the terminal to make it fit in GRAD",
+    "Ge-cy": "Moved the terminal to make it fit in GRAD",
+    "dje-cy": "The bar moved by one unit to match the GRAD",
+    "elhook-cy": "Moved one leg to make it work in GRAD 200",
+    "elhook-cy.sc": "Moved one leg to make it work in GRAD 200",
     "enghe-cy": "Moved the terminal to make it fit in the GRAD",
     "enghe-cy.sc": "Moved the terminal to make it fit in the GRAD",
     "enlefthook-cy": "Moved one leg to make it work in GRAD",
     "ge-cy": "Moved the terminal to make it fit in GRAD",
-    "Ge-cy": "Moved the terminal to make it fit in GRAD",
     "ge-cy.sc": "Moved the terminal to make it fit in GRAD",
     "hahook-cy": "Moved left side to make it work in GRAD",
     "lje-cy": "Moved one leg to make it work in GRAD",
     "te-cy": "Fix symmetry of the arms",
+    "tshe-cy.sc": "The bar moved by one unit to match the GRAD",
     "upturn-cy": "Adjusted the weight by a couple units to match descenders",
     "upturnlc-cy": "Adjusted the weight by a couple units to match descenders",
     "upturnsc-cy": "Adjusted the weight by a couple units to match descenders",
 }
 
 for glyph in """\
-        /Chekhakassian-cy
+        /Chedescender-cy
+        /Chedescender-cy
         /Chedescenderabkhasian-cy
+        /Chekhakassian-cy
+        /De-cy
+        /Eldescender-cy
         /Eltail-cy
         /Emtail-cy
+        /Endescender-cy
         /Entail-cy
         /Gedescender-cy
         /Gestrokehook-cy
+        /Ghestroke-cy
+        /Gheupturn-cy
+        /Hadescender-cy
+        /Iishorttail-cy
+        /Kadescender-cy
+        /Kastroke-cy
+        /Pedescender-cy
+        /Shcha-cy
+        /Shhadescender-cy
         /Tedescender-cy
+        /Tetse-cy
+        /Tse-cy
+        /Ustraightstroke-cy
+        /Zedescender-cy
+        /Zedescender-cy.loclBSH
+        /Zhedescender-cy
+        /chedescender-cy
         /chedescender-cy.sc
-        /De-cy
+        /chekhakassian-cy
+        /chekhakassian-cy.sc
         /de-cy
         /de-cy.sc
         /descender-cy
+        /descender1sc-cy
         /descender3-cy
+        /descender3-cy.sc
         /descenderlc1-cy
         /descenderlc3-cy
-        /descender1sc-cy
-        /descender3-cy.sc
         /el-cy
+        /eldescender-cy
         /eldescender-cy.sc
+        /eltail-cy
         /eltail-cy.sc
+        /emtail-cy
         /emtail-cy.sc
+        /endescender-cy
         /endescender-cy.sc
+        /entail-cy
         /entail-cy.sc
+        /gedescender-cy
+        /gedescender-cy.sc
+        /gestrokehook-cy
         /gestrokehook-cy.sc
         /ghestroke-cy
+        /ghestroke-cy.sc
+        /gheupturn-cy
+        /gheupturn-cy
+        /gheupturn-cy.sc
+        /hadescender-cy
+        /hadescender-cy.sc
         /iishorttail-cy
         /iishorttail-cy.sc
+        /kadescender-cy
+        /kadescender-cy.sc
+        /pedescender-cy
         /pedescender-cy.sc
         /sha-cy
-        /shcha-cy.sc
-        /Shcha-cy
+        /shcha-cy
         /shcha-cy.loclBGR
+        /shcha-cy.sc
         /shhadescender-cy
         /shhadescender-cy.sc
         /tail-cy
         /taillc-cy
         /tailsc-cy
-        /Tetse-cy
+        /tedescender-cy
+        /tedescender-cy.sc
         /tetse-cy
         /tetse-cy.sc
-        /Tse-cy
         /tse-cy
         /tse-cy.loclBGR
-        /Chedescender-cy
-        /Eldescender-cy
-        /Endescender-cy
-        /Hadescender-cy
-        /Kadescender-cy
-        /Pedescender-cy
-        /Ustraightstroke-cy
-        /Zhedescender-cy
+        /zedescender-cy
+        /zedescender-cy.loclBSH
+        /zhedescender-cy
+        /zhedescender-cy.sc
         """.strip().split():
     EXPECTED_DIFFS[glyph.lstrip("/")] = "Fixed descender shape"
 
 for glyph in """\
+        /Eleven-roman
+        /Iu-cy
         /Ldot
-        /ldot.sc
         /Nine-roman
         /Twelve-roman
-        /Eleven-roman
-        /pertenthousand
-        /ij
-        /Iu-cy
-        /iu-cy
-        /iu-cy.loclBGR
-        /iu-cy.sc
         /f_b
         /f_f
         /f_f_b
@@ -161,6 +191,14 @@ for glyph in """\
         /f_k
         /f_l
         /f_t
+        /ij
+        /iu-cy
+        /iu-cy.loclBGR
+        /iu-cy.sc
+        /ldot.sc
+        /percent
+        /pertenthousand
+        /perthousand
         /r_f
         /r_f_f
         /r_t
@@ -170,32 +208,59 @@ for glyph in """\
     EXPECTED_DIFFS[glyph.lstrip("/")] = "Fixed spacing inside the ligature"
 
 for glyph in """\
-        /idieresis
-        /Ustraightstroke-cy
-        /yi-cy
         /Abreve
-        /abreve.sc
-        /abreve.sc
         /Ebreve
-        /ebreve.sc
-        /ebreve.sc
         /Gbreve
-        /gbreve.sc
-        /gbreve.sc
         /Ibreve
-        /ibreve.sc
-        /ibreve.sc
         /Obreve
-        /obreve.sc
-        /obreve.sc
+        /Schwadieresis-cy
         /Ubreve
+        /Udieresis-cy
+        /Uhungarumlaut-cy
+        /Umacron-cy
+        /Ushort-cy
+        /Ustraightstroke-cy
+        /Yi-cy
+        /Zedieresis-cy
+        /Zhebreve-cy
+        /Zhebreve-cy
+        /Zhedieresis-cy
+        /abreve.sc
+        /abreve.sc
+        /ebreve.sc
+        /ebreve.sc
+        /gbreve.sc
+        /gbreve.sc
+        /ibreve.sc
+        /ibreve.sc
+        /idieresis
+        /obreve.sc
+        /obreve.sc
         /ubreve.sc
         /ubreve.sc
+        /yi-cy
         /zhebreve-cy
-        /Zhebreve-cy
-        /Zhebreve-cy
+        /zhedieresis-cy
         """.strip().split():
-    EXPECTED_DIFFS[glyph.lstrip("/")] = "Fixed spacing inside the ligature"
+    EXPECTED_DIFFS[glyph.lstrip("/")] = "Centered diacritics"
+
+
+for glyph in """\
+        /Gje-cy
+        /J
+        /K.alt
+        /Ka-cy
+        /Kje-cy
+        /bracketleft.cap
+        /che-cy
+        /chedieresis-cy
+        /cheverticalstroke-cy
+        /cheverticalstroke-cy
+        /cheverticalstroke-cy
+        /gje-cy
+        /gje-cy.sc
+        """.strip().split():
+    EXPECTED_DIFFS[glyph.lstrip("/")] = "Rounding errors, Eduardo double-checked them and there's no visual diff"
 
 
 def normalise(before: Glyph, layer: GlyphSet, *, decompose: bool) -> Glyph:
