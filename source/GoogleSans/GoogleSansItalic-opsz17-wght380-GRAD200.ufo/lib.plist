@@ -2410,7 +2410,6 @@
       <string>oslash-bar</string>
       <string>percentbar</string>
       <string>rlig</string>
-      <string>t-bar</string>
       <string>t-bar.sc</string>
       <string>t-caron</string>
       <string>t-cedilla</string>
@@ -7636,6 +7635,13 @@
       <string>seven-gurmukhi.tf</string>
       <string>eight-gurmukhi.tf</string>
       <string>nine-gurmukhi.tf</string>
+      <string>f-bar_one</string>
+      <string>f-bar_three</string>
+      <string>f-bar_two</string>
+      <string>flig3</string>
+      <string>t-bar_one</string>
+      <string>t-bar_three</string>
+      <string>t-bar_two</string>
     </array>
     <key>public.openTypeCategories</key>
     <dict>
@@ -10925,6 +10931,12 @@
       <string>mark</string>
       <key>f</key>
       <string>base</string>
+      <key>f-bar_one</key>
+      <string>ligature</string>
+      <key>f-bar_three</key>
+      <string>ligature</string>
+      <key>f-bar_two</key>
+      <string>ligature</string>
       <key>f-deva</key>
       <string>base</string>
       <key>f-deva.alt10</key>
@@ -16181,6 +16193,10 @@
       <string>base</string>
       <key>t</key>
       <string>base</string>
+      <key>t-bar_one</key>
+      <string>ligature</string>
+      <key>t-bar_two</key>
+      <string>ligature</string>
       <key>t-beng.half1</key>
       <string>base</string>
       <key>t-kannada</key>
