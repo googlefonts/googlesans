@@ -25,7 +25,7 @@ from ufoLib2 import Font
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).parent.parent.parent
-SOURCE_DIR = ROOT_DIR / "../googlesans-main/source/GoogleSans"
+SOURCE_DIR = ROOT_DIR / "../gs-main/source/GoogleSans"
 TARGET_DIR = ROOT_DIR / "source/GoogleSans"
 
 ALL_UFOS = [
