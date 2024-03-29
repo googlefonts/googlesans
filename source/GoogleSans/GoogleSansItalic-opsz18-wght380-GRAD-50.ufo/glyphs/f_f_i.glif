@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="f_f_i" format="2">
-  <advance width="888"/>
+  <advance width="889"/>
   <anchor x="115" y="0" name="bottom_1"/>
   <anchor x="425" y="0" name="bottom_2"/>
   <anchor x="736" y="0" name="bottom_3"/>
@@ -10,9 +10,12 @@
   <anchor x="551" y="716" name="top_2"/>
   <anchor x="862" y="716" name="top_3"/>
   <outline>
-    <component base="flig2" xOffset="-3"/>
-    <component base="flig2" xOffset="308"/>
-    <component base="i" xOffset="677"/>
+    <component base="f-bar_one"/>
+    <component base="flig1" xOffset="1"/>
+    <component base="f-bar_three" xOffset="2"/>
+    <component base="flig3" xOffset="312"/>
+    <component base="f-bar_three" xOffset="313"/>
+    <component base="i" xOffset="678"/>
   </outline>
   <lib>
     <dict>
