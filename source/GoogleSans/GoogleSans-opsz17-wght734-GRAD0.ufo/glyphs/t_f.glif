@@ -1,10 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="t_f" format="2">
-  <advance width="741"/>
+  <advance width="742"/>
   <anchor x="370" y="0" name="caret_1"/>
   <outline>
+    <component base="t-bar_one"/>
     <component base="tlig"/>
-    <component base="f" xOffset="351"/>
+    <component base="f-bar_three" xOffset="1"/>
+    <component base="flig1" xOffset="352"/>
+    <component base="f-bar_two" xOffset="352"/>
   </outline>
   <lib>
     <dict>

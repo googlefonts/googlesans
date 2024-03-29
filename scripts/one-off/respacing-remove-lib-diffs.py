@@ -25,7 +25,7 @@ from ufoLib2 import Font
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).parent.parent.parent
-SOURCE_DIR = ROOT_DIR / "../googlesans-mark-weights/source/GoogleSans"
+SOURCE_DIR = ROOT_DIR / "../gs-main/source/GoogleSans"
 TARGET_DIR = ROOT_DIR / "source/GoogleSans"
 
 ALL_UFOS = [
@@ -55,6 +55,8 @@ def main():
         target_ufo = Font.open(target_ufo_path)
 
         for source_glyph in source_ufo:
+            if source_glyph.name not in target_ufo:
+                continue
             target_glyph = target_ufo[source_glyph.name]
             target_glyph.lib = source_glyph.lib
 

@@ -1,13 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="f_j" format="2">
-  <advance width="577"/>
-  <anchor x="99" y="0" name="bottom_1"/>
+  <advance width="578"/>
+  <anchor x="114" y="0" name="bottom_1"/>
   <anchor x="393" y="-216" name="bottom_2"/>
-  <anchor x="268" y="0" name="caret_1"/>
+  <anchor x="273" y="0" name="caret_1"/>
   <anchor x="225" y="716" name="top_1"/>
   <anchor x="519" y="716" name="top_2"/>
   <outline>
-    <component base="flig2" xOffset="-3"/>
+    <component base="f-bar_one"/>
+    <component base="flig3"/>
+    <component base="f-bar_three" xOffset="2"/>
     <component base="j" xOffset="367"/>
   </outline>
   <lib>
