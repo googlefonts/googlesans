@@ -4,7 +4,7 @@
 
 ### New
 
-- 
+- added Igbo language support #612
 
 ### Changed
 
