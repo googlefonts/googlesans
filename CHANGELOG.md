@@ -1,5 +1,28 @@
 # Google Sans Changelog
 
+## v12.000
+
+### New
+
+- added Igbo language support #612
+
+### Changed
+
+- removed all "Text" instances to allow auto-opsz in Figma #521
+- improved spacing and kerning in Latin, Greek, and Cyrillic (#333 #589)
+- updated the cap height of the figures, Roman numerals, currency symbols, and other figure-height associated symbols (#412) [modified glyphs: 0123456789 #%‱‱°℃℉ ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫⅬⅭⅮⅯↀↁↂ $¢£¥฿₫€ƒ₣₴₤₺₱₽₹₸₮₩₪]
+- Cyrillic updates: fixes issues with the [modified glyphs: ђ, Ю ю ԓ Ґ ґ C c c.sc] #456 #399 #598 #607 
+- Latin updates: #526 #591 #607 #606 #400 #614 [modified glyphs: eng.sc /archaicii-malayalam.part /rr_rra-malayalam]
+- improved the consistency of the ligatures and removed overlapping of the crossbars (#624) [t_t f_t  t_f  f_f  f_f_t  f_f_i  f_f_b  f_f_h  f_f_j  f_f_k  f_f_l]
+- Small improvements to the Greek on GRAD axis (#597 #383) [modified glyphs: Ί Ί Ά Ά Ό Ό Ώ Ώ ὶ Ή Ή Ύ Ύ Λ Ϗ γ ἕ Έ Έ ἓ ς έ έ ἒ ἔ ῥ ὲ ξ ῤ ρ ∑ Σ ἳ ΄ ´ ἵ ῞ ΐ ΐ ἲ λ ῝ ί ί ` ΰ ΅ ΰ ΅ ἑ ὓ ὕ ἴ Δ ∆ ᾕ ἥ ὃ ῍ ὅ ῂ ὴ ὒ ῎ Ὶ ᾭ Ὥ ᾓ ἣ ύ ύ Ὣ ᾫ Ἳ ὸ ε ἐ Ἵ ὔ ὄ ᾔ ἤ Ὼ ᾅ ἅ ᾪ Ὢ ὰ ᾲ Ὤ ἃ ᾬ ᾃ ή ή ῄ ὺ ᾒ ἢ ό ῾ ό ἄ ὂ ᾄ ᾥ ὥ Ἲ ὣ ᾣ ά ᾴ ά ᾂ ἂ dieresistonos circumflex acute perispomeni psili breve] 
+- updated the calt features and added colon.time.tf glyph (#177)
+
+### Technical
+- updated glyph order .notdef is now first #590 
+- updated A QA check of advance widths and kerning reflow check
+- added Fontbakery configuration 
+
+
 ## v11.001
 
 ### New
