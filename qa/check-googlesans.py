@@ -74,6 +74,8 @@ excluded_check_ids = (
     "com.adobe.fonts/check/family/consistent_family_name",
     # While we have Fontbakery pinned
     "com.google.fonts/check/fontbakery_version",
+    # Exclusion requested in https://github.com/googlefonts/googlesans/issues/316
+    "com.google.fonts/check/interpolation_issues",
 )
 
 profile.configuration_defaults = {
