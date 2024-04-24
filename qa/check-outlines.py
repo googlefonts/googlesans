@@ -12,25 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-from fontbakery.fonts_profile import profile_factory
-from fontbakery.section import Section
-
-profile_imports = ("fontbakery.profiles.universal",)
-profile = profile_factory(default_section=Section("Google Sans Outline Checks"))
-
-OUTLINE_PROFILE_CHECKS = [
-    "com.google.fonts/check/outline_jaggy_segments",
-    "com.google.fonts/check/outline_semi_vertical",
-]
-
-
-def check_skip_filter(checkid, font=None, **iterargs):
-    if font and checkid not in OUTLINE_PROFILE_CHECKS:
-        return False, ("Check skipped in Google Sans outline profile")
-    return True, None
-
-
-profile.check_skip_filter = check_skip_filter
-profile.auto_register(globals())
-profile.test_expected_checks(OUTLINE_PROFILE_CHECKS)
+PROFILE = {
+    "sections": {
+        "Google Sans Outline Checks": [
+            "com.google.fonts/check/outline_jaggy_segments",
+            "com.google.fonts/check/outline_semi_vertical",
+        ]
+    }
+}
