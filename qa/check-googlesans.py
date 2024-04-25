@@ -56,8 +56,6 @@ PROFILE = {
         "com.google.fonts/check/soft_dotted",
         # We intentionally set the family names as they are
         "com.adobe.fonts/check/family/consistent_family_name",
-        # While we have Fontbakery pinned
-        "com.google.fonts/check/fontbakery_version",
         # Exclusion requested in https://github.com/googlefonts/googlesans/issues/316
         "com.google.fonts/check/interpolation_issues",
     ],
