@@ -42,13 +42,18 @@ PROFILE = {
     "exclude_checks": [
         "com.google.fonts/check/ftxvalidator_is_available",
         "com.google.fonts/check/dsig",
-        "com.google.fonts/check/family/win_ascent_and_descent",  # replaced by custom checks
-        "com.google.fonts/check/varfont/regular_opsz_coord",  # we do want our opsz definition
+        # replaced by custom checks
+        "com.google.fonts/check/family/win_ascent_and_descent",
+        # we do want our opsz definition
+        "com.google.fonts/check/varfont/regular_opsz_coord",
         # "com.google.fonts/check/os2_metrics_match_hhea",
         # "com.google.fonts/check/unwanted_tables",
-        "com.google.fonts/check/outline_jaggy_segments",  # too many unactionable warnings
-        "com.google.fonts/check/outline_semi_vertical",  # design rather than QA problem
-        "com.google.fonts/check/contour_count",  # design rather than QA problem
+        # too many unactionable warnings
+        "com.google.fonts/check/outline_jaggy_segments",
+        # design rather than QA problem
+        "com.google.fonts/check/outline_semi_vertical",
+        # design rather than QA problem
+        "com.google.fonts/check/contour_count",
         "com.adobe.fonts/check/varfont/valid_default_instance_nameids",  # Bogus
         "com.google.fonts/check/varfont/regular_wght_coord",  # Buggy in 0.8.9
         "com.google.fonts/check/varfont/bold_wght_coord",  # Buggy in 0.8.9
