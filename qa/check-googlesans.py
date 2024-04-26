@@ -68,14 +68,6 @@ PROFILE = {
         "com.google.fonts/check/googlesans/opentype/os2/fsselectionbit7": {
             "os2_fsselection_bit7": 1
         },
-        # "com.google.fonts/check/googlesans/opentype/os2/winascent": {
-        #     # defined at max across min + max opsz design space (from min opsz)
-        #     "os2_win_ascent": 1115
-        # },
-        # "com.google.fonts/check/googlesans/opentype/os2/windescent": {
-        #     # defined at min across min + max opsz design space (from min opsz)
-        #     "os2_win_descent": 292
-        # },
         "com.google.fonts/check/googlesans/opentype/hhea/ascent": {
             "hhea_ascent": 966  # set to match typo metrics values
         },
