@@ -64,7 +64,7 @@ PROFILE = {
         # Exclusion requested in https://github.com/googlefonts/googlesans/issues/316
         "com.google.fonts/check/interpolation_issues",
     ],
-    "overrides": {
+    "configuration_defaults": {
         "com.google.fonts/check/googlesans/opentype/os2/fsselectionbit7": {
             "os2_fsselection_bit7": 1
         },
