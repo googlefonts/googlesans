@@ -13,6 +13,21 @@
 # limitations under the License.
 
 from pathlib import Path
+import os
+
+# Hack to have this be conditional but without appending later
+# Only run on main & releases:
+# https://github.com/googlefonts/googlesans/issues/316#issuecomment-2120825286
+# https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
+INTERPOLATION_ISSUES = (
+    ()
+    if "CI" in os.environ
+    and (
+        os.environ.get("GITHUB_REF_NAME") == "main"
+        or os.environ.get("GITHUB_REF_TYPE") == "tag"
+    )
+    else ("com.google.fonts/check/interpolation_issues",)
+)
 
 PROFILE = {
     "include_profiles": ["universal"],
@@ -61,8 +76,8 @@ PROFILE = {
         "com.google.fonts/check/soft_dotted",
         # We intentionally set the family names as they are
         "com.adobe.fonts/check/family/consistent_family_name",
-        # Exclusion requested in https://github.com/googlefonts/googlesans/issues/316
-        "com.google.fonts/check/interpolation_issues",
+        # See declaration
+        *INTERPOLATION_ISSUES,
     ],
     "configuration_defaults": {
         "com.google.fonts/check/googlesans/opentype/os2/fsselectionbit7": {
