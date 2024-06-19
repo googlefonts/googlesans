@@ -47,6 +47,8 @@ STAGING_DIR=GoogleSans/staging
 STATIC_UPRIGHTS_TARGETS = $(addprefix $(STATIC_BUILD_DIR)/,GoogleSansText-Regular.ttf GoogleSansText-Bold.ttf GoogleSansText-Medium.ttf GoogleSans-Regular.ttf GoogleSans-Bold.ttf GoogleSans-Medium.ttf)
 STATIC_ITALICS_TARGETS = $(addprefix $(STATIC_BUILD_DIR)/,GoogleSans-BoldItalic.ttf GoogleSans-Italic.ttf GoogleSansText-MediumItalic.ttf GoogleSansText-BoldItalic.ttf GoogleSansText-Italic.ttf GoogleSans-MediumItalic.ttf)
 
+INTERPOLATABLE_UPRIGHTS_DESIGNSPACE = $(INTERMEDIATE_VARIABLE_DIR)/GoogleSansUprights.designspace
+INTERPOLATABLE_ITALICS_DESIGNSPACE = $(INTERMEDIATE_VARIABLE_DIR)/GoogleSansItalics.designspace
 INTERPOLATABLE_UPRIGHTS_TARGET = $(INTERPOLATABLE_BUILD_DIR)/GoogleSans.designspace
 INTERPOLATABLE_ITALICS_TARGET = $(INTERPOLATABLE_BUILD_DIR)/GoogleSans-Italic.designspace
 
@@ -130,16 +132,20 @@ $(STATIC_ITALICS_TARGETS): $(VARIABLE_ITALIC_INTERMEDIATE)
 	$(PYTHON3_EXE) -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 	font-v write --sha1 $@
 
+$(INTERPOLATABLE_UPRIGHTS_DESIGNSPACE): split-designspaces
+$(INTERPOLATABLE_ITALICS_DESIGNSPACE): split-designspaces
+split-designspaces: $(SOURCE)
+	$(PYTHON3_EXE) ../scripts/split-ds5-designspace.py
 
 gs-compatible-masters: gs-compatible-masters-upright gs-compatible-masters-italic
 gs-compatible-masters-upright: $(INTERPOLATABLE_UPRIGHTS_TARGET)
 gs-compatible-masters-italic: $(INTERPOLATABLE_ITALICS_TARGET)
 
-$(INTERPOLATABLE_UPRIGHTS_TARGET): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
-	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(SOURCE) --variable-fonts "GoogleSans-VF" -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
+$(INTERPOLATABLE_UPRIGHTS_TARGET): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES) $(INTERPOLATABLE_UPRIGHTS_DESIGNSPACE)
+	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(INTERPOLATABLE_UPRIGHTS_DESIGNSPACE) --variable-fonts "GoogleSans-VF" -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
 
-$(INTERPOLATABLE_ITALICS_TARGET): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
-	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(SOURCE) --variable-fonts "GoogleSans-Italic-VF" -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
+$(INTERPOLATABLE_ITALICS_TARGET): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES) $(INTERPOLATABLE_ITALICS_DESIGNSPACE)
+	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(INTERPOLATABLE_ITALICS_DESIGNSPACE) --variable-fonts "GoogleSans-Italic-VF" -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
 
 
 gs-vf-vendor: gs-vf-vendor-glyphs2designspace
