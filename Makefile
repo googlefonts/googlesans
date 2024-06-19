@@ -19,7 +19,7 @@ MASTER_UFO_DIR=$(FONT_BUILD_DIR)/master_ufo
 INSTANCE_UFO_DIR=$(FONT_BUILD_DIR)/instance_ufo
 VENV_DIR=.venv
 
-all: gs-static gs-compatible-masters  # gs-vf is built by gs-static
+all: gs-vf gs-static gs-compatible-masters
 
 # ------------------------------
 # Clean
