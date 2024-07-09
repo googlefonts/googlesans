@@ -20,7 +20,7 @@ on:
 
 jobs:
   lint-sources:
-    runs-on: [linux, googlefonts-64cores-256GB]
+    runs-on: googlefonts-64cores-256GB
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
@@ -35,7 +35,7 @@ jobs:
           ufolint source/GoogleSans/*.ufo
 
   lint-scripts:
-    runs-on: [linux, googlefonts-64cores-256GB]
+    runs-on: googlefonts-64cores-256GB
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
@@ -50,7 +50,7 @@ jobs:
           flake8
 
   build-variable:
-    runs-on: [linux, googlefonts-64cores-256GB]
+    runs-on: googlefonts-64cores-256GB
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
@@ -73,7 +73,7 @@ jobs:
   check-variable:
     needs:
       - build-variable
-    runs-on: [linux, googlefonts-64cores-256GB]
+    runs-on: googlefonts-64cores-256GB
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
@@ -122,7 +122,7 @@ jobs:
     if: github.event_name != 'pull_request'
     needs:
       - build-variable
-    runs-on: [linux, googlefonts-64cores-256GB]
+    runs-on: googlefonts-64cores-256GB
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
@@ -147,7 +147,7 @@ jobs:
   check-statics:
     needs:
       - build-statics
-    runs-on: [linux, googlefonts-64cores-256GB]
+    runs-on: googlefonts-64cores-256GB
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
@@ -194,7 +194,7 @@ jobs:
     # Skip running in PRs to save time and resources. Create a "build-*" branch
     # to build all outside a release.
     if: github.event_name != 'pull_request'
-    runs-on: [linux, googlefonts-64cores-256GB]
+    runs-on: googlefonts-64cores-256GB
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
@@ -222,7 +222,7 @@ jobs:
       - build-statics
       - check-statics
       - build-interpolatables
-    runs-on: [linux, googlefonts-64cores-256GB]
+    runs-on: googlefonts-64cores-256GB
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
