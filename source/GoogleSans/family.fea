@@ -386,6 +386,11 @@ feature tnum {
     sub @symbols by @symbols_tab;
 } tnum;
 
+feature zero {
+    sub zero by zero.slash;
+    sub zero.tf by zero.slash.tf;
+} zero;
+
 feature ordn {
     sub [A a a.alt] by ordfeminine;
     sub [O o] by ordmasculine;
@@ -1059,7 +1064,6 @@ lookup smcp_letters {
     sub h by h.sc;
     sub hbar by hbar.sc;
     sub hcircumflex by hcircumflex.sc;
-    sub i by i.sc;
     sub idotless by i.sc;
     sub iacute by iacute.sc;
     sub ibreve by ibreve.sc;
@@ -1508,7 +1512,6 @@ lookup smcp_letters {
     # ligature decomposition
     sub f_f_b by f.sc f.sc b.sc;
     sub f_f_h by f.sc f.sc h.sc;
-    sub f_f_i by f.sc f.sc i.sc;
     sub f_f_j by f.sc f.sc j.sc;
     sub f_f_k by f.sc f.sc k.sc;
     sub f_f_l by f.sc f.sc l.sc;
@@ -1517,7 +1520,6 @@ lookup smcp_letters {
     sub f_b by f.sc b.sc;
     sub f_f by f.sc f.sc;
     sub f_h by f.sc h.sc;
-    sub f_i by f.sc i.sc;
     sub f_j by f.sc j.sc;
     sub f_k by f.sc k.sc;
     sub f_l by f.sc l.sc;
@@ -1531,6 +1533,18 @@ lookup smcp_letters {
 lookup smcp_NOR_localeng {
     sub [eng eng.sc] by eng.alt.sc;
 } smcp_NOR_localeng;
+
+lookup smcp_i {
+    sub i by i.sc;
+    sub f_f_i by f.sc f.sc i.sc;
+    sub f_i by f.sc i.sc;    
+} smcp_i;
+
+lookup smcp_TRK_i {
+    sub i by idotaccent.sc;
+    sub f_f_i by f.sc f.sc idotaccent.sc;
+    sub f_i by f.sc idotaccent.sc;   
+} smcp_TRK_i;
 
 # This lookup needs to be after the main contents of both c2sc and smcp
 # so that it happens after the small caps have been intruduced.
@@ -1549,10 +1563,35 @@ feature c2sc {
 
 feature smcp {
     lookup smcp_letters;
+    lookup smcp_i;
     lookup c2sc_smcp_combining_sc;
     lookup armn_smcp_substitution;
     lookup armn_smcp_contextual_substitution;
     script latn;
+    language AZE exclude_dflt;
+    lookup smcp_letters;
+    lookup smcp_TRK_i;
+    lookup c2sc_smcp_combining_sc;
+    language CRT exclude_dflt;
+    lookup smcp_letters;
+    lookup smcp_TRK_i;
+    lookup c2sc_smcp_combining_sc;
+    language GAG exclude_dflt;
+    lookup smcp_letters;
+    lookup smcp_TRK_i;
+    lookup c2sc_smcp_combining_sc;
+    language KAZ exclude_dflt;
+    lookup smcp_letters;
+    lookup smcp_TRK_i;
+    lookup c2sc_smcp_combining_sc;
+    language TAT exclude_dflt;
+    lookup smcp_letters;
+    lookup smcp_TRK_i;
+    lookup c2sc_smcp_combining_sc;
+    language TRK exclude_dflt;
+    lookup smcp_letters;
+    lookup smcp_TRK_i;
+    lookup c2sc_smcp_combining_sc;
     language ISM;
     lookup smcp_NOR_localeng;
     language LSM;
