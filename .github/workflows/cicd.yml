@@ -20,7 +20,7 @@ on:
 
 jobs:
   lint-sources:
-    runs-on: googlefonts-64cores-256GB
+    runs-on: ubuntu-latest
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
@@ -35,7 +35,7 @@ jobs:
           ufolint source/GoogleSans/*.ufo
 
   lint-scripts:
-    runs-on: googlefonts-64cores-256GB
+    runs-on: ubuntu-latest
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
@@ -222,7 +222,7 @@ jobs:
       - build-statics
       - check-statics
       - build-interpolatables
-    runs-on: googlefonts-64cores-256GB
+    runs-on: ubuntu-latest
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
