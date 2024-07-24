@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -39,7 +39,7 @@ jobs:
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -54,7 +54,7 @@ jobs:
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -77,7 +77,7 @@ jobs:
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -126,7 +126,7 @@ jobs:
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -151,7 +151,7 @@ jobs:
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -198,7 +198,7 @@ jobs:
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -226,7 +226,7 @@ jobs:
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
