@@ -56,24 +56,19 @@ include(malayalam.fea)
 @latn_CombiningTopAccents_sc = [acutecomb.sc brevecomb.sc caroncomb.sc circumflexcomb.sc dieresiscomb.sc dotaccentcomb.sc gravecomb.sc hookabovecomb.sc hungarumlautcomb.sc macroncomb.sc ringcomb.sc tildecomb.sc brevecomb_acutecomb.sc brevecomb_gravecomb.sc brevecomb_hookabovecomb.sc brevecomb_tildecomb.sc circumflexcomb_acutecomb.sc circumflexcomb_gravecomb.sc circumflexcomb_hookabovecomb.sc circumflexcomb_tildecomb.sc brevecombcy.sc];
 @latn_CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb];
 
-# Utility lookups for the /ij/acutecomb decomposition
+# Utility lookups for ccmp_ij_acute
 lookup ij_to_iacute { sub ij by iacute; sub IJ by Iacute; } ij_to_iacute;
-lookup acutecomb_to_j_acutecomb { sub acutecomb' by j acutecomb; } acutecomb_to_j_acutecomb;
+lookup acutecomb_to_jdotless_acutecombcap { sub acutecomb' by jdotless acutecomb; } acutecomb_to_jdotless_acutecombcap;
 lookup acutecomb_to_J_acutecomb { sub acutecomb' by J acutecomb; } acutecomb_to_J_acutecomb;
 
 feature ccmp {
     # ===============
     # BEGIN LATIN
     # ===============
-    lookup ccmp_decompose_legacy_ij_ligature {
-        # Decompose the legacy Unicode-encoded ij/IJ ligature
-        # Also apply the acutecomb on /ij/IJ in all languages
-        # See https://github.com/googlefonts/googlesans/pull/517#issuecomment-1262476039
-        sub ij' lookup ij_to_iacute acutecomb' lookup acutecomb_to_j_acutecomb;
+    lookup ccmp_ij_acute {
+        sub ij' lookup ij_to_iacute acutecomb' lookup acutecomb_to_jdotless_acutecombcap;
         sub IJ' lookup ij_to_iacute acutecomb' lookup acutecomb_to_J_acutecomb;
-        sub ij' by i j;
-        sub IJ' by I J;
-    } ccmp_decompose_legacy_ij_ligature;
+    } ccmp_ij_acute;
 
     lookup ccmp_Other_1 {
         lookupflag UseMarkFilteringSet @latn_CombiningTopAccents; 
@@ -210,16 +205,6 @@ feature locl {
     script latn;
     language CAT;
     sub L' periodcentered' L by Ldot;
-    language NLD;
-    ignore sub Iacute J' acutecomb.cap;
-    ignore sub I acutecomb.cap J' acutecomb.cap;
-    # Need for ignore sub to not add a second acutecomb.cap if one is already provided
-    sub Iacute J' by J acutecomb.cap;
-    sub I acutecomb.cap J' by J acutecomb.cap;
-    # No need for ignore sub because if there was already an acutecomb,
-    # the j would be jdotless from the ccmp
-    sub iacute j' by jdotless acutecomb;
-    sub idotless acutecomb j' by jdotless acutecomb;
     language ROM;
     sub Scedilla by Scommaaccent;
     sub scedilla by scommaaccent;
