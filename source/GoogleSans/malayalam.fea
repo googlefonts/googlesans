@@ -125,7 +125,7 @@ feature akhn {
     } MALM_dflt_akhn_chilluForms;
 
     lookup MALM_dflt_akhn_chilluConjuncts {
-        sub nChillu-malayalam rra-malayalam by n_rra-malayalam;
+        sub nChillu-malayalam halant-malayalam rra-malayalam by n_rra-malayalam;
     } MALM_dflt_akhn_chilluConjuncts;
 
 } akhn;
