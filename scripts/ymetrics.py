@@ -14,13 +14,15 @@
 
 import sys
 import unicodedata
+from pathlib import Path
 
-from fontTools.ttLib import TTFont
-from fontTools.pens.boundsPen import BoundsPen
+import glyph_to_svg
 from fontTools import unicodedata as ft_unicodedata
+from fontTools.pens.boundsPen import BoundsPen
+from fontTools.ttLib import TTFont
 
 
-def report_glyphs(font_path):
+def report_glyphs(font_path: Path) -> None:
     # fonttools TTFont object
     tt = TTFont(font_path)
 
@@ -101,6 +103,8 @@ def report_glyphs(font_path):
                 if uni_script not in bad_metrics_dict:
                     bad_metrics_dict[uni_script] = []
 
+                severity = max(typo_descender - y_min, y_max - typo_ascender)
+
                 bad_metrics_dict[uni_script].append(
                     {
                         "glyph_name": glyph_name,
@@ -111,6 +115,7 @@ def report_glyphs(font_path):
                         "uni_block": uni_block,
                         "uni_category": uni_category,
                         "error_string": error_string,
+                        "severity": severity,
                     }
                 )
 
@@ -119,9 +124,9 @@ def report_glyphs(font_path):
                 f"Glyph '{glyph_name}' missing yMin and/or yMax value. (Script: {uni_script})"
             )
 
-    # ~~~~~~~~~~~~~~~
-    #   Reporting
-    # ~~~~~~~~~~~~~~~
+    # ~~~~~~~~~~~~~~~~~~
+    #   Text Reporting
+    # ~~~~~~~~~~~~~~~~~~
 
     # overall script results
     if len(bad_metrics_dict) > 0:
@@ -144,7 +149,107 @@ def report_glyphs(font_path):
     for error_string in error_list:
         print(error_string)
 
+    # ~~~~~~~~~~~~~~~~~~
+    #   HTML Reporting
+    # ~~~~~~~~~~~~~~~~~~
+
+    if len(bad_metrics_dict) > 0:
+        sorted_scripts = sorted(bad_metrics_dict.keys())
+
+        script_sections = []
+        for script_name in sorted_scripts:
+            glyph_sections = []
+            for bad_glyph in sorted(
+                bad_metrics_dict[script_name],
+                key=lambda obj: (-obj["severity"], obj["glyph_name"]),
+            ):
+                glyph_sections.append(
+                    f"""
+                        <li>
+                            <figure>
+                                {glyph_to_svg.draw_with_metrics(tt, bad_glyph["glyph_name"])}
+                                <figcaption>{bad_glyph["glyph_name"]}</figcaption>
+                            </figure>
+                        </li>
+                    """
+                )
+            glyph_sections = "\n".join(glyph_sections)
+
+            script_sections.append(
+                f"""
+                    <details>
+                        <summary><h2>{script_name} ({len(bad_metrics_dict[script_name])})</h2></summary>
+                        <ul class="drawn">
+                            {glyph_sections}
+                        </ul>
+                    </details>
+                """
+            )
+        script_sections = "\n".join(script_sections)
+
+        style = """
+            body {
+                max-width: 1280px;
+                margin: auto;
+
+                font-family: sans-serif;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            details {
+                margin: 4rem 0;
+            }
+
+            summary h2 {
+                display: inline;
+            }
+
+            ul.drawn {
+                list-style: none;
+                margin-left: 0;
+                padding-left: 0;
+
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+            }
+
+            .drawn figure {
+                margin: 0;
+            }
+
+            .drawn figcaption {
+                font-family: monospace;
+                text-align: center;
+            }
+
+            .drawn svg {
+                height: 256px;
+                border: 1px grey dashed;
+                padding: 1rem;
+            }
+        """
+
+        template = f"""
+            <!DOCTYPE html>
+            <html>
+                <head>
+                    <title>Tall Glyphs</title>
+                    <style>{style}</style>
+                </head>
+                <body>
+                    <h1>Tall Glyphs</h1>
+                    {script_sections}
+                </body>
+            </html>
+        """
+
+        Path(f"report_{font_path.stem}.html").write_text(template)
+
 
 if __name__ == "__main__":
     for font_path in sys.argv[1:]:
-        report_glyphs(font_path)
+        report_glyphs(Path(font_path))
