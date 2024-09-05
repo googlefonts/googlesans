@@ -15,8 +15,10 @@
 FONT_BUILD_DIR=build/GoogleSans
 STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
 VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
+ANDROID_BUILD_DIR=$(FONT_BUILD_DIR)/android
 MASTER_UFO_DIR=$(FONT_BUILD_DIR)/master_ufo
 INSTANCE_UFO_DIR=$(FONT_BUILD_DIR)/instance_ufo
+SUBSETS_DIR=source/GoogleSans/subsets
 VENV_DIR=.venv
 
 all: gs-static gs-compatible-masters  # gs-vf is built by gs-static
@@ -58,6 +60,59 @@ gs-vf-upright gs-vf-italic:
 
 gs-ufo2glyphs:
 	cd source && $(MAKE) $@
+
+gs-android: gs-vf $(shell find $(SUBSETS_DIR) -type f -name '*.txt')
+	mkdir -p $(ANDROID_BUILD_DIR)
+	"$(VENV_DIR)/bin/pyftsubset" build/GoogleSans/variable/GoogleSans[GRAD,opsz,wght].ttf \
+		--unicodes-file=source/GoogleSans/subsets/Armn.txt \
+		--unicodes-file=source/GoogleSans/subsets/Beng.txt \
+		--unicodes-file=source/GoogleSans/subsets/Cyrl.txt \
+		--unicodes-file=source/GoogleSans/subsets/Deva.txt \
+		--unicodes-file=source/GoogleSans/subsets/Ethi.txt \
+		--unicodes-file=source/GoogleSans/subsets/Geor.txt \
+		--unicodes-file=source/GoogleSans/subsets/Grek.txt \
+		--unicodes-file=source/GoogleSans/subsets/Gujr.txt \
+		--unicodes-file=source/GoogleSans/subsets/Guru.txt \
+		--unicodes-file=source/GoogleSans/subsets/Hebr.txt \
+		--unicodes-file=source/GoogleSans/subsets/Khmr.txt \
+		--unicodes-file=source/GoogleSans/subsets/Knda.txt \
+		--unicodes-file=source/GoogleSans/subsets/Laoo.txt \
+		--unicodes-file=source/GoogleSans/subsets/Latn.txt \
+		--unicodes-file=source/GoogleSans/subsets/Mlym.txt \
+		--unicodes-file=source/GoogleSans/subsets/Orya.txt \
+		--unicodes-file=source/GoogleSans/subsets/Sinh.txt \
+		--unicodes-file=source/GoogleSans/subsets/Taml.txt \
+		--unicodes-file=source/GoogleSans/subsets/Telu.txt \
+		--unicodes-file=source/GoogleSans/subsets/Thai.txt \
+		--unicodes-file=source/GoogleSans/subsets/Zinh.txt \
+		--unicodes-file=source/GoogleSans/subsets/Zyyy.txt \
+		--unicodes-file=source/GoogleSans/subsets/Zzzz.txt \
+		--output-file=build/GoogleSans/android/GoogleSans[GRAD,opsz,wght]-Android.ttf
+	"$(VENV_DIR)/bin/pyftsubset" build/GoogleSans/variable/GoogleSans-Italic[GRAD,opsz,wght].ttf \
+		--unicodes-file=source/GoogleSans/subsets/Armn.txt \
+		--unicodes-file=source/GoogleSans/subsets/Beng.txt \
+		--unicodes-file=source/GoogleSans/subsets/Cyrl.txt \
+		--unicodes-file=source/GoogleSans/subsets/Deva.txt \
+		--unicodes-file=source/GoogleSans/subsets/Ethi.txt \
+		--unicodes-file=source/GoogleSans/subsets/Geor.txt \
+		--unicodes-file=source/GoogleSans/subsets/Grek.txt \
+		--unicodes-file=source/GoogleSans/subsets/Gujr.txt \
+		--unicodes-file=source/GoogleSans/subsets/Guru.txt \
+		--unicodes-file=source/GoogleSans/subsets/Hebr.txt \
+		--unicodes-file=source/GoogleSans/subsets/Khmr.txt \
+		--unicodes-file=source/GoogleSans/subsets/Knda.txt \
+		--unicodes-file=source/GoogleSans/subsets/Laoo.txt \
+		--unicodes-file=source/GoogleSans/subsets/Latn.txt \
+		--unicodes-file=source/GoogleSans/subsets/Mlym.txt \
+		--unicodes-file=source/GoogleSans/subsets/Orya.txt \
+		--unicodes-file=source/GoogleSans/subsets/Sinh.txt \
+		--unicodes-file=source/GoogleSans/subsets/Taml.txt \
+		--unicodes-file=source/GoogleSans/subsets/Telu.txt \
+		--unicodes-file=source/GoogleSans/subsets/Thai.txt \
+		--unicodes-file=source/GoogleSans/subsets/Zinh.txt \
+		--unicodes-file=source/GoogleSans/subsets/Zyyy.txt \
+		--unicodes-file=source/GoogleSans/subsets/Zzzz.txt \
+		--output-file=build/GoogleSans/android/GoogleSans-Italic[GRAD,opsz,wght]-Android.ttf
 
 # ------------------------------
 # Build dependency management
