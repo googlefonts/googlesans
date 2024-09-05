@@ -35,8 +35,8 @@ def draw_with_metrics(ttf: TTFont, glyph_name: str) -> str:
         "green": [head.yMax, head.yMin],
     }
 
-    highest = max(value for values in lines.values() for value in values)
-    lowest = min(value for values in lines.values() for value in values)
+    highest = max(value for values in lines.values() for value in values) + 10
+    lowest = min(value for values in lines.values() for value in values) - 10
 
     # Draw glyph to SVG
     glyph_set = ttf.getGlyphSet()
@@ -53,7 +53,7 @@ def draw_with_metrics(ttf: TTFont, glyph_name: str) -> str:
 
     # Construct SVG
     line_elements = "\n".join(
-        f'<line x1="{x_min}" x2="{x_max}" y1="{highest - height}" y2="{highest - height}" stroke="{colour}" stroke-width="24" />'
+        f'<line x1="{x_min}" x2="{x_max}" y1="{highest - height}" y2="{highest - height}" stroke="{colour}" stroke-width="10" />'
         for colour, heights in lines.items()
         for height in heights
     )
