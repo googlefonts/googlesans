@@ -25,6 +25,7 @@ python scripts/one-off/make-subset-lists.py
 from __future__ import annotations
 
 from pathlib import Path
+import re
 
 from ufoLib2 import Font
 from fontTools.unicodedata import script as unicodedata_script
@@ -42,6 +43,8 @@ TARGET_FOLDER = Path("source/GoogleSans/subsets")
 def main():
     font = Font.open("source/GoogleSans/GoogleSans-opsz18-wght380-GRAD0.ufo")
     glyph_order = makeOfficialGlyphOrder(font)
+
+    # Start from a mechanical sorting based on GSUB closure
     cmap = makeUnicodeToGlyphNameMapping(font, glyph_order)
     feature_file = parseLayoutFeatures(font)
     gsub = compileGSUB(feature_file, glyph_order)
@@ -49,10 +52,41 @@ def main():
         unicodedata_script, cmap, gsub
     )
 
+    # Fixup the data when we know more than the code point can tell
+    pattern_to_scripts = {
+        "Zinh": {
+            # acute-deva and others with -deva in the name should be in the Deva list
+            r"-deva$": "Deva",
+        },
+        "Zyyy": {
+            # Same in Zyyy
+            r"-deva$": "Deva",
+            # Zyyy glyphs with .loclXXXX suffix should move to that script's list, e.g.
+            # colon.loclBENG should go to Beng.txt
+            r"\.loclBENG": "Beng",
+            r"\.loclDEVA": "Deva",
+            r"\.loclGEO": "Geor",
+            r"\.loclGURM": "Guru",
+            r"\.loclKNDA": "Knda",
+            r"\.loclMALM": "Mlym",
+            r"\.loclODIA": "Orya",
+            r"\.loclSINH": "Sinh",
+            r"\.loclTAML": "Taml",
+            r"\.loclTELU": "Telu",
+        },
+    }
+    for source, pattern_to_script in pattern_to_scripts.items():
+        for pattern, script in pattern_to_script.items():
+            script_glyphs = [
+                g for g in glyphs_by_script[source] if re.search(pattern, g)
+            ]
+            glyphs_by_script[script].update(script_glyphs)
+            glyphs_by_script[source].difference_update(script_glyphs)
+
     TARGET_FOLDER.mkdir(parents=True, exist_ok=True)
     for script, glyphs in glyphs_by_script.items():
         path = TARGET_FOLDER / f"{script}.txt"
-        path.write_text("\n".join(sorted(glyphs)))
+        path.write_text("\n".join(sorted(glyphs)) + "\n")
 
 
 if __name__ == "__main__":
