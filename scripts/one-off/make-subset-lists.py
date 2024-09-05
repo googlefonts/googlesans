@@ -28,7 +28,7 @@ from pathlib import Path
 import re
 
 from ufoLib2 import Font
-from fontTools.unicodedata import script as unicodedata_script
+from fontTools import unicodedata
 from ufo2ft.featureCompiler import parseLayoutFeatures
 from ufo2ft.util import (
     classifyGlyphs,
@@ -49,11 +49,26 @@ def main():
     feature_file = parseLayoutFeatures(font)
     gsub = compileGSUB(feature_file, glyph_order)
     glyphs_by_script: dict[str, set[str]] = classifyGlyphs(
-        unicodedata_script, cmap, gsub
+        # Script extension gives better results than just script but creates too
+        # many lists, so we trim down the amount of lists to only the supported
+        # scripts of Google Sans.
+        unicodedata.script_extension,
+        cmap,
+        gsub,
     )
+
+    # Basic scripts really supported by Google Sans
+    scripts = set(unicodedata.script(chr(u)) for g in font for u in g.unicodes)
+    for script in list(glyphs_by_script):
+        if script not in scripts:
+            del glyphs_by_script[script]
 
     # Fixup the data when we know more than the code point can tell
     pattern_to_scripts = {
+        "Arab": {
+            # There's only 1 Arabic glyph, move it to common.
+            r".*": "Zyyy"
+        },
         "Zinh": {
             # acute-deva and others with -deva in the name should be in the Deva list
             r"-deva$": "Deva",
@@ -74,19 +89,48 @@ def main():
             r"\.loclTAML": "Taml",
             r"\.loclTELU": "Telu",
         },
+        # Delete the locl[SOMETHING_ELSE] from each script's list
+        "Beng": {r"\.locl(?!BENG)": None},
+        "Deva": {r"\.locl(?!DEVA|MAR|NEP)": None},
+        "Geor": {r"\.locl(?!GEO)": None},
+        "Guru": {r"\.locl(?!GURM)": None},
+        "Knda": {r"\.locl(?!KNDA)": None},
+        "Mlym": {r"\.locl(?!MALM)": None},
+        "Orya": {r"\.locl(?!ODIA)": None},
+        "Sinh": {r"\.locl(?!SINH)": None},
+        "Taml": {r"\.locl(?!TAML)": None},
+        "Telu": {r"\.locl(?!TELU)": None},
+        "Gujr": {r"\.locl": None},
     }
     for source, pattern_to_script in pattern_to_scripts.items():
         for pattern, script in pattern_to_script.items():
             script_glyphs = [
                 g for g in glyphs_by_script[source] if re.search(pattern, g)
             ]
-            glyphs_by_script[script].update(script_glyphs)
+            if script is not None:
+                glyphs_by_script[script].update(script_glyphs)
             glyphs_by_script[source].difference_update(script_glyphs)
+            # Delete empty sets
+            if not glyphs_by_script[source]:
+                del glyphs_by_script[source]
 
+    # Sanity check: all glyphs with a code point should be in one list or the other.
+    # Glyphs without code points might not be listed (e.g. components used by
+    # other glyphs) and that's fine because they will automatically get picked
+    # up by pyftsubset.
+    unlisted = set(g.name for g in font if g.name is not None and g.unicode is not None).difference(*list(glyphs_by_script.values()))
+    assert not unlisted, f"Some glyphs were unlisted: {", ".join(sorted(unlisted))}"
+
+    # Write out lists of code points. pyftsubset will do the GSUB closure too.
     TARGET_FOLDER.mkdir(parents=True, exist_ok=True)
     for script, glyphs in glyphs_by_script.items():
+        lines = []
+        for g in sorted(glyphs):
+            lines.append(f"# {g}")
+            for u in font[g].unicodes:
+                lines.append(f"U+{u:04X}")
         path = TARGET_FOLDER / f"{script}.txt"
-        path.write_text("\n".join(sorted(glyphs)) + "\n")
+        path.write_text("\n".join(lines) + "\n")
 
 
 if __name__ == "__main__":
