@@ -20,6 +20,7 @@ import glyph_to_svg
 from fontTools import unicodedata as ft_unicodedata
 from fontTools.pens.boundsPen import BoundsPen
 from fontTools.ttLib import TTFont
+from ufo2ft.util import classifyGlyphs
 
 
 def report_glyphs(font_path: Path) -> None:
@@ -37,6 +38,16 @@ def report_glyphs(font_path: Path) -> None:
     # create results data structures for reporting
     bad_metrics_dict = {}
     error_list = []
+
+    # Prepare script for each glyph using GSUB closure for better reporting
+    glyphs_by_script: dict[str, set[str]] = classifyGlyphs(
+        ft_unicodedata.script_extension,
+        cmap_table,
+        tt["GSUB"],
+    )
+    glyph_to_script = {
+        g: script for script, glyphs in glyphs_by_script.items() for g in glyphs
+    }
 
     # testing block
     for glyph_name in tt.getGlyphOrder():
@@ -60,7 +71,7 @@ def report_glyphs(font_path: Path) -> None:
         try:
             for codepoint, name in cmap_table.items():
                 if name == glyph_name:
-                    uni_script_code = ft_unicodedata.script(chr(codepoint))
+                    uni_script_code = glyph_to_script.get(name)
                     uni_script = ft_unicodedata.script_name(
                         uni_script_code, default="Unknown"
                     )
@@ -242,6 +253,12 @@ def report_glyphs(font_path: Path) -> None:
                 </head>
                 <body>
                     <h1>Tall Glyphs</h1>
+                    <p>
+                        Lines legend:<br>
+                        <span style="color: green">green: [head.yMax, head.yMin]</span><br>
+                        <span style="color: blue">blue: [os2.usWinAscent, -os2.usWinDescent]</span><br>
+                        <span style="color: red">red: [os2.sTypoAscender, os2.sTypoDescender] = clipping limit for Android</span>
+                    </p>
                     {script_sections}
                 </body>
             </html>
