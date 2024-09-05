@@ -86,7 +86,7 @@ def report_glyphs(font_path):
 
         bad_flag = None
 
-        if y_min and y_max:
+        if y_min is not None and y_max is not None:
             if y_min < typo_descender and y_max <= typo_ascender:
                 error_string = f"yMin ({y_min}) below typoDescender ({typo_descender})"
                 bad_flag = True
