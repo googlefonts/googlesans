@@ -94,7 +94,7 @@ def report_glyphs(font_path):
                 error_string = f"yMax ({y_max}) above typoAscender ({typo_ascender})"
                 bad_flag = True
             elif y_min < typo_descender and y_max > typo_ascender:
-                error_string = "yMin ({y_min}) below typoDescender ({typo_descender}) and yMax ({y_max}) above typoAscender ({typo_ascender})"
+                error_string = f"yMin ({y_min}) below typoDescender ({typo_descender}) and yMax ({y_max}) above typoAscender ({typo_ascender})"
                 bad_flag = True
 
             if bad_flag is True:
