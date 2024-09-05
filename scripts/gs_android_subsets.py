@@ -23,6 +23,7 @@ build/GoogleSans/android. Each subset includes Latin.
 """
 
 from argparse import ArgumentParser
+import multiprocessing
 from pathlib import Path
 
 from fontTools.subset import main as pyftsubset, Subsetter
@@ -38,20 +39,25 @@ LATIN_SUBSET = SUBSETS_DIR / "Latn.txt"
 def main(ttfs: list[Path]) -> None:
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
 
-    for ttf in ttfs:
-        extract_subsets(ttf)
+    with multiprocessing.Pool() as pool:
+        for ttf in ttfs:
+            pool.apply_async(extract_subsets, (ttf,))
+        pool.close()
+        pool.join()
 
 
 def extract_subsets(base_ttf: Path) -> None:
     for unicodes_list_path in SUBSET_FILES:
         output_path = BUILD_DIR / f"{base_ttf.stem}-{unicodes_list_path.stem}.ttf"
+        print(f"Making {output_path} with pyftsubset")
+
         args = (
             str(base_ttf),
             f"--unicodes-file={LATIN_SUBSET}",
             f"--unicodes-file={unicodes_list_path}",
             f"--output-file={output_path}",
         )
-        print(f"pyftsubset {' '.join(args)}")
+        # print(f"pyftsubset {' '.join(args)}")
         try:
             pyftsubset(args)
         except Subsetter.MissingGlyphsSubsettingError as e:
