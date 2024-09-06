@@ -71,11 +71,14 @@ jobs:
         with:
           name: intermediate-fonts
           path: build/GoogleSans/.intermediate
+          include-hidden-files: true
+          if-no-files-found: error
       - name: Upload variable fonts
         uses: actions/upload-artifact@v4
         with:
           name: variable-fonts
           path: build/GoogleSans/variable
+          if-no-files-found: error
 
   build-android:
     if: github.event_name != 'pull_request'
@@ -98,18 +101,19 @@ jobs:
       - name: Build Android fonts
         run: |
           make setup
-          # Mitigate rebuilds
-          touch build/GoogleSans/variable/*.ttf
+          # Have to touch all the files else Make will notice that the
+          # intermediates are newer than the VFs and try to rebuild them
           mkdir -p build/GoogleSans/.intermediate
           touch build/GoogleSans/.intermediate/GoogleSans[GRAD,opsz,wght].ttf
           touch build/GoogleSans/.intermediate/GoogleSans-Italic[GRAD,opsz,wght].ttf
+          touch build/GoogleSans/variable/*.ttf
           . .venv/bin/activate && make -j gs-android
       - name: Upload Android fonts
         uses: actions/upload-artifact@v4
         with:
           name: android-fonts
-          path: |
-            build/GoogleSans/android
+          path: build/GoogleSans/android
+          if-no-files-found: error
 
   check-variable:
     needs:
@@ -189,6 +193,7 @@ jobs:
         with:
           name: static-fonts
           path: build/GoogleSans/static
+          if-no-files-found: error
 
   check-statics:
     needs:
