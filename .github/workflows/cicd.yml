@@ -263,25 +263,28 @@ jobs:
       - name: Set env variables
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-      # TODO: no `name` means download all artifacts, but put them into own dir?
-      - uses: actions/download-artifact@v3
+      - name: Download variable fonts
+        uses: actions/download-artifact@v3
         with:
           name: variable-fonts
-          path: 'build/GoogleSans'
-      - uses: actions/download-artifact@v3
+          path: build/GoogleSans
+      - name: Download Android fonts
+        uses: actions/download-artifact@v3
         with:
           name: android-fonts
-          path: 'build/GoogleSans/android'
-      - uses: actions/download-artifact@v3
+          path: build/GoogleSans/android
+      - name: Download static fonts
+        uses: actions/download-artifact@v3
         with:
           name: static-fonts
-          path: 'build/GoogleSans/static'
-      - uses: actions/download-artifact@v3
+          path: build/GoogleSans/static
+      - name: Download interpolatable fonts
+        uses: actions/download-artifact@v3
         with:
           name: interpolatable-fonts
-          path: 'build/GoogleSans/interpolatable'
+          path: build/GoogleSans/interpolatable
       - name: Delete intermediate VFs
-        run: rm -r build/GoogleSans/.intermediate
+        run: rm -rfv build/GoogleSans/.intermediate
       - name: Create build artifact zip archive
         run: zip GoogleSans-${{ steps.vars.outputs.tag }}.zip -r build/GoogleSans
       - name: Create Google Sans release
