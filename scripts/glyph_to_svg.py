@@ -20,6 +20,8 @@ from fontTools.ttLib import TTFont
 from fontTools.ttLib.tables._h_e_a_d import table__h_e_a_d as Head
 from fontTools.ttLib.tables.O_S_2f_2 import table_O_S_2f_2 as OS2
 
+import uharfbuzz as hb
+
 
 def draw_with_metrics(ttf: TTFont, glyph_name: str) -> str:
     """Draw a glyph from a TTF as an SVG, including reference lines for common
@@ -65,6 +67,73 @@ def draw_with_metrics(ttf: TTFont, glyph_name: str) -> str:
             preserveAspectRatio="meet">
             <g>
                 <path d="{svg_pen.getCommands()}" />
+            </g>
+            {line_elements}
+        </svg>
+    """
+
+
+def draw_buffer_with_metrics(ttFont: TTFont, hbFont: hb.Font, buffer: hb.Buffer) -> str:
+    # Draw metric lines
+    os2: OS2 = ttFont["OS/2"]  # type: ignore
+    head: Head = ttFont["head"]  # type: ignore
+
+    lines: dict[str, list[int]] = {
+        "rgba(0,0,0,0.2)": [0],
+        "red": [os2.sTypoAscender, os2.sTypoDescender],
+        "blue": [os2.usWinAscent, -os2.usWinDescent],
+        "green": [head.yMax, head.yMin],
+    }
+
+    y_max = max(value for values in lines.values() for value in values) + 10
+    y_min = min(value for values in lines.values() for value in values) - 10
+    x_min = x_max = 0
+
+    paths = []
+
+    # Adapted from https://github.com/simoncozens/vharfbuzz/blob/main/Lib/vharfbuzz/__init__.py#L305
+    # MIT Licence
+    x = y = 0
+    for info, pos in zip(buffer.glyph_infos, buffer.glyph_positions):
+        dx = pos.x_offset
+        dy = pos.y_offset
+        svg_pen = SVGPathPen(ttFont)
+        transform_pen = TransformPen(svg_pen, Identity.scale(y=-1))
+        hbFont.draw_glyph_with_pen(info.codepoint, transform_pen)
+        paths.append(
+            f'<path transform="translate({x + dx}, {-(y + dy)})" '
+            f'd="{svg_pen.getCommands()}" />'
+        )
+
+        if extents := hbFont.get_glyph_extents(info.codepoint):
+            cur_x = x + dx
+            cur_y = y + dy
+            min_x = cur_x + min(extents.x_bearing, 0)
+            min_y = cur_y + min(extents.height + extents.y_bearing, pos.y_advance)
+            max_x = cur_x + max(extents.width + extents.x_bearing, pos.x_advance)
+            max_y = cur_y + max(extents.y_bearing, 0)
+            x_min = min(x_min, min_x)
+            y_min = min(y_min, min_y)
+            x_max = max(x_max, max_x)
+            y_max = max(y_max, max_y)
+
+        x += pos.x_advance
+        y += pos.y_advance
+
+    # Construct SVG
+    line_elements = "\n".join(
+        f'<line x1="{x_min}" x2="{x_max}" y1="{y_max - height}" '
+        f'y2="{y_max - height}" stroke="{colour}" stroke-width="10" />'
+        for colour, heights in lines.items()
+        for height in heights
+    )
+
+    return f"""
+        <svg xmlns="http://www.w3.org/2000/svg"
+            viewBox="{x_min} 0 {x_max - x_min} {y_max - y_min}"
+            preserveAspectRatio="meet">
+            <g transform="translate(0, {y_max})">
+                {"\n".join(paths)}
             </g>
             {line_elements}
         </svg>
