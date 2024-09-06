@@ -24,6 +24,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from pathlib import Path
 import csv
+import random
 
 from fontTools.ttLib import TTFont
 import uharfbuzz as hb
@@ -63,7 +64,7 @@ class Report:
 
 
 def main():
-    test_words = load_test_words()
+    test_words = load_test_words(sample_size_per_list=1000)
 
     reports = []
 
@@ -99,13 +100,15 @@ def main():
     report_csv(reports)
 
 
-def load_test_words() -> list[str]:
+def load_test_words(sample_size_per_list: int | None = None) -> list[str]:
     # return ["Hello", "లాక్ స్క్రీన్ విడ్జెట్‌లు"]  # For testing
     words = []
     for path in (Path(__file__).parent / "diffenator2-data").glob("*.txt"):
-        for word in path.read_text().splitlines():
-            if word:
-                words.append(word)
+        all_words = [word for word in path.read_text().splitlines() if word]
+        if sample_size_per_list is None:
+            words.extend(all_words)
+        else:
+            words.extend(random.sample(all_words, sample_size_per_list))
     return words
 
 
@@ -147,3 +150,7 @@ def report_csv(reports: list[Report]):
         writer.writeheader()
         for report in reports:
             writer.writerow(asdict(report))
+
+
+if __name__ == "__main__":
+    main()
