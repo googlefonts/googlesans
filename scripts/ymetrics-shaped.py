@@ -26,10 +26,10 @@ from pathlib import Path
 import csv
 import json
 import random
-import unicodedata
 from collections import defaultdict
 
 from fontTools.ttLib import TTFont
+from fontTools import unicodedata
 import uharfbuzz as hb
 
 import glyph_to_svg
@@ -37,8 +37,8 @@ import glyph_to_svg
 
 ROOT = Path(__file__).parent.parent
 FONT_PATHS = {
-    "Upright": ROOT / "build/GoogleSans/variable/GoogleSans-Italic[GRAD,opsz,wght].ttf",
-    "Italic": ROOT / "build/GoogleSans/variable/GoogleSans[GRAD,opsz,wght].ttf",
+    "Upright": ROOT / "build/GoogleSans/variable/GoogleSans[GRAD,opsz,wght].ttf",
+    "Italic": ROOT / "build/GoogleSans/variable/GoogleSans-Italic[GRAD,opsz,wght].ttf",
 }
 TEST_LOCATIONS = {
     # "Text Regular GRAD -50":{"opsz": 17, "wght": 400, "GRAD": -50},
@@ -68,7 +68,7 @@ class Report:
 
 
 def main():
-    test_words = load_test_words(sample_size_per_list=1000)
+    test_words = load_test_words(sample_size_per_list=5_000, sample_size_aosp=50_000)
 
     reports: list[Report] = []
 
@@ -98,7 +98,7 @@ def main():
                         ascent_clip=ascent_clip,
                         descent_clip=descent_clip,
                     )
-                    # report_terminal(report)
+                    report_terminal(report)
                     reports.append(report)
 
     report_csv(reports)
@@ -113,10 +113,12 @@ def report_html(reports: list[Report]):
         by_script[report.script].append(report)
 
     script_sections = []
-    for script, reports in by_script.items():
+    for script, reports in sorted(by_script.items()):
         glyph_sections = []
-        worst_ascents = sorted(reports, key=lambda r: -r.ascent_clip)[:10]
-        worst_descents = sorted(reports, key=lambda r: -r.descent_clip)[:10]
+        reports = sorted(reports, key=lambda r: (-r.ascent_clip, -r.descent_clip))
+        worst_ascents = reports[:10]
+        reports = sorted(reports[10:], key=lambda r: (-r.descent_clip, -r.ascent_clip))
+        worst_descents = reports[:10]
         for report in worst_ascents:
             glyph_sections.append(
                 f"""
@@ -148,7 +150,7 @@ def report_html(reports: list[Report]):
 
         script_sections.append(
             f"""
-                    <details>
+                    <details open>
                         <summary><h2>{script}</h2></summary>
                         <ul class="drawn">
                             {"\n".join(glyph_sections)}
@@ -159,8 +161,7 @@ def report_html(reports: list[Report]):
 
     style = """
         body {
-            max-width: 1280px;
-            margin: auto;
+            margin: 1em;
 
             font-family: sans-serif;
         }
@@ -249,12 +250,14 @@ def draw_svg(report: Report) -> str:
     return glyph_to_svg.draw_buffer_with_metrics(tt, font, buffer)
 
 
-def load_test_words(sample_size_per_list: int | None = None) -> list[str]:
+def load_test_words(
+    sample_size_per_list: int | None = None, sample_size_aosp: int | None = None
+) -> list[str]:
     # return ["Hello", "లాక్ స్క్రీన్ విడ్జెట్‌లు"]  # For testing
     words = set()
     for path in (Path(__file__).parent / "diffenator2-data").glob("*.txt"):
         all_words = [word for word in path.read_text().splitlines() if word]
-        if sample_size_per_list is None:
+        if sample_size_per_list is None or sample_size_per_list >= len(all_words):
             words.update(all_words)
         else:
             words.update(random.sample(all_words, sample_size_per_list))
@@ -270,11 +273,21 @@ def load_test_words(sample_size_per_list: int | None = None) -> list[str]:
         }
         # There was probably at least one empty word
         aosp_words.remove("")
+        # Filter out "words" that are a mix of scripts, such
+        # as "<strong>ຕັ້ງເປັນຮູບພື້ນຫຼັງ</strong>"
+        aosp_words = [
+            w
+            for w in aosp_words
+            if len(
+                set(unicodedata.script(c) for c in w).difference("Zinh", "Zyyy", "Zzzz")
+            )
+            <= 1
+        ]
 
-        if sample_size_per_list is None:
+        if sample_size_aosp is None or sample_size_aosp >= len(aosp_words):
             words.update(aosp_words)
         else:
-            words.update(random.sample(list(aosp_words), sample_size_per_list))
+            words.update(random.sample(aosp_words, sample_size_aosp))
     else:
         print(
             "Download the AOSP aosp.json to scripts/diffenator2-data to have",
