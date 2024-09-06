@@ -27,32 +27,33 @@ import csv
 import json
 import random
 import unicodedata
+from collections import defaultdict
 
 from fontTools.ttLib import TTFont
 import uharfbuzz as hb
 
+import glyph_to_svg
+
+
 ROOT = Path(__file__).parent.parent
-FONT_PATHS = [
-    (
-        "Upright",
-        ROOT / "build/GoogleSans/variable/GoogleSans-Italic[GRAD,opsz,wght].ttf",
-    ),
-    ("Italic", ROOT / "build/GoogleSans/variable/GoogleSans[GRAD,opsz,wght].ttf"),
-]
-TEST_LOCATIONS = [
-    # ("Text Regular GRAD -50", {"opsz": 17, "wght": 400, "GRAD": -50}),
-    ("Text Regular GRAD 0", {"opsz": 17, "wght": 400, "GRAD": 0}),
-    # ("Text Regular GRAD 200", {"opsz": 17, "wght": 400, "GRAD": 200}),
-    # ("Text Bold GRAD -50", {"opsz": 17, "wght": 700, "GRAD": -50}),
-    ("Text Bold GRAD 0", {"opsz": 17, "wght": 700, "GRAD": 0}),
-    # ("Text Bold GRAD 200", {"opsz": 17, "wght": 700, "GRAD": 200}),
-    # ("Display Regular GRAD -50", {"opsz": 18, "wght": 400, "GRAD": -50}),
-    ("Display Regular GRAD 0", {"opsz": 18, "wght": 400, "GRAD": 0}),
-    # ("Display Regular GRAD 200", {"opsz": 18, "wght": 400, "GRAD": 200}),
-    # ("Display Bold GRAD -50", {"opsz": 18, "wght": 700, "GRAD": -50}),
-    ("Display Bold GRAD 0", {"opsz": 18, "wght": 700, "GRAD": 0}),
-    # ("Display Bold GRAD 200", {"opsz": 18, "wght": 700, "GRAD": 200}),
-]
+FONT_PATHS = {
+    "Upright": ROOT / "build/GoogleSans/variable/GoogleSans-Italic[GRAD,opsz,wght].ttf",
+    "Italic": ROOT / "build/GoogleSans/variable/GoogleSans[GRAD,opsz,wght].ttf",
+}
+TEST_LOCATIONS = {
+    # "Text Regular GRAD -50":{"opsz": 17, "wght": 400, "GRAD": -50},
+    "Text Regular GRAD 0": {"opsz": 17, "wght": 400, "GRAD": 0},
+    # "Text Regular GRAD 200":{"opsz": 17, "wght": 400, "GRAD": 200},
+    # "Text Bold GRAD -50":{"opsz": 17, "wght": 700, "GRAD": -50},
+    "Text Bold GRAD 0": {"opsz": 17, "wght": 700, "GRAD": 0},
+    # "Text Bold GRAD 200":{"opsz": 17, "wght": 700, "GRAD": 200},
+    # "Display Regular GRAD -50":{"opsz": 18, "wght": 400, "GRAD": -50},
+    "Display Regular GRAD 0": {"opsz": 18, "wght": 400, "GRAD": 0},
+    # "Display Regular GRAD 200":{"opsz": 18, "wght": 400, "GRAD": 200},
+    # "Display Bold GRAD -50":{"opsz": 18, "wght": 700, "GRAD": -50},
+    "Display Bold GRAD 0": {"opsz": 18, "wght": 700, "GRAD": 0},
+    # "Display Bold GRAD 200":{"opsz": 18, "wght": 700, "GRAD": 200},
+}
 AOSP_DUMP = Path(__file__).parent / "diffenator2-data/aosp.json"
 
 
@@ -69,9 +70,9 @@ class Report:
 def main():
     test_words = load_test_words(sample_size_per_list=1000)
 
-    reports = []
+    reports: list[Report] = []
 
-    for font_name, font_path in FONT_PATHS:
+    for font_name, font_path in FONT_PATHS.items():
         tt = TTFont(font_path)
         os2_table = tt["OS/2"]
         typo_ascender = os2_table.sTypoAscender
@@ -81,7 +82,7 @@ def main():
         face = hb.Face(blob)
         font = hb.Font(face)
 
-        for loc_name, loc in TEST_LOCATIONS:
+        for loc_name, loc in TEST_LOCATIONS.items():
             font.set_variations(loc)
             for word in test_words:
                 script, ascent, descent = measure_vertical(font, word)
@@ -101,9 +102,151 @@ def main():
                     reports.append(report)
 
     report_csv(reports)
+    report_html(reports)
 
+
+def report_html(reports: list[Report]):
     # Select the worst N reports for each script, generate an HTML report
     # showing those words with lines.
+    by_script = defaultdict(list)
+    for report in reports:
+        by_script[report.script].append(report)
+
+    script_sections = []
+    for script, reports in by_script.items():
+        glyph_sections = []
+        worst_ascents = sorted(reports, key=lambda r: -r.ascent_clip)[:10]
+        worst_descents = sorted(reports, key=lambda r: -r.descent_clip)[:10]
+        for report in worst_ascents:
+            glyph_sections.append(
+                f"""
+                        <li>
+                            <figure>
+                                {draw_svg(report)}
+                                <figcaption>
+                                {report.word} (ascent_clip {report.ascent_clip} descent_clip {report.descent_clip})<br>
+                                {report.font} {report.loc}
+                                </figcaption>
+                            </figure>
+                        </li>
+                    """
+            )
+        for report in worst_descents:
+            glyph_sections.append(
+                f"""
+                        <li>
+                            <figure>
+                                {draw_svg(report)}
+                                <figcaption>
+                                {report.word} (ascent_clip {report.ascent_clip} descent_clip {report.descent_clip})<br>
+                                {report.font} {report.loc}
+                                </figcaption>
+                            </figure>
+                        </li>
+                    """
+            )
+
+        script_sections.append(
+            f"""
+                    <details>
+                        <summary><h2>{script}</h2></summary>
+                        <ul class="drawn">
+                            {"\n".join(glyph_sections)}
+                        </ul>
+                    </details>
+                """
+        )
+
+    style = """
+        body {
+            max-width: 1280px;
+            margin: auto;
+
+            font-family: sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        details {
+            margin: 4rem 0;
+        }
+
+        summary h2 {
+            display: inline;
+        }
+
+        ul.drawn {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .drawn figure {
+            margin: 0;
+        }
+
+        .drawn figcaption {
+            font-family: monospace;
+            text-align: center;
+        }
+
+        .drawn svg {
+            height: 256px;
+            border: 1px grey dashed;
+            padding: 1rem;
+        }
+    """
+
+    template = f"""
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title>Tall Glyphs</title>
+                <meta charset="utf-8"/>
+                <style>{style}</style>
+            </head>
+            <body>
+                <h1>Tall Glyphs</h1>
+                <p>
+                    Lines legend:<br>
+                    <span style="color: green">
+                        green: [head.yMax, head.yMin]
+                    </span><br>
+                    <span style="color: blue">
+                        blue: [os2.usWinAscent, -os2.usWinDescent]
+                    </span><br>
+                    <span style="color: red">
+                        red: [os2.sTypoAscender, os2.sTypoDescender]
+                        = clipping limit for Android
+                    </span>
+                </p>
+                {"\n".join(script_sections)}
+            </body>
+        </html>
+    """
+
+    Path(f"report_ymetrics_shaped.html").write_text(template)
+
+
+def draw_svg(report: Report) -> str:
+    font_path = FONT_PATHS[report.font]
+    # FIXME: wasteful to reload everything but only for 10s of worst offenders
+    tt = TTFont(font_path)
+    blob = hb.Blob.from_file_path(font_path)
+    face = hb.Face(blob)
+    font = hb.Font(face)
+    font.set_variations(TEST_LOCATIONS[report.loc])
+    buffer = hb.Buffer()
+    buffer.add_str(report.word)
+    buffer.guess_segment_properties()
+    hb.shape(font, buffer)
+    return glyph_to_svg.draw_buffer_with_metrics(tt, font, buffer)
 
 
 def load_test_words(sample_size_per_list: int | None = None) -> list[str]:
