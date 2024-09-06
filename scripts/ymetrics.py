@@ -107,7 +107,10 @@ def report_glyphs(font_path: Path) -> None:
                 error_string = f"yMax ({y_max}) above typoAscender ({typo_ascender})"
                 bad_flag = True
             elif y_min < typo_descender and y_max > typo_ascender:
-                error_string = f"yMin ({y_min}) below typoDescender ({typo_descender}) and yMax ({y_max}) above typoAscender ({typo_ascender})"
+                error_string = (
+                    f"yMin ({y_min}) below typoDescender ({typo_descender}) "
+                    f"and yMax ({y_max}) above typoAscender ({typo_ascender})"
+                )
                 bad_flag = True
 
             if bad_flag is True:
@@ -132,7 +135,8 @@ def report_glyphs(font_path: Path) -> None:
 
         else:
             error_list.append(
-                f"Glyph '{glyph_name}' missing yMin and/or yMax value. (Script: {uni_script})"
+                f"Glyph '{glyph_name}' missing yMin and/or yMax value. "
+                f"(Script: {uni_script})"
             )
 
     # ~~~~~~~~~~~~~~~~~~
@@ -143,7 +147,8 @@ def report_glyphs(font_path: Path) -> None:
     if len(bad_metrics_dict) > 0:
         sorted_scripts = sorted(bad_metrics_dict.keys())
         print(
-            "Scripts with metrics that extend beyond OS/2 table global typo metrics values:"
+            "Scripts with metrics that extend beyond OS/2 table global "
+            "typo metrics values:"
         )
         for script in sorted_scripts:
             print(script)
@@ -152,7 +157,9 @@ def report_glyphs(font_path: Path) -> None:
             print(f"\n\n{script_name}:")
             for bad_glyph in bad_metrics_dict[script_name]:
                 print(
-                    f"  {bad_glyph['glyph_name']} ({bad_glyph['uni_name']}, {bad_glyph['uni_codepoint']}, {bad_glyph['uni_block']}, Category: {bad_glyph['uni_category']}): {bad_glyph['error_string']}"
+                    f"  {bad_glyph['glyph_name']} ({bad_glyph['uni_name']}, "
+                    f"{bad_glyph['uni_codepoint']}, {bad_glyph['uni_block']}, "
+                    f"Category: {bad_glyph['uni_category']}): {bad_glyph['error_string']}"
                 )
 
     # testing errors
@@ -178,7 +185,12 @@ def report_glyphs(font_path: Path) -> None:
                     f"""
                         <li>
                             <figure>
-                                {glyph_to_svg.draw_with_metrics(tt, bad_glyph["glyph_name"])}
+                                {
+                                    glyph_to_svg.draw_with_metrics(
+                                        tt,
+                                        bad_glyph["glyph_name"],
+                                    )
+                                }
                                 <figcaption>{bad_glyph["glyph_name"]}</figcaption>
                             </figure>
                         </li>
@@ -189,7 +201,9 @@ def report_glyphs(font_path: Path) -> None:
             script_sections.append(
                 f"""
                     <details>
-                        <summary><h2>{script_name} ({len(bad_metrics_dict[script_name])})</h2></summary>
+                        <summary>
+                            <h2>{script_name} ({len(bad_metrics_dict[script_name])})</h2>
+                        </summary>
                         <ul class="drawn">
                             {glyph_sections}
                         </ul>
@@ -255,9 +269,16 @@ def report_glyphs(font_path: Path) -> None:
                     <h1>Tall Glyphs</h1>
                     <p>
                         Lines legend:<br>
-                        <span style="color: green">green: [head.yMax, head.yMin]</span><br>
-                        <span style="color: blue">blue: [os2.usWinAscent, -os2.usWinDescent]</span><br>
-                        <span style="color: red">red: [os2.sTypoAscender, os2.sTypoDescender] = clipping limit for Android</span>
+                        <span style="color: green">
+                            green: [head.yMax, head.yMin]
+                        </span><br>
+                        <span style="color: blue">
+                            blue: [os2.usWinAscent, -os2.usWinDescent]
+                        </span><br>
+                        <span style="color: red">
+                            red: [os2.sTypoAscender, os2.sTypoDescender]
+                            = clipping limit for Android
+                        </span>
                     </p>
                     {script_sections}
                 </body>
