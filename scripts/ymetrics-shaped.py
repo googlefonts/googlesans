@@ -38,18 +38,18 @@ FONT_PATHS = [
     ("Italic", ROOT / "build/GoogleSans/variable/GoogleSans[GRAD,opsz,wght].ttf"),
 ]
 TEST_LOCATIONS = [
-    ("Text Regular GRAD -50", {"opsz": 17, "wght": 400, "GRAD": -50}),
+    # ("Text Regular GRAD -50", {"opsz": 17, "wght": 400, "GRAD": -50}),
     ("Text Regular GRAD 0", {"opsz": 17, "wght": 400, "GRAD": 0}),
-    ("Text Regular GRAD 200", {"opsz": 17, "wght": 400, "GRAD": 200}),
-    ("Text Bold GRAD -50", {"opsz": 17, "wght": 700, "GRAD": -50}),
+    # ("Text Regular GRAD 200", {"opsz": 17, "wght": 400, "GRAD": 200}),
+    # ("Text Bold GRAD -50", {"opsz": 17, "wght": 700, "GRAD": -50}),
     ("Text Bold GRAD 0", {"opsz": 17, "wght": 700, "GRAD": 0}),
-    ("Text Bold GRAD 200", {"opsz": 17, "wght": 700, "GRAD": 200}),
-    ("Display Regular GRAD -50", {"opsz": 18, "wght": 400, "GRAD": -50}),
+    # ("Text Bold GRAD 200", {"opsz": 17, "wght": 700, "GRAD": 200}),
+    # ("Display Regular GRAD -50", {"opsz": 18, "wght": 400, "GRAD": -50}),
     ("Display Regular GRAD 0", {"opsz": 18, "wght": 400, "GRAD": 0}),
-    ("Display Regular GRAD 200", {"opsz": 18, "wght": 400, "GRAD": 200}),
-    ("Display Bold GRAD -50", {"opsz": 18, "wght": 700, "GRAD": -50}),
+    # ("Display Regular GRAD 200", {"opsz": 18, "wght": 400, "GRAD": 200}),
+    # ("Display Bold GRAD -50", {"opsz": 18, "wght": 700, "GRAD": -50}),
     ("Display Bold GRAD 0", {"opsz": 18, "wght": 700, "GRAD": 0}),
-    ("Display Bold GRAD 200", {"opsz": 18, "wght": 700, "GRAD": 200}),
+    # ("Display Bold GRAD 200", {"opsz": 18, "wght": 700, "GRAD": 200}),
 ]
 
 
@@ -99,6 +99,9 @@ def main():
 
     report_csv(reports)
 
+    # Select the worst N reports for each script, generate an HTML report
+    # showing those words with lines.
+
 
 def load_test_words(sample_size_per_list: int | None = None) -> list[str]:
     # return ["Hello", "లాక్ స్క్రీన్ విడ్జెట్‌లు"]  # For testing
@@ -109,6 +112,10 @@ def load_test_words(sample_size_per_list: int | None = None) -> list[str]:
             words.extend(all_words)
         else:
             words.extend(random.sample(all_words, sample_size_per_list))
+            
+    # TODO also load words from AOSP json file, select scripts that GS supports,
+    # maybe sample a few words instead of all? Start with all in case it fits.
+
     return words
 
 
