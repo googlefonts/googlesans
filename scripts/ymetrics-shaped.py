@@ -21,8 +21,9 @@ https://gist.github.com/behdad/ed41c78d508226015750e03ab13f6425
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 from pathlib import Path
+import csv
 
 from fontTools.ttLib import TTFont
 import uharfbuzz as hb
@@ -35,10 +36,19 @@ FONT_PATHS = [
     ),
     ("Italic", ROOT / "build/GoogleSans/variable/GoogleSans[GRAD,opsz,wght].ttf"),
 ]
-TEST_LOCATIONS = [("Default", {})]
-TEST_WORDS = [
-    "Hello",
-    "లాక్ స్క్రీన్ విడ్జెట్‌లు",
+TEST_LOCATIONS = [
+    ("Text Regular GRAD -50", {"opsz": 17, "wght": 400, "GRAD": -50}),
+    ("Text Regular GRAD 0", {"opsz": 17, "wght": 400, "GRAD": 0}),
+    ("Text Regular GRAD 200", {"opsz": 17, "wght": 400, "GRAD": 200}),
+    ("Text Bold GRAD -50", {"opsz": 17, "wght": 700, "GRAD": -50}),
+    ("Text Bold GRAD 0", {"opsz": 17, "wght": 700, "GRAD": 0}),
+    ("Text Bold GRAD 200", {"opsz": 17, "wght": 700, "GRAD": 200}),
+    ("Display Regular GRAD -50", {"opsz": 18, "wght": 400, "GRAD": -50}),
+    ("Display Regular GRAD 0", {"opsz": 18, "wght": 400, "GRAD": 0}),
+    ("Display Regular GRAD 200", {"opsz": 18, "wght": 400, "GRAD": 200}),
+    ("Display Bold GRAD -50", {"opsz": 18, "wght": 700, "GRAD": -50}),
+    ("Display Bold GRAD 0", {"opsz": 18, "wght": 700, "GRAD": 0}),
+    ("Display Bold GRAD 200", {"opsz": 18, "wght": 700, "GRAD": 200}),
 ]
 
 
@@ -53,6 +63,8 @@ class Report:
 
 
 def main():
+    test_words = load_test_words()
+
     reports = []
 
     for font_name, font_path in FONT_PATHS:
@@ -67,7 +79,7 @@ def main():
 
         for loc_name, loc in TEST_LOCATIONS:
             font.set_variations(loc)
-            for word in TEST_WORDS:
+            for word in test_words:
                 script, ascent, descent = measure_vertical(font, word)
 
                 ascent_clip = max(0, ascent - typo_ascender)
@@ -84,7 +96,18 @@ def main():
                     report_terminal(report)
                     reports.append(report)
 
+    report_csv(reports)
     report_html(reports)
+
+
+def load_test_words() -> list[str]:
+    # return ["Hello", "లాక్ స్క్రీన్ విడ్జెట్‌లు"]  # For testing
+    words = []
+    for path in (Path(__file__).parent / "diffenator2-data").glob("*.txt"):
+        for word in path.read_text().splitlines():
+            if word:
+                words.append(word)
+    return words
 
 
 def measure_vertical(font: hb.Font, text: str) -> tuple[str, int, int]:
@@ -110,11 +133,25 @@ def measure_vertical(font: hb.Font, text: str) -> tuple[str, int, int]:
 
 def report_terminal(report: Report):
     print(
-        f"{report.font} @ {report.loc} [{report.script}] ascent_clip {report.ascent_clip: 6d} descent_clip {report.descent_clip: 6d} {report.word}"
+        f"{report.font} @ {report.loc} [{report.script}] "
+        f"ascent_clip {report.ascent_clip: 6d} descent_clip {report.descent_clip: 6d}"
+        f"{report.word}"
     )
 
 
+def report_csv(reports: list[Report]):
+    with open("ymetrics_shaped.csv", "w", newline="", encoding="utf-8") as fp:
+        writer = csv.DictWriter(
+            fp,
+            fieldnames=["font", "loc", "word", "script", "ascent_clip", "descent_clip"],
+        )
+        writer.writeheader()
+        for report in reports:
+            writer.writerow(asdict(report))
+
+
 def report_html(reports: list[Report]):
+    # TODO: not implemented, not sure it's worth it? Lots of words, would make a gigantic page
     return
     # ~~~~~~~~~~~~~~~~~~
     #   HTML Reporting
