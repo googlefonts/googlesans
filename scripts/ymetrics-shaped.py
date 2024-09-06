@@ -24,7 +24,9 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from pathlib import Path
 import csv
+import json
 import random
+import unicodedata
 
 from fontTools.ttLib import TTFont
 import uharfbuzz as hb
@@ -51,6 +53,7 @@ TEST_LOCATIONS = [
     ("Display Bold GRAD 0", {"opsz": 18, "wght": 700, "GRAD": 0}),
     # ("Display Bold GRAD 200", {"opsz": 18, "wght": 700, "GRAD": 200}),
 ]
+AOSP_DUMP = Path(__file__).parent / "diffenator2-data/aosp.json"
 
 
 @dataclass
@@ -94,7 +97,7 @@ def main():
                         ascent_clip=ascent_clip,
                         descent_clip=descent_clip,
                     )
-                    report_terminal(report)
+                    # report_terminal(report)
                     reports.append(report)
 
     report_csv(reports)
@@ -105,18 +108,37 @@ def main():
 
 def load_test_words(sample_size_per_list: int | None = None) -> list[str]:
     # return ["Hello", "లాక్ స్క్రీన్ విడ్జెట్‌లు"]  # For testing
-    words = []
+    words = set()
     for path in (Path(__file__).parent / "diffenator2-data").glob("*.txt"):
         all_words = [word for word in path.read_text().splitlines() if word]
         if sample_size_per_list is None:
-            words.extend(all_words)
+            words.update(all_words)
         else:
-            words.extend(random.sample(all_words, sample_size_per_list))
-            
-    # TODO also load words from AOSP json file, select scripts that GS supports,
-    # maybe sample a few words instead of all? Start with all in case it fits.
+            words.update(random.sample(all_words, sample_size_per_list))
 
-    return words
+    if AOSP_DUMP.exists():
+        aosp_dump = json.loads(AOSP_DUMP.read_text(encoding="utf-8"))
+        aosp_words = {
+            "".join(
+                char for char in word if not unicodedata.category(char).startswith("C")
+            )
+            for string in aosp_dump.keys()
+            for word in string.split()
+        }
+        # There was probably at least one empty word
+        aosp_words.remove("")
+
+        if sample_size_per_list is None:
+            words.update(aosp_words)
+        else:
+            words.update(random.sample(list(aosp_words), sample_size_per_list))
+    else:
+        print(
+            "Download the AOSP aosp.json to scripts/diffenator2-data to have",
+            "that be used as well",
+        )
+
+    return sorted(words)
 
 
 def measure_vertical(font: hb.Font, text: str) -> tuple[str, int, int]:
