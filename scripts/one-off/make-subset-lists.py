@@ -70,14 +70,15 @@ def main():
             r".*": "Zyyy"
         },
         "Zinh": {
-            # acute-deva and others with -deva in the name should be in the Deva list
+            # acute-deva and others with -deva in the name should be in the Deva
+            # list
             r"-deva$": "Deva",
         },
         "Zyyy": {
             # Same in Zyyy
             r"-deva$": "Deva",
-            # Zyyy glyphs with .loclXXXX suffix should move to that script's list, e.g.
-            # colon.loclBENG should go to Beng.txt
+            # Zyyy glyphs with .loclXXXX suffix should move to that script's
+            # list, e.g. colon.loclBENG should go to Beng.txt
             r"\.loclBENG": "Beng",
             r"\.loclDEVA": "Deva",
             r"\.loclGEO": "Geor",
@@ -114,11 +115,13 @@ def main():
             if not glyphs_by_script[source]:
                 del glyphs_by_script[source]
 
-    # Sanity check: all glyphs with a code point should be in one list or the other.
-    # Glyphs without code points might not be listed (e.g. components used by
-    # other glyphs) and that's fine because they will automatically get picked
-    # up by pyftsubset.
-    unlisted = set(g.name for g in font if g.name is not None and g.unicode is not None).difference(*list(glyphs_by_script.values()))
+    # Sanity check: all glyphs with a code point should be in one list or the
+    # other. Glyphs without code points might not be listed (e.g. components
+    # used by other glyphs) and that's fine because they will automatically get
+    # picked up by pyftsubset.
+    unlisted = set(
+        g.name for g in font if g.name is not None and g.unicode is not None
+    ).difference(*list(glyphs_by_script.values()))
     assert not unlisted, f"Some glyphs were unlisted: {", ".join(sorted(unlisted))}"
 
     # Write out lists of code points. pyftsubset will do the GSUB closure too.

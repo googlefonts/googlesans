@@ -63,7 +63,8 @@ def extract_subsets(base_ttf: Path) -> None:
         except Subsetter.MissingGlyphsSubsettingError as e:
             missing_glyphs = sorted(e.args[0])
             print(
-                f"pyftsubset of {unicodes_list_path.stem} failed due to missing glyphs:\n-",
+                f"pyftsubset of {unicodes_list_path.stem}",
+                "failed due to missing glyphs:\n-",
                 "\n- ".join(missing_glyphs),
             )
         except Exception as e:
