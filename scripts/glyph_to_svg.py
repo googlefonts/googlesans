@@ -53,13 +53,16 @@ def draw_with_metrics(ttf: TTFont, glyph_name: str) -> str:
 
     # Construct SVG
     line_elements = "\n".join(
-        f'<line x1="{x_min}" x2="{x_max}" y1="{highest - height}" y2="{highest - height}" stroke="{colour}" stroke-width="10" />'
+        f'<line x1="{x_min}" x2="{x_max}" y1="{highest - height}" '
+        f'y2="{highest - height}" stroke="{colour}" stroke-width="10" />'
         for colour, heights in lines.items()
         for height in heights
     )
 
     return f"""
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="{x_min} 0 {x_max - x_min} {highest - lowest}" preserveAspectRatio="meet">
+        <svg xmlns="http://www.w3.org/2000/svg"
+            viewBox="{x_min} 0 {x_max - x_min} {highest - lowest}"
+            preserveAspectRatio="meet">
             <g>
                 <path d="{svg_pen.getCommands()}" />
             </g>
