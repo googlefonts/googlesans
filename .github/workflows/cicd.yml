@@ -24,9 +24,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -40,9 +40,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -56,9 +56,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -67,12 +67,12 @@ jobs:
           make setup
           . .venv/bin/activate && make -j gs-vf
       - name: Upload intermediate fonts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: intermediate-fonts
           path: build/GoogleSans/.intermediate
       - name: Upload variable fonts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: variable-fonts
           path: build/GoogleSans/variable
@@ -84,14 +84,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: pip
       - name: Download variable fonts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: variable-fonts
           path: build/GoogleSans/variable
@@ -105,7 +105,7 @@ jobs:
           touch build/GoogleSans/.intermediate/GoogleSans-Italic[GRAD,opsz,wght].ttf
           . .venv/bin/activate && make -j gs-android
       - name: Upload Android fonts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: android-fonts
           path: |
@@ -118,14 +118,14 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
       - name: Download variable fonts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: variable-fonts
           path: build/GoogleSans/variable
@@ -151,7 +151,7 @@ jobs:
           args: '--auto-jobs -C --loglevel WARN qa/check-fea.py'
           path: 'build/GoogleSans/variable/*.ttf'
       - name: OpenType Sanitizer checks
-        uses: f-actions/opentype-sanitizer@v2
+        uses: f-actions/opentype-sanitizer@v3
         with:
           path: 'build/GoogleSans/variable/*.ttf'
       - name: File size analysis
@@ -169,14 +169,14 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
       - name: Download intermediate fonts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: intermediate-fonts
           path: build/GoogleSans/.intermediate
@@ -185,7 +185,7 @@ jobs:
           make setup
           . .venv/bin/activate && make -j gs-static
       - name: Upload static fonts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: static-fonts
           path: build/GoogleSans/static
@@ -197,14 +197,14 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
       - name: Download static fonts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: static-fonts
           path: 'build/GoogleSans/static'
@@ -230,7 +230,7 @@ jobs:
           args: '--auto-jobs -C --loglevel WARN qa/check-fea.py'
           path: 'build/GoogleSans/static/*.ttf'
       - name: OpenType Sanitizer checks
-        uses: f-actions/opentype-sanitizer@v2
+        uses: f-actions/opentype-sanitizer@v3
         with:
           path: 'build/GoogleSans/static/*.ttf'
       - name: File size analysis
@@ -246,9 +246,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -257,7 +257,7 @@ jobs:
           make setup
           . .venv/bin/activate && make -j gs-compatible-masters
       - name: Upload interpolatables
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: interpolatable-fonts
           path: build/GoogleSans/interpolatable
@@ -280,22 +280,22 @@ jobs:
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - name: Download variable fonts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: variable-fonts
           path: build/GoogleSans/variable
       - name: Download Android fonts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: android-fonts
           path: build/GoogleSans/android
       - name: Download static fonts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: static-fonts
           path: build/GoogleSans/static
       - name: Download interpolatable fonts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: interpolatable-fonts
           path: build/GoogleSans/interpolatable
