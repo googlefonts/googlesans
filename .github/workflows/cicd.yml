@@ -73,6 +73,33 @@ jobs:
             build/GoogleSans/variable
             build/GoogleSans/.intermediate
 
+  build-android:
+    if: github.event_name != 'pull_request'
+    needs:
+      - build-variable
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python v3.12 environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+          cache: pip
+      - uses: actions/download-artifact@v3
+        with:
+          name: variable-fonts
+          path: build/GoogleSans
+      - name: Build Android fonts
+        run: |
+          make setup
+          . .venv/bin/activate && make -j gs-android
+      - uses: actions/upload-artifact@v3
+        with:
+          name: android-fonts
+          path: |
+            build/GoogleSans/android
+
   check-variable:
     needs:
       - build-variable
@@ -226,6 +253,7 @@ jobs:
     needs:
       - build-variable
       - check-variable
+      - build-android
       - build-statics
       - check-statics
       - build-interpolatables
@@ -240,6 +268,10 @@ jobs:
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
+      - uses: actions/download-artifact@v3
+        with:
+          name: android-fonts
+          path: 'build/GoogleSans/android'
       - uses: actions/download-artifact@v3
         with:
           name: static-fonts
