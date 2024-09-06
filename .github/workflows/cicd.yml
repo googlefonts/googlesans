@@ -66,12 +66,16 @@ jobs:
         run: |
           make setup
           . .venv/bin/activate && make -j gs-vf
-      - uses: actions/upload-artifact@v3
+      - name: Upload intermediate fonts
+        uses: actions/upload-artifact@v3
+        with:
+          name: intermediate-fonts
+          path: build/GoogleSans/.intermediate
+      - name: Upload variable fonts
+        uses: actions/upload-artifact@v3
         with:
           name: variable-fonts
-          path: |
-            build/GoogleSans/variable
-            build/GoogleSans/.intermediate
+          path: build/GoogleSans/variable
 
   build-android:
     if: github.event_name != 'pull_request'
@@ -86,15 +90,22 @@ jobs:
         with:
           python-version: '3.12'
           cache: pip
-      - uses: actions/download-artifact@v3
+      - name: Download variable fonts
+        uses: actions/download-artifact@v3
         with:
           name: variable-fonts
-          path: build/GoogleSans
+          path: build/GoogleSans/variable
       - name: Build Android fonts
         run: |
           make setup
+          # Mitigate rebuilds
+          touch build/GoogleSans/variable/*.ttf
+          mkdir -p build/GoogleSans/.intermediate
+          touch build/GoogleSans/.intermediate/GoogleSans[GRAD,opsz,wght].ttf
+          touch build/GoogleSans/.intermediate/GoogleSans-Italic[GRAD,opsz,wght].ttf
           . .venv/bin/activate && make -j gs-android
-      - uses: actions/upload-artifact@v3
+      - name: Upload Android fonts
+        uses: actions/upload-artifact@v3
         with:
           name: android-fonts
           path: |
@@ -113,10 +124,11 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-      - uses: actions/download-artifact@v3
+      - name: Download variable fonts
+        uses: actions/download-artifact@v3
         with:
           name: variable-fonts
-          path: 'build/GoogleSans'
+          path: build/GoogleSans/variable
       - name: Font Bakery GS profile tests
         uses: f-actions/font-bakery@v3
         with:
@@ -163,18 +175,20 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-      - uses: actions/download-artifact@v3
+      - name: Download intermediate fonts
+        uses: actions/download-artifact@v3
         with:
-          name: variable-fonts
-          path: 'build/GoogleSans'
+          name: intermediate-fonts
+          path: build/GoogleSans/.intermediate
       - name: Build static fonts
         run: |
           make setup
           . .venv/bin/activate && make -j gs-static
-      - uses: actions/upload-artifact@v3
+      - name: Upload static fonts
+        uses: actions/upload-artifact@v3
         with:
           name: static-fonts
-          path: 'build/GoogleSans/static'
+          path: build/GoogleSans/static
 
   check-statics:
     needs:
@@ -189,7 +203,8 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-      - uses: actions/download-artifact@v3
+      - name: Download static fonts
+        uses: actions/download-artifact@v3
         with:
           name: static-fonts
           path: 'build/GoogleSans/static'
@@ -241,10 +256,11 @@ jobs:
         run: |
           make setup
           . .venv/bin/activate && make -j gs-compatible-masters
-      - uses: actions/upload-artifact@v3
+      - name: Upload interpolatables
+        uses: actions/upload-artifact@v3
         with:
           name: interpolatable-fonts
-          path: 'build/GoogleSans/interpolatable'
+          path: build/GoogleSans/interpolatable
 
   release:
     # only run if the commit is tagged...
@@ -267,7 +283,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: variable-fonts
-          path: build/GoogleSans
+          path: build/GoogleSans/variable
       - name: Download Android fonts
         uses: actions/download-artifact@v3
         with:
@@ -283,8 +299,6 @@ jobs:
         with:
           name: interpolatable-fonts
           path: build/GoogleSans/interpolatable
-      - name: Delete intermediate VFs
-        run: rm -rfv build/GoogleSans/.intermediate
       - name: Create build artifact zip archive
         run: zip GoogleSans-${{ steps.vars.outputs.tag }}.zip -r build/GoogleSans
       - name: Create Google Sans release
