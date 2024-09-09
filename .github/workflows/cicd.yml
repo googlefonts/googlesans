@@ -20,11 +20,12 @@ on:
 
 jobs:
   lint-sources:
-    runs-on: googlefonts-64cores-256GB
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -35,11 +36,12 @@ jobs:
           ufolint source/GoogleSans/*.ufo
 
   lint-scripts:
-    runs-on: googlefonts-64cores-256GB
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -51,10 +53,11 @@ jobs:
 
   build-variable:
     runs-on: googlefonts-64cores-256GB
+    timeout-minutes: 10
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -74,10 +77,11 @@ jobs:
     needs:
       - build-variable
     runs-on: googlefonts-64cores-256GB
+    timeout-minutes: 5
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -123,10 +127,11 @@ jobs:
     needs:
       - build-variable
     runs-on: googlefonts-64cores-256GB
+    timeout-minutes: 10
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -148,10 +153,11 @@ jobs:
     needs:
       - build-statics
     runs-on: googlefonts-64cores-256GB
+    timeout-minutes: 5
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -195,10 +201,11 @@ jobs:
     # to build all outside a release.
     if: github.event_name != 'pull_request'
     runs-on: googlefonts-64cores-256GB
+    timeout-minutes: 10
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
+      - name: Set up Python v3.12 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -222,15 +229,9 @@ jobs:
       - build-statics
       - check-statics
       - build-interpolatables
-    runs-on: googlefonts-64cores-256GB
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - name: Check out source repository
-        uses: actions/checkout@v3
-      - name: Set up Python v3.11 environment
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.12'
-          cache: 'pip'
       - name: Set env variables
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
