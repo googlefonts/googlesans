@@ -91,7 +91,8 @@ def draw_buffer_with_metrics(ttFont: TTFont, hbFont: hb.Font, buffer: hb.Buffer)
 
     paths = []
 
-    # Adapted from https://github.com/simoncozens/vharfbuzz/blob/main/Lib/vharfbuzz/__init__.py#L305
+    # Adapted from
+    # https://github.com/simoncozens/vharfbuzz/blob/main/Lib/vharfbuzz/__init__.py#L305
     # MIT Licence
     x = y = 0
     for info, pos in zip(buffer.glyph_infos, buffer.glyph_positions):

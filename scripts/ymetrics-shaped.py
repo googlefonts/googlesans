@@ -143,7 +143,7 @@ def report_html(reports: list[Report]):
                                 {draw_svg(report)}
                                 <figcaption>
                                 {report.word.word} (from {report.word.source})<br>
-                                (ascent_clip {report.ascent_clip} 
+                                (ascent_clip {report.ascent_clip}
                                     descent_clip {report.descent_clip})<br>
                                 {report.font} {report.loc}
                                 </figcaption>
@@ -252,7 +252,7 @@ def report_html(reports: list[Report]):
         </html>
     """
 
-    Path(f"report_ymetrics_shaped.html").write_text(template)
+    Path("report_ymetrics_shaped.html").write_text(template)
 
 
 def draw_svg(report: Report) -> str:
