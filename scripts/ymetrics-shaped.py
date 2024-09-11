@@ -41,33 +41,40 @@ FONT_PATHS = {
     "Italic": ROOT / "build/GoogleSans/variable/GoogleSans-Italic[GRAD,opsz,wght].ttf",
 }
 TEST_LOCATIONS = {
-    # "Text Regular GRAD -50":{"opsz": 17, "wght": 400, "GRAD": -50},
+    # "Text Regular GRAD -50": {"opsz": 17, "wght": 400, "GRAD": -50},
     "Text Regular GRAD 0": {"opsz": 17, "wght": 400, "GRAD": 0},
-    # "Text Regular GRAD 200":{"opsz": 17, "wght": 400, "GRAD": 200},
-    # "Text Bold GRAD -50":{"opsz": 17, "wght": 700, "GRAD": -50},
+    # "Text Regular GRAD 200": {"opsz": 17, "wght": 400, "GRAD": 200},
+    # "Text Bold GRAD -50": {"opsz": 17, "wght": 700, "GRAD": -50},
     "Text Bold GRAD 0": {"opsz": 17, "wght": 700, "GRAD": 0},
-    # "Text Bold GRAD 200":{"opsz": 17, "wght": 700, "GRAD": 200},
-    # "Display Regular GRAD -50":{"opsz": 18, "wght": 400, "GRAD": -50},
+    # "Text Bold GRAD 200": {"opsz": 17, "wght": 700, "GRAD": 200},
+    # "Display Regular GRAD -50": {"opsz": 18, "wght": 400, "GRAD": -50},
     "Display Regular GRAD 0": {"opsz": 18, "wght": 400, "GRAD": 0},
-    # "Display Regular GRAD 200":{"opsz": 18, "wght": 400, "GRAD": 200},
-    # "Display Bold GRAD -50":{"opsz": 18, "wght": 700, "GRAD": -50},
+    # "Display Regular GRAD 200": {"opsz": 18, "wght": 400, "GRAD": 200},
+    # "Display Bold GRAD -50": {"opsz": 18, "wght": 700, "GRAD": -50},
     "Display Bold GRAD 0": {"opsz": 18, "wght": 700, "GRAD": 0},
-    # "Display Bold GRAD 200":{"opsz": 18, "wght": 700, "GRAD": 200},
+    # "Display Bold GRAD 200": {"opsz": 18, "wght": 700, "GRAD": 200},
 }
 AOSP_DUMP = Path(__file__).parent / "diffenator2-data/aosp.json"
+NUMBER_PER_SOURCE_PER_SIDE = 5
+
+
+@dataclass
+class Word:
+    word: str
+    source: str
 
 
 @dataclass
 class Report:
     font: str
     loc: str
-    word: str
+    word: Word
     script: str
     ascent_clip: int
     descent_clip: int
 
 
-def main():
+def main() -> None:
     test_words = load_test_words(sample_size_per_list=5_000, sample_size_aosp=50_000)
 
     reports: list[Report] = []
@@ -85,7 +92,7 @@ def main():
         for loc_name, loc in TEST_LOCATIONS.items():
             font.set_variations(loc)
             for word in test_words:
-                script, ascent, descent = measure_vertical(font, word)
+                script, ascent, descent = measure_vertical(font, word.word)
 
                 ascent_clip = max(0, ascent - typo_ascender)
                 descent_clip = max(0, typo_descender - descent)
@@ -108,55 +115,68 @@ def main():
 def report_html(reports: list[Report]):
     # Select the worst N reports for each script, generate an HTML report
     # showing those words with lines.
-    by_script = defaultdict(list)
+    by_script: defaultdict[str, list[Report]] = defaultdict(list)
     for report in reports:
         by_script[report.script].append(report)
 
     script_sections = []
-    for script, reports in sorted(by_script.items()):
+    for script, all_reports in sorted(by_script.items()):
         glyph_sections = []
-        reports = sorted(reports, key=lambda r: (-r.ascent_clip, -r.descent_clip))
-        worst_ascents = reports[:10]
-        reports = sorted(reports[10:], key=lambda r: (-r.descent_clip, -r.ascent_clip))
-        worst_descents = reports[:10]
-        for report in worst_ascents:
-            glyph_sections.append(
-                f"""
+        for source in ("AOSP", "other"):
+            reports = [
+                report
+                for report in all_reports
+                if report.word.source.startswith(source)
+            ]
+            reports = sorted(reports, key=lambda r: (-r.ascent_clip, -r.descent_clip))
+            worst_ascents = reports[:NUMBER_PER_SOURCE_PER_SIDE]
+            reports = sorted(
+                reports[NUMBER_PER_SOURCE_PER_SIDE:],
+                key=lambda r: (-r.descent_clip, -r.ascent_clip),
+            )
+            worst_descents = reports[:NUMBER_PER_SOURCE_PER_SIDE]
+            for report in worst_ascents:
+                glyph_sections.append(
+                    f"""
                         <li>
                             <figure>
                                 {draw_svg(report)}
                                 <figcaption>
-                                {report.word} (ascent_clip {report.ascent_clip} descent_clip {report.descent_clip})<br>
+                                {report.word.word} (from {report.word.source})<br>
+                                (ascent_clip {report.ascent_clip} 
+                                    descent_clip {report.descent_clip})<br>
                                 {report.font} {report.loc}
                                 </figcaption>
                             </figure>
                         </li>
                     """
-            )
-        for report in worst_descents:
-            glyph_sections.append(
-                f"""
+                )
+            for report in worst_descents:
+                glyph_sections.append(
+                    f"""
                         <li>
                             <figure>
                                 {draw_svg(report)}
                                 <figcaption>
-                                {report.word} (ascent_clip {report.ascent_clip} descent_clip {report.descent_clip})<br>
+                                {report.word.word} (from {report.word.source})<br>
+                                (ascent_clip {report.ascent_clip}
+                                    descent_clip {report.descent_clip})<br>
                                 {report.font} {report.loc}
                                 </figcaption>
                             </figure>
                         </li>
                     """
-            )
+                )
 
         script_sections.append(
             f"""
-                    <details open>
-                        <summary><h2>{script}</h2></summary>
-                        <ul class="drawn">
-                            {"\n".join(glyph_sections)}
-                        </ul>
-                    </details>
-                """
+                <details open>
+                    <summary><h2>{script}</h2></summary>
+                    <ul class="drawn">
+                        {"\n".join(glyph_sections)}
+                    </ul>
+                </details>
+            """
         )
 
     style = """
@@ -244,7 +264,7 @@ def draw_svg(report: Report) -> str:
     font = hb.Font(face)
     font.set_variations(TEST_LOCATIONS[report.loc])
     buffer = hb.Buffer()
-    buffer.add_str(report.word)
+    buffer.add_str(report.word.word)
     buffer.guess_segment_properties()
     hb.shape(font, buffer)
     return glyph_to_svg.draw_buffer_with_metrics(tt, font, buffer)
@@ -252,19 +272,25 @@ def draw_svg(report: Report) -> str:
 
 def load_test_words(
     sample_size_per_list: int | None = None, sample_size_aosp: int | None = None
-) -> list[str]:
+) -> list[Word]:
     # return ["Hello", "లాక్ స్క్రీన్ విడ్జెట్‌లు"]  # For testing
-    words = set()
+    words_by_source: dict[str, str] = {}
     for path in (Path(__file__).parent / "diffenator2-data").glob("*.txt"):
-        all_words = [word for word in path.read_text().splitlines() if word]
+        all_words = [
+            line
+            for line in path.read_text().splitlines()
+            if line and not line.startswith("#")
+        ]
         if sample_size_per_list is None or sample_size_per_list >= len(all_words):
-            words.update(all_words)
+            for word in all_words:
+                words_by_source[word] = "other"
         else:
-            words.update(random.sample(all_words, sample_size_per_list))
+            for word in random.sample(all_words, sample_size_per_list):
+                words_by_source[word] = "other"
 
     if AOSP_DUMP.exists():
         aosp_dump = json.loads(AOSP_DUMP.read_text(encoding="utf-8"))
-        aosp_words = {
+        aosp_words_set = {
             "".join(
                 char for char in word if not unicodedata.category(char).startswith("C")
             )
@@ -272,12 +298,12 @@ def load_test_words(
             for word in string.split()
         }
         # There was probably at least one empty word
-        aosp_words.remove("")
+        aosp_words_set.remove("")
         # Filter out "words" that are a mix of scripts, such
         # as "<strong>ຕັ້ງເປັນຮູບພື້ນຫຼັງ</strong>"
         aosp_words = [
             w
-            for w in aosp_words
+            for w in aosp_words_set
             if len(
                 set(unicodedata.script(c) for c in w).difference("Zinh", "Zyyy", "Zzzz")
             )
@@ -285,16 +311,18 @@ def load_test_words(
         ]
 
         if sample_size_aosp is None or sample_size_aosp >= len(aosp_words):
-            words.update(aosp_words)
+            for word in aosp_words:
+                words_by_source[word] = "AOSP"
         else:
-            words.update(random.sample(aosp_words, sample_size_aosp))
+            for word in random.sample(aosp_words, sample_size_aosp):
+                words_by_source[word] = "AOSP"
     else:
         print(
             "Download the AOSP aosp.json to scripts/diffenator2-data to have",
             "that be used as well",
         )
 
-    return sorted(words)
+    return [Word(word, source) for word, source in sorted(words_by_source.items())]
 
 
 def measure_vertical(font: hb.Font, text: str) -> tuple[str, int, int]:
