@@ -23,7 +23,7 @@ from fontTools.ttLib.tables.O_S_2f_2 import table_O_S_2f_2 as OS2
 import uharfbuzz as hb
 
 
-def draw_with_metrics(ttf: TTFont, glyph_name: str) -> str:
+def draw_with_metrics(ttf: TTFont, glyph_name: str, loc: dict | None) -> str:
     """Draw a glyph from a TTF as an SVG, including reference lines for common
     vertical metrics."""
 
@@ -41,7 +41,7 @@ def draw_with_metrics(ttf: TTFont, glyph_name: str) -> str:
     lowest = min(value for values in lines.values() for value in values) - 10
 
     # Draw glyph to SVG
-    glyph_set = ttf.getGlyphSet()
+    glyph_set = ttf.getGlyphSet(location=loc)
     glyph = glyph_set[glyph_name]
 
     bounds = BoundsPen(glyph_set)
