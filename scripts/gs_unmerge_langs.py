@@ -118,8 +118,28 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
 
     # Post-process TTF metadata (e.g. names, metrics).
     ttf = TTFont(output_path)
+
     ttf["OS/2"].sTypoAscender = subset.ascender  # type: ignore
     ttf["OS/2"].sTypoDescender = subset.descender  # type: ignore
+
+    for rec in ttf["name"].names:
+        match rec.nameID:
+            case 1 | 4:
+                replace = ("Google Sans", f"Google Sans Android {subset.name}")
+            case 3 | 6:
+                replace = ("GoogleSans", f"GoogleSansAndroid{subset.name}")
+            case 0 | 2 | 5 | 7 | 8 | 9 | 11 | 13:
+                replace = None
+            case n if n >= 256:  # User ID
+                replace = None
+            case n:
+                raise ValueError(f"Unrecognised name ID for post-processing: {n}")
+
+        if replace is not None:
+            before, after = replace
+            assert before in rec.toUnicode(), "Incorrect family name"
+            rec.string = rec.toUnicode().replace(before, after)
+
     ttf.save(output_path)
 
 
