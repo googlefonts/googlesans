@@ -32,43 +32,46 @@ from fontTools.subset import main as pyftsubset, Subsetter
 BUILD_DIR = Path("build/GoogleSans/android")
 
 SUBSETS_DIR = Path("source/GoogleSans/subsets")
-SUBSET_FILES = sorted(path for path in SUBSETS_DIR.glob("*.txt") if path.stem != "Latn")
-LATIN_SUBSET = SUBSETS_DIR / "Latn.txt"
+SUBSET_FILES = sorted(SUBSETS_DIR.glob("*.txt"))
 
 
 def main(ttfs: list[Path]) -> None:
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
 
-    with multiprocessing.Pool() as pool:
-        for ttf in ttfs:
-            pool.apply_async(extract_subsets, (ttf,))
-        pool.close()
-        pool.join()
+    for ttf in ttfs:
+        extract_subsets(ttf)
 
 
 def extract_subsets(base_ttf: Path) -> None:
-    for unicodes_list_path in SUBSET_FILES:
-        output_path = BUILD_DIR / f"{base_ttf.stem}-{unicodes_list_path.stem}.ttf"
-        print(f"Making {output_path} with pyftsubset")
-
-        args = (
-            str(base_ttf),
-            f"--unicodes-file={LATIN_SUBSET}",
-            f"--unicodes-file={unicodes_list_path}",
-            f"--output-file={output_path}",
+    with multiprocessing.Pool() as pool:
+        pool.starmap(
+            extract_subset,
+            ((base_ttf, unicodes_path) for unicodes_path in SUBSET_FILES),
         )
-        # print(f"pyftsubset {' '.join(args)}")
-        try:
-            pyftsubset(args)
-        except Subsetter.MissingGlyphsSubsettingError as e:
-            missing_glyphs = sorted(e.args[0])
-            print(
-                f"pyftsubset of {unicodes_list_path.stem}",
-                "failed due to missing glyphs:\n-",
-                "\n- ".join(missing_glyphs),
-            )
-        except Exception as e:
-            print(f"pyftsubset of {unicodes_list_path.stem} failed: {e}")
+
+
+def extract_subset(base_ttf: Path, unicodes_list_path: Path) -> None:
+    output_path = BUILD_DIR / f"{base_ttf.stem}-{unicodes_list_path.stem}.ttf"
+    print(f"Making {output_path} with pyftsubset")
+
+    args = (
+        str(base_ttf),
+        f"--unicodes-file={unicodes_list_path}",
+        f"--output-file={output_path}",
+    )
+    try:
+        pyftsubset(args)
+    except Subsetter.MissingGlyphsSubsettingError as e:
+        missing_glyphs = sorted(e.args[0])
+        print(
+            f"pyftsubset of {unicodes_list_path.stem}",
+            "failed due to missing glyphs:\n-",
+            "\n- ".join(missing_glyphs),
+        )
+        raise
+    except:
+        print(f"pyftsubset of {unicodes_list_path.stem} failed")
+        raise
 
 
 if __name__ == "__main__":
