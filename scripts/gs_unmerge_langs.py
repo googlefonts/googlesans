@@ -29,6 +29,7 @@ from pathlib import Path
 
 from fontTools.subset import Subsetter
 from fontTools.subset import main as pyftsubset
+from fontTools.ttLib import TTFont
 
 BUILD_DIR = Path("build/GoogleSans/android")
 SUBSETS_DIR = Path("source/GoogleSans/subsets")
@@ -47,29 +48,29 @@ class Subset:
 
 
 SUBSETS = [
-    Subset(name="Armn", metrics=(-1000, 2000)),
-    Subset(name="Beng", metrics=(-1000, 2000)),
-    Subset(name="Cyrl", metrics=(-1000, 2000)),
-    Subset(name="Deva", metrics=(-1000, 2000)),
-    Subset(name="Ethi", metrics=(-1000, 2000)),
-    Subset(name="Geor", metrics=(-1000, 2000)),
-    Subset(name="Grek", metrics=(-1000, 2000)),
-    Subset(name="Gujr", metrics=(-1000, 2000)),
-    Subset(name="Guru", metrics=(-1000, 2000)),
-    Subset(name="Hebr", metrics=(-1000, 2000)),
-    Subset(name="Khmr", metrics=(-1000, 2000)),
-    Subset(name="Knda", metrics=(-1000, 2000)),
-    Subset(name="Laoo", metrics=(-1000, 2000)),
-    Subset(name="Latn", metrics=(-1000, 2000)),
-    Subset(name="Mlym", metrics=(-1000, 2000)),
-    Subset(name="Orya", metrics=(-1000, 2000)),
-    Subset(name="Sinh", metrics=(-1000, 2000)),
-    Subset(name="Taml", metrics=(-1000, 2000)),
-    Subset(name="Telu", metrics=(-1000, 2000)),
-    Subset(name="Thai", metrics=(-1000, 2000)),
-    Subset(name="Zinh", metrics=(-1000, 2000)),
-    Subset(name="Zyyy", metrics=(-1000, 2000)),
-    Subset(name="Zzzz", metrics=(-1000, 2000)),
+    Subset(name="Latn", metrics=(-286, 966)),
+    Subset(name="Armn", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Beng", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Cyrl", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Deva", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Ethi", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Geor", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Grek", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Gujr", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Guru", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Hebr", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Khmr", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Knda", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Laoo", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Mlym", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Orya", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Sinh", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Taml", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Telu", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Thai", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Zinh", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Zyyy", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Zzzz", metrics=(-286, 966)),  # TODO: Add final metrics
 ]
 
 
@@ -92,6 +93,7 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
     output_path = BUILD_DIR / f"{base_ttf.stem}-{subset.name}.ttf"
     print(f"Making {output_path} with pyftsubset")
 
+    # Produce new TTF with subset of glyphs.
     args = (
         str(base_ttf),
         *(f"--unicodes-file={path}" for path in subset.codepoints),
@@ -110,6 +112,13 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
     except:
         print(f"pyftsubset of {subset.name} failed")
         raise
+
+    # Post-process TTF metadata (e.g. names, metrics).
+    ttf = TTFont(output_path)
+    ascender, descender = subset.metrics
+    ttf["OS/2"].sTypoAscender = ascender  # type: ignore
+    ttf["OS/2"].sTypoDescender = descender  # type: ignore
+    ttf.save(output_path)
 
 
 if __name__ == "__main__":
