@@ -40,7 +40,8 @@ class Subset:
     """All of the ingredients to make a subset."""
 
     name: str
-    metrics: tuple[int, int]  # TODO: Apply
+    ascender: int
+    descender: int
 
     @property
     def codepoints(self) -> list[Path]:
@@ -48,29 +49,29 @@ class Subset:
 
 
 SUBSETS = [
-    Subset(name="Latn", metrics=(-286, 966)),
-    Subset(name="Armn", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Beng", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Cyrl", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Deva", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Ethi", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Geor", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Grek", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Gujr", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Guru", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Hebr", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Khmr", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Knda", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Laoo", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Mlym", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Orya", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Sinh", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Taml", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Telu", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Thai", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Zinh", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Zyyy", metrics=(-286, 966)),  # TODO: Add final metrics
-    Subset(name="Zzzz", metrics=(-286, 966)),  # TODO: Add final metrics
+    Subset(name="Latn", ascender=966, descender=-286),
+    Subset(name="Armn", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Beng", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Cyrl", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Deva", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Ethi", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Geor", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Grek", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Gujr", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Guru", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Hebr", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Khmr", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Knda", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Laoo", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Mlym", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Orya", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Sinh", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Taml", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Telu", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Thai", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Zinh", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Zyyy", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="Zzzz", ascender=966, descender=-286),  # TODO: Add final metrics
 ]
 
 
@@ -115,9 +116,8 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
 
     # Post-process TTF metadata (e.g. names, metrics).
     ttf = TTFont(output_path)
-    ascender, descender = subset.metrics
-    ttf["OS/2"].sTypoAscender = ascender  # type: ignore
-    ttf["OS/2"].sTypoDescender = descender  # type: ignore
+    ttf["OS/2"].sTypoAscender = subset.ascender  # type: ignore
+    ttf["OS/2"].sTypoDescender = subset.descender  # type: ignore
     ttf.save(output_path)
 
 
