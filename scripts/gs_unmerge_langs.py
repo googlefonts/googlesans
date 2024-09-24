@@ -99,6 +99,8 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
         str(base_ttf),
         *(f"--unicodes-file={path}" for path in subset.codepoints),
         f"--output-file={output_path}",
+        "--name-IDs=*",
+        "--name-languages=*",
     )
     try:
         pyftsubset(args)
