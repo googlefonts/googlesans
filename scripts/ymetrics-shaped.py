@@ -285,6 +285,7 @@ def load_test_words(
             for word in all_words:
                 words_by_source[word] = "other"
         else:
+            random.seed("Google")
             for word in random.sample(all_words, sample_size_per_list):
                 words_by_source[word] = "other"
 
@@ -314,6 +315,7 @@ def load_test_words(
             for word in aosp_words:
                 words_by_source[word] = "AOSP"
         else:
+            random.seed("Google")
             for word in random.sample(aosp_words, sample_size_aosp):
                 words_by_source[word] = "AOSP"
     else:
