@@ -42,36 +42,37 @@ class Subset:
     name: str
     ascender: int
     descender: int
+    scripts: list[str]
 
     @property
     def codepoints(self) -> list[Path]:
-        return [SUBSETS_DIR / f"{self.name}.txt"]
+        return [SUBSETS_DIR / f"{script}.txt" for script in self.scripts]
 
 
 SUBSETS = [
-    Subset(name="Latn", ascender=966, descender=-286),
-    Subset(name="Armn", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Beng", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Cyrl", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Deva", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Ethi", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Geor", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Grek", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Gujr", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Guru", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Hebr", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Khmr", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Knda", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Laoo", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Mlym", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Orya", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Sinh", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Taml", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Telu", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Thai", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Zinh", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Zyyy", ascender=966, descender=-286),  # TODO: Add final metrics
-    Subset(name="Zzzz", ascender=966, descender=-286),  # TODO: Add final metrics
+    Subset(name="LGC", ascender=966, descender=-286, scripts=["Latn", "Grek", "Cyrl"]),
+    # TODO: Final metrics
+    Subset(name="Armn", ascender=966, descender=-286, scripts=["Armn"]),
+    Subset(name="Beng", ascender=966, descender=-286, scripts=["Beng"]),
+    Subset(name="Deva", ascender=966, descender=-286, scripts=["Deva"]),
+    Subset(name="Ethi", ascender=966, descender=-286, scripts=["Ethi"]),
+    Subset(name="Geor", ascender=966, descender=-286, scripts=["Geor"]),
+    Subset(name="Gujr", ascender=966, descender=-286, scripts=["Gujr"]),
+    Subset(name="Guru", ascender=966, descender=-286, scripts=["Guru"]),
+    Subset(name="Hebr", ascender=966, descender=-286, scripts=["Hebr"]),
+    Subset(name="Khmr", ascender=966, descender=-286, scripts=["Khmr"]),
+    Subset(name="Knda", ascender=966, descender=-286, scripts=["Knda"]),
+    Subset(name="Laoo", ascender=966, descender=-286, scripts=["Laoo"]),
+    Subset(name="Mlym", ascender=966, descender=-286, scripts=["Mlym"]),
+    Subset(name="Orya", ascender=966, descender=-286, scripts=["Orya"]),
+    Subset(name="Sinh", ascender=966, descender=-286, scripts=["Sinh"]),
+    Subset(name="Taml", ascender=966, descender=-286, scripts=["Taml"]),
+    Subset(name="Telu", ascender=966, descender=-286, scripts=["Telu"]),
+    Subset(name="Thai", ascender=966, descender=-286, scripts=["Thai"]),
+    # TODO: Find a home
+    Subset(name="Zinh", ascender=966, descender=-286, scripts=["Zinh"]),
+    Subset(name="Zyyy", ascender=966, descender=-286, scripts=["Zyyy"]),
+    Subset(name="Zzzz", ascender=966, descender=-286, scripts=["Zzzz"]),
 ]
 
 
