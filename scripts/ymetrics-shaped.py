@@ -75,7 +75,7 @@ class Report:
 
 
 def main() -> None:
-    test_words = load_test_words(sample_size_per_list=5_000, sample_size_aosp=50_000)
+    test_words = load_test_words(sample_size_per_list=5_000, sample_size_aosp=None)
 
     reports: list[Report] = []
 
