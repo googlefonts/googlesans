@@ -317,9 +317,9 @@ def load_test_words(
             for word in random.sample(aosp_words, sample_size_aosp):
                 words_by_source[word] = "AOSP"
     else:
-        print(
-            "Download the AOSP aosp.json to scripts/diffenator2-data to have",
-            "that be used as well",
+        raise ValueError(
+            "Download the AOSP aosp.json to scripts/diffenator2-data to have "
+            "that be used as well: https://github.com/googlefonts/aosp-test-texts/blob/main/corpus/aosp.json"
         )
 
     return [Word(word, source) for word, source in sorted(words_by_source.items())]
