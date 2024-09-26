@@ -132,9 +132,11 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
     # Post-process TTF metadata (e.g. names, metrics).
     ttf = TTFont(output_path)
 
+    # Set per-subset vertical metrics:
     ttf["OS/2"].sTypoAscender = subset.ascender  # type: ignore
     ttf["OS/2"].sTypoDescender = subset.descender  # type: ignore
 
+    # Append suffix to differentiate subsets from each other and main VF:
     for rec in ttf["name"].names:
         match rec.nameID:
             case 1 | 4:
@@ -152,6 +154,12 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
             before, after = replace
             assert before in rec.toUnicode(), "Incorrect family name"
             rec.string = rec.toUnicode().replace(before, after)
+
+    # Change version to 0.013
+    ttf["head"].fontRevision = 0.013  # type: ignore
+
+    for rec in ttf["name"].names:
+        rec.string = rec.toUnicode().replace("12.000", "0.013")
 
     ttf.save(output_path)
 
