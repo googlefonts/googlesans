@@ -50,7 +50,20 @@ class Subset:
 
 
 SUBSETS = [
-    Subset(name="LGC", ascender=966, descender=-286, scripts=["Latn", "Grek", "Cyrl"]),
+    Subset(
+        name="LGC",
+        ascender=966,
+        descender=-286,
+        scripts=[
+            "Latn",
+            "Grek",
+            "Cyrl",
+            # TODO: Confirm new clipping and/or find a new home
+            "Zinh",
+            "Zyyy",
+            "Zzzz",
+        ],
+    ),
     # TODO: Final metrics
     Subset(name="Armn", ascender=1040, descender=-286, scripts=["Armn"]),
     Subset(name="Beng", ascender=1172, descender=-604, scripts=["Beng"]),
@@ -69,13 +82,6 @@ SUBSETS = [
     Subset(name="Taml", ascender=989, descender=-482, scripts=["Taml"]),
     Subset(name="Telu", ascender=1204, descender=-962, scripts=["Telu"]),
     Subset(name="Thai", ascender=1319, descender=-570, scripts=["Thai"]),
-    # TODO: Find a home
-    Subset(
-        name="Unassigned",
-        ascender=966,
-        descender=-286,
-        scripts=["Zinh", "Zyyy", "Zzzz"],
-    ),
 ]
 
 
