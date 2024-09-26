@@ -111,6 +111,9 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
         f"--output-file={output_path}",
         "--name-IDs=*",
         "--name-languages=*",
+        "--notdef-outline",
+        "--layout-features=*",
+        "--recalc-bounds",
     )
     try:
         pyftsubset(args)
