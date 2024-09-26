@@ -138,9 +138,9 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
     for rec in ttf["name"].names:
         match rec.nameID:
             case 1 | 4:
-                replace = ("Google Sans", f"Google Sans Android {subset.name}")
+                replace = ("Google Sans", f"Google Sans Alpha {subset.name}")
             case 3 | 6:
-                replace = ("GoogleSans", f"GoogleSansAndroid{subset.name}")
+                replace = ("GoogleSans", f"GoogleSansAlpha{subset.name}")
             case 0 | 2 | 5 | 7 | 8 | 9 | 11 | 13:
                 replace = None
             case n if n >= 256:  # User ID
