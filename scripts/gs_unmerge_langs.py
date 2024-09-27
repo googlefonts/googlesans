@@ -52,12 +52,17 @@ class Subset:
 
 
 SUBSETS = [
+    ###########################################
+    ### Latin, Greek, Cyrillic, and Unknown ###
+    ###########################################
+    # EVERY Latin glyph, original vertical metrics:
     Subset(
-        name="LGC",
+        name="LGC-Full",
         ascender=966,
         descender=-286,
         scripts=[
-            "Latn",
+            "LatnSmall",
+            "LatnTall",
             "Grek",
             "Cyrl",
             # TODO: Confirm new clipping and/or find a new home
@@ -66,6 +71,26 @@ SUBSETS = [
             "Zzzz",
         ],
     ),
+    # ONLY PREVIOUSLY NON-CLIPPING Latin glyphs, original vertical metrics:
+    Subset(
+        name="LGC-Small",
+        ascender=966,
+        descender=-286,
+        scripts=[
+            "LatnSmall",
+            "Grek",
+            "Cyrl",
+            # TODO: Confirm new clipping and/or find a new home
+            "Zinh",
+            "Zyyy",
+            "Zzzz",
+        ],
+    ),
+    # ONLY PREVIOUSLY CLIPPING Latin glyphs, taller vertical metrics:
+    Subset(name="LGC-Tall", ascender=1115, descender=-292, scripts=["LatnTall"]),
+    ##########################
+    ### Per-script Subsets ###
+    ##########################
     # TODO: Final metrics
     Subset(name="Armn", ascender=1040, descender=-286, scripts=["Armn"]),
     Subset(name="Beng", ascender=1172, descender=-604, scripts=["Beng"]),
