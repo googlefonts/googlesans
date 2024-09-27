@@ -27,6 +27,8 @@ from argparse import ArgumentParser
 from dataclasses import dataclass
 from pathlib import Path
 
+import ufo2ft.fontInfoData
+import ufo2ft.util
 from fontTools.subset import Subsetter
 from fontTools.subset import main as pyftsubset
 from fontTools.ttLib import TTFont
@@ -137,7 +139,7 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
     ttf["OS/2"].sTypoDescender = subset.descender  # type: ignore
 
     # Append suffix to differentiate subsets from each other and main VF:
-    for rec in ttf["name"].names:
+    for rec in ttf["name"].names:  # type: ignore
         match rec.nameID:
             case 1 | 4:
                 replace = ("Google Sans", f"Google Sans Alpha {subset.name}")
@@ -158,8 +160,16 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
     # Change version to 0.013
     ttf["head"].fontRevision = 0.013  # type: ignore
 
-    for rec in ttf["name"].names:
+    for rec in ttf["name"].names:  # type: ignore
         rec.string = rec.toUnicode().replace("12.000", "0.013")
+
+    # Update codepage ranges
+    # API usage derived from here:
+    #   https://github.com/googlefonts/ufo2ft/blob/5fd168e65/Lib/ufo2ft/outlineCompiler.py#L670-L672
+    # TODO: When we bump fonttools, we can ask the subsetter to do this itself
+    codepages = ufo2ft.util.calcCodePageRanges(set(ttf["cmap"].getBestCmap().keys()))  # type: ignore
+    ttf["OS/2"].ulCodePageRange1 = ufo2ft.fontInfoData.intListToNum(codepages, 0, 32)  # type: ignore
+    ttf["OS/2"].ulCodePageRange2 = ufo2ft.fontInfoData.intListToNum(codepages, 32, 32)  # type: ignore
 
     ttf.save(output_path)
 
