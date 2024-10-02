@@ -17,6 +17,8 @@ Aggregate coverage and file size statistics across several TTFs.
 
 Initially developed for comparison of a full VF and a collection of subsets that
 aim to reproduce it.
+
+NOTE: TTFs must include glyph names for the unique glyph count to be accurate.
 """
 
 from __future__ import annotations
