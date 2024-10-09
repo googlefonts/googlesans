@@ -184,6 +184,12 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
 
     # Change version to 0.013
     ttf["head"].fontRevision = 0.013  # type: ignore
+    
+    if "LGC" in subset.name:
+        # Override font metrics
+        # https://docs.google.com/document/d/1leoHTpzVSEyEtekxSiktBDkVuhoMAu0v9xKVkUqToAc/edit?resourcekey=0-jdmXDwNa-B7XHsVYlBY5vw&disco=AAABTwDw-l8
+        ttf["head"].yMin = -381  # type: ignore
+        ttf["head"].yMax = 1056  # type: ignore
 
     for rec in ttf["name"].names:  # type: ignore
         rec.string = rec.toUnicode().replace("12.000", "0.013")
