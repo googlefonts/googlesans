@@ -14,18 +14,32 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# from argparse import ArgumentParser
+"""
+Analyze what kerns will be impossible if two font subsets are pulled out into
+separate TTFs
+
+Outputs a CSV to stdout, info/warnings to stderr
+"""
+
+import csv
+import os
+import sys
 from pathlib import Path
 
 from ufoLib2 import Font
 
+#########################
+# 👇 User configuration #
+#########################
 SUBSET_GROUP_ONE = [
     "LatnTall",
 ]
 SUBSET_GROUP_TWO = [
     "LatnSmall",
 ]
-SHOW_CLASHES = True
+#########################
+# 👆 User configuration #
+#########################
 
 SOURCES_PATH = Path(__file__).parent.parent / "source" / "GoogleSans"
 SUBSETS_PATH = SOURCES_PATH / "subsets"
@@ -42,7 +56,7 @@ def get_all_codepoints(subset_names: list[str]) -> set[int]:
             try:
                 codepoints.add(int(hex_str, 16))
             except ValueError:
-                print(f"failed to convert line to codepoint: '{line}'")
+                print(f"failed to convert line to codepoint: '{line}'", file=sys.stderr)
     return codepoints
 
 
@@ -54,18 +68,29 @@ def main():
     # Consolidate all subsets into big lists of codepoints
     group_one_codepoints = get_all_codepoints(SUBSET_GROUP_ONE)
     print(
-        f"Subsets {SUBSET_GROUP_ONE} have {len(group_one_codepoints)} codepoints total"
+        f"Subsets {SUBSET_GROUP_ONE} have {len(group_one_codepoints)} codepoints total",
+        file=sys.stderr,
     )
     group_two_codepoints = get_all_codepoints(SUBSET_GROUP_TWO)
     print(
-        f"Subsets {SUBSET_GROUP_TWO} have {len(group_two_codepoints)} codepoints total"
+        f"Subsets {SUBSET_GROUP_TWO} have {len(group_two_codepoints)} codepoints total",
+        file=sys.stderr,
     )
     assert (
         len(group_one_codepoints & group_two_codepoints) == 0
     ), "overlapping subset groups"
 
-    if not SHOW_CLASHES:
-        print("Kerns between the two groups of codepoints:")
+    csv_out = csv.writer(sys.stdout, lineterminator=os.linesep)
+    csv_out.writerow(
+        (
+            "master",
+            "left glyph",
+            "right glyph",
+            "left group",
+            "right group",
+            "value",
+        )
+    )
     for source_path in sorted(SOURCES_PATH.glob("*.ufo")):
         ufo = Font.open(source_path)
 
@@ -81,7 +106,6 @@ def main():
             len(group_one_names & group_two_names) == 0
         ), "overlapping glyphs names across groups"
 
-        external_kerns = 0
         for glyph_name in group_one_names:
             left_kern_group = next(
                 (
@@ -101,36 +125,27 @@ def main():
             )
             for (kern_left, kern_right), value in ufo.kerning.items():
                 if kern_left == left_kern_group or kern_left == glyph_name:
-                    other_first = False
                     other = kern_right
+                    other_first = False
                 elif kern_right == right_kern_group or kern_right == glyph_name:
-                    other_first = True
                     other = kern_left
+                    other_first = True
                 else:
                     continue
 
-                done = False
                 for other_glyph_name in ufo.groups.get(other, [other]):
                     if other_glyph_name not in group_two_names:
                         continue
-                    if SHOW_CLASHES and value >= 50:
-                        if other_first:
-                            print(
-                                f"{source_path.stem}: /{other_glyph_name} /{glyph_name} -> {value}"
-                            )
-                        else:
-                            print(
-                                f"{source_path.stem}: /{glyph_name} /{other_glyph_name} -> {value}"
-                            )
-                    external_kerns += 1
-                    if not SHOW_CLASHES:
-                        done = True
-                        break
-                if done:
-                    break
-
-        if not SHOW_CLASHES:
-            print(f"- {source_path.stem}: {external_kerns}")
+                    csv_out.writerow(
+                        (
+                            source_path.stem,
+                            other_glyph_name if other_first else glyph_name,
+                            glyph_name if other_first else other_glyph_name,
+                            kern_left,
+                            kern_right,
+                            value,
+                        )
+                    )
 
 
 if __name__ == "__main__":
