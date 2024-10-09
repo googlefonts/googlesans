@@ -22,6 +22,7 @@ Outputs a CSV to stdout, info/warnings to stderr
 """
 
 import csv
+import itertools
 import os
 import sys
 from pathlib import Path
@@ -60,6 +61,13 @@ def get_all_codepoints(subset_names: list[str]) -> set[int]:
     return codepoints
 
 
+def make_test_string(left_unicodes: list[int], right_unicodes: list[int]) -> str:
+    return " ".join(
+        f"{chr(left)}{chr(right)}"
+        for left, right in itertools.product(left_unicodes, right_unicodes)
+    )
+
+
 def main():
     assert (
         len(SUBSET_GROUP_ONE) > 0 and len(SUBSET_GROUP_TWO) > 0
@@ -84,6 +92,7 @@ def main():
     csv_out.writerow(
         (
             "master",
+            "test string",
             "left glyph",
             "right glyph",
             "left group",
@@ -136,11 +145,20 @@ def main():
                 for other_glyph_name in ufo.groups.get(other, [other]):
                     if other_glyph_name not in group_two_names:
                         continue
+                    left_name, right_name = (
+                        (other_glyph_name, glyph_name)
+                        if other_first
+                        else (glyph_name, other_glyph_name)
+                    )
+                    test_string = make_test_string(
+                        ufo[left_name].unicodes, ufo[right_name].unicodes
+                    )
                     csv_out.writerow(
                         (
                             source_path.stem,
-                            other_glyph_name if other_first else glyph_name,
-                            glyph_name if other_first else other_glyph_name,
+                            test_string,
+                            left_name,
+                            right_name,
                             kern_left,
                             kern_right,
                             value,
