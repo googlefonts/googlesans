@@ -1,0 +1,12 @@
+# This allows us to test support for localised forms with `locl` in the GS
+# script subsets.
+# TODO: If we settle on this approach, all shared glyphs should be added to
+#       their respective script subset list where a `locl` substitution exists
+#       instead.
+
+# period
+U+002E
+# quotedblleft
+U+201C
+# quotedblright
+U+201D

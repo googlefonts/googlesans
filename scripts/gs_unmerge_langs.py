@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 # Copyright 2024 Google Sans Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,9 +17,10 @@ Extract language subsets from TTFs containing all languages.
 
 Uses subsets found in source/GoogleSans/subsets. The name of the subset file is
 appended to the font's file name, with output fonts landing in
-build/GoogleSans/android. Each subset includes Latin.
+build/GoogleSans/android.
 """
 
+import itertools
 import multiprocessing
 from argparse import ArgumentParser
 from dataclasses import dataclass
@@ -29,12 +28,14 @@ from pathlib import Path
 
 import ufo2ft.fontInfoData
 import ufo2ft.util
+from colr_foreground import get_color
 from fontTools.subset import Subsetter
 from fontTools.subset import main as pyftsubset
 from fontTools.ttLib import TTFont
 
-BUILD_DIR = Path("build/GoogleSans/android")
-SUBSETS_DIR = Path("source/GoogleSans/subsets")
+REPO_ROOT = Path(__file__).parent.parent
+BUILD_DIR = REPO_ROOT / "build" / "GoogleSans" / "android"
+SUBSETS_DIR = REPO_ROOT / "source" / "GoogleSans" / "subsets"
 
 
 @dataclass(frozen=True, kw_only=True)
@@ -44,92 +45,214 @@ class Subset:
     name: str
     ascender: int
     descender: int
-    scripts: list[str]
-
-    @property
-    def codepoints(self) -> list[Path]:
-        return [SUBSETS_DIR / f"{script}.txt" for script in self.scripts]
+    ymax: int | None
+    ymin: int | None
+    codepoints: list[Path]
+    color: tuple[float, float, float]
 
 
 SUBSETS = [
-    ###########################################
-    ### Latin, Greek, Cyrillic, and Unknown ###
-    ###########################################
-    # EVERY Latin glyph, original vertical metrics:
+    ###############################
+    ### Already-shipped scripts ###
+    ###############################
     Subset(
-        name="LGC-Full",
+        name="LatnGrekCyrl",
         ascender=966,
         descender=-286,
-        scripts=[
-            "LatnSmall",
-            "LatnTall",
-            "Grek",
-            "Cyrl",
-            # TODO: Confirm new clipping and/or find a new home
-            "Zinh",
-            "Zyyy",
-            "Zzzz",
+        ymax=1056,
+        ymin=-381,
+        codepoints=[
+            SUBSETS_DIR / "LatnSmall.txt",
+            SUBSETS_DIR / "LatnTall.txt",
+            SUBSETS_DIR / "Grek.txt",
+            SUBSETS_DIR / "Cyrl.txt",
         ],
+        color=get_color("#5388ac"),
     ),
-    # ONLY PREVIOUSLY NON-CLIPPING Latin glyphs, original vertical metrics:
     Subset(
-        name="LGC-Small",
+        name="Other",
         ascender=966,
         descender=-286,
-        scripts=[
-            "LatnSmall",
-            "Grek",
-            "Cyrl",
-            # TODO: Confirm new clipping and/or find a new home
-            "Zinh",
-            "Zyyy",
-            "Zzzz",
+        ymax=1056,
+        ymin=-381,
+        codepoints=[
+            # TODO: Confirm no clipping and/or find a new home
+            SUBSETS_DIR / "Zinh.txt",
+            SUBSETS_DIR / "Zyyy.txt",
+            SUBSETS_DIR / "Zzzz.txt",
         ],
+        color=get_color("#0000ff"),
     ),
-    # ONLY PREVIOUSLY CLIPPING Latin glyphs, taller vertical metrics:
-    Subset(name="LGC-Tall", ascender=1115, descender=-292, scripts=["LatnTall"]),
     ##########################
     ### Per-script Subsets ###
     ##########################
     # TODO: Final metrics
-    Subset(name="Armn", ascender=1040, descender=-286, scripts=["Armn"]),
-    Subset(name="Beng", ascender=1172, descender=-604, scripts=["Beng"]),
-    Subset(name="Deva", ascender=1058, descender=-527, scripts=["Deva"]),
-    Subset(name="Ethi", ascender=975, descender=-286, scripts=["Ethi"]),
-    Subset(name="Geor", ascender=966, descender=-286, scripts=["Geor"]),
-    Subset(name="Gujr", ascender=1244, descender=-565, scripts=["Gujr"]),
-    Subset(name="Guru", ascender=1056, descender=-655, scripts=["Guru"]),
-    Subset(name="Hebr", ascender=966, descender=-469, scripts=["Hebr"]),
-    Subset(name="Khmr", ascender=1070, descender=-559, scripts=["Khmr"]),
-    Subset(name="Knda", ascender=985, descender=-800, scripts=["Knda"]),
-    Subset(name="Laoo", ascender=1375, descender=-474, scripts=["Laoo"]),
-    Subset(name="Mlym", ascender=1070, descender=-395, scripts=["Mlym"]),
-    Subset(name="Orya", ascender=1213, descender=-1076, scripts=["Orya"]),
-    Subset(name="Sinh", ascender=1093, descender=-362, scripts=["Sinh"]),
-    Subset(name="Taml", ascender=989, descender=-482, scripts=["Taml"]),
-    Subset(name="Telu", ascender=1204, descender=-962, scripts=["Telu"]),
-    Subset(name="Thai", ascender=1319, descender=-570, scripts=["Thai"]),
+    Subset(
+        name="Armn",
+        ascender=1040,
+        descender=-286,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Armn.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#604f1e"),
+    ),
+    Subset(
+        name="Beng",
+        ascender=1172,
+        descender=-604,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Beng.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#e69138"),
+    ),
+    Subset(
+        name="Deva",
+        ascender=1058,
+        descender=-527,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Deva.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#0b57d0"),
+    ),
+    Subset(
+        name="Ethi",
+        ascender=975,
+        descender=-286,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Ethi.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#a64d79"),
+    ),
+    Subset(
+        name="Geor",
+        ascender=966,
+        descender=-286,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Geor.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#ff00ff"),
+    ),
+    Subset(
+        name="Gujr",
+        ascender=1244,
+        descender=-565,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Gujr.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#274e13"),
+    ),
+    Subset(
+        name="Guru",
+        ascender=1056,
+        descender=-655,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Guru.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#9900ff"),
+    ),
+    Subset(
+        name="Hebr",
+        ascender=966,
+        descender=-469,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Hebr.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#6aa84f"),
+    ),
+    Subset(
+        name="Khmr",
+        ascender=1070,
+        descender=-559,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Khmr.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#cb9bb3"),
+    ),
+    Subset(
+        name="Knda",
+        ascender=985,
+        descender=-800,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Knda.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#c9286c"),
+    ),
+    Subset(
+        name="Laoo",
+        ascender=1375,
+        descender=-474,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Laoo.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#b45f06"),
+    ),
+    Subset(
+        name="Mlym",
+        ascender=1070,
+        descender=-395,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Mlym.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#999999"),
+    ),
+    Subset(
+        name="Orya",
+        ascender=1213,
+        descender=-1076,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Orya.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#ff0000"),
+    ),
+    Subset(
+        name="Sinh",
+        ascender=1093,
+        descender=-362,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Sinh.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#85200c"),
+    ),
+    Subset(
+        name="Taml",
+        ascender=989,
+        descender=-482,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Taml.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#674ea7"),
+    ),
+    Subset(
+        name="Telu",
+        ascender=1204,
+        descender=-962,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Telu.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#9995b8"),
+    ),
+    Subset(
+        name="Thai",
+        ascender=1319,
+        descender=-570,
+        ymax=None,
+        ymin=None,
+        codepoints=[SUBSETS_DIR / "Thai.txt", SUBSETS_DIR / "Shared.txt"],
+        color=get_color("#0db6ac"),
+    ),
 ]
 
 
 def main(ttfs: list[Path]) -> None:
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
 
-    for ttf in ttfs:
-        extract_subsets(ttf)
-
-
-def extract_subsets(base_ttf: Path) -> None:
     with multiprocessing.Pool() as pool:
-        pool.starmap(
-            extract_subset,
-            ((base_ttf, subset) for subset in SUBSETS),
-        )
+        pool.starmap(extract_subset, itertools.product(ttfs, SUBSETS))
 
 
 def extract_subset(base_ttf: Path, subset: Subset) -> None:
     output_path = BUILD_DIR / f"{base_ttf.stem}-{subset.name}.ttf"
-    print(f"Making {output_path} with pyftsubset")
+    print(f"Making {output_path.relative_to(REPO_ROOT)} with pyftsubset")
 
     # Produce new TTF with subset of glyphs.
     args = (
@@ -184,12 +307,13 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
 
     # Change version to 0.013
     ttf["head"].fontRevision = 0.013  # type: ignore
-    
-    if "LGC" in subset.name:
-        # Override font metrics
-        # https://docs.google.com/document/d/1leoHTpzVSEyEtekxSiktBDkVuhoMAu0v9xKVkUqToAc/edit?resourcekey=0-jdmXDwNa-B7XHsVYlBY5vw&disco=AAABTwDw-l8
-        ttf["head"].yMin = -381  # type: ignore
-        ttf["head"].yMax = 1056  # type: ignore
+
+    # Override head metrics, if subset requests
+    # https://docs.google.com/document/d/1leoHTpzVSEyEtekxSiktBDkVuhoMAu0v9xKVkUqToAc/edit?resourcekey=0-jdmXDwNa-B7XHsVYlBY5vw&disco=AAABTwDw-l8
+    if subset.ymax is not None:
+        ttf["head"].yMax = subset.ymax  # type: ignore
+    if subset.ymin is not None:
+        ttf["head"].yMin = subset.ymin  # type: ignore
 
     for rec in ttf["name"].names:  # type: ignore
         rec.string = rec.toUnicode().replace("12.000", "0.013")
