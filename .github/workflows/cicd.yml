@@ -76,8 +76,8 @@ jobs:
   check-variable:
     needs:
       - build-variable
-    runs-on: googlefonts-64cores-256GB
-    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
@@ -152,8 +152,8 @@ jobs:
   check-statics:
     needs:
       - build-statics
-    runs-on: googlefonts-64cores-256GB
-    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
