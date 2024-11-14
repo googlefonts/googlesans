@@ -76,8 +76,8 @@ jobs:
   check-variable:
     needs:
       - build-variable
-    runs-on: googlefonts-64cores-256GB
-    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
@@ -93,21 +93,21 @@ jobs:
       - name: Font Bakery GS profile tests
         uses: f-actions/font-bakery@v3
         with:
-          version: '0.10.9'
+          version: 'latest'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-googlesans.py'
           path: 'build/GoogleSans/variable/*.ttf'
       - name: Font Bakery character set profile tests
         uses: f-actions/font-bakery@v3
         with:
-          version: '0.10.9'
+          version: 'latest'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-charset.py'
           path: 'build/GoogleSans/variable/*.ttf'
       - name: Font Bakery feature tag and shaping tests
         uses: f-actions/font-bakery@v3
         with:
-          version: '0.10.9'
+          version: 'latest'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-fea.py'
           path: 'build/GoogleSans/variable/*.ttf'
@@ -152,8 +152,8 @@ jobs:
   check-statics:
     needs:
       - build-statics
-    runs-on: googlefonts-64cores-256GB
-    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
@@ -169,21 +169,21 @@ jobs:
       - name: Font Bakery GS profile tests
         uses: f-actions/font-bakery@v3
         with:
-          version: '0.10.9'
+          version: 'latest'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-googlesans.py'
           path: 'build/GoogleSans/static/*.ttf'
       - name: Font Bakery character set profile tests
         uses: f-actions/font-bakery@v3
         with:
-          version: '0.10.9'
+          version: 'latest'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-charset.py'
           path: 'build/GoogleSans/static/*.ttf'
       - name: Font Bakery feature tag and shaping tests
         uses: f-actions/font-bakery@v3
         with:
-          version: '0.10.9'
+          version: 'latest'
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN qa/check-fea.py'
           path: 'build/GoogleSans/static/*.ttf'

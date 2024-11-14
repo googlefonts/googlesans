@@ -12,111 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os
-import sys
-from difflib import unified_diff
+from pathlib import Path
 
-from fontbakery.callable import check
-from fontbakery.checkrunner import PASS, FAIL
-from fontbakery.fonts_profile import profile_factory
-from fontbakery.section import Section
-
-profile_imports = [("fontbakery.profiles.shared_conditions", ("ttFont",))]
-profile = profile_factory(
-    default_section=Section("Google Sans Custom Character Set Checks")
-)
-
-GOOGLESANS_PROFILE_CHECKS = [
-    "com.google.fonts/check/googlesans/glyphs/glyphset-contents",
-]
-
-excluded_check_ids = (
-    "com.google.fonts/check/ftxvalidator_is_available",
-    "com.google.fonts/check/dsig",
-    "com.google.fonts/check/family/win_ascent_and_descent",  # replaced by custom checks
-    "com.google.fonts/check/varfont/regular_opsz_coord",  # we want our opsz definition
-    # "com.google.fonts/check/os2_metrics_match_hhea",
-    # "com.google.fonts/check/unwanted_tables",
-)
-
-# ================================================
-# Glyph set checks
-# ================================================
-
-# ::::::::::::::::::::::::::::::::::::::::::::::::
-# Glyph set support
-# ::::::::::::::::::::::::::::::::::::::::::::::::
-# compare against a newline-delimited list of expected glyph names
-# this includes all Unicode encoded and non-Unicode encoded glyph definitions
-
-
-@check(
-    id="com.google.fonts/check/googlesans/glyphs/glyphset-contents",
-    rationale="""
-    Confirms that the fonts include all expected Unicode encoded and \
-    non-Unicode encoded glyph definitions. This test also confirms that \
-    fonts have the expected glyph order.
-    """,
-)
-def com_google_fonts_check_googlesans_glyphs_glyphset_contents(ttFonts):
-    """Confirm that fonts have all expected Unicode encoded and \
-       non-Unicoded encoded glyph definitions.This test also confirms \
-       that the glyph order is defined as expected."""
-    try:
-        glyph_definition_basedir = os.path.join("qa", "definitions")
-
-        tests_passed = True
-        for tt in ttFonts:
-            glyph_list_raw = ""
-            base_file_path = os.path.basename(tt.reader.file.name) + ".glyphsetdef"
-            expected_glyph_definition_path = os.path.join(
-                glyph_definition_basedir, base_file_path
-            )
-            with open(expected_glyph_definition_path, "r") as f:
-                glyph_list_raw = f.read().rstrip()
-
-            glyph_list = glyph_list_raw.split("\n")
-            # must have
-            # (1) glyph set contents &
-            # (2) glyph set order as defined in def file
-            if not (tt.getGlyphOrder() == glyph_list):
-                tests_passed = False
-                yield FAIL, (
-                    "{} failed expected glyph set check. Diffs:\n\n```diff\n{}\n```"
-                ).format(
-                    tt.reader.file.name,
-                    "\n".join(
-                        unified_diff(
-                            list(tt.getGlyphOrder()),
-                            list(glyph_list),
-                            fromfile="ttFont.getGlyphOrder()",
-                            tofile="glyphsetdef",
-                            lineterm="",
-                        )
-                    ),
-                )
-        if tests_passed:
-            yield PASS, "All fonts passed the expected glyph set checks"
-    except Exception as e:
-        sys.stderr.write("[ERROR]: {}".format(str(e)))
-        sys.exit(1)
-
-
-# ================================================
-#
-# End check definitions
-#
-# ================================================
-
-
-# skip filter function to exclude checks defined in the
-# fontbakery universal profile
-def check_skip_filter(checkid, font=None, **iterargs):
-    if font and checkid in excluded_check_ids:
-        return False, ("Check skipped in Google Sans profile")
-    return True, None
-
-
-profile.check_skip_filter = check_skip_filter
-profile.auto_register(globals())
-profile.test_expected_checks(GOOGLESANS_PROFILE_CHECKS, exclusive=True)
+PROFILE = {
+    # The checks are in a separate file, because Simon says that eventually this
+    # file will become pure data.
+    "check_definitions": [Path(__file__).parent / "check-charset-checks.py"],
+    "sections": {
+        "Google Sans Custom Character Set Checks": [
+            "com.google.fonts/check/googlesans/glyphs/glyphset-contents",
+        ]
+    },
+}
