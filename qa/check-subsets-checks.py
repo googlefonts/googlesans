@@ -55,7 +55,8 @@ def check_coverage_codepoints(ttFont: TTFont, subsets: dict[Path, TTFont], font:
     if in_full == in_subsets:
         yield (
             PASS,
-            f"Subsets have the same codepoint coverage as the full font `{font.file_displayname}`",
+            "Subsets have the same codepoint coverage as the full font",
+            f"`{font.file_displayname}`",
         )
     else:
 
@@ -73,7 +74,8 @@ def check_coverage_codepoints(ttFont: TTFont, subsets: dict[Path, TTFont], font:
 
         yield (
             FAIL,
-            f"Subsets have different codepoint coverage than the full font {font.file_displayname}:\n\n```diff\n"
+            "Subsets have different codepoint coverage than the full font",
+            f"{font.file_displayname}:\n\n```diff\n"
             + "\n".join(
                 difflib.unified_diff(
                     format_cmap(in_full),

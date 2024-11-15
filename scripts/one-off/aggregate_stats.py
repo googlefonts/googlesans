@@ -42,7 +42,9 @@ def sum(ttfs: list[TTFont]) -> dict[str, int]:
         #     https://github.com/source-foundry/font-size/blob/a8056c559/lib/fontsize/size.py
         tags = [tag for tag in ttf.keys() if tag != "GlyphOrder"]
         for tag in tags:
-            tables[tag] = tables.get(tag, 0) + ttf.reader.tables[tag].length  # type: ignore
+            tables[tag] = (
+                tables.get(tag, 0) + ttf.reader.tables[tag].length  # type: ignore
+            )
 
     # Summarise glyphs and codepoints as counts, and include table bytes too.
     return {

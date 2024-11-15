@@ -36,7 +36,8 @@ def get_color(hexa: str) -> tuple[float, float, float]:
     match = HEX_COLOR.fullmatch(hexa)
     if match is None:
         raise ValueError(
-            f"Hex color must be a '#' followed by six hexadecimal digits, but was instead '{hexa}'"
+            "Hex color must be a '#' followed by six hexadecimal digits,",
+            f"but was instead '{hexa}'"
         )
     r, g, b = match.groups()
     return (int(r, 16) / 255, int(g, 16) / 255, int(b, 16) / 255)

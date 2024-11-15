@@ -52,9 +52,9 @@ class Subset:
 
 
 SUBSETS = [
-    ###############################
-    ### Already-shipped scripts ###
-    ###############################
+    ###########################
+    # Already-shipped scripts #
+    ###########################
     Subset(
         name="LatnGrekCyrl",
         ascender=966,
@@ -83,9 +83,9 @@ SUBSETS = [
         ],
         color=get_color("#0000ff"),
     ),
-    ##########################
-    ### Per-script Subsets ###
-    ##########################
+    ######################
+    # Per-script Subsets #
+    ######################
     # TODO: Final metrics
     Subset(
         name="Armn",
@@ -275,9 +275,9 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
             "\n- ".join(missing_glyphs),
         )
         raise
-    except:
+    except Exception as err:
         print(f"pyftsubset of {subset.name} failed")
-        raise
+        raise err
 
     # Post-process TTF metadata (e.g. names, metrics).
     ttf = TTFont(output_path)
@@ -322,9 +322,19 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
     # API usage derived from here:
     #   https://github.com/googlefonts/ufo2ft/blob/5fd168e65/Lib/ufo2ft/outlineCompiler.py#L670-L672
     # TODO: When we bump fonttools, we can ask the subsetter to do this itself
-    codepages = ufo2ft.util.calcCodePageRanges(set(ttf["cmap"].getBestCmap().keys()))  # type: ignore
-    ttf["OS/2"].ulCodePageRange1 = ufo2ft.fontInfoData.intListToNum(codepages, 0, 32)  # type: ignore
-    ttf["OS/2"].ulCodePageRange2 = ufo2ft.fontInfoData.intListToNum(codepages, 32, 32)  # type: ignore
+    codepages = ufo2ft.util.calcCodePageRanges(
+        set(ttf["cmap"].getBestCmap().keys())  # type: ignore
+    )
+    ttf["OS/2"].ulCodePageRange1 = ufo2ft.fontInfoData.intListToNum(
+        codepages,
+        0,
+        32,
+    )  # type: ignore
+    ttf["OS/2"].ulCodePageRange2 = ufo2ft.fontInfoData.intListToNum(
+        codepages,
+        32,
+        32,
+    )  # type: ignore
 
     ttf.save(output_path)
 
