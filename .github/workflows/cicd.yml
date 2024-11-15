@@ -243,6 +243,47 @@ jobs:
           pip install --upgrade font-size
           font-size build/GoogleSans/static/*.ttf
 
+  check-android:
+    needs:
+      - build-android
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v4
+      - name: Set up Python v3.12 environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - name: Download variable fonts
+        uses: actions/download-artifact@v4
+        with:
+          name: variable-fonts
+          path: build/GoogleSans/variable
+      - name: Download Android fonts
+        uses: actions/download-artifact@v4
+        with:
+          name: android-fonts
+          path: build/GoogleSans/android
+      - name: Font Bakery GS profile tests
+        uses: f-actions/font-bakery@v3
+        with:
+          version: 'latest'
+          subcmd: 'check-profile'
+          args: '--auto-jobs -C --loglevel WARN qa/check-subsets.py'
+          # Subsets are derived from the big VFs with a condition in the
+          # subsets' Font Bakery profile.
+          path: 'build/GoogleSans/variable/*.ttf'
+      - name: OpenType Sanitizer checks
+        uses: f-actions/opentype-sanitizer@v3
+        with:
+          path: 'build/GoogleSans/android/*.ttf'
+      - name: File size analysis
+        run: |
+          pip install --upgrade font-size
+          font-size build/GoogleSans/android/*.ttf
+
   build-interpolatables:
     # Skip running in PRs to save time and resources. Create a "build-*" branch
     # to build all outside a release.
@@ -275,6 +316,7 @@ jobs:
       - build-variable
       - check-variable
       - build-android
+      - check-android
       - build-statics
       - check-statics
       - build-interpolatables
