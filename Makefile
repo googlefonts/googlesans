@@ -115,6 +115,14 @@ test-fb-vf:
 	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-fea.py $(VARIABLE_BUILD_DIR)/*.ttf
 	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-charset.py $(VARIABLE_BUILD_DIR)/*.ttf
 
+test-fb-android:
+	@echo "========================================================="
+	@echo " fontbakery v`fontbakery --version` Android font checks"
+	@echo "========================================================="
+# Subsets are derived from the big VFs with a condition in the subsets' Font
+# Bakery profile.
+	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-subsets.py $(VARIABLE_BUILD_DIR)/*.ttf
+
 update-glyphset-defs:
 	python3 scripts/gs-update-glyphset-qa-files.py
 
@@ -147,7 +155,7 @@ gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
 gs-vf-upright gs-vf-italic \
 setup update-deps sync-deps list-deps \
-test-fb test-fb-static-expert test-fb-vf-expert \
+test-fb test-fb-static test-fb-vf test-fb-android \
 metadata
 
 # Disable built-in rules to speed up source globbing.
