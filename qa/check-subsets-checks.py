@@ -19,9 +19,10 @@ Checks for comparing the coverage of subsets with their full originating font.
 import difflib
 import unicodedata
 from pathlib import Path
+from typing import Literal
 
 from fontbakery.callable import check, condition
-from fontbakery.status import FAIL, PASS
+from fontbakery.status import ERROR, FAIL, PASS
 from fontbakery.testable import Font
 from fontTools.ttLib import TTFont
 
@@ -87,3 +88,67 @@ def check_coverage_codepoints(ttFont: TTFont, subsets: dict[Path, TTFont], font:
             )
             + "\n```",
         )
+
+
+@check(id="android_subsets/coverage/language_systems")
+def check_coverage_langsys(ttFont: TTFont, subsets: dict[Path, TTFont], font: Font):
+    """
+    Check that language system coverage in the subsets matches the full font.
+    """
+
+    shaping_tags: tuple[ShapingTag, ...] = ("GPOS", "GSUB")
+    for table in shaping_tags:
+        in_full = get_langsys(ttFont, table)
+
+        if in_full is None:
+            yield (ERROR, f"Full font is does not have a {table} table")
+            return
+
+        in_subsets = {
+            system
+            for subset in subsets.values()
+            if (lang_sys := get_langsys(subset, table)) is not None
+            for system in lang_sys
+        }
+
+        if in_full == in_subsets:
+            yield (
+                PASS,
+                f"Subsets have the same {table} language system coverage as "
+                f"the full font `{font.file_displayname}`",
+            )
+        else:
+            yield (
+                FAIL,
+                f"Subsets have different {table} language system coverage than "
+                f"the full font {font.file_displayname}:\n\n```diff\n"
+                + "\n".join(
+                    difflib.unified_diff(
+                        sorted(str(langsys) for langsys in in_full),
+                        sorted(str(langsys) for langsys in in_subsets),
+                        fromfile="Full Font",
+                        tofile="Subsets",
+                        lineterm="",
+                    )
+                )
+                + "\n```",
+            )
+
+
+type ShapingTag = Literal["GPOS", "GSUB"]
+
+
+def get_langsys(ttf: TTFont, table: ShapingTag) -> set[tuple[str, str]] | None:
+    shaping = ttf.get(table)
+
+    if shaping is None:
+        return None
+
+    return {
+        (script_rec.ScriptTag, lang_tag)
+        for script_rec in shaping.table.ScriptList.ScriptRecord  # type: ignore
+        for lang_tag in [
+            *(["dflt"] if script_rec.Script.DefaultLangSys else []),
+            *(lang_rec.LangSysTag for lang_rec in script_rec.Script.LangSysRecord),
+        ]
+    }
