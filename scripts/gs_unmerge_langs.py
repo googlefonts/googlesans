@@ -26,12 +26,12 @@ from argparse import ArgumentParser
 from dataclasses import dataclass
 from pathlib import Path
 
-import ufo2ft.fontInfoData
-import ufo2ft.util
 from colr_foreground import get_color
 from fontTools.subset import Subsetter
 from fontTools.subset import main as pyftsubset
 from fontTools.ttLib import TTFont
+from ufo2ft.fontInfoData import intListToNum
+from ufo2ft.util import calcCodePageRanges
 
 REPO_ROOT = Path(__file__).parent.parent
 BUILD_DIR = REPO_ROOT / "build" / "GoogleSans" / "android"
@@ -322,19 +322,19 @@ def extract_subset(base_ttf: Path, subset: Subset) -> None:
     # API usage derived from here:
     #   https://github.com/googlefonts/ufo2ft/blob/5fd168e65/Lib/ufo2ft/outlineCompiler.py#L670-L672
     # TODO: When we bump fonttools, we can ask the subsetter to do this itself
-    codepages = ufo2ft.util.calcCodePageRanges(
+    codepages = calcCodePageRanges(
         set(ttf["cmap"].getBestCmap().keys())  # type: ignore
     )
-    ttf["OS/2"].ulCodePageRange1 = ufo2ft.fontInfoData.intListToNum(
+    ttf["OS/2"].ulCodePageRange1 = intListToNum(  # type: ignore
         codepages,
         0,
         32,
-    )  # type: ignore
-    ttf["OS/2"].ulCodePageRange2 = ufo2ft.fontInfoData.intListToNum(
+    )
+    ttf["OS/2"].ulCodePageRange2 = intListToNum(  # type: ignore
         codepages,
         32,
         32,
-    )  # type: ignore
+    )
 
     ttf.save(output_path)
 

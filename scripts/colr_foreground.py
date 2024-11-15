@@ -36,7 +36,7 @@ def get_color(hexa: str) -> tuple[float, float, float]:
     match = HEX_COLOR.fullmatch(hexa)
     if match is None:
         raise ValueError(
-            "Hex color must be a '#' followed by six hexadecimal digits,",
+            "Hex color must be a '#' followed by six hexadecimal digits, "
             f"but was instead '{hexa}'"
         )
     r, g, b = match.groups()
@@ -54,9 +54,7 @@ if __name__ == "__main__":
     for ttf_path in BUILD_DIR.glob("*.ttf"):
         print(f"Coloring {ttf_path.name}")
         (subset_color,) = (
-            subset.color
-            for subset in SUBSETS
-            if subset.name in ttf_path.name
+            subset.color for subset in SUBSETS if subset.name in ttf_path.name
         )
         ttf = TTFont(ttf_path)
         set_foreground(ttf, (*subset_color, 1))
