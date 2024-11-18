@@ -20,6 +20,7 @@ PROFILE = {
         "Android Fallback Coverage": [
             "android_subsets/coverage/codepoints",
             "android_subsets/coverage/language_systems",
+            "android_subsets/coverage/feature_tags",
         ]
     },
 }

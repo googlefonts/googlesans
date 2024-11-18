@@ -152,3 +152,51 @@ def get_langsys(ttf: TTFont, table: ShapingTag) -> set[tuple[str, str]] | None:
             *(lang_rec.LangSysTag for lang_rec in script_rec.Script.LangSysRecord),
         ]
     }
+
+
+@check(id="android_subsets/coverage/feature_tags")
+def check_coverage_feature_tags(
+    ttFont: TTFont, subsets: dict[Path, TTFont], font: Font
+):
+    """
+    Check that feature tag coverage in the subsets matches the full font.
+
+    NOTE: This does not check the content or quantity of features, only the
+          presence of the same _types_ of feature before and after subsetting.
+    """
+
+    shaping_tags: tuple[ShapingTag, ...] = ("GPOS", "GSUB")
+    for table in shaping_tags:
+        in_full = {
+            fea_rec.FeatureTag
+            for fea_rec in ttFont[table].table.FeatureList.FeatureRecord
+        }
+
+        in_subsets = {
+            fea_rec.FeatureTag
+            for subset in subsets.values()
+            for fea_rec in subset[table].table.FeatureList.FeatureRecord
+        }
+
+        if in_full == in_subsets:
+            yield (
+                PASS,
+                f"Subsets have the same {table} feature tag coverage as "
+                f"the full font `{font.file_displayname}`",
+            )
+        else:
+            yield (
+                FAIL,
+                f"Subsets have different {table} feature tag coverage than "
+                f"the full font {font.file_displayname}:\n\n```diff\n"
+                + "\n".join(
+                    difflib.unified_diff(
+                        sorted(in_full),
+                        sorted(in_subsets),
+                        fromfile="Full Font",
+                        tofile="Subsets",
+                        lineterm="",
+                    )
+                )
+                + "\n```",
+            )
