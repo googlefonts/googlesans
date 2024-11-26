@@ -127,7 +127,8 @@ def main():
 
     # Exceptions
     glyphs_to_add = {
-        # We spotted /zerowidthjoiner is needed in Sinhala to make some conjuncts. Should this be included in other scripts?
+        # We spotted /zerowidthjoiner is needed in Sinhala to make some conjuncts.
+        # Should this be included in other scripts?
         "Sinh": ["zerowidthjoiner"],
         # Punctuation needed for some Thai ligatures.
         "Thai": ["quotedbl", "underscore"],
