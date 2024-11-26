@@ -20,6 +20,11 @@ https://github.com/googlefonts/googlesans/issues/646
 How to run:
 
 python scripts/one-off/make-subset-lists.py
+
+We keep this script here instead of in the Pixel Fallback repo,
+as it uses the sources present in googlesans repo and it needs the design names.
+The output .txt files are needed in the Pixel Fallback repo:
+https://github.com/googlefonts/pixel-brand-fallback-stack
 """
 
 from __future__ import annotations
@@ -90,6 +95,11 @@ def main():
             r"\.loclTAML": "Taml",
             r"\.loclTELU": "Telu",
         },
+        "Latn": {
+            # All ending with '-georgian' needs to end up in Geor list only.
+            # Their script extension is Latn + Geor so we remove from Latn
+            r"-georgian": "Geor",
+        },
         # Delete the locl[SOMETHING_ELSE] from each script's list
         "Beng": {r"\.locl(?!BENG)": None},
         "Deva": {r"\.locl(?!DEVA|MAR|NEP)": None},
@@ -114,6 +124,16 @@ def main():
             # Delete empty sets
             if not glyphs_by_script[source]:
                 del glyphs_by_script[source]
+
+    # Exceptions
+    glyphs_to_add = {
+        # We spotted /zerowidthjoiner is needed in Sinhala to make some conjuncts. Should this be included in other scripts?
+        "Sinh": ["zerowidthjoiner"],
+        # Punctuation needed for some Thai ligatures.
+        "Thai": ["quotedbl", "underscore"],
+    }
+    for script, glyphs in glyphs_to_add.items():
+        glyphs_by_script[script].update(glyphs)
 
     # Sanity check: all glyphs with a code point should be in one list or the
     # other. Glyphs without code points might not be listed (e.g. components
