@@ -62,7 +62,7 @@ subset: thai
 subset: tifinagh
 subset: vietnamese
 experiments: "dont_send_all_subset_through_subsetter"
-experiments: "layout_features=hist,lnum,pnum,ss02,ss09,tnum"
+experiments: "layout_features=c2sc,case,dlig,dnom,hist,lnum,ordn,pnum,rkrf,sinf,smcp,ss02,ss08,ss09,subs,sups,tnum"
 foundry: "GOOGLE"
 android_version: "v26"
 axes {
