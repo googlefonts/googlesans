@@ -301,7 +301,7 @@ def hb_font(self: Font):
 
 # statics
 @check(
-    id="com.google.fonts/check/googlesans/features/staticuprights",
+    id="googlesans/features/staticuprights",
     conditions=["is_not_italic", "is_not_variable_font"],
     rationale="""
     Confirms that the upright builds contain expected feature tags.
@@ -332,7 +332,7 @@ def com_google_fonts_check_googlesans_features_static_uprights(ttFont):
 
 
 @check(
-    id="com.google.fonts/check/googlesans/features/staticitalics",
+    id="googlesans/features/staticitalics",
     conditions=["is_italic", "is_not_variable_font"],
     rationale="""
     Confirms that the italics builds contain expected feature tags.
@@ -364,7 +364,7 @@ def com_google_fonts_check_googlesans_features_static_italics(ttFont):
 
 # VF
 @check(
-    id="com.google.fonts/check/googlesans/features/variableuprights",
+    id="googlesans/features/variableuprights",
     conditions=["is_not_italic", "is_variable_font"],
     rationale="""
     Confirms that the variable upright builds contain expected feature tags.
@@ -395,7 +395,7 @@ def com_google_fonts_check_googlesans_features_variable_uprights(ttFont):
 
 
 @check(
-    id="com.google.fonts/check/googlesans/features/variableitalics",
+    id="googlesans/features/variableitalics",
     conditions=["is_italic", "is_variable_font"],
     rationale="""
     Confirms that the variable italics builds contain expected feature tags.
@@ -425,7 +425,7 @@ def com_google_fonts_check_googlesans_features_variable_italics(ttFont):
         )
 
 
-@check(id="com.google.fonts/check/googlesans/features/regression")
+@check(id="googlesans/features/regression")
 def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
     """But does it shape?"""
     tt = ttFont

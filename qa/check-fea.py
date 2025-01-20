@@ -20,11 +20,11 @@ PROFILE = {
     "check_definitions": [Path(__file__).parent / "check-fea-checks.py"],
     "sections": {
         "Google Sans Custom Feature Support Checks": [
-            "com.google.fonts/check/googlesans/features/staticuprights",
-            "com.google.fonts/check/googlesans/features/staticitalics",
-            "com.google.fonts/check/googlesans/features/variableuprights",
-            "com.google.fonts/check/googlesans/features/variableitalics",
-            "com.google.fonts/check/googlesans/features/regression",
+            "googlesans/features/staticuprights",
+            "googlesans/features/staticitalics",
+            "googlesans/features/variableuprights",
+            "googlesans/features/variableitalics",
+            "googlesans/features/regression",
         ]
     },
 }
