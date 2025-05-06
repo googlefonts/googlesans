@@ -975,7 +975,9 @@ feature blws {
         sub da-deva rVocalicMatra-deva by da_rVocalicMatra-deva;
     } dev2_dflt_mar_nep_blws_botom_mark_ligatures;
 
+	@UMFS_blws_marks = [rakar-deva];
     lookup dev2_dflt_mar_nep_blws_rakaar_mark {
+		lookupflag UseMarkFilteringSet @UMFS_blws_marks;
         sub @dev2_dflt_blws_rakar_diagonal_bases rakar-deva' by rakar-deva.diagonal;
         sub @dev2_dflt_blws_rakar_diagonal_short_bases rakar-deva' by rakar-deva.short;
     } dev2_dflt_mar_nep_blws_rakaar_mark;
