@@ -79,11 +79,10 @@ feature blwf {
         sub halant-oriya bha-oriya by bha-oriya.blwf;
         sub halant-oriya ma-oriya by ma-oriya.blwf;
         sub halant-oriya ya-oriya by ya-oriya.blwf;
-        sub halant-oriya yya-oriya by yya-oriya.blwf;
         sub halant-oriya ra-oriya by ra-oriya.blwf;
         sub halant-oriya la-oriya by la-oriya.blwf;
         sub halant-oriya lla-oriya by lla-oriya.blwf;
-        sub halant-oriya va-oriya by va-oriya.blwf;
+        sub halant-oriya va-oriya by ba-oriya.blwf;
         sub halant-oriya sha-oriya by sha-oriya.blwf;
         sub halant-oriya ssa-oriya by ssa-oriya.blwf;
         sub halant-oriya sa-oriya by sa-oriya.blwf;
@@ -93,6 +92,14 @@ feature blwf {
     } ODI_dflt_blwf_below_base_forms;
 
 } blwf;
+
+feature pstf {
+    script ory2;
+	lookup ODI_dflt_pstf_postBaseYya {
+		sub halant-oriya yya-oriya by yya-oriya.blwf;
+	} ODI_dflt_pstf_postBaseYya;
+
+} pstf;
 
 feature cjct {
     script ory2;
