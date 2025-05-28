@@ -231,6 +231,9 @@ jobs:
       - build-interpolatables
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    # Permission is required for releasing
+    permissions:
+      contents: write
     steps:
       - name: Set env variables
         id: vars
