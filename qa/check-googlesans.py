@@ -75,6 +75,15 @@ PROFILE = {
         "opentype/family/consistent_family_name",
         # See declaration
         *INTERPOLATION_ISSUES,
+        # Ignore issue about a Khmer glyph that Cadson-Demak confirmed to be OK
+        # https://github.com/googlefonts/googlesans/pull/656#issuecomment-3130940361
+        "base_has_width",
+        # Ignore mac names, Marianna confirmed we don't change the fonts at the moment
+        # https://github.com/googlefonts/googlesans/pull/656#issuecomment-3103220308
+        "no_mac_entries",
+        # Ignore family name issue, it's on purpose
+        # https://github.com/googlefonts/googlesans/pull/656#issuecomment-3103220308
+        "typographic_family_name"
     ],
     "configuration_defaults": {
         "googlesans/opentype/os2/fsselectionbit7": {
