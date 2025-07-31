@@ -24,9 +24,9 @@ jobs:
           py-version: ${{ matrix.python-version }}
           buildcommand: "make gs-vf"
       - name: Check out ${{ steps.config.outputs.projectname }} source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ steps.config.outputs.py-version }}
           cache: "pip"
