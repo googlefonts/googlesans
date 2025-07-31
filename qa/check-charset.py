@@ -20,7 +20,7 @@ PROFILE = {
     "check_definitions": [Path(__file__).parent / "check-charset-checks.py"],
     "sections": {
         "Google Sans Custom Character Set Checks": [
-            "com.google.fonts/check/googlesans/glyphs/glyphset-contents",
+            "googlesans/glyphs/glyphset-contents",
         ]
     },
 }
