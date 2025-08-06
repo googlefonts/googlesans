@@ -86,7 +86,7 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
@@ -136,7 +136,7 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
@@ -162,7 +162,7 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           name: static-fonts
           path: 'build/GoogleSans/static'
@@ -239,15 +239,15 @@ jobs:
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       # TODO: no `name` means download all artifacts, but put them into own dir?
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           name: static-fonts
           path: 'build/GoogleSans/static'
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           name: interpolatable-fonts
           path: 'build/GoogleSans/interpolatable'
