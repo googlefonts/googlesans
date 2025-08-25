@@ -24,8 +24,8 @@ PYTHON3_EXE=python3
 # --------------------------------------------------------
 #  fontmake compiler executable
 # --------------------------------------------------------
-FONTMAKE_EXE=FONTTOOLS_GPOS_COMPACT_MODE=5 fontmake --verbose WARNING
-FONTMAKE_EXE_NO_COMPACTION=fontmake --verbose WARNING
+FONTMAKE_EXE=FONTTOOLS_GPOS_COMPACT_MODE=5 fontmake --verbose WARNING --no-auto-use-my-metrics
+FONTMAKE_EXE_NO_COMPACTION=fontmake --verbose WARNING --no-auto-use-my-metrics
 
 # --------------------------------------------------------
 #  Source file path definitions
