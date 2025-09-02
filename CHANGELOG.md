@@ -1,5 +1,9 @@
 # Google Sans Changelog
 
+## vXX.XXX
+
+- Remove the `USE_MY_METRICS` flags on components in the `glyf` table to work around https://github.com/fonttools/fonttools/pull/3912.
+
 ## v12.000
 
 ### New
