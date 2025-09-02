@@ -83,7 +83,9 @@ PROFILE = {
         "no_mac_entries",
         # Ignore family name issue, it's on purpose
         # https://github.com/googlefonts/googlesans/pull/656#issuecomment-3103220308
-        "typographic_family_name"
+        "typographic_family_name",
+        # Not applicable to Google Sans fonts:
+        "fontdata_namecheck"
     ],
     "configuration_defaults": {
         "googlesans/opentype/os2/fsselectionbit7": {
