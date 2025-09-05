@@ -20,7 +20,7 @@ jobs:
       with:
         ref: ${{ inputs.before }}
     - name: Setup Python 3.12
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: "3.12"
         cache: pip
@@ -43,7 +43,7 @@ jobs:
       with:
         ref: ${{ inputs.after }}
     - name: Setup Python 3.12
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: "3.12"
         cache: pip
@@ -75,7 +75,7 @@ jobs:
         name: After VFs (${{ inputs.after }})
         path: after
     - name: Setup Python 3.12
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: "3.12"
     - name: Install diffenator2
