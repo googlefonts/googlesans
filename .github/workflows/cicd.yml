@@ -252,7 +252,7 @@ jobs:
           name: interpolatable-fonts
           path: 'build/GoogleSans/interpolatable'
       - name: Delete intermediate VFs
-        run: rm -r build/GoogleSans/.intermediate
+        run: rm -rf build/GoogleSans/.intermediate
       - name: Create build artifact zip archive
         run: zip GoogleSans-${{ steps.vars.outputs.tag }}.zip -r build/GoogleSans
       - name: Create Google Sans release
