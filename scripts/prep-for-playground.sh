@@ -32,4 +32,7 @@ sed -i -E 's|timeout-minutes: [0-9]+|timeout-minutes: 60|g' \
 sed -i 's|uses: googlefonts/googlesans|uses: daltonmaag/google-sans-playground|g' \
     .github/workflows/*.yml
 
+# Get rid of Dependabot
+rm .github/dependabot.yml
+
 git commit -m "Patchie" .github/workflows
