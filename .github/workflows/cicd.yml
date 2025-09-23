@@ -76,6 +76,7 @@ jobs:
           path: |
             build/GoogleSans/variable
             build/GoogleSans/.intermediate
+          include-hidden-files: true
 
   check-variable:
     needs:
