@@ -70,6 +70,7 @@ setup:
 	"$(VENV_DIR)/bin/pip" install --no-deps -r requirements-dev.txt
 	@echo "\n\nDependency versions installed in your venv are:\n"
 	@$(MAKE) list-deps
+	cargo binstall autobase --no-confirm || cargo install --locked autobase
 	@echo "\n\nBuild fonts with 'make' or make targets for select font builds (see BUILD.md docs)."
 	@echo "Remove the virtual environment directory with 'make clean'."
 

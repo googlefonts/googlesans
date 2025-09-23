@@ -93,6 +93,7 @@ gs-vf-italic: $(VARIABLE_ITALIC_TARGET)
 $(VARIABLE_UPRIGHT_INTERMEDIATE): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
 	$(FONTMAKE_EXE) -m $(UPRIGHT_SOURCE) -o variable --output-path $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
+	autobase --min-max --words 1000000 --config GoogleSans/autobase.toml $@
 	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $@
 	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $@
 	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py $@
@@ -106,6 +107,7 @@ $(VARIABLE_UPRIGHT_TARGET): $(VARIABLE_UPRIGHT_INTERMEDIATE)
 $(VARIABLE_ITALIC_INTERMEDIATE): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
 	$(FONTMAKE_EXE) -m $(ITALIC_SOURCE) -o variable --output-path $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
+	autobase --min-max --words 1000000 --config GoogleSans/autobase.toml $@
 	$(PYTHON3_EXE) ../scripts/internal/set-overlap-bits.py $@
 	$(PYTHON3_EXE) ../scripts/set-unicoderange.py $@
 	$(PYTHON3_EXE) ../scripts/gftools-fix-unwanted-tables.py $@
@@ -124,12 +126,14 @@ gs-static-italic: $(STATIC_ITALICS_TARGETS)
 $(STATIC_UPRIGHTS_TARGETS): $(VARIABLE_UPRIGHT_INTERMEDIATE)
 	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $< $(UPRIGHT_SOURCE) $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
+	autobase --min-max --words 1000000 --config GoogleSans/autobase.toml $@
 	$(PYTHON3_EXE) -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 	font-v write --sha1 $@
 
 $(STATIC_ITALICS_TARGETS): $(VARIABLE_ITALIC_INTERMEDIATE)
 	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $< $(ITALIC_SOURCE) $@
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
+	autobase --min-max --words 1000000 --config GoogleSans/autobase.toml $@
 	$(PYTHON3_EXE) -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 	font-v write --sha1 $@
 
