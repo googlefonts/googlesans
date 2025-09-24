@@ -236,19 +236,21 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Set env variables
+      - name: Save tag name
         id: vars
         run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
-      # TODO: no `name` means download all artifacts, but put them into own dir?
-      - uses: actions/download-artifact@v4
+      - name: Download variable fonts
+        uses: actions/download-artifact@v4
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
-      - uses: actions/download-artifact@v4
+      - name: Download static fonts
+        uses: actions/download-artifact@v4
         with:
           name: static-fonts
           path: 'build/GoogleSans/static'
-      - uses: actions/download-artifact@v4
+      - name: Download interpolatable fonts
+        uses: actions/download-artifact@v4
         with:
           name: interpolatable-fonts
           path: 'build/GoogleSans/interpolatable'
