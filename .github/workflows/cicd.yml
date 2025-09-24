@@ -246,7 +246,7 @@ jobs:
     steps:
       - name: Set env variables
         id: vars
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+        run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
       # TODO: no `name` means download all artifacts, but put them into own dir?
       - uses: actions/download-artifact@v4
         with:
