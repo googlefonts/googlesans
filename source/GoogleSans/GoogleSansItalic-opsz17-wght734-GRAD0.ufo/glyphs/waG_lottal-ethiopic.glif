@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="waGlottal-ethiopic" format="2">
-  <advance width="915"/>
+  <advance width="740"/>
   <unicode hex="12A7"/>
   <outline>
     <contour>
@@ -54,6 +54,13 @@
       <point x="335" y="789" type="line"/>
     </contour>
     <component base="_geez-part-21" xOffset="-55"/>
-    <component base="geez-part-9" xOffset="539" yOffset="15"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>CPP</string>
+      <key>public.verticalOrigin</key>
+      <integer>966</integer>
+    </dict>
+  </lib>
 </glyph>
