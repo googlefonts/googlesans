@@ -70,7 +70,6 @@ setup:
 	"$(VENV_DIR)/bin/pip" install --no-deps -r requirements-dev.txt
 	@echo "\n\nDependency versions installed in your venv are:\n"
 	@$(MAKE) list-deps
-	cargo binstall autobase --no-confirm || cargo install --locked autobase
 	@echo "\n\nBuild fonts with 'make' or make targets for select font builds (see BUILD.md docs)."
 	@echo "Remove the virtual environment directory with 'make clean'."
 
@@ -130,6 +129,7 @@ glyphs-norm:
 # Generate BASE table records
 # ---------------------------
 autobase: gs-vf
+	cargo binstall autobase --no-confirm || cargo install --locked autobase
 	autobase --min-max --config sources/GoogleSans/autobase.toml --words 1000000 build/GoogleSans/variable/GoogleSans*.ttf
 
 # -------------------------------------
