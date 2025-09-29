@@ -1,0 +1,15 @@
+[input]
+script = "orya"
+comparison_mode = "full"
+text = [
+    # Regression checks for https://github.com/googlefonts/googlesans/issues/659
+    # and https://github.com/googlefonts/googlesans/issues/661
+    "ସତ୍ବଃ",
+    "ସତ୍ଵଃ",
+    "ସତ୍ୱଃ",
+    "କଚନ୍ତ",
+    "ଚଲାନ୍ତ",
+    "ମ୍ୟୁଜିକ",
+    "उं ऊं उँ ऊँ",
+    "झ़ झ़्र झ़्ल झ़्च झ़्स झ़्र्ल झ़ि झ़्लि झ़ु झ़ू",
+]

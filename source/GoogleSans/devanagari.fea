@@ -975,7 +975,9 @@ feature blws {
         sub da-deva rVocalicMatra-deva by da_rVocalicMatra-deva;
     } dev2_dflt_mar_nep_blws_botom_mark_ligatures;
 
+	@UMFS_blws_marks = [rakar-deva];
     lookup dev2_dflt_mar_nep_blws_rakaar_mark {
+		lookupflag UseMarkFilteringSet @UMFS_blws_marks;
         sub @dev2_dflt_blws_rakar_diagonal_bases rakar-deva' by rakar-deva.diagonal;
         sub @dev2_dflt_blws_rakar_diagonal_short_bases rakar-deva' by rakar-deva.short;
     } dev2_dflt_mar_nep_blws_rakaar_mark;
@@ -984,6 +986,7 @@ feature blws {
     #	sub qa-deva' lookup dev2_dflt_none_decompose_nukta_glyphs rakar-deva.diagonal;
     #} dev2_dflt_decompose_nukta_glyphs_in_rakaar_context;
     lookup dev2_dflt_mar_nep_blws_umatra_short {
+		lookupflag 0;
         sub [tt_tta-deva tt_ttha-deva tth_ttha-deva dd_dda-deva dd_ddha-deva ddh_ddha-deva nga-deva cha-deva tta-deva ttha-deva dda-deva ddha-deva lla-deva llla-deva gga-deva jja-deva ddda-deva bba-deva la-deva.loclMAR d_ga-deva d_gha-deva d_da-deva d_dha-deva d_ba-deva d_bha-deva d_ra-deva d_va-deva h_ra-deva h_la-deva h_va-deva h_nna-deva h_na-deva] [uMatra-deva uuMatra-deva]' by [uMatra-deva.alt uuMatra-deva.alt];
         sub rakar-deva [uMatra-deva uuMatra-deva]' by [uMatra-deva.alt uuMatra-deva.alt];
     } dev2_dflt_mar_nep_blws_umatra_short;
