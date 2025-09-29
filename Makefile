@@ -70,6 +70,7 @@ setup:
 	"$(VENV_DIR)/bin/pip" install --no-deps -r requirements-dev.txt
 	@echo "\n\nDependency versions installed in your venv are:\n"
 	@$(MAKE) list-deps
+	cargo binstall autobase --no-confirm || cargo install --locked autobase
 	@echo "\n\nBuild fonts with 'make' or make targets for select font builds (see BUILD.md docs)."
 	@echo "Remove the virtual environment directory with 'make clean'."
 
@@ -125,6 +126,11 @@ black:
 glyphs-norm:
 	python3 scripts/gs-glyphs-norm.py source/GoogleSans/*.glyphs
 
+# ---------------------------
+# Generate BASE table records
+# ---------------------------
+autobase: gs-vf
+	autobase --min-max --config sources/GoogleSans/autobase.toml --words 1000000 build/GoogleSans/variable/GoogleSans*.ttf
 
 # -------------------------------------
 # Release targets
@@ -143,7 +149,7 @@ gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
 gs-vf-upright gs-vf-italic \
 setup update-deps sync-deps list-deps \
 test-fb test-fb-static-expert test-fb-vf-expert \
-metadata
+autobase metadata
 
 # Disable built-in rules to speed up source globbing.
 MAKEFLAGS += --no-builtin-rules
