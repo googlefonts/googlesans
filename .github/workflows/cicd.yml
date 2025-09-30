@@ -24,9 +24,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -40,9 +40,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -56,9 +56,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -72,6 +72,7 @@ jobs:
           path: |
             build/GoogleSans/variable
             build/GoogleSans/.intermediate
+          include-hidden-files: true
 
   check-variable:
     needs:
@@ -80,9 +81,9 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -130,9 +131,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -153,12 +154,12 @@ jobs:
     needs:
       - build-statics
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -204,9 +205,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -231,25 +232,30 @@ jobs:
       - build-interpolatables
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    # Permission is required for releasing
+    permissions:
+      contents: write
     steps:
-      - name: Set env variables
+      - name: Save tag name
         id: vars
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-      # TODO: no `name` means download all artifacts, but put them into own dir?
-      - uses: actions/download-artifact@v4
+        run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
+      - name: Download variable fonts
+        uses: actions/download-artifact@v4
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
-      - uses: actions/download-artifact@v4
+      - name: Download static fonts
+        uses: actions/download-artifact@v4
         with:
           name: static-fonts
           path: 'build/GoogleSans/static'
-      - uses: actions/download-artifact@v4
+      - name: Download interpolatable fonts
+        uses: actions/download-artifact@v4
         with:
           name: interpolatable-fonts
           path: 'build/GoogleSans/interpolatable'
       - name: Delete intermediate VFs
-        run: rm -r build/GoogleSans/.intermediate
+        run: rm -rf build/GoogleSans/.intermediate
       - name: Create build artifact zip archive
         run: zip GoogleSans-${{ steps.vars.outputs.tag }}.zip -r build/GoogleSans
       - name: Create Google Sans release

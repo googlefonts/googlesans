@@ -30,7 +30,7 @@ from fontbakery.prelude import check, PASS, FAIL
 
 
 @check(
-    id="com.google.fonts/check/googlesans/glyphs/glyphset-contents",
+    id="googlesans/glyphs/glyphset-contents",
     rationale="""
     Confirms that the fonts include all expected Unicode encoded and \
     non-Unicode encoded glyph definitions. This test also confirms that \
