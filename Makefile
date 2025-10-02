@@ -130,7 +130,7 @@ glyphs-norm:
 # ---------------------------
 autobase: gs-vf
 	cargo binstall autobase-cli --no-confirm || cargo install --locked autobase-cli
-	autobase --min-max --config sources/GoogleSans/autobase.toml --words 1000000 build/GoogleSans/variable/GoogleSans*.ttf
+	autobase --min-max --config source/GoogleSans/autobase.toml --words 1000000 build/GoogleSans/variable/GoogleSans*.ttf
 
 # -------------------------------------
 # Release targets
