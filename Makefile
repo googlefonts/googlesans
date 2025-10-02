@@ -129,7 +129,7 @@ glyphs-norm:
 # Generate BASE table records
 # ---------------------------
 autobase: gs-vf
-	cargo binstall autobase --no-confirm || cargo install --locked autobase
+	cargo binstall autobase-cli --no-confirm || cargo install --locked autobase-cli
 	autobase --min-max --config sources/GoogleSans/autobase.toml --words 1000000 build/GoogleSans/variable/GoogleSans*.ttf
 
 # -------------------------------------
