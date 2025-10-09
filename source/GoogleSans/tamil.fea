@@ -41,7 +41,7 @@ feature abvs {
         sub sa-tamil iiMatra-tamil by sa_iiMatra-tamil;
         sub ha-tamil iiMatra-tamil by ha_iiMatra-tamil;
         sub k_ssa-tamil iiMatra-tamil by k_ssa_iiMatra-tamil;
-        sub sha-tamil pulli-tamil ra-tamil iiMatra-tamil by sh_ra_iiMatra-tamil;
+        sub [sha-tamil sa-tamil] pulli-tamil ra-tamil iiMatra-tamil by sh_ra_iiMatra-tamil;
     } tml2_dflt_abvs_iimatra_ligatures;
 
 } abvs;
