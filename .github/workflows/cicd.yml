@@ -87,7 +87,7 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v6
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
@@ -137,7 +137,7 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v6
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
@@ -163,7 +163,7 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v6
         with:
           name: static-fonts
           path: 'build/GoogleSans/static'
@@ -240,17 +240,17 @@ jobs:
         id: vars
         run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
       - name: Download variable fonts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
       - name: Download static fonts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: static-fonts
           path: 'build/GoogleSans/static'
       - name: Download interpolatable fonts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: interpolatable-fonts
           path: 'build/GoogleSans/interpolatable'
