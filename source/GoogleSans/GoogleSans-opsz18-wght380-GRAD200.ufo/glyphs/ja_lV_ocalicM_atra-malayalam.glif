@@ -1,11 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ja_lVocalicMatra-malayalam" format="2">
-  <advance width="808"/>
-  <guideline x="48" y="133" angle="91.1496"/>
-  <guideline x="766" y="416" angle="269.0789"/>
+  <advance width="850"/>
+  <anchor x="440" y="0" name="bottom"/>
+  <anchor x="425" y="580" name="top"/>
+  <anchor x="709" y="580" name="topright"/>
   <outline>
     <component base="ja-malayalam"/>
-    <component base="lVocalicMatra-malayalam" xOffset="419"/>
+    <component base="lVocalicMatra-malayalam" xOffset="440"/>
   </outline>
   <lib>
     <dict>
