@@ -39,7 +39,6 @@ feature akhn {
         #biconsonant
         sub ka-malayalam halant-malayalam ka-malayalam by k_ka-malayalam;
         sub ka-malayalam halant-malayalam ta-malayalam by k_ta-malayalam;
-        sub ka-malayalam halant-malayalam tta-malayalam by k_tta-malayalam;
         sub ka-malayalam halant-malayalam la-malayalam by k_la-malayalam;
         sub ka-malayalam halant-malayalam ssa-malayalam by k_ssa-malayalam;
         sub ga-malayalam halant-malayalam ga-malayalam by g_ga-malayalam;
@@ -81,13 +80,10 @@ feature akhn {
         sub na-malayalam halant-malayalam rra-malayalam by n_rra-malayalam;
         sub na-malayalam halant-malayalam ta-malayalam by n_ta-malayalam;
         sub na-malayalam halant-malayalam tha-malayalam by n_tha-malayalam;
-        sub pa-malayalam halant-malayalam ta-malayalam by p_ta-malayalam;
         sub pa-malayalam halant-malayalam pa-malayalam by p_pa-malayalam;
         sub pa-malayalam halant-malayalam la-malayalam by p_la-malayalam;
         sub pha-malayalam halant-malayalam la-malayalam by ph_la-malayalam;
         sub ba-malayalam halant-malayalam ba-malayalam by b_ba-malayalam;
-        sub ba-malayalam halant-malayalam da-malayalam by b_da-malayalam;
-        sub ba-malayalam halant-malayalam dha-malayalam by b_dha-malayalam;
         sub ba-malayalam halant-malayalam la-malayalam by b_la-malayalam;
         sub ma-malayalam halant-malayalam ma-malayalam by m_ma-malayalam;
         sub ma-malayalam halant-malayalam pa-malayalam by m_pa-malayalam;
@@ -101,7 +97,6 @@ feature akhn {
         sub sha-malayalam halant-malayalam cha-malayalam by sh_cha-malayalam;
         sub sha-malayalam halant-malayalam sha-malayalam by sh_sha-malayalam;
         sub sha-malayalam halant-malayalam la-malayalam by sh_la-malayalam;
-        sub ssa-malayalam halant-malayalam tta-malayalam by ss_tta-malayalam;
         sub sa-malayalam halant-malayalam sa-malayalam by s_sa-malayalam;
         sub sa-malayalam halant-malayalam tha-malayalam by s_tha-malayalam;
         sub sa-malayalam halant-malayalam la-malayalam by s_la-malayalam;
@@ -118,7 +113,7 @@ feature akhn {
         sub llla-malayalam halant-malayalam zerowidthjoiner by lllChillu-malayalam;
         sub nna-malayalam halant-malayalam zerowidthjoiner by nnChillu-malayalam;
         sub na-malayalam halant-malayalam zerowidthjoiner by nChillu-malayalam;
-        sub rra-malayalam halant-malayalam zerowidthjoiner by rrChillu-malayalam;
+        sub ra-malayalam halant-malayalam zerowidthjoiner by rrChillu-malayalam;
         sub la-malayalam halant-malayalam zerowidthjoiner by lChillu-malayalam;
         sub lla-malayalam halant-malayalam zerowidthjoiner by llChillu-malayalam;
         sub ka-malayalam halant-malayalam zerowidthjoiner by kChillu-malayalam;
@@ -151,6 +146,7 @@ feature blws {
     script mlm2;
     lookup MALM_dflt_blws_lVocalicMatraLigatures {
         #lVocalicMatra
+		sub ja-malayalam lVocalicMatra-malayalam by ja_lVocalicMatra-malayalam;
         sub tta-malayalam lVocalicMatra-malayalam by tta_lVocalicMatra-malayalam;
         sub ttha-malayalam lVocalicMatra-malayalam by ttha_lVocalicMatra-malayalam;
         sub da-malayalam lVocalicMatra-malayalam by da_lVocalicMatra-malayalam;
@@ -160,6 +156,7 @@ feature blws {
         sub rra-malayalam lVocalicMatra-malayalam by rra_lVocalicMatra-malayalam;
         sub llla-malayalam lVocalicMatra-malayalam by llla_lVocalicMatra-malayalam;
         #llVocalicMatra
+		sub ja-malayalam llVocalicMatra-malayalam by ja_llVocalicMatra-malayalam;
         sub tta-malayalam llVocalicMatra-malayalam by tta_llVocalicMatra-malayalam;
         sub ttha-malayalam llVocalicMatra-malayalam by ttha_llVocalicMatra-malayalam;
         sub da-malayalam llVocalicMatra-malayalam by da_llVocalicMatra-malayalam;
@@ -180,6 +177,18 @@ feature psts {
     } MALM_dflt_psts_consonant_postBaseForm_ligatures;
 
 } psts;
+
+feature hist {
+	script mlm2;
+	lookup MALM_dflt_hist_historicalConjuncts {
+		sub ka-malayalam halant-malayalam tta-malayalam by k_tta-malayalam;
+		sub pa-malayalam halant-malayalam ta-malayalam by p_ta-malayalam;
+		sub ba-malayalam halant-malayalam da-malayalam by b_da-malayalam;
+		sub ba-malayalam halant-malayalam dha-malayalam by b_dha-malayalam;
+		sub ssa-malayalam halant-malayalam tta-malayalam by ss_tta-malayalam;
+	} MALM_dflt_hist_historicalConjuncts;
+	
+} hist;
 
 feature haln {
     script mlm2;
