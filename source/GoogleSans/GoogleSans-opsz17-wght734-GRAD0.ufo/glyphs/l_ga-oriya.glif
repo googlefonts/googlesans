@@ -8,7 +8,6 @@
   <anchor x="479" y="714" name="topcenter"/>
   <outline>
     <contour>
-      <point x="747" y="216" type="curve"/>
       <point x="878" y="-18" type="line"/>
       <point x="968" y="38" type="line"/>
       <point x="844" y="261" type="line"/>
@@ -37,20 +36,7 @@
       <point x="804" y="393" type="curve" smooth="yes"/>
       <point x="804" y="328"/>
       <point x="791" y="276"/>
-    </contour>
-    <contour>
-      <point x="430" y="-370" type="curve" smooth="yes"/>
-      <point x="400" y="-370"/>
-      <point x="385" y="-351"/>
-      <point x="385" y="-314" type="curve" smooth="yes"/>
-      <point x="385" y="-274"/>
-      <point x="398" y="-257"/>
-      <point x="430" y="-257" type="curve" smooth="yes"/>
-      <point x="459" y="-257"/>
-      <point x="474" y="-276"/>
-      <point x="474" y="-314" type="curve" smooth="yes"/>
-      <point x="474" y="-351"/>
-      <point x="459" y="-370"/>
+      <point x="747" y="216" type="curve"/>
     </contour>
     <contour>
       <point x="436" y="-449" type="curve" smooth="yes"/>
@@ -67,7 +53,20 @@
       <point x="356" y="-449"/>
     </contour>
     <contour>
-      <point x="601" y="-228" type="curve" smooth="yes"/>
+      <point x="430" y="-370" type="curve" smooth="yes"/>
+      <point x="400" y="-370"/>
+      <point x="385" y="-351"/>
+      <point x="385" y="-314" type="curve" smooth="yes"/>
+      <point x="385" y="-274"/>
+      <point x="398" y="-257"/>
+      <point x="430" y="-257" type="curve" smooth="yes"/>
+      <point x="459" y="-257"/>
+      <point x="474" y="-276"/>
+      <point x="474" y="-314" type="curve" smooth="yes"/>
+      <point x="474" y="-351"/>
+      <point x="459" y="-370"/>
+    </contour>
+    <contour>
       <point x="601" y="-431" type="line"/>
       <point x="700" y="-431" type="line"/>
       <point x="700" y="244" type="line" smooth="yes"/>
@@ -125,6 +124,7 @@
       <point x="463" y="-84" type="curve" smooth="yes"/>
       <point x="555" y="-84"/>
       <point x="601" y="-139"/>
+      <point x="601" y="-228" type="curve" smooth="yes"/>
     </contour>
   </outline>
   <lib>
