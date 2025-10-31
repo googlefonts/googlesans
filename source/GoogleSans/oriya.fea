@@ -281,6 +281,10 @@ feature blws {
         sub @ODI_uMatra_group_3 uuMatra-oriya' by uuMatra-oriya.alt3;
         sub @ODI_uMatra_group_4 uuMatra-oriya' by uuMatra-oriya.alt4;
     } ODI_dflt_blws_alternateUuMatras;
+	
+	lookup ODI_dflt_blws_shortRa {
+		sub wa-oriya ra-oriya.blwf' by ra-oriya.blwf.alt01;
+	} ODI_dflt_blws_shortRa;
 
 } blws;
 
