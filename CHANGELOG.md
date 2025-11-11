@@ -1,8 +1,15 @@
 # Google Sans Changelog
 
-## vXX.XXX
+## vXX.XXX Upcoming
 
 - Remove the `USE_MY_METRICS` flags on components in the `glyf` table to work around https://github.com/fonttools/fonttools/pull/3912.
+- Bug fixes in Ethiopic, Devanagari, Tamil, Odia, Malayalam.
+- Added BASE table
+
+## v12.001
+
+### Changed
+- added updated the licence to OFL, CODE_OF_CONDUCT.md, CONTRIBUTING.md, CONTRIBUTORS.txt, added TRADEMARKS.md, added AUTHORS.txt
 
 ## v12.000
 
