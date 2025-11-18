@@ -85,7 +85,10 @@ PROFILE = {
         # https://github.com/googlefonts/googlesans/pull/656#issuecomment-3103220308
         "typographic_family_name",
         # Not applicable to Google Sans fonts:
-        "fontdata_namecheck"
+        "fontdata_namecheck",
+        # We're not that worried about Microsoft Office support
+        # https://github.com/googlefonts/googlesans/issues/693#issuecomment-3480871914
+        "name/family_and_style_max_length",
     ],
     "configuration_defaults": {
         "googlesans/opentype/os2/fsselectionbit7": {
