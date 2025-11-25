@@ -35,4 +35,4 @@ sed -i 's|uses: googlefonts/googlesans|uses: daltonmaag/google-sans-playground|g
 # Get rid of Dependabot
 rm .github/dependabot.yml
 
-git commit -m "Patchie" .github/workflows
+git commit -m "Patchie" .github
