@@ -47,6 +47,8 @@ def main(args: Optional[List[str]] = None):
             "--glyph-names",
             "--no-prune-unicode-ranges",
             "--recalc-bounds",
+            "--drop-tables-=BASE",
+            "--no-subset-tables+=BASE",
             f"--output-file={local_filepath_subset}",
         ]
 

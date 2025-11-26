@@ -2024,3 +2024,45 @@ feature ss09 {
     sub registered by registered.alt;
 
 } ss09;
+
+table BASE {
+    HorizAxis.BaseTagList romn;
+    HorizAxis.BaseScriptList
+        armn romn 0,
+        bng2 romn 0,
+        cyrl romn 0,
+        dev2 romn 0,
+        ethi romn 0,
+        grek romn 0,
+        gjr2 romn 0,
+        gur2 romn 0,
+        hebr romn 0,
+        khmr romn 0,
+        knd2 romn 0,
+        lao  romn 0,
+        latn romn 0,
+        mlm2 romn 0,
+        ory2 romn 0,
+        sinh romn 0,
+        tml2 romn 0,
+        tel2 romn 0,
+        thai romn 0;
+    HorizAxis.MinMax armn dflt -286, 1040;
+    HorizAxis.MinMax bng2 dflt -604, 1165;
+    HorizAxis.MinMax cyrl dflt -286, 977;
+    HorizAxis.MinMax dev2 dflt -787, 1052;
+    HorizAxis.MinMax gjr2 dflt -648, 1138;
+    HorizAxis.MinMax gur2 dflt -404, 1016;
+    HorizAxis.MinMax khmr dflt -485, 1070;
+    HorizAxis.MinMax knd2 dflt -787, 985;
+    HorizAxis.MinMax lao  dflt -474, 1317;
+    HorizAxis.MinMax latn dflt -314, 1034;
+    HorizAxis.MinMax latn VIT  -314, 1115;
+    HorizAxis.MinMax mlm2 dflt -395, 1068;
+    HorizAxis.MinMax ory2 dflt -832, 1198;
+    HorizAxis.MinMax sinh dflt -362, 1092;
+    HorizAxis.MinMax tml2 dflt -482, 1036;
+    HorizAxis.MinMax tel2 dflt -1081, 1232;
+    HorizAxis.MinMax thai dflt -570, 1319;
+    HorizAxis.MinMax ethi dflt -286, 975;
+} BASE;

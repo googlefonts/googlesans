@@ -125,6 +125,12 @@ black:
 glyphs-norm:
 	python3 scripts/gs-glyphs-norm.py source/GoogleSans/*.glyphs
 
+# ---------------------------
+# Generate BASE table records
+# ---------------------------
+autobase: gs-vf
+	cargo binstall autobase-cli --no-confirm || cargo install --locked autobase-cli
+	autobase --min-max --config source/GoogleSans/autobase.toml --words 1000000 build/GoogleSans/variable/GoogleSans*.ttf
 
 # -------------------------------------
 # Release targets
@@ -143,7 +149,7 @@ gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
 gs-vf-upright gs-vf-italic \
 setup update-deps sync-deps list-deps \
 test-fb test-fb-static-expert test-fb-vf-expert \
-metadata
+autobase metadata
 
 # Disable built-in rules to speed up source globbing.
 MAKEFLAGS += --no-builtin-rules
