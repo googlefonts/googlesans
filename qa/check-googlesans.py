@@ -49,6 +49,7 @@ PROFILE = {
             "googlesans/opentype/os2/typolinegap",
             "googlesans/opentype/os2/unicode_range_bits",
             "googlesans/opentype/post/underline",
+            "googlesans/opentype/BASE",
             "googlesans/vf/fvaraxes",
             "googlesans/vf/fvardefault",
             "varfont/duplexed_axis_reflow",

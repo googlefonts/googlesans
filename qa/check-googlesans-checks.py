@@ -290,6 +290,15 @@ def com_google_fonts_check_googlesans_opentype_os2_typolinegap(ttFont, config):
         yield PASS, "The OS/2.typoLineGap value matches the required value."
 
 
+@check(id="googlesans/opentype/BASE", rationale="Checks that the font has a BASE table")
+def com_google_fonts_check_googlesans_has_base_table(ttFont):
+    """BASE table is present as expected."""
+    if "BASE" in ttFont:
+        yield PASS, "BASE table present in font"
+    else:
+        yield FAIL, "Missing BASE table"
+
+
 # ::::::::::::::::::::::::::::::::::::::::::::::::
 # Other metrics
 # ::::::::::::::::::::::::::::::::::::::::::::::::
