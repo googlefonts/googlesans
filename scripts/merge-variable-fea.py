@@ -69,9 +69,9 @@ def merge_line(lines: list[str], locations: list[str]) -> str:
                 )
 
             new_bracket = (
-                new_bracket[: num.start()]
+                new_bracket[:num.start()]
                 + make_var_scalar(values, locations)
-                + new_bracket[num.end() :]
+                + new_bracket[num.end():]
             )
 
         base = base[:bracket_start] + new_bracket + base[bracket_end:]
@@ -84,7 +84,7 @@ def merge_files(input_files: list[str], output_file: str, locations: list[str]):
     all_lines = [open(f).readlines() for f in input_files]
 
     # Extract meaningful lines from each file
-    meaningful = [[l for l in lines if is_meaningful(l)] for lines in all_lines]
+    meaningful = [[ln for ln in lines if is_meaningful(ln)] for lines in all_lines]
 
     # Verify same count of meaningful lines
     counts = [len(m) for m in meaningful]
