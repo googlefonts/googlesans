@@ -19,7 +19,6 @@ from pathlib import Path
 from typing import Dict, List, Set, Tuple, Union
 
 import ufo2ft
-from ufo2ft.util import makeOfficialGlyphOrder
 import ufoLib2
 from fontTools.designspaceLib import (
     DesignSpaceDocument,
@@ -29,6 +28,7 @@ from fontTools.designspaceLib import (
 )
 from fontTools.misc.transform import Transform
 from glyphsLib.builder.bracket_layers import _expand_kerning_to_brackets
+from ufo2ft.util import makeOfficialGlyphOrder
 
 from . import gdef
 
@@ -177,6 +177,7 @@ def scrub_ufo(
     # Clean glifs.
     for layer in ufo.layers:
         for glyph in layer:
+            glyph.height = 0
             # Turn coordinates like "123.0" into "123".
             glyph.width = clean_number(glyph.width)
             for anchor in glyph.anchors:
@@ -210,10 +211,14 @@ def scrub_ufo(
             glyph.lib = {
                 k: v
                 for k, v in glyph.lib.items()
-                if (k.startswith("public.") and k != "public.markColor")
-                or (
+                if (
+                    k.startswith("public.")
+                    and k != "public.markColor"
+                    and k != "public.verticalOrigin"
+                ) or (
                     k.startswith("com.schriftgestaltung.Glyphs.")
                     and k != "com.schriftgestaltung.Glyphs.lastChange"
+                    and k != "com.schriftgestaltung.Glyphs.shapeOrder"
                 )
             }
 
