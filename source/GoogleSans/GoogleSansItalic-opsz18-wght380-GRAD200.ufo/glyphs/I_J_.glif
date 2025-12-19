@@ -1,33 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="IJ" format="2">
-  <advance width="780"/>
+  <advance height="1252" width="770"/>
   <unicode hex="0132"/>
-  <anchor x="202" y="716" name="top.UC.1"/>
-  <anchor x="748" y="716" name="top.UC.2"/>
   <outline>
-    <contour>
-      <point x="13" y="0" type="line"/>
-      <point x="137" y="0" type="line"/>
-      <point x="264" y="716" type="line"/>
-      <point x="140" y="716" type="line"/>
-    </contour>
-    <contour>
-      <point x="450" y="-16" type="curve" smooth="yes"/>
-      <point x="587" y="-16"/>
-      <point x="684" y="53"/>
-      <point x="713" y="220" type="curve" smooth="yes"/>
-      <point x="800" y="716" type="line"/>
-      <point x="676" y="716" type="line"/>
-      <point x="588" y="214" type="line" smooth="yes"/>
-      <point x="572" y="121"/>
-      <point x="531" y="95"/>
-      <point x="460" y="95" type="curve" smooth="yes"/>
-      <point x="394" y="95"/>
-      <point x="367" y="135"/>
-      <point x="359" y="194" type="curve"/>
-      <point x="256" y="150" type="line"/>
-      <point x="265" y="47"/>
-      <point x="342" y="-16"/>
-    </contour>
+    <component base="I"/>
+    <component base="J" xOffset="241"/>
   </outline>
 </glyph>

@@ -56,24 +56,19 @@ include(malayalam.fea)
 @latn_CombiningTopAccents_sc = [acutecomb.sc brevecomb.sc caroncomb.sc circumflexcomb.sc dieresiscomb.sc dotaccentcomb.sc gravecomb.sc hookabovecomb.sc hungarumlautcomb.sc macroncomb.sc ringcomb.sc tildecomb.sc brevecomb_acutecomb.sc brevecomb_gravecomb.sc brevecomb_hookabovecomb.sc brevecomb_tildecomb.sc circumflexcomb_acutecomb.sc circumflexcomb_gravecomb.sc circumflexcomb_hookabovecomb.sc circumflexcomb_tildecomb.sc brevecombcy.sc];
 @latn_CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb];
 
-# Utility lookups for the /ij/acutecomb decomposition
+# Utility lookups for ccmp_ij_acute
 lookup ij_to_iacute { sub ij by iacute; sub IJ by Iacute; } ij_to_iacute;
-lookup acutecomb_to_j_acutecomb { sub acutecomb' by j acutecomb; } acutecomb_to_j_acutecomb;
+lookup acutecomb_to_jdotless_acutecombcap { sub acutecomb' by jdotless acutecomb; } acutecomb_to_jdotless_acutecombcap;
 lookup acutecomb_to_J_acutecomb { sub acutecomb' by J acutecomb; } acutecomb_to_J_acutecomb;
 
 feature ccmp {
     # ===============
     # BEGIN LATIN
     # ===============
-    lookup ccmp_decompose_legacy_ij_ligature {
-        # Decompose the legacy Unicode-encoded ij/IJ ligature
-        # Also apply the acutecomb on /ij/IJ in all languages
-        # See https://github.com/googlefonts/googlesans/pull/517#issuecomment-1262476039
-        sub ij' lookup ij_to_iacute acutecomb' lookup acutecomb_to_j_acutecomb;
+    lookup ccmp_ij_acute {
+        sub ij' lookup ij_to_iacute acutecomb' lookup acutecomb_to_jdotless_acutecombcap;
         sub IJ' lookup ij_to_iacute acutecomb' lookup acutecomb_to_J_acutecomb;
-        sub ij' by i j;
-        sub IJ' by I J;
-    } ccmp_decompose_legacy_ij_ligature;
+    } ccmp_ij_acute;
 
     lookup ccmp_Other_1 {
         lookupflag UseMarkFilteringSet @latn_CombiningTopAccents; 
@@ -210,16 +205,6 @@ feature locl {
     script latn;
     language CAT;
     sub L' periodcentered' L by Ldot;
-    language NLD;
-    ignore sub Iacute J' acutecomb.cap;
-    ignore sub I acutecomb.cap J' acutecomb.cap;
-    # Need for ignore sub to not add a second acutecomb.cap if one is already provided
-    sub Iacute J' by J acutecomb.cap;
-    sub I acutecomb.cap J' by J acutecomb.cap;
-    # No need for ignore sub because if there was already an acutecomb,
-    # the j would be jdotless from the ccmp
-    sub iacute j' by jdotless acutecomb;
-    sub idotless acutecomb j' by jdotless acutecomb;
     language ROM;
     sub Scedilla by Scommaaccent;
     sub scedilla by scommaaccent;
@@ -385,6 +370,11 @@ feature tnum {
     sub @figures by @figures_tab;
     sub @symbols by @symbols_tab;
 } tnum;
+
+feature zero {
+    sub zero by zero.slash;
+    sub zero.tf by zero.slash.tf;
+} zero;
 
 feature ordn {
     sub [A a a.alt] by ordfeminine;
@@ -1059,7 +1049,6 @@ lookup smcp_letters {
     sub h by h.sc;
     sub hbar by hbar.sc;
     sub hcircumflex by hcircumflex.sc;
-    sub i by i.sc;
     sub idotless by i.sc;
     sub iacute by iacute.sc;
     sub ibreve by ibreve.sc;
@@ -1508,7 +1497,6 @@ lookup smcp_letters {
     # ligature decomposition
     sub f_f_b by f.sc f.sc b.sc;
     sub f_f_h by f.sc f.sc h.sc;
-    sub f_f_i by f.sc f.sc i.sc;
     sub f_f_j by f.sc f.sc j.sc;
     sub f_f_k by f.sc f.sc k.sc;
     sub f_f_l by f.sc f.sc l.sc;
@@ -1517,7 +1505,6 @@ lookup smcp_letters {
     sub f_b by f.sc b.sc;
     sub f_f by f.sc f.sc;
     sub f_h by f.sc h.sc;
-    sub f_i by f.sc i.sc;
     sub f_j by f.sc j.sc;
     sub f_k by f.sc k.sc;
     sub f_l by f.sc l.sc;
@@ -1531,6 +1518,18 @@ lookup smcp_letters {
 lookup smcp_NOR_localeng {
     sub [eng eng.sc] by eng.alt.sc;
 } smcp_NOR_localeng;
+
+lookup smcp_i {
+    sub i by i.sc;
+    sub f_f_i by f.sc f.sc i.sc;
+    sub f_i by f.sc i.sc;    
+} smcp_i;
+
+lookup smcp_TRK_i {
+    sub i by idotaccent.sc;
+    sub f_f_i by f.sc f.sc idotaccent.sc;
+    sub f_i by f.sc idotaccent.sc;   
+} smcp_TRK_i;
 
 # This lookup needs to be after the main contents of both c2sc and smcp
 # so that it happens after the small caps have been intruduced.
@@ -1549,10 +1548,35 @@ feature c2sc {
 
 feature smcp {
     lookup smcp_letters;
+    lookup smcp_i;
     lookup c2sc_smcp_combining_sc;
     lookup armn_smcp_substitution;
     lookup armn_smcp_contextual_substitution;
     script latn;
+    language AZE exclude_dflt;
+    lookup smcp_letters;
+    lookup smcp_TRK_i;
+    lookup c2sc_smcp_combining_sc;
+    language CRT exclude_dflt;
+    lookup smcp_letters;
+    lookup smcp_TRK_i;
+    lookup c2sc_smcp_combining_sc;
+    language GAG exclude_dflt;
+    lookup smcp_letters;
+    lookup smcp_TRK_i;
+    lookup c2sc_smcp_combining_sc;
+    language KAZ exclude_dflt;
+    lookup smcp_letters;
+    lookup smcp_TRK_i;
+    lookup c2sc_smcp_combining_sc;
+    language TAT exclude_dflt;
+    lookup smcp_letters;
+    lookup smcp_TRK_i;
+    lookup c2sc_smcp_combining_sc;
+    language TRK exclude_dflt;
+    lookup smcp_letters;
+    lookup smcp_TRK_i;
+    lookup c2sc_smcp_combining_sc;
     language ISM;
     lookup smcp_NOR_localeng;
     language LSM;
