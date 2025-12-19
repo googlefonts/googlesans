@@ -86,6 +86,7 @@ STATIC_UPRIGHT_FEA = [
     "sups",
     "tnum",
     "vatu",
+    "zero",
 ]
 
 STATIC_ITALICS_FEA = [
@@ -143,6 +144,7 @@ STATIC_ITALICS_FEA = [
     "sups",
     "tnum",
     "vatu",
+    "zero",
 ]
 
 VAR_UPRIGHT_FEA = [
@@ -201,6 +203,7 @@ VAR_UPRIGHT_FEA = [
     "sups",
     "tnum",
     "vatu",
+    "zero",
 ]
 
 VAR_ITALICS_FEA = [
@@ -258,6 +261,7 @@ VAR_ITALICS_FEA = [
     "sups",
     "tnum",
     "vatu",
+    "zero",
 ]
 
 # ================================================
