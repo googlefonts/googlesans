@@ -26,7 +26,7 @@ jobs:
       - name: Check out source repository
         uses: actions/checkout@v5
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -42,7 +42,7 @@ jobs:
       - name: Check out source repository
         uses: actions/checkout@v5
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -58,7 +58,7 @@ jobs:
       - name: Check out source repository
         uses: actions/checkout@v5
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -83,7 +83,7 @@ jobs:
       - name: Check out source repository
         uses: actions/checkout@v5
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -133,7 +133,7 @@ jobs:
       - name: Check out source repository
         uses: actions/checkout@v5
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -159,7 +159,7 @@ jobs:
       - name: Check out source repository
         uses: actions/checkout@v5
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -207,7 +207,7 @@ jobs:
       - name: Check out source repository
         uses: actions/checkout@v5
       - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
