@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="iiMatra_reph_anusvara-deva" format="2">
   <advance width="303"/>
+  <anchor x="358" y="690" name="top"/>
   <outline>
     <contour>
       <point x="295" y="734" type="line"/>
@@ -42,10 +43,16 @@
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>=iiMatra-deva</string>
       <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
       <string>=iiMatra-deva@644</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPC</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Matra</string>
     </dict>
   </lib>
 </glyph>

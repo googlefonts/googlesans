@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="rakar-deva" format="2">
   <anchor x="188" y="-39" name="_bottom"/>
-  <anchor x="159" y="-225" name="bottom"/>
+  <anchor x="167" y="-235" name="bottom"/>
+  <anchor x="157" y="-291" name="nukta"/>
   <outline>
     <contour>
       <point x="7" y="-253" type="line"/>
@@ -16,8 +17,14 @@
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Mark</string>
       <key>com.schriftgestaltung.Glyphs.originalWidth</key>
       <integer>475</integer>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Nonspacing</string>
     </dict>
   </lib>
 </glyph>

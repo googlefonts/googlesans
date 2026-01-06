@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="da_uMatra-deva" format="2">
   <advance width="600"/>
+  <anchor x="405" y="-33" name="_bottom"/>
   <anchor x="491" y="679" name="top"/>
   <outline>
     <contour>
@@ -53,4 +54,14 @@
     </contour>
     <component base="uMatra-deva" xOffset="114" yOffset="-33"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPPC</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Composition</string>
+    </dict>
+  </lib>
 </glyph>

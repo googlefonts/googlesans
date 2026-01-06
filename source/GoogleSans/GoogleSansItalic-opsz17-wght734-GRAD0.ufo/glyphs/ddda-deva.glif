@@ -2,7 +2,7 @@
 <glyph name="ddda-deva" format="2">
   <advance width="603"/>
   <unicode hex="097E"/>
-  <anchor x="284" y="-83" name="bottom"/>
+  <anchor x="252" y="-75" name="bottom"/>
   <anchor x="525" y="690" name="top"/>
   <outline>
     <contour>
@@ -32,12 +32,12 @@
       <point x="115" y="482"/>
       <point x="115" y="386" type="curve" smooth="yes"/>
       <point x="115" y="313"/>
-      <point x="171" y="267"/>
+      <point x="171" y="266"/>
       <point x="255" y="266" type="curve" smooth="yes"/>
-      <point x="297" y="265"/>
+      <point x="297" y="266"/>
       <point x="364" y="271"/>
       <point x="393" y="271" type="curve" smooth="yes"/>
-      <point x="430" y="272"/>
+      <point x="430" y="271"/>
       <point x="447" y="252"/>
       <point x="447" y="227" type="curve" smooth="yes"/>
       <point x="447" y="183"/>
@@ -57,10 +57,18 @@
       <point x="38" y="24" type="line"/>
     </contour>
     <contour>
-      <point x="42" y="595" type="line"/>
-      <point x="685" y="595" type="line"/>
-      <point x="702" y="690" type="line"/>
+      <point x="42" y="596" type="line"/>
+      <point x="684" y="596" type="line"/>
+      <point x="701" y="690" type="line"/>
       <point x="59" y="690" type="line"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

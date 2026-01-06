@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="m-deva.alt4" format="2">
   <advance width="387"/>
-  <anchor x="487" y="286" name="bottomright"/>
+  <anchor x="476" y="280" name="bottomright"/>
   <anchor x="142" y="37" name="nukta"/>
   <outline>
     <contour>
@@ -27,16 +27,20 @@
       <point x="222" y="391" type="line"/>
     </contour>
     <contour>
-      <point x="42" y="595" type="line"/>
-      <point x="466" y="595" type="line"/>
+      <point x="42" y="596" type="line"/>
+      <point x="466" y="596" type="line"/>
       <point x="482" y="690" type="line"/>
       <point x="59" y="690" type="line"/>
     </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>ma-deva</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
     </dict>
   </lib>
 </glyph>

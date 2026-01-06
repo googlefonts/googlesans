@@ -1,8 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="lll-deva" format="2">
   <advance width="773"/>
+  <anchor x="467" y="-38" name="nukta"/>
   <outline>
     <component base="ll-deva"/>
     <component base="nukta-deva" xOffset="358" yOffset="98"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
+    </dict>
+  </lib>
 </glyph>

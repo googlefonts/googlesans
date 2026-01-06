@@ -1,9 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="yya-deva" format="2">
-  <advance width="644"/>
+  <advance width="648"/>
   <unicode hex="095F"/>
+  <anchor x="463" y="0" name="bottom"/>
+  <anchor x="420" y="226" name="bottomright"/>
+  <anchor x="136" y="-22" name="nukta"/>
+  <anchor x="584" y="690" name="top"/>
   <outline>
     <component base="ya-deva"/>
-    <component base="nukta-deva" xOffset="55" yOffset="114"/>
+    <component base="nukta-deva" xOffset="59" yOffset="114"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

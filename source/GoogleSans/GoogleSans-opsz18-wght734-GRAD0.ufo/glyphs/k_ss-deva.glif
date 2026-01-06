@@ -1,6 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="k_ss-deva" format="2">
   <advance width="510"/>
+  <note>
+Positive Kerning with Kana
+</note>
   <anchor x="670" y="201" name="bottomright"/>
   <outline>
     <contour>
@@ -74,8 +77,14 @@
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>k_ssa-deva</string>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Conjunct</string>
     </dict>
   </lib>
 </glyph>

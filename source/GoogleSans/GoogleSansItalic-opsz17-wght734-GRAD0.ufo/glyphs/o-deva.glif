@@ -1,9 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="o-deva" format="2">
-  <advance width="1111"/>
+  <advance width="1117"/>
   <unicode hex="0913"/>
+  <anchor x="386" y="0" name="bottomleft"/>
+  <anchor x="1144" y="690" name="top"/>
   <outline>
     <component base="aa-deva"/>
     <component base="eMatra-deva" xOffset="719"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Matra</string>
+    </dict>
+  </lib>
 </glyph>

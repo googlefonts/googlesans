@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="rrVocalicMatra-deva" format="2">
   <unicode hex="0944"/>
-  <anchor x="160" y="0" name="_bottom"/>
+  <anchor x="177" y="0" name="_bottom"/>
   <outline>
     <contour>
       <point x="152" y="-391" type="curve" smooth="yes"/>
@@ -47,8 +47,14 @@
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Mark</string>
       <key>com.schriftgestaltung.Glyphs.originalWidth</key>
       <integer>399</integer>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Nonspacing</string>
     </dict>
   </lib>
 </glyph>

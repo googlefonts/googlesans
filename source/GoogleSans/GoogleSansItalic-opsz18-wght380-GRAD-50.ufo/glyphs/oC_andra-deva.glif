@@ -3,6 +3,8 @@
   <advance width="1005"/>
   <unicode hex="0911"/>
   <guideline x="747" y="359" angle="90"/>
+  <anchor x="378" y="0" name="bottomleft"/>
+  <anchor x="1114" y="660" name="top"/>
   <outline>
     <component base="aa-deva"/>
     <component base="eCandraMatra-deva" xOffset="534"/>
@@ -20,6 +22,10 @@
           <string>eCandraMatra-deva</string>
         </dict>
       </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Matra</string>
     </dict>
   </lib>
 </glyph>

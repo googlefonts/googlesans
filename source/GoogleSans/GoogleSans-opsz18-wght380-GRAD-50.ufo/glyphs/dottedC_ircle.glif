@@ -3,12 +3,8 @@
   <advance width="687"/>
   <unicode hex="25CC"/>
   <anchor x="356" y="0" name="bottom"/>
-  <anchor x="560" y="0" name="bottomright"/>
-  <anchor x="488" y="660" name="candra"/>
   <anchor x="356" y="-91" name="nukta"/>
   <anchor x="338" y="660" name="top"/>
-  <anchor x="338" y="660" name="topcenter"/>
-  <anchor x="488" y="660" name="topright"/>
   <outline>
     <contour>
       <point x="232" y="58" type="curve" smooth="yes"/>
@@ -183,6 +179,8 @@
     <dict>
       <key>com.schriftgestaltung.Glyphs.category</key>
       <string>Symbol</string>
+      <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
+      <string>=|dottedCircle</string>
       <key>com.schriftgestaltung.Glyphs.subCategory</key>
       <string>Geometry</string>
     </dict>

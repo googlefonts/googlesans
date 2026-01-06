@@ -2,8 +2,20 @@
 <glyph name="ghha-deva" format="2">
   <advance width="628"/>
   <unicode hex="095A"/>
+  <anchor x="455" y="0" name="bottom"/>
+  <anchor x="463" y="287" name="bottomright"/>
+  <anchor x="156" y="50" name="nukta"/>
+  <anchor x="575" y="679" name="top"/>
   <outline>
     <component base="ga-deva"/>
     <component base="nukta-deva" xOffset="119" yOffset="175"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

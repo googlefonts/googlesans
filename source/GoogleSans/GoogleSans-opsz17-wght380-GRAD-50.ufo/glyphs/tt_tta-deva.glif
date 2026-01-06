@@ -1,36 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="tt_tta-deva" format="2">
   <advance width="521"/>
+  <note>
+Missing anchors
+</note>
   <anchor x="284" y="-315" name="bottom"/>
   <anchor x="349" y="679" name="top"/>
   <outline>
-    <contour>
-      <point x="284" y="143" type="curve" smooth="yes"/>
-      <point x="382" y="143"/>
-      <point x="454" y="183"/>
-      <point x="509" y="253" type="curve"/>
-      <point x="450" y="306" type="line"/>
-      <point x="406" y="254"/>
-      <point x="353" y="221"/>
-      <point x="282" y="221" type="curve" smooth="yes"/>
-      <point x="188" y="221"/>
-      <point x="138" y="267"/>
-      <point x="138" y="333" type="curve" smooth="yes"/>
-      <point x="138" y="400"/>
-      <point x="191" y="444"/>
-      <point x="295" y="444" type="curve" smooth="yes"/>
-      <point x="389" y="444" type="line"/>
-      <point x="389" y="637" type="line"/>
-      <point x="309" y="637" type="line"/>
-      <point x="309" y="480" type="line"/>
-      <point x="353" y="518" type="line"/>
-      <point x="290" y="518" type="line" smooth="yes"/>
-      <point x="139" y="518"/>
-      <point x="54" y="444"/>
-      <point x="54" y="333" type="curve" smooth="yes"/>
-      <point x="54" y="222"/>
-      <point x="141" y="143"/>
-    </contour>
     <contour>
       <point x="284" y="-305" type="curve" smooth="yes"/>
       <point x="381" y="-305"/>
@@ -56,7 +32,34 @@
       <point x="54" y="-3"/>
       <point x="54" y="-115" type="curve" smooth="yes"/>
       <point x="54" y="-225"/>
-      <point x="141" y="-305"/>
+      <point x="142" y="-305"/>
+    </contour>
+    <contour>
+      <point x="284" y="147" type="curve" smooth="yes"/>
+      <point x="382" y="147"/>
+      <point x="453" y="188"/>
+      <point x="509" y="257" type="curve"/>
+      <point x="450" y="306" type="line"/>
+      <point x="407" y="253"/>
+      <point x="355" y="221"/>
+      <point x="282" y="221" type="curve" smooth="yes"/>
+      <point x="188" y="221"/>
+      <point x="138" y="267"/>
+      <point x="138" y="334" type="curve" smooth="yes"/>
+      <point x="138" y="402"/>
+      <point x="186" y="444"/>
+      <point x="273" y="444" type="curve" smooth="yes"/>
+      <point x="389" y="444" type="line"/>
+      <point x="389" y="637" type="line"/>
+      <point x="309" y="637" type="line"/>
+      <point x="309" y="480" type="line"/>
+      <point x="353" y="518" type="line"/>
+      <point x="273" y="518" type="line" smooth="yes"/>
+      <point x="136" y="518"/>
+      <point x="54" y="446"/>
+      <point x="54" y="334" type="curve" smooth="yes"/>
+      <point x="54" y="225"/>
+      <point x="144" y="147"/>
     </contour>
     <contour>
       <point x="-20" y="607" type="line"/>
@@ -65,4 +68,14 @@
       <point x="-20" y="679" type="line"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Conjunct</string>
+    </dict>
+  </lib>
 </glyph>
