@@ -1,0 +1,13 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+locl = true
+
+[input]
+script = "deva"
+language = "dflt"
+comparison_mode = "full"
+text = [
+    "क. क, क: क; क… क! क? क* (क क) {क क} [क क] ‘क क’ “क क”" # Localised Devanagari Punctuation
+]
