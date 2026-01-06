@@ -2,8 +2,10 @@
 <glyph name="ca-deva" format="2">
   <advance width="672"/>
   <unicode hex="091A"/>
+  <note>
+kerning
+</note>
   <anchor x="547" y="0" name="bottom"/>
-  <anchor x="452" y="200" name="bottomright"/>
   <anchor x="547" y="671" name="top"/>
   <outline>
     <contour>
@@ -47,4 +49,12 @@
       <point x="-20" y="671" type="line"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

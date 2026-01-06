@@ -1,8 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ddd-deva" format="2">
   <advance width="548"/>
+  <anchor x="236" y="-44" name="bottom"/>
+  <anchor x="491" y="660" name="top"/>
   <outline>
     <component base="ddda-deva"/>
-    <component base="halant-deva" xOffset="190" yOffset="-52"/>
+    <component base="halant-deva" xOffset="161" yOffset="-44"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

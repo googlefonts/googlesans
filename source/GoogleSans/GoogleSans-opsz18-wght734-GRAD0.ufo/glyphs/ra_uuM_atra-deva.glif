@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ra_uuMatra-deva" format="2">
   <advance width="721"/>
+  <anchor x="109" y="15" name="nukta"/>
+  <anchor x="295" y="671" name="top"/>
   <outline>
     <contour>
       <point x="624" y="180" type="curve"/>
@@ -51,6 +53,14 @@
           <string>ra-deva</string>
         </dict>
       </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPC</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Composition</string>
     </dict>
   </lib>
 </glyph>

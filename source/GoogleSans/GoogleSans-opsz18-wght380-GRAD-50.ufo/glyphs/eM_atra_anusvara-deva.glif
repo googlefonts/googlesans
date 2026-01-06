@@ -1,5 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="eMatra_anusvara-deva" format="2">
+  <anchor x="308" y="660" name="_top"/>
+  <anchor x="390" y="660" name="top"/>
   <outline>
     <component base="eMatra-deva" xOffset="30"/>
     <component base="anusvara-deva" xOffset="306"/>
@@ -17,8 +19,12 @@
           <string>anusvara-deva</string>
         </dict>
       </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Mark</string>
       <key>com.schriftgestaltung.Glyphs.originalWidth</key>
       <integer>474</integer>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Nonspacing</string>
     </dict>
   </lib>
 </glyph>

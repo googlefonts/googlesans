@@ -1,8 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="s-deva" format="2">
   <advance width="432"/>
+  <note>
+Add +kerning for half s + kana combination (regular, Bold)
+</note>
   <guideline x="585" y="528" angle="80.009"/>
-  <anchor x="538" y="263" name="bottomright"/>
+  <anchor x="560" y="292" name="bottomright"/>
   <anchor x="56" y="15" name="nukta"/>
   <outline>
     <contour>
@@ -21,33 +24,37 @@
       <point x="387" y="624" type="line"/>
       <point x="299" y="624" type="line"/>
       <point x="265" y="431" type="line" smooth="yes"/>
-      <point x="257" y="384"/>
-      <point x="227" y="355"/>
-      <point x="177" y="355" type="curve" smooth="yes"/>
-      <point x="155" y="355"/>
-      <point x="137" y="363"/>
+      <point x="256" y="381"/>
+      <point x="231" y="355"/>
+      <point x="186" y="355" type="curve" smooth="yes"/>
+      <point x="161" y="355"/>
+      <point x="139" y="363"/>
       <point x="120" y="383" type="curve"/>
       <point x="44" y="327" type="line"/>
     </contour>
     <contour>
       <point x="350" y="268" type="line"/>
-      <point x="577" y="268" type="line"/>
-      <point x="591" y="346" type="line"/>
-      <point x="189" y="346" type="line"/>
-      <point x="177" y="278" type="line"/>
-      <point x="179" y="278" type="line"/>
+      <point x="572" y="268" type="line"/>
+      <point x="585" y="340" type="line"/>
+      <point x="189" y="340" type="line"/>
+      <point x="177" y="277" type="line"/>
+      <point x="179" y="277" type="line"/>
     </contour>
     <contour>
       <point x="40" y="588" type="line"/>
-      <point x="512" y="588" type="line"/>
-      <point x="525" y="660" type="line"/>
+      <point x="522" y="588" type="line"/>
+      <point x="535" y="660" type="line"/>
       <point x="53" y="660" type="line"/>
     </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>sa-deva</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
     </dict>
   </lib>
 </glyph>

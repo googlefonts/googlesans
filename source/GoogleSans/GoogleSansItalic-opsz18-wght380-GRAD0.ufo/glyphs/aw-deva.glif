@@ -2,8 +2,18 @@
 <glyph name="aw-deva" format="2">
   <advance width="1005"/>
   <unicode hex="0975"/>
+  <anchor x="378" y="0" name="bottomleft"/>
+  <anchor x="964" y="660" name="top"/>
   <outline>
     <component base="a-deva"/>
     <component base="awMatra-deva" xOffset="757"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Matra</string>
+    </dict>
+  </lib>
 </glyph>

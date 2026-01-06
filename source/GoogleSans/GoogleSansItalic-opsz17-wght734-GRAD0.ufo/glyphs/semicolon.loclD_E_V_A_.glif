@@ -3,24 +3,38 @@
   <advance width="279"/>
   <outline>
     <contour>
-      <point x="178" y="382" type="curve" smooth="yes"/>
-      <point x="220" y="382"/>
-      <point x="255" y="417"/>
-      <point x="255" y="460" type="curve" smooth="yes"/>
-      <point x="255" y="502"/>
-      <point x="221" y="536"/>
-      <point x="178" y="536" type="curve" smooth="yes"/>
-      <point x="136" y="536"/>
-      <point x="100" y="503"/>
-      <point x="100" y="460" type="curve" smooth="yes"/>
-      <point x="100" y="417"/>
-      <point x="135" y="382"/>
+      <point x="179" y="379" type="curve" smooth="yes"/>
+      <point x="223" y="379"/>
+      <point x="258" y="414"/>
+      <point x="258" y="458" type="curve" smooth="yes"/>
+      <point x="258" y="502"/>
+      <point x="223" y="537"/>
+      <point x="179" y="537" type="curve" smooth="yes"/>
+      <point x="135" y="537"/>
+      <point x="100" y="502"/>
+      <point x="100" y="458" type="curve" smooth="yes"/>
+      <point x="100" y="414"/>
+      <point x="135" y="379"/>
     </contour>
-    <contour>
-      <point x="-48" y="-121" type="line"/>
-      <point x="49" y="-121" type="line"/>
-      <point x="201" y="131" type="line"/>
-      <point x="66" y="131" type="line"/>
-    </contour>
+    <component base="comma.loclDEVA" xOffset="3"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>comma.loclDEVA</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Punctuation</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PC</string>
+    </dict>
+  </lib>
 </glyph>

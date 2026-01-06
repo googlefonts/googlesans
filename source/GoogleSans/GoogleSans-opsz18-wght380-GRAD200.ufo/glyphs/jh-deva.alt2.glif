@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="jh-deva.alt2" format="2">
-  <advance width="546"/>
+  <advance width="511"/>
   <guideline x="566" y="624" angle="270"/>
+  <anchor x="697" y="192" name="bottomright"/>
   <anchor x="153" y="-110" name="nukta"/>
-  <anchor x="687" y="192" name="bottomright"/>
   <outline>
     <contour>
       <point x="351" y="-180" type="line"/>
@@ -25,8 +25,8 @@
       <point x="481" y="238" type="line"/>
       <point x="485" y="244" type="line"/>
       <point x="576" y="238" type="line"/>
-      <point x="721" y="238" type="line"/>
-      <point x="711" y="320" type="line"/>
+      <point x="708" y="238" type="line"/>
+      <point x="698" y="320" type="line"/>
       <point x="357" y="320" type="line" smooth="yes"/>
       <point x="312" y="320"/>
       <point x="268" y="312"/>
@@ -74,15 +74,21 @@
     </contour>
     <contour>
       <point x="-20" y="588" type="line"/>
-      <point x="566" y="588" type="line"/>
-      <point x="566" y="660" type="line"/>
+      <point x="592" y="588" type="line"/>
+      <point x="592" y="660" type="line"/>
       <point x="-20" y="660" type="line"/>
     </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>jha-deva</string>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
     </dict>
   </lib>
 </glyph>

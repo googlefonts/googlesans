@@ -1,12 +1,31 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="quoteright.loclDEVA" format="2">
-  <advance width="359"/>
+  <advance width="355"/>
   <outline>
     <contour>
       <point x="90" y="470" type="line"/>
-      <point x="181" y="470" type="line"/>
-      <point x="305" y="716" type="line"/>
-      <point x="173" y="716" type="line"/>
+      <point x="186" y="470" type="line"/>
+      <point x="246" y="602" type="line" smooth="yes"/>
+      <point x="256" y="624"/>
+      <point x="291" y="701"/>
+      <point x="301" y="723" type="curve"/>
+      <point x="287" y="723"/>
+      <point x="176" y="723"/>
+      <point x="166" y="723" type="curve"/>
+      <point x="163" y="713"/>
+      <point x="154" y="683"/>
+      <point x="148" y="663" type="curve" smooth="yes"/>
+      <point x="141" y="639"/>
+      <point x="133" y="613"/>
+      <point x="129" y="600" type="curve" smooth="yes"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Punctuation</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Quote</string>
+    </dict>
+  </lib>
 </glyph>

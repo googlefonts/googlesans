@@ -2,8 +2,8 @@
 <glyph name="ch_ya-deva" format="2">
   <advance width="1334"/>
   <anchor x="1162" y="0" name="bottom"/>
-  <anchor x="809" y="-53" name="nukta"/>
   <anchor x="1280" y="679" name="top"/>
+  <anchor x="809" y="-53" name="nukta"/>
   <outline>
     <contour>
       <point x="1118" y="0" type="line"/>
@@ -60,8 +60,14 @@
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
       <string>ya-deva</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPC</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Conjunct</string>
     </dict>
   </lib>
 </glyph>

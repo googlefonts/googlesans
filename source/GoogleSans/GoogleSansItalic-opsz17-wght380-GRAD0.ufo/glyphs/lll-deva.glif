@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="lll-deva" format="2">
-  <advance width="688"/>
+  <advance width="740"/>
+  <anchor x="425" y="-20" name="nukta"/>
   <outline>
     <component base="ll-deva"/>
     <component base="nukta-deva" xOffset="394" yOffset="125"/>
@@ -18,6 +19,10 @@
           <string>nukta-deva</string>
         </dict>
       </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
     </dict>
   </lib>
 </glyph>

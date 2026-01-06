@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="nn-deva" format="2">
-  <advance width="524"/>
-  <anchor x="626" y="262" name="bottomright"/>
+  <advance width="500"/>
+  <anchor x="606" y="232" name="bottomright"/>
   <outline>
     <contour>
       <point x="280" y="148" type="curve" smooth="yes"/>
@@ -25,15 +25,21 @@
     </contour>
     <contour>
       <point x="-20" y="607" type="line"/>
-      <point x="544" y="607" type="line"/>
-      <point x="544" y="679" type="line"/>
+      <point x="520" y="607" type="line"/>
+      <point x="520" y="679" type="line"/>
       <point x="-20" y="679" type="line"/>
     </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>nna-deva</string>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
     </dict>
   </lib>
 </glyph>

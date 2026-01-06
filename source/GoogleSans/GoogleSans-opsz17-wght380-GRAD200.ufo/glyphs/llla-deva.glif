@@ -2,8 +2,19 @@
 <glyph name="llla-deva" format="2">
   <advance width="884"/>
   <unicode hex="0934"/>
+  <anchor x="611" y="56" name="bottom"/>
+  <anchor x="450" y="-20" name="nukta"/>
+  <anchor x="613" y="679" name="top"/>
   <outline>
     <component base="lla-deva"/>
     <component base="nukta-deva" xOffset="349" yOffset="105"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

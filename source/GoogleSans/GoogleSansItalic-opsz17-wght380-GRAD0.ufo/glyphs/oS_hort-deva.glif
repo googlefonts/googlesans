@@ -3,8 +3,18 @@
   <advance width="1069"/>
   <unicode hex="0912"/>
   <guideline x="972" y="674" angle="80"/>
+  <anchor x="392" y="0" name="bottomleft"/>
+  <anchor x="1105" y="679" name="top"/>
   <outline>
     <component base="aa-deva"/>
     <component base="eShortMatra-deva" xOffset="523"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Matra</string>
+    </dict>
+  </lib>
 </glyph>

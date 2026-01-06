@@ -4,8 +4,18 @@
   <unicode hex="0913"/>
   <guideline x="896" y="684" angle="90"/>
   <guideline x="972" y="674" angle="80"/>
+  <anchor x="392" y="0" name="bottomleft"/>
+  <anchor x="1086" y="679" name="top"/>
   <outline>
     <component base="aa-deva"/>
     <component base="eMatra-deva" xOffset="670"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Matra</string>
+    </dict>
+  </lib>
 </glyph>

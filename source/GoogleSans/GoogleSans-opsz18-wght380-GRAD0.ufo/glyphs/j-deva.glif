@@ -2,7 +2,7 @@
 <glyph name="j-deva" format="2">
   <advance width="564"/>
   <guideline x="584" y="624" angle="270"/>
-  <anchor x="692" y="242" name="bottomright"/>
+  <anchor x="691" y="224" name="bottomright"/>
   <anchor x="149" y="0" name="nukta"/>
   <outline>
     <contour>
@@ -42,8 +42,14 @@
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>ja-deva</string>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
     </dict>
   </lib>
 </glyph>
