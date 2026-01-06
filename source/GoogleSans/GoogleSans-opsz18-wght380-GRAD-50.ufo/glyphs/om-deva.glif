@@ -2,6 +2,7 @@
 <glyph name="om-deva" format="2">
   <advance width="1006"/>
   <unicode hex="0950"/>
+  <anchor x="648" y="507" name="_top"/>
   <outline>
     <contour>
       <point x="270" y="0" type="curve" smooth="yes"/>
@@ -93,4 +94,12 @@
     </contour>
     <component base="candraBindu-deva" xOffset="432" yOffset="-153"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Symbol</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPPPC</string>
+    </dict>
+  </lib>
 </glyph>

@@ -2,9 +2,9 @@
 <glyph name="jha-deva" format="2">
   <advance width="804"/>
   <unicode hex="091D"/>
-  <anchor x="160" y="-120" name="nukta"/>
   <anchor x="678" y="0" name="bottom"/>
   <anchor x="652" y="168" name="bottomright"/>
+  <anchor x="160" y="-120" name="nukta"/>
   <anchor x="678" y="671" name="top"/>
   <outline>
     <contour>
@@ -89,8 +89,12 @@
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.rightMetricsKey</key>
       <string>aaMatra-deva</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
     </dict>
   </lib>
 </glyph>

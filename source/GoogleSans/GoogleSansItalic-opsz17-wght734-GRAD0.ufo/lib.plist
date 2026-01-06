@@ -7643,6 +7643,30 @@
       <string>zero-slash</string>
       <string>zero.slash</string>
       <string>zero.slash.tf</string>
+      <string>k_ss_ra-deva</string>
+      <string>rakar-deva.diagonal.alt</string>
+      <string>rakar_nukta-deva</string>
+      <string>kh-deva.alt5</string>
+      <string>ss-deva.alt</string>
+      <string>k_ssa-deva.short</string>
+      <string>ng_ga-deva</string>
+      <string>aaMatra-deva.post</string>
+      <string>aaMatra-deva.post.alt</string>
+      <string>nukta-deva.triple</string>
+      <string>zero-deva.tf</string>
+      <string>one-deva.tf</string>
+      <string>two-deva.tf</string>
+      <string>three-deva.tf</string>
+      <string>four-deva.tf</string>
+      <string>five-deva.tf</string>
+      <string>six-deva.tf</string>
+      <string>seven-deva.tf</string>
+      <string>eight-deva.tf</string>
+      <string>nine-deva.tf</string>
+      <string>one-deva.loclNEP.tf</string>
+      <string>five-deva.loclNEP.tf</string>
+      <string>eight-deva.loclMARNEP.tf</string>
+      <string>nine-deva.loclNEP.tf</string>
     </array>
     <key>public.openTypeCategories</key>
     <dict>
@@ -8563,6 +8587,10 @@
       <key>aaGlottal-ethiopic</key>
       <string>base</string>
       <key>aaMatra-deva</key>
+      <string>base</string>
+      <key>aaMatra-deva.post</key>
+      <string>base</string>
+      <key>aaMatra-deva.post.alt</key>
       <string>base</string>
       <key>aaMatra-gujarati</key>
       <string>base</string>
@@ -12366,6 +12394,8 @@
       <string>base</string>
       <key>k_ss_nna-beng</key>
       <string>base</string>
+      <key>k_ss_ra-deva</key>
+      <string>base</string>
       <key>k_ss_ra-gujarati</key>
       <string>base</string>
       <key>k_ss_ya-gujarati</key>
@@ -12373,6 +12403,8 @@
       <key>k_ssa-beng</key>
       <string>base</string>
       <key>k_ssa-deva</key>
+      <string>base</string>
+      <key>k_ssa-deva.short</key>
       <string>base</string>
       <key>k_ssa-gujarati</key>
       <string>base</string>
@@ -12531,6 +12563,8 @@
       <key>kh-deva.alt3</key>
       <string>base</string>
       <key>kh-deva.alt4</key>
+      <string>base</string>
+      <key>kh-deva.alt5</key>
       <string>base</string>
       <key>kh-kannada</key>
       <string>base</string>
@@ -13646,6 +13680,8 @@
       <string>base</string>
       <key>ng_ga-beng</key>
       <string>base</string>
+      <key>ng_ga-deva</key>
+      <string>base</string>
       <key>ng_ga-gujarati</key>
       <string>base</string>
       <key>ng_ga-oriya</key>
@@ -14011,6 +14047,8 @@
       <key>nukta-beng</key>
       <string>mark</string>
       <key>nukta-deva</key>
+      <string>mark</string>
+      <key>nukta-deva.triple</key>
       <string>mark</string>
       <key>nukta-gujarati</key>
       <string>mark</string>
@@ -15288,6 +15326,8 @@
       <string>mark</string>
       <key>rakar-deva.diagonal</key>
       <string>mark</string>
+      <key>rakar-deva.diagonal.alt</key>
+      <string>mark</string>
       <key>rakar-deva.short</key>
       <string>mark</string>
       <key>rakar-gujarati</key>
@@ -15295,6 +15335,8 @@
       <key>rakar-gurmukhi</key>
       <string>mark</string>
       <key>rakar-sinhala</key>
+      <string>mark</string>
+      <key>rakar_nukta-deva</key>
       <string>mark</string>
       <key>ralowerdiagonal-beng</key>
       <string>base</string>
@@ -15981,6 +16023,8 @@
       <key>ss-beng.half4</key>
       <string>base</string>
       <key>ss-deva</key>
+      <string>base</string>
+      <key>ss-deva.alt</key>
       <string>base</string>
       <key>ss-kannada</key>
       <string>base</string>
@@ -18829,6 +18873,10 @@
       <string>uni09BE</string>
       <key>aaMatra-deva</key>
       <string>uni093E</string>
+      <key>aaMatra-deva.post</key>
+      <string>uni093E.post</string>
+      <key>aaMatra-deva.post.alt</key>
+      <string>uni093E.post.alt</string>
       <key>aaMatra-gujarati</key>
       <string>uni0ABE</string>
       <key>aaMatra-gujarati.segment</key>
@@ -19562,9 +19610,9 @@
       <key>bau-telugu</key>
       <string>bautelugu</string>
       <key>bb-deva</key>
-      <string>bbdeva</string>
+      <string>uni097F.half</string>
       <key>bb-deva.alt2</key>
-      <string>bbdeva.alt2</string>
+      <string>uni097F.half.alt2</string>
       <key>bba-deva</key>
       <string>uni097F</string>
       <key>bba-ethiopic</key>
@@ -20682,11 +20730,11 @@
       <key>ddau-telugu</key>
       <string>ddautelugu</string>
       <key>ddd-deva</key>
-      <string>ddddeva</string>
+      <string>uni097E.half</string>
       <key>ddda-deva</key>
       <string>uni097E</string>
       <key>dddh-deva</key>
-      <string>dddhdeva</string>
+      <string>uni095C094D</string>
       <key>dddha-deva</key>
       <string>uni095C</string>
       <key>dde-ethiopic</key>
@@ -21359,6 +21407,10 @@
       <string>uni096E</string>
       <key>eight-deva.loclMARNEP</key>
       <string>uni096E.loclMARNEP</string>
+      <key>eight-deva.loclMARNEP.tf</key>
+      <string>uni096E.loclMARNEP.tf</string>
+      <key>eight-deva.tf</key>
+      <string>uni096E.tf</string>
       <key>eight-ethiopic</key>
       <string>uni1370</string>
       <key>eight-ethiopic.fina</key>
@@ -21798,9 +21850,9 @@
       <key>exclamdouble</key>
       <string>exclamdbl</string>
       <key>eyelashReph-deva</key>
-      <string>eyelashRephdeva</string>
+      <string>uni0931.half</string>
       <key>eyelashReph-deva.alt1</key>
-      <string>eyelashRephdeva.alt1</string>
+      <string>uni0931.half.alt1</string>
       <key>f-deva</key>
       <string>uni095E094D</string>
       <key>f-deva.alt10</key>
@@ -21909,6 +21961,10 @@
       <string>uni096B</string>
       <key>five-deva.loclNEP</key>
       <string>uni096B.loclNEP</string>
+      <key>five-deva.loclNEP.tf</key>
+      <string>uni096B.loclNEP.tf</string>
+      <key>five-deva.tf</key>
+      <string>uni096B.tf</string>
       <key>five-ethiopic</key>
       <string>uni136D</string>
       <key>five-ethiopic.fina</key>
@@ -21977,6 +22033,8 @@
       <string>uni09EA</string>
       <key>four-deva</key>
       <string>uni096A</string>
+      <key>four-deva.tf</key>
+      <string>uni096A.tf</string>
       <key>four-ethiopic</key>
       <string>uni136C</string>
       <key>four-ethiopic.fina</key>
@@ -22296,7 +22354,7 @@
       <key>gestrokehook-cy.sc</key>
       <string>uni04FB.sc</string>
       <key>gg-deva</key>
-      <string>ggdeva</string>
+      <string>uni097B.half</string>
       <key>gga-deva</key>
       <string>uni097B</string>
       <key>gga-ethiopic</key>
@@ -23660,9 +23718,9 @@
       <key>jil-georgian</key>
       <string>uni10EB</string>
       <key>jj-deva</key>
-      <string>jjdeva</string>
+      <string>uni097C.half</string>
       <key>jj-deva.alt2</key>
-      <string>jjdeva.alt2</string>
+      <string>uni097C.half.alt2</string>
       <key>jja-deva</key>
       <string>uni097C</string>
       <key>jny-sinhala</key>
@@ -23825,6 +23883,8 @@
       <string>uni0B150B370B28</string>
       <key>k_ss_nna-beng</key>
       <string>uni099509CD09B709CD09A3</string>
+      <key>k_ss_ra-deva</key>
+      <string>uni0915094D0937094D0930</string>
       <key>k_ss_ra-gujarati</key>
       <string>uni0A950ACD0AB70ACD0AB0</string>
       <key>k_ss_ya-gujarati</key>
@@ -23833,6 +23893,8 @@
       <string>uni099509CD09B7</string>
       <key>k_ssa-deva</key>
       <string>uni0915094D0937</string>
+      <key>k_ssa-deva.short</key>
+      <string>uni0915094D0937.short</string>
       <key>k_ssa-gujarati</key>
       <string>uni0A950ACD0AB7</string>
       <key>k_ssa-kannada</key>
@@ -24047,6 +24109,8 @@
       <string>uni0916094D.alt3</string>
       <key>kh-deva.alt4</key>
       <string>uni0916094D.alt4</string>
+      <key>kh-deva.alt5</key>
+      <string>uni0916094D.alt5</string>
       <key>kh-gujarati</key>
       <string>uni0A960ACD</string>
       <key>kh-kannada</key>
@@ -25112,7 +25176,7 @@
       <key>mark-ar</key>
       <string>uni061C</string>
       <key>marwaridda-deva</key>
-      <string>marwariddadeva</string>
+      <string>uni0978</string>
       <key>masoracircle-hb</key>
       <string>uni05AF</string>
       <key>masoracircle-hb.final</key>
@@ -25499,6 +25563,8 @@
       <string>uni0C19.half</string>
       <key>ng_ga-beng</key>
       <string>uni099909CD0997</string>
+      <key>ng_ga-deva</key>
+      <string>uni0919094D0917</string>
       <key>ng_ga-gujarati</key>
       <string>uni0A990ACD0A97</string>
       <key>ng_ga-oriya</key>
@@ -25709,6 +25775,10 @@
       <string>uni096F</string>
       <key>nine-deva.loclNEP</key>
       <string>uni096F.loclNEP</string>
+      <key>nine-deva.loclNEP.tf</key>
+      <string>uni096F.loclNEP.tf</string>
+      <key>nine-deva.tf</key>
+      <string>uni096F.tf</string>
       <key>nine-ethiopic</key>
       <string>uni1371</string>
       <key>nine-ethiopic.fina</key>
@@ -26039,6 +26109,8 @@
       <string>uni09BC</string>
       <key>nukta-deva</key>
       <string>uni093C</string>
+      <key>nukta-deva.triple</key>
+      <string>uni093C.triple</string>
       <key>nukta-gujarati</key>
       <string>uni0ABC</string>
       <key>nukta-gurmukhi</key>
@@ -26661,6 +26733,10 @@
       <string>uni0967</string>
       <key>one-deva.loclNEP</key>
       <string>uni0967.loclNEP</string>
+      <key>one-deva.loclNEP.tf</key>
+      <string>uni0967.loclNEP.tf</string>
+      <key>one-deva.tf</key>
+      <string>uni0967.tf</string>
       <key>one-ethiopic</key>
       <string>uni1369</string>
       <key>one-ethiopic.fina</key>
@@ -27645,6 +27721,8 @@
       <string>uni094D0930</string>
       <key>rakar-deva.diagonal</key>
       <string>uni094D0930.diagonal</string>
+      <key>rakar-deva.diagonal.alt</key>
+      <string>uni094D0930.diagonal.alt</string>
       <key>rakar-deva.short</key>
       <string>uni094D0930.short</string>
       <key>rakar-gujarati</key>
@@ -27653,6 +27731,8 @@
       <string>uni0A4D0A30</string>
       <key>rakar-sinhala</key>
       <string>uni0DCA0DBB</string>
+      <key>rakar_nukta-deva</key>
+      <string>uni094D0930093C</string>
       <key>ralowerdiagonal-beng</key>
       <string>uni09F1</string>
       <key>ramiddlediagonal-beng</key>
@@ -27718,7 +27798,7 @@
       <key>reviamugrash-hb</key>
       <string>uni0597</string>
       <key>rh-deva</key>
-      <string>rhdeva</string>
+      <string>uni095D094D</string>
       <key>rh_ga-beng</key>
       <string>uni09DD09CD0997</string>
       <key>rha-beng</key>
@@ -28251,6 +28331,8 @@
       <string>uni09ED</string>
       <key>seven-deva</key>
       <string>uni096D</string>
+      <key>seven-deva.tf</key>
+      <string>uni096D.tf</string>
       <key>seven-ethiopic</key>
       <string>uni136F</string>
       <key>seven-ethiopic.fina</key>
@@ -28553,6 +28635,8 @@
       <string>uni09EC</string>
       <key>six-deva</key>
       <string>uni096C</string>
+      <key>six-deva.tf</key>
+      <string>uni096C.tf</string>
       <key>six-ethiopic</key>
       <string>uni136E</string>
       <key>six-ethiopic.fina</key>
@@ -28655,6 +28739,8 @@
       <string>uni09B709CD.half4</string>
       <key>ss-deva</key>
       <string>uni0937094D</string>
+      <key>ss-deva.alt</key>
+      <string>uni0937094D.alt</string>
       <key>ss-gujarati</key>
       <string>uni0AB70ACD</string>
       <key>ss-kannada</key>
@@ -29355,6 +29441,8 @@
       <string>uni09E9</string>
       <key>three-deva</key>
       <string>uni0969</string>
+      <key>three-deva.tf</key>
+      <string>uni0969.tf</string>
       <key>three-ethiopic</key>
       <string>uni136B</string>
       <key>three-ethiopic.fina</key>
@@ -29869,6 +29957,8 @@
       <string>uni09E8</string>
       <key>two-deva</key>
       <string>uni0968</string>
+      <key>two-deva.tf</key>
+      <string>uni0968.tf</string>
       <key>two-ethiopic</key>
       <string>uni136A</string>
       <key>two-ethiopic.fina</key>
@@ -30682,9 +30772,9 @@
       <key>yaa-telugu</key>
       <string>yaatelugu</string>
       <key>yaheavy-deva</key>
-      <string>yaheavydeva</string>
+      <string>uni097A</string>
       <key>yaheavy-deva.half</key>
-      <string>yaheavydeva.half</string>
+      <string>uni097A.half</string>
       <key>yakash-gurmukhi</key>
       <string>uni0A75</string>
       <key>yamakkan-thai</key>
@@ -30933,6 +31023,8 @@
       <string>uni09E6</string>
       <key>zero-deva</key>
       <string>uni0966</string>
+      <key>zero-deva.tf</key>
+      <string>uni0966.tf</string>
       <key>zero-gujarati</key>
       <string>uni0AE6</string>
       <key>zero-gurmukhi</key>

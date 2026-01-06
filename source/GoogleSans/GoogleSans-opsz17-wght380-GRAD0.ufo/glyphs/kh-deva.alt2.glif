@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="kh-deva.alt2" format="2">
   <advance width="638"/>
-  <anchor x="662" y="328" name="bottomright"/>
+  <anchor x="662" y="317" name="bottomright"/>
   <anchor x="131" y="-1" name="nukta"/>
   <outline>
     <contour>
@@ -65,8 +65,14 @@
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>kha-deva</string>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
     </dict>
   </lib>
 </glyph>

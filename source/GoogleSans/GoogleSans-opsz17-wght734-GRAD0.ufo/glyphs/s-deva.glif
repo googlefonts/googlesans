@@ -1,7 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="s-deva" format="2">
   <advance width="477"/>
-  <anchor x="594" y="276" name="bottomright"/>
+  <note>
+Add +kerning for half s + kana combination (regular, Bold)
+</note>
+  <anchor x="590" y="296" name="bottomright"/>
   <anchor x="118" y="15" name="nukta"/>
   <outline>
     <contour>
@@ -31,22 +34,28 @@
     <contour>
       <point x="359" y="267" type="line"/>
       <point x="612" y="267" type="line"/>
-      <point x="612" y="366" type="line"/>
-      <point x="216" y="366" type="line"/>
+      <point x="612" y="361" type="line"/>
+      <point x="216" y="361" type="line"/>
       <point x="216" y="277" type="line"/>
       <point x="222" y="277" type="line"/>
     </contour>
     <contour>
       <point x="-20" y="596" type="line"/>
-      <point x="517" y="596" type="line"/>
-      <point x="517" y="690" type="line"/>
+      <point x="497" y="596" type="line"/>
+      <point x="497" y="690" type="line"/>
       <point x="-20" y="690" type="line"/>
     </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>sa-deva</string>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
     </dict>
   </lib>
 </glyph>

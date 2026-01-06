@@ -3,8 +3,18 @@
   <advance width="582"/>
   <unicode hex="095C"/>
   <anchor x="301" y="-183" name="bottom"/>
+  <anchor x="301" y="-112" name="nukta"/>
+  <anchor x="441" y="671" name="top"/>
   <outline>
     <component base="dda-deva"/>
     <component base="nukta-deva" xOffset="216" yOffset="26"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

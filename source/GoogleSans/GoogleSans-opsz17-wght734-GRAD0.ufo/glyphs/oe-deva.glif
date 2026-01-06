@@ -2,8 +2,17 @@
 <glyph name="oe-deva" format="2">
   <advance width="818"/>
   <unicode hex="0973"/>
+  <anchor x="676" y="690" name="top"/>
   <outline>
     <component base="a-deva"/>
     <component base="oeMatra-deva" xOffset="586"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Matra</string>
+    </dict>
+  </lib>
 </glyph>

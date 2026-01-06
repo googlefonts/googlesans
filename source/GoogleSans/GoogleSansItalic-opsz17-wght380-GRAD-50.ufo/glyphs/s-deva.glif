@@ -1,7 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="s-deva" format="2">
   <advance width="448"/>
-  <anchor x="570" y="265" name="bottomright"/>
+  <note>
+Add +kerning for half s + kana combination (regular, Bold)
+</note>
+  <anchor x="588" y="296" name="bottomright"/>
   <anchor x="73" y="15" name="nukta"/>
   <outline>
     <contour>
@@ -31,22 +34,26 @@
     <contour>
       <point x="362" y="272" type="line"/>
       <point x="594" y="272" type="line"/>
-      <point x="608" y="350" type="line"/>
-      <point x="187" y="350" type="line"/>
-      <point x="187" y="282" type="line"/>
-      <point x="189" y="282" type="line"/>
+      <point x="607" y="344" type="line"/>
+      <point x="198" y="344" type="line"/>
+      <point x="184" y="281" type="line"/>
+      <point x="189" y="281" type="line"/>
     </contour>
     <contour>
       <point x="44" y="607" type="line"/>
-      <point x="516" y="607" type="line"/>
-      <point x="529" y="679" type="line"/>
+      <point x="532" y="607" type="line"/>
+      <point x="545" y="679" type="line"/>
       <point x="57" y="679" type="line"/>
     </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>sa-deva</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
     </dict>
   </lib>
 </glyph>

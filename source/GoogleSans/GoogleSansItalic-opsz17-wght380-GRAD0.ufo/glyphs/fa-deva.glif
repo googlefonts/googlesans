@@ -2,8 +2,20 @@
 <glyph name="fa-deva" format="2">
   <advance width="892"/>
   <unicode hex="095E"/>
+  <anchor x="402" y="0" name="bottom"/>
+  <anchor x="371" y="264" name="bottomright"/>
+  <anchor x="161" y="43" name="nukta"/>
+  <anchor x="520" y="679" name="top"/>
   <outline>
     <component base="pha-deva"/>
     <component base="nukta-deva" xOffset="124" yOffset="168"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

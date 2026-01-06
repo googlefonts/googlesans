@@ -1,8 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="nnn-deva" format="2">
   <advance width="382"/>
+  <anchor x="457" y="258" name="bottomright"/>
+  <anchor x="132" y="37" name="nukta"/>
   <outline>
     <component base="n-deva"/>
     <component base="nukta-deva" xOffset="90" yOffset="173"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
+    </dict>
+  </lib>
 </glyph>
