@@ -25,12 +25,12 @@ from fontTools.ttLib import TTFont
 
 def run():
     # ==================================================
-    # v10.001 definitions
+    # vNext definitions
     # ==================================================
 
     # input file path definitions for subsetting
-    v10_roman_input_filepath = Path("v10/GoogleSans[GRAD,opsz,wght].ttf")
-    v10_italic_input_filepath = Path("v10/GoogleSans-Italic[GRAD,opsz,wght].ttf")
+    vNext_roman_input_filepath = Path("vNext/GoogleSans[GRAD,opsz,wght].ttf")
+    vNext_italic_input_filepath = Path("vNext/GoogleSans-Italic[GRAD,opsz,wght].ttf")
 
     # Android subset output file path definitions
     # these are the target production files
@@ -74,7 +74,7 @@ def run():
 
     # Roman subset options
     roman_subset_options = [
-        f"{v10_roman_input_filepath}",
+        f"{vNext_roman_input_filepath}",
         f"--unicodes-file={roman_glyph_list_path}",
         "--no-ignore-missing-glyphs",
         "--notdef-outline",
@@ -92,7 +92,7 @@ def run():
 
     # Italic subset options
     italic_subset_options = [
-        f"{v10_italic_input_filepath}",
+        f"{vNext_italic_input_filepath}",
         f"--unicodes-file={italic_glyph_list_path}",
         "--no-ignore-missing-glyphs",
         "--notdef-outline",
