@@ -1,9 +1,8 @@
 # ---------------------------------
 # Devanagari classes
 # ---------------------------------
-@dev2_default_punctuation = [];
+@dev2_default_punctuation = [period comma colon semicolon ellipsis exclam question asterisk parenleft parenright braceleft braceright bracketleft bracketright quotedblleft quotedblright quoteleft quoteright];
 
-#period comma colon semicolon ellipsis exclam question asterisk parenleft parenright braceleft braceright bracketleft bracketright quotedblleft quotedblright quoteleft quoteright
 @dev2_localised_punctuation = [period.loclDEVA comma.loclDEVA colon.loclDEVA semicolon.loclDEVA ellipsis.loclDEVA exclam.loclDEVA question.loclDEVA asterisk.loclDEVA parenleft.loclDEVA parenright.loclDEVA braceleft.loclDEVA braceright.loclDEVA bracketleft.loclDEVA bracketright.loclDEVA quotedblleft.loclDEVA quotedblright.loclDEVA quoteleft.loclDEVA quoteright.loclDEVA];
 
 @dev2_proportional_numerals = [zero-deva one-deva two-deva three-deva four-deva five-deva six-deva seven-deva eight-deva nine-deva one-deva.loclNEP five-deva.loclNEP eight-deva.loclMARNEP nine-deva.loclNEP];
@@ -133,9 +132,9 @@ lookup eShortMatra_reph_anusvara {
 
 feature locl {
     script dev2;
-    #lookup dev2_dflt_locl_localised_punctuations {
-    #	sub @dev2_default_punctuation by @dev2_localised_punctuation;
-    #} dev2_dflt_locl_localised_punctuations;
+    lookup dev2_dflt_locl_localised_punctuations {
+    	sub @dev2_default_punctuation by @dev2_localised_punctuation;
+    } dev2_dflt_locl_localised_punctuations;
     language MAR;
     lookup dev2_mar_locl_localised_consonants {
         sub la-deva by la-deva.loclMAR;
