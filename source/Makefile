@@ -41,7 +41,7 @@ STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
 INTERMEDIATE_VARIABLE_DIR=$(FONT_BUILD_DIR)/.intermediate
 VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
 INTERPOLATABLE_BUILD_DIR=$(FONT_BUILD_DIR)/interpolatable
-
+ANDROID_BUILD_DIR=$(FONT_BUILD_DIR)/android
 STAGING_DIR=GoogleSans/staging
 
 # Artifact paths
@@ -55,6 +55,11 @@ VARIABLE_UPRIGHT_INTERMEDIATE = $(INTERMEDIATE_VARIABLE_DIR)/GoogleSans[GRAD,ops
 VARIABLE_ITALIC_INTERMEDIATE = $(INTERMEDIATE_VARIABLE_DIR)/GoogleSans-Italic[GRAD,opsz,wght].ttf
 VARIABLE_UPRIGHT_TARGET = $(VARIABLE_BUILD_DIR)/GoogleSans[GRAD,opsz,wght].ttf
 VARIABLE_ITALIC_TARGET = $(VARIABLE_BUILD_DIR)/GoogleSans-Italic[GRAD,opsz,wght].ttf
+
+ANDROID_UPRIGHT_V4_OUTPUT_PATH=$(ANDROID_BUILD_DIR)/variable/GoogleSans[GRAD,opsz,wght].ttf
+ANDROID_UPRIGHT_V4_CHARACTERS=../android/characters-roman-v4.txt
+ANDROID_ITALIC_V4_OUTPUT_PATH=$(ANDROID_BUILD_DIR)/variable/GoogleSans-Italic[GRAD,opsz,wght].ttf
+ANDROID_ITALIC_V4_CHARACTERS=../android/characters-italic-v4.txt
 
 # --------------------------------------------------------
 #  UFO intermediates and designspace paths
@@ -143,6 +148,24 @@ $(INTERPOLATABLE_UPRIGHTS_TARGET): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
 
 $(INTERPOLATABLE_ITALICS_TARGET): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
 	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(ITALIC_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
+
+
+gs-android: $(ANDROID_UPRIGHT_V4_OUTPUT_PATH) $(ANDROID_ITALIC_V4_OUTPUT_PATH)
+$(ANDROID_UPRIGHT_V4_OUTPUT_PATH) $(ANDROID_ITALIC_V4_OUTPUT_PATH): $(VARIABLE_UPRIGHT_TARGET) $(VARIABLE_ITALIC_TARGET) $(ANDROID_UPRIGHT_V4_CHARACTERS) $(ANDROID_ITALIC_V4_CHARACTERS) 
+	$(PYTHON3_EXE) ../android/build-android-vfs.py $(VARIABLE_UPRIGHT_TARGET) $(ANDROID_UPRIGHT_V4_CHARACTERS) $(VARIABLE_ITALIC_TARGET) $(ANDROID_ITALIC_V4_CHARACTERS) $(ANDROID_BUILD_DIR)/variable
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_UPRIGHT_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans.designspace $(ANDROID_BUILD_DIR)/static/GoogleSans-Regular.ttf
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_UPRIGHT_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans.designspace $(ANDROID_BUILD_DIR)/static/GoogleSans-Medium.ttf
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_UPRIGHT_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans.designspace $(ANDROID_BUILD_DIR)/static/GoogleSans-Bold.ttf
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_UPRIGHT_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans.designspace $(ANDROID_BUILD_DIR)/static/GoogleSansText-Regular.ttf
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_UPRIGHT_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans.designspace $(ANDROID_BUILD_DIR)/static/GoogleSansText-Medium.ttf
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_UPRIGHT_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans.designspace $(ANDROID_BUILD_DIR)/static/GoogleSansText-Bold.ttf
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_ITALIC_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans-Italic.designspace $(ANDROID_BUILD_DIR)/static/GoogleSans-Italic.ttf
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_ITALIC_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans-Italic.designspace $(ANDROID_BUILD_DIR)/static/GoogleSans-MediumItalic.ttf
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_ITALIC_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans-Italic.designspace $(ANDROID_BUILD_DIR)/static/GoogleSans-BoldItalic.ttf
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_ITALIC_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans-Italic.designspace $(ANDROID_BUILD_DIR)/static/GoogleSansText-Italic.ttf
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_ITALIC_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans-Italic.designspace $(ANDROID_BUILD_DIR)/static/GoogleSansText-MediumItalic.ttf
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_ITALIC_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans-Italic.designspace $(ANDROID_BUILD_DIR)/static/GoogleSansText-BoldItalic.ttf
+	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $(ANDROID_BUILD_DIR)/static/*.ttf
 
 
 gs-vf-vendor: gs-vf-vendor-glyphs2designspace
