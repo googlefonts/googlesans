@@ -53,7 +53,7 @@ jobs:
 
   build-variable:
     runs-on: googlefonts-64cores-256GB
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Check out source repository
         uses: actions/checkout@v6
