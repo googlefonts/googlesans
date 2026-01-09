@@ -46,6 +46,10 @@
 
 @dev2_UMFS_nuktas = [nukta-deva];
 
+@dev2_dflt_blws_rakar_nukta_bases = [ka-deva pha-deva ya-deva k-deva k-deva.alt2 k-deva.alt3 k-deva.alt4 k-deva.alt5 k-deva.alt6 k-deva.alt7 k-deva.alt8 k-deva.alt10 k-deva.alt11 g-deva ph-deva ph-deva.alt2 ph-deva.alt3 ph-deva.alt4 ph-deva.alt5 ph-deva.alt6 ph-deva.alt7 ph-deva.alt8 ph-deva.alt10 ph-deva.alt11 y-deva y-deva.alt2 y-deva.alt3];
+
+@dev2_dflt_blws_rakar_nukta_bases_wide = [kh-deva kh-deva.alt2 kh-deva.alt3 kh-deva.alt4 kh-deva.alt5 j-deva j-deva.alt2 j-deva.alt3 j-deva.alt4 j-deva.alt5 j-deva.alt6 j-deva.alt7 j-deva.alt8 jh-deva jh-deva.alt2 jh-deva.alt3];
+
 # ---------------------------------
 # Lookups
 # ---------------------------------
@@ -1014,6 +1018,7 @@ feature blws {
         sub kha-deva' nukta-deva rakar-deva by kh-deva.alt5 nukta-deva rakar-deva.diagonal;
         sub jha-deva' nukta-deva rakar-deva by jh-deva.alt2 nukta-deva rakar-deva.diagonal;
         sub ja-deva' nukta-deva rakar-deva by j-deva nukta-deva rakar-deva.diagonal;
+		sub ghh-deva' rakar-deva by g-deva nukta-deva;
     } dev2_dflt_mar_nep_blws_rakaar_dynamic_A;
 
     lookup dev2_dflt_mar_nep_blws_rakaar_dynamic_B {
@@ -1030,6 +1035,7 @@ feature blws {
     lookup dev2_dflt_mar_nep_blws_rakaar_mark {
         lookupflag 0;
         sub @dev2_dflt_blws_rakar_diagonal_bases rakar-deva' by rakar-deva.diagonal;
+		sub @dev2_dflt_blws_rakar_nukta_bases_wide nukta-deva rakar-deva' by rakar-deva.diagonal;
         sub @dev2_dflt_blws_rakar_diagonal_short_bases rakar-deva' by rakar-deva.short;
         sub [ga-deva tha-deva] rakar-deva' by rakar-deva.diagonal.alt;
     } dev2_dflt_mar_nep_blws_rakaar_mark;
@@ -1044,12 +1050,12 @@ feature blws {
 
     lookup dev2_dflt_blws_decomposeNuktaGlyphsWithRakaar_A {
         lookupflag 0;
-        sub [ka-deva pha-deva ya-deva] nukta-deva rakar-deva' by rakar-deva.diagonal nukta-deva;
+        sub @dev2_dflt_blws_rakar_nukta_bases nukta-deva rakar-deva' by rakar-deva.diagonal nukta-deva;
         sub [dddha-deva rha-deva] rakar-deva' by rakar_nukta-deva;
     } dev2_dflt_blws_decomposeNuktaGlyphsWithRakaar_A;
 
     lookup dev2_dflt_blws_decomposeNuktaGlyphsWithRakaar_B {
-        sub [ka-deva pha-deva ya-deva] nukta-deva' rakar-deva.diagonal nukta-deva by NULL;
+        sub @dev2_dflt_blws_rakar_nukta_bases nukta-deva' rakar-deva.diagonal nukta-deva by NULL;
         sub dddha-deva' rakar_nukta-deva by dda-deva;
         sub rha-deva' rakar_nukta-deva by ddha-deva;
     } dev2_dflt_blws_decomposeNuktaGlyphsWithRakaar_B;
