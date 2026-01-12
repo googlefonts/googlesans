@@ -46,8 +46,9 @@ if "Italic" not in font_path.stem:
         "--notdef-outline",
         "--layout-features+=c2sc,calt,case,ccmp,dlig,dnom,frac,jalt,liga,lnum,locl,numr,ordn,pnum,sinf,smcp,ss01,ss02,ss03,ss04,ss05,ss06,ss07,ss08,ss09,subs,sups,tnum,kern,mark,mkmk",
         "--layout-scripts=latn,grek,cyrl,hebr",
-        "--drop-tables= ",
-        "--no-subset-tables+=BASE",
+        # Strip BASE from Android builds until upstream issues with it are resolved.
+        "--drop-tables=BASE",
+        # "--no-subset-tables+=BASE",
         "--name-IDs=*",
         "--name-languages=*",
         "--name-legacy",
@@ -66,8 +67,9 @@ else:
         "--notdef-outline",
         "--layout-features+=c2sc,calt,case,ccmp,dlig,dnom,frac,jalt,liga,lnum,locl,numr,ordn,pnum,sinf,smcp,ss01,ss02,ss04,ss05,ss06,ss07,ss08,ss09,subs,sups,tnum,kern,mark,mkmk",
         "--layout-scripts=latn,grek,cyrl,hebr",
-        "--drop-tables= ",
-        "--no-subset-tables+=BASE",
+        # Strip BASE from Android builds until upstream issues with it are resolved.
+        "--drop-tables=BASE",
+        # "--no-subset-tables+=BASE",
         "--name-IDs=*",
         "--name-languages=*",
         "--name-legacy",
