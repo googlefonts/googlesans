@@ -1,5 +1,9 @@
 # Google Sans Changelog
 
+## v13.000
+- Updated IJ shaping (#563)
+- Add Riyal (#700)
+
 ## v12.002
 
 - Remove the `USE_MY_METRICS` flags on components in the `glyf` table to work around https://github.com/fonttools/fonttools/pull/3912.
