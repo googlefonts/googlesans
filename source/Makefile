@@ -56,10 +56,10 @@ VARIABLE_ITALIC_INTERMEDIATE = $(INTERMEDIATE_VARIABLE_DIR)/GoogleSans-Italic[GR
 VARIABLE_UPRIGHT_TARGET = $(VARIABLE_BUILD_DIR)/GoogleSans[GRAD,opsz,wght].ttf
 VARIABLE_ITALIC_TARGET = $(VARIABLE_BUILD_DIR)/GoogleSans-Italic[GRAD,opsz,wght].ttf
 
-ANDROID_UPRIGHT_V4_OUTPUT_PATH=$(ANDROID_BUILD_DIR)/variable/GoogleSans[GRAD,opsz,wght].ttf
-ANDROID_UPRIGHT_V4_CHARACTERS=../android/characters-roman-v4.txt
-ANDROID_ITALIC_V4_OUTPUT_PATH=$(ANDROID_BUILD_DIR)/variable/GoogleSans-Italic[GRAD,opsz,wght].ttf
-ANDROID_ITALIC_V4_CHARACTERS=../android/characters-italic-v4.txt
+VARIABLE_ANDROID_UPRIGHT_TARGET=$(ANDROID_BUILD_DIR)/variable/GoogleSans[GRAD,opsz,wght].ttf
+VARIABLE_ANDROID_UPRIGHT_CHARACTERS=../android/characters-roman-v4.txt
+VARIABLE_ANDROID_ITALIC_TARGET=$(ANDROID_BUILD_DIR)/variable/GoogleSans-Italic[GRAD,opsz,wght].ttf
+VARIABLE_ANDROID_ITALIC_CHARACTERS=../android/characters-italic-v4.txt
 
 # --------------------------------------------------------
 #  UFO intermediates and designspace paths
@@ -151,47 +151,51 @@ $(INTERPOLATABLE_ITALICS_TARGET): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
 
 
 gs-android: gs-android-vf gs-android-static
-gs-android-vf: $(ANDROID_UPRIGHT_V4_OUTPUT_PATH) $(ANDROID_ITALIC_V4_OUTPUT_PATH)
-$(ANDROID_UPRIGHT_V4_OUTPUT_PATH) $(ANDROID_ITALIC_V4_OUTPUT_PATH): $(VARIABLE_UPRIGHT_TARGET) $(VARIABLE_ITALIC_TARGET) $(ANDROID_UPRIGHT_V4_CHARACTERS) $(ANDROID_ITALIC_V4_CHARACTERS) 
-	$(PYTHON3_EXE) ../android/build-android-vfs.py $(VARIABLE_UPRIGHT_TARGET) $(ANDROID_UPRIGHT_V4_CHARACTERS) $(VARIABLE_ITALIC_TARGET) $(ANDROID_ITALIC_V4_CHARACTERS) $(ANDROID_BUILD_DIR)/variable
+gs-android-vf: $(VARIABLE_ANDROID_UPRIGHT_TARGET) $(VARIABLE_ANDROID_ITALIC_TARGET)
+
+$(VARIABLE_ANDROID_UPRIGHT_TARGET): $(VARIABLE_UPRIGHT_TARGET) $(VARIABLE_ANDROID_UPRIGHT_CHARACTERS)
+	$(PYTHON3_EXE) ../android/build-android-vfs.py $(VARIABLE_UPRIGHT_TARGET) $(VARIABLE_ANDROID_UPRIGHT_CHARACTERS) $@
+
+$(VARIABLE_ANDROID_ITALIC_TARGET): $(VARIABLE_ITALIC_TARGET) $(VARIABLE_ANDROID_ITALIC_CHARACTERS) 
+	$(PYTHON3_EXE) ../android/build-android-vfs.py $(VARIABLE_ITALIC_TARGET) $(VARIABLE_ANDROID_ITALIC_CHARACTERS) $@
 
 gs-android-static: $(ANDROID_BUILD_DIR)/static/GoogleSans-Regular.ttf $(ANDROID_BUILD_DIR)/static/GoogleSans-Medium.ttf $(ANDROID_BUILD_DIR)/static/GoogleSans-Bold.ttf $(ANDROID_BUILD_DIR)/static/GoogleSansText-Regular.ttf $(ANDROID_BUILD_DIR)/static/GoogleSansText-Medium.ttf $(ANDROID_BUILD_DIR)/static/GoogleSansText-Bold.ttf $(ANDROID_BUILD_DIR)/static/GoogleSans-Italic.ttf $(ANDROID_BUILD_DIR)/static/GoogleSans-MediumItalic.ttf $(ANDROID_BUILD_DIR)/static/GoogleSans-BoldItalic.ttf $(ANDROID_BUILD_DIR)/static/GoogleSansText-Italic.ttf $(ANDROID_BUILD_DIR)/static/GoogleSansText-MediumItalic.ttf $(ANDROID_BUILD_DIR)/static/GoogleSansText-BoldItalic.ttf
-$(ANDROID_BUILD_DIR)/static/GoogleSans-Regular.ttf: $(ANDROID_UPRIGHT_V4_OUTPUT_PATH)
-	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_UPRIGHT_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans.designspace $(ANDROID_BUILD_DIR)/static/GoogleSans-Regular.ttf
-	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $(ANDROID_BUILD_DIR)/static/GoogleSans-Regular.ttf
-$(ANDROID_BUILD_DIR)/static/GoogleSans-Medium.ttf: $(ANDROID_UPRIGHT_V4_OUTPUT_PATH)
-	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_UPRIGHT_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans.designspace $(ANDROID_BUILD_DIR)/static/GoogleSans-Medium.ttf
-	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $(ANDROID_BUILD_DIR)/static/GoogleSans-Medium.ttf
-$(ANDROID_BUILD_DIR)/static/GoogleSans-Bold.ttf: $(ANDROID_UPRIGHT_V4_OUTPUT_PATH)
-	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_UPRIGHT_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans.designspace $(ANDROID_BUILD_DIR)/static/GoogleSans-Bold.ttf
-	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $(ANDROID_BUILD_DIR)/static/GoogleSans-Bold.ttf
-$(ANDROID_BUILD_DIR)/static/GoogleSansText-Regular.ttf: $(ANDROID_UPRIGHT_V4_OUTPUT_PATH)
-	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_UPRIGHT_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans.designspace $(ANDROID_BUILD_DIR)/static/GoogleSansText-Regular.ttf
-	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $(ANDROID_BUILD_DIR)/static/GoogleSansText-Regular.ttf
-$(ANDROID_BUILD_DIR)/static/GoogleSansText-Medium.ttf: $(ANDROID_UPRIGHT_V4_OUTPUT_PATH)
-	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_UPRIGHT_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans.designspace $(ANDROID_BUILD_DIR)/static/GoogleSansText-Medium.ttf
-	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $(ANDROID_BUILD_DIR)/static/GoogleSansText-Medium.ttf
-$(ANDROID_BUILD_DIR)/static/GoogleSansText-Bold.ttf: $(ANDROID_UPRIGHT_V4_OUTPUT_PATH)
-	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_UPRIGHT_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans.designspace $(ANDROID_BUILD_DIR)/static/GoogleSansText-Bold.ttf
-	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $(ANDROID_BUILD_DIR)/static/GoogleSansText-Bold.ttf
-$(ANDROID_BUILD_DIR)/static/GoogleSans-Italic.ttf: $(ANDROID_ITALIC_V4_OUTPUT_PATH)
-	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_ITALIC_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans-Italic.designspace $(ANDROID_BUILD_DIR)/static/GoogleSans-Italic.ttf
-	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $(ANDROID_BUILD_DIR)/static/GoogleSans-Italic.ttf
-$(ANDROID_BUILD_DIR)/static/GoogleSans-MediumItalic.ttf: $(ANDROID_ITALIC_V4_OUTPUT_PATH)
-	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_ITALIC_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans-Italic.designspace $(ANDROID_BUILD_DIR)/static/GoogleSans-MediumItalic.ttf
-	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $(ANDROID_BUILD_DIR)/static/GoogleSans-MediumItalic.ttf
-$(ANDROID_BUILD_DIR)/static/GoogleSans-BoldItalic.ttf: $(ANDROID_ITALIC_V4_OUTPUT_PATH)
-	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_ITALIC_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans-Italic.designspace $(ANDROID_BUILD_DIR)/static/GoogleSans-BoldItalic.ttf
-	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $(ANDROID_BUILD_DIR)/static/GoogleSans-BoldItalic.ttf
-$(ANDROID_BUILD_DIR)/static/GoogleSansText-Italic.ttf: $(ANDROID_ITALIC_V4_OUTPUT_PATH)
-	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_ITALIC_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans-Italic.designspace $(ANDROID_BUILD_DIR)/static/GoogleSansText-Italic.ttf
-	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $(ANDROID_BUILD_DIR)/static/GoogleSansText-Italic.ttf
-$(ANDROID_BUILD_DIR)/static/GoogleSansText-MediumItalic.ttf: $(ANDROID_ITALIC_V4_OUTPUT_PATH)
-	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_ITALIC_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans-Italic.designspace $(ANDROID_BUILD_DIR)/static/GoogleSansText-MediumItalic.ttf
-	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $(ANDROID_BUILD_DIR)/static/GoogleSansText-MediumItalic.ttf
-$(ANDROID_BUILD_DIR)/static/GoogleSansText-BoldItalic.ttf: $(ANDROID_ITALIC_V4_OUTPUT_PATH)
-	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(ANDROID_ITALIC_V4_OUTPUT_PATH) ../source/GoogleSans/GoogleSans-Italic.designspace $(ANDROID_BUILD_DIR)/static/GoogleSansText-BoldItalic.ttf
-	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $(ANDROID_BUILD_DIR)/static/GoogleSansText-BoldItalic.ttf
+$(ANDROID_BUILD_DIR)/static/GoogleSans-Regular.ttf: $(VARIABLE_ANDROID_UPRIGHT_TARGET)
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_ANDROID_UPRIGHT_TARGET) ../source/GoogleSans/GoogleSans.designspace $@
+	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $@
+$(ANDROID_BUILD_DIR)/static/GoogleSans-Medium.ttf: $(VARIABLE_ANDROID_UPRIGHT_TARGET)
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_ANDROID_UPRIGHT_TARGET) ../source/GoogleSans/GoogleSans.designspace $@
+	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $@
+$(ANDROID_BUILD_DIR)/static/GoogleSans-Bold.ttf: $(VARIABLE_ANDROID_UPRIGHT_TARGET)
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_ANDROID_UPRIGHT_TARGET) ../source/GoogleSans/GoogleSans.designspace $@
+	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $@
+$(ANDROID_BUILD_DIR)/static/GoogleSansText-Regular.ttf: $(VARIABLE_ANDROID_UPRIGHT_TARGET)
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_ANDROID_UPRIGHT_TARGET) ../source/GoogleSans/GoogleSans.designspace $@
+	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $@
+$(ANDROID_BUILD_DIR)/static/GoogleSansText-Medium.ttf: $(VARIABLE_ANDROID_UPRIGHT_TARGET)
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_ANDROID_UPRIGHT_TARGET) ../source/GoogleSans/GoogleSans.designspace $@
+	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $@
+$(ANDROID_BUILD_DIR)/static/GoogleSansText-Bold.ttf: $(VARIABLE_ANDROID_UPRIGHT_TARGET)
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_ANDROID_UPRIGHT_TARGET) ../source/GoogleSans/GoogleSans.designspace $@
+	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $@
+$(ANDROID_BUILD_DIR)/static/GoogleSans-Italic.ttf: $(VARIABLE_ANDROID_ITALIC_TARGET)
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_ANDROID_ITALIC_TARGET) ../source/GoogleSans/GoogleSans-Italic.designspace $@
+	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $@
+$(ANDROID_BUILD_DIR)/static/GoogleSans-MediumItalic.ttf: $(VARIABLE_ANDROID_ITALIC_TARGET)
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_ANDROID_ITALIC_TARGET) ../source/GoogleSans/GoogleSans-Italic.designspace $@
+	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $@
+$(ANDROID_BUILD_DIR)/static/GoogleSans-BoldItalic.ttf: $(VARIABLE_ANDROID_ITALIC_TARGET)
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_ANDROID_ITALIC_TARGET) ../source/GoogleSans/GoogleSans-Italic.designspace $@
+	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $@
+$(ANDROID_BUILD_DIR)/static/GoogleSansText-Italic.ttf: $(VARIABLE_ANDROID_ITALIC_TARGET)
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_ANDROID_ITALIC_TARGET) ../source/GoogleSans/GoogleSans-Italic.designspace $@
+	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $@
+$(ANDROID_BUILD_DIR)/static/GoogleSansText-MediumItalic.ttf: $(VARIABLE_ANDROID_ITALIC_TARGET)
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_ANDROID_ITALIC_TARGET) ../source/GoogleSans/GoogleSans-Italic.designspace $@
+	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $@
+$(ANDROID_BUILD_DIR)/static/GoogleSansText-BoldItalic.ttf: $(VARIABLE_ANDROID_ITALIC_TARGET)
+	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_ANDROID_ITALIC_TARGET) ../source/GoogleSans/GoogleSans-Italic.designspace $@
+	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $@
 
 gs-vf-vendor: gs-vf-vendor-glyphs2designspace
 	$(foreach \
