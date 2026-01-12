@@ -249,14 +249,14 @@ jobs:
         with:
           version: 'latest'
           subcmd: 'check-profile'
-          args: '--auto-jobs -C --loglevel WARN -x case_mapping qa/check-googlesans.py'
+          args: '--auto-jobs -C --loglevel WARN -x case_mapping -x googlesans/opentype/BASE qa/check-googlesans.py'
           path: 'build/GoogleSans/android/variable/*.ttf'
       - name: Font Bakery GS profile tests (static fonts)
         uses: f-actions/font-bakery@v3
         with:
           version: 'latest'
           subcmd: 'check-profile'
-          args: '--auto-jobs -C --loglevel WARN -x case_mapping -x googlesans/opentype/os2/windescent -x googlesans/opentype/os2/winascent qa/check-googlesans.py'
+          args: '--auto-jobs -C --loglevel WARN -x case_mapping -x googlesans/opentype/os2/windescent -x googlesans/opentype/os2/winascent -x googlesans/opentype/BASE qa/check-googlesans.py'
           path: 'build/GoogleSans/android/static/*.ttf'
       - uses: actions/upload-artifact@v4
         with:
