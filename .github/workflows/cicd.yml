@@ -220,6 +220,49 @@ jobs:
           name: interpolatable-fonts
           path: 'build/GoogleSans/interpolatable'
 
+  build-and-check-android:
+    # Skip running in PRs to save time and resources. Create a "build-*" branch
+    # to build all outside a release.
+    if: github.event_name != 'pull_request'
+    needs:
+      - build-variable
+    runs-on: googlefonts-64cores-256GB
+    timeout-minutes: 10
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v5
+      - name: Set up Python v3.12 environment
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - uses: actions/download-artifact@v4
+        with:
+          name: variable-fonts
+          path: 'build/GoogleSans'
+      - name: Build static fonts
+        run: |
+          make setup
+          . .venv/bin/activate && make -j gs-android
+      - name: Font Bakery GS profile tests (variable fonts)
+        uses: f-actions/font-bakery@v3
+        with:
+          version: 'latest'
+          subcmd: 'check-profile'
+          args: '--auto-jobs -C --loglevel WARN -x case_mapping -x googlesans/opentype/BASE qa/check-googlesans.py'
+          path: 'build/GoogleSans/android/variable/*.ttf'
+      - name: Font Bakery GS profile tests (static fonts)
+        uses: f-actions/font-bakery@v3
+        with:
+          version: 'latest'
+          subcmd: 'check-profile'
+          args: '--auto-jobs -C --loglevel WARN -x case_mapping -x googlesans/opentype/os2/windescent -x googlesans/opentype/os2/winascent -x googlesans/opentype/BASE qa/check-googlesans.py'
+          path: 'build/GoogleSans/android/static/*.ttf'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android-fonts
+          path: 'build/GoogleSans/android'
+
   release:
     # only run if the commit is tagged...
     if: startsWith(github.ref, 'refs/tags/v')
@@ -230,6 +273,7 @@ jobs:
       - build-statics
       - check-statics
       - build-interpolatables
+      - build-and-check-android
     runs-on: ubuntu-latest
     timeout-minutes: 5
     # Permission is required for releasing
@@ -254,6 +298,11 @@ jobs:
         with:
           name: interpolatable-fonts
           path: 'build/GoogleSans/interpolatable'
+      - name: Download Android fonts
+        uses: actions/download-artifact@v4
+        with:
+          name: android-fonts
+          path: 'build/GoogleSans/android'
       - name: Delete intermediate VFs
         run: rm -rf build/GoogleSans/.intermediate
       - name: Create build artifact zip archive
