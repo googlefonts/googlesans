@@ -32,7 +32,7 @@ jobs:
           cache: "pip"
           cache-dependency-path: "requirements*.txt"
       - name: Install Python build dependencies
-        uses: py-actions/py-dependency-install@v2
+        uses: py-actions/py-dependency-install@v4
         with:
           update-wheel: "true"
           update-setuptools: "true"
