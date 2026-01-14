@@ -90,8 +90,6 @@ PROFILE = {
         # We're not that worried about Microsoft Office support
         # https://github.com/googlefonts/googlesans/issues/693#issuecomment-3480871914
         "name/family_and_style_max_length",
-        # https://github.com/googlefonts/googlesans/issues/712
-        "smallcaps_before_ligatures",
     ],
     "configuration_defaults": {
         "googlesans/opentype/os2/fsselectionbit7": {
