@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="iiMatra_reph-deva" format="2">
   <advance width="248"/>
+  <anchor x="266" y="660" name="top"/>
   <outline>
     <contour>
       <point x="177" y="672" type="line"/>
@@ -26,4 +27,14 @@
     </contour>
     <component base="iiMatra-deva"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Matra</string>
+    </dict>
+  </lib>
 </glyph>

@@ -1,10 +1,17 @@
 # ---------------------------------
 # Devanagari classes
 # ---------------------------------
+@dev2_default_punctuation = [period comma colon semicolon ellipsis exclam question asterisk parenleft parenright braceleft braceright bracketleft bracketright quotedblleft quotedblright quoteleft quoteright];
+
+@dev2_localised_punctuation = [period.loclDEVA comma.loclDEVA colon.loclDEVA semicolon.loclDEVA ellipsis.loclDEVA exclam.loclDEVA question.loclDEVA asterisk.loclDEVA parenleft.loclDEVA parenright.loclDEVA braceleft.loclDEVA braceright.loclDEVA bracketleft.loclDEVA bracketright.loclDEVA quotedblleft.loclDEVA quotedblright.loclDEVA quoteleft.loclDEVA quoteright.loclDEVA];
+
+@dev2_proportional_numerals = [zero-deva one-deva two-deva three-deva four-deva five-deva six-deva seven-deva eight-deva nine-deva one-deva.loclNEP five-deva.loclNEP eight-deva.loclMARNEP nine-deva.loclNEP];
+
+@dev2_tabular_numerals = [zero-deva.tf one-deva.tf two-deva.tf three-deva.tf four-deva.tf five-deva.tf six-deva.tf seven-deva.tf eight-deva.tf nine-deva.tf one-deva.loclNEP.tf five-deva.loclNEP.tf eight-deva.loclMARNEP.tf nine-deva.loclNEP.tf];
 
 @dev2_dflt_pres_imatra_alt2_bases = [ra-deva rra-deva marwaridda-deva tt_tta-deva tt_ttha-deva tth_ttha-deva d_da-deva];
 
-@dev2_dflt_pres_imatra_alt3_bases = [ka-deva qa-deva gha-deva nga-deva tta-deva ttha-deva dda-deva ddha-deva ta-deva da-deva dha-deva na-deva nnna-deva pa-deva pha-deva fa-deva va-deva ssa-deva ha-deva dddha-deva rha-deva jha-deva.loclNEP ddda-deva bba-deva dd_dda-deva dd_ddha-deva ddh_ddha-deva t_ra-deva d_ga-deva ss_tta-deva ss_ttha-deva d_ba-deva d_ra-deva d_va-deva h_na-deva h_ra-deva h_va-deva];
+@dev2_dflt_pres_imatra_alt3_bases = [ka-deva qa-deva gha-deva nga-deva tta-deva ttha-deva dda-deva ddha-deva ta-deva da-deva dha-deva na-deva nnna-deva pa-deva pha-deva fa-deva va-deva ssa-deva ha-deva dddha-deva rha-deva jha-deva.loclNEP ddda-deva bba-deva dd_dda-deva dd_ddha-deva ddh_ddha-deva t_ra-deva d_ga-deva ss_tta-deva ss_ttha-deva d_ba-deva d_ra-deva d_va-deva h_na-deva h_ra-deva h_va-deva ng_ga-deva];
 
 @dev2_dflt_pres_imatra_dflt_bases = [ga-deva ca-deva cha-deva tha-deva ba-deva bha-deva ma-deva ya-deva sha-deva sa-deva ghha-deva yya-deva yaheavy-deva gga-deva k_ssa-deva j_nya-deva la-deva.loclMAR sha-deva.loclMAR t_ta-deva d_gha-deva d_dha-deva d_bha-deva d_ma-deva d_ya-deva p_ta-deva sh_ra-deva h_nna-deva h_la-deva];
 
@@ -22,9 +29,10 @@
 
 @dev2_dflt_rclt_all_above_matra_ligatures = [iiMatra_reph-deva iiMatra_reph-deva.alt2 iiMatra_reph_anusvara-deva iiMatra_reph_anusvara-deva.alt2 eMatra_anusvara-deva eMatra_candraBindu-deva eMatra_reph-deva eMatra_reph_anusvara-deva aiMatra_anusvara-deva aiMatra_candraBindu-deva aiMatra_reph-deva aiMatra_reph_anusvara-deva eCandraMatra_anusvara-deva eCandraMatra_reph-deva eShortMatra_anusvara-deva eShortMatra_candraBindu-deva eShortMatra_reph-deva eShortMatra_reph_anusvara-deva reph_anusvara-deva];
 
-@dev2_dflt_blws_rakar_diagonal_bases = [ka-deva ga-deva gha-deva ca-deva ja-deva nya-deva nna-deva tha-deva dha-deva na-deva pa-deva pha-deva ba-deva bha-deva ma-deva ya-deva va-deva ssa-deva qa-deva za-deva fa-deva yya-deva jha-deva.loclNEP k-deva k-deva.alt2 k-deva.alt3 k-deva.alt4 k-deva.alt5 k-deva.alt6 k-deva.alt7 k-deva.alt8 k-deva.alt10 k-deva.alt11 g-deva gh-deva gh-deva.alt2 c-deva c-deva.alt2 j-deva j-deva.alt2 j-deva.alt3 j-deva.alt4 j-deva.alt5 j-deva.alt6 j-deva.alt7 j-deva.alt8 ny-deva ny-deva.alt2 nn-deva t-deva t-deva.alt2 t-deva.alt3 t-deva.alt4 th-deva th-deva.alt2 th-deva.alt3 th-deva.alt4 dh-deva dh-deva.alt2 dh-deva.alt3 dh-deva.alt4 n-deva n-deva.alt2 n-deva.alt3 n-deva.alt4 nnn-deva nnn-deva.alt2 nnn-deva.alt3 nnn-deva.alt4 p-deva p-deva.alt2 p-deva.alt3 ph-deva ph-deva.alt2 ph-deva.alt3 ph-deva.alt4 ph-deva.alt5 ph-deva.alt6 ph-deva.alt7 ph-deva.alt8 ph-deva.alt10 ph-deva.alt11 b-deva b-deva.alt2 b-deva.alt3 b-deva.alt4 b-deva.alt5 bh-deva bh-deva.alt2 bh-deva.alt3 bh-deva.alt4 m-deva m-deva.alt2 m-deva.alt3 m-deva.alt4 y-deva y-deva.alt2 y-deva.alt3 v-deva v-deva.alt2 v-deva.alt3 v-deva.alt4 v-deva.alt5 ss-deva s-deva s-deva.alt2 q-deva q-deva.alt2 q-deva.alt3 q-deva.alt4 q-deva.alt5 q-deva.alt6 q-deva.alt7 q-deva.alt8 q-deva.alt10 q-deva.alt11 ghh-deva z-deva z-deva.alt2 z-deva.alt3 z-deva.alt4 z-deva.alt5 z-deva.alt6 z-deva.alt7 z-deva.alt8 f-deva f-deva.alt2 f-deva.alt3 f-deva.alt4 f-deva.alt5 f-deva.alt6 f-deva.alt7 f-deva.alt8 f-deva.alt10 f-deva.alt11 yy-deva yy-deva.alt2 yy-deva.alt3 yy-deva.alt4 yaheavy-deva.half zh-deva zh-deva.alt2 zh-deva.alt3 zh-deva.alt4 zh-deva.alt5 zh-deva.alt6 zh-deva.alt7 zh-deva.alt8 jh-deva.loclNEP jh-deva.loclNEP.alt2];
+@dev2_dflt_blws_rakar_diagonal_bases = [ka-deva gha-deva ca-deva ja-deva nya-deva nna-deva dha-deva na-deva pa-deva pha-deva ba-deva ya-deva va-deva qa-deva za-deva fa-deva yya-deva jha-deva.loclNEP k-deva k-deva.alt2 k-deva.alt3 k-deva.alt4 k-deva.alt5 k-deva.alt6 k-deva.alt7 k-deva.alt8 k-deva.alt10 k-deva.alt11 g-deva gh-deva gh-deva.alt2 c-deva c-deva.alt2 j-deva j-deva.alt2 j-deva.alt3 j-deva.alt4 j-deva.alt5 j-deva.alt6 j-deva.alt7 j-deva.alt8 ny-deva ny-deva.alt2 nn-deva t-deva t-deva.alt2 t-deva.alt3 t-deva.alt4 th-deva th-deva.alt2 th-deva.alt3 th-deva.alt4 dh-deva dh-deva.alt2 dh-deva.alt3 dh-deva.alt4 n-deva n-deva.alt2 n-deva.alt3 n-deva.alt4 nnn-deva nnn-deva.alt2 nnn-deva.alt3 nnn-deva.alt4 p-deva p-deva.alt2 p-deva.alt3 ph-deva ph-deva.alt2 ph-deva.alt3 ph-deva.alt4 ph-deva.alt5 ph-deva.alt6 ph-deva.alt7 ph-deva.alt8 ph-deva.alt10 ph-deva.alt11 b-deva b-deva.alt2 b-deva.alt3 b-deva.alt4 b-deva.alt5 bh-deva bh-deva.alt2 bh-deva.alt3 bh-deva.alt4 m-deva m-deva.alt2 m-deva.alt3 m-deva.alt4 y-deva y-deva.alt2 y-deva.alt3 v-deva v-deva.alt2 v-deva.alt3 v-deva.alt4 v-deva.alt5 ss-deva ghh-deva yaheavy-deva.half jh-deva.loclNEP jh-deva.loclNEP.alt2];
 
-@dev2_dflt_blws_rakar_diagonal_short_bases = [kha-deva jha-deva la-deva sa-deva khha-deva ghha-deva k_ssa-deva j_nya-deva kh-deva kh-deva.alt2 kh-deva.alt3 kh-deva.alt4 jh-deva jh-deva.alt2 jh-deva.alt3 l-deva l-deva.alt2 l-deva.alt3 l-deva.alt4 l-deva.alt5 l-deva.alt6 l-deva.alt7 l-deva.alt8 s-deva s-deva.alt2 khh-deva khh-deva.alt2 khh-deva.alt3 khh-deva.alt4 ghh-deva k_ss-deva k_ss-deva.alt2 k_ss-deva.alt3 k_ss-deva.alt4 k_ss-deva.alt5 k_ss-deva.alt6 k_ss-deva.alt7 j_ny-deva j_ny-deva.alt2 j_ny-deva.alt3 j_ny-deva.alt4 j_ny-deva.alt5 j_ny-deva.alt6 j_ny-deva.alt7 j_ny-deva.alt8];
+#zh-deva zh-deva.alt2 zh-deva.alt3 zh-deva.alt4 zh-deva.alt5 zh-deva.alt6 zh-deva.alt7 zh-deva.alt8
+@dev2_dflt_blws_rakar_diagonal_short_bases = [ghha-deva j_nya-deva kh-deva kh-deva.alt2 kh-deva.alt3 kh-deva.alt4 jh-deva jh-deva.alt2 jh-deva.alt3 l-deva l-deva.alt2 l-deva.alt3 l-deva.alt4 l-deva.alt5 l-deva.alt6 l-deva.alt7 l-deva.alt8 ghh-deva k_ss-deva k_ss-deva.alt2 k_ss-deva.alt3 k_ss-deva.alt4 k_ss-deva.alt5 k_ss-deva.alt6 k_ss-deva.alt7 j_ny-deva j_ny-deva.alt2 j_ny-deva.alt3 j_ny-deva.alt4 j_ny-deva.alt5 j_ny-deva.alt6 j_ny-deva.alt7 j_ny-deva.alt8];
 
 @dev2_dflt_half_mark_attachment_class_halant = [halant-deva];
 
@@ -32,10 +40,15 @@
 
 @dev2_dflt_blws_mark_attachment_class_uMatra = [uMatra-deva uMatra-deva.narrow];
 
-@dev2_dflt_locl_localised_punctuation_dflt = [asterisk braceleft braceright bracketleft bracketright colon comma ellipsis exclam parenleft parenright period question quotedblleft quotedblright quoteleft quoteright semicolon];
+@dev2_UMFS_rakars = [rakar-deva rakar-deva.diagonal rakar-deva.short rakar-deva.diagonal.alt rakar_nukta-deva];
 
-@dev2_dflt_locl_localised_punctuation_deva = [asterisk.loclDEVA braceleft.loclDEVA braceright.loclDEVA bracketleft.loclDEVA bracketright.loclDEVA colon.loclDEVA comma.loclDEVA ellipsis.loclDEVA exclam.loclDEVA parenleft.loclDEVA parenright.loclDEVA period.loclDEVA question.loclDEVA quotedblleft.loclDEVA quotedblright.loclDEVA quoteleft.loclDEVA quoteright.loclDEVA semicolon.loclDEVA];
+@dev2_UMFS_uMatras = [uMatra-deva uMatra-deva.narrow];
 
+@dev2_UMFS_nuktas = [nukta-deva];
+
+@dev2_dflt_blws_rakar_nukta_bases = [ka-deva pha-deva ya-deva k-deva k-deva.alt2 k-deva.alt3 k-deva.alt4 k-deva.alt5 k-deva.alt6 k-deva.alt7 k-deva.alt8 k-deva.alt10 k-deva.alt11 g-deva ph-deva ph-deva.alt2 ph-deva.alt3 ph-deva.alt4 ph-deva.alt5 ph-deva.alt6 ph-deva.alt7 ph-deva.alt8 ph-deva.alt10 ph-deva.alt11 y-deva y-deva.alt2 y-deva.alt3];
+
+@dev2_dflt_blws_rakar_nukta_bases_wide = [kh-deva kh-deva.alt2 kh-deva.alt3 kh-deva.alt4 kh-deva.alt5 j-deva j-deva.alt2 j-deva.alt3 j-deva.alt4 j-deva.alt5 j-deva.alt6 j-deva.alt7 j-deva.alt8 jh-deva jh-deva.alt2 jh-deva.alt3];
 
 # ---------------------------------
 # Lookups
@@ -49,7 +62,6 @@ lookup dev2_dflt_none_zwj_eyelash_ra {
 #lookup dev2_dflt_none_decompose_nukta_glyphs {
 #	sub qa-deva by ka-deva nukta-deva;
 #} dev2_dflt_none_decompose_nukta_glyphs;
-
 # ---------------------------------
 # Vowels with composite above marks
 # ---------------------------------
@@ -124,10 +136,9 @@ lookup eShortMatra_reph_anusvara {
 
 feature locl {
     script dev2;
-    lookup dev2_locl_localised_punctuation { # Localised puntuation for Devanagari
-    	sub @dev2_dflt_locl_localised_punctuation_dflt by @dev2_dflt_locl_localised_punctuation_deva;
-    } dev2_locl_localised_punctuation;
-
+    lookup dev2_dflt_locl_localised_punctuations {
+    	sub @dev2_default_punctuation by @dev2_localised_punctuation;
+    } dev2_dflt_locl_localised_punctuations;
     language MAR;
     lookup dev2_mar_locl_localised_consonants {
         sub la-deva by la-deva.loclMAR;
@@ -139,8 +150,7 @@ feature locl {
     lookup dev2_mar_nep_locl_common_localised_numerals {
         sub eight-deva by eight-deva.loclMARNEP;
     } dev2_mar_nep_locl_common_localised_numerals;
-	lookup dev2_locl_localised_punctuation;
-	
+
     language NEP;
     lookup dev2_nep_locl_localised_consonants_numerals {
         sub jha-deva by jha-deva.loclNEP;
@@ -151,22 +161,22 @@ feature locl {
     } dev2_nep_locl_localised_consonants_numerals;
 
     lookup dev2_mar_nep_locl_common_localised_numerals;
-    lookup dev2_locl_localised_punctuation;
 } locl;
 
 feature nukt {
     script dev2;
     lookup dev2_dflt_mar_nep_nukt_all_nukta_forms {
-        sub ka-deva nukta-deva by qa-deva;
-        sub ra-deva nukta-deva by rra-deva;
-        sub lla-deva nukta-deva by llla-deva;
-        sub kha-deva nukta-deva by khha-deva;
-        sub ga-deva nukta-deva by ghha-deva;
-        sub ja-deva nukta-deva by za-deva;
-        sub dda-deva nukta-deva by dddha-deva;
-        sub ddha-deva nukta-deva by rha-deva;
-        sub pha-deva nukta-deva by fa-deva;
-        sub ya-deva nukta-deva by yya-deva;
+        ignore sub [ka-deva kha-deva ja-deva pha-deva ya-deva]' nukta-deva' halant-deva;
+        sub ka-deva' nukta-deva' by qa-deva;
+        sub ra-deva' nukta-deva' by rra-deva;
+        sub lla-deva' nukta-deva' by llla-deva;
+        sub kha-deva' nukta-deva' by khha-deva;
+        sub ga-deva' nukta-deva' by ghha-deva;
+        sub ja-deva' nukta-deva' by za-deva;
+        sub dda-deva' nukta-deva' by dddha-deva;
+        sub ddha-deva' nukta-deva' by rha-deva;
+        sub pha-deva' nukta-deva' by fa-deva;
+        sub ya-deva' nukta-deva' by yya-deva;
     } dev2_dflt_mar_nep_nukt_all_nukta_forms;
 
     language MAR;
@@ -214,6 +224,7 @@ feature rkrf {
         sub ta-deva halant-deva ra-deva by t_ra-deva;
         sub ha-deva halant-deva ra-deva by h_ra-deva;
         sub sha-deva halant-deva ra-deva by sh_ra-deva;
+        sub k_ssa-deva halant-deva ra-deva by k_ss_ra-deva;
     } dev2_dflt_mar_nep_rkrf_rakar_forms;
 
     language MAR;
@@ -278,24 +289,28 @@ feature half {
         sub ssa-deva halant-deva by ss-deva;
         sub sa-deva halant-deva by s-deva;
         sub ha-deva halant-deva by h-deva;
-        sub qa-deva halant-deva by q-deva;
-        sub khha-deva halant-deva by khh-deva;
         sub ghha-deva halant-deva by ghh-deva;
-        sub za-deva halant-deva by z-deva;
         sub dddha-deva halant-deva by dddh-deva;
-        sub fa-deva halant-deva by f-deva;
-        sub yya-deva halant-deva by yy-deva;
+        sub rha-deva halant-deva by rh-deva;
         sub yaheavy-deva halant-deva by yaheavy-deva.half;
         sub gga-deva halant-deva by gg-deva;
         sub jja-deva halant-deva by jj-deva;
         sub ddda-deva halant-deva by ddd-deva;
         sub bba-deva halant-deva by bb-deva;
-        sub zha-deva halant-deva by zh-deva;
         sub k_ssa-deva halant-deva by k_ss-deva;
         sub j_nya-deva halant-deva by j_ny-deva;
         sub t_ra-deva halant-deva by t_r-deva;
         sub sh_ra-deva halant-deva by sh_r-deva;
     } dev2_dflt_mar_nep_half_all_half_forms;
+
+    lookup dev2_dflt_mar_nep_half_zhaDynamic_A {
+        lookupflag 0;
+        sub zha-deva halant-deva' by nukta-deva.triple;
+    } dev2_dflt_mar_nep_half_zhaDynamic_A;
+
+    lookup dev2_dflt_mar_nep_half_zhaDynamic_B {
+        sub zha-deva' nukta-deva.triple by j-deva;
+    } dev2_dflt_mar_nep_half_zhaDynamic_B;
 
     language MAR;
     lookup dev2_dflt_mar_nep_half_all_half_forms;
@@ -318,6 +333,7 @@ feature cjct {
     script dev2;
     lookup dev2_dflt_mar_nep_cjct_all_conjuncts {
         lookupflag IgnoreMarks;
+        sub ng-deva ga-deva by ng_ga-deva;
         sub ng-deva ya-deva by ng_ya-deva;
         sub ch-deva ya-deva by ch_ya-deva;
         sub tt-deva tta-deva by tt_tta-deva;
@@ -341,7 +357,6 @@ feature cjct {
         sub d-deva ra-deva by d_ra-deva;
         sub d-deva va-deva by d_va-deva;
         sub d-deva dh-deva ya-deva by d_dh_ya-deva;
-        sub h-deva ma-deva by h_ma-deva;
         sub h-deva nna-deva by h_nna-deva;
         sub h-deva na-deva by h_na-deva;
         sub h-deva ya-deva by h_ya-deva;
@@ -365,93 +380,93 @@ feature pres {
     script dev2;
     lookup dev2_dflt_mar_nep_pres_contextual_half_forms {
         lookupflag IgnoreMarks;
-        sub [k-deva q-deva]' [cha-deva nga-deva jha-deva dda-deva pa-deva pha-deva ssa-deva ha-deva dddha-deva fa-deva ddda-deva nna-deva bba-deva ch-deva ng-deva jh-deva dd-deva p-deva ph-deva ss-deva h-deva dddh-deva f-deva ddd-deva nn-deva bb-deva] by [k-deva.alt2 q-deva.alt2];
-        sub [k-deva q-deva]' [ga-deva na-deva nnna-deva ghha-deva gga-deva bha-deva jha-deva.loclNEP ma-deva marwaridda-deva g-deva n-deva nnn-deva ghh-deva gg-deva bh-deva m-deva] by [k-deva.alt3 q-deva.alt3];
-        sub [k-deva q-deva]' [tta-deva ttha-deva ddha-deva ta-deva da-deva rha-deva tt-deva tth-deva ddh-deva t-deva d-deva rh-deva] by [k-deva.alt4 q-deva.alt4];
-        sub [k-deva q-deva]' [kha-deva ra-deva rra-deva sha-deva sa-deva s-deva khha-deva kh-deva sh-deva s-deva s-deva khh-deva] by [k-deva.alt5 q-deva.alt5];
-        sub [k-deva q-deva]' [ja-deva jja-deva zha-deva za-deva j-deva jj-deva zh-deva z-deva] by [k-deva.alt6 q-deva.alt6];
-        sub [k-deva q-deva]' [ya-deva tha-deva yya-deva yaheavy-deva y-deva th-deva yy-deva yaheavy-deva.half] by [k-deva.alt7 q-deva.alt7];
-        sub [k-deva q-deva]' [gha-deva dha-deva gh-deva dh-deva] by [k-deva.alt8 q-deva.alt8];
-        sub [k-deva q-deva]' [nya-deva ny-deva] by [k-deva.alt10 q-deva.alt10];
-        sub [k-deva q-deva]' [ca-deva c-deva] by [k-deva.alt11 q-deva.alt11];
-        sub [kh-deva khh-deva]' [nga-deva ca-deva cha-deva jha-deva dda-deva ha-deva dddha-deva ddda-deva ng-deva c-deva ch-deva jh-deva dd-deva h-deva dddh-deva ddd-deva] by [kh-deva.alt2 khh-deva.alt2];
-        sub [kh-deva khh-deva]' [ga-deva ghha-deva marwaridda-deva gga-deva bha-deva jha-deva.loclNEP ma-deva g-deva ghh-deva gg-deva bh-deva m-deva] by [kh-deva.alt3 khh-deva.alt3];
-        sub [kh-deva khh-deva]' [gha-deva dha-deva gh-deva dh-deva] by [kh-deva.alt4 khh-deva.alt4];
+        sub [k-deva]' [cha-deva nga-deva jha-deva dda-deva pa-deva pha-deva ssa-deva ha-deva dddha-deva fa-deva ddda-deva nna-deva bba-deva ch-deva ng-deva jh-deva dd-deva p-deva ph-deva ss-deva h-deva dddh-deva ddd-deva nn-deva bb-deva] by [k-deva.alt2];
+        sub [k-deva]' [ga-deva na-deva nnna-deva ghha-deva gga-deva bha-deva jha-deva.loclNEP ma-deva marwaridda-deva g-deva n-deva nnn-deva ghh-deva gg-deva bh-deva m-deva] by [k-deva.alt3];
+        sub [k-deva]' [tta-deva ttha-deva ddha-deva ta-deva da-deva rha-deva tt-deva tth-deva ddh-deva t-deva d-deva rh-deva] by [k-deva.alt4];
+        sub [k-deva]' [kha-deva ra-deva rra-deva sha-deva sa-deva s-deva khha-deva kh-deva sh-deva s-deva s-deva] by [k-deva.alt5];
+        sub [k-deva]' [ja-deva jja-deva zha-deva za-deva j-deva jj-deva] by [k-deva.alt6];
+        sub [k-deva]' [ya-deva tha-deva yya-deva yaheavy-deva y-deva th-deva yaheavy-deva.half] by [k-deva.alt7];
+        sub [k-deva]' [gha-deva dha-deva gh-deva dh-deva] by [k-deva.alt8];
+        sub [k-deva]' [nya-deva ny-deva] by [k-deva.alt10];
+        sub [k-deva]' [ca-deva c-deva] by [k-deva.alt11];
+        sub [kh-deva]' [nga-deva ca-deva cha-deva jha-deva dda-deva ha-deva dddha-deva ddda-deva ng-deva c-deva ch-deva jh-deva dd-deva h-deva dddh-deva ddd-deva] by [kh-deva.alt2];
+        sub [kh-deva]' [ga-deva ghha-deva marwaridda-deva gga-deva bha-deva jha-deva.loclNEP ma-deva g-deva ghh-deva gg-deva bh-deva m-deva] by [kh-deva.alt3];
+        sub [kh-deva]' [gha-deva dha-deva gh-deva dh-deva] by [kh-deva.alt4];
         sub gh-deva' [nga-deva jha-deva dda-deva ha-deva dddha-deva ddda-deva ng-deva jh-deva dd-deva h-deva dddh-deva ddd-deva] by gh-deva.alt2;
         sub c-deva' [nga-deva jha-deva dda-deva ha-deva dddha-deva ddda-deva ng-deva jh-deva dd-deva h-deva dddh-deva ddd-deva] by c-deva.alt2;
-        sub [j-deva z-deva zh-deva]' [ga-deva nya-deva ghha-deva gga-deva g-deva ny-deva ghh-deva gg-deva] by [j-deva.alt2 z-deva.alt2 zh-deva.alt2];
-        sub [j-deva z-deva zh-deva]' [jha-deva dda-deva dddha-deva nga-deva cha-deva nna-deva pa-deva pha-deva ssa-deva ha-deva fa-deva ddda-deva jh-deva dd-deva dddh-deva ng-deva ch-deva nn-deva p-deva ph-deva ss-deva h-deva f-deva ddd-deva] by [j-deva.alt3 z-deva.alt3 zh-deva.alt3];
-        sub [j-deva z-deva zh-deva]' [kha-deva ra-deva rra-deva sha-deva sa-deva khha-deva kh-deva sh-deva s-deva khh-deva] by [j-deva.alt4 z-deva.alt4 zh-deva.alt4];
-        sub [j-deva z-deva zh-deva]' [ya-deva tha-deva yya-deva yaheavy-deva ta-deva na-deva nnna-deva tta-deva ttha-deva ddha-deva da-deva rha-deva y-deva th-deva yy-deva yaheavy-deva.half t-deva n-deva nnn-deva tt-deva tth-deva ddh-deva d-deva rh-deva] by [j-deva.alt5 z-deva.alt5 zh-deva.alt5];
-        sub [j-deva z-deva zh-deva]' [gha-deva dha-deva gh-deva dh-deva] by [j-deva.alt6 z-deva.alt6 zh-deva.alt6];
-        sub [j-deva z-deva zh-deva]' [ja-deva za-deva jja-deva zha-deva j-deva z-deva jj-deva zh-deva] by [j-deva.alt7 z-deva.alt7 zh-deva.alt7];
-        sub [j-deva z-deva zh-deva]' [ca-deva c-deva] by [j-deva.alt8 z-deva.alt8 zh-deva.alt8];
-        sub jh-deva' [nga-deva ca-deva cha-deva jha-deva dda-deva nna-deva pa-deva pha-deva ssa-deva ha-deva dddha-deva fa-deva gga-deva jja-deva ng-deva c-deva ch-deva jh-deva dd-deva nn-deva p-deva ph-deva ss-deva h-deva dddh-deva f-deva gg-deva jj-deva] by jh-deva.alt2;
-        sub jh-deva' [kha-deva ra-deva rra-deva sha-deva sa-deva khha-deva kh-deva sh-deva s-deva khh-deva] by jh-deva.alt3;
-        sub ny-deva' [nga-deva ca-deva cha-deva nya-deva ja-deva jha-deva dda-deva pa-deva pha-deva ssa-deva ha-deva dddha-deva fa-deva ng-deva c-deva ch-deva ny-deva j-deva jh-deva dd-deva p-deva ph-deva ss-deva h-deva dddh-deva f-deva] by ny-deva.alt2;
-        sub t-deva' [kha-deva tha-deva na-deva nnna-deva ra-deva rra-deva sha-deva sa-deva khha-deva kh-deva th-deva n-deva nnn-deva sh-deva s-deva khh-deva kh-deva th-deva n-deva nnn-deva sh-deva s-deva khh-deva kh-deva th-deva n-deva nnn-deva sh-deva s-deva khh-deva] by t-deva.alt2;
+        sub [j-deva]' [ga-deva nya-deva ghha-deva gga-deva g-deva ny-deva ghh-deva gg-deva] by [j-deva.alt2];
+        sub [j-deva]' [jha-deva dda-deva dddha-deva nga-deva cha-deva nna-deva pa-deva pha-deva ssa-deva ha-deva fa-deva ddda-deva jh-deva dd-deva dddh-deva ng-deva ch-deva nn-deva p-deva ph-deva ss-deva h-deva ddd-deva] by [j-deva.alt3];
+        sub [j-deva]' [kha-deva ra-deva rra-deva sha-deva sa-deva khha-deva kh-deva sh-deva s-deva] by [j-deva.alt4];
+        sub [j-deva]' [ya-deva tha-deva yya-deva yaheavy-deva ta-deva na-deva nnna-deva tta-deva ttha-deva ddha-deva da-deva rha-deva y-deva th-deva yaheavy-deva.half t-deva n-deva nnn-deva tt-deva tth-deva ddh-deva d-deva rh-deva] by [j-deva.alt5];
+        sub [j-deva]' [gha-deva dha-deva gh-deva dh-deva] by [j-deva.alt6];
+        sub [j-deva]' [ja-deva za-deva jja-deva zha-deva j-deva jj-deva] by [j-deva.alt7];
+        sub [j-deva]' [ca-deva c-deva] by [j-deva.alt8];
+        sub jh-deva' [nga-deva ca-deva cha-deva jha-deva dda-deva ha-deva dddha-deva gga-deva jja-deva ng-deva c-deva ch-deva jh-deva dd-deva h-deva dddh-deva gg-deva jj-deva] by jh-deva.alt2;
+        sub jh-deva' [kha-deva ra-deva rra-deva sha-deva sa-deva khha-deva kh-deva sh-deva s-deva] by jh-deva.alt3;
+        sub ny-deva' [nga-deva ca-deva cha-deva nya-deva ja-deva jha-deva dda-deva pa-deva pha-deva ssa-deva ha-deva dddha-deva fa-deva ng-deva c-deva ch-deva ny-deva j-deva jh-deva dd-deva p-deva ph-deva ss-deva h-deva dddh-deva] by ny-deva.alt2;
+        sub t-deva' [kha-deva tha-deva na-deva nnna-deva ra-deva rra-deva sha-deva sa-deva khha-deva kh-deva th-deva n-deva nnn-deva sh-deva s-deva kh-deva th-deva n-deva nnn-deva sh-deva s-deva kh-deva th-deva n-deva nnn-deva sh-deva s-deva] by t-deva.alt2;
         sub t-deva' [ga-deva gha-deva nga-deva tta-deva ttha-deva ddha-deva da-deva dha-deva bha-deva jha-deva.loclNEP ma-deva ghha-deva rha-deva marwaridda-deva gga-deva g-deva gh-deva ng-deva tt-deva tth-deva ddh-deva d-deva dh-deva bh-deva m-deva ghh-deva rh-deva gg-deva] by t-deva.alt3;
-        sub t-deva' [ja-deva ya-deva za-deva yya-deva yaheavy-deva jja-deva zha-deva j-deva y-deva z-deva yy-deva yaheavy-deva.half jj-deva zh-deva] by t-deva.alt4;
+        sub t-deva' [ja-deva ya-deva za-deva yya-deva yaheavy-deva jja-deva zha-deva j-deva y-deva yaheavy-deva.half jj-deva] by t-deva.alt4;
         sub th-deva' [ca-deva cha-deva ha-deva c-deva ch-deva h-deva] by th-deva.alt2;
-        sub th-deva' [tha-deva dha-deva sha-deva ya-deva yya-deva yaheavy-deva th-deva dh-deva sh-deva y-deva yy-deva yaheavy-deva.half] by th-deva.alt3;
+        sub th-deva' [tha-deva dha-deva sha-deva ya-deva yya-deva yaheavy-deva th-deva dh-deva sh-deva y-deva yaheavy-deva.half] by th-deva.alt3;
         sub th-deva' [nga-deva jha-deva dda-deva dddha-deva ddda-deva ng-deva jh-deva dd-deva dddh-deva ddd-deva] by th-deva.alt4;
         sub dh-deva' [nga-deva jha-deva dda-deva ha-deva dddha-deva ddda-deva ng-deva jh-deva dd-deva h-deva dddh-deva ddd-deva] by dh-deva.alt2;
-        sub dh-deva' [gha-deva nna-deva pa-deva pha-deva ssa-deva ha-deva fa-deva cha-deva ca-deva nya-deva gh-deva nn-deva p-deva ph-deva ss-deva h-deva f-deva ch-deva c-deva ny-deva] by dh-deva.alt3;
+        sub dh-deva' [gha-deva nna-deva pa-deva pha-deva ssa-deva ha-deva fa-deva cha-deva ca-deva nya-deva gh-deva nn-deva p-deva ph-deva ss-deva h-deva ch-deva c-deva ny-deva] by dh-deva.alt3;
         sub dh-deva' [tha-deva sha-deva dha-deva th-deva sh-deva dh-deva] by dh-deva.alt4;
-        sub [n-deva nnn-deva]' [cha-deva nya-deva yya-deva ya-deva tha-deva nna-deva nga-deva jha-deva dda-deva dddha-deva yaheavy-deva ch-deva ny-deva yy-deva y-deva th-deva nn-deva ng-deva jh-deva dd-deva dddh-deva yaheavy-deva.half] by [n-deva.alt2 nnn-deva.alt2];
-        sub [n-deva nnn-deva]' [ja-deva za-deva jja-deva ca-deva zha-deva j-deva z-deva jj-deva c-deva zh-deva] by [n-deva.alt3 nnn-deva.alt3];
+        sub [n-deva nnn-deva]' [cha-deva nya-deva yya-deva ya-deva tha-deva nna-deva nga-deva jha-deva dda-deva dddha-deva yaheavy-deva ch-deva ny-deva y-deva th-deva nn-deva ng-deva jh-deva dd-deva dddh-deva yaheavy-deva.half] by [n-deva.alt2 nnn-deva.alt2];
+        sub [n-deva nnn-deva]' [ja-deva za-deva jja-deva ca-deva zha-deva j-deva jj-deva c-deva] by [n-deva.alt3 nnn-deva.alt3];
         sub [n-deva nnn-deva]' [ga-deva bha-deva jha-deva.loclNEP ma-deva ghha-deva gga-deva marwaridda-deva g-deva bh-deva m-deva ghh-deva gg-deva] by [n-deva.alt4 nnn-deva.alt4];
         sub p-deva' [nga-deva jha-deva dda-deva dddha-deva ddda-deva ng-deva jh-deva dd-deva dddh-deva ddd-deva] by p-deva.alt2;
         sub p-deva' [cha-deva ha-deva ca-deva nya-deva ch-deva h-deva c-deva ny-deva] by p-deva.alt3;
-        sub [ph-deva f-deva]' [cha-deva nga-deva jha-deva dda-deva pa-deva pha-deva ssa-deva ha-deva dddha-deva fa-deva ddda-deva nna-deva bba-deva ch-deva ng-deva jh-deva dd-deva p-deva ph-deva ss-deva h-deva dddh-deva f-deva ddd-deva nn-deva bb-deva] by [ph-deva.alt2 f-deva.alt2];
-        sub [ph-deva f-deva]' [ga-deva na-deva nnna-deva ghha-deva gga-deva bha-deva jha-deva.loclNEP ma-deva marwaridda-deva g-deva n-deva nnn-deva ghh-deva gg-deva bh-deva m-deva] by [ph-deva.alt3 f-deva.alt3];
-        sub [ph-deva f-deva]' [tta-deva ttha-deva ddha-deva ta-deva da-deva rha-deva tt-deva tth-deva ddh-deva t-deva d-deva rh-deva] by [ph-deva.alt4 f-deva.alt4];
-        sub [ph-deva f-deva]' [kha-deva sha-deva sa-deva khha-deva kh-deva sh-deva s-deva khh-deva] by [ph-deva.alt5 f-deva.alt5];
-        sub [ph-deva f-deva]' [ja-deva jja-deva zha-deva za-deva j-deva jj-deva zh-deva z-deva] by [ph-deva.alt6 f-deva.alt6];
-        sub [ph-deva f-deva]' [ya-deva tha-deva yya-deva yaheavy-deva y-deva th-deva yy-deva yaheavy-deva.half] by [ph-deva.alt7 f-deva.alt7];
-        sub [ph-deva f-deva]' [gha-deva dha-deva gh-deva dh-deva] by [ph-deva.alt8 f-deva.alt8];
-        sub [ph-deva f-deva]' [nya-deva ny-deva] by [ph-deva.alt10 f-deva.alt10];
-        sub [ph-deva f-deva]' [ca-deva c-deva] by [ph-deva.alt11 f-deva.alt11];
+        sub [ph-deva]' [cha-deva nga-deva jha-deva dda-deva pa-deva pha-deva ssa-deva ha-deva dddha-deva fa-deva ddda-deva nna-deva bba-deva ch-deva ng-deva jh-deva dd-deva p-deva ph-deva ss-deva h-deva dddh-deva ddd-deva nn-deva bb-deva] by [ph-deva.alt2];
+        sub [ph-deva]' [ga-deva na-deva nnna-deva ghha-deva gga-deva bha-deva jha-deva.loclNEP ma-deva marwaridda-deva g-deva n-deva nnn-deva ghh-deva gg-deva bh-deva m-deva] by [ph-deva.alt3];
+        sub [ph-deva]' [tta-deva ttha-deva ddha-deva ta-deva da-deva rha-deva tt-deva tth-deva ddh-deva t-deva d-deva rh-deva] by [ph-deva.alt4];
+        sub [ph-deva]' [kha-deva sha-deva sa-deva khha-deva kh-deva sh-deva s-deva] by [ph-deva.alt5];
+        sub [ph-deva]' [ja-deva jja-deva zha-deva za-deva j-deva jj-deva] by [ph-deva.alt6];
+        sub [ph-deva]' [ya-deva tha-deva yya-deva yaheavy-deva y-deva th-deva yaheavy-deva.half] by [ph-deva.alt7];
+        sub [ph-deva]' [gha-deva dha-deva gh-deva dh-deva] by [ph-deva.alt8];
+        sub [ph-deva]' [nya-deva ny-deva] by [ph-deva.alt10];
+        sub [ph-deva]' [ca-deva c-deva] by [ph-deva.alt11];
         sub b-deva' [nga-deva ca-deva jha-deva nya-deva dda-deva dddha-deva ddda-deva jja-deva bba-deva ng-deva c-deva jh-deva ny-deva dd-deva dddh-deva ddd-deva jj-deva bb-deva] by b-deva.alt2;
         sub b-deva' [ga-deva na-deva nnna-deva bha-deva jha-deva.loclNEP ma-deva gga-deva marwaridda-deva gga-deva g-deva n-deva nnn-deva bh-deva m-deva gg-deva gg-deva] by b-deva.alt3;
         sub b-deva' [gha-deva dha-deva gh-deva dh-deva] by b-deva.alt4;
         sub b-deva' [cha-deva ha-deva ch-deva h-deva] by b-deva.alt5;
-        sub bh-deva' [dda-deva nga-deva dddha-deva ddda-deva cha-deva jha-deva tha-deva yya-deva yaheavy-deva ya-deva ha-deva dd-deva ng-deva dddh-deva ddd-deva ch-deva jh-deva th-deva yy-deva yaheavy-deva.half y-deva h-deva] by bh-deva.alt2;
-        sub bh-deva' [ca-deva ja-deva za-deva jja-deva zha-deva c-deva j-deva z-deva jj-deva zh-deva] by bh-deva.alt3;
-        sub bh-deva' [kha-deva ga-deva khha-deva sha-deva sa-deva marwaridda-deva gga-deva kh-deva g-deva khh-deva sh-deva s-deva gg-deva] by bh-deva.alt4;
-        sub m-deva' [dda-deva nga-deva dddha-deva ddda-deva cha-deva jha-deva tha-deva yya-deva yaheavy-deva ya-deva ha-deva dd-deva ng-deva dddh-deva ddd-deva ch-deva jh-deva th-deva yy-deva yaheavy-deva.half y-deva h-deva] by m-deva.alt2;
-        sub m-deva' [ca-deva ja-deva za-deva jja-deva zha-deva c-deva j-deva z-deva jj-deva zh-deva] by m-deva.alt3;
-        sub m-deva' [kha-deva ga-deva khha-deva sha-deva sa-deva marwaridda-deva gga-deva kh-deva g-deva khh-deva sh-deva s-deva gg-deva] by m-deva.alt4;
-        sub [y-deva yy-deva]' [nga-deva jha-deva dda-deva dddha-deva ddda-deva ng-deva jh-deva dd-deva dddh-deva ddd-deva] by [y-deva.alt2 yy-deva.alt2];
-        sub [y-deva yy-deva]' [ca-deva cha-deva ha-deva c-deva ch-deva h-deva] by [y-deva.alt3 yy-deva.alt3];
-        sub l-deva' [kha-deva sha-deva sa-deva khha-deva kh-deva sh-deva s-deva khh-deva] by l-deva.alt2;
+        sub bh-deva' [dda-deva nga-deva dddha-deva ddda-deva cha-deva jha-deva tha-deva yya-deva yaheavy-deva ya-deva ha-deva dd-deva ng-deva dddh-deva ddd-deva ch-deva jh-deva th-deva yaheavy-deva.half y-deva h-deva] by bh-deva.alt2;
+        sub bh-deva' [ca-deva ja-deva za-deva zha-deva c-deva j-deva] by bh-deva.alt3;
+        sub bh-deva' [kha-deva ga-deva khha-deva sa-deva marwaridda-deva gga-deva kh-deva g-deva s-deva gg-deva] by bh-deva.alt4;
+        sub m-deva' [dda-deva nga-deva dddha-deva ddda-deva cha-deva jha-deva tha-deva yya-deva yaheavy-deva ya-deva ha-deva dd-deva ng-deva dddh-deva ddd-deva ch-deva jh-deva th-deva yaheavy-deva.half y-deva h-deva] by m-deva.alt2;
+        sub m-deva' [ca-deva ja-deva za-deva jja-deva zha-deva c-deva j-deva jj-deva] by m-deva.alt3;
+        sub m-deva' [kha-deva ga-deva khha-deva sha-deva sa-deva marwaridda-deva gga-deva kh-deva g-deva sh-deva s-deva gg-deva] by m-deva.alt4;
+        sub [y-deva]' [nga-deva jha-deva dda-deva dddha-deva ddda-deva ng-deva jh-deva dd-deva dddh-deva ddd-deva] by [y-deva.alt2];
+        sub [y-deva]' [ca-deva cha-deva ha-deva c-deva ch-deva h-deva] by [y-deva.alt3];
+        sub l-deva' [kha-deva sha-deva sa-deva khha-deva kh-deva sh-deva s-deva] by l-deva.alt2;
         sub l-deva' [ga-deva bha-deva jha-deva.loclNEP ma-deva ghha-deva marwaridda-deva gga-deva g-deva bh-deva m-deva ghh-deva gg-deva] by l-deva.alt3;
         sub l-deva' [gha-deva dha-deva gh-deva dh-deva] by l-deva.alt4;
         sub l-deva' [ca-deva c-deva] by l-deva.alt5;
-        sub l-deva' [ja-deva za-deva jja-deva zha-deva j-deva z-deva jj-deva zh-deva] by l-deva.alt6;
+        sub l-deva' [ja-deva za-deva jja-deva zha-deva j-deva jj-deva] by l-deva.alt6;
         sub l-deva' [nya-deva ny-deva] by l-deva.alt7;
-        sub l-deva' [tha-deva ya-deva yya-deva yaheavy-deva th-deva y-deva yy-deva yaheavy-deva.half] by l-deva.alt8;
+        sub l-deva' [tha-deva ya-deva yya-deva yaheavy-deva th-deva y-deva yaheavy-deva.half] by l-deva.alt8;
         sub v-deva' [nga-deva ca-deva jha-deva nya-deva dda-deva ha-deva dddha-deva ddda-deva jja-deva ng-deva c-deva jh-deva ny-deva dd-deva h-deva dddh-deva ddd-deva jj-deva] by v-deva.alt2;
         sub v-deva' [ga-deva na-deva nnna-deva va-deva ma-deva gga-deva marwaridda-deva gga-deva g-deva n-deva nnn-deva v-deva m-deva gg-deva gg-deva] by v-deva.alt3;
         sub v-deva' [gha-deva dha-deva gh-deva dh-deva] by v-deva.alt4;
-        sub v-deva' [cha-deva ha-deva ch-deva h-deva] by v-deva.alt4;
-        sub s-deva' [kha-deva sa-deva khha-deva ddda-deva kh-deva s-deva khh-deva ddd-deva] by s-deva.alt2;
+        sub v-deva' [cha-deva ha-deva ch-deva h-deva] by v-deva.alt5;
+        sub s-deva' [kha-deva sa-deva khha-deva ddda-deva kh-deva s-deva ddd-deva] by s-deva.alt2;
         sub jj-deva' [tta-deva ttha-deva da-deva rha-deva tt-deva tth-deva d-deva rh-deva] by jj-deva.alt2;
         sub bb-deva' [gha-deva nga-deva cha-deva jha-deva dda-deva dha-deva ha-deva dddha-deva ddda-deva gh-deva ng-deva ch-deva jh-deva dd-deva dh-deva h-deva dddh-deva ddd-deva] by bb-deva.alt2;
-        sub k_ss-deva' [kha-deva sha-deva sa-deva khha-deva kh-deva sh-deva s-deva khh-deva] by k_ss-deva.alt2;
-        sub k_ss-deva' [ya-deva tha-deva yya-deva yaheavy-deva na-deva nnna-deva y-deva th-deva yy-deva yaheavy-deva.half n-deva nnn-deva] by k_ss-deva.alt3;
+        sub k_ss-deva' [kha-deva sha-deva sa-deva khha-deva kh-deva sh-deva s-deva] by k_ss-deva.alt2;
+        sub k_ss-deva' [ya-deva tha-deva yya-deva yaheavy-deva na-deva nnna-deva y-deva th-deva yaheavy-deva.half n-deva nnn-deva] by k_ss-deva.alt3;
         sub k_ss-deva' [bha-deva jha-deva.loclNEP ma-deva ghha-deva marwaridda-deva gga-deva ga-deva bh-deva m-deva ghh-deva gg-deva g-deva] by k_ss-deva.alt4;
         sub k_ss-deva' [gha-deva dha-deva gh-deva dh-deva] by k_ss-deva.alt5;
         sub k_ss-deva' [nya-deva ny-deva] by k_ss-deva.alt6;
         sub k_ss-deva' [ca-deva c-deva] by k_ss-deva.alt7;
         sub j_ny-deva' [ga-deva nya-deva ghha-deva gga-deva g-deva ny-deva ghh-deva gg-deva] by j_ny-deva.alt2;
-        sub j_ny-deva' [jha-deva dda-deva dddha-deva nga-deva cha-deva nna-deva pa-deva pha-deva ssa-deva ha-deva fa-deva ddda-deva jh-deva dd-deva dddh-deva ng-deva ch-deva nn-deva p-deva ph-deva ss-deva h-deva f-deva ddd-deva] by j_ny-deva.alt3;
-        sub j_ny-deva' [kha-deva sha-deva sa-deva khha-deva kh-deva sh-deva s-deva khh-deva] by j_ny-deva.alt4;
-        sub j_ny-deva' [ya-deva tha-deva yya-deva yaheavy-deva ta-deva na-deva nnna-deva tta-deva ttha-deva ddha-deva da-deva rha-deva y-deva th-deva yy-deva yaheavy-deva.half t-deva n-deva nnn-deva tt-deva tth-deva ddh-deva d-deva rh-deva] by j_ny-deva.alt5;
+        sub j_ny-deva' [jha-deva dda-deva dddha-deva nga-deva cha-deva nna-deva pa-deva pha-deva ssa-deva ha-deva fa-deva ddda-deva jh-deva dd-deva dddh-deva ng-deva ch-deva nn-deva p-deva ph-deva ss-deva h-deva ddd-deva] by j_ny-deva.alt3;
+        sub j_ny-deva' [kha-deva sha-deva sa-deva khha-deva kh-deva sh-deva s-deva] by j_ny-deva.alt4;
+        sub j_ny-deva' [ya-deva tha-deva yya-deva yaheavy-deva ta-deva na-deva nnna-deva tta-deva ttha-deva ddha-deva da-deva rha-deva y-deva th-deva yaheavy-deva.half t-deva n-deva nnn-deva tt-deva tth-deva ddh-deva d-deva rh-deva] by j_ny-deva.alt5;
         sub j_ny-deva' [gha-deva dha-deva gh-deva dh-deva] by j_ny-deva.alt6;
-        sub j_ny-deva' [ja-deva za-deva jja-deva zha-deva j-deva z-deva jj-deva zh-deva] by j_ny-deva.alt7;
+        sub j_ny-deva' [ja-deva za-deva jja-deva zha-deva j-deva jj-deva] by j_ny-deva.alt7;
         sub j_ny-deva' [ca-deva c-deva] by j_ny-deva.alt8;
-        sub jh-deva.loclNEP' [ca-deva ja-deva nya-deva za-deva jja-deva zha-deva jha-deva.loclNEP sha-deva.loclMAR c-deva j-deva ny-deva z-deva jj-deva zh-deva jh-deva.loclNEP sh-deva.loclMAR] by jh-deva.loclNEP.alt2;
+        sub jh-deva.loclNEP' [ca-deva ja-deva nya-deva za-deva jja-deva zha-deva jha-deva.loclNEP sha-deva.loclMAR c-deva j-deva ny-deva jj-deva jh-deva.loclNEP sh-deva.loclMAR] by jh-deva.loclNEP.alt2;
         sub eyelashReph-deva' dda-deva by eyelashReph-deva.alt1;
     } dev2_dflt_mar_nep_pres_contextual_half_forms;
 
@@ -463,7 +478,7 @@ feature pres {
     } dev2_dflt_mar_nep_pres_half_form_conjuncts;
 
     lookup dev2_dflt_mar_nep_pres_imatra_contexts {
-        lookupflag MarkAttachmentType @dev2_dflt_pres_mark_attachment_class_top_marks;
+        lookupflag UseMarkFilteringSet [@dev2_dflt_pres_mark_attachment_class_top_marks @dev2_UMFS_rakars];
         sub iMatra-deva' @dev2_dflt_pres_imatra_alt2_bases [anusvara-deva candraBindu-deva reph-deva reph_anusvara-deva] by iMatra-deva.alt1;
         sub iMatra-deva' @dev2_dflt_pres_imatra_alt2_bases by iMatra-deva.alt2;
         # Version 2
@@ -485,7 +500,7 @@ feature pres {
     } dev2_dflt_mar_nep_pres_imatra_contexts;
 
     lookup dev2_dflt_mar_nep_pres_imatra_contexts_half_forms {
-        lookupflag MarkAttachmentType @dev2_dflt_pres_mark_attachment_class_top_marks;
+        lookupflag MarkAttachmentType [@dev2_dflt_pres_mark_attachment_class_top_marks];
         # Bi-consonant pairs
         # Short context for length 5
         sub iMatra-deva' m-deva [gha-deva tta-deva ttha-deva ddha-deva ta-deva da-deva dha-deva na-deva nnna-deva pa-deva ba-deva bha-deva jha-deva.loclNEP ma-deva va-deva ssa-deva ghha-deva rha-deva bba-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt4;
@@ -540,6 +555,7 @@ feature pres {
         sub iMatra-deva' n-deva.alt2 [yya-deva ya-deva tha-deva nga-deva dda-deva dddha-deva yaheavy-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt4;
         sub iMatra-deva' b-deva.alt3 [ga-deva na-deva nnna-deva bha-deva jha-deva.loclNEP ma-deva gga-deva marwaridda-deva gga-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt4;
         sub iMatra-deva' b-deva [tta-deva ttha-deva ddha-deva ta-deva tha-deva da-deva pa-deva ba-deva ya-deva va-deva ssa-deva rha-deva yya-deva yaheavy-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt4;
+        # Default context for length 5
         sub iMatra-deva' m-deva [gha-deva tta-deva ttha-deva ddha-deva ta-deva da-deva dha-deva na-deva nnna-deva pa-deva ba-deva bha-deva jha-deva.loclNEP ma-deva va-deva ssa-deva ghha-deva rha-deva bba-deva] by iMatra-deva.alt5;
         sub iMatra-deva' c-deva [ga-deva gha-deva tta-deva ttha-deva ddha-deva ta-deva da-deva dha-deva na-deva nnna-deva pa-deva ba-deva bha-deva jha-deva.loclNEP ma-deva ya-deva va-deva ssa-deva ghha-deva yya-deva marwaridda-deva yaheavy-deva gga-deva bba-deva] by iMatra-deva.alt5;
         sub iMatra-deva' bh-deva.alt2 [dda-deva nga-deva dddha-deva ddda-deva tha-deva yya-deva yaheavy-deva ya-deva ha-deva] by iMatra-deva.alt5;
@@ -610,7 +626,7 @@ feature pres {
         sub iMatra-deva' bh-deva.alt3 [ja-deva za-deva jja-deva zha-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt5;
         sub iMatra-deva' bh-deva.alt4 [sha-deva sha-deva.loclMAR sa-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt5;
         sub iMatra-deva' t-deva.alt2 [sha-deva sha-deva.loclMAR sa-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt5;
-        sub iMatra-deva' jh-deva [ga-deva gha-deva tta-deva ttha-deva ddha-deva ta-deva da-deva dha-deva na-deva nnna-deva ba-deva bha-deva jha-deva.loclNEP ma-deva ya-deva va-deva ghha-deva rha-deva yya-deva marwaridda-deva yaheavy-deva ddda-deva bba-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt5;
+        sub iMatra-deva' jh-deva [ga-deva gha-deva tta-deva ttha-deva ddha-deva ta-deva da-deva dha-deva na-deva nnna-deva ba-deva bha-deva jha-deva.loclNEP ma-deva ya-deva va-deva ghha-deva rha-deva yya-deva marwaridda-deva yaheavy-deva ddda-deva bba-deva pa-deva pha-deva fa-deva ssa-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt5;
         sub iMatra-deva' dh-deva.alt3 [cha-deva ca-deva nya-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt5;
         sub iMatra-deva' jj-deva [gha-deva dda-deva ta-deva na-deva nnna-deva pa-deva ba-deva ya-deva va-deva ssa-deva ha-deva dddha-deva yya-deva marwaridda-deva ddda-deva bba-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt5;
         sub iMatra-deva' m-deva.alt3 [ja-deva za-deva jja-deva zha-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt5;
@@ -666,6 +682,7 @@ feature pres {
         sub iMatra-deva' c-deva.alt2 nga-deva @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt5;
         sub iMatra-deva' n-deva [la-deva la-deva.loclMAR sha-deva sha-deva.loclMAR] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt5;
         sub iMatra-deva' b-deva [nna-deva la-deva la-deva.loclMAR sha-deva sha-deva.loclMAR sa-deva zha-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt5;
+        # Default context for length 6
         sub iMatra-deva' j_ny-deva.alt8 ca-deva by iMatra-deva.alt6;
         sub iMatra-deva' gh-deva [cha-deva nya-deva nna-deva la-deva la-deva.loclMAR sha-deva sha-deva.loclMAR sa-deva jja-deva zha-deva] by iMatra-deva.alt6;
         sub iMatra-deva' m-deva [nya-deva nna-deva la-deva la-deva.loclMAR] by iMatra-deva.alt6;
@@ -683,7 +700,7 @@ feature pres {
         sub iMatra-deva' bh-deva.alt3 [ja-deva za-deva jja-deva zha-deva] by iMatra-deva.alt6;
         sub iMatra-deva' bh-deva.alt4 [sha-deva sha-deva.loclMAR sa-deva] by iMatra-deva.alt6;
         sub iMatra-deva' t-deva.alt2 [sha-deva sha-deva.loclMAR sa-deva] by iMatra-deva.alt6;
-        sub iMatra-deva' jh-deva [ga-deva gha-deva tta-deva ttha-deva ddha-deva ta-deva da-deva dha-deva na-deva nnna-deva ba-deva bha-deva jha-deva.loclNEP ma-deva ya-deva va-deva ghha-deva rha-deva yya-deva marwaridda-deva yaheavy-deva ddda-deva bba-deva] by iMatra-deva.alt6;
+        sub iMatra-deva' jh-deva [ga-deva gha-deva tta-deva ttha-deva ddha-deva ta-deva da-deva dha-deva na-deva nnna-deva ba-deva bha-deva jha-deva.loclNEP ma-deva ya-deva va-deva ghha-deva rha-deva yya-deva marwaridda-deva yaheavy-deva ddda-deva bba-deva pa-deva pha-deva ssa-deva fa-deva] by iMatra-deva.alt6;
         sub iMatra-deva' dh-deva.alt3 [cha-deva ca-deva nya-deva] by iMatra-deva.alt6;
         sub iMatra-deva' jj-deva [gha-deva dda-deva ta-deva na-deva nnna-deva pa-deva ba-deva ya-deva va-deva ssa-deva ha-deva dddha-deva yya-deva marwaridda-deva ddda-deva bba-deva] by iMatra-deva.alt6;
         sub iMatra-deva' m-deva.alt3 [ja-deva za-deva jja-deva zha-deva] by iMatra-deva.alt6;
@@ -740,7 +757,7 @@ feature pres {
         sub iMatra-deva' n-deva [la-deva la-deva.loclMAR sha-deva sha-deva.loclMAR] by iMatra-deva.alt6;
         sub iMatra-deva' b-deva [nna-deva la-deva la-deva.loclMAR sha-deva sha-deva.loclMAR sa-deva zha-deva] by iMatra-deva.alt6;
         # short context for length 7
-        sub iMatra-deva' jh-deva.alt2 [nga-deva ca-deva cha-deva jha-deva nna-deva pha-deva fa-deva jja-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
+        sub iMatra-deva' jh-deva.alt2 [nga-deva ca-deva cha-deva jha-deva jja-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
         sub iMatra-deva' jh-deva.alt3 [kha-deva sha-deva sha-deva.loclMAR sa-deva khha-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
         sub iMatra-deva' m-deva [ka-deva pha-deva lla-deva la-deva.loclMAR llla-deva la-deva.loclMAR qa-deva fa-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
         sub iMatra-deva' k-deva.alt11 ca-deva @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
@@ -757,7 +774,7 @@ feature pres {
         sub iMatra-deva' th-deva [ka-deva kha-deva ja-deva nna-deva pha-deva la-deva la-deva.loclMAR lla-deva la-deva.loclMAR llla-deva la-deva.loclMAR qa-deva khha-deva za-deva fa-deva jja-deva zha-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
         sub iMatra-deva' n-deva [ka-deva kha-deva pha-deva lla-deva la-deva.loclMAR llla-deva la-deva.loclMAR qa-deva khha-deva fa-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
         sub iMatra-deva' bh-deva.alt4 [kha-deva khha-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
-        sub iMatra-deva' jh-deva [ka-deva ja-deva nya-deva tha-deva la-deva la-deva.loclMAR lla-deva la-deva.loclMAR llla-deva la-deva.loclMAR qa-deva za-deva zha-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
+        sub iMatra-deva' jh-deva [ka-deva ja-deva nya-deva tha-deva la-deva la-deva.loclMAR lla-deva la-deva.loclMAR llla-deva la-deva.loclMAR qa-deva za-deva zha-deva nna-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
         sub iMatra-deva' dh-deva.alt3 [nna-deva pha-deva fa-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
         sub iMatra-deva' jj-deva [ka-deva kha-deva ga-deva nga-deva ca-deva cha-deva ja-deva jha-deva nya-deva nna-deva tha-deva dha-deva pha-deva bha-deva jha-deva.loclNEP ma-deva la-deva la-deva.loclMAR lla-deva la-deva.loclMAR llla-deva la-deva.loclMAR sha-deva sha-deva.loclMAR sa-deva qa-deva khha-deva ghha-deva za-deva fa-deva yaheavy-deva gga-deva jja-deva zha-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
         sub iMatra-deva' ph-deva.alt10 nya-deva @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
@@ -813,6 +830,7 @@ feature pres {
         sub iMatra-deva' c-deva.alt2 jha-deva @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
         sub iMatra-deva' kh-deva.alt2 [nga-deva ca-deva cha-deva jha-deva dda-deva ha-deva dddha-deva ddda-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
         sub iMatra-deva' b-deva [ka-deva kha-deva ja-deva pha-deva lla-deva la-deva.loclMAR llla-deva la-deva.loclMAR qa-deva khha-deva za-deva fa-deva] @dev2_dflt_pres_mark_attachment_class_top_marks by iMatra-deva.alt6;
+        # Default context for length 7
         sub iMatra-deva' jh-deva.alt2 [nga-deva ca-deva cha-deva jha-deva nna-deva pha-deva fa-deva jja-deva] by iMatra-deva.alt7;
         sub iMatra-deva' jh-deva.alt3 [kha-deva sha-deva sha-deva.loclMAR sa-deva khha-deva] by iMatra-deva.alt7;
         sub iMatra-deva' m-deva [ka-deva pha-deva lla-deva la-deva.loclMAR llla-deva la-deva.loclMAR qa-deva fa-deva] by iMatra-deva.alt7;
@@ -830,7 +848,7 @@ feature pres {
         sub iMatra-deva' th-deva [ka-deva kha-deva ja-deva nna-deva pha-deva la-deva la-deva.loclMAR lla-deva la-deva.loclMAR llla-deva la-deva.loclMAR qa-deva khha-deva za-deva fa-deva jja-deva zha-deva] by iMatra-deva.alt7;
         sub iMatra-deva' n-deva [ka-deva kha-deva pha-deva lla-deva la-deva.loclMAR llla-deva la-deva.loclMAR qa-deva khha-deva fa-deva] by iMatra-deva.alt7;
         sub iMatra-deva' bh-deva.alt4 [kha-deva khha-deva] by iMatra-deva.alt7;
-        sub iMatra-deva' jh-deva [ka-deva ja-deva nya-deva tha-deva la-deva la-deva.loclMAR lla-deva la-deva.loclMAR llla-deva la-deva.loclMAR qa-deva za-deva zha-deva] by iMatra-deva.alt7;
+        sub iMatra-deva' jh-deva [ka-deva ja-deva nya-deva tha-deva la-deva la-deva.loclMAR lla-deva la-deva.loclMAR llla-deva la-deva.loclMAR qa-deva za-deva zha-deva nna-deva] by iMatra-deva.alt7;
         sub iMatra-deva' dh-deva.alt3 [nna-deva pha-deva fa-deva] by iMatra-deva.alt7;
         sub iMatra-deva' jj-deva [ka-deva kha-deva ga-deva nga-deva ca-deva cha-deva ja-deva jha-deva nya-deva nna-deva tha-deva dha-deva pha-deva bha-deva jha-deva.loclNEP ma-deva la-deva la-deva.loclMAR lla-deva la-deva.loclMAR llla-deva la-deva.loclMAR sha-deva sha-deva.loclMAR sa-deva qa-deva khha-deva ghha-deva za-deva fa-deva yaheavy-deva gga-deva jja-deva zha-deva] by iMatra-deva.alt7;
         sub iMatra-deva' ph-deva.alt10 nya-deva by iMatra-deva.alt7;
@@ -905,6 +923,7 @@ feature pres {
 feature abvs {
     script dev2;
     lookup dev2_dflt_mar_nep_abvs_top_mark_ligatures {
+        lookupflag 0;
         #	ignore sub ra-deva eMatra-deva anusvara-deva;
         sub eMatra-deva anusvara-deva by eMatra_anusvara-deva;
         sub eMatra-deva candraBindu-deva by eMatra_candraBindu-deva;
@@ -975,44 +994,102 @@ feature blws {
         sub da-deva rVocalicMatra-deva by da_rVocalicMatra-deva;
     } dev2_dflt_mar_nep_blws_botom_mark_ligatures;
 
-	@UMFS_blws_marks = [rakar-deva];
+    lookup dev2_dflt_mar_nep_blws_short_akhand {
+        sub k_ssa-deva' [uMatra-deva uuMatra-deva] by k_ssa-deva.short;
+    } dev2_dflt_mar_nep_blws_short_akhand;
+
+    lookup dev2_dflt_mar_nep_blws_rakaar_dynamic_A {
+        lookupflag UseMarkFilteringSet [@dev2_UMFS_rakars @dev2_UMFS_nuktas];
+        sub kha-deva' rakar-deva by kh-deva.alt5 rakar-deva.diagonal;
+        sub gha-deva' rakar-deva by gh-deva.alt2 rakar-deva.diagonal.alt;
+        sub ca-deva' rakar-deva by c-deva.alt2 rakar-deva.diagonal.alt;
+        sub ja-deva' rakar-deva by j-deva rakar-deva.diagonal;
+        sub jha-deva' rakar-deva by jh-deva.alt2 rakar-deva.diagonal;
+        sub nna-deva' rakar-deva by nn-deva rakar-deva.diagonal;
+        sub ba-deva' rakar-deva by b-deva.alt2 rakar-deva.diagonal;
+        sub bha-deva' rakar-deva by bh-deva.alt4 rakar-deva.diagonal;
+        sub ma-deva' rakar-deva by m-deva.alt4 rakar-deva.diagonal;
+        sub la-deva' rakar-deva by l-deva.alt3 rakar-deva.diagonal;
+        sub va-deva' rakar-deva by v-deva.alt2 rakar-deva.diagonal;
+        sub ssa-deva' rakar-deva by ss-deva.alt rakar-deva.diagonal.alt;
+        sub sa-deva' rakar-deva by s-deva rakar-deva.short;
+        sub j_nya-deva' rakar-deva by j_ny-deva.alt2 rakar-deva.diagonal;
+        # Nukta glyphs
+        sub kha-deva' nukta-deva rakar-deva by kh-deva.alt5 nukta-deva rakar-deva.diagonal;
+        sub jha-deva' nukta-deva rakar-deva by jh-deva.alt2 nukta-deva rakar-deva.diagonal;
+        sub ja-deva' nukta-deva rakar-deva by j-deva nukta-deva rakar-deva.diagonal;
+		sub ghh-deva' rakar-deva by g-deva nukta-deva;
+    } dev2_dflt_mar_nep_blws_rakaar_dynamic_A;
+
+    lookup dev2_dflt_mar_nep_blws_rakaar_dynamic_B {
+        lookupflag UseMarkFilteringSet [@dev2_UMFS_rakars @dev2_UMFS_nuktas];
+        sub [kh-deva.alt5 b-deva.alt2 bh-deva.alt4 m-deva.alt4 l-deva.alt3] rakar-deva.diagonal rakar-deva' by aaMatra-deva.post;
+        sub [j-deva jh-deva.alt2 nn-deva v-deva.alt2] rakar-deva.diagonal rakar-deva' by aaMatra-deva.post.alt;
+        sub [jh-deva.alt2] nukta-deva rakar-deva.diagonal nukta-deva' rakar-deva' by aaMatra-deva.post.alt;
+        sub [gh-deva.alt2 c-deva.alt2 ss-deva.alt] rakar-deva.diagonal.alt rakar-deva' by aaMatra-deva.post;
+        sub s-deva rakar-deva.short rakar-deva' by aaMatra-deva.post;
+        sub [kh-deva.alt5 j-deva] nukta-deva rakar-deva.diagonal nukta-deva' rakar-deva' by aaMatra-deva.post.alt;
+        sub j_ny-deva.alt2 rakar-deva.diagonal rakar-deva' by aaMatra-deva.post.alt;
+    } dev2_dflt_mar_nep_blws_rakaar_dynamic_B;
+
     lookup dev2_dflt_mar_nep_blws_rakaar_mark {
-		lookupflag UseMarkFilteringSet @UMFS_blws_marks;
+        lookupflag 0;
         sub @dev2_dflt_blws_rakar_diagonal_bases rakar-deva' by rakar-deva.diagonal;
+		sub @dev2_dflt_blws_rakar_nukta_bases_wide nukta-deva rakar-deva' by rakar-deva.diagonal;
         sub @dev2_dflt_blws_rakar_diagonal_short_bases rakar-deva' by rakar-deva.short;
+        sub [ga-deva tha-deva] rakar-deva' by rakar-deva.diagonal.alt;
     } dev2_dflt_mar_nep_blws_rakaar_mark;
 
-    #lookup dev2_dflt_decompose_nukta_glyphs_in_rakaar_context {
-    #	sub qa-deva' lookup dev2_dflt_none_decompose_nukta_glyphs rakar-deva.diagonal;
-    #} dev2_dflt_decompose_nukta_glyphs_in_rakaar_context;
+    lookup dev2_dflt_dflt_blws_iMatraForDynamicRakaars {
+        lookupflag UseMarkFilteringSet @dev2_dflt_pres_mark_attachment_class_top_marks;
+        # Rakaar contexts short
+        # Rakaar contexts default
+        ignore sub iMatra-deva' j_ny-deva.alt2 aaMatra-deva.post.alt @dev2_dflt_pres_mark_attachment_class_top_marks;
+        sub iMatra-deva' j_ny-deva.alt2 aaMatra-deva.post.alt by iMatra-deva.alt5;
+    } dev2_dflt_dflt_blws_iMatraForDynamicRakaars;
+
+    lookup dev2_dflt_blws_decomposeNuktaGlyphsWithRakaar_A {
+        lookupflag 0;
+        sub @dev2_dflt_blws_rakar_nukta_bases nukta-deva rakar-deva' by rakar-deva.diagonal nukta-deva;
+        sub [dddha-deva rha-deva] rakar-deva' by rakar_nukta-deva;
+    } dev2_dflt_blws_decomposeNuktaGlyphsWithRakaar_A;
+
+    lookup dev2_dflt_blws_decomposeNuktaGlyphsWithRakaar_B {
+        sub @dev2_dflt_blws_rakar_nukta_bases nukta-deva' rakar-deva.diagonal nukta-deva by NULL;
+        sub dddha-deva' rakar_nukta-deva by dda-deva;
+        sub rha-deva' rakar_nukta-deva by ddha-deva;
+    } dev2_dflt_blws_decomposeNuktaGlyphsWithRakaar_B;
+
+    lookup dev2_dflt_blws_decomposeNuktaGlyphsWithRakaar_C {
+        sub [ka-deva pha-deva ya-deva] rakar-deva.diagonal nukta-deva uMatra-deva' by uMatra-deva nukta-deva;
+        sub [ka-deva pha-deva ya-deva] rakar-deva.diagonal nukta-deva uuMatra-deva' by uuMatra-deva nukta-deva;
+    } dev2_dflt_blws_decomposeNuktaGlyphsWithRakaar_C;
+
+    lookup dev2_dflt_blws_decomposeNuktaGlyphsWithRakaar_D {
+        sub [ka-deva pha-deva ya-deva] rakar-deva.diagonal nukta-deva' [uMatra-deva uuMatra-deva] nukta-deva by NULL;
+    } dev2_dflt_blws_decomposeNuktaGlyphsWithRakaar_D;
+
     lookup dev2_dflt_mar_nep_blws_umatra_short {
-		lookupflag 0;
-        sub [tt_tta-deva tt_ttha-deva tth_ttha-deva dd_dda-deva dd_ddha-deva ddh_ddha-deva nga-deva cha-deva tta-deva ttha-deva dda-deva ddha-deva lla-deva llla-deva gga-deva jja-deva ddda-deva bba-deva la-deva.loclMAR d_ga-deva d_gha-deva d_da-deva d_dha-deva d_ba-deva d_bha-deva d_ra-deva d_va-deva h_ra-deva h_la-deva h_va-deva h_nna-deva h_na-deva] [uMatra-deva uuMatra-deva]' by [uMatra-deva.alt uuMatra-deva.alt];
-        sub rakar-deva [uMatra-deva uuMatra-deva]' by [uMatra-deva.alt uuMatra-deva.alt];
+        sub [tt_tta-deva tt_ttha-deva tth_ttha-deva dd_dda-deva dd_ddha-deva ddh_ddha-deva nga-deva cha-deva tta-deva ttha-deva dda-deva ddha-deva lla-deva llla-deva gga-deva jja-deva ddda-deva bba-deva la-deva.loclMAR ng_ga-deva d_ga-deva d_gha-deva d_da-deva d_dha-deva d_ba-deva d_bha-deva d_ra-deva d_va-deva h_ra-deva h_la-deva h_va-deva h_nna-deva h_na-deva] [uMatra-deva uuMatra-deva]' by [uMatra-deva.alt uuMatra-deva.alt];
+        sub [rakar-deva rakar_nukta-deva] [uMatra-deva uuMatra-deva]' by [uMatra-deva.alt uuMatra-deva.alt];
     } dev2_dflt_mar_nep_blws_umatra_short;
 
     lookup dev2_dflt_blws_umatra_narrow {
-        lookupflag MarkAttachmentType @dev2_dflt_blws_mark_attachment_class_uMatra;
-        sub [jha-deva h_ma-deva h_ya-deva] uMatra-deva' by uMatra-deva.narrow;
+        lookupflag UseMarkFilteringSet [@dev2_UMFS_rakars @dev2_UMFS_uMatras];
+        #lookupflag UseMarkFilteringSet ;
+        sub [jh-deva.alt2 j_ny-deva.alt2] [rakar-deva.diagonal] [aaMatra-deva.post.alt] uMatra-deva' by uMatra-deva.narrow;
+        sub [tha-deva] [rakar-deva.diagonal.alt] uMatra-deva' by uMatra-deva.narrow;
+        sub [ka-deva dha-deva pha-deva ya-deva] [rakar-deva.diagonal] uMatra-deva' by uMatra-deva.narrow;
+        sub [jha-deva k_ss_ra-deva h_ma-deva h_ya-deva j_nya-deva] uMatra-deva' by uMatra-deva.narrow;
     } dev2_dflt_blws_umatra_narrow;
 
     language MAR;
-    lookup dev2_dflt_mar_nep_blws_botom_mark_ligatures;
-    lookup dev2_dflt_mar_nep_blws_rakaar_mark;
-    #lookup dev2_dflt_decompose_nukta_glyphs_in_rakaar_context;
-    lookup dev2_dflt_mar_nep_blws_umatra_short;
     lookup dev2_mar_blws_umatra_narrow {
-        lookupflag MarkAttachmentType @dev2_dflt_blws_mark_attachment_class_uMatra;
-        sub jha-deva uMatra-deva' by uMatra-deva.narrow;
+        lookupflag UseMarkFilteringSet @dev2_UMFS_uMatras;
         sub sha-deva.loclMAR uMatra-deva' by uMatra-deva.narrow;
     } dev2_mar_blws_umatra_narrow;
 
     language NEP;
-    lookup dev2_dflt_mar_nep_blws_botom_mark_ligatures;
-    lookup dev2_dflt_mar_nep_blws_rakaar_mark;
-    #lookup dev2_dflt_decompose_nukta_glyphs_in_rakaar_context;
-    lookup dev2_dflt_mar_nep_blws_umatra_short;
-    lookup dev2_dflt_blws_umatra_narrow;
 } blws;
 
 feature psts {
@@ -1039,3 +1116,10 @@ feature rclt {
     language NEP;
     lookup dev2_dflt_mar_nep_rclt_alternate_ematra;
 } rclt;
+
+feature tnum {
+    script dev2;
+    sub @dev2_proportional_numerals by @dev2_tabular_numerals;
+    language MAR;
+    language NEP;
+} tnum;

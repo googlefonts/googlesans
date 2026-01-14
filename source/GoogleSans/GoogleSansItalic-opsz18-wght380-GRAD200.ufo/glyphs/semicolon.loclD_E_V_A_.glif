@@ -16,11 +16,23 @@
       <point x="92" y="416"/>
       <point x="120" y="388"/>
     </contour>
-    <contour>
-      <point x="-50" y="-98" type="line"/>
-      <point x="27" y="-98" type="line"/>
-      <point x="160" y="122" type="line"/>
-      <point x="57" y="122" type="line"/>
-    </contour>
+    <component base="comma.loclDEVA" xOffset="30"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>comma.loclDEVA</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Punctuation</string>
+    </dict>
+  </lib>
 </glyph>

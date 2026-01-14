@@ -2,6 +2,10 @@
 <glyph name="za-deva" format="2">
   <advance width="830"/>
   <unicode hex="095B"/>
+  <anchor x="652" y="0" name="bottom"/>
+  <anchor x="638" y="182" name="bottomright"/>
+  <anchor x="92" y="-10" name="nukta"/>
+  <anchor x="780" y="671" name="top"/>
   <outline>
     <component base="ja-deva"/>
     <component base="nukta-deva" xOffset="74" yOffset="126"/>
@@ -19,6 +23,10 @@
           <string>nukta-deva</string>
         </dict>
       </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
     </dict>
   </lib>
 </glyph>

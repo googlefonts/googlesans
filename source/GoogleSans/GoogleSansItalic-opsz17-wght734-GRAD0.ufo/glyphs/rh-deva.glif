@@ -1,6 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="rh-deva" format="2">
   <advance width="658"/>
+  <anchor x="345" y="-204" name="bottom"/>
+  <anchor x="345" y="-122" name="nukta"/>
+  <anchor x="555" y="690" name="top"/>
   <outline>
     <component base="rha-deva"/>
     <component base="halant-deva" xOffset="155" yOffset="-254"/>
@@ -18,6 +21,10 @@
           <string>halant-deva</string>
         </dict>
       </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
     </dict>
   </lib>
 </glyph>

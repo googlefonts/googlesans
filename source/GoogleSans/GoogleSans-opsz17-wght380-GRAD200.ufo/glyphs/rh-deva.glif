@@ -1,8 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="rh-deva" format="2">
   <advance width="630"/>
+  <anchor x="351" y="-181" name="bottom"/>
+  <anchor x="351" y="-116" name="nukta"/>
+  <anchor x="460" y="679" name="top"/>
   <outline>
     <component base="rha-deva"/>
     <component base="halant-deva" xOffset="217" yOffset="-181"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
+    </dict>
+  </lib>
 </glyph>

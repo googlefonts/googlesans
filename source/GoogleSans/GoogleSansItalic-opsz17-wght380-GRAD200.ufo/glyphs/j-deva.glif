@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="j-deva" format="2">
   <advance width="570"/>
-  <anchor x="710" y="251" name="bottomright"/>
-  <anchor x="123" y="1" name="nukta"/>
+  <anchor x="726" y="231" name="bottomright"/>
+  <anchor x="142" y="1" name="nukta"/>
   <outline>
     <contour>
       <point x="351" y="87" type="curve" smooth="yes"/>
@@ -14,8 +14,8 @@
       <point x="508" y="402" type="curve"/>
       <point x="510" y="407" type="line"/>
       <point x="574" y="403" type="line"/>
-      <point x="762" y="403" type="line"/>
-      <point x="776" y="481" type="line"/>
+      <point x="772" y="403" type="line"/>
+      <point x="786" y="481" type="line"/>
       <point x="330" y="481" type="line"/>
       <point x="316" y="403" type="line"/>
       <point x="346" y="403" type="line" smooth="yes"/>
@@ -34,15 +34,19 @@
     </contour>
     <contour>
       <point x="44" y="607" type="line"/>
-      <point x="638" y="607" type="line"/>
-      <point x="651" y="679" type="line"/>
+      <point x="664" y="607" type="line"/>
+      <point x="677" y="679" type="line"/>
       <point x="57" y="679" type="line"/>
     </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>ja-deva</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
     </dict>
   </lib>
 </glyph>
