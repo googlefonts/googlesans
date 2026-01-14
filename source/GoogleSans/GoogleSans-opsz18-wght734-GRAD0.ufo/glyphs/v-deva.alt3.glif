@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="v-deva.alt3" format="2">
-  <advance width="392"/>
+  <advance width="333"/>
   <anchor x="408" y="209" name="bottomright"/>
   <anchor x="69" y="51" name="nukta"/>
   <outline>
@@ -22,9 +22,9 @@
       <point x="369" y="409"/>
       <point x="418" y="369"/>
       <point x="431" y="310" type="curve"/>
-      <point x="522" y="319" type="line"/>
-      <point x="510" y="431"/>
-      <point x="423" y="509"/>
+      <point x="511" y="319" type="line"/>
+      <point x="495" y="431"/>
+      <point x="420" y="509"/>
       <point x="293" y="509" type="curve" smooth="yes"/>
       <point x="157" y="509"/>
       <point x="62" y="421"/>
@@ -41,8 +41,14 @@
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
       <key>com.schriftgestaltung.Glyphs.glyph.leftMetricsKey</key>
       <string>va-deva</string>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
     </dict>
   </lib>
 </glyph>

@@ -2,6 +2,7 @@
 <glyph name="ka-deva" format="2">
   <advance width="902"/>
   <unicode hex="0915"/>
+  <guideline x="225" y="-30" angle="90"/>
   <anchor x="454" y="0" name="bottom"/>
   <anchor x="380" y="215" name="bottomright"/>
   <anchor x="225" y="-10" name="nukta"/>
@@ -79,4 +80,12 @@
       <point x="-20" y="679" type="line"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

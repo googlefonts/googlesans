@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="semicolon.loclDEVA" format="2">
-  <advance width="258"/>
+  <advance width="268"/>
   <outline>
     <contour>
       <point x="135" y="406" type="curve" smooth="yes"/>
@@ -16,7 +16,7 @@
       <point x="71" y="434"/>
       <point x="99" y="406"/>
     </contour>
-    <component base="comma.loclDEVA"/>
+    <component base="comma.loclDEVA" xOffset="2"/>
   </outline>
   <lib>
     <dict>
@@ -31,6 +31,8 @@
           <string>comma.loclDEVA</string>
         </dict>
       </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Punctuation</string>
     </dict>
   </lib>
 </glyph>

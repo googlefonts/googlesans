@@ -1,8 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ghh-deva" format="2">
   <advance width="302"/>
+  <anchor x="432" y="240" name="bottomright"/>
+  <anchor x="174" y="50" name="nukta"/>
   <outline>
     <component base="g-deva"/>
     <component base="nukta-deva" xOffset="89" yOffset="175"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.script</key>
+      <string>devanagari</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
+    </dict>
+  </lib>
 </glyph>

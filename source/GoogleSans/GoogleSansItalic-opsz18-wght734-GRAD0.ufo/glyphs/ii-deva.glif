@@ -2,9 +2,10 @@
 <glyph name="ii-deva" format="2">
   <advance width="578"/>
   <unicode hex="0908"/>
+  <anchor x="512" y="672" name="top"/>
   <outline>
     <component base="i-deva"/>
-    <component base="reph-deva" xOffset="598" yOffset="-2"/>
+    <component base="reph-deva" xOffset="288" yOffset="-2"/>
   </outline>
   <lib>
     <dict>
@@ -19,6 +20,10 @@
           <string>reph-deva</string>
         </dict>
       </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Matra</string>
     </dict>
   </lib>
 </glyph>

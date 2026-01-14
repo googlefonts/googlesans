@@ -1,8 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ddh-deva" format="2">
   <advance width="658"/>
+  <anchor x="348" y="-9" name="bottom"/>
+  <anchor x="345" y="-122" name="nukta"/>
+  <anchor x="555" y="690" name="top"/>
   <outline>
     <component base="ddha-deva"/>
     <component base="halant-deva" xOffset="204" yOffset="-9"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Halfform</string>
+    </dict>
+  </lib>
 </glyph>

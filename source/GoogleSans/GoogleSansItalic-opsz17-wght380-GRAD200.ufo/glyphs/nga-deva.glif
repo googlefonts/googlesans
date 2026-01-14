@@ -3,6 +3,10 @@
   <advance width="679"/>
   <unicode hex="0919"/>
   <guideline x="460" y="428" angle="0"/>
+  <anchor x="578" y="182" name="_top"/>
+  <anchor x="291" y="6" name="bottom"/>
+  <anchor x="259" y="-108" name="nukta"/>
+  <anchor x="510" y="679" name="top"/>
   <outline>
     <contour>
       <point x="524" y="607" type="line"/>
@@ -13,4 +17,12 @@
     <component base="anusvara-deva" xOffset="416" yOffset="-497"/>
     <component base="dda-deva"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Spacing</string>
+    </dict>
+  </lib>
 </glyph>

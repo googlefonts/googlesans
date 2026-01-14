@@ -1,0 +1,14 @@
+[meta]
+build_commit  = ""
+
+[input.features]
+locl = true
+tnum = true
+
+[input]
+script = "deva"
+language = "mr"
+comparison_mode = "full"
+text = [
+    "० १ २ ३ ४ ५ ६ ७ ८ ९" # Tabular Devanagari Numerals
+]

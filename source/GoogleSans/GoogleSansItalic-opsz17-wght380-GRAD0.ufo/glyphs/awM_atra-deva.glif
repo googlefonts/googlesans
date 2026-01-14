@@ -3,6 +3,7 @@
   <advance width="280"/>
   <unicode hex="094F"/>
   <guideline x="685" y="949" angle="0"/>
+  <anchor x="227" y="679" name="top"/>
   <outline>
     <contour>
       <point x="180" y="659" type="curve"/>
@@ -68,4 +69,12 @@
     </contour>
     <component base="aaMatra-deva"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Matra</string>
+    </dict>
+  </lib>
 </glyph>

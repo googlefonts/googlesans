@@ -2,6 +2,7 @@
 <glyph name="oCandraMatra-deva" format="2">
   <advance width="280"/>
   <unicode hex="0949"/>
+  <anchor x="283" y="654" name="top"/>
   <outline>
     <component base="aaMatra-deva"/>
     <component base="eCandraMatra-deva" xOffset="-233"/>
@@ -19,6 +20,10 @@
           <string>eCandraMatra-deva</string>
         </dict>
       </array>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Letter</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Matra</string>
     </dict>
   </lib>
 </glyph>
