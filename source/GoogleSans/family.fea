@@ -387,6 +387,34 @@ feature case {
     lookup armn_case_contextual_substitution;
 } case;
 
+
+feature liga {
+    sub f f b by f_f_b;
+    sub f f h by f_f_h;
+    sub f f i by f_f_i;
+    sub f f j by f_f_j;
+    sub f f k by f_f_k;
+    sub f f l by f_f_l;
+    sub f f t by f_f_t;
+    sub f b by f_b;
+    sub f f by f_f;
+    sub f h by f_h;
+    sub f i by f_i;
+    sub f j by f_j;
+    sub f k by f_k;
+    sub f l by f_l;
+    sub f t by f_t;
+    sub t f by t_f;
+    sub t t by t_t;
+    sub [G g] o o g l e underscore l o g o by Google.logo;
+    sub [G g] o o g l e l o g o l i g a t u r e by Google.logo;
+    sub G l o g o l i g a t u r e by G.logo;
+    sub o l o g o l i g a t u r e by o.logo;
+    sub g l o g o l i g a t u r e by g.logo;
+    sub l l o g o l i g a t u r e by l.logo;
+    sub e l o g o l i g a t u r e by e.logo;
+} liga;
+
 feature sups {
     # automatic
     sub zero by zerosuperior;
@@ -1466,6 +1494,25 @@ lookup smcp_letters {
     sub varia by varia.sc;
     sub oxia by oxia.sc;
     sub perispomeni by perispomeni.sc;
+    # ligature decomposition
+    sub f_f_b by f.sc f.sc b.sc;
+    sub f_f_h by f.sc f.sc h.sc;
+    sub f_f_j by f.sc f.sc j.sc;
+    sub f_f_k by f.sc f.sc k.sc;
+    sub f_f_l by f.sc f.sc l.sc;
+    sub f_f_t by f.sc f.sc t.sc;
+    sub r_f_f by r.sc f.sc f.sc;
+    sub f_b by f.sc b.sc;
+    sub f_f by f.sc f.sc;
+    sub f_h by f.sc h.sc;
+    sub f_j by f.sc j.sc;
+    sub f_k by f.sc k.sc;
+    sub f_l by f.sc l.sc;
+    sub f_t by f.sc t.sc;
+    sub r_f by r.sc f.sc;
+    sub r_t by r.sc t.sc;
+    sub t_f by t.sc f.sc;
+    sub t_t by t.sc t.sc;
 } smcp_letters;
 
 lookup smcp_NOR_localeng {
@@ -1473,11 +1520,15 @@ lookup smcp_NOR_localeng {
 } smcp_NOR_localeng;
 
 lookup smcp_i {
-    sub i by i.sc;   
+    sub i by i.sc;
+    sub f_f_i by f.sc f.sc i.sc;
+    sub f_i by f.sc i.sc;    
 } smcp_i;
 
 lookup smcp_TRK_i {
-    sub i by idotaccent.sc; 
+    sub i by idotaccent.sc;
+    sub f_f_i by f.sc f.sc idotaccent.sc;
+    sub f_i by f.sc idotaccent.sc;   
 } smcp_TRK_i;
 
 # This lookup needs to be after the main contents of both c2sc and smcp
@@ -1535,33 +1586,6 @@ feature smcp {
     language SKS;
     lookup smcp_NOR_localeng;
 } smcp;
-
-feature liga {
-    sub f f b by f_f_b;
-    sub f f h by f_f_h;
-    sub f f i by f_f_i;
-    sub f f j by f_f_j;
-    sub f f k by f_f_k;
-    sub f f l by f_f_l;
-    sub f f t by f_f_t;
-    sub f b by f_b;
-    sub f f by f_f;
-    sub f h by f_h;
-    sub f i by f_i;
-    sub f j by f_j;
-    sub f k by f_k;
-    sub f l by f_l;
-    sub f t by f_t;
-    sub t f by t_f;
-    sub t t by t_t;
-    sub [G g] o o g l e underscore l o g o by Google.logo;
-    sub [G g] o o g l e l o g o l i g a t u r e by Google.logo;
-    sub G l o g o l i g a t u r e by G.logo;
-    sub o l o g o l i g a t u r e by o.logo;
-    sub g l o g o l i g a t u r e by g.logo;
-    sub l l o g o l i g a t u r e by l.logo;
-    sub e l o g o l i g a t u r e by e.logo;
-} liga;
 
 feature dlig {
     # ===============
