@@ -7,7 +7,6 @@
 - Add updated subsets for Android (#711)
 
 ### Changed
-- Move the liga feature after smcp and c2sc (#713)
 - Import Devanagari bugfixes (#710) 
 
 ## v12.002
