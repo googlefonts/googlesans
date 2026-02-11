@@ -12,7 +12,7 @@ fonts {
   filename: "GoogleSans[GRAD,opsz,wght].ttf"
   post_script_name: "GoogleSans-Regular"
   full_name: "Google Sans Regular"
-  [google.fonts.copyright]: "Copyright 2017 Google, Inc. All Rights Reserved."
+  [google.fonts.copyright]: "Copyright 2025 The Google Sans Project Authors (https://github.com/googlefonts/googlesans)"
 }
 fonts {
   name: "Google Sans"
@@ -21,7 +21,7 @@ fonts {
   filename: "GoogleSans-Italic[GRAD,opsz,wght].ttf"
   post_script_name: "GoogleSans-Italic"
   full_name: "Google Sans Italic"
-  [google.fonts.copyright]: "Copyright 2017 Google, Inc. All Rights Reserved."
+  [google.fonts.copyright]: "Copyright 2025 The Google Sans Project Authors (https://github.com/googlefonts/googlesans)"
 }
 subset: "adlam"
 subset: "arabic"
