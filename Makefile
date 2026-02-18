@@ -44,7 +44,7 @@ clean-ufo:
 # Compile
 # ------------------------------
 
-gs-static gs-vf gs-vf-vendor gs-compatible-masters gs-compatible-masters-upright gs-compatible-masters-italic gs-android:
+gs-static gs-vf gs-vf-vendor gs-compatible-masters gs-compatible-masters-upright gs-compatible-masters-italic gs-android gs-figma:
 	cd source && $(MAKE) $@
 
 gs-regular gs-medium gs-bold gs-italic gs-medium-italic gs-bold-italic:
@@ -143,7 +143,7 @@ metadata:
 .PHONY: all \
 black \
 clean clean-builds clean-ufo\
-gs-static gs-vf gs-android \
+gs-static gs-vf gs-android gs-figma \
 gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
 gs-vf-upright gs-vf-italic \
