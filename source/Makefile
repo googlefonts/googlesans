@@ -42,6 +42,7 @@ INTERMEDIATE_VARIABLE_DIR=$(FONT_BUILD_DIR)/.intermediate
 VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
 INTERPOLATABLE_BUILD_DIR=$(FONT_BUILD_DIR)/interpolatable
 ANDROID_BUILD_DIR=$(FONT_BUILD_DIR)/android
+FIGMA_BUILD_DIR=$(FONT_BUILD_DIR)/figma
 STAGING_DIR=GoogleSans/staging
 
 # Artifact paths
@@ -60,6 +61,9 @@ VARIABLE_ANDROID_UPRIGHT_TARGET=$(ANDROID_BUILD_DIR)/variable/GoogleSans[GRAD,op
 VARIABLE_ANDROID_UPRIGHT_CHARACTERS=../android/characters-roman-v4.txt
 VARIABLE_ANDROID_ITALIC_TARGET=$(ANDROID_BUILD_DIR)/variable/GoogleSans-Italic[GRAD,opsz,wght].ttf
 VARIABLE_ANDROID_ITALIC_CHARACTERS=../android/characters-italic-v4.txt
+
+VARIABLE_FIGMA_UPRIGHT_TARGET=$(FIGMA_BUILD_DIR)/GoogleSans[GRAD,opsz,wght].ttf
+VARIABLE_FIGMA_ITALIC_TARGET=$(FIGMA_BUILD_DIR)/GoogleSans-Italic[GRAD,opsz,wght].ttf
 
 # --------------------------------------------------------
 #  UFO intermediates and designspace paths
@@ -197,6 +201,26 @@ $(ANDROID_BUILD_DIR)/static/GoogleSansText-BoldItalic.ttf: $(VARIABLE_ANDROID_IT
 	$(PYTHON3_EXE) ../scripts/internal/cut-instances.py $(VARIABLE_ANDROID_ITALIC_TARGET) ../source/GoogleSans/GoogleSans-Italic.designspace $@
 	$(PYTHON3_EXE) ../scripts/internal/prune_font_binary.py $@
 
+gs-figma: $(VARIABLE_FIGMA_UPRIGHT_TARGET) $(VARIABLE_FIGMA_ITALIC_TARGET)
+
+$(VARIABLE_FIGMA_UPRIGHT_TARGET): $(VARIABLE_UPRIGHT_TARGET)
+# TODO: Run in venv?
+# TODO: Source dep?
+	gftools-rename-font \
+			$(VARIABLE_UPRIGHT_TARGET)
+			--suffix \
+			" Variable" \
+			-o $(VARIABLE_FIGMA_UPRIGHT_TARGET)
+
+$(VARIABLE_FIGMA_ITALIC_TARGET): $(VARIABLE_ITALIC_TARGET)
+# TODO: Run in venv?
+# TODO: Source dep?
+	gftools-rename-font \
+			$(VARIABLE_ITALIC_TARGET)
+			--suffix \
+			" Variable" \
+			-o $(VARIABLE_FIGMA_ITALIC_TARGET)
+
 gs-vf-vendor: gs-vf-vendor-glyphs2designspace
 	$(foreach \
 		file, \
@@ -274,7 +298,7 @@ $(STAGING_DIR):
 gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
 gs-vf-upright gs-vf-italic gs-ufo2glyphs gs-compatible-masters \
-gs-compatible-masters-upright gs-compatible-masters-italic gs-android gs-android-vf gs-android-static
+gs-compatible-masters-upright gs-compatible-masters-italic gs-android gs-android-vf gs-android-static gs-figma
 
 # Disable built-in rules to speed up source globbing.
 MAKEFLAGS += --no-builtin-rules
