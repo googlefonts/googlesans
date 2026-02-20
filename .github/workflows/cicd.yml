@@ -292,10 +292,8 @@ jobs:
         with:
           version: 'latest'
           subcmd: 'check-profile'
-          # TODO: Any other profiles?
-          # TODO: Should these still be excluded?
-          args: '--auto-jobs -C --loglevel WARN -x case_mapping -x googlesans/opentype/BASE qa/check-googlesans.py'
-          path: 'build/GoogleSans/figma/variable/*.ttf'
+          args: '--auto-jobs -C --loglevel WARN -x case_mapping qa/check-googlesans.py'
+          path: 'build/GoogleSans/figma/*.ttf'
       - uses: actions/upload-artifact@v6
         with:
           name: figma-fonts
