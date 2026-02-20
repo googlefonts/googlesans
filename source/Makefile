@@ -204,19 +204,17 @@ $(ANDROID_BUILD_DIR)/static/GoogleSansText-BoldItalic.ttf: $(VARIABLE_ANDROID_IT
 gs-figma: $(VARIABLE_FIGMA_UPRIGHT_TARGET) $(VARIABLE_FIGMA_ITALIC_TARGET)
 
 $(VARIABLE_FIGMA_UPRIGHT_TARGET): $(VARIABLE_UPRIGHT_TARGET)
-# TODO: Run in venv?
-# TODO: Source dep?
+	mkdir -p $(FIGMA_BUILD_DIR)
 	gftools-rename-font \
-			$(VARIABLE_UPRIGHT_TARGET)
+			$(VARIABLE_UPRIGHT_TARGET) \
 			--suffix \
 			" Variable" \
 			-o $(VARIABLE_FIGMA_UPRIGHT_TARGET)
 
 $(VARIABLE_FIGMA_ITALIC_TARGET): $(VARIABLE_ITALIC_TARGET)
-# TODO: Run in venv?
-# TODO: Source dep?
+	mkdir -p $(FIGMA_BUILD_DIR)
 	gftools-rename-font \
-			$(VARIABLE_ITALIC_TARGET)
+			$(VARIABLE_ITALIC_TARGET) \
 			--suffix \
 			" Variable" \
 			-o $(VARIABLE_FIGMA_ITALIC_TARGET)
