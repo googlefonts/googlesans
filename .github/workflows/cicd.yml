@@ -309,7 +309,7 @@ jobs:
         run: |
           zip_name="GoogleSans-${{ steps.vars.outputs.tag }}.zip"
           echo "zip-name=$zip_name" >> "$GITHUB_OUTPUT"
-          zip "$zip_name" -r build/GoogleSans
+          zip -9 "$zip_name" -r build/GoogleSans
       - name: Upload Release Asset
         uses: svenstaro/upload-release-action@v2
         with:
