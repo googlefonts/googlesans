@@ -62,8 +62,8 @@ VARIABLE_ANDROID_UPRIGHT_CHARACTERS=../android/characters-roman-v4.txt
 VARIABLE_ANDROID_ITALIC_TARGET=$(ANDROID_BUILD_DIR)/variable/GoogleSans-Italic[GRAD,opsz,wght].ttf
 VARIABLE_ANDROID_ITALIC_CHARACTERS=../android/characters-italic-v4.txt
 
-VARIABLE_FIGMA_UPRIGHT_TARGET=$(FIGMA_BUILD_DIR)/GoogleSans[GRAD,opsz,wght].ttf
-VARIABLE_FIGMA_ITALIC_TARGET=$(FIGMA_BUILD_DIR)/GoogleSans-Italic[GRAD,opsz,wght].ttf
+VARIABLE_FIGMA_UPRIGHT_TARGET=$(FIGMA_BUILD_DIR)/GoogleSansVariable[GRAD,opsz,wght].ttf
+VARIABLE_FIGMA_ITALIC_TARGET=$(FIGMA_BUILD_DIR)/GoogleSansVariable-Italic[GRAD,opsz,wght].ttf
 
 # --------------------------------------------------------
 #  UFO intermediates and designspace paths
