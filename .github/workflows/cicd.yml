@@ -13,8 +13,9 @@ on:
       # pull_request).
       - "build/**" # Push events to branches matching refs/heads/build/[ANYTHING]
       - "build-*" # Push events to branches matching refs/heads/build-[ANYTHING]
-    tags:
-      - "v*" # Push events to matching v*, i.e. v9.000 and v10.001rc1
+  release:
+    # A release, pre-release, or draft of a release was published
+    types: [published]
   # Run on all PRs. Runs a limited set of jobs by default to save time.
   pull_request:
 
@@ -264,9 +265,7 @@ jobs:
           path: 'build/GoogleSans/android'
 
   release:
-    # only run if the commit is tagged...
-    if: startsWith(github.ref, 'refs/tags/v')
-    # ... and both the lint and test jobs completed successfully
+    if: ${{ github.event_name == 'release' }}
     needs:
       - build-variable
       - check-variable
@@ -306,26 +305,13 @@ jobs:
       - name: Delete intermediate VFs
         run: rm -rf build/GoogleSans/.intermediate
       - name: Create build artifact zip archive
-        run: zip GoogleSans-${{ steps.vars.outputs.tag }}.zip -r build/GoogleSans
-      - name: Create Google Sans release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Google Sans ${{ github.ref }}
-          body: |
-            Please see the root of the repository for the CHANGELOG.md
-          draft: true  # Create a draft release for final review.
-          prerelease: false
+        id: release-archives
+        run: |
+          zip_name="GoogleSans-${{ steps.vars.outputs.tag }}.zip"
+          echo "zip-name=$zip_name" >> "$GITHUB_OUTPUT"
+          zip "$zip_name" -r build/GoogleSans
       - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: svenstaro/upload-release-action@v2
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./GoogleSans-${{ steps.vars.outputs.tag }}.zip
-          asset_name: GoogleSans-${{ steps.vars.outputs.tag }}.zip
-          asset_content_type: application/zip
+          file: ${{ steps.release-archives.outputs.zip-name }}
+          overwrite: true
