@@ -1,5 +1,12 @@
 # Google Sans Changelog
 
+## v13.001
+### New
+- Added Figma-specific variable font builds (#720)
+
+### Changed
+- Updated build workflow (#721)
+
 ## v13.000
 ### New
 - Updated IJ shaping (#563)
