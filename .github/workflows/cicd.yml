@@ -88,7 +88,7 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
@@ -138,7 +138,7 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
@@ -164,7 +164,7 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: static-fonts
           path: 'build/GoogleSans/static'
@@ -237,7 +237,7 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
@@ -280,7 +280,7 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
@@ -320,27 +320,27 @@ jobs:
         id: vars
         run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
       - name: Download variable fonts
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
       - name: Download static fonts
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: static-fonts
           path: 'build/GoogleSans/static'
       - name: Download interpolatable fonts
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: interpolatable-fonts
           path: 'build/GoogleSans/interpolatable'
       - name: Download Android fonts
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: android-fonts
           path: 'build/GoogleSans/android'
       - name: Download Figma fonts
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: figma-fonts
           path: 'build/GoogleSans/figma'
