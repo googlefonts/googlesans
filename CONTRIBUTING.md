@@ -5,6 +5,10 @@ at the end).
 
 Beyond the usual changes made using your font editor, there may be some additional changes to make in order for the pipeline to pass.
 
+## Formatting sources
+
+If you want any changes to the Designspace or UFOs, please run `scripts/gs-normalize-designspace.py` to reformat everything appropriately.
+
 ## Adding/Removing glyphs
 
 We track glyph set changes in the `qa/definitions` folder.
@@ -13,7 +17,7 @@ Please check the changes to the glyph sets are as you expect before committing.
 
 ## Shaping changes (feature code, respacing, et. al)
 
-We have a regression testing suite built on Harfbuzz that integrates with Fontbakery, which lives under `qa/shaping`.
+We have a regression testing suite built on HarfBuzz that integrates with Fontbakery, which lives under `qa/shaping`.
 To update the expectations, you need all the TTFs built, and then to run `update_all_shaping.sh` from within the `qa` folder.
 Please check the shaping changes match your expectations before committing.
 
@@ -43,7 +47,7 @@ frustration later on.
 # Code reviews
 
 All submissions, including submissions by project members, require review.
-We use Github pull requests for this purpose.
+We use GitHub pull requests for this purpose.
 
 ---
 
