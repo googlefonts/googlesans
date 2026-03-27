@@ -201,7 +201,7 @@ for source, lines in by_source.items():
         }
         }} arabicspace;
 
-        feature dist {{
+        feature locl {{
             script arab;
             {
             "\n".join(
@@ -210,8 +210,8 @@ for source, lines in by_source.items():
                 for line in [f"language {lang};", "lookup arabicspace;"]
             )
         }
-        }} dist;
-""".strip().splitlines()
+        }} locl;
+        """.strip().splitlines()
     )
 
     loc_from = mapping[source]
