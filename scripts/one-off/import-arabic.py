@@ -47,8 +47,10 @@ SKIP = {
     "percentbar",
     "question",
     "radical",
-    "slash",
     "dottedCircle",
+    # This isn't referenced by any features or glyphs, and is on the skip export
+    # list, so ignore.
+    "slash",
 }
 
 # Define sources and targets.
