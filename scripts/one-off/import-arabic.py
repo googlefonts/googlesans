@@ -44,13 +44,20 @@ SKIP = {
     "mark-ar",
     "parenleft",
     "parenright",
-    "percentbar",
     "question",
     "radical",
     "dottedCircle",
     # This isn't referenced by any features or glyphs, and is on the skip export
     # list, so ignore.
     "slash",
+}
+
+# NOTE: Only renames the glyph and references to it in composites. This is
+# sufficient for the glyphs currently defined here.
+RENAME = {
+    # Slightly different outlines; preserve as an alternate unless composites
+    # are updated.
+    "percentbar": "percentbar-ar",
 }
 
 # Define sources and targets.
@@ -109,9 +116,16 @@ for source_from in ds_from.sources:
             if glyph.name in SKIP:
                 continue
 
+            # Rename if required, while copying to allow mutation.
+            glyph = glyph.copy(RENAME.get(glyph.name, glyph.name))
+            assert glyph.name is not None
             assert glyph.name not in source_to.font, glyph.name
 
             glyph.clearAnchors()  # Handled by feature code
+            for component in glyph.components:
+                component.baseGlyph = RENAME.get(
+                    component.baseGlyph, component.baseGlyph
+                )
             source_to.font[glyph.name] = glyph
 
         # For compatibility checker, only:
