@@ -11,6 +11,7 @@ TODO: Continue to adapt in response to QA.
 
 import re
 from pathlib import Path
+from typing import Literal
 
 from fontTools.designspaceLib import DesignSpaceDocument
 from ufoLib2 import Font
@@ -79,7 +80,12 @@ name_to_tag = {
 ds_from.loadSourceFonts(Font.open)
 ufos_to = ds_to.loadSourceFonts(Font.open)
 
-space_changes = {}
+space_changes: dict[
+    # DI name (file stem)
+    str,
+    # Glyph name -> width change amount
+    dict[Literal["space", "thinspace", "hairspace"], float],
+] = {}
 
 # Copy every glyph to every target location that is a superset of the source axes.
 for source_from in ds_from.sources:
@@ -91,8 +97,12 @@ for source_from in ds_from.sources:
         for name, value in source_from.getFullDesignLocation(ds_from).items()
     }
 
-    space_from = source_from.font["space"].width
-    spaces_to = set()
+    # for glyph_name in ("space", "thinspace", "hairspace"):
+    space_from = {
+        glyph_name: source_from.font[glyph_name].width
+        for glyph_name in ("space", "thinspace", "hairspace")
+    }
+    spaces_to: dict[Literal["space", "thinspace", "hairspace"], set[float]] = {}
 
     for source_to in ds_to.sources:
         assert isinstance(source_to.font, Font)
@@ -108,7 +118,10 @@ for source_from in ds_from.sources:
         if not matches:
             continue
 
-        spaces_to.add(source_to.font["space"].width)
+        for glyph_name in ("space", "thinspace", "hairspace"):
+            spaces_to.setdefault(glyph_name, set()).add(
+                source_to.font[glyph_name].width
+            )
 
         for glyph in source_from.font:
             assert glyph.name is not None
@@ -133,9 +146,12 @@ for source_from in ds_from.sources:
             sorted(set(source_from.font.lib.get("public.skipExportGlyphs", [])) - SKIP)
         )
 
-    # Keep track of how /space needs its width adjusted too.
-    (space_to,) = spaces_to
-    space_changes[Path(source_from.path).stem] = space_from - space_to
+        # Keep track of how /space needs its width adjusted too.
+        for glyph_name, new_widths in spaces_to.items():
+            (space_to,) = new_widths
+            assert source_from.path is not None
+            di_space_changes = space_changes.setdefault(Path(source_from.path).stem, {})
+            di_space_changes[glyph_name] = space_from[glyph_name] - space_to
 
 
 # Skip or decompose the glyphs that the source does too.
@@ -173,11 +189,16 @@ mapping = {
     "GoogleSansArabicText-Bold": {"opsz": 17, "wght": 734},
 }
 for source, lines in by_source.items():
-    space_change = space_changes[source]
+    di_space_changes = space_changes[source]
     lines.extend(
         f"""
         lookup arabicspace {{
-            pos space {space_change};
+            {
+            "\n".join(
+                f"pos {glyph_name} {space_change};"
+                for glyph_name, space_change in di_space_changes.items()
+            )
+        }
         }} arabicspace;
 
         feature dist {{
