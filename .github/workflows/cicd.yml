@@ -67,7 +67,7 @@ jobs:
         run: |
           make setup
           . .venv/bin/activate && make -j gs-vf
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: variable-fonts
           path: |
@@ -146,7 +146,7 @@ jobs:
         run: |
           make setup
           . .venv/bin/activate && make -j gs-static
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: static-fonts
           path: 'build/GoogleSans/static'
@@ -216,7 +216,7 @@ jobs:
         run: |
           make setup
           . .venv/bin/activate && make -j gs-compatible-masters
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: interpolatable-fonts
           path: 'build/GoogleSans/interpolatable'
@@ -259,7 +259,7 @@ jobs:
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN -x case_mapping -x googlesans/opentype/os2/windescent -x googlesans/opentype/os2/winascent -x googlesans/opentype/BASE qa/check-googlesans.py'
           path: 'build/GoogleSans/android/static/*.ttf'
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: android-fonts
           path: 'build/GoogleSans/android'
@@ -295,7 +295,7 @@ jobs:
           subcmd: 'check-profile'
           args: '--auto-jobs -C --loglevel WARN -x case_mapping qa/check-googlesans.py'
           path: 'build/GoogleSans/figma/*.ttf'
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: figma-fonts
           path: 'build/GoogleSans/figma'
