@@ -10,11 +10,31 @@ TODO: Continue to adapt in response to QA.
 """
 
 import re
+from io import StringIO
 from pathlib import Path
 from typing import Literal
 
 from fontTools.designspaceLib import DesignSpaceDocument
+from fontTools.feaLib.ast import (
+    Element,
+    FeatureBlock,
+    FeatureFile,
+    GlyphClass,
+    GlyphClassDefStatement,
+    GlyphName,
+    LanguageStatement,
+    LanguageSystemStatement,
+    LigatureCaretByPosStatement,
+    LookupBlock,
+    LookupReferenceStatement,
+    ScriptStatement,
+    SinglePosStatement,
+    TableBlock,
+    ValueRecord,
+)
+from fontTools.feaLib.parser import Parser
 from ufoLib2 import Font
+from ufoLib2.objects import Anchor
 
 # These glyphs have outlines in both.
 # TODO: Which need kerning or components adjusting?
@@ -160,68 +180,128 @@ ds_to.lib["public.skipExportGlyphs"].extend(
 )
 # TODO: GDEF categories?
 
-# Use the direct output of the custom feature writers.
-by_source = {}
+# Use the direct output of the custom feature writers. This debug fea is
+# delineated by comment headers into the sources that each section came from.
+# We must split as a string line-by-line, otherwise the Parser will report
+# false-positive duplicate definitions across the boundaries.
+fea_by_source_raw: dict[str, list[str]] = {}
 current_source = None
-arabic_languages = set()
 for line in fea_from.strip().splitlines():
     header = re.match(r"\A### (.+) ###\Z", line)
-    languagesystem = re.match(r"\Alanguagesystem (.+) (.+)\Z", line)
     if header:
         current_source = header.group(1)
     else:
-        if languagesystem:
-            # Only keep Arabic language systems.
-            if languagesystem.group(1) != "arab":
-                continue
-            else:
-                arabic_languages.add(languagesystem.group(2))
-        by_source.setdefault(current_source, []).append(line)
+        assert current_source is not None
+        fea_by_source_raw.setdefault(current_source, []).append(line)
 
-assert len(by_source) == 4
+# Parsing can now occur.
+fea_by_source: dict[str, FeatureFile] = {
+    source: Parser(StringIO("\n".join(lines))).parse()
+    for source, lines in fea_by_source_raw.items()
+}
+assert len(fea_by_source) == 4
 
-
-# Create a feature to adjust the advance of /space, and write the feature files.
+# Process the features further to adjust the advance of spaces, extract some
+# GDEF information, and write the feature files.
 mapping = {
     "GoogleSansArabic-Regular": {"opsz": 18, "wght": 380},
     "GoogleSansArabic-Bold": {"opsz": 18, "wght": 734},
     "GoogleSansArabicText-Regular": {"opsz": 17, "wght": 380},
     "GoogleSansArabicText-Bold": {"opsz": 17, "wght": 734},
 }
-for source, lines in by_source.items():
+for source, fea in fea_by_source.items():
+    # Extract GDEF and languagesystem information, then omit these from the fea.
+    kept_elements: list[Element] = []
+    categories: dict[str, str] | None = None
+    ligature_carets: dict[str, list[int]] = {}
+    arabic_languages: set[str] = set()
+    for element in fea.statements:
+        if isinstance(element, LanguageSystemStatement):
+            # Only Arabic languagesystem statements must be added to avoid
+            # duplication. In addition, note the specific languages, for
+            # registering our new locl feature later.
+            if element.script == "arab":
+                arabic_languages.add(element.language)
+            else:
+                continue
+        elif isinstance(element, TableBlock) and element.name == "GDEF":
+            # These must be stored in a <lib> key instead of in the feature
+            # files otherwise ufo2ft will not create the automatic GDEF for all
+            # other writing systems.
+            for element in element.statements:
+                if isinstance(element, GlyphClassDefStatement):
+                    assert categories is None
+                    categories = {}
+                    assert isinstance(element.baseGlyphs, GlyphClass)
+                    for glyph in element.baseGlyphs.glyphs:
+                        assert isinstance(glyph, str)
+                        assert glyph not in categories
+                        categories[glyph] = "base"
+                    assert isinstance(element.markGlyphs, GlyphClass)
+                    for glyph in element.markGlyphs.glyphs:
+                        assert isinstance(glyph, str)
+                        assert glyph not in categories
+                        categories[glyph] = "mark"
+                    assert isinstance(element.ligatureGlyphs, GlyphClass)
+                    for glyph in element.ligatureGlyphs.glyphs:
+                        assert isinstance(glyph, str)
+                        assert glyph not in categories
+                        categories[glyph] = "ligature"
+                    assert isinstance(element.componentGlyphs, GlyphClass)
+                    for glyph in element.componentGlyphs.glyphs:
+                        assert isinstance(glyph, str)
+                        assert glyph not in categories
+                        categories[glyph] = "component"
+                elif isinstance(element, LigatureCaretByPosStatement):
+                    assert isinstance(element.glyphs, GlyphName)
+                    assert element.glyphs.glyph not in ligature_carets
+                    ligature_carets[element.glyphs.glyph] = element.carets
+                else:
+                    assert False, f"Unrecognised GDEF element: {type(element)}"
+            continue
+        kept_elements.append(element)
+    assert categories is not None
+
     di_space_changes = space_changes[source]
-    lines.extend(
-        f"""
-        lookup arabicspace {{
-            {
-            "\n".join(
-                f"pos {glyph_name} {space_change};"
-                for glyph_name, space_change in di_space_changes.items()
-            )
-        }
-        }} arabicspace;
 
-        feature locl {{
-            script arab;
-            {
-            "\n".join(
-                line
-                for lang in sorted(arabic_languages)
-                for line in [f"language {lang};", "lookup arabicspace;"]
-            )
-        }
-        }} locl;
-        """.strip().splitlines()
-    )
+    # Create locl feature to adjust spaces for Arabic.
+    spaces_lookup = LookupBlock("arabicspace")
+    spaces_lookup.statements = [
+        SinglePosStatement(
+            [(GlyphName(glyph_name), ValueRecord(xAdvance=space_change))],
+            prefix=[],
+            suffix=[],
+            forceChain=False,
+        )
+        for glyph_name, space_change in di_space_changes.items()
+    ]
+    kept_elements.append(spaces_lookup)
 
+    locl_fea = FeatureBlock("locl")
+    locl_fea.statements = [
+        ScriptStatement("arab"),
+        *(
+            statement
+            for lang in sorted(arabic_languages)
+            for statement in (
+                LanguageStatement(lang),
+                LookupReferenceStatement(spaces_lookup),
+            )
+        ),
+    ]
+    kept_elements.append(locl_fea)
+    fea.statements = kept_elements
+
+    # Write feature file.
     loc_from = mapping[source]
     path = Path(
         "source",
         "GoogleSans",
         f"arabic-opsz{loc_from['opsz']}-wght{loc_from['wght']}.fea",
     )
-    path.write_text("\n".join(lines))
+    path.write_text(fea.asFea())
 
+    # Add feature file and GDEF information to all relevant UFOs.
     for source_to in ds_to.sources:
         assert isinstance(source_to.font, Font)
         if source_to.layerName is not None:
@@ -236,7 +316,22 @@ for source, lines in by_source.items():
         if not matches:
             continue
 
-        source_to.font.features.text += f"include({path.name})\n"
+        ufo_cats = source_to.font.lib["public.openTypeCategories"]
+        for glyph, category in categories.items():
+            if glyph in SKIP:
+                continue
+            assert glyph not in ufo_cats
+            ufo_cats[glyph] = category
+
+        for glyph in source_to.font:
+            assert glyph.name is not None
+            if glyph.name in SKIP:
+                continue
+            if carets := ligature_carets.get(glyph.name):
+                for idx, x in enumerate(sorted(carets, reverse=True)):
+                    glyph.appendAnchor(Anchor(x=x, name=f"caret_{idx + 1}", y=0))
+
+        source_to.font.features.text += f"include({path.name});\n"
 
 # Save everything.
 for ufo in ufos_to:
