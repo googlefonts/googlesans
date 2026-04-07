@@ -1,13 +1,16 @@
-"""
-Proof-of-concept import of Arabic.
-
-After QA, the final goal is to have a record of the equivalent steps that would
-be taken in a font editor in a literate programming style. In particular, there
-are too many steps that would need manually undone to use an off-the-shelf merge
-tool.
-
-TODO: Continue to adapt in response to QA.
-"""
+# Copyright 2026 Google Sans Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 import re
 from io import StringIO
@@ -83,13 +86,13 @@ RENAME = {
 
 # Define sources and targets.
 ds_from = DesignSpaceDocument.fromfile(
-    Path("..", "googlesans-arabic", "masters", "GoogleSansArabic.designspace")
+    Path("../Subfamilies/Arabic", "masters", "GoogleSansArabic.designspace")
 )
 ds_to = DesignSpaceDocument.fromfile(
     Path("source", "GoogleSans", "GoogleSans.designspace")
 )
 fea_from = Path(
-    "..", "googlesans-arabic", "build", "arabic", "GoogleSansArabic.fea"
+    "..", "Subfamilies/Arabic", "build", "arabic", "GoogleSansArabic.fea"
 ).read_text()
 
 name_to_tag = {
@@ -178,7 +181,6 @@ for source_from in ds_from.sources:
 ds_to.lib["public.skipExportGlyphs"].extend(
     sorted(set(ds_from.lib.get("public.skipExportGlyphs", [])) - SKIP)
 )
-# TODO: GDEF categories?
 
 # Use the direct output of the custom feature writers. This debug fea is
 # delineated by comment headers into the sources that each section came from.
