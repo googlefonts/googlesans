@@ -47,17 +47,20 @@ STATIC_UPRIGHT_FEA = [
     "dist",
     "dlig",
     "dnom",
+    "fina",
     "frac",
     "half",
     "haln",
     "hist",
     "init",
+    "isol",
     "jalt",
     "kern",
     "liga",
     "lnum",
     "locl",
     "mark",
+    "medi",
     "mkmk",
     "nukt",
     "numr",
@@ -71,6 +74,7 @@ STATIC_UPRIGHT_FEA = [
     "rkrf",
     "rlig",
     "rphf",
+    "rtlm",
     "sinf",
     "smcp",
     "ss01",
@@ -164,17 +168,20 @@ VAR_UPRIGHT_FEA = [
     "dist",
     "dlig",
     "dnom",
+    "fina",
     "frac",
     "half",
     "haln",
     "hist",
     "init",
+    "isol",
     "jalt",
     "kern",
     "liga",
     "lnum",
     "locl",
     "mark",
+    "medi",
     "mkmk",
     "nukt",
     "numr",
@@ -188,6 +195,7 @@ VAR_UPRIGHT_FEA = [
     "rkrf",
     "rlig",
     "rphf",
+    "rtlm",
     "sinf",
     "smcp",
     "ss01",
@@ -491,9 +499,12 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
                     try:
                         expected = shaped_texts_expected[key]
                     except KeyError as e:
-                        yield FAIL, (
-                            f"{shaping_file}: No entry found for {filename.name}, "
-                            f" instance {e}"
+                        yield (
+                            FAIL,
+                            (
+                                f"{shaping_file}: No entry found for {filename.name}, "
+                                f" instance {e}"
+                            ),
                         )
                         continue
                     if shaped_text != expected:
@@ -503,12 +514,15 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
                         shaped_texts_expected_str = textwrap.indent(
                             "\n".join(expected), "\t  "
                         )
-                        yield FAIL, (
-                            f"{shaping_file}: Expected and actual shaping not matching."
-                            f"\n\tExpected for {key}:\n"
-                            f"{shaped_texts_expected_str}"
-                            "\n\tActual:\n"
-                            f"{shaped_texts_str}"
+                        yield (
+                            FAIL,
+                            (
+                                f"{shaping_file}: Expected and actual shaping not matching."
+                                f"\n\tExpected for {key}:\n"
+                                f"{shaped_texts_expected_str}"
+                                "\n\tActual:\n"
+                                f"{shaped_texts_str}"
+                            ),
                         )
             else:
                 assert isinstance(shaped_texts, list)
@@ -518,12 +532,15 @@ def com_google_fonts_check_googlesans_features_regression(ttFont, hb_font):
                 shaped_texts_expected_str = textwrap.indent(
                     "\n".join(shaped_texts_expected), "\t  "
                 )
-                yield FAIL, (
-                    f"{shaping_file}: Expected and actual shaping not matching."
-                    "\n\tExpected:\n"
-                    f"{shaped_texts_expected_str}"
-                    "\n\tActual:\n"
-                    f"{shaped_texts_str}"
+                yield (
+                    FAIL,
+                    (
+                        f"{shaping_file}: Expected and actual shaping not matching."
+                        "\n\tExpected:\n"
+                        f"{shaped_texts_expected_str}"
+                        "\n\tActual:\n"
+                        f"{shaped_texts_str}"
+                    ),
                 )
 
     if not shaping_file_found:
