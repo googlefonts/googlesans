@@ -24,6 +24,7 @@ from fontTools.feaLib.ast import (
     FeatureFile,
     GlyphClass,
     GlyphClassDefStatement,
+    GlyphClassDefinition,
     GlyphName,
     LanguageStatement,
     LanguageSystemStatement,
@@ -210,8 +211,10 @@ class SuffixingVisitor(Visitor):
     pass
 
 
-@SuffixingVisitor.register((LookupBlock, MarkClass))
-def visit(_visitor: SuffixingVisitor, obj: LookupBlock | MarkClass) -> None:
+@SuffixingVisitor.register((LookupBlock, MarkClass, GlyphClassDefinition))
+def visit(
+    _visitor: SuffixingVisitor, obj: LookupBlock | MarkClass | GlyphClassDefinition
+) -> None:
     if not obj.name.endswith("_arabic"):
         obj.name += "_arabic"
 
