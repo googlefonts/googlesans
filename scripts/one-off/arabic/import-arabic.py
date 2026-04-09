@@ -36,6 +36,7 @@ from fontTools.feaLib.ast import (
     ValueRecord,
 )
 from fontTools.feaLib.parser import Parser
+from fontTools.misc.visitor import Visitor
 from ufoLib2 import Font
 from ufoLib2.objects import Anchor
 
@@ -203,6 +204,19 @@ fea_by_source: dict[str, FeatureFile] = {
 }
 assert len(fea_by_source) == 4
 
+
+class SuffixingVisitor(Visitor):
+    pass
+
+
+@SuffixingVisitor.register(LookupBlock)
+def visit(_visitor: SuffixingVisitor, block: LookupBlock) -> None:
+    if not block.name.endswith("_arabic"):
+        block.name += "_arabic"
+
+
+visitor = SuffixingVisitor()
+
 # Process the features further to adjust the advance of spaces, extract some
 # GDEF information, and write the feature files.
 mapping = {
@@ -293,6 +307,8 @@ for source, fea in fea_by_source.items():
     ]
     kept_elements.append(locl_fea)
     fea.statements = kept_elements
+
+    visitor.visit(fea)
 
     # Write feature file.
     loc_from = mapping[source]
