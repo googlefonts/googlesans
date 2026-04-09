@@ -30,6 +30,7 @@ from fontTools.feaLib.ast import (
     LigatureCaretByPosStatement,
     LookupBlock,
     LookupReferenceStatement,
+    MarkClass,
     ScriptStatement,
     SinglePosStatement,
     TableBlock,
@@ -209,10 +210,10 @@ class SuffixingVisitor(Visitor):
     pass
 
 
-@SuffixingVisitor.register(LookupBlock)
-def visit(_visitor: SuffixingVisitor, block: LookupBlock) -> None:
-    if not block.name.endswith("_arabic"):
-        block.name += "_arabic"
+@SuffixingVisitor.register((LookupBlock, MarkClass))
+def visit(_visitor: SuffixingVisitor, obj: LookupBlock | MarkClass) -> None:
+    if not obj.name.endswith("_arabic"):
+        obj.name += "_arabic"
 
 
 visitor = SuffixingVisitor()
