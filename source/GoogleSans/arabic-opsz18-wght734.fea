@@ -4302,3 +4302,13 @@ feature locl {
     language dflt;
     lookup arabicspace_arabic;
 } locl;
+
+# Give automatic code a place to live; Arabic declares these features so we need
+# to give the generated code a placeholder so it still gets made
+feature mark {
+	# Automatic Code
+} mark;
+
+feature mkmk {
+	# Automatic Code
+} mkmk;
