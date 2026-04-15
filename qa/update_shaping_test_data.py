@@ -72,7 +72,12 @@ def shape_run(
             if pos.x_offset or pos.y_offset:
                 s += f"@{pos.x_offset},{pos.y_offset}"
             if pos.x_advance or pos.y_advance:
-                s += f"+{pos.x_advance},{pos.y_advance}"
+                # +x_advance, then ,y_advance if hb_glyph_position_t.y_advance
+                # is not 0
+                # https://harfbuzz.github.io/harfbuzz-hb-buffer.html#hb-buffer-serialize-glyphs
+                s += f"+{pos.x_advance}"
+                if pos.y_advance:
+                    s += f",{pos.y_advance}"
             out.append(s)
         return "|".join(out)
     elif shaping_comparison_mode is ComparisonMode.GLYPHSTREAM:
