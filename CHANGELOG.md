@@ -1,5 +1,9 @@
 # Google Sans Changelog
 
+## v13.002
+### Changed
+- Updated `.logo` and `.super` glyphs
+
 ## v13.001
 ### New
 - Added Figma-specific variable font builds (#720)
