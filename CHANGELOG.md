@@ -1,7 +1,7 @@
 # Google Sans Changelog
 
 ## v13.002
-### New
+### Changed
 - Updated `.logo` and `.super` glyphs
 
 ## v13.001
