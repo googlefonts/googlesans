@@ -122,6 +122,13 @@ for source_from in ds_from.sources:
         name_to_tag[name]: value
         for name, value in source_from.getFullDesignLocation(ds_from).items()
     }
+    skip_export_glyphs: set[str] = set(ds_from.lib.get("public.skipExportGlyphs", []))
+    component_glyphs: set[str] = {
+        component.baseGlyph
+        for glyph in source_from.font
+        for component in glyph.components
+    }
+    skip_export_glyphs -= component_glyphs
 
     # for glyph_name in ("space", "thinspace", "hairspace"):
     space_from = {
@@ -152,7 +159,7 @@ for source_from in ds_from.sources:
         for glyph in source_from.font:
             assert glyph.name is not None
 
-            if glyph.name in SKIP:
+            if glyph.name in SKIP or glyph.name in skip_export_glyphs:
                 continue
 
             # Rename if required, while copying to allow mutation.
@@ -360,3 +367,5 @@ for ufo in ufos_to:
     ufo.save()
 
 ds_to.write(ds_to.path)
+
+print("don't forget to normalise :)")
