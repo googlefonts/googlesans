@@ -133,11 +133,11 @@ for test_definition_path in sorted(ARABIC_TEST_PATH.glob("*.toml")):
         else:
             features_tup = None
 
-        test_input = test["input"]
         expectation_dict = next(
             test_case["expectation"]
             for test_case in expectation_cases
-            if test_case["input"] == test_input
+            # The test definition should be a matching subset of the test case
+            if test.items() <= test_case.items()
         )
 
         sldf = (
@@ -146,7 +146,7 @@ for test_definition_path in sorted(ARABIC_TEST_PATH.glob("*.toml")):
             test.get("direction", file_direction),
             features_tup,
         )
-        grouped_tests.setdefault(sldf, []).append((test_input, expectation_dict))
+        grouped_tests.setdefault(sldf, []).append((test["input"], expectation_dict))
         if note := test.get("note"):
             # Comments are copied manually as tomli-w doesn't support them
             print(sldf, test["input"], "# " + note)
