@@ -1,0 +1,115 @@
+{
+color = 3;
+glyphname = idieresis.sc;
+kernLeft = LAT_i_left.sc;
+kernRight = LAT_i_right.sc;
+layers = (
+{
+layerId = m001;
+shapes = (
+{
+ref = i.sc;
+},
+{
+pos = (-64,0);
+ref = dieresiscomb.sc;
+}
+);
+width = 281;
+},
+{
+layerId = m002;
+shapes = (
+{
+alignment = -1;
+pos = (-5,0);
+ref = i.sc;
+},
+{
+alignment = -1;
+pos = (-60,0);
+ref = dieresiscomb.sc;
+}
+);
+width = 229;
+},
+{
+layerId = m003;
+shapes = (
+{
+ref = i.sc;
+},
+{
+pos = (-60,0);
+ref = dieresiscomb.sc;
+}
+);
+width = 229;
+},
+{
+layerId = m004;
+shapes = (
+{
+ref = i.sc;
+},
+{
+pos = (-60,0);
+ref = dieresiscomb.sc;
+}
+);
+width = 229;
+},
+{
+layerId = m005;
+shapes = (
+{
+ref = i.sc;
+},
+{
+pos = (-67,0);
+ref = dieresiscomb.sc;
+}
+);
+width = 273;
+},
+{
+layerId = m006;
+shapes = (
+{
+ref = i.sc;
+},
+{
+pos = (-60,0);
+ref = dieresiscomb.sc;
+}
+);
+width = 229;
+},
+{
+layerId = m007;
+shapes = (
+{
+ref = i.sc;
+},
+{
+pos = (-60,0);
+ref = dieresiscomb.sc;
+}
+);
+width = 229;
+},
+{
+layerId = m008;
+shapes = (
+{
+ref = i.sc;
+},
+{
+pos = (-60,0);
+ref = dieresiscomb.sc;
+}
+);
+width = 229;
+}
+);
+}
