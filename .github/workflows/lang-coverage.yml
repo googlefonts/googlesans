@@ -4,13 +4,12 @@ on:
   push:
     branches:
       - main # Push events on main branch
-      - cldr-coverage # Push events on a cldr-coverage branch
 
 jobs:
-  cldr-coverage-support:
+  coverage-support:
     runs-on: googlefonts-64cores-256GB
     timeout-minutes: 30
-    name: PyICU Script and Writing System Coverage
+    name: Shaperglot Script and Writing System Coverage
     steps:
       - name: Check out the source repository
         uses: actions/checkout@v6
@@ -24,7 +23,8 @@ jobs:
         run: make setup
       - name: Build fonts
         run: .venv/bin/activate && make gs-vf-upright
-      - name: CLDR script/language coverage
-        uses: f-actions/cldr-coverage@master
-        with:
-          path: build/GoogleSans/variable/GoogleSans[GRAD,opsz,wght].ttf
+      - name: Shaperglot script/language coverage
+        run: |
+          python -m venv .venv-test
+          .venv-test/bin/pip install shaperglot
+          .venv-test/bin/shaperglot report build/GoogleSans/variable/GoogleSans[GRAD,opsz,wght].ttf
