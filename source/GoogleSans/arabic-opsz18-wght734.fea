@@ -1984,8 +1984,6 @@ feature mark {
             <anchor 107 337> mark @MC_top_arabic;
         pos base thinspace
             <anchor 54 337> mark @MC_top_arabic;
-        pos base dottedCircle
-            <anchor 328 577> mark @MC_top_arabic;
         pos base lellah-ar
             <anchor 746 1107> mark @MC_top_arabic;
         pos base lellah-ar.fina
@@ -2473,8 +2471,6 @@ feature mark {
             <anchor 218 0> mark @MC_bottom_arabic;
         pos base space
             <anchor 107 0> mark @MC_bottom_arabic;
-        pos base dottedCircle
-            <anchor 328 0> mark @MC_bottom_arabic;
         pos base lellah-ar
             <anchor 280 0> mark @MC_bottom_arabic;
         pos base lellah-ar.fina
@@ -2609,8 +2605,6 @@ feature mark {
     lookup mark2base_below_arabic {
         pos base space
             <anchor 106 0> mark @MC_below_arabic;
-        pos base dottedCircle
-            <anchor 328 0> mark @MC_below_arabic;
     } mark2base_below_arabic;
 
     lookup mark2base_waqf_arabic {
@@ -2626,8 +2620,6 @@ feature mark {
             <anchor 299 1328> mark @MC_waqf_arabic;
         pos base space
             <anchor 0 600> mark @MC_waqf_arabic;
-        pos base dottedCircle
-            <anchor 328 690> mark @MC_waqf_arabic;
     } mark2base_waqf_arabic;
 
     lookup mark2liga_top_arabic {
