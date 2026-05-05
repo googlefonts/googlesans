@@ -10,35 +10,21 @@ jobs:
   cldr-coverage-support:
     runs-on: googlefonts-64cores-256GB
     timeout-minutes: 30
-    strategy:
-      matrix:
-        python-version: ["3.12"]
     name: PyICU Script and Writing System Coverage
     steps:
-      - name: Configuration
-        id: config
-        uses: f-actions/font-setup@master
-        with:
-          projectname: "Google Sans"
-          dependpath: "requirements.txt"
-          py-version: ${{ matrix.python-version }}
-          buildcommand: "make gs-vf"
-      - name: Check out ${{ steps.config.outputs.projectname }} source repository
+      - name: Check out the source repository
         uses: actions/checkout@v6
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: ${{ steps.config.outputs.py-version }}
+          python-version: '3.12'
           cache: "pip"
           cache-dependency-path: "requirements*.txt"
       - name: Install Python build dependencies
-        uses: py-actions/py-dependency-install@v4
-        with:
-          update-wheel: "true"
-          update-setuptools: "true"
+        run: make setup
       - name: Build fonts
-        run: ${{ steps.config.outputs.buildcommand }}
+        run: .venv/bin/activate && make gs-vf-upright
       - name: CLDR script/language coverage
         uses: f-actions/cldr-coverage@master
         with:
-          path: "/github/workspace/build/GoogleSans/variable/GoogleSans[GRAD,opsz,wght].ttf"
+          path: build/GoogleSans/variable/GoogleSans[GRAD,opsz,wght].ttf
