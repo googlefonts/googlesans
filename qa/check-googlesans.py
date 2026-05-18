@@ -92,6 +92,8 @@ PROFILE = {
         "name/family_and_style_max_length",
         # https://github.com/googlefonts/googlesans/issues/712
         "smallcaps_before_ligatures",
+        # Arabic glyphs fail these but shape fine when feature code is ran
+        "empty_letters",
     ],
     "configuration_defaults": {
         "googlesans/opentype/os2/fsselectionbit7": {

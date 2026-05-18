@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="kashida-ar.wide" format="2">
+  <advance width="386"/>
+  <outline>
+    <contour>
+      <point x="0" y="0" type="line"/>
+      <point x="386" y="0" type="line"/>
+      <point x="386" y="93" type="line"/>
+      <point x="0" y="93" type="line"/>
+    </contour>
+    <component base="connection.r" xOffset="336"/>
+    <component base="connection.l"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>connection.r</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>
