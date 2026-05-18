@@ -1,0 +1,11 @@
+[input]
+script = "arab"
+direction = "ltr"
+text = [
+    "٠١٢٣٤٥٦٧٨٩",
+    "۰۱۲۳۴۵۶۷۸۹",
+    "0123456789",
+]
+
+[input.features]
+pnum = true
