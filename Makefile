@@ -112,6 +112,15 @@ test-vf:
 		--plugin qa/check-charset.py,qa/check-fea.py,qa/check-googlesans.py \
 		$(VARIABLE_BUILD_DIR)/*.ttf
 
+test-android:
+	@echo "==================================================="
+	@echo " `fontspector -V` Android font checks"
+	@echo "==================================================="
+	fontspector --loglevel warn --succinct \
+		--profile qa/check-googlesans.toml \
+		--plugin qa/check-charset.py,qa/check-fea.py,qa/check-googlesans.py \
+		$(FONT_BUILD_DIR)/android/*/*.ttf
+
 update-glyphset-defs:
 	python3 scripts/gs-update-glyphset-qa-files.py
 
@@ -150,7 +159,7 @@ gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
 gs-vf-upright gs-vf-italic \
 setup update-deps sync-deps list-deps \
-test test-static-expert test-vf-expert \
+test test-static test-vf test-android \
 autobase metadata
 
 # Disable built-in rules to speed up source globbing.

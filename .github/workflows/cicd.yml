@@ -88,31 +88,16 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
+      - name: Setup fontspector
+        uses: fonttools/setup-fontspector@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/download-artifact@v8
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
-      - name: Font Bakery GS profile tests
-        uses: f-actions/font-bakery@v3.2.0
-        with:
-          version: 'latest'
-          subcmd: 'check-profile'
-          args: '--auto-jobs -C --loglevel WARN qa/check-googlesans.py'
-          path: 'build/GoogleSans/variable/*.ttf'
-      - name: Font Bakery character set profile tests
-        uses: f-actions/font-bakery@v3.2.0
-        with:
-          version: 'latest'
-          subcmd: 'check-profile'
-          args: '--auto-jobs -C --loglevel WARN qa/check-charset.py'
-          path: 'build/GoogleSans/variable/*.ttf'
-      - name: Font Bakery feature tag and shaping tests
-        uses: f-actions/font-bakery@v3.2.0
-        with:
-          version: 'latest'
-          subcmd: 'check-profile'
-          args: '--auto-jobs -C --loglevel WARN qa/check-fea.py'
-          path: 'build/GoogleSans/variable/*.ttf'
+      - name: Fontspector tests
+        run: make test-vf
       - name: OpenType Sanitizer checks
         uses: f-actions/opentype-sanitizer@v3.1.0
         with:
@@ -164,31 +149,16 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
+      - name: Setup fontspector
+        uses: fonttools/setup-fontspector@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/download-artifact@v8
         with:
           name: static-fonts
           path: 'build/GoogleSans/static'
-      - name: Font Bakery GS profile tests
-        uses: f-actions/font-bakery@v3.2.0
-        with:
-          version: 'latest'
-          subcmd: 'check-profile'
-          args: '--auto-jobs -C --loglevel WARN qa/check-googlesans.py'
-          path: 'build/GoogleSans/static/*.ttf'
-      - name: Font Bakery character set profile tests
-        uses: f-actions/font-bakery@v3.2.0
-        with:
-          version: 'latest'
-          subcmd: 'check-profile'
-          args: '--auto-jobs -C --loglevel WARN qa/check-charset.py'
-          path: 'build/GoogleSans/static/*.ttf'
-      - name: Font Bakery feature tag and shaping tests
-        uses: f-actions/font-bakery@v3.2.0
-        with:
-          version: 'latest'
-          subcmd: 'check-profile'
-          args: '--auto-jobs -C --loglevel WARN qa/check-fea.py'
-          path: 'build/GoogleSans/static/*.ttf'
+      - name: Fontspector tests
+        run: make test-static
       - name: OpenType Sanitizer checks
         uses: f-actions/opentype-sanitizer@v3.1.0
         with:
@@ -237,32 +207,20 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
+      - name: Setup fontspector
+        uses: fonttools/setup-fontspector@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/download-artifact@v8
         with:
           name: variable-fonts
           path: 'build/GoogleSans'
-      - name: Build static fonts
+      - name: Build Android fonts
         run: |
           make setup
           . .venv/bin/activate && make -j gs-android
-      - name: Font Bakery GS profile tests (variable fonts)
-        uses: f-actions/font-bakery@v3.2.0
-        with:
-          version: 'latest'
-          subcmd: 'check-profile'
-          args: '--auto-jobs -C --loglevel WARN -x case_mapping -x googlesans/opentype/BASE qa/check-googlesans.py'
-          path: 'build/GoogleSans/android/variable/*.ttf'
-      - name: Font Bakery GS profile tests (static fonts)
-        uses: f-actions/font-bakery@v3.2.0
-        with:
-          version: 'latest'
-          subcmd: 'check-profile'
-          args: '--auto-jobs -C --loglevel WARN -x case_mapping -x googlesans/opentype/os2/windescent -x googlesans/opentype/os2/winascent -x googlesans/opentype/BASE qa/check-googlesans.py'
-          path: 'build/GoogleSans/android/static/*.ttf'
-      - uses: actions/upload-artifact@v7
-        with:
-          name: android-fonts
-          path: 'build/GoogleSans/android'
+      - name: Fontspector tests
+        run: make test-android
 
   build-and-check-figma:
     # Skip running in PRs to save time and resources. Create a 'build-*' branch
