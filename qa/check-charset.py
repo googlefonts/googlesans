@@ -66,20 +66,20 @@ def glyphset_contents(font_paths: list[Path]) -> CheckStatuses:
         if expected_glyphs == actual_glyphs:
             yield PASS, "Font glyphset matches its expected glyphset"
         else:
+            diff = "\n".join(
+                unified_diff(
+                    expected_glyphs,
+                    actual_glyphs,
+                    fromfile="glyphsetdef",
+                    tofile="ttFont.getGlyphOrder()",
+                    lineterm="",
+                )
+            )
             yield (
                 FAIL,
                 (
-                    "Font glyphset does not match its expected glyphset. Diffs:\n\n```diff\n{}\n```"
-                ).format(
-                    "\n".join(
-                        unified_diff(
-                            expected_glyphs,
-                            actual_glyphs,
-                            fromfile="glyphsetdef",
-                            tofile="ttFont.getGlyphOrder()",
-                            lineterm="",
-                        )
-                    ),
+                    "Font glyphset does not match its expected glyphset. "
+                    f"Diffs:\n\n```diff\n{diff}\n```"
                 ),
             )
 
