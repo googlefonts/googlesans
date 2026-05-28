@@ -92,23 +92,25 @@ update-deps:
 # Testing
 # ------------------------------
 
-test-fb: test-fb-static test-fb-vf
+test: test-static test-vf
 
-test-fb-static:
-	@echo "========================================================="
-	@echo " fontbakery v`fontbakery --version` static font checks"
-	@echo "========================================================="
-	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-googlesans.py $(STATIC_BUILD_DIR)/*.ttf
-	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-fea.py $(STATIC_BUILD_DIR)/*.ttf
-	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-charset.py $(STATIC_BUILD_DIR)/*.ttf
+test-static:
+	@echo "==================================================="
+	@echo " `fontspector -V` static font checks"
+	@echo "==================================================="
+	fontspector --loglevel warn --succinct \
+		--profile qa/check-googlesans.toml \
+		--plugin qa/check-charset.py,qa/check-fea.py,qa/check-googlesans.py \
+		$(STATIC_BUILD_DIR)/*.ttf
 
-test-fb-vf:
-	@echo "========================================================="
-	@echo " fontbakery v`fontbakery --version` variable font checks"
-	@echo "========================================================="
-	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-googlesans.py $(VARIABLE_BUILD_DIR)/*.ttf
-	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-fea.py $(VARIABLE_BUILD_DIR)/*.ttf
-	fontbakery check-profile --auto-jobs -C --loglevel WARN qa/check-charset.py $(VARIABLE_BUILD_DIR)/*.ttf
+test-vf:
+	@echo "==================================================="
+	@echo " `fontspector -V` variable font checks"
+	@echo "==================================================="
+	fontspector --loglevel warn --succinct \
+		--profile qa/check-googlesans.toml \
+		--plugin qa/check-charset.py,qa/check-fea.py,qa/check-googlesans.py \
+		$(VARIABLE_BUILD_DIR)/*.ttf
 
 update-glyphset-defs:
 	python3 scripts/gs-update-glyphset-qa-files.py
@@ -148,7 +150,7 @@ gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
 gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
 gs-vf-upright gs-vf-italic \
 setup update-deps sync-deps list-deps \
-test-fb test-fb-static-expert test-fb-vf-expert \
+test test-static-expert test-vf-expert \
 autobase metadata
 
 # Disable built-in rules to speed up source globbing.
