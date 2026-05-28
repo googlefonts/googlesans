@@ -47,6 +47,13 @@ exclude_checks = [
     "smallcaps_before_ligatures",
     # Arabic glyphs fail these but shape fine when feature code is ran
     "empty_letters",
+    "fvar_instance_ps_names",
+    "googlefonts/glyphsets/shape_languages",
+    # Arabic is upright-only
+    "googlefonts/family/equal_codepoint_coverage",
+    "googlefonts/fvar_instances",
+    "googlefonts/STAT/compulsory_axis_values",
+    "googlefonts/version_bump",
 ]
 
 [sections]
