@@ -41,7 +41,11 @@ from fontTools.ttLib import TTFont
 # Make Fontspector able to find the update_shaping_test_data package.
 sys.path.append(str(Path(__file__).parent.parent))
 
-from qa.update_shaping_test_data import ComparisonMode, Direction, shape_texts
+from qa.update_shaping_test_data import (  # noqa: E402
+    ComparisonMode,
+    Direction,
+    shape_texts,
+)
 
 STATIC_UPRIGHT_FEA = [
     "abvf",

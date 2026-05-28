@@ -143,28 +143,21 @@ def unicode_range_bits(font_path: Path) -> CheckStatuses:
                     entry[3] - entry[2] + 1 for entry in UNICODERANGE_DATA[bit]
                 )
                 if num_chars == 0:
+                    status = FAIL
                     set_unset = "0"
                     num_chars = "none"
-                    yield (
-                        FAIL,
-                        Message(
-                            "bad-range-bit",
-                            f"UnicodeRange bit {bit} '{range_name}' should be {set_unset} "
-                            f"because cmap has {num_chars} of the {range_size} codepoints "
-                            f"in this range.",
-                        ),
-                    )
                 else:
+                    status = WARN
                     set_unset = "1"
-                    yield (
-                        WARN,
-                        Message(
-                            "bad-range-bit",
-                            f"UnicodeRange bit {bit} '{range_name}' should be {set_unset} "
-                            f"because cmap has {num_chars} of the {range_size} codepoints "
-                            f"in this range.",
-                        ),
-                    )
+                yield (
+                    status,
+                    Message(
+                        "bad-range-bit",
+                        f"UnicodeRange bit {bit} '{range_name}' should be {set_unset} "
+                        f"because cmap has {num_chars} of the {range_size} codepoints "
+                        f"in this range.",
+                    ),
+                )
 
 
 # ================================================
