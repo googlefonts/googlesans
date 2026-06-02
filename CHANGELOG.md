@@ -3,7 +3,7 @@
 
 ## v14.000
 ### New
-- Added Arabic script support (#729)
+- Added Arabic script support (#729) for: Arabic, Baluchi, Kazakh, Pashto, Punjabi, Somali, Uyghur, Uzbek.
 
 
 ## v13.002
