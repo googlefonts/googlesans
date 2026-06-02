@@ -1,5 +1,11 @@
 # Google Sans Changelog
 
+
+## v14.000
+### New
+- Added Arabic script support (#729)
+
+
 ## v13.002
 ### Changed
 - Updated `.logo` and `.super` glyphs
