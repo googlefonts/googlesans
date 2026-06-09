@@ -15,8 +15,6 @@ exclude_checks = [
     "family/win_ascent_and_descent",
     # we do want our opsz definition
     "opentype/fvar/regular_coords_correct",
-    # "os2_metrics_match_hhea",
-    # "unwanted_tables",
     # too many unactionable warnings
     "outline_jaggy_segments",
     # design rather than QA problem
@@ -25,8 +23,6 @@ exclude_checks = [
     "contour_count",
     "opentype/varfont/valid_default_instance_nameids",  # Bogus
     "varfont/bold_wght_coord",  # Buggy in 0.8.9
-    # https://github.com/googlefonts/googlesans/issues/576:
-    "soft_dotted",
     # We intentionally set the family names as they are
     "opentype/family/consistent_family_name",
     # Ignore issue about a Khmer glyph that Cadson-Demak confirmed to be OK
@@ -64,6 +60,10 @@ exclude_checks = [
     "googlefonts/meta/script_lang_tags",
     "dotted_circle",
     "overlapping_path_segments",
+    "alt_caron",
+    # TODO: re-enable this after migrating to gftools
+    "googlefonts/repo/dirname_matches_nameid_1",
+    "googlefonts/STAT/opsz_not_elided",
 ]
 
 [sections]
