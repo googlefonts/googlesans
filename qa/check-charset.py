@@ -27,7 +27,6 @@ from pathlib import Path
 from fontspectorapi import (
     FAIL,
     PASS,
-    SKIP,
     CheckStatuses,
     Plugin,
     check,
@@ -50,11 +49,10 @@ GLYPH_DEFS_DIR = Path("qa", "definitions")
 )
 def glyphset_contents(font_paths: list[Path]) -> CheckStatuses:
     for font_path in font_paths:
-        ttf = TTFont(font_path)
-
-        if "Google Sans Flex TV" in ttf["name"].getDebugName(1):  # type: ignore
-            yield SKIP, "Font is not interesting to check."
+        if font_path.parent.parent.name == "android":
             continue
+
+        ttf = TTFont(font_path)
 
         glyph_def_name = font_path.name + ".glyphsetdef"
         glyph_def_path = GLYPH_DEFS_DIR / glyph_def_name
