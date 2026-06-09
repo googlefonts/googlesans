@@ -98,7 +98,7 @@ test-static:
 	@echo "==================================================="
 	@echo " `fontspector -V` static font checks"
 	@echo "==================================================="
-	fontspector --loglevel warn --succinct \
+	fontspector --loglevel warn --succinct --full-lists \
 		--profile qa/check-googlesans.toml \
 		--plugin qa/check-charset.py,qa/check-fea.py,qa/check-googlesans.py \
 		$(STATIC_BUILD_DIR)/*.ttf
@@ -107,7 +107,7 @@ test-vf:
 	@echo "==================================================="
 	@echo " `fontspector -V` variable font checks"
 	@echo "==================================================="
-	fontspector --loglevel warn --succinct \
+	fontspector --loglevel warn --succinct --full-lists \
 		--profile qa/check-googlesans.toml \
 		--plugin qa/check-charset.py,qa/check-fea.py,qa/check-googlesans.py \
 		$(VARIABLE_BUILD_DIR)/*.ttf
@@ -116,7 +116,7 @@ test-android:
 	@echo "==================================================="
 	@echo " `fontspector -V` Android font checks"
 	@echo "==================================================="
-	fontspector --loglevel warn --succinct \
+	fontspector --loglevel warn --succinct --full-lists \
 		--profile qa/check-googlesans.toml \
 		--plugin qa/check-charset.py,qa/check-fea.py,qa/check-googlesans.py \
 		$(FONT_BUILD_DIR)/android/*/*.ttf
