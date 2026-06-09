@@ -298,6 +298,10 @@ VAR_ITALICS_FEA = [
     rationale="Confirms that the font builds contain expected feature tags.",
 )
 def included_features(font_path: Path) -> CheckStatuses:
+    if font_path.parent.parent.name == "android":
+        yield SKIP, "this check doesn't support Android fonts"
+        return
+
     ttf = TTFont(font_path)
 
     match ("fvar" in ttf, "Italic" in font_path.stem):
@@ -341,12 +345,12 @@ def included_features(font_path: Path) -> CheckStatuses:
     rationale="But does it still shape the same?",
 )
 def features_regression(font_path: Path) -> CheckStatuses:
+    if font_path.parent.parent.name == "android":
+        yield SKIP, "this check doesn't support Android fonts"
+        return
+
     ttf = TTFont(font_path)
     hb_font = uharfbuzz.Face(font_path.read_bytes())  # type: ignore
-
-    if "Google Sans Flex TV" in ttf["name"].getDebugName(1):  # type: ignore
-        yield SKIP, "Font is not interesting to check."
-        return
 
     shaping_file_found = False
     shaping_basedir = Path("qa", "shaping")
