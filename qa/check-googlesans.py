@@ -107,6 +107,8 @@ def has_base_table(font_path: Path) -> CheckStatuses:
 
     if "BASE" in ttf:
         yield PASS, "BASE table present in font"
+    elif "android" == font_path.parent.parent.name:
+        yield PASS, "Android fonts shouldn't have a BASE table"
     else:
         yield FAIL, "Missing BASE table"
 
