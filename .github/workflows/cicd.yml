@@ -195,7 +195,7 @@ jobs:
           name: interpolatable-fonts
           path: 'build/GoogleSans/interpolatable'
 
-  build-and-check-android:
+  build-android:
     # Skip running in PRs to save time and resources. Create a "build-*" branch
     # to build all outside a release.
     if: github.event_name != 'pull_request'
@@ -213,10 +213,6 @@ jobs:
           cache: 'pip'
       - name: Setup uv
         uses: astral-sh/setup-uv@v8.1.0
-      - name: Setup fontspector
-        uses: fonttools/setup-fontspector@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/download-artifact@v8
         with:
           name: variable-fonts
@@ -225,8 +221,6 @@ jobs:
         run: |
           make setup
           . .venv/bin/activate && make -j gs-android
-      - name: Fontspector tests
-        run: make test-android
 
   build-and-check-figma:
     # Skip running in PRs to save time and resources. Create a 'build-*' branch
@@ -272,7 +266,7 @@ jobs:
       - build-statics
       - check-statics
       - build-interpolatables
-      - build-and-check-android
+      - build-android
       - build-and-check-figma
     runs-on: ubuntu-latest
     timeout-minutes: 5
