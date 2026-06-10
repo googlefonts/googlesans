@@ -345,7 +345,7 @@ def included_features(font_path: Path) -> CheckStatuses:
     rationale="But does it still shape the same?",
 )
 def features_regression(font_path: Path) -> CheckStatuses:
-    if font_path.parent.parent.name == "android":
+    if font_path.parent.parent.name == "android" or font_path.parent.name == "figma":
         yield SKIP, "this check doesn't support Android fonts"
         return
 
