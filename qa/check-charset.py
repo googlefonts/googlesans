@@ -49,7 +49,10 @@ GLYPH_DEFS_DIR = Path("qa", "definitions")
 )
 def glyphset_contents(font_paths: list[Path]) -> CheckStatuses:
     for font_path in font_paths:
-        if font_path.parent.parent.name == "android":
+        if (
+            font_path.parent.parent.name == "android"
+            or font_path.parent.name == "figma"
+        ):
             continue
 
         ttf = TTFont(font_path)
