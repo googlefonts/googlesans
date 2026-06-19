@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 10
     steps:
     - name: Checkout ${{ inputs.before }}
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         ref: ${{ inputs.before }}
     - name: Setup Python 3.12
@@ -39,7 +39,7 @@ jobs:
     timeout-minutes: 10
     steps:
     - name: Checkout ${{ inputs.after }}
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         ref: ${{ inputs.after }}
     - name: Setup Python 3.12
