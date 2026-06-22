@@ -1,0 +1,90 @@
+include_profiles = [
+    "googlefonts",
+    "gs-custom",
+    "gs-charset",
+    "gs-fea",
+]
+
+explicit_checks = [
+    "varfont/duplexed_axis_reflow",
+    "interpolation_issues",
+]
+
+exclude_checks = [
+    # replaced by custom checks
+    "family/win_ascent_and_descent",
+    # we do want our opsz definition
+    "opentype/fvar/regular_coords_correct",
+    # too many unactionable warnings
+    "outline_jaggy_segments",
+    # design rather than QA problem
+    "outline_semi_vertical",
+    # design rather than QA problem
+    "contour_count",
+    "opentype/varfont/valid_default_instance_nameids",  # Bogus
+    "varfont/bold_wght_coord",  # Buggy in 0.8.9
+    # We intentionally set the family names as they are
+    "opentype/family/consistent_family_name",
+    # Ignore issue about a Khmer glyph that Cadson-Demak confirmed to be OK
+    # https://github.com/googlefonts/googlesans/pull/656#issuecomment-3130940361
+    "base_has_width",
+    # Ignore mac names, Marianna confirmed we don't change the fonts at the moment
+    # https://github.com/googlefonts/googlesans/pull/656#issuecomment-3103220308
+    "no_mac_entries",
+    # Ignore family name issue, it's on purpose
+    # https://github.com/googlefonts/googlesans/pull/656#issuecomment-3103220308
+    "typographic_family_name",
+    # Not applicable to Google Sans fonts:
+    "fontdata_namecheck",
+    # We're not that worried about Microsoft Office support
+    # https://github.com/googlefonts/googlesans/issues/693#issuecomment-3480871914
+    "name/family_and_style_max_length",
+    # https://github.com/googlefonts/googlesans/issues/712
+    "smallcaps_before_ligatures",
+    # Arabic glyphs fail these but shape fine when feature code is ran
+    "empty_letters",
+    "fvar_instance_ps_names",
+    "googlefonts/glyphsets/shape_languages",
+    # Arabic is upright-only
+    "googlefonts/family/equal_codepoint_coverage",
+    "googlefonts/fvar_instances",
+    "googlefonts/STAT/compulsory_axis_values",
+    "googlefonts/version_bump",
+    "ligature_carets",
+    "math_signs_width",
+    "missing_small_caps_glyphs",
+    "soft_hyphen",
+    "valid_glyphnames",
+    "googlefonts/metadata/unreachable_subsetting",
+    "googlefonts/repo/vf_has_static_fonts",
+    "googlefonts/meta/script_lang_tags",
+    "dotted_circle",
+    "overlapping_path_segments",
+    "alt_caron",
+    # TODO: re-enable this after migrating to gftools
+    "googlefonts/repo/dirname_matches_nameid_1",
+    "googlefonts/STAT/opsz_not_elided",
+    "googlefonts/STAT/axisregistry",
+]
+
+[sections]
+"Google Sans Outline Checks" = [
+    "outline_jaggy_segments",
+    "outline_semi_vertical",
+]
+
+[field_values]
+# Note: all keys must be quoted as Fontspector requires flat keys here, whereas
+#       TOML interprets . as a subtable
+"hhea.ascender" = 966
+"hhea.descender" = -286
+"hhea.lineGap" = 0
+"OS/2.sTypoAscender" = 966  # Matching hhea
+"OS/2.sTypoDescender" = -286  # Matching hhea
+"OS/2.sTypoLineGap" = 0
+"OS/2.yStrikeoutPosition" = 306
+"OS/2.yStrikeoutSize" = 84
+"OS/2.ySubscriptYSize" = 600
+"OS/2.ySuperscriptYSize" = 600
+"post.underlinePosition" = -160
+"post.underlineThickness" = 84
