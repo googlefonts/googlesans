@@ -114,7 +114,7 @@ jobs:
           args: '--auto-jobs -C --loglevel WARN qa/check-fea.py'
           path: 'build/GoogleSans/variable/*.ttf'
       - name: OpenType Sanitizer checks
-        uses: f-actions/opentype-sanitizer@v3.1.0
+        uses: f-actions/opentype-sanitizer@v4.0.0
         with:
           path: 'build/GoogleSans/variable/*.ttf'
       - name: File size analysis
@@ -190,7 +190,7 @@ jobs:
           args: '--auto-jobs -C --loglevel WARN qa/check-fea.py'
           path: 'build/GoogleSans/static/*.ttf'
       - name: OpenType Sanitizer checks
-        uses: f-actions/opentype-sanitizer@v3.1.0
+        uses: f-actions/opentype-sanitizer@v4.0.0
         with:
           path: 'build/GoogleSans/static/*.ttf'
       - name: File size analysis
