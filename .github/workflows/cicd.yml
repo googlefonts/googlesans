@@ -101,7 +101,7 @@ jobs:
       - name: Fontspector tests
         run: make test-vf
       - name: OpenType Sanitizer checks
-        uses: f-actions/opentype-sanitizer@v3.1.0
+        uses: f-actions/opentype-sanitizer@v4.0.0
         with:
           path: 'build/GoogleSans/variable/*.ttf'
       - name: File size analysis
@@ -164,7 +164,7 @@ jobs:
       - name: Fontspector tests
         run: make test-static
       - name: OpenType Sanitizer checks
-        uses: f-actions/opentype-sanitizer@v3.1.0
+        uses: f-actions/opentype-sanitizer@v4.0.0
         with:
           path: 'build/GoogleSans/static/*.ttf'
       - name: File size analysis
