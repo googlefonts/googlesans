@@ -22,7 +22,7 @@ jobs:
       - name: Install Python build dependencies
         run: make setup
       - name: Build fonts
-        run: .venv/bin/activate && make gs-vf-upright
+        run: . .venv/bin/activate && make gs-vf-upright
       - name: Shaperglot script/language coverage
         run: |
           python -m venv .venv-test
