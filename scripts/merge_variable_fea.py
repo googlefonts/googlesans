@@ -103,8 +103,10 @@ DEVICE_SLOTS = ("xPlaDevice", "yPlaDevice", "xAdvDevice", "yAdvDevice")
 
 _GLYPH_CLASS_RE = re.compile(r"\[([^\]]+)\]")
 
+Location = dict[str, int | float]
 
-def parse_location(spec: str) -> dict:
+
+def parse_location(spec: str) -> Location:
     """'opsz=18,wght=400' -> {'opsz': 18, 'wght': 400} (int where integral)."""
     loc = {}
     for part in spec.split(","):
@@ -116,13 +118,13 @@ def parse_location(spec: str) -> dict:
     return loc
 
 
-def glyph_names_from_ufo(ufo_path: str) -> set:
+def glyph_names_from_ufo(ufo_path: str) -> set[str]:
     return set(UFOReader(ufo_path).getGlyphSet().keys())
 
 
 def parse_master(
-    frag_path: str, glyph_names: set, context: list, include_dir: str
-) -> list:
+    frag_path: str, glyph_names: set[str], context: list[str], include_dir: str
+) -> list[ast.Statement]:
     """Parse one fragment with prepended context includes; return only the
     fragment's own top-level statements (context statements sliced off)."""
     preamble = "".join(f"include({c});\n" for c in context)
@@ -140,7 +142,7 @@ def parse_master(
     return full.statements[n_ctx:]
 
 
-def meaningful(stmts: list) -> list:
+def meaningful(stmts: list[ast.Statement]) -> list[ast.Statement]:
     """Statements that carry structure/values (standalone comments dropped from
     pairing; they remain in the reference tree and so in the output)."""
     return [s for s in stmts if not isinstance(s, ast.Comment)]
@@ -150,7 +152,7 @@ def is_block(node) -> bool:
     return hasattr(node, "statements") and isinstance(node.statements, list)
 
 
-def block_header(node) -> tuple:
+def block_header(node) -> tuple[str, str | None, bool | None]:
     """Block identity independent of its body (and its body's comments)."""
     return (
         type(node).__name__,
@@ -200,20 +202,20 @@ def signature(stmt) -> str:
     )
 
 
-def shape(node) -> tuple:
+def shape(node) -> tuple[str, str | None, bool | None] | tuple[str, str]:
     """Per-statement alignment key: block header, or leaf signature."""
     if is_block(node):
         return block_header(node)
     return ("leaf", signature(node))
 
 
-def aligned(mlists: list) -> bool:
+def aligned(mlists: list[list[ast.Statement]]) -> bool:
     """True if every master has the same statement shapes in the same order."""
     shapes = [tuple(shape(s) for s in ml) for ml in mlists]
     return all(s == shapes[0] for s in shapes)
 
 
-def value_holders(stmt) -> list:
+def value_holders(stmt) -> list[ast.Anchor | ast.ValueRecord]:
     """Ordered Anchor/ValueRecord objects carrying mergeable numerics in `stmt`
     itself (not its child statements). [] for purely structural statements;
     ligature-caret positions are bare numbers, not holder objects, and are merged
@@ -237,7 +239,7 @@ def value_holders(stmt) -> list:
     return []
 
 
-def holder_slots(h) -> tuple:
+def holder_slots(h) -> tuple[str, ...]:
     """Numeric slot names on a value holder; raises on shapes the merge can't
     express (device tables, contourpoint anchors). NULL anchors never reach here:
     feaLib parses '<anchor NULL>' to a value-less component, so value_holders
@@ -270,7 +272,11 @@ def caret_holder(stmt):
     return None
 
 
-def _variabilize(vals: list, locations: list, where: str):
+def _variabilize(
+    vals: list[int | float | VariableScalar | None],
+    locations: list[Location],
+    where: str,
+):
     """One numeric value per master for a single slot. Returns a VariableScalar to
     write when the masters disagree, or None to leave the slot untouched (every
     master equal, or the slot is unset in every master). Raises if the slot is set
@@ -290,7 +296,11 @@ def _variabilize(vals: list, locations: list, where: str):
     return None
 
 
-def merge_holder_lists(holders_per_master: list, locations: list, where: str):
+def merge_holder_lists(
+    holders_per_master: list[list[ast.Anchor | ast.ValueRecord]],
+    locations: list[Location],
+    where: str,
+):
     """Merge parallel holders, mutating the reference master's holders: a numeric
     slot that differs across masters becomes a VariableScalar."""
     ref = holders_per_master[0]
@@ -302,7 +312,11 @@ def merge_holder_lists(holders_per_master: list, locations: list, where: str):
                 setattr(h0, slot, vs)
 
 
-def merge_caret_lists(carets_per_master: list, locations: list, where: str):
+def merge_caret_lists(
+    carets_per_master: list[list[int | float | VariableScalar]],
+    locations: list[Location],
+    where: str,
+):
     """Merge parallel ligature-caret lists, mutating the reference master's list: a
     caret position that differs across masters becomes a VariableScalar."""
     ref = carets_per_master[0]
@@ -315,7 +329,7 @@ def merge_caret_lists(carets_per_master: list, locations: list, where: str):
             ref[i] = vs
 
 
-def _markclass_run(stmts: list):
+def _markclass_run(stmts: list[ast.Statement]):
     """(lo, hi) inclusive span covering every MarkClassDefinition among `stmts`,
     or None if there are none. Comments may sit inside the run; any other kind of
     statement between two markClass defs means the block is non-contiguous."""
@@ -332,12 +346,12 @@ def _markclass_run(stmts: list):
     return lo, hi
 
 
-def _glyph_set(container) -> tuple:
+def _glyph_set(container) -> tuple[str, ...]:
     """Glyph names of a feaLib glyph container (GlyphName/GlyphClass/...)."""
     return tuple(container.glyphSet())
 
 
-def _decompose_run(run: list):
+def _decompose_run(run: list[ast.Statement]):
     """run -> ({(class, glyph): Anchor}, [(class, [glyphs])], {class: MarkClass})."""
     entries, groups, classes = {}, [], {}
     for s in run:
@@ -357,7 +371,7 @@ def _decompose_run(run: list):
     return entries, groups, classes
 
 
-def canonicalize_markclass_level(real_lists: list, where: str):
+def canonicalize_markclass_level(real_lists: list[list[ast.Statement]], where: str):
     """Reconcile markClass grouping divergence at one statement level: rewrite
     every master's markClass run in place to the reference master's grouping,
     splitting a group only where its glyphs' anchors diverge within some master.
@@ -404,7 +418,11 @@ def canonicalize_markclass_level(real_lists: list, where: str):
         rl[lo:hi + 1] = rebuilt[mi]
 
 
-def merge_level(real_lists: list, locations: list, where: str):
+def merge_level(
+    real_lists: list[list[ast.Statement]],
+    locations: list[Location],
+    where: str,
+):
     """Merge parallel statement lists for one level, recursing into blocks.
     Mutates the reference master's nodes (and, on divergence, every master's
     markClass run) in place."""
@@ -448,11 +466,11 @@ def merge_level(real_lists: list, locations: list, where: str):
 
 
 def merge_files(
-    input_files: list,
+    input_files: list[str],
     output_file: str,
-    locations: list,
+    locations: list[str],
     ufo: str,
-    context: list,
+    context: list[str],
     include_dir=None,
 ):
     if len(input_files) != len(locations):
