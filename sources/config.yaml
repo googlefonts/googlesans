@@ -1,5 +1,14 @@
 sources:
-  - ../source/GoogleSans/GoogleSans-Italic.designspace
-  - ../source/GoogleSans/GoogleSans.designspace
-familyName: "GoogleSans"
+  - GoogleSans.designspace
+  - GoogleSans-Italic.designspace
 
+familyName: Google Sans
+
+buildVariable: true
+# XXX: to be enabled once its compatible with fontc. For now, we will slice them
+# ourselves
+buildStatic: false
+buildOTF: false
+buildWebfont: false
+
+extraFontmakeArgs: --no-auto-use-my-metrics
