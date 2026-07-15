@@ -172,29 +172,6 @@ jobs:
           pip install --upgrade font-size
           font-size build/GoogleSans/static/*.ttf
 
-  build-interpolatables:
-    # Skip running in PRs to save time and resources. Create a "build-*" branch
-    # to build all outside a release.
-    if: github.event_name != 'pull_request'
-    runs-on: googlefonts-64cores-256GB
-    timeout-minutes: 10
-    steps:
-      - name: Check out source repository
-        uses: actions/checkout@v7
-      - name: Set up Python v3.12 environment
-        uses: actions/setup-python@v6
-        with:
-          python-version: '3.12'
-          cache: 'pip'
-      - name: Build interpolatable fonts
-        run: |
-          make setup
-          . .venv/bin/activate && make -j gs-compatible-masters
-      - uses: actions/upload-artifact@v7
-        with:
-          name: interpolatable-fonts
-          path: 'build/GoogleSans/interpolatable'
-
   build-android:
     # Skip running in PRs to save time and resources. Create a "build-*" branch
     # to build all outside a release.
@@ -266,7 +243,6 @@ jobs:
       - check-variable
       - build-statics
       - check-statics
-      - build-interpolatables
       - build-android
       - build-and-check-figma
     runs-on: ubuntu-latest
@@ -288,11 +264,6 @@ jobs:
         with:
           name: static-fonts
           path: 'build/GoogleSans/static'
-      - name: Download interpolatable fonts
-        uses: actions/download-artifact@v8
-        with:
-          name: interpolatable-fonts
-          path: 'build/GoogleSans/interpolatable'
       - name: Download Android fonts
         uses: actions/download-artifact@v8
         with:
