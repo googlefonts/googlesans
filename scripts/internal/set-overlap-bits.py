@@ -65,26 +65,35 @@ def set_overlap_bits_if_overlapping(
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("font", nargs="+", type=Path)
+parser.add_argument(
+    "font",
+    type=Path,
+    help="Path to TTF",
+)
+parser.add_argument(
+    "-o",
+    "--output",
+    type=Path,
+    help="Path to write patched TTF to.",
+)
 parsed_args = parser.parse_args()
-fonts: list[Path] = parsed_args.font
+font_path: Path = parsed_args.font
 
-for font_path in fonts:
-    font = TTFont(font_path)
-    num_glyphs = font["maxp"].numGlyphs
-    fvar = font["fvar"]
+font = TTFont(font_path)
+num_glyphs = font["maxp"].numGlyphs
+fvar = font["fvar"]
 
-    instance_coordinates = [instance.coordinates for instance in fvar.instances]
-    hbfont = hb.Font(hb.Face(hb.Blob.from_file_path(font_path)))
-    overlapping_glyphs = overlapping_glyphs(hbfont, instance_coordinates, num_glyphs)
+instance_coordinates = [instance.coordinates for instance in fvar.instances]
+hbfont = hb.Font(hb.Face(hb.Blob.from_file_path(font_path)))
+overlapping_glyphs = overlapping_glyphs(hbfont, instance_coordinates, num_glyphs)
 
-    ocont, ocomp = set_overlap_bits_if_overlapping(font, overlapping_glyphs)
-    ocont_p = ocont / num_glyphs
-    ocomp_p = ocomp / num_glyphs
-    print(
-        font.reader.file.name,
-        f"{num_glyphs} glyphs, "
-        f"{ocont} overlapping contours ({ocont_p:.2%}), "
-        f"{ocomp} overlapping components ({ocomp_p:.2%})",
-    )
-    font.save(font_path)
+ocont, ocomp = set_overlap_bits_if_overlapping(font, overlapping_glyphs)
+ocont_p = ocont / num_glyphs
+ocomp_p = ocomp / num_glyphs
+print(
+    font_path.name,
+    f"{num_glyphs} glyphs, "
+    f"{ocont} overlapping contours ({ocont_p:.2%}), "
+    f"{ocomp} overlapping components ({ocomp_p:.2%})",
+)
+font.save(parsed_args.output if parsed_args.output is not None else font_path)
