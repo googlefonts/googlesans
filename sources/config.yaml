@@ -1,17 +1,24 @@
+familyName: Google Sans
+
 sources:
   - GoogleSans.designspace
   - GoogleSans-Italic.designspace
 
-familyName: Google Sans
-
-buildVariable: true
-# XXX: to be enabled once its compatible with fontc. For now, we will slice them
-# ourselves
-buildStatic: false
-buildOTF: false
-buildWebfont: false
-
-extraFontmakeArgs: --no-auto-use-my-metrics
+recipe:
+  ../fonts/.intermediate/GoogleSans[GRAD,opsz,wght].ttf:
+    - source: GoogleSans.designspace
+    - operation: buildVariable
+      args: --no-auto-use-my-metrics
+    - operation: fix
+      args: --skip-fvar-instances
+    - operation: hbsubset
+  ../fonts/.intermediate/GoogleSans-Italic[GRAD,opsz,wght].ttf:
+    - source: GoogleSans-Italic.designspace
+    - operation: buildVariable
+      args: --no-auto-use-my-metrics
+    - operation: fix
+      args: --skip-fvar-instances
+    - operation: hbsubset
 
 stat:
   GoogleSans[GRAD,opsz,wght].ttf:
