@@ -5,36 +5,20 @@ absl-py==2.4.0
     #   gftools
     #   nanoemoji
     #   picosvg
-afdko==4.0.3
-    # via gftools
 attrs==25.3.0
     # via
     #   cattrs
-    #   statmake
     #   ufolib2
 axisregistry==0.4.16
-    # via gftools
-babelfont==3.1.3
     # via gftools
 beautifulsoup4==4.14.3
     # via gftools
 booleanoperations==0.9.0
-    # via
-    #   afdko
-    #   fontparts
-    #   ufo2ft
+    # via ufo2ft
 brotli==1.2.0
-    # via
-    #   fonttools
-    #   gftools
-bump2version==1.0.1
-    # via bumpfontversion
-bumpfontversion==0.4.1
     # via gftools
 cattrs==25.2.0
-    # via
-    #   statmake
-    #   ufolib2
+    # via ufolib2
 certifi==2026.1.4
     # via requests
 cffi==2.0.0
@@ -51,20 +35,13 @@ compreffor==0.5.6
 cryptography==46.0.5
     # via pyjwt
 defcon==0.12.2
-    # via
-    #   afdko
-    #   fontparts
-    #   glyphsets
-    #   mutatormath
-    #   ufoprocessor
+    # via glyphsets
 ffmpeg-python==0.2.0
     # via gftools
 filelock==3.24.3
     # via youseedee
 font-v==2.1.0
-    # via
-    #   -r requirements.in
-    #   gftools
+    # via -r requirements.in
 fontfeatures==1.9.0
     # via gftools
 fontmake==3.11.0
@@ -73,24 +50,13 @@ fontmake==3.11.0
     #   gftools
 fontmath==0.9.4
     # via
-    #   afdko
     #   fontmake
-    #   fontparts
-    #   mutatormath
     #   ufo2ft
-    #   ufoprocessor
-fontparts==0.14.0
-    # via ufoprocessor
-fontpens==0.2.4
-    # via defcon
 fonttools==4.60.0
     # via
     #   -r requirements.in
-    #   afdko
     #   axisregistry
-    #   babelfont
     #   booleanoperations
-    #   bumpfontversion
     #   cffsubr
     #   compreffor
     #   defcon
@@ -98,18 +64,13 @@ fonttools==4.60.0
     #   fontfeatures
     #   fontmake
     #   fontmath
-    #   fontparts
-    #   fontpens
     #   gftools
     #   glyphsets
     #   glyphslib
-    #   mutatormath
     #   nanoemoji
-    #   statmake
     #   ufo2ft
     #   ufolib2
     #   ufomerge
-    #   ufoprocessor
     #   vharfbuzz
     #   vttlib
 future==1.0.0
@@ -120,7 +81,7 @@ gflanguages==0.7.7
     #   glyphsets
 gfsubsets==2025.11.4
     # via gftools
-gftools==0.9.99
+gftools==0.9.996
     # via -r requirements.in
 gitdb==4.0.12
     # via gitpython
@@ -130,7 +91,6 @@ glyphsets==1.1.0
     # via gftools
 glyphslib==6.11.6
     # via
-    #   bumpfontversion
     #   fontmake
     #   gftools
     #   glyphsets
@@ -142,7 +102,6 @@ jinja2==3.1.6
     # via gftools
 lxml==6.0.2
     # via
-    #   afdko
     #   fontfeatures
     #   fonttools
     #   nanoemoji
@@ -153,8 +112,6 @@ markupsafe==3.0.3
     # via jinja2
 mdurl==0.1.2
     # via markdown-it-py
-mutatormath==3.0.1
-    # via ufoprocessor
 nanoemoji==0.15.9
     # via gftools
 networkx==3.6.1
@@ -164,16 +121,11 @@ ninja==1.13.0
     #   gftools
     #   nanoemoji
 openstep-plist==0.5.0
-    # via
-    #   babelfont
-    #   bumpfontversion
-    #   glyphslib
+    # via glyphslib
 opentype-sanitizer==9.2.0
     # via gftools
 orjson==3.11.7
-    # via
-    #   babelfont
-    #   ufolib2
+    # via ufolib2
 packaging==26.0
     # via gftools
 picosvg==0.22.3
@@ -234,14 +186,11 @@ six==1.17.0
 skia-pathops==0.8.0.post2
     # via
     #   fontmake
-    #   gftools
     #   picosvg
 smmap==5.0.2
     # via gitdb
 soupsieve==2.8.3
     # via beautifulsoup4
-statmake==2.0.1
-    # via gftools
 strictyaml==1.7.3
     # via gftools
 tabulate==0.9.0
@@ -250,8 +199,6 @@ tabulate==0.9.0
     #   glyphsets
 toml==0.10.2
     # via nanoemoji
-tqdm==4.67.3
-    # via afdko
 ttfautohint-py==0.6.0
     # via gftools
 typing-extensions==4.15.0
@@ -265,21 +212,13 @@ ufo2ft==3.6.6
     #   nanoemoji
 ufolib2==0.18.1
     # via
-    #   babelfont
-    #   bumpfontversion
     #   fontmake
     #   glyphslib
     #   nanoemoji
     #   ufomerge
     #   vttlib
 ufomerge==1.9.6
-    # via
-    #   babelfont
-    #   gftools
-ufonormalizer==0.6.3
-    # via afdko
-ufoprocessor==1.14.1
-    # via afdko
+    # via gftools
 uharfbuzz==0.51.5
     # via
     #   -r requirements.in
@@ -301,6 +240,4 @@ vttlib==0.12.0
 youseedee==0.7.0
     # via glyphsets
 zopfli==0.4.1
-    # via
-    #   fonttools
-    #   nanoemoji
+    # via nanoemoji
