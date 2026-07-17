@@ -12,6 +12,10 @@ recipe:
     - operation: fix
       args: --skip-fvar-instances
     - operation: hbsubset
+    - operation: exec
+      # Executed when venv is active, so requirements.txt will be available
+      exe: python
+      args: ../scripts/internal/set-overlap-bits.py $in --output $out
   ../fonts/.intermediate/GoogleSans-Italic[GRAD,opsz,wght].ttf:
     - source: GoogleSans-Italic.designspace
     - operation: buildVariable
@@ -19,6 +23,10 @@ recipe:
     - operation: fix
       args: --skip-fvar-instances
     - operation: hbsubset
+    - operation: exec
+      # Executed when venv is active, so requirements.txt will be available
+      exe: python
+      args: ../scripts/internal/set-overlap-bits.py $in --output $out
 
 stat:
   GoogleSans[GRAD,opsz,wght].ttf:
