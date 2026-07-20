@@ -40,7 +40,6 @@ FONT_BUILD_DIR=../build/GoogleSans
 STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
 INTERMEDIATE_VARIABLE_DIR=$(FONT_BUILD_DIR)/.intermediate
 VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
-INTERPOLATABLE_BUILD_DIR=$(FONT_BUILD_DIR)/interpolatable
 ANDROID_BUILD_DIR=$(FONT_BUILD_DIR)/android
 FIGMA_BUILD_DIR=$(FONT_BUILD_DIR)/figma
 STAGING_DIR=GoogleSans/staging
@@ -48,9 +47,6 @@ STAGING_DIR=GoogleSans/staging
 # Artifact paths
 STATIC_UPRIGHTS_TARGETS = $(addprefix $(STATIC_BUILD_DIR)/,GoogleSansText-Regular.ttf GoogleSansText-Bold.ttf GoogleSansText-Medium.ttf GoogleSans-Regular.ttf GoogleSans-Bold.ttf GoogleSans-Medium.ttf)
 STATIC_ITALICS_TARGETS = $(addprefix $(STATIC_BUILD_DIR)/,GoogleSans-BoldItalic.ttf GoogleSans-Italic.ttf GoogleSansText-MediumItalic.ttf GoogleSansText-BoldItalic.ttf GoogleSansText-Italic.ttf GoogleSans-MediumItalic.ttf)
-
-INTERPOLATABLE_UPRIGHTS_TARGET = $(INTERPOLATABLE_BUILD_DIR)/GoogleSans.designspace
-INTERPOLATABLE_ITALICS_TARGET = $(INTERPOLATABLE_BUILD_DIR)/GoogleSans-Italic.designspace
 
 VARIABLE_UPRIGHT_INTERMEDIATE = $(INTERMEDIATE_VARIABLE_DIR)/GoogleSans[GRAD,opsz,wght].ttf
 VARIABLE_ITALIC_INTERMEDIATE = $(INTERMEDIATE_VARIABLE_DIR)/GoogleSans-Italic[GRAD,opsz,wght].ttf
@@ -141,17 +137,6 @@ $(STATIC_ITALICS_TARGETS): $(VARIABLE_ITALIC_INTERMEDIATE)
 	$(PYTHON3_EXE) ../scripts/gs-subset.py $@
 	$(PYTHON3_EXE) -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 	font-v write --sha1 $@
-
-
-gs-compatible-masters: gs-compatible-masters-upright gs-compatible-masters-italic
-gs-compatible-masters-upright: $(INTERPOLATABLE_UPRIGHTS_TARGET)
-gs-compatible-masters-italic: $(INTERPOLATABLE_ITALICS_TARGET)
-
-$(INTERPOLATABLE_UPRIGHTS_TARGET): $(FONT_BUILD_DIR) $(UPRIGHT_ALL_SOURCES)
-	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(UPRIGHT_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
-
-$(INTERPOLATABLE_ITALICS_TARGET): $(FONT_BUILD_DIR) $(ITALIC_ALL_SOURCES)
-	$(FONTMAKE_EXE_NO_COMPACTION) --no-production-names -m $(ITALIC_SOURCE) -o ttf-interpolatable --output-dir $(INTERPOLATABLE_BUILD_DIR)
 
 
 gs-android: gs-android-vf gs-android-static
@@ -287,7 +272,7 @@ gst-bold-italic: $(FONT_BUILD_DIR)
 # Utilities
 #
 $(FONT_BUILD_DIR):
-	mkdir -p $(STATIC_BUILD_DIR) $(INTERMEDIATE_VARIABLE_DIR) $(VARIABLE_BUILD_DIR) $(INTERPOLATABLE_BUILD_DIR)
+	mkdir -p $(STATIC_BUILD_DIR) $(INTERMEDIATE_VARIABLE_DIR) $(VARIABLE_BUILD_DIR)
 
 $(STAGING_DIR):
 	mkdir -p $(STAGING_DIR)

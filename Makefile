@@ -19,7 +19,7 @@ MASTER_UFO_DIR=$(FONT_BUILD_DIR)/master_ufo
 INSTANCE_UFO_DIR=$(FONT_BUILD_DIR)/instance_ufo
 VENV_DIR=.venv
 
-all: gs-static gs-compatible-masters  # gs-vf is built by gs-static
+all: gs-vf gs-static
 
 # ------------------------------
 # Clean
@@ -44,7 +44,7 @@ clean-ufo:
 # Compile
 # ------------------------------
 
-gs-static gs-vf gs-vf-vendor gs-compatible-masters gs-compatible-masters-upright gs-compatible-masters-italic gs-android gs-figma:
+gs-static gs-vf gs-vf-vendor gs-android gs-figma:
 	cd source && $(MAKE) $@
 
 gs-regular gs-medium gs-bold gs-italic gs-medium-italic gs-bold-italic:
