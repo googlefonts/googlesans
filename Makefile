@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+export FONTTOOLS_GPOS_COMPACT_MODE = 5
+
 FONT_BUILD_DIR=build/GoogleSans
 STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
 VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
