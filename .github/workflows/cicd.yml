@@ -198,6 +198,11 @@ jobs:
         run: |
           make setup
           . .venv/bin/activate && make -j gs-android
+      - name: Upload Android fonts
+        uses: actions/upload-artifact@v7
+        with:
+          name: android-fonts
+          path: build/GoogleSans/android
 
   build-and-check-figma:
     # Skip running in PRs to save time and resources. Create a 'build-*' branch
