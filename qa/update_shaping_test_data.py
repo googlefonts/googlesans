@@ -68,7 +68,7 @@ def shape_run(
     if shaping_comparison_mode is ComparisonMode.FULL:
         out = []
         for info, pos in zip(infos, positions):
-            s = f"glyph{info.codepoint:05}={info.cluster}"
+            s = f"{font.get_glyph_name(info.codepoint)}={info.cluster}"
             if pos.x_offset or pos.y_offset:
                 s += f"@{pos.x_offset},{pos.y_offset}"
             if pos.x_advance or pos.y_advance:
@@ -81,7 +81,7 @@ def shape_run(
             out.append(s)
         return "|".join(out)
     elif shaping_comparison_mode is ComparisonMode.GLYPHSTREAM:
-        return "|".join(f"glyph{info.codepoint:05}" for info in infos)
+        return "|".join(font.get_glyph_name(info.codepoint) for info in infos)
     else:
         raise ValueError(f"Unknown comparison mode {shaping_comparison_mode}.")
 
