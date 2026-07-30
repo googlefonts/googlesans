@@ -256,6 +256,13 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Check out source repository
+        uses: actions/checkout@v7
+      - name: Set up Python v3.12 environment
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: 'pip'
       - name: Save tag name
         id: vars
         run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
@@ -281,6 +288,12 @@ jobs:
           path: 'build/GoogleSans/figma'
       - name: Delete intermediate VFs
         run: rm -rf build/GoogleSans/.intermediate
+      - name: Setup venv
+        run: make setup
+      - name: Set post table to v3 for all fonts
+        run: |
+          find build/GoogleSans -type f -iname '*.ttf' \
+            -exec .venv/bin/python scripts/post_v3.py {} \;
       - name: Create build artifact zip archive
         id: release-archives
         run: |
