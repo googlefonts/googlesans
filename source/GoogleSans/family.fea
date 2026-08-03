@@ -2049,6 +2049,10 @@ feature ss09 {
 
 } ss09;
 
+feature kern {
+    # Automatic Code
+} kern;
+
 table BASE {
     HorizAxis.BaseTagList romn;
     HorizAxis.BaseScriptList
