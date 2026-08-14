@@ -5,6 +5,9 @@ on:
     branches:
       - main # Push events on main branch
 
+permissions:
+  contents: read
+
 jobs:
   coverage-support:
     runs-on: googlefonts-64cores-256GB
