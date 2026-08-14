@@ -19,6 +19,9 @@ on:
   # Run on all PRs. Runs a limited set of jobs by default to save time.
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   lint-sources:
     runs-on: ubuntu-latest
