@@ -323,16 +323,12 @@ jobs:
         run: |
           find build/GoogleSans -type f -iname '*.ttf' \
             -exec .venv/bin/python scripts/post_v3.py {} \;
-      - name: Create build artifact zip archive
-        id: release-archives
+      - name: Upload build artifact zip archive
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           zip_name="GoogleSans-${STEPS_VARS_OUTPUTS_TAG}.zip"
-          echo "zip-name=$zip_name" >> "$GITHUB_OUTPUT"
           zip -9 "$zip_name" -r build/GoogleSans
-        env:
-          STEPS_VARS_OUTPUTS_TAG: ${{ steps.vars.outputs.tag }}
-      - name: Upload Release Asset
-        uses: svenstaro/upload-release-action@29e53e917877a24fad85510ded594ab3c9ca12de # latest
-        with:
-          file: ${{ steps.release-archives.outputs.zip-name }}
-          overwrite: true
+        
+          gh release upload --repo "$GITHUB_REPOSITORY" "$GITHUB_REF_NAME" \
+            "$zip_name"
