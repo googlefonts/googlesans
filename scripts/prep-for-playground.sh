@@ -35,4 +35,8 @@ sed -i 's|uses: googlefonts/googlesans|uses: daltonmaag/google-sans-playground|g
 # Get rid of Dependabot
 rm .github/dependabot.yml
 
-git commit -m "Patchie" .github
+if command -v jj >/dev/null 2>&1 && [ -d .jj ]; then
+    jj commit -m "Patchie" .github
+else
+    git commit -m "Patchie" .github
+fi
