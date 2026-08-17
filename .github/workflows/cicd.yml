@@ -89,7 +89,7 @@ jobs:
           python-version: '3.12'
           cache: 'pip'
       - name: Setup uv
-        uses: astral-sh/setup-uv@v8.2.0
+        uses: astral-sh/setup-uv@v10.0.1
       - name: Setup fontspector
         uses: fonttools/setup-fontspector@main
         env:
@@ -152,7 +152,7 @@ jobs:
           python-version: '3.12'
           cache: 'pip'
       - name: Setup uv
-        uses: astral-sh/setup-uv@v8.2.0
+        uses: astral-sh/setup-uv@v10.0.1
       - name: Setup fontspector
         uses: fonttools/setup-fontspector@main
         env:
@@ -189,7 +189,7 @@ jobs:
           python-version: '3.12'
           cache: 'pip'
       - name: Setup uv
-        uses: astral-sh/setup-uv@v8.2.0
+        uses: astral-sh/setup-uv@v10.0.1
       - uses: actions/download-artifact@v8
         with:
           name: variable-fonts
@@ -221,7 +221,7 @@ jobs:
           python-version: '3.12'
           cache: 'pip'
       - name: Setup uv
-        uses: astral-sh/setup-uv@v8.2.0
+        uses: astral-sh/setup-uv@v10.0.1
       - name: Setup fontspector
         uses: fonttools/setup-fontspector@main
         env:
