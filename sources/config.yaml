@@ -16,6 +16,8 @@ recipe:
       # Executed when venv is active, so requirements.txt will be available
       exe: python
       args: ../scripts/internal/set-overlap-bits.py $in --output $out
+    - postprocess: buildStat
+      args: --src STAT.yaml
   ../fonts/.intermediate/GoogleSans-Italic[GRAD,opsz,wght].ttf:
     - source: GoogleSans-Italic.designspace
     - operation: buildVariable
@@ -27,3 +29,5 @@ recipe:
       # Executed when venv is active, so requirements.txt will be available
       exe: python
       args: ../scripts/internal/set-overlap-bits.py $in --output $out
+    - postprocess: buildStat
+      args: --src STAT.yaml

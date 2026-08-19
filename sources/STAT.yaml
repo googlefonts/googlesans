@@ -1,0 +1,87 @@
+GoogleSans[GRAD,opsz,wght].ttf:
+  - name: Optical Size
+    tag: opsz
+    values:
+      - flags: 2
+        name: Max
+        nominalValue: 18.0
+        rangeMinValue: 18.0
+      - flags: 0
+        name: Text
+        nominalValue: 17.0
+        rangeMinValue: 6.0
+        rangeMaxValue: 17.0
+  - name: Weight
+    tag: wght
+    values:
+      - flags: 2
+        name: Regular
+        value: 400.0
+      - flags: 0
+        name: Medium
+        value: 500.0
+      - flags: 0
+        name: Bold
+        value: 700.0
+  - name: Grade
+    tag: GRAD
+    values:
+      - flags: 0
+        name: Grade-50
+        value: -50.0
+      - flags: 2
+        name: 0
+        value: 0.0
+      - flags: 0
+        name: Grade200
+        value: 200.0
+  - name: Italic
+    tag: ital
+    values:
+      - flags: 2
+        name: Regular
+        value: 0.0
+        linkedValue: 1.0
+GoogleSans-Italic[GRAD,opsz,wght].ttf:
+  - name: Optical Size
+    tag: opsz
+    values:
+      - flags: 2
+        name: Max
+        nominalValue: 18.0
+        rangeMinValue: 18.0
+      - flags: 0
+        name: Text
+        nominalValue: 17.0
+        rangeMinValue: 6.0
+        rangeMaxValue: 17.0
+  - name: Weight
+    tag: wght
+    values:
+      - flags: 2
+        name: Regular
+        value: 400.0
+      - flags: 0
+        name: Medium
+        value: 500.0
+      - flags: 0
+        name: Bold
+        value: 700.0
+  - name: Grade
+    tag: GRAD
+    values:
+      - flags: 0
+        name: Grade-50
+        value: -50.0
+      - flags: 2
+        name: 0
+        value: 0.0
+      - flags: 0
+        name: Grade200
+        value: 200.0
+  - name: Italic
+    tag: ital
+    values:
+      - flags: 0
+        name: Italic
+        value: 1.0
