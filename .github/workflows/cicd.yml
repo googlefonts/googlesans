@@ -38,7 +38,7 @@ jobs:
       - name: Lint UFO sources
         run: |
           pip install ufolint
-          ufolint source/GoogleSans/*.ufo
+          ufolint sources/*.ufo
 
   lint-scripts:
     runs-on: ubuntu-latest
