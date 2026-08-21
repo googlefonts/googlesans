@@ -52,7 +52,7 @@ fontmath==0.9.4
     # via
     #   fontmake
     #   ufo2ft
-fonttools==4.60.0
+fonttools==4.63.0
     # via
     #   -r requirements.in
     #   axisregistry
@@ -86,7 +86,9 @@ gftools==0.9.996
 gitdb==4.0.12
     # via gitpython
 gitpython==3.1.45
-    # via font-v
+    # via
+    #   -r requirements.in
+    #   font-v
 glyphsets==1.1.0
     # via gftools
 glyphslib==6.11.6
@@ -223,7 +225,7 @@ uharfbuzz==0.51.5
     # via
     #   -r requirements.in
     #   vharfbuzz
-unicodedata2==16.0.0
+unicodedata2==17.0.1
     # via
     #   fonttools
     #   glyphsets

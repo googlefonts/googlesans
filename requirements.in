@@ -1,8 +1,9 @@
 fontmake[pathops]
 font-v
 uharfbuzz
-# Make sure fontTools supports BASE with MinMax records
-fontTools>=4.57.0
+# Make sure fontTools supports BASE with MinMax records, and that the subsetter
+# won't get rid of BASE
+fontTools>=4.60.1
 gftools
 # Needed for fontvi
 GitPython
