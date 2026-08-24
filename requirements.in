@@ -1,6 +1,7 @@
 fontmake[pathops]
 font-v
-uharfbuzz
+# Avoids shaping regressions related to GPOS compaction
+uharfbuzz>=0.51.6
 # Make sure fontTools supports BASE with MinMax records, and that the subsetter
 # won't get rid of BASE
 fontTools>=4.60.1
