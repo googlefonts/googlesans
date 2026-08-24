@@ -1,98 +1,138 @@
-# Copyright 2020 Google Sans Authors
+export UV_PYTHON=$(shell cat .github/workflows/python-version.txt)
+UV_RUN=uv run --quiet --with-requirements requirements.txt
 
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+SOURCES=$(shell python3 scripts/read-config.py --sources)
+FAMILY=$(shell python3 scripts/read-config.py --family)
 
-#     http://www.apache.org/licenses/LICENSE-2.0
+FONT_BUILD_DIR=fonts
+FONT_NAME_UPRIGHT=GoogleSans[GRAD,opsz,wght].ttf
+FONT_NAME_ITALIC=GoogleSans-Italic[GRAD,opsz,wght].ttf
 
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+INTERMEDIATE_VARIABLE_DIR=$(FONT_BUILD_DIR)/.intermediate
+VARIABLE_UPRIGHT_INTERMEDIATE=$(INTERMEDIATE_VARIABLE_DIR)/$(FONT_NAME_UPRIGHT)
+VARIABLE_ITALIC_INTERMEDIATE=$(INTERMEDIATE_VARIABLE_DIR)/$(FONT_NAME_ITALIC)
+
+VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
+VARIABLE_UPRIGHT_TARGET=$(VARIABLE_BUILD_DIR)/$(FONT_NAME_UPRIGHT)
+VARIABLE_ITALIC_TARGET=$(VARIABLE_BUILD_DIR)/$(FONT_NAME_ITALIC)
+
+STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
+STATIC_UPRIGHTS_TARGETS = $(addprefix $(STATIC_BUILD_DIR)/,GoogleSansText-Regular.ttf GoogleSansText-Bold.ttf GoogleSansText-Medium.ttf GoogleSans-Regular.ttf GoogleSans-Bold.ttf GoogleSans-Medium.ttf)
+STATIC_ITALICS_TARGETS = $(addprefix $(STATIC_BUILD_DIR)/,GoogleSans-BoldItalic.ttf GoogleSans-Italic.ttf GoogleSansText-MediumItalic.ttf GoogleSansText-BoldItalic.ttf GoogleSansText-Italic.ttf GoogleSans-MediumItalic.ttf)
+
+ANDROID_BUILD_DIR=$(FONT_BUILD_DIR)/android
+VARIABLE_ANDROID_UPRIGHT_TARGET=$(ANDROID_BUILD_DIR)/variable/$(FONT_NAME_UPRIGHT)
+VARIABLE_ANDROID_UPRIGHT_CHARACTERS=android/characters-roman-v4.txt
+VARIABLE_ANDROID_ITALIC_TARGET=$(ANDROID_BUILD_DIR)/variable/$(FONT_NAME_ITALIC)
+VARIABLE_ANDROID_ITALIC_CHARACTERS=android/characters-italic-v4.txt
+STATIC_ANDROID_UPRIGHT_TARGETS = $(addprefix $(ANDROID_BUILD_DIR)/static/,GoogleSansText-Regular.ttf GoogleSansText-Bold.ttf GoogleSansText-Medium.ttf GoogleSans-Regular.ttf GoogleSans-Bold.ttf GoogleSans-Medium.ttf)
+STATIC_ANDROID_ITALIC_TARGETS = $(addprefix $(ANDROID_BUILD_DIR)/static/,GoogleSans-BoldItalic.ttf GoogleSans-Italic.ttf GoogleSansText-MediumItalic.ttf GoogleSansText-BoldItalic.ttf GoogleSansText-Italic.ttf GoogleSans-MediumItalic.ttf)
+
+FIGMA_BUILD_DIR=$(FONT_BUILD_DIR)/figma
 
 export FONTTOOLS_GPOS_COMPACT_MODE = 5
 
-FONT_BUILD_DIR=build/GoogleSans
-STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
-VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
-MASTER_UFO_DIR=$(FONT_BUILD_DIR)/master_ufo
-INSTANCE_UFO_DIR=$(FONT_BUILD_DIR)/instance_ufo
-VENV_DIR=.venv
+help:
+	@echo "Build targets for Google Sans"
+	@echo
+	@echo "  make build:  Builds the variable fonts and places them in the fonts/ directory"
+	@echo "  make test:   Tests the fonts with Fontspector"
 
-all: gs-vf gs-static
+#################
+# Build targets #
+#################
 
-# ------------------------------
-# Clean
-# ------------------------------
+build: build.stamp
 
-# clean performs post-build cleanup tasks
-clean:
-	rm -rf "$(MASTER_UFO_DIR)"
-	rm -rf "$(INSTANCE_UFO_DIR)"
-	rm -rf "$(VENV_DIR)"
+build.stamp: requirements.txt sources/config.yaml $(SOURCES)
+	@rm -rf $(FONT_BUILD_DIR)/*
+	$(UV_RUN) gftools builder sources/config.yaml
+	@mkdir -p $(VARIABLE_BUILD_DIR)
+	$(UV_RUN) --script scripts/patch-figma-fvar.py \
+		$(VARIABLE_UPRIGHT_INTERMEDIATE) \
+		--output $(VARIABLE_UPRIGHT_TARGET)
+	$(UV_RUN) --script scripts/patch-figma-fvar.py \
+		$(VARIABLE_ITALIC_INTERMEDIATE) \
+		--output $(VARIABLE_ITALIC_TARGET)
+	@touch build.stamp
 
-# clean-builds removes the font build dir and all font artifact contents
-clean-builds:
-	rm -rf "$(FONT_BUILD_DIR)"
+static: static-upright static-italic
+static-upright: $(STATIC_UPRIGHTS_TARGETS)
+static-italic: $(STATIC_ITALICS_TARGETS)
 
-# clean intermediate UFO masters and instances
-clean-ufo:
-	rm -rf "$(MASTER_UFO_DIR)"
-	rm -rf "$(INSTANCE_UFO_DIR)"
+$(STATIC_UPRIGHTS_TARGETS): build
+	@mkdir -p $(STATIC_BUILD_DIR)
+	$(UV_RUN) scripts/internal/cut-instances.py \
+		$(VARIABLE_UPRIGHT_INTERMEDIATE) \
+		sources/GoogleSans.designspace \
+		$@
+	$(UV_RUN) scripts/gs-subset.py $@
+	$(UV_RUN) python -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 
-# ------------------------------
-# Compile
-# ------------------------------
+$(STATIC_ITALICS_TARGETS): build
+	@mkdir -p $(STATIC_BUILD_DIR)
+	$(UV_RUN) scripts/internal/cut-instances.py \
+		$(VARIABLE_ITALIC_INTERMEDIATE) \
+		sources/GoogleSans-Italic.designspace \
+		$@
+	$(UV_RUN) scripts/gs-subset.py $@
+	$(UV_RUN) python -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 
-gs-static gs-vf gs-vf-vendor gs-android gs-figma:
-	cd sources && $(MAKE) $@
+android: android-vf android-static
+android-vf: android-vf-upright android-vf-italic
+android-vf-upright: $(VARIABLE_ANDROID_UPRIGHT_TARGET)
+android-vf-italic: $(VARIABLE_ANDROID_ITALIC_TARGET)
 
-gs-regular gs-medium gs-bold gs-italic gs-medium-italic gs-bold-italic:
-	cd sources && $(MAKE) $@
+$(VARIABLE_ANDROID_UPRIGHT_TARGET): build $(VARIABLE_ANDROID_UPRIGHT_CHARACTERS)
+	@mkdir -p $(ANDROID_BUILD_DIR)/variable
+	$(UV_RUN) android/build-android-vfs.py \
+		$(VARIABLE_UPRIGHT_TARGET) \
+		$(VARIABLE_ANDROID_UPRIGHT_CHARACTERS) \
+		$(VARIABLE_ANDROID_UPRIGHT_TARGET)
 
-gst-regular gst-medium gst-bold gst-italic gst-medium-italic gst-bold-italic:
-	cd sources && $(MAKE) $@
+$(VARIABLE_ANDROID_ITALIC_TARGET): build $(VARIABLE_ANDROID_ITALIC_CHARACTERS)
+	@mkdir -p $(ANDROID_BUILD_DIR)/variable
+	$(UV_RUN) android/build-android-vfs.py \
+		$(VARIABLE_ITALIC_TARGET) \
+		$(VARIABLE_ANDROID_ITALIC_CHARACTERS) \
+		$(VARIABLE_ANDROID_ITALIC_TARGET)
 
-gs-vf-upright gs-vf-italic:
-	cd sources && $(MAKE) $@
+android-static: android-static-upright android-static-italic
+android-static-upright: $(STATIC_ANDROID_UPRIGHT_TARGETS)
+android-static-italic: $(STATIC_ANDROID_ITALIC_TARGETS)
 
-gs-ufo2glyphs:
-	cd sources && $(MAKE) $@
+$(STATIC_ANDROID_UPRIGHT_TARGETS): $(VARIABLE_ANDROID_UPRIGHT_TARGET)
+	@mkdir -p $(ANDROID_BUILD_DIR)/static
+	$(UV_RUN) scripts/internal/cut-instances.py \
+		$(VARIABLE_ANDROID_UPRIGHT_TARGET) \
+		sources/GoogleSans.designspace \
+		$@
+	$(UV_RUN) scripts/gs-subset.py $@
+	$(UV_RUN) python -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 
-# ------------------------------
-# Build dependency management
-# ------------------------------
-# setup creates a Python 3 virtual environment directory
-setup:
-	mkdir -p "$(VENV_DIR)"
-	python3 -m venv "$(VENV_DIR)"
-	"$(VENV_DIR)/bin/pip" install --upgrade pip wheel setuptools
-	"$(VENV_DIR)/bin/pip" install --no-deps -r requirements-dev.txt
-	@echo "\n\nDependency versions installed in your venv are:\n"
-	@$(MAKE) list-deps
-	@echo "\n\nBuild fonts with 'make' or make targets for select font builds (see BUILD.md docs)."
-	@echo "Remove the virtual environment directory with 'make clean'."
+$(STATIC_ANDROID_ITALIC_TARGETS): $(VARIABLE_ANDROID_ITALIC_TARGET)
+	@mkdir -p $(ANDROID_BUILD_DIR)/static
+	$(UV_RUN) scripts/internal/cut-instances.py \
+		$(VARIABLE_ANDROID_ITALIC_TARGET) \
+		sources/GoogleSans-Italic.designspace \
+		$@
+	$(UV_RUN) scripts/gs-subset.py $@
+	$(UV_RUN) python -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 
-# sync-deps syncs updated build dependencies in an existing virtual environment
-# installing and uninstalling packages as (re)defined in the requirements.txt file
-sync-deps:
-	"$(VENV_DIR)/bin/pip" install -r requirements.txt
+figma: build
+	@mkdir -p $(FIGMA_BUILD_DIR)
+	$(UV_RUN) gftools-rename-font $(VARIABLE_UPRIGHT_TARGET) \
+		--suffix " Variable" \
+		--out $(FIGMA_BUILD_DIR)/GoogleSansVariable[GRAD,opsz,wght].ttf
+	$(UV_RUN) gftools-rename-font $(VARIABLE_ITALIC_TARGET) \
+		--suffix " Variable" \
+		--out $(FIGMA_BUILD_DIR)/GoogleSansVariable-Italic[GRAD,opsz,wght].ttf
 
-# list-deps displays venv installed dependencies
-list-deps:
-	@"$(VENV_DIR)/bin/pip" list
+all: build static android figma
 
-# [MAINTAINER ONLY TARGET]
-# update-deps updates the requirements.txt file with new releases of Python build dependencies
-# Note: the `pip-compile` tool is from the https://github.com/jazzband/pip-tools package
-update-deps:
-	pip-compile --upgrade --resolver=backtracking requirements.in
-
-# ------------------------------
-# Testing
-# ------------------------------
+################
+# Test targets #
+################
 
 test: test-static test-vf
 
@@ -132,46 +172,26 @@ test-android:
 		--plugin qa/check-charset.py,qa/check-fea.py,qa/check-googlesans.py \
 		$(FONT_BUILD_DIR)/android/*/*.ttf
 
-update-glyphset-defs:
-	python3 scripts/gs-update-glyphset-qa-files.py
+#################
+# Misc. targets #
+#################
 
-# ------------------------------
-# Python source formatting
-# ------------------------------
-black:
-	black --line-length 90 scripts/*.py qa/*.py
+update-glyphset-expectations:
+	$(UV_RUN) scripts/gs-update-glyphset-qa-files.py
 
-# --------------------------------------
-# Glyphs source formatting/normalization
-# --------------------------------------
-glyphs-norm:
-	python3 scripts/gs-glyphs-norm.py source/GoogleSans/*.glyphs
+update-shaping-expectations:
+	$(UV_RUN) bash -c "cd qa && bash update_all_shaping.sh"
 
-# ---------------------------
-# Generate BASE table records
-# ---------------------------
-autobase: gs-vf
+autobase: build
 	cargo binstall autobase-cli --no-confirm || cargo install --locked autobase-cli
 	autobase --min-max --config source/GoogleSans/autobase.toml --words 1000000 build/GoogleSans/variable/GoogleSans*.ttf
 
-# -------------------------------------
-# Release targets
-# -------------------------------------
-
-# METADATA.pb file gen for Fonts API configuration
 metadata:
 	cd metadata && python metadata-builder.py
 
-.PHONY: all \
-black \
-clean clean-builds clean-ufo\
-gs-static gs-vf gs-android gs-figma \
-gs-regular gs-italic gs-medium gs-medium-italic gs-bold gs-bold-italic \
-gst-regular gst-italic gst-medium gst-medium-italic gst-bold gst-bold-italic \
-gs-vf-upright gs-vf-italic \
-setup update-deps sync-deps list-deps \
+.PHONY: help \
 test test-static test-vf test-android test-figma \
-autobase metadata
+update-glyphset-expectations update-shaping-expectations
 
 # Disable built-in rules to speed up source globbing.
 MAKEFLAGS += --no-builtin-rules
