@@ -207,6 +207,9 @@ update-glyphset-expectations:
 update-shaping-expectations:
 	$(UV_RUN) bash -c "cd qa && bash update_all_shaping.sh"
 
+shaperglot:
+	uvx shaperglot report $(VARIABLE_UPRIGHT_TARGET)
+
 autobase: build
 	cargo binstall autobase-cli --no-confirm || cargo install --locked autobase-cli
 	autobase --min-max --config source/GoogleSans/autobase.toml --words 1000000 build/GoogleSans/variable/GoogleSans*.ttf
@@ -214,7 +217,7 @@ autobase: build
 metadata:
 	cd metadata && python metadata-builder.py
 
-.PHONY: help \
+.PHONY: help shaperglot \
 test test-static test-vf test-android test-figma \
 update-glyphset-expectations update-shaping-expectations
 
