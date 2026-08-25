@@ -158,6 +158,8 @@ jobs:
       uses: f-actions/opentype-sanitizer@d5603373a9adccd136dd48b037b9b5178b485bea  # v4.0.0
       with:
         path: fonts/variable/*.ttf
+    - name: Run Shaperglot
+      run: make shaperglot
     - name: Run Fontspector
       id: fontspector
       run: make test-vf
