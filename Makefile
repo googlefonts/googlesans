@@ -172,6 +172,31 @@ test-android:
 		--plugin qa/check-charset.py,qa/check-fea.py,qa/check-googlesans.py \
 		$(FONT_BUILD_DIR)/android/*/*.ttf
 
+#################################
+# Working with external vendors #
+#################################
+
+STAGING_DIR=sources/staging
+
+vendor-build: vendor-glyphs2designspace
+	$(foreach \
+		file, \
+		$(wildcard $(STAGING_DIR)/*.designspace), \
+		$(UV_RUN) fontmake -m $(file) -o variable --output-dir $(STAGING_DIR); \
+	)
+	@echo "Note: vendor fonts are built with fontmake, not gftools, and so may have some differences as a result"
+
+vendor-glyphs2designspace: $(wildcard sources/*.glyphs)
+	$(UV_RUN) scripts/gs-glyphs2ufo.py sources/*.glyphs --target-dir $(STAGING_DIR)
+
+# Export Google Sans as Glyphs files
+ufo2glyphs: $(wildcard GoogleSans/*.designspace)
+	$(foreach \
+		file, \
+		$(wildcard GoogleSans/*.designspace), \
+		$(UV_RUN) scripts/gs-ufo2glyphs.py $(file); \
+	)
+
 #################
 # Misc. targets #
 #################
