@@ -134,43 +134,18 @@ all: build static android figma
 # Test targets #
 ################
 
-test: test-static test-vf
-
-test-static:
+test:
+	@mkdir -p out/fontspector
 	@echo "==================================================="
-	@echo " `fontspector -V` static font checks"
+	@echo " `fontspector -V` checks"
 	@echo "==================================================="
-	fontspector --loglevel warn --succinct --full-lists \
+	find $(FONT_BUILD_DIR) \
+		-name '*.ttf' -not -path "$(INTERMEDIATE_VARIABLE_DIR)/*" \
+		-print0 \
+	| xargs --null fontspector --loglevel warn --succinct --full-lists \
 		--profile qa/check-googlesans.toml \
 		--plugin qa/check-charset.py,qa/check-fea.py,qa/check-googlesans.py \
-		$(STATIC_BUILD_DIR)/*.ttf
-
-test-vf:
-	@echo "==================================================="
-	@echo " `fontspector -V` variable font checks"
-	@echo "==================================================="
-	fontspector --loglevel warn --succinct --full-lists \
-		--profile qa/check-googlesans.toml \
-		--plugin qa/check-charset.py,qa/check-fea.py,qa/check-googlesans.py \
-		$(VARIABLE_BUILD_DIR)/*.ttf
-
-test-figma:
-	@echo "==================================================="
-	@echo " `fontspector -V` Figma font checks"
-	@echo "==================================================="
-	fontspector --loglevel warn --succinct --full-lists \
-		--profile qa/check-googlesans.toml \
-		--plugin qa/check-charset.py,qa/check-fea.py,qa/check-googlesans.py \
-		$(FONT_BUILD_DIR)/figma/*.ttf
-
-test-android:
-	@echo "==================================================="
-	@echo " `fontspector -V` Android font checks"
-	@echo "==================================================="
-	fontspector --loglevel warn --succinct --full-lists \
-		--profile qa/check-googlesans.toml \
-		--plugin qa/check-charset.py,qa/check-fea.py,qa/check-googlesans.py \
-		$(FONT_BUILD_DIR)/android/*/*.ttf
+		--html out/fontspector/fontspector-googlesans-report.html
 
 #################################
 # Working with external vendors #
@@ -217,8 +192,7 @@ autobase: build
 metadata:
 	cd metadata && python metadata-builder.py
 
-.PHONY: help shaperglot \
-test test-static test-vf test-android test-figma \
+.PHONY: help shaperglot test \
 update-glyphset-expectations update-shaping-expectations
 
 # Disable built-in rules to speed up source globbing.
