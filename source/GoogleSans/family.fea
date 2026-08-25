@@ -71,10 +71,10 @@ feature ccmp {
     } ccmp_ij_acute;
 
     lookup ccmp_Other_1 {
-        lookupflag UseMarkFilteringSet @latn_CombiningTopAccents; 
-        sub [i j i-cy je-cy]' @latn_CombiningTopAccents by [idotless jdotless idotless jdotless];
-        sub idotbelow' @latn_CombiningTopAccents by idotless dotbelowcomb;
-        sub iogonek' @latn_CombiningTopAccents by idotless ogonekcomb;
+        lookupflag UseMarkFilteringSet [@latn_CombiningTopAccents commaturnedabovecomb]; 
+        sub [i j i-cy je-cy]' [@latn_CombiningTopAccents commaturnedabovecomb] by [idotless jdotless idotless jdotless];
+        sub idotbelow' [@latn_CombiningTopAccents commaturnedabovecomb] by idotless dotbelowcomb;
+        sub iogonek' [@latn_CombiningTopAccents commaturnedabovecomb] by idotless ogonekcomb;
     } ccmp_Other_1;
 
     lookup ccmp_combining_cap {
