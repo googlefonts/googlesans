@@ -162,18 +162,17 @@ jobs:
       run: make shaperglot
     - name: Run Fontspector
       id: fontspector
-      run: make test-vf
-    # TODO: once Fontspector is producing HTML reports
-    # - name: Upload Fontspector report
-    #   uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
-    #   # Always upload reports (even during a pipeline fail), so long as Fontspector completed
-    #   # https://docs.github.com/en/actions/learn-github-actions/expressions#always
-    #   # https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context
-    #   if: ${{ !cancelled() && (steps.fontspector.conclusion == 'success' || steps.fontspector.conclusion == 'failure') }}
-    #   with:
-    #     name: Fontspector report
-    #     path: out/fontspector
-    #     if-no-files-found: error
+      run: make test
+    - name: Upload Fontspector report
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+      # Always upload reports (even during a pipeline fail), so long as Fontspector completed
+      # https://docs.github.com/en/actions/learn-github-actions/expressions#always
+      # https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context
+      if: ${{ !cancelled() && (steps.fontspector.conclusion == 'success' || steps.fontspector.conclusion == 'failure') }}
+      with:
+        name: Fontspector report
+        path: out/fontspector
+        if-no-files-found: error
   test-instances:
     if: ${{ github.event_name == 'release' || inputs.cut-instances }}
     needs:
@@ -213,18 +212,17 @@ jobs:
           path: fonts/**/*.ttf
       - name: Run Fontspector
         id: fontspector
-        run: make test-static test-android test-figma
-      # TODO: once Fontspector is producing HTML reports
-      # - name: Upload Fontspector report
-      #   uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
-      #   # Always upload reports (even during a pipeline fail), so long as Fontspector completed
-      #   # https://docs.github.com/en/actions/learn-github-actions/expressions#always
-      #   # https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context
-      #   if: ${{ !cancelled() && (steps.fontspector.conclusion == 'success' || steps.fontspector.conclusion == 'failure') }}
-      #   with:
-      #     name: Fontspector report
-      #     path: out/fontspector
-      #     if-no-files-found: error
+        run: make test
+      - name: Upload Fontspector report
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+        # Always upload reports (even during a pipeline fail), so long as Fontspector completed
+        # https://docs.github.com/en/actions/learn-github-actions/expressions#always
+        # https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context
+        if: ${{ !cancelled() && (steps.fontspector.conclusion == 'success' || steps.fontspector.conclusion == 'failure') }}
+        with:
+          name: Fontspector instances report
+          path: out/fontspector
+          if-no-files-found: error
   upload-to-release:
     if: github.event_name == 'release'
     needs:
