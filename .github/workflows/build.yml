@@ -1,0 +1,253 @@
+name: Build from Designspace
+
+on:
+  workflow_dispatch:
+    inputs:
+      git-ref:
+        description: The branch to build from
+        required: true
+      cut-instances:
+        description: Build instance fonts? (Workspace, Figma, Android)
+        required: false
+        type: boolean
+  push:
+    branches:
+    - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+    - main
+  release:
+    # A release, pre-release, or draft of a release was published
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  build-variable:
+    runs-on: googlefonts-64cores-256GB
+    timeout-minutes: 15
+    steps:
+    # on: pull_request uses head_ref for branch name, on: push uses ref_name
+    - name: Checkout ${{ inputs.git-ref || github.head_ref || github.ref_name }}
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      with:
+        ref: ${{ inputs.git-ref || github.head_ref || github.ref_name }}
+        persist-credentials: false
+    - name: Set up Python
+      uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
+      with:
+        python-version-file: ./.github/workflows/python-version.txt
+    - name: Set up uv and enable caching
+      uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d  # v10.0.1
+      with:
+        # https://docs.zizmor.sh/audits/#cache-poisoning
+        enable-cache: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        cache-dependency-glob: |
+          requirements*.txt
+          requirements*.in
+    - name: Build the font
+      run: make --jobs build
+    - name: Generate archive name
+      id: vf-artifact-name
+      uses: alpha-tango-kilo/gha-artifact-name@49459760611c4a5cedffa13dfb36ca29ab1fdcfc  # v1.3.0
+      with:
+        repo-name: Google Sans
+    - name: Upload archive
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+      with:
+        name: ${{ steps.vf-artifact-name.outputs.artifact-name }}
+        path: |
+          fonts/.intermediate
+          fonts/variable
+        include-hidden-files: true
+        compression-level: 9
+        if-no-files-found: error
+    outputs:
+      artifact-name: ${{ steps.vf-artifact-name.outputs.artifact-name }}
+  cut-instances:
+    if: ${{ github.event_name == 'release' || inputs.cut-instances }}
+    needs:
+    - build-variable
+    runs-on: googlefonts-16cores-64GB
+    timeout-minutes: 10
+    steps:
+    - name: Checkout ${{ github.ref_name }}
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      with:
+        ref: ${{ github.ref_name }}
+        persist-credentials: false
+    - name: Set up Python
+      uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
+      with:
+        python-version-file: ./.github/workflows/python-version.txt
+    - name: Set up uv and enable caching
+      uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d  # v10.0.1
+      with:
+        # https://docs.zizmor.sh/audits/#cache-poisoning
+        enable-cache: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        cache-dependency-glob: |
+          requirements*.txt
+          requirements*.in
+    - name: Download main VFs
+      uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
+      with:
+        name: ${{ needs.build-variable.outputs.artifact-name }}
+        path: fonts
+    - name: Slice static fonts
+      shell: bash
+      run: |
+        # Prevent main VFs re-building
+        touch build.stamp
+        make --jobs static
+    - name: Create Android flavour Google Sans
+      run: make --jobs android
+    - name: Create Figma flavour Google Sans
+      run: make --jobs figma
+    - name: Generate archive name
+      id: instances-artifact-name
+      uses: alpha-tango-kilo/gha-artifact-name@49459760611c4a5cedffa13dfb36ca29ab1fdcfc  # v1.3.0
+      with:
+        repo-name: Google Sans instances
+    - name: Upload instances
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+      with:
+        name: ${{ steps.instances-artifact-name.outputs.artifact-name }}
+        path: |
+          fonts/static
+          fonts/android
+          fonts/figma
+        compression-level: 9
+        if-no-files-found: error
+    outputs:
+      artifact-name: ${{ steps.instances-artifact-name.outputs.artifact-name }}
+  test-variable:
+    needs:
+    - build-variable
+    runs-on: googlefonts-8cores-32GB
+    timeout-minutes: 40
+    steps:
+    - name: Checkout ${{ inputs.git-ref || github.head_ref || github.ref_name }}
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      with:
+        ref: ${{ inputs.git-ref || github.head_ref || github.ref_name }}
+        persist-credentials: false
+    - name: Set up Python
+      uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
+      with:
+        python-version-file: .github/workflows/python-version.txt
+    - name: Set up uv and enable caching
+      uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d  # v10.0.1
+      with:
+        # https://docs.zizmor.sh/audits/#cache-poisoning
+        enable-cache: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        cache-dependency-glob: |
+          requirements*.txt
+          requirements*.in
+    - name: Setup Fontspector
+      uses: fonttools/setup-fontspector@d53404291dc78a5a41cf76ea48e1d13a731fb812  # main
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Download built fonts
+      uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
+      with:
+        name: ${{ needs.build.outputs.artifact-name }}
+        path: fonts
+    - name: Check with OT Sanitizer
+      uses: f-actions/opentype-sanitizer@d5603373a9adccd136dd48b037b9b5178b485bea  # v4.0.0
+      with:
+        path: fonts/variable/*.ttf
+    - name: Run Fontspector
+      id: fontspector
+      run: make test-vf
+    # TODO: once Fontspector is producing HTML reports
+    # - name: Upload Fontspector report
+    #   uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+    #   # Always upload reports (even during a pipeline fail), so long as Fontspector completed
+    #   # https://docs.github.com/en/actions/learn-github-actions/expressions#always
+    #   # https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context
+    #   if: ${{ !cancelled() && (steps.fontspector.conclusion == 'success' || steps.fontspector.conclusion == 'failure') }}
+    #   with:
+    #     name: Fontspector report
+    #     path: out/fontspector
+    #     if-no-files-found: error
+  test-instances:
+    if: ${{ github.event_name == 'release' || inputs.cut-instances }}
+    needs:
+    - cut-instances
+    runs-on: googlefonts-8cores-32GB
+    timeout-minutes: 30
+    steps:
+      - name: Checkout ${{ inputs.git-ref || github.head_ref || github.ref_name }}
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          ref: ${{ inputs.git-ref || github.head_ref || github.ref_name }}
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
+        with:
+          python-version-file: .github/workflows/python-version.txt
+      - name: Set up uv and enable caching
+        uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d  # v10.0.1
+        with:
+          # https://docs.zizmor.sh/audits/#cache-poisoning
+          enable-cache: ${{ !startsWith(github.ref, 'refs/tags/') }}
+          cache-dependency-glob: |
+            requirements*.txt
+            requirements*.in
+      - name: Setup Fontspector
+        uses: fonttools/setup-fontspector@d53404291dc78a5a41cf76ea48e1d13a731fb812  # main
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Download built fonts
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
+        with:
+          name: ${{ needs.cut-instances.outputs.artifact-name }}
+          path: fonts
+      - name: Check with OT Sanitizer
+        uses: f-actions/opentype-sanitizer@d5603373a9adccd136dd48b037b9b5178b485bea  # v4.0.0
+        with:
+          path: fonts/**/*.ttf
+      - name: Run Fontspector
+        id: fontspector
+        run: make test-static test-android test-figma
+      # TODO: once Fontspector is producing HTML reports
+      # - name: Upload Fontspector report
+      #   uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+      #   # Always upload reports (even during a pipeline fail), so long as Fontspector completed
+      #   # https://docs.github.com/en/actions/learn-github-actions/expressions#always
+      #   # https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context
+      #   if: ${{ !cancelled() && (steps.fontspector.conclusion == 'success' || steps.fontspector.conclusion == 'failure') }}
+      #   with:
+      #     name: Fontspector report
+      #     path: out/fontspector
+      #     if-no-files-found: error
+  upload-to-release:
+    if: github.event_name == 'release'
+    needs:
+    - build-variable
+    - cut-instances
+    - test-variable
+    - test-instances
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+    - name: Download all fonts
+      uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
+      with:
+        path: fonts
+    - name: Upload release artifacts
+      env:
+        # For GitHub CLI
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        ZIP_NAME="GoogleSans-${GITHUB_REF#refs/*/}.zip"
+        cd fonts && zip -9 "../$ZIP_NAME" **/*.ttf
+    
+        cd "$GITHUB_WORKSPACE"
+        # Repo must be explicitly stated as we don't have the repo checked out
+        gh release upload --repo "$GITHUB_REPOSITORY" "$GITHUB_REF_NAME" \
+          "$ZIP_NAME"
