@@ -1,5 +1,16 @@
 export UV_PYTHON=$(shell cat .github/workflows/python-version.txt)
 UV_RUN=uv run --quiet --with-requirements requirements.txt
+SUBSETTER=$(UV_RUN) --module fontTools.subset \
+	--unicodes="*" \
+	--no-ignore-missing-glyphs \
+	--notdef-outline \
+	--layout-features="*" \
+	--name-IDs="*" \
+	--name-languages="*" \
+	--glyph-names \
+	--no-prune-unicode-ranges \
+	--recalc-bounds \
+	--output-file=$@
 
 SOURCES=$(shell python3 scripts/read-config.py --sources)
 FAMILY=$(shell python3 scripts/read-config.py --family)
@@ -66,7 +77,7 @@ $(STATIC_UPRIGHTS_TARGETS): build
 		$(VARIABLE_UPRIGHT_INTERMEDIATE) \
 		sources/GoogleSans.designspace \
 		$@
-	$(UV_RUN) scripts/gs-subset.py $@
+	$(SUBSETTER) $@
 
 $(STATIC_ITALICS_TARGETS): build
 	@mkdir -p $(STATIC_BUILD_DIR)
@@ -74,7 +85,7 @@ $(STATIC_ITALICS_TARGETS): build
 		$(VARIABLE_ITALIC_INTERMEDIATE) \
 		sources/GoogleSans-Italic.designspace \
 		$@
-	$(UV_RUN) scripts/gs-subset.py $@
+	$(SUBSETTER) $@
 
 android: android-vf android-static
 android-vf: android-vf-upright android-vf-italic
@@ -105,7 +116,7 @@ $(STATIC_ANDROID_UPRIGHT_TARGETS): $(VARIABLE_ANDROID_UPRIGHT_TARGET)
 		$(VARIABLE_ANDROID_UPRIGHT_TARGET) \
 		sources/GoogleSans.designspace \
 		$@
-	$(UV_RUN) scripts/gs-subset.py $@
+	$(SUBSETTER) $@
 
 $(STATIC_ANDROID_ITALIC_TARGETS): $(VARIABLE_ANDROID_ITALIC_TARGET)
 	@mkdir -p $(ANDROID_BUILD_DIR)/static
@@ -113,7 +124,7 @@ $(STATIC_ANDROID_ITALIC_TARGETS): $(VARIABLE_ANDROID_ITALIC_TARGET)
 		$(VARIABLE_ANDROID_ITALIC_TARGET) \
 		sources/GoogleSans-Italic.designspace \
 		$@
-	$(UV_RUN) scripts/gs-subset.py $@
+	$(SUBSETTER) $@
 
 figma: build
 	@mkdir -p $(FIGMA_BUILD_DIR)
