@@ -67,7 +67,6 @@ $(STATIC_UPRIGHTS_TARGETS): build
 		sources/GoogleSans.designspace \
 		$@
 	$(UV_RUN) scripts/gs-subset.py $@
-	$(UV_RUN) python -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 
 $(STATIC_ITALICS_TARGETS): build
 	@mkdir -p $(STATIC_BUILD_DIR)
@@ -76,7 +75,6 @@ $(STATIC_ITALICS_TARGETS): build
 		sources/GoogleSans-Italic.designspace \
 		$@
 	$(UV_RUN) scripts/gs-subset.py $@
-	$(UV_RUN) python -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 
 android: android-vf android-static
 android-vf: android-vf-upright android-vf-italic
@@ -108,7 +106,6 @@ $(STATIC_ANDROID_UPRIGHT_TARGETS): $(VARIABLE_ANDROID_UPRIGHT_TARGET)
 		sources/GoogleSans.designspace \
 		$@
 	$(UV_RUN) scripts/gs-subset.py $@
-	$(UV_RUN) python -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 
 $(STATIC_ANDROID_ITALIC_TARGETS): $(VARIABLE_ANDROID_ITALIC_TARGET)
 	@mkdir -p $(ANDROID_BUILD_DIR)/static
@@ -117,7 +114,6 @@ $(STATIC_ANDROID_ITALIC_TARGETS): $(VARIABLE_ANDROID_ITALIC_TARGET)
 		sources/GoogleSans-Italic.designspace \
 		$@
 	$(UV_RUN) scripts/gs-subset.py $@
-	$(UV_RUN) python -m fontTools.otlLib.optimize --gpos-compression-level 5 $@
 
 figma: build
 	@mkdir -p $(FIGMA_BUILD_DIR)
