@@ -140,8 +140,10 @@ test:
 	@echo "==================================================="
 	@echo " `fontspector -V` checks"
 	@echo "==================================================="
-	find $(FONT_BUILD_DIR) \
-		-name '*.ttf' -not -path "$(INTERMEDIATE_VARIABLE_DIR)/*" \
+	find $(FONT_BUILD_DIR) -name '*.ttf' \
+		-not -path "$(INTERMEDIATE_VARIABLE_DIR)/*" \
+		-not -path "$(ANDROID_BUILD_DIR)/*" \
+		-not -path "$(FIGMA_BUILD_DIR)/*" \
 		-print0 \
 	| xargs --null fontspector --loglevel warn --succinct --full-lists \
 		--profile qa/check-googlesans.toml \
