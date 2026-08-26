@@ -235,17 +235,32 @@ jobs:
     permissions:
       contents: write
     steps:
+    - name: Checkout ${{ inputs.git-ref || github.head_ref || github.ref_name }}
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      with:
+        ref: ${{ inputs.git-ref || github.head_ref || github.ref_name }}
+        persist-credentials: false
+    - name: Set up Python
+      uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
+      with:
+        python-version-file: .github/workflows/python-version.txt
+    - name: Set up uv and enable caching
+      uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d  # v10.0.1
     - name: Download all fonts
       uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
       with:
         path: fonts
+    - name: Create post v3 release package
+      # -o prevents rebuilding by saying the recipe "all" (which release depends
+      # on) is up-to-date
+      run: make -o all release
     - name: Upload release artifacts
       env:
         # For GitHub CLI
         GH_TOKEN: ${{ github.token }}
       run: |
         ZIP_NAME="GoogleSans-${GITHUB_REF#refs/*/}.zip"
-        cd fonts && zip -9 "../$ZIP_NAME" **/*.ttf
+        cd fonts/release && zip -9 "../../$ZIP_NAME" **/*.ttf
     
         cd "$GITHUB_WORKSPACE"
         # Repo must be explicitly stated as we don't have the repo checked out
