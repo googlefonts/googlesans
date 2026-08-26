@@ -1,6 +1,6 @@
-export UV_PYTHON=$(shell cat .github/workflows/python-version.txt)
-UV_RUN=uv run --quiet --with-requirements requirements.txt
-SUBSETTER=$(UV_RUN) --module fontTools.subset \
+export UV_PYTHON := $(shell cat .github/workflows/python-version.txt)
+UV_RUN := uv run --quiet --with-requirements requirements.txt
+SUBSETTER = $(UV_RUN) --module fontTools.subset \
 	--unicodes="*" \
 	--no-ignore-missing-glyphs \
 	--notdef-outline \
@@ -12,36 +12,36 @@ SUBSETTER=$(UV_RUN) --module fontTools.subset \
 	--recalc-bounds \
 	--output-file=$@
 
-SOURCES=$(shell python3 scripts/read-config.py --sources)
-FAMILY=$(shell python3 scripts/read-config.py --family)
+SOURCES := $(shell python3 scripts/read-config.py --sources)
+FAMILY := $(shell python3 scripts/read-config.py --family)
 
-FONT_BUILD_DIR=fonts
-FONT_NAME_UPRIGHT=GoogleSans[GRAD,opsz,wght].ttf
-FONT_NAME_ITALIC=GoogleSans-Italic[GRAD,opsz,wght].ttf
+FONT_BUILD_DIR := fonts
+FONT_NAME_UPRIGHT := GoogleSans[GRAD,opsz,wght].ttf
+FONT_NAME_ITALIC := GoogleSans-Italic[GRAD,opsz,wght].ttf
 
-INTERMEDIATE_VARIABLE_DIR=$(FONT_BUILD_DIR)/.intermediate
-VARIABLE_UPRIGHT_INTERMEDIATE=$(INTERMEDIATE_VARIABLE_DIR)/$(FONT_NAME_UPRIGHT)
-VARIABLE_ITALIC_INTERMEDIATE=$(INTERMEDIATE_VARIABLE_DIR)/$(FONT_NAME_ITALIC)
+INTERMEDIATE_VARIABLE_DIR := $(FONT_BUILD_DIR)/.intermediate
+VARIABLE_UPRIGHT_INTERMEDIATE := $(INTERMEDIATE_VARIABLE_DIR)/$(FONT_NAME_UPRIGHT)
+VARIABLE_ITALIC_INTERMEDIATE := $(INTERMEDIATE_VARIABLE_DIR)/$(FONT_NAME_ITALIC)
 
-VARIABLE_BUILD_DIR=$(FONT_BUILD_DIR)/variable
-VARIABLE_UPRIGHT_TARGET=$(VARIABLE_BUILD_DIR)/$(FONT_NAME_UPRIGHT)
-VARIABLE_ITALIC_TARGET=$(VARIABLE_BUILD_DIR)/$(FONT_NAME_ITALIC)
+VARIABLE_BUILD_DIR := $(FONT_BUILD_DIR)/variable
+VARIABLE_UPRIGHT_TARGET := $(VARIABLE_BUILD_DIR)/$(FONT_NAME_UPRIGHT)
+VARIABLE_ITALIC_TARGET := $(VARIABLE_BUILD_DIR)/$(FONT_NAME_ITALIC)
 
-STATIC_BUILD_DIR=$(FONT_BUILD_DIR)/static
-STATIC_UPRIGHTS_TARGETS = $(addprefix $(STATIC_BUILD_DIR)/,GoogleSansText-Regular.ttf GoogleSansText-Bold.ttf GoogleSansText-Medium.ttf GoogleSans-Regular.ttf GoogleSans-Bold.ttf GoogleSans-Medium.ttf)
-STATIC_ITALICS_TARGETS = $(addprefix $(STATIC_BUILD_DIR)/,GoogleSans-BoldItalic.ttf GoogleSans-Italic.ttf GoogleSansText-MediumItalic.ttf GoogleSansText-BoldItalic.ttf GoogleSansText-Italic.ttf GoogleSans-MediumItalic.ttf)
+STATIC_BUILD_DIR := $(FONT_BUILD_DIR)/static
+STATIC_UPRIGHTS_TARGETS := $(addprefix $(STATIC_BUILD_DIR)/,GoogleSansText-Regular.ttf GoogleSansText-Bold.ttf GoogleSansText-Medium.ttf GoogleSans-Regular.ttf GoogleSans-Bold.ttf GoogleSans-Medium.ttf)
+STATIC_ITALICS_TARGETS := $(addprefix $(STATIC_BUILD_DIR)/,GoogleSans-BoldItalic.ttf GoogleSans-Italic.ttf GoogleSansText-MediumItalic.ttf GoogleSansText-BoldItalic.ttf GoogleSansText-Italic.ttf GoogleSans-MediumItalic.ttf)
 
-ANDROID_BUILD_DIR=$(FONT_BUILD_DIR)/android
-VARIABLE_ANDROID_UPRIGHT_TARGET=$(ANDROID_BUILD_DIR)/variable/$(FONT_NAME_UPRIGHT)
-VARIABLE_ANDROID_UPRIGHT_CHARACTERS=android/characters-roman-v4.txt
-VARIABLE_ANDROID_ITALIC_TARGET=$(ANDROID_BUILD_DIR)/variable/$(FONT_NAME_ITALIC)
-VARIABLE_ANDROID_ITALIC_CHARACTERS=android/characters-italic-v4.txt
-STATIC_ANDROID_UPRIGHT_TARGETS = $(addprefix $(ANDROID_BUILD_DIR)/static/,GoogleSansText-Regular.ttf GoogleSansText-Bold.ttf GoogleSansText-Medium.ttf GoogleSans-Regular.ttf GoogleSans-Bold.ttf GoogleSans-Medium.ttf)
-STATIC_ANDROID_ITALIC_TARGETS = $(addprefix $(ANDROID_BUILD_DIR)/static/,GoogleSans-BoldItalic.ttf GoogleSans-Italic.ttf GoogleSansText-MediumItalic.ttf GoogleSansText-BoldItalic.ttf GoogleSansText-Italic.ttf GoogleSans-MediumItalic.ttf)
+ANDROID_BUILD_DIR := $(FONT_BUILD_DIR)/android
+VARIABLE_ANDROID_UPRIGHT_TARGET := $(ANDROID_BUILD_DIR)/variable/$(FONT_NAME_UPRIGHT)
+VARIABLE_ANDROID_UPRIGHT_CHARACTERS := android/characters-roman-v4.txt
+VARIABLE_ANDROID_ITALIC_TARGET := $(ANDROID_BUILD_DIR)/variable/$(FONT_NAME_ITALIC)
+VARIABLE_ANDROID_ITALIC_CHARACTERS := android/characters-italic-v4.txt
+STATIC_ANDROID_UPRIGHT_TARGETS := $(addprefix $(ANDROID_BUILD_DIR)/static/,GoogleSansText-Regular.ttf GoogleSansText-Bold.ttf GoogleSansText-Medium.ttf GoogleSans-Regular.ttf GoogleSans-Bold.ttf GoogleSans-Medium.ttf)
+STATIC_ANDROID_ITALIC_TARGETS := $(addprefix $(ANDROID_BUILD_DIR)/static/,GoogleSans-BoldItalic.ttf GoogleSans-Italic.ttf GoogleSansText-MediumItalic.ttf GoogleSansText-BoldItalic.ttf GoogleSansText-Italic.ttf GoogleSans-MediumItalic.ttf)
 
-FIGMA_BUILD_DIR=$(FONT_BUILD_DIR)/figma
+FIGMA_BUILD_DIR := $(FONT_BUILD_DIR)/figma
 
-export FONTTOOLS_GPOS_COMPACT_MODE = 5
+export FONTTOOLS_GPOS_COMPACT_MODE := 5
 
 help:
 	@echo "Build targets for Google Sans"
@@ -165,7 +165,7 @@ test:
 # Working with external vendors #
 #################################
 
-STAGING_DIR=sources/staging
+STAGING_DIR := sources/staging
 
 vendor-build: vendor-glyphs2designspace
 	$(foreach \
