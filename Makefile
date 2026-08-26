@@ -126,6 +126,11 @@ figma: build
 
 all: build static android figma
 
+release: all
+	@rm -rf fonts/release
+	find $(FONT_BUILD_DIR) -name '*.ttf' -not -path "$(INTERMEDIATE_VARIABLE_DIR)/*" \
+		-exec $(UV_RUN) scripts/post_v3.py {} \;
+
 ################
 # Test targets #
 ################
@@ -188,7 +193,7 @@ autobase: build
 metadata:
 	cd metadata && python metadata-builder.py
 
-.PHONY: help shaperglot test \
+.PHONY: help shaperglot test release \
 update-glyphset-expectations update-shaping-expectations
 
 # Disable built-in rules to speed up source globbing.
