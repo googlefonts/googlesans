@@ -259,6 +259,7 @@ jobs:
         # For GitHub CLI
         GH_TOKEN: ${{ github.token }}
       run: |
+        shopt -s globstar
         ZIP_NAME="GoogleSans-${GITHUB_REF#refs/*/}.zip"
         cd fonts/release && zip -9 "../../$ZIP_NAME" **/*.ttf
     
