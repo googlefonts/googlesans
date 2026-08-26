@@ -206,7 +206,7 @@ autobase: build
 metadata:
 	cd metadata && python metadata-builder.py
 
-.PHONY: help shaperglot test release \
+.PHONY: help shaperglot test release figma autobase metadata \
 update-glyphset-expectations update-shaping-expectations
 
 # Disable built-in rules to speed up source globbing.
