@@ -95,16 +95,12 @@ jobs:
       with:
         name: ${{ needs.build-variable.outputs.artifact-name }}
         path: fonts
-    - name: Slice static fonts
+    - name: Slice static fonts and create Android and Figma flavours
       shell: bash
       run: |
         # Prevent main VFs re-building
         touch build.stamp
-        make --jobs static
-    - name: Create Android flavour Google Sans
-      run: make --jobs android
-    - name: Create Figma flavour Google Sans
-      run: make --jobs figma
+        make --jobs all
     - name: Generate archive name
       id: instances-artifact-name
       uses: alpha-tango-kilo/gha-artifact-name@49459760611c4a5cedffa13dfb36ca29ab1fdcfc  # v1.3.0
