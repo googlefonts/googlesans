@@ -1,5 +1,6 @@
 export UV_PYTHON := $(shell cat .github/workflows/python-version.txt)
 UV_RUN := uv run --quiet --with-requirements requirements.txt
+FONTC := $(shell $(UV_RUN) which fontc)
 SUBSETTER = $(UV_RUN) --module fontTools.subset \
 	--unicodes="*" \
 	--no-ignore-missing-glyphs \
@@ -11,6 +12,7 @@ SUBSETTER = $(UV_RUN) --module fontTools.subset \
 	--no-prune-unicode-ranges \
 	--recalc-bounds \
 	--output-file=$@
+COMPACT := $(UV_RUN) --module fontTools.otlLib.optimize --gpos-compression-level 5
 
 SOURCES := $(shell python3 scripts/read-config.py --sources)
 FAMILY := $(shell python3 scripts/read-config.py --family)
@@ -41,8 +43,6 @@ STATIC_ANDROID_ITALIC_TARGETS := $(addprefix $(ANDROID_BUILD_DIR)/static/,Google
 
 FIGMA_BUILD_DIR := $(FONT_BUILD_DIR)/figma
 
-export FONTTOOLS_GPOS_COMPACT_MODE := 5
-
 help:
 	@echo "Build targets for Google Sans"
 	@echo
@@ -57,7 +57,10 @@ build: build.stamp
 
 build.stamp: requirements.txt sources/config.yaml $(SOURCES)
 	@rm -rf $(FONT_BUILD_DIR)/*
-	$(UV_RUN) gftools builder sources/config.yaml
+	$(UV_RUN) gftools builder sources/config.yaml \
+		--experimental-fontc "$(FONTC)"
+	$(COMPACT) $(VARIABLE_UPRIGHT_INTERMEDIATE)
+	$(COMPACT) $(VARIABLE_ITALIC_INTERMEDIATE)
 	@mkdir -p $(VARIABLE_BUILD_DIR)
 	$(UV_RUN) --script scripts/patch-figma-fvar.py \
 		$(VARIABLE_UPRIGHT_INTERMEDIATE) \
