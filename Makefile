@@ -204,7 +204,7 @@ autobase: build
 	autobase --min-max --config source/GoogleSans/autobase.toml --words 1000000 build/GoogleSans/variable/GoogleSans*.ttf
 
 metadata:
-	cd metadata && python metadata-builder.py
+	$(UV_RUN) metadata/metadata-builder.py
 
 .PHONY: help shaperglot test release figma autobase metadata \
 update-glyphset-expectations update-shaping-expectations
