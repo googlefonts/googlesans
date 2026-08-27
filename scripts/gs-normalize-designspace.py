@@ -29,7 +29,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument(
     "--source-dir",
     type=Path,
-    default=ROOT_DIR / "source" / "GoogleSans",
+    default=ROOT_DIR / "sources",
     help="Path to source directory.",
 )
 parsed_args = parser.parse_args()
