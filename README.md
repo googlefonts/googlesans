@@ -36,3 +36,5 @@ Usage documentation is available in [`USAGE.md`](USAGE.md).
 
 Maintainer documentation can be found in [`docs/MAINTAINER.md`](docs/MAINTAINER.md).
 
+## License
+SIL Open Font License, without Reserved Font Names.
