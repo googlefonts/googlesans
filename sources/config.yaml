@@ -1,5 +1,39 @@
-sources:
-  - ../source/GoogleSans/GoogleSans-Italic.designspace
-  - ../source/GoogleSans/GoogleSans.designspace
-familyName: "GoogleSans"
+familyName: Google Sans
 
+sources:
+  - GoogleSans.designspace
+  - GoogleSans-Italic.designspace
+
+recipe:
+  ../fonts/.intermediate/GoogleSans[GRAD,opsz,wght].ttf:
+    - source: GoogleSans.designspace
+    - operation: buildVariable
+      args: --no-auto-use-my-metrics
+    - operation: fix
+      args: --skip-fvar-instances
+    - operation: hbsubset
+    - operation: exec
+      # Executed when venv is active, so requirements.txt will be available
+      exe: python
+      args: ../scripts/internal/set-overlap-bits.py $in --output $out
+    - operation: exec
+      exe: python
+      args: ../scripts/fontvi.py $in --output $out
+    - postprocess: buildStat
+      args: --src STAT.yaml
+  ../fonts/.intermediate/GoogleSans-Italic[GRAD,opsz,wght].ttf:
+    - source: GoogleSans-Italic.designspace
+    - operation: buildVariable
+      args: --no-auto-use-my-metrics
+    - operation: fix
+      args: --skip-fvar-instances
+    - operation: hbsubset
+    - operation: exec
+      # Executed when venv is active, so requirements.txt will be available
+      exe: python
+      args: ../scripts/internal/set-overlap-bits.py $in --output $out
+    - operation: exec
+      exe: python
+      args: ../scripts/fontvi.py $in --output $out
+    - postprocess: buildStat
+      args: --src STAT.yaml

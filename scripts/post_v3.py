@@ -22,10 +22,11 @@ if __name__ == "__main__":
         "-o",
         "--output",
         type=Path,
-        help="path to write patched TTF to",
+        help="path to write patched TTF to (defaults to fonts/release)",
     )
 
     args = parser.parse_args()
-    output = args.output or args.font
+    output: Path = args.output or Path("fonts/release") / args.font.relative_to("fonts")
+    output.parent.mkdir(parents=True, exist_ok=True)
     process_font(args.font, output)
-    print(f"Wrote {args.font.name} to {output} with post v3")
+    print(f"Wrote {args.font} to {output} with post v3")

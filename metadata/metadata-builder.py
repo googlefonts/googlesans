@@ -155,7 +155,7 @@ def main():
     template = template.replace("{{filesize}}", str(total_filesize))
     template = template.replace("{{gitcommit}}", get_git_commit_sha())
 
-    with open("METADATA.pb", "w") as f:
+    with open(Path(__file__).parent / "METADATA.pb", "w") as f:
         f.write(template)
 
 
