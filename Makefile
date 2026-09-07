@@ -179,10 +179,10 @@ vendor-glyphs2designspace: $(wildcard sources/*.glyphs)
 	$(UV_RUN) scripts/gs-glyphs2ufo.py sources/*.glyphs --target-dir $(STAGING_DIR)
 
 # Export Google Sans as Glyphs files
-ufo2glyphs: $(wildcard GoogleSans/*.designspace)
+ufo2glyphs: $(wildcard sources/*.designspace)
 	$(foreach \
 		file, \
-		$(wildcard GoogleSans/*.designspace), \
+		$(wildcard sources/*.designspace), \
 		$(UV_RUN) scripts/gs-ufo2glyphs.py $(file); \
 	)
 
