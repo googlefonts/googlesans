@@ -8,7 +8,6 @@ recipe:
   ../fonts/.intermediate/GoogleSans[GRAD,opsz,wght].ttf:
     - source: GoogleSans.designspace
     - operation: buildVariable
-      args: --no-auto-use-my-metrics
     - operation: fix
       args: --skip-fvar-instances
     - operation: hbsubset
@@ -24,7 +23,6 @@ recipe:
   ../fonts/.intermediate/GoogleSans-Italic[GRAD,opsz,wght].ttf:
     - source: GoogleSans-Italic.designspace
     - operation: buildVariable
-      args: --no-auto-use-my-metrics
     - operation: fix
       args: --skip-fvar-instances
     - operation: hbsubset
