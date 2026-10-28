@@ -1,4 +1,4 @@
-#!/usr/bin/env -S uv run --script
+#!/usr/bin/env python
 
 # Copyright 2020 Google Sans Authors
 
