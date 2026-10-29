@@ -156,7 +156,7 @@ test:
 		-not -path "$(ANDROID_BUILD_DIR)/*" \
 		-not -path "$(FIGMA_BUILD_DIR)/*" \
 		-print0 \
-	| xargs --null fontspector --loglevel warn --succinct --full-lists \
+	| xargs --null $(UV_RUN) fontspector --loglevel warn --succinct --full-lists \
 		--profile qa/check-googlesans.toml \
 		--plugin qa/check-charset.py,qa/check-fea.py,qa/check-googlesans.py \
 		--html out/fontspector/fontspector-googlesans-report.html

@@ -94,7 +94,7 @@ jobs:
         name: After VFs (${{ inputs.after }})
         path: after
     - name: Install diffenator3
-      uses: notofonts/install-diffenator3-action@f11137e5df21a0396dda8e276fbaffbe1df87617
+      uses: notofonts/install-diffenator3-action@20563461fec9ee21c9dac5c7476fd57b9095880f  # main
     - name: Run diffenator3
       env:
         INPUT_ALL_MASTERS: ${{ inputs.all-masters }}

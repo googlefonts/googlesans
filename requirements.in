@@ -7,3 +7,7 @@ fontTools>=4.60.1
 gftools
 # Needed for fontvi
 GitPython
+# Used by tests
+fontspectorapi
+# Used by qa/update_shaping_test_data.py
+toml
